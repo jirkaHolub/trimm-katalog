@@ -1,0 +1,11 @@
+.DS_Store
+*.bak
+__pycache__/
+*.pyc
+
+# build skripty a pomocné soubory – nepatří na produkci
+build_photo_map.py
+inject_photos.py
+photo_map.json
+photo_map_report.txt
+missing_product_content_models.txt
