@@ -9,3 +9,6 @@ inject_photos.py
 photo_map.json
 photo_map_report.txt
 missing_product_content_models.txt
+
+# zdrojové rozkresy (.ai/.psd) – web používá jen vyexportované PNG v rozkresy_web/
+trimm_rozkresy/

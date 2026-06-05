@@ -138,7 +138,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
 
 /* Card-only catalogue layout */
 .product-card{height:850px;min-height:850px;display:grid;grid-template-rows:minmax(0,1fr) auto;overflow:hidden}
-.card-top{padding:22px 24px 10px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-rows:auto 238px auto auto auto;align-content:start;column-gap:20px;row-gap:9px;min-height:0;overflow:hidden}
+.card-top{padding:22px 24px 10px;display:grid;grid-template-columns:minmax(0,1.05fr) minmax(0,.95fr);grid-template-rows:auto 238px auto auto 1fr;align-content:start;column-gap:20px;row-gap:9px;min-height:0;overflow:hidden}
 .card-info,.card-head{display:contents}
 .card-head h3{grid-column:1/-1;grid-row:1;margin:0;color:#071426;font-size:30px;line-height:1;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
 .photo-area{grid-column:1/-1;grid-row:2;height:238px;min-height:238px;max-height:238px;margin:0;border-radius:0;background:#fff;align-items:flex-end;justify-content:center;overflow:hidden}
@@ -157,12 +157,12 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
 .size-range{background:transparent;color:#ff6b1a;padding:0;border-radius:0;font-size:10px;font-weight:800}
 .dmoc-price{margin-left:auto;color:#071426;font-size:12px;font-weight:900;letter-spacing:.03em;white-space:nowrap}
 .dmoc-label{color:#777;font-size:8px;font-weight:800;letter-spacing:.1em;margin-right:4px}
-.card-mats{grid-column:1;grid-row:4;margin:0}
+.card-mats{grid-column:1;grid-row:4;margin:0;align-self:start}
 .mat-block{margin-bottom:10px;line-height:1.3}
 .mat-label{display:block;margin-bottom:2px;color:#1a1a1a;font-size:11px;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
 .mat-value{display:block;color:#1a1a1a;font-size:12px;line-height:1.3;text-wrap:pretty;word-break:normal;overflow-wrap:normal;hyphens:none}
-.card-desc{grid-column:1;grid-row:5;margin:6px 0 0;font-size:12px;line-height:1.42;color:#444;display:block;overflow:visible}
-.card-feats{grid-column:2;grid-row:4/6;border-top:0;padding-top:0;overflow:visible;min-height:0}
+.card-desc{grid-column:1;grid-row:5;margin:6px 0 0;font-size:12px;line-height:1.42;color:#444;display:block;overflow:visible;align-self:start}
+.card-feats{grid-column:2;grid-row:4/6;border-top:0;padding-top:0;overflow:visible;min-height:0;align-self:start}
 .feat-block{margin-bottom:12px}
 .feat-label{display:block;margin:0 0 4px;color:#1a1a1a;font-size:11px;font-weight:900;letter-spacing:.04em;text-transform:uppercase}
 .feat-block ul{columns:1}
@@ -559,7 +559,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
       <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><img class="variant-art" src="rozkresy_web/Arta_dark_grey.ai.png" alt="ARTA dark grey" loading="lazy"><div class="color-name">dark grey</div></div></div></div>
     </article><article class="product-card" data-serie="snow-city" data-model="AGATA" data-typ="bunda">
       <div class="card-top">
-        <div class="photo-area"><div class="photo-inner"><span class="ph-name">AGATA</span><span class="ph-typ">bunda</span></div></div>
+        <div class="photo-area"><img class="photo-front" src="resized/AGATA_beige_front.jpg" alt="AGATA" loading="lazy"></div>
         <div class="card-info">
           <div class="card-head">
             <h3>AGATA</h3>
@@ -1512,7 +1512,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
       <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><img class="variant-art" src="rozkresy_web/destiny_white.ai.png" alt="DESTINY white" loading="lazy"><div class="color-name">white</div></div><div class="color-item"><div class="color-num">2</div><img class="variant-art" src="rozkresy_web/destiny_black.ai.png" alt="DESTINY black" loading="lazy"><div class="color-name">black</div></div><div class="color-item"><div class="color-num">3</div><img class="variant-art" src="rozkresy_web/destiny_red.ai.png" alt="DESTINY red" loading="lazy"><div class="color-name">red</div></div><div class="color-item"><div class="color-num">4</div><img class="variant-art" src="rozkresy_web/destiny_lemon.ai.png" alt="DESTINY lemon" loading="lazy"><div class="color-name">lemon</div></div></div></div>
     </article><article class="product-card" data-serie="thermolayer" data-model="CHANGE" data-typ="tričko">
       <div class="card-top">
-        <div class="photo-area"><div class="photo-inner"><span class="ph-name">CHANGE</span><span class="ph-typ">tričko</span></div></div>
+        <div class="photo-area"><img class="photo-front" src="resized/CHANGE_blue_melange_front.jpg" alt="CHANGE" loading="lazy"></div>
         <div class="card-info">
           <div class="card-head">
             <h3>CHANGE</h3>
@@ -1751,7 +1751,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
       <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><img class="variant-art" src="rozkresy_web/destiny_lady_white.ai.png" alt="DESTINY LADY white" loading="lazy"><div class="color-name">white</div></div><div class="color-item"><div class="color-num">2</div><img class="variant-art" src="rozkresy_web/destiny_lady_black.ai.png" alt="DESTINY LADY black" loading="lazy"><div class="color-name">black</div></div><div class="color-item"><div class="color-num">3</div><img class="variant-art" src="rozkresy_web/destiny_lady_red.ai.png" alt="DESTINY LADY red" loading="lazy"><div class="color-name">red</div></div><div class="color-item"><div class="color-num">4</div><img class="variant-art" src="rozkresy_web/destiny_lady_neon_orange.ai.png" alt="DESTINY LADY neon orange" loading="lazy"><div class="color-name">neon orange</div></div><div class="color-item"><div class="color-num">5</div><img class="variant-art" src="rozkresy_web/destiny_lady_neon_pink.ai.png" alt="DESTINY LADY neon pink" loading="lazy"><div class="color-name">neon pink</div></div></div></div>
     </article><article class="product-card" data-serie="thermolayer" data-model="CHANGE LADY" data-typ="tričko">
       <div class="card-top">
-        <div class="photo-area"><div class="photo-inner"><span class="ph-name">CHANGE LADY</span><span class="ph-typ">tričko</span></div></div>
+        <div class="photo-area"><img class="photo-front" src="resized/CHANGE_LADY_white_front.jpg" alt="CHANGE LADY" loading="lazy"></div>
         <div class="card-info">
           <div class="card-head">
             <h3>CHANGE LADY</h3>
@@ -2011,7 +2011,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
   <div class="pgrid">
 <article class="product-card" data-serie="accessories" data-model="DOTS" data-typ="čepice">
       <div class="card-top">
-        <div class="photo-area"><div class="photo-inner"><span class="ph-name">DOTS</span><span class="ph-typ">čepice</span></div></div>
+        <div class="photo-area"><img class="photo-front" src="resized/DOTS_black_front.jpg" alt="DOTS" loading="lazy"></div>
         <div class="card-info">
           <div class="card-head">
             <h3>DOTS</h3>
@@ -2024,7 +2024,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
       <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><span class="color-dot" style="background:#1a1a1a"></span><div class="color-name">black</div></div><div class="color-item"><div class="color-num">2</div><span class="color-dot" style="background:#c8202e"></span><div class="color-name">red</div></div><div class="color-item"><div class="color-num">3</div><span class="color-dot" style="background:#ffffff"></span><div class="color-name">white</div></div><div class="color-item"><div class="color-num">4</div><span class="color-dot" style="background:#3a6ea5"></span><div class="color-name">jeans blue</div></div><div class="color-item"><div class="color-num">5</div><span class="color-dot" style="background:#1a2845"></span><div class="color-name">navy</div></div><div class="color-item"><div class="color-num">6</div><span class="color-dot" style="background:#8c8c8c"></span><div class="color-name">grey melange</div></div></div></div>
     </article><article class="product-card" data-serie="accessories" data-model="PURE" data-typ="čepice">
       <div class="card-top">
-        <div class="photo-area"><div class="photo-inner"><span class="ph-name">PURE</span><span class="ph-typ">čepice</span></div></div>
+        <div class="photo-area"><img class="photo-front" src="resized/PURE_black_front.jpg" alt="PURE" loading="lazy"></div>
         <div class="card-info">
           <div class="card-head">
             <h3>PURE</h3>
@@ -2065,7 +2065,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
       <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><img class="variant-art" src="rozkresy_web/break_black.ai.png" alt="BREAK black" loading="lazy"><div class="color-name">black</div></div><div class="color-item"><div class="color-num">2</div><span class="color-dot" style="background:#a5d63a"></span><div class="color-name">lime green</div></div><div class="color-item"><div class="color-num">3</div><span class="color-dot" style="background:#3a6ea5"></span><div class="color-name">jeans blue</div></div><div class="color-item"><div class="color-num">4</div><span class="color-dot" style="background:#d8528a"></span><div class="color-name">pinky</div></div></div></div>
     </article><article class="product-card" data-serie="accessories" data-model="MICRO UNI" data-typ="čepice">
       <div class="card-top">
-        <div class="photo-area"><div class="photo-inner"><span class="ph-name">MICRO UNI</span><span class="ph-typ">čepice</span></div></div>
+        <div class="photo-area"><img class="photo-front" src="resized/MICRO_UNI_black_front.jpg" alt="MICRO UNI" loading="lazy"></div>
         <div class="card-info">
           <div class="card-head">
             <h3>MICRO UNI</h3>
@@ -2091,7 +2091,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
       <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><span class="color-dot" style="background:#c8202e"></span><div class="color-name">red</div></div><div class="color-item"><div class="color-num">2</div><span class="color-dot" style="background:#3a6ea5"></span><div class="color-name">jeans blue</div></div><div class="color-item"><div class="color-num">3</div><span class="color-dot" style="background:#1a1a1a"></span><div class="color-name">black</div></div><div class="color-item"><div class="color-num">4</div><span class="color-dot" style="background:#7a7a7a"></span><div class="color-name">grey</div></div><div class="color-item"><div class="color-num">5</div><span class="color-dot" style="background:#d8528a"></span><div class="color-name">pinky</div></div></div></div>
     </article><article class="product-card" data-serie="accessories" data-model="SMOOTH" data-typ="kšiltovka">
       <div class="card-top">
-        <div class="photo-area"><div class="photo-inner"><span class="ph-name">SMOOTH</span><span class="ph-typ">kšiltovka</span></div></div>
+        <div class="photo-area"><img class="photo-front" src="resized/SMOOTH_navy_front.jpg" alt="SMOOTH" loading="lazy"></div>
         <div class="card-info">
           <div class="card-head">
             <h3>SMOOTH</h3>
