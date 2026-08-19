@@ -177,14 +177,6 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
 .color-dot{width:30px;height:30px;border-radius:50%;margin:0 auto 4px;border:1px solid rgba(0,0,0,.14);box-shadow:inset 0 -2px 4px rgba(0,0,0,.10)}
 .variant-art{display:block;width:100%;max-width:70px;height:58px;object-fit:contain;object-position:center bottom;margin:0 auto 4px}
 .color-name{font-size:9px;line-height:1.16;color:#555;text-transform:capitalize;word-break:break-word}
-/* PŘEPÍNAČ JAZYKA */
-.langsw{display:inline-flex;gap:2px;background:rgba(255,255,255,.94);border:1px solid var(--border);border-radius:20px;padding:3px;box-shadow:0 2px 10px rgba(0,0,0,.07);flex-shrink:0}
-.langsw a{padding:5px 13px;border-radius:16px;font-size:11px;font-weight:800;letter-spacing:.09em;text-decoration:none;color:var(--muted);transition:all .12s;line-height:1}
-.langsw a:hover{color:var(--text);background:#f0f0f0}
-.langsw a.active{background:var(--text);color:#fff}
-.langsw-hero{position:absolute;top:20px;right:24px;z-index:20}
-.fbar .langsw{margin-left:auto}
-
 @media(max-width:1100px){
   .product-card{height:850px;min-height:850px}
   .photo-area{height:230px;min-height:230px;max-height:230px}
@@ -201,9 +193,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
 </head>
 <body>
 
-<section class="hero" aria-label="TRIMM Fall-Winter 26/27">
-  <nav class="langsw langsw-hero" aria-label="Jazyk / Language"><a href="trimm_katalog_FW_26_27_3.html" hreflang="cs" class="active">CZ</a><a href="trimm_katalog_FW_26_27_3_en.html" hreflang="en">EN</a></nav>
-</section>
+<section class="hero" aria-label="TRIMM Fall-Winter 26/27"></section>
 
 <section class="toc">
   <div class="toc-title">SPORTSWEAR CONTENT</div>
@@ -226,7 +216,6 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
     <button class="chip" data-f="backpacks">BACKPACKS</button>
     <button class="chip" data-f="accessories">ACCESSORIES</button>
   </div>
-  <nav class="langsw" aria-label="Jazyk / Language"><a href="trimm_katalog_FW_26_27_3.html" hreflang="cs" class="active">CZ</a><a href="trimm_katalog_FW_26_27_3_en.html" hreflang="en">EN</a></nav>
 </div>
 
 <main id="products" class="products">
@@ -2293,22 +2282,6 @@ function setFilter(f){cf=f;chips.forEach(x=>x.classList.toggle('active',x.datase
 q.addEventListener('input',go);
 chips.forEach(c=>c.addEventListener('click',()=>setFilter(c.dataset.f)));
 tocLinks.forEach(a=>a.addEventListener('click',()=>setFilter(a.dataset.f)));
-
-/* přepnutí jazyka: jiná URL, ale filtr, hledání i pozice zůstanou */
-document.querySelectorAll('.langsw a').forEach(a=>a.addEventListener('click',e=>{
-  if(a.classList.contains('active')){e.preventDefault();return}
-  e.preventDefault();
-  const u=new URL(a.getAttribute('href'),location.href);
-  if(cf&&cf!=='all')u.searchParams.set('f',cf);
-  if(q.value)u.searchParams.set('q',q.value);
-  if(location.hash)u.hash=location.hash;
-  location.href=u.toString();
-}));
-
-const params=new URLSearchParams(location.search);
-if(params.get('q'))q.value=params.get('q');
-const wanted=params.get('f');
-setFilter([...chips].some(c=>c.dataset.f===wanted)?wanted:'all');
 </script>
 </body>
 </html>
