@@ -11,7 +11,7 @@ html{background:var(--bg);color:var(--text);font-family:'Helvetica Neue',Helveti
 body{width:min(100%,104rem);margin:0 auto}
 
 /* HERO */
-.hero{position:relative;display:block;aspect-ratio:2750/1986;min-height:0;background:#fff url("hero-fw-26-27.png") center/contain no-repeat;overflow:hidden}
+.hero{position:relative;display:block;aspect-ratio:2750/1986;min-height:0;background:#fff url("hero-fw-26-27.jpg") center/contain no-repeat;overflow:hidden}
 
 /* TOC */
 .toc{background:#fff;border-bottom:1px solid var(--border);padding:50px 60px}
@@ -132,7 +132,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
 .photo-area:has(img){background:#fff;display:flex;align-items:flex-end;justify-content:center;gap:2%;padding:6px 8px}
 .photo-area img{position:static;object-fit:contain;object-position:bottom center;display:block}
 .photo-back{height:72%;max-width:32%;width:auto}
-.photo-front{height:96%;max-width:62%;width:auto}
+.photo-front{height:96%;max-width:62%;width:auto}.photo-reverse{height:55%;max-width:20%;width:auto}.photo-area:has(.photo-reverse) .photo-back{max-width:26%}.photo-area:has(.photo-reverse) .photo-front{max-width:48%}
 /* If only one image is present, let it take full area */
 .photo-area:has(img:only-of-type) img{height:96%;max-width:80%}
 
@@ -146,7 +146,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
 .photo-area:has(img){background:#fff!important;padding:0 4px;gap:4%;align-items:flex-end;justify-content:center}
 .photo-area img{filter:none}
 .photo-back{height:68%;max-width:34%}
-.photo-front{height:95%;max-width:58%}
+.photo-front{height:95%;max-width:58%}.photo-reverse{height:52%;max-width:20%}.photo-area:has(.photo-reverse) .photo-back{max-width:24%}.photo-area:has(.photo-reverse) .photo-front{max-width:44%}
 .photo-area:has(img:only-of-type) img{height:95%;max-width:82%}
 .photo-inner{width:100%;height:100%;display:flex;flex-direction:column;align-items:center;justify-content:center;background:#f4f4f2}
 .card-meta{grid-column:1/-1;grid-row:3;display:flex;align-items:center;gap:12px;flex-wrap:wrap;min-height:30px;margin:0}
@@ -992,7 +992,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
       <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><img class="variant-art" src="rozkresy_web/Metric_jeans_blue_dark_lagoon.ai.png" alt="METRIC jeans blue/dark lagoon" loading="lazy"><div class="color-name">jeans blue/dark lagoon</div></div><div class="color-item"><div class="color-num">2</div><img class="variant-art" src="rozkresy_web/Metric_dark_grey_black.ai.png" alt="METRIC dark grey/black" loading="lazy"><div class="color-name">dark grey/black</div></div><div class="color-item"><div class="color-num">3</div><img class="variant-art" src="rozkresy_web/Metric_mustard_khaki.ai.png" alt="METRIC mustard/khaki" loading="lazy"><div class="color-name">mustard/khaki</div></div></div></div>
     </article><article class="product-card" data-serie="active" data-model="DOUBLE" data-typ="bunda">
       <div class="card-top">
-        <div class="photo-area"><img class="photo-back" src="resized/DOUBLE_jeans_blue_dark_lagoon_back.jpg" alt="DOUBLE – zadní strana" loading="lazy"><img class="photo-front" src="resized/DOUBLE_jeans_blue_dark_lagoon_front.jpg" alt="DOUBLE" loading="lazy"></div>
+        <div class="photo-area"><img class="photo-reverse" src="resized/DOUBLE_reverse.jpg" alt="DOUBLE – rubová strana" loading="lazy"><img class="photo-back" src="resized/DOUBLE_jeans_blue_dark_lagoon_back.jpg" alt="DOUBLE – zadní strana" loading="lazy"><img class="photo-front" src="resized/DOUBLE_jeans_blue_dark_lagoon_front.jpg" alt="DOUBLE" loading="lazy"></div>
         <div class="card-info">
           <div class="card-head">
             <h3>DOUBLE</h3>
@@ -1441,7 +1441,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
           <div class="card-feats"><div class="feat-block"><div class="feat-label">AKTIVITY</div><div class="act-tags"><span class="act-tag">Adventure</span><span class="act-tag">Běžecké lyžování</span><span class="act-tag">Freeride a Snowboarding</span><span class="act-tag">Jogging</span><span class="act-tag">Lyžování</span><span class="act-tag">Ski Alp</span><span class="act-tag">Trekking</span></div></div></div>
         </div>
       </div>
-      <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><span class="color-dot" style="background:#1a1a1a"></span><div class="color-name">black</div></div><div class="color-item"><div class="color-num">2</div><span class="color-dot" style="background:linear-gradient(135deg,#7a7a7a 0.000% 50.000%,#1a1a1a 50.000% 100.000%)"></span><div class="color-name">grey/black</div></div><div class="color-item"><div class="color-num">3</div><span class="color-dot" style="background:linear-gradient(135deg,#0a4a55 0.000% 50.000%,#c79a2a 50.000% 100.000%)"></span><div class="color-name">dark lagoon/mustard</div></div></div></div>
+      <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><img class="variant-art" src="rozkresy_web/micron_vest_black.pdf.png" alt="MICRON VEST black" loading="lazy"><div class="color-name">black</div></div><div class="color-item"><div class="color-num">2</div><img class="variant-art" src="rozkresy_web/micron_vest_grey_black.pdf.png" alt="MICRON VEST grey/black" loading="lazy"><div class="color-name">grey/black</div></div><div class="color-item"><div class="color-num">3</div><img class="variant-art" src="rozkresy_web/micron_vest_dark_lagoon_mustard.pdf.png" alt="MICRON VEST dark lagoon/mustard" loading="lazy"><div class="color-name">dark lagoon/mustard</div></div></div></div>
     </article><article class="product-card" data-serie="thermolayer" data-model="CAPE" data-typ="mikina">
       <div class="card-top">
         <div class="photo-area"><img class="photo-back" src="resized/CAPE_grey_melange_back.jpg" alt="CAPE – zadní strana" loading="lazy"><img class="photo-front" src="resized/CAPE_grey_melange_front.jpg" alt="CAPE" loading="lazy"></div>
@@ -1653,7 +1653,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
           <div class="card-feats"><div class="feat-block"><div class="feat-label">AKTIVITY</div><div class="act-tags"><span class="act-tag">Adventure</span><span class="act-tag">Běžecké lyžování</span><span class="act-tag">Freeride a Snowboarding</span><span class="act-tag">Jogging</span><span class="act-tag">Lyžování</span><span class="act-tag">Ski Alp</span><span class="act-tag">Trekking</span></div></div></div>
         </div>
       </div>
-      <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><span class="color-dot" style="background:#1a1a1a"></span><div class="color-name">black</div></div><div class="color-item"><div class="color-num">2</div><span class="color-dot" style="background:linear-gradient(135deg,#7a7a7a 0.000% 50.000%,#d8528a 50.000% 100.000%)"></span><div class="color-name">grey/pinky</div></div><div class="color-item"><div class="color-num">3</div><span class="color-dot" style="background:linear-gradient(135deg,#c79a2a 0.000% 50.000%,#7a7a7a 50.000% 100.000%)"></span><div class="color-name">mustard/grey</div></div></div></div>
+      <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><img class="variant-art" src="rozkresy_web/micron_lady_vest_black.pdf.png" alt="MICRON LADY VEST black" loading="lazy"><div class="color-name">black</div></div><div class="color-item"><div class="color-num">2</div><img class="variant-art" src="rozkresy_web/micron_lady_vest_grey_pinky.pdf.png" alt="MICRON LADY VEST grey/pinky" loading="lazy"><div class="color-name">grey/pinky</div></div><div class="color-item"><div class="color-num">3</div><img class="variant-art" src="rozkresy_web/micron_lady_vest_mustard_grey.pdf.png" alt="MICRON LADY VEST mustard/grey" loading="lazy"><div class="color-name">mustard/grey</div></div></div></div>
     </article><article class="product-card" data-serie="thermolayer" data-model="NEXA" data-typ="mikina">
       <div class="card-top">
         <div class="photo-area"><img class="photo-back" src="resized/NEXA_blue_back.jpg" alt="NEXA – zadní strana" loading="lazy"><img class="photo-front" src="resized/NEXA_blue_front.jpg" alt="NEXA" loading="lazy"></div>
@@ -1762,7 +1762,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
       <div class="card-colors"><div class="colors-row"><div class="color-item"><div class="color-num">1</div><img class="variant-art" src="rozkresy_web/destiny_lady_white.ai.png" alt="DESTINY LADY white" loading="lazy"><div class="color-name">white</div></div><div class="color-item"><div class="color-num">2</div><img class="variant-art" src="rozkresy_web/destiny_lady_black.ai.png" alt="DESTINY LADY black" loading="lazy"><div class="color-name">black</div></div><div class="color-item"><div class="color-num">3</div><img class="variant-art" src="rozkresy_web/destiny_lady_red.ai.png" alt="DESTINY LADY red" loading="lazy"><div class="color-name">red</div></div><div class="color-item"><div class="color-num">4</div><img class="variant-art" src="rozkresy_web/destiny_lady_neon_orange.ai.png" alt="DESTINY LADY neon orange" loading="lazy"><div class="color-name">neon orange</div></div><div class="color-item"><div class="color-num">5</div><img class="variant-art" src="rozkresy_web/destiny_lady_neon_pink.ai.png" alt="DESTINY LADY neon pink" loading="lazy"><div class="color-name">neon pink</div></div></div></div>
     </article><article class="product-card" data-serie="thermolayer" data-model="CHANGE LADY" data-typ="tričko">
       <div class="card-top">
-        <div class="photo-area"><img class="photo-front" src="resized/CHANGE_LADY_white_front.jpg" alt="CHANGE LADY" loading="lazy"></div>
+        <div class="photo-area"><img class="photo-back" src="resized/CHANGE_LADY_back.jpg" alt="CHANGE LADY – zadní strana" loading="lazy"><img class="photo-front" src="resized/CHANGE_LADY_white_front.jpg" alt="CHANGE LADY" loading="lazy"></div>
         <div class="card-info">
           <div class="card-head">
             <h3>CHANGE LADY</h3>
