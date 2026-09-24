@@ -1093,9 +1093,10 @@
     ],
     "front": "foto/bivak_sand_front.jpg",
     "back": null,
-    "art": null,
+    "art": "rozkresy/bivak_sand.png",
     "src": "pdf",
-    "generic": true
+    "generic": true,
+    "art_src": "pdf"
    }
   ],
   "new": false,
@@ -5048,8 +5049,9 @@
     ],
     "front": null,
     "back": null,
-    "art": null,
-    "src": null
+    "art": "rozkresy/battle_2in1_khaki_black.png",
+    "src": null,
+    "art_src": "pdf"
    },
    {
     "n": 3,
@@ -5060,8 +5062,9 @@
     ],
     "front": null,
     "back": null,
-    "art": null,
-    "src": null
+    "art": "rozkresy/battle_2in1_royal_blue_brick.png",
+    "src": null,
+    "art_src": "pdf"
    },
    {
     "n": 4,
@@ -5072,8 +5075,9 @@
     ],
     "front": null,
     "back": null,
-    "art": null,
-    "src": null
+    "art": "rozkresy/battle_2in1_purple_pinky.png",
+    "src": null,
+    "art_src": "pdf"
    }
   ],
   "new": false,
@@ -5908,9 +5912,10 @@
     ],
     "front": "foto/tramp_blue_front.jpg",
     "back": null,
-    "art": null,
+    "art": "rozkresy/tramp_blue.png",
     "src": "pdf",
-    "generic": true
+    "generic": true,
+    "art_src": "pdf"
    },
    {
     "n": 2,
@@ -5934,9 +5939,10 @@
     ],
     "front": "foto/tramp_camouflage_front.jpg",
     "back": null,
-    "art": null,
+    "art": "rozkresy/tramp_camouflage.png",
     "src": "web",
-    "generic": true
+    "generic": true,
+    "art_src": "pdf"
    }
   ],
   "new": false,
@@ -7465,9 +7471,10 @@
     ],
     "front": "foto/opal_40_black_orange_front.jpg",
     "back": null,
-    "art": null,
+    "art": "rozkresy/opal_40_black_orange.png",
     "src": "pdf",
-    "generic": true
+    "generic": true,
+    "art_src": "pdf"
    },
    {
     "n": 2,
@@ -7477,8 +7484,9 @@
     ],
     "front": null,
     "back": null,
-    "art": null,
-    "src": null
+    "art": "rozkresy/opal_40_blue_orange.png",
+    "src": null,
+    "art_src": "pdf"
    }
   ],
   "new": false,
@@ -13193,8 +13201,9 @@
     ],
     "front": null,
     "back": null,
-    "art": null,
-    "src": null
+    "art": "rozkresy/tracky_dark_lagoon.png",
+    "src": null,
+    "art_src": "pdf"
    },
    {
     "n": 3,

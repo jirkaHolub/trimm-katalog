@@ -35,6 +35,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/PACK_DSL.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "",
+    "file": "data/pdf_swatch/PACK_DSL_1.png"
+   },
+   {
+    "n": "1",
+    "label": "Orange",
+    "file": "data/pdf_swatch/PACK_DSL_1.png"
+   }
+  ],
   "serie": "EXTREME SERIE"
  },
  {
@@ -71,6 +83,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/FLY_DSL.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/FLY_DSL_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Bordo/Grey",
+    "file": "data/pdf_swatch/FLY_DSL_1.png"
+   }
+  ],
   "serie": "EXTREME SERIE"
  },
  {
@@ -108,6 +132,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/HIMLITE_DSL.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/HIMLITE_DSL_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Orange",
+    "file": "data/pdf_swatch/HIMLITE_DSL_1.png"
+   }
+  ],
   "serie": "EXTREME SERIE"
  },
  {
@@ -144,6 +180,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/VECTOR_DSL.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/VECTOR_DSL_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Bordo/Grey",
+    "file": "data/pdf_swatch/VECTOR_DSL_1.png"
+   }
+  ],
   "serie": "EXTREME SERIE"
  },
  {
@@ -181,6 +229,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/PIONEER_DSL.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/PIONEER_DSL_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Orange",
+    "file": "data/pdf_swatch/PIONEER_DSL_1.png"
+   }
+  ],
   "serie": "EXTREME SERIE"
  },
  {
@@ -217,6 +277,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/DELTA_D.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "O",
+    "file": "data/pdf_swatch/DELTA_D_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Lime green / Grey",
+    "file": "data/pdf_swatch/DELTA_D_1.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -251,6 +323,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SPARK_D.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/SPARK_D_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Lime green / Grey",
+    "file": "data/pdf_swatch/SPARK_D_1.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -286,6 +370,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/APOLOS_D.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "O",
+    "file": "data/pdf_swatch/APOLOS_D_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Lime green / Grey",
+    "file": "data/pdf_swatch/APOLOS_D_1.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -320,6 +416,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BIVAK_D.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/BIVAK_D_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Lime green /",
+    "file": "data/pdf_swatch/BIVAK_D_1.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -354,6 +462,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ALFA_D.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Lime green /",
+    "file": "data/pdf_swatch/ALFA_D_1.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -388,6 +503,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/FRONTIER_D.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Lime green / Grey",
+    "file": "data/pdf_swatch/FRONTIER_D_1.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -423,6 +545,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/APOLOM_D.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "",
+    "file": "data/pdf_swatch/APOLOM_D_3.png"
+   },
+   {
+    "n": "1",
+    "label": "Lime green / Grey",
+    "file": "data/pdf_swatch/APOLOM_D_1.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -458,6 +592,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/THUNDER_D.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "",
+    "file": "data/pdf_swatch/THUNDER_D_3.png"
+   },
+   {
+    "n": "1",
+    "label": "Lime green / Grey",
+    "file": "data/pdf_swatch/THUNDER_D_1.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -492,6 +638,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/LARGO_D.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Lime green / Grey",
+    "file": "data/pdf_swatch/LARGO_D_1.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -526,6 +679,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/GLOBE_D.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Lime green / Grey",
+    "file": "data/pdf_swatch/GLOBE_D_1.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -559,6 +719,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SOLO.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "",
+    "file": "data/pdf_swatch/SOLO_1.png"
+   },
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/SOLO_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -592,6 +764,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SPARK.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/SPARK_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/SPARK_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -626,6 +810,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BIVAK.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/BIVAK_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/BIVAK_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -661,6 +857,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/COMPACT.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/COMPACT_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -695,6 +898,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ALFA.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/ALFA_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -729,6 +939,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/LARGO.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/LARGO_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -763,6 +980,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/MAGNUM.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/MAGNUM_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -797,6 +1021,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOCUS.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/FOCUS_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -832,6 +1063,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TORNADO.jpg",
+  "swatches": [
+   {
+    "n": "4",
+    "label": "",
+    "file": "data/pdf_swatch/TORNADO_4.png"
+   },
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/TORNADO_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -871,6 +1114,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ENDURO.jpg",
+  "swatches": [
+   {
+    "n": "4",
+    "label": "",
+    "file": "data/pdf_swatch/ENDURO_4.png"
+   },
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/ENDURO_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -906,6 +1161,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/DUO.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/DUO_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Dark Olive",
+    "file": "data/pdf_swatch/DUO_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Sand",
+    "file": "data/pdf_swatch/DUO_2.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -940,6 +1212,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/COMET.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Green",
+    "file": "data/pdf_swatch/COMET_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Sand",
+    "file": "data/pdf_swatch/COMET_2.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -974,6 +1258,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/HUDSON.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Green",
+    "file": "data/pdf_swatch/HUDSON_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -1009,6 +1300,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/EAGLE_II.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Green",
+    "file": "data/pdf_swatch/EAGLE_II_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Sand",
+    "file": "data/pdf_swatch/EAGLE_II_2.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -1045,6 +1348,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/CAMP_II.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark lagoon / Dark grey",
+    "file": "data/pdf_swatch/CAMP_II_1.png"
+   }
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1082,6 +1392,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ARIZONA_II.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark lagoon / Dark grey",
+    "file": "data/pdf_swatch/ARIZONA_II_1.png"
+   }
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1119,6 +1436,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/COMFORT_II.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark lagoon / Dark grey",
+    "file": "data/pdf_swatch/COMFORT_II_1.png"
+   }
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1153,6 +1477,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/MACAO.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark lagoon / Dark grey",
+    "file": "data/pdf_swatch/MACAO_1.png"
+   }
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1188,6 +1519,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/MONZUN.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark lagoon / Dark grey",
+    "file": "data/pdf_swatch/MONZUN_1.png"
+   }
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1224,6 +1562,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/GALAXY_II.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark lagoon / Dark grey",
+    "file": "data/pdf_swatch/GALAXY_II_1.png"
+   }
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1254,6 +1599,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRACE_ONE.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/TRACE_ONE_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark Olive",
+    "file": "data/pdf_swatch/TRACE_ONE_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Camouflage",
+    "file": "data/pdf_swatch/TRACE_ONE_3.png"
+   }
+  ],
   "serie": "SHELTERS SERIE"
  },
  {
@@ -1284,6 +1646,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRACE.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Green",
+    "file": "data/pdf_swatch/TRACE_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Sand",
+    "file": "data/pdf_swatch/TRACE_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Camouflage",
+    "file": "data/pdf_swatch/TRACE_3.png"
+   }
+  ],
   "serie": "SHELTERS SERIE"
  },
  {
@@ -1314,6 +1693,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRACE_XL.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Camouflage",
+    "file": "data/pdf_swatch/TRACE_XL_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark Olive",
+    "file": "data/pdf_swatch/TRACE_XL_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Sand",
+    "file": "data/pdf_swatch/TRACE_XL_3.png"
+   }
+  ],
   "serie": "SHELTERS SERIE"
  },
  {
@@ -1343,6 +1739,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/PARTY_PARTY_PLUS.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Sand",
+    "file": "data/pdf_swatch/PARTY_PARTY_PLUS_1.png"
+   },
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/PARTY_PARTY_PLUS_2.png"
+   }
+  ],
   "serie": "SHELTERS SERIE"
  },
  {
@@ -1371,6 +1779,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/PARTY_S.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark lagoon / Dark grey",
+    "file": "data/pdf_swatch/PARTY_S_1.png"
+   }
+  ],
   "serie": "SHELTERS SERIE"
  },
  {
@@ -1392,6 +1807,7 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOOTPRINT_PACK.jpg",
+  "swatches": [],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1413,6 +1829,7 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOOTPRINT_HIMLITE.jpg",
+  "swatches": [],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1434,6 +1851,7 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOOTPRINT_PIONEER.jpg",
+  "swatches": [],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1454,6 +1872,18 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/Y_PEG_D23.jpg",
+  "swatches": [
+   {
+    "n": "4",
+    "label": "",
+    "file": "data/pdf_swatch/Y_PEG_D23_4.png"
+   },
+   {
+    "n": "1",
+    "label": "Bordo Anodized",
+    "file": "data/pdf_swatch/Y_PEG_D23_1.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1474,6 +1904,18 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/Y_PEG_D18.jpg",
+  "swatches": [
+   {
+    "n": "4",
+    "label": "",
+    "file": "data/pdf_swatch/Y_PEG_D18_4.png"
+   },
+   {
+    "n": "1",
+    "label": "Bordo Anodized",
+    "file": "data/pdf_swatch/Y_PEG_D18_1.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1494,6 +1936,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/V_PEG_D17.jpg",
+  "swatches": [
+   {
+    "n": "4",
+    "label": "",
+    "file": "data/pdf_swatch/V_PEG_D17_4.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1514,6 +1963,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ROCK_PEG_D16.jpg",
+  "swatches": [
+   {
+    "n": "4",
+    "label": "",
+    "file": "data/pdf_swatch/ROCK_PEG_D16_4.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1535,6 +1991,18 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SOLID_PEG_D18.jpg",
+  "swatches": [
+   {
+    "n": "4",
+    "label": "",
+    "file": "data/pdf_swatch/SOLID_PEG_D18_4.png"
+   },
+   {
+    "n": "1",
+    "label": "Silver",
+    "file": "data/pdf_swatch/SOLID_PEG_D18_1.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1556,6 +2024,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SOLID_PEG_S19.jpg",
+  "swatches": [
+   {
+    "n": "5",
+    "label": "",
+    "file": "data/pdf_swatch/SOLID_PEG_S19_5.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1577,6 +2052,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SOLID_PEG_S26.jpg",
+  "swatches": [
+   {
+    "n": "5",
+    "label": "",
+    "file": "data/pdf_swatch/SOLID_PEG_S26_5.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1598,6 +2080,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/NAILS_PEG_S27.jpg",
+  "swatches": [
+   {
+    "n": "4",
+    "label": "",
+    "file": "data/pdf_swatch/NAILS_PEG_S27_4.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1619,6 +2108,18 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/V_PEG_S30.jpg",
+  "swatches": [
+   {
+    "n": "4",
+    "label": "",
+    "file": "data/pdf_swatch/V_PEG_S30_4.png"
+   },
+   {
+    "n": "1",
+    "label": "Silver",
+    "file": "data/pdf_swatch/V_PEG_S30_1.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1640,6 +2141,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/POLES_D50_8_5_MM.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "",
+    "file": "data/pdf_swatch/POLES_D50_8_5_MM_3.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1661,6 +2169,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/POLES_DRW40_6_5_MM.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "",
+    "file": "data/pdf_swatch/POLES_DRW40_6_5_MM_3.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1682,6 +2197,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/POLES_DRW50_8_5_MM.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "",
+    "file": "data/pdf_swatch/POLES_DRW50_8_5_MM_3.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1703,6 +2225,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/POLES_DRW50_9_5_MM.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "",
+    "file": "data/pdf_swatch/POLES_DRW50_9_5_MM_3.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1723,6 +2252,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/POLES_DRW60_11_MM.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "",
+    "file": "data/pdf_swatch/POLES_DRW60_11_MM_3.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1744,6 +2280,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/POLES_S45_15_MM.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/POLES_S45_15_MM_1.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1764,6 +2307,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TENTS_POLES_GUM.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "White Dots",
+    "file": "data/pdf_swatch/TENTS_POLES_GUM_1.png"
+   }
+  ],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1811,6 +2361,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/NORD_750.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark Lagoon",
+    "file": "data/pdf_swatch/NORD_750_1.png"
+   }
+  ],
   "serie": "EXTREME DOWN SERIE"
  },
  {
@@ -1857,6 +2414,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/NORD_500.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark Lagoon",
+    "file": "data/pdf_swatch/NORD_500_1.png"
+   }
+  ],
   "serie": "EXTREME DOWN SERIE"
  },
  {
@@ -1903,6 +2467,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/NORD_350.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark Lagoon",
+    "file": "data/pdf_swatch/NORD_350_1.png"
+   }
+  ],
   "serie": "EXTREME DOWN SERIE"
  },
  {
@@ -1951,6 +2522,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/PEAK_400.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grey",
+    "file": "data/pdf_swatch/PEAK_400_1.png"
+   }
+  ],
   "serie": "EXTREME DOWN SERIE"
  },
  {
@@ -1998,6 +2576,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/PEAK_250.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grey",
+    "file": "data/pdf_swatch/PEAK_250_1.png"
+   }
+  ],
   "serie": "EXTREME DOWN SERIE"
  },
  {
@@ -2052,6 +2637,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ARKTIS.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue/Dark grey",
+    "file": "data/pdf_swatch/ARKTIS_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Red/Dark grey",
+    "file": "data/pdf_swatch/ARKTIS_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Olive/Dark grey",
+    "file": "data/pdf_swatch/ARKTIS_2.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2109,6 +2711,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/RACK_1200.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Khaki/Olive",
+    "file": "data/pdf_swatch/RACK_1200_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Dark red / Red",
+    "file": "data/pdf_swatch/RACK_1200_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Blue/Sea blue",
+    "file": "data/pdf_swatch/RACK_1200_2.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2161,6 +2780,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/GANT.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Red/Dark red",
+    "file": "data/pdf_swatch/GANT_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Sea blue / Mid.blue",
+    "file": "data/pdf_swatch/GANT_2.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2213,6 +2844,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BALANCE_WIDE.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Sea blue / Mid.blue",
+    "file": "data/pdf_swatch/BALANCE_WIDE_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Khaki/Dark grey",
+    "file": "data/pdf_swatch/BALANCE_WIDE_2.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2270,6 +2913,28 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BALANCE.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Sea blue / Mid.blue",
+    "file": "data/pdf_swatch/BALANCE_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Red/Dark red",
+    "file": "data/pdf_swatch/BALANCE_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Lemon/Lagoon",
+    "file": "data/pdf_swatch/BALANCE_2.png"
+   },
+   {
+    "n": "4",
+    "label": "Kiwi green / Dark grey",
+    "file": "data/pdf_swatch/BALANCE_4.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2321,6 +2986,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BALANCE_JUNIOR.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Kiwi green / Dark grey",
+    "file": "data/pdf_swatch/BALANCE_JUNIOR_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Sea blue / Mid.blue",
+    "file": "data/pdf_swatch/BALANCE_JUNIOR_2.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2381,6 +3058,28 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BATTLE_2IN1.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Brick/Royal blue",
+    "file": "data/pdf_swatch/BATTLE_2IN1_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Royal blue / Brick",
+    "file": "data/pdf_swatch/BATTLE_2IN1_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Khaki/Black",
+    "file": "data/pdf_swatch/BATTLE_2IN1_2.png"
+   },
+   {
+    "n": "4",
+    "label": "Purple/Pinky",
+    "file": "data/pdf_swatch/BATTLE_2IN1_4.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2435,6 +3134,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRAPER.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Camouflage",
+    "file": "data/pdf_swatch/TRAPER_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Olive",
+    "file": "data/pdf_swatch/TRAPER_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Blue",
+    "file": "data/pdf_swatch/TRAPER_2.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2489,6 +3205,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/WALKER.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Kiwi green / Mid.green",
+    "file": "data/pdf_swatch/WALKER_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Sea blue / Mid.blue",
+    "file": "data/pdf_swatch/WALKER_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red/Dark red",
+    "file": "data/pdf_swatch/WALKER_2.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2541,6 +3274,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/WALKER_FLEX.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Purple/Pinky",
+    "file": "data/pdf_swatch/WALKER_FLEX_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Kiwi green / Orange",
+    "file": "data/pdf_swatch/WALKER_FLEX_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Sea blue / Orange",
+    "file": "data/pdf_swatch/WALKER_FLEX_2.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2598,6 +3348,28 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/HIGHLANDER.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grey/Olive",
+    "file": "data/pdf_swatch/HIGHLANDER_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Red/Dark grey",
+    "file": "data/pdf_swatch/HIGHLANDER_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Mid.blue/Sea blue",
+    "file": "data/pdf_swatch/HIGHLANDER_2.png"
+   },
+   {
+    "n": "4",
+    "label": "Lagoon/Lemon",
+    "file": "data/pdf_swatch/HIGHLANDER_4.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2655,6 +3427,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/RACK_800.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark red / Red",
+    "file": "data/pdf_swatch/RACK_800_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Blue/Sea blue",
+    "file": "data/pdf_swatch/RACK_800_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Khaki/Olive",
+    "file": "data/pdf_swatch/RACK_800_2.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2708,6 +3497,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/IMPACT.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Kiwi green / Dark grey",
+    "file": "data/pdf_swatch/IMPACT_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Lemon/Lagoon",
+    "file": "data/pdf_swatch/IMPACT_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red/Dark red",
+    "file": "data/pdf_swatch/IMPACT_2.png"
+   }
+  ],
   "serie": "LITE SERIE"
  },
  {
@@ -2766,6 +3572,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/RACK_400.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue/Sea blue",
+    "file": "data/pdf_swatch/RACK_400_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Dark red / Red",
+    "file": "data/pdf_swatch/RACK_400_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Khaki/Olive",
+    "file": "data/pdf_swatch/RACK_400_2.png"
+   }
+  ],
   "serie": "LITE SERIE"
  },
  {
@@ -2817,6 +3640,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRAVEL.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Olive",
+    "file": "data/pdf_swatch/TRAVEL_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Camouflage",
+    "file": "data/pdf_swatch/TRAVEL_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Mid.blue",
+    "file": "data/pdf_swatch/TRAVEL_2.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -2869,6 +3709,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRAMP.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/TRAMP_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Camouflage",
+    "file": "data/pdf_swatch/TRAMP_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Olive",
+    "file": "data/pdf_swatch/TRAMP_2.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -2920,6 +3777,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/DIVAN.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Kiwi green / Mid.green",
+    "file": "data/pdf_swatch/DIVAN_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Sea blue / Mid.blue",
+    "file": "data/pdf_swatch/DIVAN_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red/Dark red",
+    "file": "data/pdf_swatch/DIVAN_2.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -2942,6 +3816,23 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/HAVEN.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Orange",
+    "file": "data/pdf_swatch/HAVEN_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/HAVEN_3.png"
+   },
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/HAVEN_2.png"
+   }
+  ],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -2964,6 +3855,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/LINER_MUMMY_P.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grey",
+    "file": "data/pdf_swatch/LINER_MUMMY_P_1.png"
+   }
+  ],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -2986,6 +3884,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/LINER_BLANKET_P.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grey",
+    "file": "data/pdf_swatch/LINER_BLANKET_P_1.png"
+   }
+  ],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3008,6 +3913,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/THERMAL_LINER_MUMMY_F.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grey",
+    "file": "data/pdf_swatch/THERMAL_LINER_MUMMY_F_1.png"
+   }
+  ],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3030,6 +3942,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/THERMAL_LINER_BLANKET_F.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grey",
+    "file": "data/pdf_swatch/THERMAL_LINER_BLANKET_F_1.png"
+   }
+  ],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3052,6 +3971,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/COMPRESS_BAG_S.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark grey / Red",
+    "file": "data/pdf_swatch/COMPRESS_BAG_S_1.png"
+   }
+  ],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3074,6 +4000,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/COMPRESS_BAG_M.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark grey / Red",
+    "file": "data/pdf_swatch/COMPRESS_BAG_M_1.png"
+   }
+  ],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3110,6 +4043,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/WAKE_5_5.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/WAKE_5_5_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Green",
+    "file": "data/pdf_swatch/WAKE_5_5_2.png"
+   }
+  ],
   "serie": "LITE SERIE"
  },
  {
@@ -3143,6 +4088,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TIGUAN_5_0.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Orange/Dark grey",
+    "file": "data/pdf_swatch/TIGUAN_5_0_1.png"
+   }
+  ],
   "serie": "LITE SERIE"
  },
  {
@@ -3179,6 +4131,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ZERO_5_5.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Green/Grey",
+    "file": "data/pdf_swatch/ZERO_5_5_1.png"
+   }
+  ],
   "serie": "LITE SERIE"
  },
  {
@@ -3215,6 +4174,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/STEPPER_5_5.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/STEPPER_5_5_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey",
+    "file": "data/pdf_swatch/STEPPER_5_5_2.png"
+   }
+  ],
   "serie": "LITE SERIE"
  },
  {
@@ -3253,6 +4224,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/STEPPER_DUO_5_5.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/STEPPER_DUO_5_5_1.png"
+   },
+   {
+    "n": "2",
+    "label": "",
+    "file": "data/pdf_swatch/STEPPER_DUO_5_5_2.png"
+   }
+  ],
   "serie": "LITE SERIE"
  },
  {
@@ -3289,6 +4272,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/CHARGE_8_5.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grey",
+    "file": "data/pdf_swatch/CHARGE_8_5_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Blue",
+    "file": "data/pdf_swatch/CHARGE_8_5_2.png"
+   }
+  ],
   "serie": "LITE SERIE"
  },
  {
@@ -3325,6 +4320,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/HIKER_2_5.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/HIKER_2_5_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey",
+    "file": "data/pdf_swatch/HIKER_2_5_2.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -3360,6 +4367,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SPACE_3_7.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Steel Blue",
+    "file": "data/pdf_swatch/SPACE_3_7_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -3395,6 +4409,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/CORNER_6_0.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Steel Blue",
+    "file": "data/pdf_swatch/CORNER_6_0_1.png"
+   }
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -3432,6 +4453,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/FREEDOM_XL_5_0.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Olive",
+    "file": "data/pdf_swatch/FREEDOM_XL_5_0_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey",
+    "file": "data/pdf_swatch/FREEDOM_XL_5_0_2.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3468,6 +4501,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ALTEA_L_5_0.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/ALTEA_L_5_0_1.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3504,6 +4544,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/LANCER_7_0.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/LANCER_7_0_1.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3539,6 +4586,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/YETTI_10_0.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/YETTI_10_0_1.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3571,6 +4625,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BUBBLES_1_8.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/BUBBLES_1_8_1.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3602,6 +4663,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ROTTO_12_0.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/ROTTO_12_0_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey",
+    "file": "data/pdf_swatch/ROTTO_12_0_2.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3631,6 +4704,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/LEXUS_12_0.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/LEXUS_12_0_1.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3668,6 +4748,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BUDDY_5_0.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grey",
+    "file": "data/pdf_swatch/BUDDY_5_0_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/BUDDY_5_0_2.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3705,6 +4797,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/OPAL_40.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black/ Orange",
+    "file": "data/pdf_swatch/OPAL_40_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Blue/ Orange",
+    "file": "data/pdf_swatch/OPAL_40_2.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -3742,6 +4846,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ALPIN_40.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark orange / Orange",
+    "file": "data/pdf_swatch/ALPIN_40_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Black/ Orange",
+    "file": "data/pdf_swatch/ALPIN_40_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Jeans blue / Orange",
+    "file": "data/pdf_swatch/ALPIN_40_3.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -3782,6 +4903,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/COURIER_35.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue/Orange",
+    "file": "data/pdf_swatch/COURIER_35_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Black/ Orange",
+    "file": "data/pdf_swatch/COURIER_35_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Green/Orange",
+    "file": "data/pdf_swatch/COURIER_35_3.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -3815,6 +4953,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/OTAWA_30.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/OTAWA_30_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Blue",
+    "file": "data/pdf_swatch/OTAWA_30_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Red",
+    "file": "data/pdf_swatch/OTAWA_30_3.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -3853,6 +5008,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/MANTA_30.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black/ Orange",
+    "file": "data/pdf_swatch/MANTA_30_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Blue/Orange",
+    "file": "data/pdf_swatch/MANTA_30_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Green/Orange",
+    "file": "data/pdf_swatch/MANTA_30_3.png"
+   }
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -3884,6 +5056,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/HAVANA_28.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/HAVANA_28_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Black",
+    "file": "data/pdf_swatch/HAVANA_28_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Red",
+    "file": "data/pdf_swatch/HAVANA_28_3.png"
+   }
+  ],
   "serie": "DAYPACK SERIE"
  },
  {
@@ -3912,6 +5101,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ESCAPE_25.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Lagoon/Blue",
+    "file": "data/pdf_swatch/ESCAPE_25_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey/Off white",
+    "file": "data/pdf_swatch/ESCAPE_25_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Lime green / Grey",
+    "file": "data/pdf_swatch/ESCAPE_25_3.png"
+   }
+  ],
   "serie": "DAYPACK SERIE"
  },
  {
@@ -3945,6 +5151,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/CRUISER_12.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black/ Orange",
+    "file": "data/pdf_swatch/CRUISER_12_1.png"
+   }
+  ],
   "serie": "CYKLO SERIE"
  },
  {
@@ -3977,6 +5190,23 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BIKER_6.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue/Dark grey",
+    "file": "data/pdf_swatch/BIKER_6_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Black/Dark grey",
+    "file": "data/pdf_swatch/BIKER_6_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Green/Dark grey",
+    "file": "data/pdf_swatch/BIKER_6_3.png"
+   }
+  ],
   "serie": "CYKLO SERIE"
  },
  {
@@ -4007,6 +5237,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/START_4.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black/ Orange",
+    "file": "data/pdf_swatch/START_4_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Blue/Orange",
+    "file": "data/pdf_swatch/START_4_2.png"
+   }
+  ],
   "serie": "CYKLO SERIE"
  },
  {
@@ -4032,6 +5274,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/NEW_YORK_100.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grey Melange",
+    "file": "data/pdf_swatch/NEW_YORK_100_1.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -4056,6 +5305,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BOOTBAG_20.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black/Red",
+    "file": "data/pdf_swatch/BOOTBAG_20_1.png"
+   }
+  ],
   "serie": "COMFORT SERIE"
  },
  {
@@ -4078,6 +5334,18 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BACKUP_10.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Lime Green",
+    "file": "data/pdf_swatch/BACKUP_10_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Orange",
+    "file": "data/pdf_swatch/BACKUP_10_2.png"
+   }
+  ],
   "serie": "TRAVEL LITE / TRAVEL SERIE"
  },
  {
@@ -4098,6 +5366,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/MONEY_BELT.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Beige",
+    "file": "data/pdf_swatch/MONEY_BELT_1.png"
+   }
+  ],
   "serie": "TRAVEL LITE / TRAVEL SERIE"
  },
  {
@@ -4118,6 +5393,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/MONEY.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black/ Melange",
+    "file": "data/pdf_swatch/MONEY_1.png"
+   }
+  ],
   "serie": "TRAVEL LITE / TRAVEL SERIE"
  },
  {
@@ -4138,6 +5420,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BAGS_RAIN_COVER_S.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Signal Green",
+    "file": "data/pdf_swatch/BAGS_RAIN_COVER_S_1.png"
+   }
+  ],
   "serie": "BACKPACKS ACCESSORIES"
  },
  {
@@ -4158,6 +5447,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BAGS_RAIN_COVER_L.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Signal Green",
+    "file": "data/pdf_swatch/BAGS_RAIN_COVER_L_1.png"
+   }
+  ],
   "serie": "BACKPACKS ACCESSORIES"
  },
  {
@@ -4182,6 +5478,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRANSIT_140.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Army Brown",
+    "file": "data/pdf_swatch/TRANSIT_140_1.png"
+   }
+  ],
   "serie": "WATERPROOF"
  },
  {
@@ -4209,6 +5512,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BOARD_65.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Orange",
+    "file": "data/pdf_swatch/BOARD_65_1.png"
+   }
+  ],
   "serie": "WATERPROOF"
  },
  {
@@ -4232,6 +5542,33 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SAVER_25L_LONG.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Red",
+    "file": "data/pdf_swatch/SAVER_25L_LONG_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Grey",
+    "file": "data/pdf_swatch/SAVER_25L_LONG_4.png"
+   },
+   {
+    "n": "2",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/SAVER_25L_LONG_2.png"
+   },
+   {
+    "n": "5",
+    "label": "Yellow",
+    "file": "data/pdf_swatch/SAVER_25L_LONG_5.png"
+   },
+   {
+    "n": "3",
+    "label": "Blue",
+    "file": "data/pdf_swatch/SAVER_25L_LONG_3.png"
+   }
+  ],
   "serie": "WATERPROOF"
  },
  {
@@ -4255,6 +5592,33 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SAVER_25L_SHORT.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Red",
+    "file": "data/pdf_swatch/SAVER_25L_SHORT_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Grey",
+    "file": "data/pdf_swatch/SAVER_25L_SHORT_4.png"
+   },
+   {
+    "n": "2",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/SAVER_25L_SHORT_2.png"
+   },
+   {
+    "n": "5",
+    "label": "Yellow",
+    "file": "data/pdf_swatch/SAVER_25L_SHORT_5.png"
+   },
+   {
+    "n": "3",
+    "label": "Blue",
+    "file": "data/pdf_swatch/SAVER_25L_SHORT_3.png"
+   }
+  ],
   "serie": "WATERPROOF"
  },
  {
@@ -4278,6 +5642,13 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SAVER_X_28L.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Transparent",
+    "file": "data/pdf_swatch/SAVER_X_28L_1.png"
+   }
+  ],
   "serie": "WATERPROOF"
  },
  {
@@ -4301,6 +5672,33 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SAVER_XL_51L.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Transparent / Red",
+    "file": "data/pdf_swatch/SAVER_XL_51L_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Transparent / Grey",
+    "file": "data/pdf_swatch/SAVER_XL_51L_4.png"
+   },
+   {
+    "n": "2",
+    "label": "Transparent / Khaki",
+    "file": "data/pdf_swatch/SAVER_XL_51L_2.png"
+   },
+   {
+    "n": "5",
+    "label": "Transparent / Yellow",
+    "file": "data/pdf_swatch/SAVER_XL_51L_5.png"
+   },
+   {
+    "n": "3",
+    "label": "Transparent / Blue",
+    "file": "data/pdf_swatch/SAVER_XL_51L_3.png"
+   }
+  ],
   "serie": "WATERPROOF"
  },
  {
@@ -4323,6 +5721,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/OMEGA_2L.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Transparent Blue",
+    "file": "data/pdf_swatch/OMEGA_2L_1.png"
+   }
+  ],
   "serie": "WATERBLADDER"
  },
  {
@@ -4345,6 +5750,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/DESERT_2L.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Transparent White",
+    "file": "data/pdf_swatch/DESERT_2L_1.png"
+   }
+  ],
   "serie": "WATERBLADDER"
  },
  {
@@ -4367,6 +5779,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ARMADA_1_5L.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Transparent Khaki",
+    "file": "data/pdf_swatch/ARMADA_1_5L_1.png"
+   }
+  ],
   "serie": "WATERBLADDER"
  },
  {
@@ -4389,6 +5808,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ARMAX_1_5L.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Transparent White",
+    "file": "data/pdf_swatch/ARMAX_1_5L_1.png"
+   }
+  ],
   "serie": "WATERBLADDER"
  },
  {
@@ -4411,6 +5837,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/HYDRA_1_5L.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Transparent White",
+    "file": "data/pdf_swatch/HYDRA_1_5L_1.png"
+   }
+  ],
   "serie": "WATERBLADDER"
  },
  {
@@ -4433,6 +5866,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/GEL_FLASK_T_600.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Lemon",
+    "file": "data/pdf_swatch/GEL_FLASK_T_600_1.png"
+   }
+  ],
   "serie": "WATERBLADDER"
  },
  {
@@ -4455,6 +5895,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/GEL_FLASK_A_500.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Light Green",
+    "file": "data/pdf_swatch/GEL_FLASK_A_500_1.png"
+   }
+  ],
   "serie": "WATERBLADDER"
  },
  {
@@ -4477,6 +5924,13 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/GEL_FLASK_H_350.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/GEL_FLASK_H_350_1.png"
+   }
+  ],
   "serie": "WATERBLADDER"
  },
  {
@@ -4511,6 +5965,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/INTENSE.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Red/Blue",
+    "file": "data/pdf_swatch/INTENSE_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Jeans blue / Orange",
+    "file": "data/pdf_swatch/INTENSE_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Lemon/ Lagoon",
+    "file": "data/pdf_swatch/INTENSE_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Dark lagoon / Lemon",
+    "file": "data/pdf_swatch/INTENSE_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4547,6 +6023,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ACCORD.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Khaki/Dark grey",
+    "file": "data/pdf_swatch/ACCORD_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/ACCORD_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grey/Dark grey",
+    "file": "data/pdf_swatch/ACCORD_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange/Grey",
+    "file": "data/pdf_swatch/ACCORD_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4583,6 +6081,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/HIMAL.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Mustard/ Khaki",
+    "file": "data/pdf_swatch/HIMAL_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Deep khaki / Mustard",
+    "file": "data/pdf_swatch/HIMAL_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Dark navy / Jeans blue",
+    "file": "data/pdf_swatch/HIMAL_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4616,6 +6131,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ORADO.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Dark lagoon / Lemon",
+    "file": "data/pdf_swatch/ORADO_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red/Blue",
+    "file": "data/pdf_swatch/ORADO_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Orange",
+    "file": "data/pdf_swatch/ORADO_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Jeans blue / Orange/",
+    "file": "data/pdf_swatch/ORADO_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4651,6 +6188,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/FOXTER.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Red",
+    "file": "data/pdf_swatch/FOXTER_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Lagoon",
+    "file": "data/pdf_swatch/FOXTER_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/FOXTER_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Black",
+    "file": "data/pdf_swatch/FOXTER_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/FOXTER_5.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4687,6 +6251,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/EXPED.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange/ Jeans blue",
+    "file": "data/pdf_swatch/EXPED_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark lagoon / Jeans blue",
+    "file": "data/pdf_swatch/EXPED_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Orange",
+    "file": "data/pdf_swatch/EXPED_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Khaki/Black",
+    "file": "data/pdf_swatch/EXPED_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4722,6 +6308,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/EXPED_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/EXPED_PANTS_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4760,6 +6353,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ANORAC.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange",
+    "file": "data/pdf_swatch/ANORAC_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Offwhite",
+    "file": "data/pdf_swatch/ANORAC_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/ANORAC_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/ANORAC_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4795,6 +6410,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/MARK.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Signal Green",
+    "file": "data/pdf_swatch/MARK_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red",
+    "file": "data/pdf_swatch/MARK_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/MARK_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4826,6 +6458,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ERWI_HARD.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit black /",
+    "file": "data/pdf_swatch/ERWI_HARD_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark navy / Navy",
+    "file": "data/pdf_swatch/ERWI_HARD_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Dark khaki / Khaki",
+    "file": "data/pdf_swatch/ERWI_HARD_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Dark red / Red",
+    "file": "data/pdf_swatch/ERWI_HARD_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/ERWI_HARD_5.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4856,6 +6515,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/JURRY.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/JURRY_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4887,6 +6553,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/MOTION.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/MOTION_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4916,6 +6589,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/SIGMA.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/SIGMA_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4950,6 +6630,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/INTENSA.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Red/Blue",
+    "file": "data/pdf_swatch/INTENSA_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Jeans blue / Orange",
+    "file": "data/pdf_swatch/INTENSA_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Lemon/ Lagoon",
+    "file": "data/pdf_swatch/INTENSA_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Dark lagoon / Lemon",
+    "file": "data/pdf_swatch/INTENSA_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -4986,6 +6688,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ACCORD_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Dark lagoon / Pinky",
+    "file": "data/pdf_swatch/ACCORD_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/ACCORD_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grey/Dark grey",
+    "file": "data/pdf_swatch/ACCORD_LADY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Khaki/Dark grey",
+    "file": "data/pdf_swatch/ACCORD_LADY_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5022,6 +6746,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/HIMAL_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Mustard/ Khaki",
+    "file": "data/pdf_swatch/HIMAL_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Deep khaki / Mustard",
+    "file": "data/pdf_swatch/HIMAL_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Dark navy / Pinky",
+    "file": "data/pdf_swatch/HIMAL_LADY_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5055,6 +6796,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ORADA.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Dark lagoon / Lemon",
+    "file": "data/pdf_swatch/ORADA_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red/Blue",
+    "file": "data/pdf_swatch/ORADA_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Orange",
+    "file": "data/pdf_swatch/ORADA_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Jeans blue / Lime green /",
+    "file": "data/pdf_swatch/ORADA_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5090,6 +6853,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/FOXTERA.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Red",
+    "file": "data/pdf_swatch/FOXTERA_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Lagoon",
+    "file": "data/pdf_swatch/FOXTERA_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/FOXTERA_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Black",
+    "file": "data/pdf_swatch/FOXTERA_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/FOXTERA_5.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5126,6 +6916,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/EXPED_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Dark lagoon / Jeans blue",
+    "file": "data/pdf_swatch/EXPED_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark lagoon / Pinky",
+    "file": "data/pdf_swatch/EXPED_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Orange",
+    "file": "data/pdf_swatch/EXPED_LADY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Khaki/Black",
+    "file": "data/pdf_swatch/EXPED_LADY_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5161,6 +6973,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/EXPED_LADY_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/EXPED_LADY_PANTS_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5199,6 +7018,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ANORAC_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/ANORAC_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Pinky",
+    "file": "data/pdf_swatch/ANORAC_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Offwhite",
+    "file": "data/pdf_swatch/ANORAC_LADY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/ANORAC_LADY_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5234,6 +7075,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/MARK_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Signal Green",
+    "file": "data/pdf_swatch/MARK_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red",
+    "file": "data/pdf_swatch/MARK_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/MARK_LADY_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5265,6 +7123,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ERWI_HARD_LADY.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Dark navy / Navy",
+    "file": "data/pdf_swatch/ERWI_HARD_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit black / Black",
+    "file": "data/pdf_swatch/ERWI_HARD_LADY_1.png"
+   },
+   {
+    "n": "3",
+    "label": "Dark khaki / Khaki",
+    "file": "data/pdf_swatch/ERWI_HARD_LADY_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Dark red / Red",
+    "file": "data/pdf_swatch/ERWI_HARD_LADY_4.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5295,6 +7175,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/JURRA.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/JURRA_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5326,6 +7213,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/MOTION_LADY.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/MOTION_LADY_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5355,6 +7249,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/SIGMA_LADY.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/SIGMA_LADY_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5385,6 +7286,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/SIGMA_JR.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/SIGMA_JR_1.png"
+   }
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -5417,6 +7325,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CONTRE.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black/Grafit black",
+    "file": "data/pdf_swatch/CONTRE_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red/Jeans blue",
+    "file": "data/pdf_swatch/CONTRE_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/CONTRE_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange/ Grafit black",
+    "file": "data/pdf_swatch/CONTRE_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Khaki/Grafit black",
+    "file": "data/pdf_swatch/CONTRE_5.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5448,6 +7383,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CONTRE_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black/Grafit black",
+    "file": "data/pdf_swatch/CONTRE_PANTS_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5479,6 +7421,38 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/MAROL.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/MAROL_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Mustard/ Grafit black",
+    "file": "data/pdf_swatch/MAROL_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/MAROL_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange/ Jeans blue",
+    "file": "data/pdf_swatch/MAROL_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/MAROL_5.png"
+   },
+   {
+    "n": "6",
+    "label": "Khaki/Dark grey",
+    "file": "data/pdf_swatch/MAROL_6.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5510,6 +7484,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/MAROL_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Khaki/Dark grey",
+    "file": "data/pdf_swatch/MAROL_PANTS_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Jeans blue / Dark grey",
+    "file": "data/pdf_swatch/MAROL_PANTS_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/MAROL_PANTS_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5541,6 +7532,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/PACO.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange/Red",
+    "file": "data/pdf_swatch/PACO_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Grafit black / Black",
+    "file": "data/pdf_swatch/PACO_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/PACO_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5573,6 +7581,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/METRIC.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Mustard/ Khaki",
+    "file": "data/pdf_swatch/METRIC_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark grey / Black",
+    "file": "data/pdf_swatch/METRIC_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/METRIC_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5605,6 +7630,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/DOUBLE.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Mustard/ Khaki",
+    "file": "data/pdf_swatch/DOUBLE_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark grey / Black",
+    "file": "data/pdf_swatch/DOUBLE_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/DOUBLE_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5635,6 +7677,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/RONDO_SHORT.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Jeans blue / Dark grey",
+    "file": "data/pdf_swatch/RONDO_SHORT_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/RONDO_SHORT_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5665,6 +7719,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ZENON.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black/Grafit black",
+    "file": "data/pdf_swatch/ZENON_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red/Grafit black",
+    "file": "data/pdf_swatch/ZENON_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Grafit black",
+    "file": "data/pdf_swatch/ZENON_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange/ Grafit black",
+    "file": "data/pdf_swatch/ZENON_4.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5696,6 +7772,38 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ZEN.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/ZEN_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red",
+    "file": "data/pdf_swatch/ZEN_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Mustard/ Dark lagoon",
+    "file": "data/pdf_swatch/ZEN_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/ZEN_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Orange/ Jeans blue",
+    "file": "data/pdf_swatch/ZEN_5.png"
+   },
+   {
+    "n": "6",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/ZEN_6.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5726,6 +7834,38 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ZEN_VEST.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Red",
+    "file": "data/pdf_swatch/ZEN_VEST_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark Lagoon",
+    "file": "data/pdf_swatch/ZEN_VEST_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/ZEN_VEST_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/ZEN_VEST_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Orange/ Jeans blue",
+    "file": "data/pdf_swatch/ZEN_VEST_5.png"
+   },
+   {
+    "n": "6",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/ZEN_VEST_6.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5756,6 +7896,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ZEN_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit black / Black",
+    "file": "data/pdf_swatch/ZEN_PANTS_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark lagoon",
+    "file": "data/pdf_swatch/ZEN_PANTS_2.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5789,6 +7941,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ROCHE.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange/Dark orange",
+    "file": "data/pdf_swatch/ROCHE_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/ROCHE_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit black / Black",
+    "file": "data/pdf_swatch/ROCHE_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/ROCHE_4.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5821,6 +7995,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ROCHE_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/ROCHE_PANTS_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/ROCHE_PANTS_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5853,6 +8039,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/TECHNO.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange/ Jeans blue",
+    "file": "data/pdf_swatch/TECHNO_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Jeans blue / Orange",
+    "file": "data/pdf_swatch/TECHNO_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black/Jeans blue",
+    "file": "data/pdf_swatch/TECHNO_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/TECHNO_4.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5881,6 +8089,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CALDO.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/CALDO_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5910,6 +8125,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/HARDY.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/HARDY_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5939,6 +8161,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/FJORD.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/FJORD_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5966,6 +8195,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/TIMERO.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/TIMERO_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -5993,6 +8229,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/TAIPE.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit black / Black",
+    "file": "data/pdf_swatch/TAIPE_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6023,6 +8266,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/TRACKY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/TRACKY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark Lagoon",
+    "file": "data/pdf_swatch/TRACKY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Dark Grey",
+    "file": "data/pdf_swatch/TRACKY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange",
+    "file": "data/pdf_swatch/TRACKY_4.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6055,6 +8320,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CONTRA.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black/Grafit black",
+    "file": "data/pdf_swatch/CONTRA_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red/Jeans blue",
+    "file": "data/pdf_swatch/CONTRA_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Azure/Grafit black",
+    "file": "data/pdf_swatch/CONTRA_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange/ Grafit black",
+    "file": "data/pdf_swatch/CONTRA_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/CONTRA_5.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6086,6 +8378,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CONTRA_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black/Grafit black",
+    "file": "data/pdf_swatch/CONTRA_PANTS_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6117,6 +8416,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/MAROLA.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/MAROLA_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Mustard/ Grafit black",
+    "file": "data/pdf_swatch/MAROLA_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Red",
+    "file": "data/pdf_swatch/MAROLA_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/MAROLA_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Pinky/Jeans blue",
+    "file": "data/pdf_swatch/MAROLA_5.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6148,6 +8474,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/MAROLA_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Jeans blue / Dark grey",
+    "file": "data/pdf_swatch/MAROLA_PANTS_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/MAROLA_PANTS_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6179,6 +8517,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/PACO_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Azure/Pinky",
+    "file": "data/pdf_swatch/PACO_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Grafit black / Black",
+    "file": "data/pdf_swatch/PACO_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/PACO_LADY_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6211,6 +8566,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/METRIC_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Mustard/ Dark lagoon",
+    "file": "data/pdf_swatch/METRIC_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark grey / Black",
+    "file": "data/pdf_swatch/METRIC_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Pinky/Dark lagoon",
+    "file": "data/pdf_swatch/METRIC_LADY_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6243,6 +8615,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/DOUBLE_LADY.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Pinky/ Dark lagoon",
+    "file": "data/pdf_swatch/DOUBLE_LADY_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark grey / Black",
+    "file": "data/pdf_swatch/DOUBLE_LADY_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Azure/ Dark lagoon",
+    "file": "data/pdf_swatch/DOUBLE_LADY_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Mustard/ Dark lagoon",
+    "file": "data/pdf_swatch/DOUBLE_LADY_4.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6272,6 +8666,38 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/RONDA.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/RONDA_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark Lagoon",
+    "file": "data/pdf_swatch/RONDA_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Red",
+    "file": "data/pdf_swatch/RONDA_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/RONDA_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Orange/ Jeans blue",
+    "file": "data/pdf_swatch/RONDA_5.png"
+   },
+   {
+    "n": "6",
+    "label": "Pinky/Jeans blue",
+    "file": "data/pdf_swatch/RONDA_6.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6302,6 +8728,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/RONDA_SHORT.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Jeans blue / Dark grey",
+    "file": "data/pdf_swatch/RONDA_SHORT_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/RONDA_SHORT_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6332,6 +8770,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ZENONA.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black/Grafit black",
+    "file": "data/pdf_swatch/ZENONA_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red/Grafit black",
+    "file": "data/pdf_swatch/ZENONA_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Azure/Grafit black",
+    "file": "data/pdf_swatch/ZENONA_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange/ Grafit black",
+    "file": "data/pdf_swatch/ZENONA_4.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6363,6 +8823,38 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ZENA.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/ZENA_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red",
+    "file": "data/pdf_swatch/ZENA_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Mustard/ Dark lagoon",
+    "file": "data/pdf_swatch/ZENA_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/ZENA_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Orange/ Jeans blue",
+    "file": "data/pdf_swatch/ZENA_5.png"
+   },
+   {
+    "n": "6",
+    "label": "Pinky/Jeans blue",
+    "file": "data/pdf_swatch/ZENA_6.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6393,6 +8885,38 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ZENA_VEST.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/ZENA_VEST_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark Lagoon",
+    "file": "data/pdf_swatch/ZENA_VEST_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Red",
+    "file": "data/pdf_swatch/ZENA_VEST_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/ZENA_VEST_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Orange/ Jeans blue",
+    "file": "data/pdf_swatch/ZENA_VEST_5.png"
+   },
+   {
+    "n": "6",
+    "label": "Pinky/Jeans blue",
+    "file": "data/pdf_swatch/ZENA_VEST_6.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6423,6 +8947,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ZENA_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit black /",
+    "file": "data/pdf_swatch/ZENA_PANTS_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark lagoon",
+    "file": "data/pdf_swatch/ZENA_PANTS_2.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6456,6 +8992,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ROCHE_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange/Dark orange",
+    "file": "data/pdf_swatch/ROCHE_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Lime green / Jeans blue",
+    "file": "data/pdf_swatch/ROCHE_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit black / Black",
+    "file": "data/pdf_swatch/ROCHE_LADY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/ROCHE_LADY_4.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6488,6 +9046,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ROCHE_LADY_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/ROCHE_LADY_PANTS_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/ROCHE_LADY_PANTS_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6520,6 +9090,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/TECHNO_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange/ Jeans blue",
+    "file": "data/pdf_swatch/TECHNO_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Jeans blue / Orange",
+    "file": "data/pdf_swatch/TECHNO_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black/Pinky",
+    "file": "data/pdf_swatch/TECHNO_LADY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Pinky/Jeans blue",
+    "file": "data/pdf_swatch/TECHNO_LADY_4.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6548,6 +9140,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CALDA.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/CALDA_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6577,6 +9176,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/FJORDA.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/FJORDA_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6604,6 +9210,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/TIMERA.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/TIMERA_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6631,6 +9244,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/TAIPA.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit black / Black",
+    "file": "data/pdf_swatch/TAIPA_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6661,6 +9281,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/TRACKA.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange",
+    "file": "data/pdf_swatch/TRACKA_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark Grey",
+    "file": "data/pdf_swatch/TRACKA_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/TRACKA_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6692,6 +9329,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ERVI.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit black /",
+    "file": "data/pdf_swatch/ERVI_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark navy / Navy",
+    "file": "data/pdf_swatch/ERVI_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Dark khaki / Khaki",
+    "file": "data/pdf_swatch/ERVI_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Jeans blue / Dark",
+    "file": "data/pdf_swatch/ERVI_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Dark red / Red",
+    "file": "data/pdf_swatch/ERVI_5.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -6724,6 +9388,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/OASIS.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange/ Grafit black",
+    "file": "data/pdf_swatch/OASIS_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Khaki/Grafit black",
+    "file": "data/pdf_swatch/OASIS_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans blue / Dark navy",
+    "file": "data/pdf_swatch/OASIS_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -6756,6 +9437,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/BART.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/BART_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red",
+    "file": "data/pdf_swatch/BART_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/BART_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange/Dark orange",
+    "file": "data/pdf_swatch/BART_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Khaki/Black",
+    "file": "data/pdf_swatch/BART_5.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -6785,6 +9493,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ECHO.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Dark Navy",
+    "file": "data/pdf_swatch/ECHO_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Orange",
+    "file": "data/pdf_swatch/ECHO_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/ECHO_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Mustard",
+    "file": "data/pdf_swatch/ECHO_4.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6817,6 +9547,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/MICRON.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/MICRON_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Red",
+    "file": "data/pdf_swatch/MICRON_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/MICRON_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Grey/ Black",
+    "file": "data/pdf_swatch/MICRON_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Mustard",
+    "file": "data/pdf_swatch/MICRON_5.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6846,6 +9603,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/NEO.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Khaki Melange",
+    "file": "data/pdf_swatch/NEO_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Navy Melange",
+    "file": "data/pdf_swatch/NEO_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grey Melange",
+    "file": "data/pdf_swatch/NEO_1.png"
+   }
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -6872,6 +9646,28 @@
    "Jogging"
   ],
   "pdf_photo": "data/pdf_photos/CAPE.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/CAPE_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Navy",
+    "file": "data/pdf_swatch/CAPE_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/CAPE_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Grey Melange",
+    "file": "data/pdf_swatch/CAPE_4.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -6902,6 +9698,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CLINIC.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Lite khaki / Grey",
+    "file": "data/pdf_swatch/CLINIC_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey melange /",
+    "file": "data/pdf_swatch/CLINIC_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grey melange /",
+    "file": "data/pdf_swatch/CLINIC_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -6932,6 +9745,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CLINIC_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Grey melange /",
+    "file": "data/pdf_swatch/CLINIC_PANTS_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grey melange /",
+    "file": "data/pdf_swatch/CLINIC_PANTS_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -6964,6 +9789,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CUBE.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange",
+    "file": "data/pdf_swatch/CUBE_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark Navy",
+    "file": "data/pdf_swatch/CUBE_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/CUBE_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -6995,6 +9837,38 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/BRAVE.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Navy",
+    "file": "data/pdf_swatch/BRAVE_3.png"
+   },
+   {
+    "n": "2",
+    "label": "White",
+    "file": "data/pdf_swatch/BRAVE_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/BRAVE_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Dark Grey",
+    "file": "data/pdf_swatch/BRAVE_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Dark Lagoon",
+    "file": "data/pdf_swatch/BRAVE_5.png"
+   },
+   {
+    "n": "6",
+    "label": "Red",
+    "file": "data/pdf_swatch/BRAVE_6.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7023,6 +9897,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/DESTINY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Red",
+    "file": "data/pdf_swatch/DESTINY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Black",
+    "file": "data/pdf_swatch/DESTINY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "White",
+    "file": "data/pdf_swatch/DESTINY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Lemon",
+    "file": "data/pdf_swatch/DESTINY_4.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7049,6 +9945,28 @@
    "Trekking•"
   ],
   "pdf_photo": "data/pdf_photos/CHANGE.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue Melange",
+    "file": "data/pdf_swatch/CHANGE_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Black Melange",
+    "file": "data/pdf_swatch/CHANGE_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Grey Melange",
+    "file": "data/pdf_swatch/CHANGE_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange Melange",
+    "file": "data/pdf_swatch/CHANGE_4.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7080,6 +9998,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ERVI_LADY.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Grafit black /",
+    "file": "data/pdf_swatch/ERVI_LADY_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Dark navy / Navy",
+    "file": "data/pdf_swatch/ERVI_LADY_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Dark khaki / Khaki",
+    "file": "data/pdf_swatch/ERVI_LADY_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Jeans blue / Dark lagoon",
+    "file": "data/pdf_swatch/ERVI_LADY_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Dark red / Red",
+    "file": "data/pdf_swatch/ERVI_LADY_5.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7112,6 +10057,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/OASIS_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Azure/Dark navy",
+    "file": "data/pdf_swatch/OASIS_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Khaki/Grafit black",
+    "file": "data/pdf_swatch/OASIS_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Red/Dark navy",
+    "file": "data/pdf_swatch/OASIS_LADY_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7142,6 +10104,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/VERONA.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Pinky",
+    "file": "data/pdf_swatch/VERONA_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey",
+    "file": "data/pdf_swatch/VERONA_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/VERONA_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Mustard",
+    "file": "data/pdf_swatch/VERONA_4.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7174,6 +10158,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/BART_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/BART_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Red",
+    "file": "data/pdf_swatch/BART_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/BART_LADY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange/Dark orange",
+    "file": "data/pdf_swatch/BART_LADY_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Azure/Black",
+    "file": "data/pdf_swatch/BART_LADY_5.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7203,6 +10214,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ECHO_LADY.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Azure",
+    "file": "data/pdf_swatch/ECHO_LADY_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Orange",
+    "file": "data/pdf_swatch/ECHO_LADY_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/ECHO_LADY_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Mustard",
+    "file": "data/pdf_swatch/ECHO_LADY_4.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7235,6 +10268,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/MICRON_LADY.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/MICRON_LADY_1.png"
+   },
+   {
+    "n": "2",
+    "label": "Red",
+    "file": "data/pdf_swatch/MICRON_LADY_2.png"
+   },
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/MICRON_LADY_3.png"
+   },
+   {
+    "n": "4",
+    "label": "Pinky",
+    "file": "data/pdf_swatch/MICRON_LADY_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Mustard",
+    "file": "data/pdf_swatch/MICRON_LADY_5.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7266,6 +10326,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/NEONA.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Khaki Melange",
+    "file": "data/pdf_swatch/NEONA_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey Melange",
+    "file": "data/pdf_swatch/NEONA_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Navy Melange",
+    "file": "data/pdf_swatch/NEONA_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7292,6 +10369,28 @@
    "Jogging"
   ],
   "pdf_photo": "data/pdf_photos/CAPE_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/CAPE_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Azure",
+    "file": "data/pdf_swatch/CAPE_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/CAPE_LADY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Grey Melange",
+    "file": "data/pdf_swatch/CAPE_LADY_4.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7322,6 +10421,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CLINIC_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Lite khaki / Grey",
+    "file": "data/pdf_swatch/CLINIC_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey melange /",
+    "file": "data/pdf_swatch/CLINIC_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grey melange /",
+    "file": "data/pdf_swatch/CLINIC_LADY_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7352,6 +10468,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CLINIC_LADY_PANTS.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Grey melange /",
+    "file": "data/pdf_swatch/CLINIC_LADY_PANTS_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grey melange /",
+    "file": "data/pdf_swatch/CLINIC_LADY_PANTS_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7384,6 +10512,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CUBE_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Azure",
+    "file": "data/pdf_swatch/CUBE_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Pinky",
+    "file": "data/pdf_swatch/CUBE_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Grafit Black",
+    "file": "data/pdf_swatch/CUBE_LADY_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7415,6 +10560,38 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/BRAVE_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Navy",
+    "file": "data/pdf_swatch/BRAVE_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "White",
+    "file": "data/pdf_swatch/BRAVE_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/BRAVE_LADY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Dark Grey",
+    "file": "data/pdf_swatch/BRAVE_LADY_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Dark Lagoon",
+    "file": "data/pdf_swatch/BRAVE_LADY_5.png"
+   },
+   {
+    "n": "6",
+    "label": "Red",
+    "file": "data/pdf_swatch/BRAVE_LADY_6.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7443,6 +10620,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/DESTINY_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Red",
+    "file": "data/pdf_swatch/DESTINY_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Black",
+    "file": "data/pdf_swatch/DESTINY_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "White",
+    "file": "data/pdf_swatch/DESTINY_LADY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Neon Orange",
+    "file": "data/pdf_swatch/DESTINY_LADY_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Neon Pink",
+    "file": "data/pdf_swatch/DESTINY_LADY_5.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7471,6 +10675,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/CHANGE_LADY.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Grey Melange",
+    "file": "data/pdf_swatch/CHANGE_LADY_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Black Melange",
+    "file": "data/pdf_swatch/CHANGE_LADY_2.png"
+   },
+   {
+    "n": "1",
+    "label": "White",
+    "file": "data/pdf_swatch/CHANGE_LADY_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Orange Melange",
+    "file": "data/pdf_swatch/CHANGE_LADY_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Blue Melange",
+    "file": "data/pdf_swatch/CHANGE_LADY_5.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7504,6 +10735,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/BART_JR.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Jeans blue / Black",
+    "file": "data/pdf_swatch/BART_JR_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Orange/Dark orange",
+    "file": "data/pdf_swatch/BART_JR_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7537,6 +10780,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/BART_LADY_JR.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Azure/Black",
+    "file": "data/pdf_swatch/BART_LADY_JR_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Orange/Dark orange",
+    "file": "data/pdf_swatch/BART_LADY_JR_1.png"
+   }
+  ],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -7564,6 +10819,38 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/COOL_FEELING.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Pinky",
+    "file": "data/pdf_swatch/COOL_FEELING_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey",
+    "file": "data/pdf_swatch/COOL_FEELING_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/COOL_FEELING_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Jeans Blue",
+    "file": "data/pdf_swatch/COOL_FEELING_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Azure",
+    "file": "data/pdf_swatch/COOL_FEELING_5.png"
+   },
+   {
+    "n": "6",
+    "label": "Lime Green",
+    "file": "data/pdf_swatch/COOL_FEELING_6.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7591,6 +10878,28 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/FIVE_PANEL_SNAP.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Black",
+    "file": "data/pdf_swatch/FIVE_PANEL_SNAP_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Grey",
+    "file": "data/pdf_swatch/FIVE_PANEL_SNAP_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Army Green",
+    "file": "data/pdf_swatch/FIVE_PANEL_SNAP_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Navy",
+    "file": "data/pdf_swatch/FIVE_PANEL_SNAP_4.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7618,6 +10927,33 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/PLAIN_MICROFIBRE.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Grey",
+    "file": "data/pdf_swatch/PLAIN_MICROFIBRE_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Brown",
+    "file": "data/pdf_swatch/PLAIN_MICROFIBRE_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/PLAIN_MICROFIBRE_1.png"
+   },
+   {
+    "n": "4",
+    "label": "Olive",
+    "file": "data/pdf_swatch/PLAIN_MICROFIBRE_4.png"
+   },
+   {
+    "n": "5",
+    "label": "Purple",
+    "file": "data/pdf_swatch/PLAIN_MICROFIBRE_5.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7645,6 +10981,18 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/POWER.jpg",
+  "swatches": [
+   {
+    "n": "2",
+    "label": "Royal Blue",
+    "file": "data/pdf_swatch/POWER_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/POWER_1.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7672,6 +11020,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/SPORT.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/SPORT_1.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7699,6 +11054,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/PORTY.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/PORTY_1.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7727,6 +11089,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/ONES.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/ONES_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Orange",
+    "file": "data/pdf_swatch/ONES_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Yellow",
+    "file": "data/pdf_swatch/ONES_1.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7754,6 +11133,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/BASIC.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Orange",
+    "file": "data/pdf_swatch/BASIC_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Yellow",
+    "file": "data/pdf_swatch/BASIC_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/BASIC_1.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7782,6 +11178,23 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/TOPIC.jpg",
+  "swatches": [
+   {
+    "n": "3",
+    "label": "Khaki",
+    "file": "data/pdf_swatch/TOPIC_3.png"
+   },
+   {
+    "n": "2",
+    "label": "Yellow",
+    "file": "data/pdf_swatch/TOPIC_2.png"
+   },
+   {
+    "n": "1",
+    "label": "Orange",
+    "file": "data/pdf_swatch/TOPIC_1.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7809,6 +11222,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/STOPERS.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/STOPERS_1.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7836,6 +11256,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/STOPERS_SHORT.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Black",
+    "file": "data/pdf_swatch/STOPERS_SHORT_1.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7863,6 +11290,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/SNAKE_24MM_W.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Pink",
+    "file": "data/pdf_swatch/SNAKE_24MM_W_1.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -7890,6 +11324,13 @@
    "Trekking"
   ],
   "pdf_photo": "data/pdf_photos/SNAKE_24MM_M.jpg",
+  "swatches": [
+   {
+    "n": "1",
+    "label": "Blue",
+    "file": "data/pdf_swatch/SNAKE_24MM_M_1.png"
+   }
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  }
 ]

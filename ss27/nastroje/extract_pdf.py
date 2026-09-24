@@ -166,6 +166,33 @@ def parse_column(sec,name,x0,x1,pno):
             img.save(out,quality=88)
         P['pdf_photo']='data/pdf_photos/'+fn
     except Exception as e: P['pdf_photo_err']=str(e)
+    # vzorníky barev z PDF (malé obrázky u čísel barev) -> data/pdf_swatch/<slug>_<n>.png + popisek
+    P['swatches']=[]
+    try:
+        nums=[t for t in sp if re.fullmatch(r'\d',t['text'].strip()) and 'Bold' in t['font'] and 5.5<=t['size']<=6.5 and t['y']>60]
+        names=[t for t in sp if 'Regul' in t['font'] and 4.5<=t['size']<=6.5 and t['text'].strip() and not is_label(t['text']) and not re.search(r'\d|•',t['text'])]
+        for t in nums:
+            x,y=t['x'],t['y']
+            if y<330:   # vzorník vlevo, název vpravo dole
+                lab=[n for n in names if n['x']>x+5 and y-4<n['y']<y+32]
+                box=fitz.Rect(x+8,y-3,x+80,(min(n['y'] for n in lab)-1) if lab else y+19)
+            else:       # vzorník dole, název pod ním
+                lab=[n for n in names if -8<=(n['x']-x)<26 and y<n['y']<y+100]
+                lab.sort(key=lambda n:n['y'])
+                box=fitz.Rect(x-4,y+8,x+37,(lab[0]['y']-2) if lab else y+70)
+            label=fix(' '.join(n['text'] for n in sorted(lab,key=lambda n:(round(n['y']),n['x']))[:2])).strip()
+            if box.width<10 or box.height<8: continue
+            pix=d[pno].get_pixmap(dpi=300,clip=box,colorspace=fitz.csRGB)
+            img=Image.open(io.BytesIO(pix.tobytes('png'))).convert('RGB')
+            from PIL import ImageChops
+            bb=ImageChops.difference(img,Image.new('RGB',img.size,(255,255,255))).convert('L').point(lambda v:255 if v>18 else 0).getbbox()
+            if not bb or (bb[2]-bb[0])<20 or (bb[3]-bb[1])<12: continue
+            img=img.crop((max(0,bb[0]-4),max(0,bb[1]-4),min(img.width,bb[2]+4),min(img.height,bb[3]+4)))
+            os.makedirs(os.path.join(DATA,'pdf_swatch'),exist_ok=True)
+            fn=re.sub(r'[^A-Za-z0-9]+','_',P['name']).strip('_')+'_'+t['text'].strip()+'.png'
+            img.save(os.path.join(DATA,'pdf_swatch',fn))
+            P['swatches'].append(dict(n=t['text'].strip(),label=label,file='data/pdf_swatch/'+fn))
+    except Exception as e: P['swatch_err']=str(e)
     return P
 def main():
     prods=[]; serie=None

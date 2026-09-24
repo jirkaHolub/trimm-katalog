@@ -502,6 +502,25 @@ try:
                     _pdf[33].get_pixmap(dpi=400,clip=fitz.Rect(106,518,162,552),colorspace=fitz.csRGB).save(dst); c['front']='foto/'+os.path.basename(dst); c['back']=None; c['src']='pdf'
 except Exception as e: print('PARTY camo swatch:',e)
 # sjednocení fotek
+# vzorníky z SS26 PDF pro barvy bez rozkresu i bez barevně specifické fotky
+pdfsw={slug(p['name']):p.get('swatches',[]) for p in pdf}
+def cn2(s): return re.sub(r'[^a-z0-9]+','',s.lower())
+nsw=0
+for r in catalog:
+    k=slug(r['name']); pk=ALIAS.get(nkey(r['name']))
+    sws=pdfsw.get(k) or (pdfsw.get(slug(pk)) if pk else None) or []
+    if not sws: continue
+    for c in r['colors']:
+        if c['art'] or (c.get('front') and not c.get('generic')): continue
+        hit=[s for s in sws if cn2(s['label'])==cn2(c['name'])]
+        if not hit:
+            ft=lambda x:cn2(x.split('/')[0])
+            mine=[x for x in r['colors'] if ft(x['name'])==ft(c['name'])]; theirs=[s for s in sws if ft(s['label'])==ft(c['name'])]
+            if len(mine)==1 and len(theirs)==1: hit=theirs
+        if hit and os.path.exists(os.path.join(ROOT,hit[0]['file'])):
+            key=slug(r['name']+' '+c['name']); dst=os.path.join(ROZ,key+'.png'); shutil.copy(os.path.join(ROOT,hit[0]['file']),dst)
+            c['art']='rozkresy/'+key+'.png'; c['art_src']='pdf'; nsw+=1
+print('vzorníky z PDF',nsw)
 ORIG=os.path.join(DATA,'orig'); os.makedirs(ORIG,exist_ok=True)
 for _f in os.listdir(FOTO):
     if _f.lower().endswith('.jpg') and not os.path.exists(os.path.join(ORIG,_f)): shutil.copy(os.path.join(FOTO,_f),os.path.join(ORIG,_f))
