@@ -331,7 +331,7 @@ for name,m in models.items():
                         col['back_url']=orig_url(best[1]); col['back_sim']=round(best[0],2)
             elif fid and sec!='sportswear':
                 for cand in [(fid[0],fid[1]+1),(fid[0],fid[1]-1)]:
-                    if cand in gal and cand not in variant_fronts and not gal[cand].lower().endswith('.png'):
+                    if cand in gal and cand not in variant_fronts and not gal[cand].lower().endswith('.png') and not re.search(r'technical|symboly|detail',gal[cand].lower()):
                         col['back_url']=orig_url(gal[cand]); break
         # rozkres
         rk=slug(name+' '+cname)
@@ -520,7 +520,30 @@ for r in catalog:
         if hit and os.path.exists(os.path.join(ROOT,hit[0]['file'])):
             key=slug(r['name']+' '+c['name']); dst=os.path.join(ROZ,key+'.png'); shutil.copy(os.path.join(ROOT,hit[0]['file']),dst)
             c['art']='rozkresy/'+key+'.png'; c['art_src']='pdf'; nsw+=1
-print('vzorníky z PDF',nsw)
+# oříznuté rozkresy: obsah sahá k okraji obrázku (>20 % délky hrany) -> nahradit vzorníkem z PDF, nebo fotkou barvy
+from PIL import ImageChops
+def edge_cut(path):
+    im=Image.open(path)
+    if im.mode in ('RGBA','LA','P'):
+        im=im.convert('RGBA'); alpha=im.split()[-1]; rgb=Image.new('RGB',im.size,(255,255,255)); rgb.paste(im,mask=alpha)
+    else: rgb=im.convert('RGB'); alpha=None
+    m=ImageChops.difference(rgb,Image.new('RGB',rgb.size,(255,255,255))).convert('L').point(lambda v:255 if v>25 else 0)
+    if alpha is not None: m=ImageChops.multiply(m,alpha.point(lambda v:255 if v>20 else 0))
+    w,h=m.size
+    if not m.getbbox(): return 0
+    return max(sum(1 for p in line.getdata() if p)/max(1,len(list(line.getdata()))) for line in (m.crop((0,0,1,h)),m.crop((w-1,0,w,h)),m.crop((0,0,w,1)),m.crop((0,h-1,w,h))))
+ncut=0
+for r in catalog:
+    k=slug(r['name']); pk=ALIAS.get(nkey(r['name'])); sws=pdfsw.get(k) or (pdfsw.get(slug(pk)) if pk else None) or []
+    for c in r['colors']:
+        if not c.get('art') or c.get('art_src')=='pdf': continue
+        if edge_cut(os.path.join(ROOT,c['art']))<=0.2: continue
+        hit=[s for s in sws if cn2(s['label'])==cn2(c['name'])]
+        if hit and os.path.exists(os.path.join(ROOT,hit[0]['file'])):
+            key=slug(r['name']+' '+c['name']); shutil.copy(os.path.join(ROOT,hit[0]['file']),os.path.join(ROZ,key+'.png')); c['art']='rozkresy/'+key+'.png'; c['art_src']='pdf'; ncut+=1
+        elif c.get('front') and not c.get('generic'):
+            c['art']=None; c['art_cut']=True; ncut+=1
+print('vzorníky z PDF',nsw,'| oříznuté rozkresy nahrazeny',ncut)
 ORIG=os.path.join(DATA,'orig'); os.makedirs(ORIG,exist_ok=True)
 for _f in os.listdir(FOTO):
     if _f.lower().endswith('.jpg') and not os.path.exists(os.path.join(ORIG,_f)): shutil.copy(os.path.join(FOTO,_f),os.path.join(ORIG,_f))

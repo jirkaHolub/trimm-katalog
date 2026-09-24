@@ -173,13 +173,14 @@ def parse_column(sec,name,x0,x1,pno):
         names=[t for t in sp if 'Regul' in t['font'] and 4.5<=t['size']<=6.5 and t['text'].strip() and not is_label(t['text']) and not re.search(r'\d|•',t['text'])]
         for t in nums:
             x,y=t['x'],t['y']
-            if y<330:   # vzorník vlevo, název vpravo dole
+            if y<330:   # vzorník vlevo, název vpravo dole; hranice = další číslo pod ním
                 lab=[n for n in names if n['x']>x+5 and y-4<n['y']<y+32]
-                box=fitz.Rect(x+8,y-3,x+80,(min(n['y'] for n in lab)-1) if lab else y+19)
-            else:       # vzorník dole, název pod ním
+                ybot=(min(n['y'] for n in lab)-1) if lab else y+22
+                box=fitz.Rect(x+8,y-4,x+0.44*(x1-x0),ybot)
+            else:       # vzorník dole, název pod ním; hranice = polovina vzdálenosti k sousednímu číslu
                 lab=[n for n in names if -8<=(n['x']-x)<26 and y<n['y']<y+100]
                 lab.sort(key=lambda n:n['y'])
-                box=fitz.Rect(x-4,y+8,x+37,(lab[0]['y']-2) if lab else y+70)
+                box=fitz.Rect(x-4,y+8,x+41,(lab[0]['y']-2) if lab else y+70)
             label=fix(' '.join(n['text'] for n in sorted(lab,key=lambda n:(round(n['y']),n['x']))[:2])).strip()
             if box.width<10 or box.height<8: continue
             pix=d[pno].get_pixmap(dpi=300,clip=box,colorspace=fitz.csRGB)
@@ -188,6 +189,7 @@ def parse_column(sec,name,x0,x1,pno):
             bb=ImageChops.difference(img,Image.new('RGB',img.size,(255,255,255))).convert('L').point(lambda v:255 if v>18 else 0).getbbox()
             if not bb or (bb[2]-bb[0])<20 or (bb[3]-bb[1])<12: continue
             img=img.crop((max(0,bb[0]-4),max(0,bb[1]-4),min(img.width,bb[2]+4),min(img.height,bb[3]+4)))
+            if sec=='sleeping' and img.width>1.5*img.height: img=img.rotate(90,expand=True)  # spacák naležato -> nastojato (kapuce nahoře)
             os.makedirs(os.path.join(DATA,'pdf_swatch'),exist_ok=True)
             fn=re.sub(r'[^A-Za-z0-9]+','_',P['name']).strip('_')+'_'+t['text'].strip()+'.png'
             img.save(os.path.join(DATA,'pdf_swatch',fn))

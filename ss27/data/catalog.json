@@ -4846,7 +4846,7 @@
      "T0248385"
     ],
     "front": "foto/balance_sea_blue_blue_front.jpg",
-    "back": "foto/balance_sea_blue_blue_back.jpg",
+    "back": null,
     "art": null,
     "src": "web"
    },
@@ -4966,7 +4966,7 @@
      "T0248386"
     ],
     "front": "foto/balance_jr_sea_blue_blue_front.jpg",
-    "back": "foto/balance_jr_sea_blue_blue_back.jpg",
+    "back": null,
     "art": null,
     "src": "web"
    }
@@ -5156,7 +5156,7 @@
      "T0244185"
     ],
     "front": "foto/traper_blue_front.jpg",
-    "back": "foto/traper_blue_back.jpg",
+    "back": null,
     "art": null,
     "src": "web"
    },
@@ -5249,7 +5249,7 @@
      "T0250193"
     ],
     "front": "foto/walker_red_dark_red_front.jpg",
-    "back": "foto/walker_red_dark_red_back.jpg",
+    "back": null,
     "art": null,
     "src": "web"
    },
@@ -5424,7 +5424,7 @@
      "T0244161"
     ],
     "front": "foto/highlander_dark_grey_olive_front.jpg",
-    "back": "foto/highlander_dark_grey_olive_back.jpg",
+    "back": null,
     "art": null,
     "src": "web"
    },
@@ -5659,7 +5659,7 @@
      "T0249699"
     ],
     "front": "foto/impact_lemon_lagoon_front.jpg",
-    "back": "foto/impact_lemon_lagoon_back.jpg",
+    "back": null,
     "art": null,
     "src": "web"
    }
@@ -5820,7 +5820,7 @@
      "T0247890"
     ],
     "front": "foto/travel_olive_front.jpg",
-    "back": "foto/travel_olive_back.jpg",
+    "back": null,
     "art": null,
     "src": "web"
    },
@@ -7967,7 +7967,8 @@
     "front": null,
     "back": null,
     "art": "rozkresy/escape_25_lime_green_grey.png",
-    "src": null
+    "src": null,
+    "art_src": "pdf"
    }
   ],
   "new": false,
