@@ -502,6 +502,9 @@ try:
                     _pdf[33].get_pixmap(dpi=400,clip=fitz.Rect(106,518,162,552),colorspace=fitz.csRGB).save(dst); c['front']='foto/'+os.path.basename(dst); c['back']=None; c['src']='pdf'
 except Exception as e: print('PARTY camo swatch:',e)
 # sjednocení fotek
+ORIG=os.path.join(DATA,'orig'); os.makedirs(ORIG,exist_ok=True)
+for _f in os.listdir(FOTO):
+    if _f.lower().endswith('.jpg') and not os.path.exists(os.path.join(ORIG,_f)): shutil.copy(os.path.join(FOTO,_f),os.path.join(ORIG,_f))
 import subprocess; subprocess.run([sys.executable,os.path.join(HERE,'normalize_photos.py')])
 _ps=json.load(open(os.path.join(DATA,'photo_status.json')))
 for r in catalog:
