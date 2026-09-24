@@ -296,7 +296,7 @@ doc=f'''<!DOCTYPE html>
 <style>{CSS}</style>
 </head>
 <body>
-<section class="hero" aria-label="TRIMM Spring-Summer 2027"><div><div class="brand">TRIMM · OUTDOOR PRODUCTS</div><h1>SPRING – SUMMER <span>2027</span></h1><div class="sub">KATALOG · CZ · DOPORUČENÉ MALOOBCHODNÍ CENY</div></div></section>
+<section class="hero" aria-label="TRIMM Spring-Summer 2027"><div><div class="brand">TRIMM · OUTDOOR PRODUCTS</div><h1>SPRING – SUMMER <span>2027</span></h1><div class="sub">KATALOG · CZ</div></div></section>
 <section class="toc">
  <div class="toc-title">CONTENT</div>
  <div class="toc-grid">{toc}</div>
