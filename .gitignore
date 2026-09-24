@@ -3,15 +3,26 @@
 __pycache__/
 *.pyc
 
-# build skripty a pomocné soubory – nepatří na produkci
-build_photo_map.py
-inject_photos.py
-photo_map.json
-photo_map_report.txt
-missing_product_content_models.txt
+# pomocné soubory sestavení – nepatří na produkci
+nastroje/build_photo_map.py
+nastroje/inject_photos.py
+archiv/photo_map.json
+archiv/photo_map_report.txt
+archiv/missing_product_content_models.txt
 
 # zdrojové rozkresy (.ai/.psd) – web používá jen vyexportované PNG v rozkresy_web/
-trimm_rozkresy/
+podklady/rozkresy-ai/
 
-# balíček pro nahrání na FTP – generuje se lokálně
-trimm-katalog-ftp.zip
+# balíčky k nahrání – generují se lokálně
+vystupy/*.zip
+archiv/trimm-katalog-ftp.zip
+
+# SS27 – pomocná data sestavení (výřezy z PDF, cover), fotky a stránky se generují skripty v ss27/nastroje/
+ss27/data/pdf_photos/
+ss27/data/cover_ss26.png
+ss27/nastroje/build.log
+ss27/data/thumbs/
+ss27/data/color_check.json
+ss27/data/color_check_bad.jpg
+ss27/data/photo_status.json
+ss27/nastroje/*.log

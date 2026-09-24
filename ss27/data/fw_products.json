@@ -1,0 +1,5731 @@
+{
+ "AVALON": {
+  "name": "AVALON",
+  "typ": "bunda",
+  "serie": "ski",
+  "front": "resized/AVALON_white_black_front.jpg",
+  "back": "resized/AVALON_white_black_back.jpg",
+  "desc": "Profesionální lyžařská bunda ostře řezaného vzhledu je skvělou volbou pro milovníky extrémních sportů.Díky své maximální funkčnosti vám bude výborným společníkem.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Stretch, TEFLON, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Kapsa na audio příslušenství",
+   "Kapsa na brýle",
+   "Kapsa na mobil",
+   "Kapsa na skipas",
+   "Manžeta v rukávu",
+   "Odepínací resp. schovávací kapuce",
+   "Odepínací sněhová manžeta",
+   "Prodyšnost 10 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Vodonepropustnost 10 000 mm",
+   "Vodoodpudivé zipy"
+  ],
+  "activities": [
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "white/black",
+    "art": "rozkresy_web/avalon_white_black.ai.png"
+   },
+   {
+    "name": "jeans blue/lagoon",
+    "art": "rozkresy_web/avalon_jeans_blue_lagoon.ai.png"
+   },
+   {
+    "name": "khaki/black",
+    "art": "rozkresy_web/avalon_khaki_black.ai.png"
+   },
+   {
+    "name": "dark blue/signal orange",
+    "art": "rozkresy_web/avalon_dark_blue_signal_orange.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "FUSION": {
+  "name": "FUSION",
+  "typ": "bunda",
+  "serie": "ski",
+  "front": "resized/FUSION_lagoon_black_white_front.jpg",
+  "back": "resized/FUSION_lagoon_black_white_back.jpg",
+  "desc": "Pánská lyžařská bunda s dokonalým technickým propracováním ve všech směrech. Je vyrobená z velice funkčního nylonového strečového materiálu a doplněná o jemné módní designové prvky včetně reflexních proužků. Elastické prvky jsou také součástí vnitřního vypracovaní, a nabízí tak ještě dokonalejší volnost pohybu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Stretch, TEFLON, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Kapsa na audio příslušenství",
+   "Kapsa na brýle",
+   "Kapsa na mobil",
+   "Kapsa na skipas",
+   "Manžeta v rukávu",
+   "Odepínací resp. schovávací kapuce",
+   "Prodyšnost 10 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Sněhová manžeta",
+   "Ventilace v rukávu",
+   "Vodonepropustnost 10 000 mm",
+   "Vodoodpudivé zipy"
+  ],
+  "activities": [
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "lagoon/black/white",
+    "art": "rozkresy_web/fusion_lagoon_black_white.ai.png"
+   },
+   {
+    "name": "lemon/black/white",
+    "art": "rozkresy_web/fusion_lemon_black_white.ai.png"
+   },
+   {
+    "name": "red/black/white",
+    "art": "rozkresy_web/fusion_red_black_white.ai.png"
+   },
+   {
+    "name": "signal orange/jeans blue/white",
+    "art": "rozkresy_web/fusion_signal_orange_jeans_blue_white.ai.png"
+   },
+   {
+    "name": "signal orange/navy/white",
+    "art": "rozkresy_web/fusion_signal_orange_navy_white.ai.png"
+   },
+   {
+    "name": "signal green/jeans blue/white",
+    "art": "rozkresy_web/fusion_signal_green_jeans_blue_white.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ECCO": {
+  "name": "ECCO",
+  "typ": "bunda",
+  "serie": "ski",
+  "front": "resized/ECCO_orange_black_front.jpg",
+  "back": "resized/ECCO_orange_black_back.jpg",
+  "desc": "Pánská lyžařská bunda kombinovaná ze strečového nylonového materiálu a jemného nylonového ripstopu. Nenápadné barevné kombinace tvořené lehce odlišnými odstíny a kompozice dvou materiálů dodávají tomuto stylu technický a funkční vzhled. Elastické prvky jsou i součástí vnitřního vypracovaní, což nabízí ještě dokonalejší volnost pohybu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Stretch, TEFLON, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Kapsa na audio příslušenství",
+   "Kapsa na brýle",
+   "Kapsa na mobil",
+   "Kapsa na skipas",
+   "Manžeta v rukávu",
+   "Odepínací resp. schovávací kapuce",
+   "Prodyšnost 10 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Sněhová manžeta",
+   "Ventilace v rukávu",
+   "Vodonepropustnost 10 000 mm",
+   "Vodoodpudivé zipy"
+  ],
+  "activities": [
+   "Freeride a Snowboarding",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "black/jeans blue",
+    "art": "rozkresy_web/ecco_black_jeans_blue.ai.png"
+   },
+   {
+    "name": "black/red",
+    "art": "rozkresy_web/ecco_black_red.ai.png"
+   },
+   {
+    "name": "black/black",
+    "art": "rozkresy_web/ecco_black_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "SLIDER": {
+  "name": "SLIDER",
+  "typ": "bunda",
+  "serie": "ski",
+  "front": "resized/SLIDER_jeans_blue_front.jpg",
+  "back": "resized/SLIDER_jeans_blue_back.jpg",
+  "desc": "Pánská lyžařská bunda kombinovaná ze strečového nylonového materiálu a jemného nylonového ripstopu. Nenápadné barevné kombinace tvořené lehce odlišnými odstíny a kompozice dvou materiálů dodávají tomuto stylu technický a funkční vzhled. Elastické prvky jsou i součástí vnitřního vypracovaní, což nabízí ještě dokonalejší volnost pohybu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Stretch, TEFLON, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Kapsa na audio příslušenství",
+   "Kapsa na brýle",
+   "Kapsa na mobil",
+   "Kapsa na skipas",
+   "Manžeta v rukávu",
+   "Odepínací resp. schovávavcí kapuce",
+   "Prodyšnost 10 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Sněhová manžeta",
+   "Ventilace v rukávu",
+   "Vodonepropustnost 10 000 mm",
+   "Vodoodpudivé zipy"
+  ],
+  "activities": [
+   "Freeride a Snowboarding",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue",
+    "art": null
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/slider_red.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/slider_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "RIDER": {
+  "name": "RIDER",
+  "typ": "kalhoty",
+  "serie": "ski",
+  "front": "resized/RIDER_black_front.jpg",
+  "back": "resized/RIDER_black_back.jpg",
+  "desc": "Perfektně tvarované lyžařské kalhoty, které jsou díky použitému materiálu vhodné do kompletu s bundami Trimm. Dokonalé technické řešení variability obvodu pasu zaručuje perfektní pohodlí. Odnímatelné šle a další důmyslné detaily jsou samozřejmostí.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Stretch, TEFLON, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Odepínatelné šle",
+   "Prodyšnost 10 000 g/ m2 za 24 h",
+   "Vnitřní rozepínací sněhová manžeta",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Freeride a Snowboarding",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "red",
+    "art": "rozkresy_web/rider_red.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/rider_black.ai.png"
+   },
+   {
+    "name": "signal orange",
+    "art": "rozkresy_web/rider_signal_orange.ai.png"
+   },
+   {
+    "name": "signal green",
+    "art": "rozkresy_web/rider_signal_green.ai.png"
+   },
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/rider_jeans_blue.ai.png"
+   },
+   {
+    "name": "navy",
+    "art": "rozkresy_web/rider_navy.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "VARIO": {
+  "name": "VARIO",
+  "typ": "bunda",
+  "serie": "ski",
+  "front": "resized/VARIO_red_black_front.jpg",
+  "back": "resized/VARIO_red_black_back.jpg",
+  "desc": "Stylová pánská lyžařská bunda, která dokonale vynikne na zasněžené sjezdovce díky použití trendových barev. Tento model je vyroben z materiálu s technickou membránou, je voděodolný a zároveň dobře prodyšný.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Microtwill, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na audio příslušenství",
+   "Kapsa na brýle",
+   "Kapsa na mobil",
+   "Kapsa na skipas",
+   "Manžeta v rukávu",
+   "Odepínací resp. schovávací kapuce",
+   "Odepínací sněhová manžeta",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Ventilace v rukávu",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Freeride a Snowboarding",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "red/black",
+    "art": "rozkresy_web/vario_red_black.ai.png"
+   },
+   {
+    "name": "khaki/black",
+    "art": "rozkresy_web/vario_khaki_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "RIO": {
+  "name": "RIO",
+  "typ": "bunda",
+  "serie": "ski",
+  "front": "resized/RIO_dark_navy_front.jpg",
+  "back": "resized/RIO_dark_navy_back.jpg",
+  "desc": "Stylová pánská lyžařská bunda, která dokonale vynikne na zasněžené sjezdovce díky použití trendových barev. Tento model je vyroben z materiálu s technickou membránou, je voděodolný a zároveň dobře prodyšný.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Microtwill, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na audio příslušenství",
+   "Kapsa na brýle",
+   "Kapsa na mobil",
+   "Kapsa na skipas",
+   "Manžeta v rukávu",
+   "Odepínací resp. schovávací kapuce",
+   "Odepínací sněhová manžeta",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Ventilace v rukávu",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Freeride a Snowboarding",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "dark navy/black",
+    "art": null
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "DERRYL": {
+  "name": "DERRYL",
+  "typ": "kalhoty",
+  "serie": "ski",
+  "front": "resized/DERRYL_black_front.jpg",
+  "back": "resized/DERRYL_black_back.jpg",
+  "desc": "Pánské lyžařské kalhoty ze strečového materiálu s membránou. Značková výplň pro optimální teplotní komfort, dobře padnoucí přiléhavý střih pro náročné sportovní výkony.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Microtwill Stretch, Triguard Stretch 2L membrane, 10 000 / 10 000",
+   "VNITŘNÍ MATERIÁL": "100 % PES"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Vodonepropustnost 10 000 mm",
+   "Prodyšnost 10 000 g/m² za 24 h",
+   "Odepínatelné šle",
+   "Vnitřní rozepínací sněhová manžeta"
+  ],
+  "activities": [
+   "Lyžování",
+   "Freeride a Snowboarding"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Derryl_black.ai.png"
+   }
+  ],
+  "size": "XS – 4XL"
+ },
+ "TOMBA": {
+  "name": "TOMBA",
+  "typ": "kalhoty",
+  "serie": "ski",
+  "front": "resized/TOMBA_black_front.jpg",
+  "back": "resized/TOMBA_black_back.jpg",
+  "desc": "Pánské lyžařské kalhoty s dobře padnoucím, přiléhavým střihem vyrobené ze strečového materiálu s membránou krásně zvýrazní postavu. Jsou opatřeny kapsami na zip a sněhovými manžetami se zipy v dolní zadní spodní části kalhot.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, TEFLON, Triguard Softshell"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Prodyšnost 20 000 g/ m2 za 24 h",
+   "Vnitřní rozepínací sněhová manžeta",
+   "Vodonepropustnost 20 000 mm"
+  ],
+  "activities": [
+   "Freeride a Snowboarding",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Tomba_black.ai.png"
+   }
+  ],
+  "size": "S – XXXL"
+ },
+ "FLASH PANTS": {
+  "name": "FLASH PANTS",
+  "typ": "kalhoty",
+  "serie": "ski",
+  "front": "resized/FLASH_PANTS_black_front.jpg",
+  "back": "resized/FLASH_PANTS_black_back.jpg",
+  "desc": "Pánské lyžařské kalhoty s dokonale padnoucím technickým střihem uspokojí i nejnáročnějšího lyžaře. Jsou vyrobené ze softshellového strečového materiálu s membránou s vysokými parametry prodyšnosti a voděodolnosti. Jsou opatřeny kapsami na zip, sněhovými manžetami se zipy v zadní spodní části kalhot a lehce nastavitelnými odepínatelnými šlemi.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, TEFLON, Triguard Softshell"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Odepínatelné šle",
+   "Prodyšnost 20 000 g/ m2 za 24 h",
+   "Vnitřní rozepínací sněhová manžeta",
+   "Vodonepropustnost 20 000 mm"
+  ],
+  "activities": [
+   "Freeride a Snowboarding",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "signal orange",
+    "art": "rozkresy_web/flash_pants_signal_orange.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/flash_pants_black.ai.png"
+   }
+  ],
+  "size": "S – XXXL"
+ },
+ "VALONA": {
+  "name": "VALONA",
+  "typ": "bunda",
+  "serie": "ski",
+  "front": "resized/VALONA_front.jpg",
+  "back": "resized/VALONA_back.jpg",
+  "desc": "Dámská bunda určená pro náročné lyžařky, které chtějí skloubit výkon, pohodlí a trendy design. Tento model je vyroben ze strečového materiálu s technickou membránou. Je voděodolný a zároveň dobře prodyšný. Značková výplň poskytuje dokonalou tepelnou izolaci.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Stretch, TEFLON, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Kapsa na audio příslušenství",
+   "Kapsa na brýle",
+   "Kapsa na mobil",
+   "Kapsa na skipas",
+   "Manžeta v rukávu",
+   "Odepínací resp. schovávací kapuce",
+   "Odepínací sněhová manžeta",
+   "Prodyšnost 10 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Vodonepropustnost 10 000 mm",
+   "Vodoodpudivé zipy"
+  ],
+  "activities": [
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "white/black",
+    "art": "rozkresy_web/valona_white_black.ai.png"
+   },
+   {
+    "name": "azure/lagoon",
+    "art": "rozkresy_web/valona_azure_lagoon.ai.png"
+   },
+   {
+    "name": "khaki/black",
+    "art": "rozkresy_web/valona_khaki_black.ai.png"
+   },
+   {
+    "name": "dark blue/signal orange",
+    "art": "rozkresy_web/valona_dark_blue_signal_orange.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ILUSION": {
+  "name": "ILUSION",
+  "typ": "bunda",
+  "serie": "ski",
+  "front": "resized/ILUSION_front.jpg",
+  "back": "resized/ILUSION_back.jpg",
+  "desc": "Dámská lyžařská bunda s dokonalým technickým propracováním ve všech směrech. Je vyrobená z velice funkčního nylonového strečového materiálu a doplněná o jemné módní designové prvky včetně reflexních proužků. Elastické prvky jsou také součástí vnitřního vypracovaní, a nabízí tak ještě dokonalejší volnost pohybu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Stretch, TEFLON, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Kapsa na audio příslušenství",
+   "Kapsa na brýle",
+   "Kapsa na mobil",
+   "Kapsa na skipas",
+   "Manžeta v rukávu",
+   "Odepínací resp. schovávací kapuce",
+   "Odepínací sněhová manžeta",
+   "Prodyšnost 10 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Vodonepropustnost 10 000 mm",
+   "Vodoodpudivé zipy"
+  ],
+  "activities": [
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "white/red/black",
+    "art": "rozkresy_web/ilusion_white_red_black.ai.png"
+   },
+   {
+    "name": "red/black",
+    "art": "rozkresy_web/ilusion_red_black.ai.png"
+   },
+   {
+    "name": "lemon/dark lagoon",
+    "art": "rozkresy_web/ilusion_lemon_dark_lagoon.ai.png"
+   },
+   {
+    "name": "signal orange/jeans blue",
+    "art": "rozkresy_web/ilusion_signal_orange_jeans_blue.ai.png"
+   },
+   {
+    "name": "signal orange/navy",
+    "art": "rozkresy_web/ilusion_signal_orange_navy.ai.png"
+   },
+   {
+    "name": "signal green/jeans blue",
+    "art": "rozkresy_web/ilusion_signal_green_jeans_blue.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "SLIDER LADY": {
+  "name": "SLIDER LADY",
+  "typ": "bunda",
+  "serie": "ski",
+  "front": "resized/SLIDER_LADY_red_front.jpg",
+  "back": "resized/SLIDER_LADY_red_back.jpg",
+  "desc": "Dámská lyžařská bunda kombinovaná ze strečového nylonu a jemného ripstopu. Nenápadné barevné kombinace a kompozice dvou materiálů dodávají stylu technický a funkční vzhled.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Stretch + 100 % Nylon ripstop, Triguard stretch 2L membrane, 10 000 / 10 000",
+   "VNITŘNÍ MATERIÁL": "100 % PES"
+  },
+  "features": [
+   "Vodoodpudivé zipy",
+   "Ventilace v rukávu",
+   "Odepínací resp. schovávací kapuce",
+   "3D regulovatelná kapuce",
+   "Manžeta v rukávu",
+   "4-směrný elastický materiál",
+   "Sněhová manžeta",
+   "Kapsa na skipas",
+   "Vodonepropustnost 10 000 mm",
+   "Prodyšnost 10 000 g/m² za 24 h",
+   "Reflexní prvky",
+   "Kapsa na brýle",
+   "Kapsa na audio příslušenství",
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "red",
+    "art": null
+   },
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/slider_lady_jeans_blue.recolor.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/slider_lady_black.pdf.png"
+   }
+  ],
+  "size": "XS – 2XL"
+ },
+ "RIDER LADY": {
+  "name": "RIDER LADY",
+  "typ": "kalhoty",
+  "serie": "ski",
+  "front": "resized/RIDER_LADY_front.jpg",
+  "back": "resized/RIDER_LADY_back.jpg",
+  "desc": "Perfektně tvarované dámské lyžařské kalhoty, které jsou díky použitému materiálu vhodné do kompletu s bundami Trimm. Dokonalé technické řešení variability obvodu pasu zaručuje perfektní pohodlí. Odnímatelné šle a další důmyslné detaily jsou samozřejmostí.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Stretch, TEFLON, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Odepínatelné šle",
+   "Prodyšnost 10 000 g/ m2 za 24 h",
+   "Vnitřní rozepínací sněhová manžeta",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Freeride a Snowboarding",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "white",
+    "art": "rozkresy_web/Rider_lady_white.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/Rider_lady_black.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/rider_lady_red.ai.png"
+   },
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/rider_lady_jeans_blue.ai.png"
+   },
+   {
+    "name": "signal orange",
+    "art": "rozkresy_web/rider_lady_signal_orange.ai.png"
+   },
+   {
+    "name": "signal green",
+    "art": "rozkresy_web/rider_lady_signal_green.ai.png"
+   },
+   {
+    "name": "navy",
+    "art": "rozkresy_web/Rider_lady_navy.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "VARIO LADY": {
+  "name": "VARIO LADY",
+  "typ": "bunda",
+  "serie": "ski",
+  "front": "resized/VARIO_LADY_front.jpg",
+  "back": "resized/VARIO_LADY_back.jpg",
+  "desc": "Stylová dámská lyžařská bunda, která dokonale vynikne na zasněžené sjezdovce díky použití trendových barev. Tento model je vyroben z materiálu s technickou membránou, je voděodolný a zároveň dobře prodyšný.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Microtwill, Triguard Stretch 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na audio příslušenství",
+   "Kapsa na brýle",
+   "Kapsa na mobil",
+   "Kapsa na skipas",
+   "Manžeta v rukávu",
+   "Odepínací resp. schovávací kapuce",
+   "Odepínací sněhová manžeta",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Ventilace v rukávu",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Freeride a Snowboarding",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/black",
+    "art": "rozkresy_web/vario_lady_jeans_blue_black.ai.png"
+   },
+   {
+    "name": "grey/black",
+    "art": "rozkresy_web/vario_lady_grey_black.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "DARRA": {
+  "name": "DARRA",
+  "typ": "kalhoty",
+  "serie": "ski",
+  "front": "resized/DARRA_black_front.jpg",
+  "back": "resized/DARRA_black_back.jpg",
+  "desc": "Dámské lyžařské kalhoty ze strečového materiálu s membránou. Značková výplň pro optimální teplotní komfort, dobře padnoucí přiléhavý střih dělá tento styl dokonalým i při náročných sportovních výkonech.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Microtwill Stretch, Triguard Stretch 2L membrane, 10 000 / 10 000",
+   "VNITŘNÍ MATERIÁL": "100 % PES"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Vodonepropustnost 10 000 mm",
+   "Prodyšnost 10 000 g/m² za 24 h",
+   "Odepínatelné šle",
+   "Vnitřní rozepínací sněhová manžeta"
+  ],
+  "activities": [
+   "Lyžování",
+   "Freeride a Snowboarding"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Darra_black.ai.png"
+   }
+  ],
+  "size": "XXS – XXL"
+ },
+ "JUSTA PANTS": {
+  "name": "JUSTA PANTS",
+  "typ": "kalhoty",
+  "serie": "ski",
+  "front": "resized/JUSTA_PANTS_black_black_front.jpg",
+  "back": "resized/JUSTA_PANTS_black_black_back.jpg",
+  "desc": "Luxusní dámské lyžařské kalhoty z materiálu s vysokým leskem v kombinaci se strečovým pruhem v boční části. Jsou vhodné jak na lyžování, tak na běžné nošení v zimním období. Dobře padnoucím střihem dokonale zvýrazní ženskou siluetu. Jsou opatřeny kapsami na zip a zipy na zadní spodní části nohavic.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, 100 % PES Microtwill, Triguard Stretch 2L Membrane",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Vodonepropustnost 6 000 mm"
+  ],
+  "activities": [
+   "Běžné nošení",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "black/black",
+    "art": "rozkresy_web/justa_pants_black_black.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "LARA": {
+  "name": "LARA",
+  "typ": "kalhoty",
+  "serie": "ski",
+  "front": "resized/LARA_black_front.jpg",
+  "back": "resized/LARA_black_back.jpg",
+  "desc": "Dámské lyžařské kalhoty s dobře padnoucím, přiléhavým střihem vyrobené ze strečového materiálu s membránou dokonale zvýrazní ženskou siluetu. Jsou opatřeny kapsami na zip a sněhovými manžetami se zipy zadní spodní části kalhot.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, TEFLON, Triguard Softshell"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Prodyšnost 20 000 g/ m2 za 24 h",
+   "Vnitřní rozepínací sněhová manžeta",
+   "Vodonepropustnost 20 000 mm"
+  ],
+  "activities": [
+   "Freeride a Snowboarding",
+   "Lyžování"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Lara_black.ai.png"
+   },
+   {
+    "name": "white",
+    "art": "rozkresy_web/Lara_white.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "SPERO": {
+  "name": "SPERO",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/SPERO_deep_khaki_front.jpg",
+  "back": "resized/SPERO_deep_khaki_back.jpg",
+  "desc": "Zimní delší pánský prošívaný kabátek z kombinace jemné nylonové tkaniny s lehkou náplní a syntetického peří.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Microtwill, Triguard Stretch 2L Membrane, Taped seams, 10 000 / 5 000",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Běžné nošení"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Spero_black.ai.png"
+   },
+   {
+    "name": "dark navy",
+    "art": "rozkresy_web/Spero_dark_navy.ai.png"
+   },
+   {
+    "name": "deep khaki",
+    "art": "rozkresy_web/Spero_deep_khaki.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "TROCK": {
+  "name": "TROCK",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/TROCK_red_light_grey_front.jpg",
+  "back": "resized/TROCK_red_light_grey_back.jpg",
+  "desc": "Dobře vypadající lehká pánská bundička vhodná pro zimní sportovní aktivity i do ulic velkoměsta. Zaujme hlavně použitím speciální bezešvé technologie, která vytváří zajímavé vzory a materiál zároveň minimalizuje nežádoucí únik peří. Ochrání a udrží v teple i v největších mrazech.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, Down proof, Water repelent",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon Ripstop",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "dark navy/old blue",
+    "art": "rozkresy_web/Trock_dark_navy_old_blue.ai.png"
+   },
+   {
+    "name": "red/light grey",
+    "art": "rozkresy_web/Trock_red_light_grey.ai.png"
+   },
+   {
+    "name": "black/light grey",
+    "art": "rozkresy_web/trock_black_light_grey.ai.png"
+   },
+   {
+    "name": "golden/light grey",
+    "art": "rozkresy_web/Trock_golden_light_grey.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "CREDIT": {
+  "name": "CREDIT",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/CREDIT_front.jpg",
+  "back": "resized/CREDIT_back.jpg",
+  "desc": "Lehká prošívaná pánská bunda s kapucí. Svým stylem a použitým materiálem utralite nylonový rip-stop a lehkou náplní ze syntetického peří je předurčená pro veškeré sportovní aktivity i do ulic velkoměsta.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Elastan, 100 % Nylon Ripstop, Down proof, Water repelent",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon Ripstop",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "red/black",
+    "art": "rozkresy_web/credit_red_black.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/credit_orange_jeans_blue.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "SILKY": {
+  "name": "SILKY",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/SILKY_deep_khaki_front.jpg",
+  "back": "resized/SILKY_deep_khaki_back.jpg",
+  "desc": "Dlouhý zimní dámský prošívaný kabátek tvořený kombinací jemné nylonové tkaniny s lehkou náplní a syntetického peří, moderního luxusní vzhledu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Down proof, Water repelent",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Běžné nošení"
+  ],
+  "colors": [
+   {
+    "name": "deep khaki",
+    "art": "rozkresy_web/Silky_deep_khaki.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "LUSTIC LUX": {
+  "name": "LUSTIC LUX",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/LUSTIC_LUX_front.jpg",
+  "back": "resized/LUSTIC_LUX_back.jpg",
+  "desc": "Elegantní zimní dlouhý dámský kabátek z jemného nylonového materiálu se zajímavými módními prvky. Díky konstrukci a typu výplně, kterou tvoří syntetické peří, je velice hřejivý. Ochrání na dlouhých procházkách přírodou i ve víru velkoměsta.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, Down proof, Water repelent",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Běžné nošení"
+  ],
+  "colors": [
+   {
+    "name": "dark navy",
+    "art": "rozkresy_web/lustic_lux_dark_navy.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "DORA": {
+  "name": "DORA",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/DORA_dark_khaki_front.jpg",
+  "back": "resized/DORA_dark_khaki_back.jpg",
+  "desc": "Zimní delší dámský prošívaný kabátek tvořený kombinací jemné nylonové tkaniny s lehkou náplní a syntetického peří.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Down proof, Water repelent",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Běžné nošení"
+  ],
+  "colors": [
+   {
+    "name": "dark grey",
+    "art": "rozkresy_web/dora_dark_grey.ai.png"
+   },
+   {
+    "name": "deep khaki",
+    "art": "rozkresy_web/dora_deep_khaki.ai.png"
+   },
+   {
+    "name": "dark navy",
+    "art": "rozkresy_web/dora_dark_navy.ai.png"
+   },
+   {
+    "name": "light grey",
+    "art": "rozkresy_web/dora_light_grey.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ARTA": {
+  "name": "ARTA",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/ARTA_front.jpg",
+  "back": "resized/ARTA_back.jpg",
+  "desc": "Elegantní zimní dlouhá dámská prošivaná bunda z jemného nylonového materiálu se zajímavými módními prvky. Díky konstrukci a typu výplně, kterou tvoří syntetické peří, je velice hřejivá. Ochrání na dlouhých procházkách přírodou i ve víru velkoměsta.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Down proof, Water repelent",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Běžné nošení"
+  ],
+  "colors": [
+   {
+    "name": "dark grey",
+    "art": "rozkresy_web/Arta_dark_grey.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "AGATA": {
+  "name": "AGATA",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/AGATA_beige_front.jpg",
+  "back": "resized/AGATA_back.jpg",
+  "desc": "Zimní dámský prošívaný kabátek tvořený kombinací jemné nylonové tkaniny s lehkou náplní a syntetického peří, moderního luxusní vzhledu. Kabát má odnimatelná kapuci s odnimatelnou kožešinou a s páskem",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Down proof, Water repelent",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Běžné nošení"
+  ],
+  "colors": [
+   {
+    "name": "beige",
+    "art": null
+   }
+  ],
+  "size": "XS – 2XL"
+ },
+ "HONOR LADY": {
+  "name": "HONOR LADY",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/HONOR_LADY_black_front.jpg",
+  "back": "resized/HONOR_LADY_black_back.jpg",
+  "desc": "Lehká a zároveň extrémně teplá bunda, která Vás ochrání a udrží v teple i největších mrazech. Použitá speciální bezešvá technologie a materiál minimalizují nežádoucí únik peří. Vhodná pro zimní sportovní aktivity i do ulic velkoměsta.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Pongee, DWR, Water repelent",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Běžné nošení"
+  ],
+  "colors": [
+   {
+    "name": "khaki",
+    "art": "rozkresy_web/honor_lady_khaki.ai.png"
+   },
+   {
+    "name": "dark blue",
+    "art": "rozkresy_web/honor_lady_dark_blue.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/honor_lady_black.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "TROCK LADY": {
+  "name": "TROCK LADY",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/TROCK_LADY_golden_light_grey_front.jpg",
+  "back": "resized/TROCK_LADY_golden_light_grey_back.jpg",
+  "desc": "Dobře vypadající lehká dámská bundička vhodná pro zimní sportovní aktivity i do ulic velkoměsta. Zaujme hlavně použitím speciální bezešvé technologie, která vytváří zajímavé vzory a materiál zároveň minimalizuje nežádoucí únik peří. Ochrání a udrží v teple i v největších mrazech.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, Down proof, Water repelent",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon Ripstop",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "golden/light grey",
+    "art": "rozkresy_web/Trock_lady_golden_light_grey.ai.png"
+   },
+   {
+    "name": "black/light grey",
+    "art": "rozkresy_web/Trock_lady_black_light_grey.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "CREDIT LADY": {
+  "name": "CREDIT LADY",
+  "typ": "bunda",
+  "serie": "snow-city",
+  "front": "resized/CREDIT_LADY_black_black_front.jpg",
+  "back": "resized/CREDIT_LADY_black_black_back.jpg",
+  "desc": "Lehká prošívaná dámská bunda s kapucí. Svým stylem a použitým materiálem utralite nylonový rip-stop a lehkou náplní ze syntetického peří je předurčená pro veškeré sportovní aktivity i do ulic velkoměsta.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Elastan, 100 % Nylon Ripstop, Down proof, Water repelent",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon Ripstop",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/black",
+    "art": "rozkresy_web/credit_lady_black_black.ai.png"
+   },
+   {
+    "name": "red/black",
+    "art": "rozkresy_web/credit_lady_red_black.ai.png"
+   },
+   {
+    "name": "khaki/black",
+    "art": "rozkresy_web/credit_lady_khaki_black.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/credit_lady_orange_jeans_blue.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "INTENSE": {
+  "name": "INTENSE",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/INTENSE_front.jpg",
+  "back": "resized/INTENSE_back.jpg",
+  "desc": "Horská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý třívrstvý strečový membránový materiál s vysokou prodyšností a vodním sloupcem a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Pongee, Triguard 3L Membrane Extreme, Taped seams"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Prodyšnost 20 000 g/ m2 za 24 h",
+   "Ventilace v rukávu",
+   "Vodonepropustnost 20 000 mm",
+   "Vodoodpudivé zipy"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "lemon/lagoon",
+    "art": "rozkresy_web/intense_lemon_lagoon.ai.png"
+   },
+   {
+    "name": "jeans blue/orange",
+    "art": "rozkresy_web/intense_jeans_blue_orange.ai.png"
+   },
+   {
+    "name": "red/blue",
+    "art": "rozkresy_web/intense_red_blue.ai.png"
+   },
+   {
+    "name": "dark lagoon/lemon",
+    "art": "rozkresy_web/intense_dark_lagoon_lemon.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ORADO": {
+  "name": "ORADO",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/ORADO_red_blue_front.jpg",
+  "back": "resized/ORADO_red_blue_back.jpg",
+  "desc": "Horská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý membránový materiál a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Spandex, 100 % PES Pongee, Triguard 3L Membrane Extreme, Taped seams"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Prodyšnost 20 000 g/ m2 za 24 h",
+   "Vodonepropustnost 20 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/orange",
+    "art": "rozkresy_web/orado_jeans_blue_orange.ai.png"
+   },
+   {
+    "name": "red/blue",
+    "art": "rozkresy_web/orado_red_blue.ai.png"
+   },
+   {
+    "name": "dark lagoon/lemon",
+    "art": "rozkresy_web/orado_dark_lagoon_lemon.ai.png"
+   },
+   {
+    "name": "jeans blue/orange/orange",
+    "art": "rozkresy_web/orado_jeans_blue_orange_orange.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "FOXTER": {
+  "name": "FOXTER",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/FOXTER_khaki_front.jpg",
+  "back": "resized/FOXTER_khaki_back.jpg",
+  "desc": "Pánská outdoorová bunda vhodná na horské túry i pro další sportovní aktivity. Vrchní materiál je mimořádně oděruvzdorný a díky vodnímu sloupci 10 000 mm s lepenými švy prakticky nepromokavý. Pro ještě účinnější odvětrání je opatřená v podpaží zipovými otvory. Vsazená regulovatelná kapuce poslouží při náhlé změně počasí. Dokonalý tepelný komfort zajistí praktická regulace spodního kraje. Tato bunda vám bude skvělým společníkem v přírodě i ve městě.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Triguard 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Ventilace v rukávu",
+   "Vodonepropustnost 10 000 mm",
+   "Vodoodpudivé zipy"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/foxter_jeans_blue.ai.png"
+   },
+   {
+    "name": "lagoon",
+    "art": "rozkresy_web/foxter_lagoon.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/foxter_red.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/foxter_black.ai.png"
+   },
+   {
+    "name": "khaki",
+    "art": "rozkresy_web/foxter_khaki.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "EXPED": {
+  "name": "EXPED",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/EXPED_orange_jeans_blue_front.jpg",
+  "back": "resized/EXPED_orange_jeans_blue_back.jpg",
+  "desc": "Bunda je vyrobena z 2,5 vrstvého materiálu, takže je velmi lehká a snadno sbalitelná. Konstrukce s odvětráním zaručuje výbornou voděodolnost a prodyšnost. Zaručeně vás tak ochrání před deštěm, sněhem i větrem a spolehlivě odvede vlhkost z povrchu těla pryč, takže se budete cítit velmi komfortně i v nepříznivém počasí. Nepromokavost zvyšují i 100% vodotěsné švy.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Triguard 2.5L Membrane, Taped seams"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Lepené švy",
+   "Odepínací resp. schovávací kapuce",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Větrání",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/orange",
+    "art": "rozkresy_web/exped_jeans_blue_orange.ai.png"
+   },
+   {
+    "name": "dark lagoon/jeans blue",
+    "art": "rozkresy_web/exped_dark_lagoon_jeans_blue.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/exped_orange_jeans_blue.ai.png"
+   },
+   {
+    "name": "khaki/black",
+    "art": "rozkresy_web/exped_khaki_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "EXPED PANTS": {
+  "name": "EXPED PANTS",
+  "typ": "kalhoty",
+  "serie": "outdoor",
+  "front": "resized/EXPED_PANTS_black_front.jpg",
+  "back": "resized/EXPED_PANTS_black_back.jpg",
+  "desc": "Kalhoty s vynikajícími vlastnostmi jsou určeny pro nejnáročnější aktivity v horské přírodě. Použitý membránový 2,5 L materiál a promyšlený střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodné pro skialpinismus, horolezectví, turistiku. Boční zipy umožňují odvětrání po celé délce a především navlečení kalhot bez nutnosti sundání bot.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Triguard 2.5L Membrane, Taped seams"
+  },
+  "features": [
+   "Celorozepínací kalhoty",
+   "Lepené švy",
+   "Odepínatelné šle",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Větrání",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/exped_pants_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "MARK": {
+  "name": "MARK",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/MARK_black_front.jpg",
+  "back": "resized/MARK_black_back.jpg",
+  "desc": "Bunda je vyrobena z 2,5 vrstvého materiálu, takže je velmi lehká a snadno sbalitelná. Konstrukce s odvětránímzaručuje výbornou voděodolnost a prodyšnost. Zaručeně vás tak ochrání před deštěm, sněhem i větrem a spolehlivě odvede vlhkost z povrchu těla pryč, takže se budete cítit velmi komfortně i v nepříznivém počasí. Nepromokavost zvyšují i 100% vodotěsné švy.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Triguard 2.5L Membrane, Taped seams"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Lepené švy",
+   "Odepínací resp. schovávací kapuce",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Větrání",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/mark_black.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/mark_red.ai.png"
+   },
+   {
+    "name": "signal green",
+    "art": "rozkresy_web/mark_signal_green.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ERWI HARD": {
+  "name": "ERWI HARD",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/ERWI_HARD_dark_navy_navy_front.jpg",
+  "back": "resized/ERWI_HARD_dark_navy_navy_back.jpg",
+  "desc": "Maximálně funkční pánská softshellová bunda s kapucí, kombinovaná s odolním polyesterem s výplní a použitím speciální bezešvé technologie, která vytváří zajímavé vzory a materiál zároveň minimalizuje nežádoucí únik výplně. Softshellový materiál tvoří boční panely a raglánové rukávý a část zadního dílu ve spodní části. Materiálové složení zaručuje příjemnou hřejivost, lehkost, odolnost vůči větru a vlhkosti.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, 100 % PES Softshell, Triguard Softshell, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black/black",
+    "art": "rozkresy_web/Erwi_hard_grafit_black_black.ai.png"
+   },
+   {
+    "name": "dark navy/navy",
+    "art": "rozkresy_web/Erwi_hard_dark_navy_navy.ai.png"
+   },
+   {
+    "name": "dark khaki/khaki",
+    "art": "rozkresy_web/Erwi_hard_dark_khaki_khaki.ai.png"
+   },
+   {
+    "name": "dark red/red",
+    "art": "rozkresy_web/erwi_hard_dark_red_red.pdf.png"
+   },
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/erwi_hard_jeans_blue_dark_lagoon.pdf.png"
+   }
+  ],
+  "size": "S – 5XL"
+ },
+ "JURRY": {
+  "name": "JURRY",
+  "typ": "kalhoty",
+  "serie": "outdoor",
+  "front": "resized/JURRY_grafit_black_front.jpg",
+  "back": "resized/JURRY_grafit_black_back.jpg",
+  "desc": "Softshellové kalhoty vhodné pro všechny sportovní aktivity. Díky použité membráně ochrání před nepřízní počasí. Kolena a dolní část kalhot jsou tvarovány a vyztuženy tkaninou vysoce odolnou proti mechanickému poškození.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Spandex, 100 % PES Softshell, Triguard Softshell"
+  },
+  "features": [
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/Jurry_grafit_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "MOTION": {
+  "name": "MOTION",
+  "typ": "kalhoty",
+  "serie": "outdoor",
+  "front": "resized/MOTION_black_front.jpg",
+  "back": "resized/MOTION_black_back.jpg",
+  "desc": "Softshellové kalhoty, které jsou ideální pro všechny sportovní i volnočasové aktivity. Dobře poslouží zejména při chladných a větrných dnech v jakékoli roční době.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Softshell, Triguard Softshell"
+  },
+  "features": [
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Vnitřní rozepínací sněhová manžeta",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Motion_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "SIGMA": {
+  "name": "SIGMA",
+  "typ": "kalhoty",
+  "serie": "outdoor",
+  "front": "resized/SIGMA_black_front.jpg",
+  "back": "resized/SIGMA_black_back.jpg",
+  "desc": "Softshellové kalhoty ideální pro všechny sportovní i volnočasové aktivity. Dobře poslouží zejména při chladných a větrných dnech v jakékoli roční době.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Softshell, Triguard Softshell, 8 000 / 5 000"
+  },
+  "features": [
+   "Prodyšnost 5 000 g/m² za 24 h",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Sigma_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "INTENSA": {
+  "name": "INTENSA",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/INTENSA_front.jpg",
+  "back": "resized/INTENSA_back.jpg",
+  "desc": "Horská dámská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý třívrstvý strečový membránový materiál s vysokou prodyšností a vodním sloupcem a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Pongee, Triguard 3L Membrane Extreme, Taped seams"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Prodyšnost 20 000 g/ m2 za 24 h",
+   "Ventilace v rukávu",
+   "Vodonepropustnost 20 000 mm",
+   "Vodoodpudivé zipy"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "lemon/lagoon",
+    "art": "rozkresy_web/intensa_lemon_lagoon.ai.png"
+   },
+   {
+    "name": "jeans blue/orange",
+    "art": "rozkresy_web/intensa_jeans_blue_orange.ai.png"
+   },
+   {
+    "name": "red/blue",
+    "art": "rozkresy_web/intensa_red_blue.ai.png"
+   },
+   {
+    "name": "dark lagoon/lemon",
+    "art": "rozkresy_web/intensa_dark_lagoon_lemon.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ORADA": {
+  "name": "ORADA",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/ORADA_jeans_blue_lime_green_lime_green_front.jpg",
+  "back": "resized/ORADA_jeans_blue_lime_green_lime_green_back.jpg",
+  "desc": "Horská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý membránový materiál a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Spandex, 100 % PES Pongee, Triguard 3L Membrane Extreme, Taped seams"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Prodyšnost 20 000 g/ m2 za 24 h",
+   "Vodonepropustnost 20 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/orange",
+    "art": "rozkresy_web/orada_jeans_blue_orange.ai.png"
+   },
+   {
+    "name": "red/blue",
+    "art": "rozkresy_web/orada_red_blue.ai.png"
+   },
+   {
+    "name": "dark lagoon/lemon",
+    "art": "rozkresy_web/orada_dark_lagoon_lemon.ai.png"
+   },
+   {
+    "name": "jeans blue/lime green/lime green",
+    "art": "rozkresy_web/orada_jeans_blue_lime_green_lime_green.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "FOXTERA": {
+  "name": "FOXTERA",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/FOXTERA_jeans_blue_front.jpg",
+  "back": "resized/FOXTERA_jeans_blue_back.jpg",
+  "desc": "Dámská outdoorová bunda vhodná na horské túry i pro další sportovní aktivity. Vrchní materiál je mimořádně oděruvzdorný a díky vodnímu sloupci 10 000 mm s lepenými švy prakticky nepromokavý. Pro ještě účinnější odvětrání je opatřená v podpaží zipovými otvory. Vsazená regulovatelná kapuce poslouží při náhlé změně počasí. Dokonalý tepelný komfort zajistí praktická regulace spodního kraje. Tato bunda vám bude skvělým společníkem v přírodě i ve městě.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Triguard 2L Membrane, Taped seams",
+   "VNITŘNÍ MATERIÁL": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Ventilace v rukávu",
+   "Vodonepropustnost 10 000 mm",
+   "Vodoodpudivé zipy"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/foxtera_jeans_blue.ai.png"
+   },
+   {
+    "name": "lagoon",
+    "art": "rozkresy_web/foxtera_lagoon.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/foxtera_red.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/foxtera_black.ai.png"
+   },
+   {
+    "name": "khaki",
+    "art": "rozkresy_web/foxtera_khaki.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "EXPED LADY": {
+  "name": "EXPED LADY",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/EXPED_LADY_front.jpg",
+  "back": "resized/EXPED_LADY_back.jpg",
+  "desc": "Bunda je vyrobena z 2,5 vrstvého materiálu, takže je velmi lehká a snadno sbalitelná. Konstrukce s odvětráním zaručuje výbornou voděodolnost a prodyšnost. Zaručeně vás tak ochrání před deštěm, sněhem i větrem a spolehlivě odvede vlhkost z povrchu těla pryč, takže se budete cítit velmi komfortně i v nepříznivém počasí. Nepromokavost zvyšují i 100% vodotěsné švy.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Triguard 2.5L Membrane, Taped seams"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Lepené švy",
+   "Odepínací resp. schovávací kapuce",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Větrání",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/orange",
+    "art": "rozkresy_web/exped_lady_jeans_blue_orange.ai.png"
+   },
+   {
+    "name": "dark lagoon/pinky",
+    "art": "rozkresy_web/exped_lady_dark_lagoon_pinky.ai.png"
+   },
+   {
+    "name": "dark lagoon/jeans blue",
+    "art": "rozkresy_web/exped_lady_dark_lagoon_jeans_blue.ai.png"
+   },
+   {
+    "name": "khaki/black",
+    "art": "rozkresy_web/exped_lady_khaki_black.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "EXPED LADY PANTS": {
+  "name": "EXPED LADY PANTS",
+  "typ": "kalhoty",
+  "serie": "outdoor",
+  "front": "resized/EXPED_LADY_PANTS_black_front.jpg",
+  "back": "resized/EXPED_LADY_PANTS_black_back.jpg",
+  "desc": "Kalhoty s vynikajícími vlastnostmi jsou určeny pro nejnáročnější aktivity v horské přírodě. Použitý membránový 2,5 L materiál a promyšlený střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodné pro skialpinismus, horolezectví, turistiku. Boční zipy umožňují odvětrání po celé délce a především navlečení kalhot bez nutnosti sundání bot.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Triguard 2.5L Membrane, Taped seams"
+  },
+  "features": [
+   "Celorozepínací kalhoty",
+   "Lepené švy",
+   "Odepínatelné šle",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Větrání",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/exped_lady_pants_black.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "MARK LADY": {
+  "name": "MARK LADY",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/MARK_LADY_black_front.jpg",
+  "back": "resized/MARK_LADY_black_back.jpg",
+  "desc": "Bunda je vyrobena z 2,5 vrstvého materiálu, takže je velmi lehká a snadno sbalitelná. Konstrukce s odvětráním zaručuje výbornou voděodolnost a prodyšnost. Zaručeně vás tak ochrání před deštěm, sněhem i větrem a spolehlivě odvede vlhkost z povrchu těla pryč, takže se budete cítit velmi komfortně i v nepříznivém počasí. Nepromokavost zvyšují i 100% vodotěsné švy.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon, Triguard 2.5L Membrane, Taped seams"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Lepené švy",
+   "Odepínací resp. schovávací kapuce",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Větrání",
+   "Vodonepropustnost 10 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/mark_lady_black.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/mark_lady_red.ai.png"
+   },
+   {
+    "name": "signal green",
+    "art": "rozkresy_web/mark_lady_signal_green.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ERWI HARD LADY": {
+  "name": "ERWI HARD LADY",
+  "typ": "bunda",
+  "serie": "outdoor",
+  "front": "resized/ERWI_HARD_LADY_grafit_black_black_front.jpg",
+  "back": "resized/ERWI_HARD_LADY_grafit_black_black_back.jpg",
+  "desc": "Maximálně funkční dámská softshellová bunda s kapucí, kombinovaná s odolním polyesterem s výplní a použitím speciální bezešvé technologie, která vytváří zajímavé vzory a materiál zároveň minimalizuje nežádoucí únik výplně. Softshellový materiál tvoří boční panely a raglánové rukávý a část zadního dílu ve spodní části. Materiálové složení zaručuje příjemnou hřejivost, lehkost, odolnost vůči větru a vlhkosti.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, 100 % PES Softshell, Triguard Softshell, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % PES",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black/black",
+    "art": "rozkresy_web/Erwi_hard_lady_grafit_black_black.ai.png"
+   },
+   {
+    "name": "dark navy/navy",
+    "art": "rozkresy_web/Erwi_hard_lady_dark_navy_navy.ai.png"
+   },
+   {
+    "name": "dark khaki/khaki",
+    "art": "rozkresy_web/Erwi_hard_lady_dark_khaki_khaki.ai.png"
+   },
+   {
+    "name": "dark red/red",
+    "art": "rozkresy_web/erwi_hard_lady_dark_red_red.recolor.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "JURRA": {
+  "name": "JURRA",
+  "typ": "kalhoty",
+  "serie": "outdoor",
+  "front": "resized/JURRA_grafit_black_front.jpg",
+  "back": "resized/JURRA_grafit_black_back.jpg",
+  "desc": "Dámské softshellové kalhoty vhodné pro všechny sportovní aktivity. Díky použité membráně ochrání před nepřízní počasí. Kolena a dolní část kalhot jsou tvarovány a vyztuženy tkaninou vysoce odolnou proti mechanickému poškození.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Spandex, 100 % PES Softshell, Triguard Softshell"
+  },
+  "features": [
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/Jurra_grafit_black.ai.png"
+   }
+  ],
+  "size": "XS – 2XL"
+ },
+ "MOTION LADY": {
+  "name": "MOTION LADY",
+  "typ": "kalhoty",
+  "serie": "outdoor",
+  "front": "resized/MOTION_LADY_black_front.jpg",
+  "back": "resized/MOTION_LADY_black_back.jpg",
+  "desc": "Dámské softshellové kalhoty, které jsou ideální pro všechny sportovní i volnočasové aktivity. Dobře poslouží zejména při chladných a větrných dnech v jakékoli roční době.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Softshell, Triguard Softshell"
+  },
+  "features": [
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Vnitřní rozepínací sněhová manžeta",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Motion_lady_black.ai.png"
+   }
+  ],
+  "size": "XS – XL"
+ },
+ "SIGMA LADY": {
+  "name": "SIGMA LADY",
+  "typ": "kalhoty",
+  "serie": "outdoor",
+  "front": "resized/SIGMA_LADY_black_front.jpg",
+  "back": "resized/SIGMA_LADY_black_back.jpg",
+  "desc": "Dámské softshellové kalhoty ideální pro všechny sportovní i volnočasové aktivity. Dobře poslouží zejména při chladných a větrných dnech.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Softshell, Triguard Softshell, 8 000 / 5 000"
+  },
+  "features": [
+   "Prodyšnost 5 000 g/m² za 24 h",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Sigma_lady_black.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "SIGMA JR": {
+  "name": "SIGMA JR",
+  "typ": "kalhoty",
+  "serie": "outdoor",
+  "front": "resized/SIGMA_JR_black_front.jpg",
+  "back": "resized/SIGMA_JR_black_back.jpg",
+  "desc": "Dětské softshellové kalhoty ideální pro všechny sportovní i volnočasové aktivity. Dobře poslouží zejména při chladných a větrných dnech.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Softshell, Triguard Softshell, 5 000 / 8 000"
+  },
+  "features": [
+   "Prodyšnost 5 000 g/m² za 24 h",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Sigma_jr_black.ai.png"
+   }
+  ],
+  "size": "116 – 164"
+ },
+ "CONTRE": {
+  "name": "CONTRE",
+  "typ": "bunda",
+  "serie": "active",
+  "front": null,
+  "back": null,
+  "desc": "Extrémně prodyšná, lehká skialpová a touringová bunda vhodná i pro jiné sportovní aktivity. Odepnutím rukávů vznikne praktická vesta. Díky kombinaci použitých materiálů poskytuje vše potřebné - extra dávku tepla, zvýšenou prodyšnost a maximální volnost pohybu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, 100 % PES BiStretch, 100 % PES Softshell, Bi Stretch, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Manžeta v rukávu",
+   "Odepínací rukávy"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/contre_jeans_blue_dark_lagoon.ai.png"
+   },
+   {
+    "name": "red/jeans blue",
+    "art": "rozkresy_web/contre_red_jeans_blue.ai.png"
+   },
+   {
+    "name": "black/grafit black",
+    "art": "rozkresy_web/contre_black_grafit_black.ai.png"
+   },
+   {
+    "name": "orange/grafit black",
+    "art": "rozkresy_web/contre_orange_grafit_black.ai.png"
+   },
+   {
+    "name": "khaki/grafit black",
+    "art": "rozkresy_web/contre_khaki_grafit_black.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/contre_lime_green_jeans_blue.recolor.png"
+   },
+   {
+    "name": "mustard/dark lagoon",
+    "art": "rozkresy_web/contre_mustard_dark_lagoon.recolor.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "CONTRE PANTS": {
+  "name": "CONTRE PANTS",
+  "typ": "kalhoty",
+  "serie": "active",
+  "front": "resized/CONTRE_PANTS_black_grafit_black_front.jpg",
+  "back": "resized/CONTRE_PANTS_black_grafit_black_back.jpg",
+  "desc": "Pánské kalhoty s vynikajícími vlastnostmi. Použitím kombinace tří funkčních materiálů s vysokou prodyšností a odolností a dokonalým střihovým technickým provedením jsou určeny pro nejnáročnější aktivity v přírodě. Vhodné pro skialpinismus, horolezectví, turistiku a celou řadu sportovních aktivit.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Spandex, 100 % Nylon Spandex Armortex, 100 % PES BiStretch, 100 % PES Softshell, Bi Stretch, DWR"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Odepínatelné šle",
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/grafit black",
+    "art": "rozkresy_web/contre_pants_black_grafit_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "MAROL": {
+  "name": "MAROL",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/MAROL_orange_jeans_blue_front.jpg",
+  "back": "resized/MAROL_orange_jeans_blue_back.jpg",
+  "desc": "Extrémně prodyšná, lehká skialpová a touringová bunda vhodná i pro jiné sportovní aktivity. Díky kombinaci použitých materiálů poskytuje vše potřebné - extra dávku tepla, zvýšenou prodyšnost a maximální volnost pohybu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, 100 % PES BiStretch, 100 % PES Softshell, Bi Stretch, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Manžeta v rukávu"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/marol_jeans_blue.ai.png"
+   },
+   {
+    "name": "mustard/grafit black",
+    "art": "rozkresy_web/marol_mustard_grafit_black.ai.png"
+   },
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/marol_grafit_black.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/marol_orange_jeans_blue.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/marol_lime_green_jeans_blue.ai.png"
+   },
+   {
+    "name": "khaki/dark grey",
+    "art": "rozkresy_web/marol_khaki_dark_grey.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "MAROL PANTS": {
+  "name": "MAROL PANTS",
+  "typ": "kalhoty",
+  "serie": "active",
+  "front": "resized/MAROL_PANTS_front.jpg",
+  "back": "resized/MAROL_PANTS_back.jpg",
+  "desc": "Pánské kalhoty s vynikajícími vlastnostmi. Použitím kombinace tří funkčních materiálů s vysokou prodyšností a odolností a dokonalým střihovým technickým provedením jsou určeny pro nejnáročnější aktivity v přírodě. Vhodné pro skialpinismus, horolezectví, turistiku a celou řadu sportovních aktivit.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Spandex, 100 % Nylon Spandex Armortex, 100 % PES BiStretch, 100 % PES Softshell, Bi Stretch"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Odepínatelné šle",
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/marol_pants_grafit_black.ai.png"
+   },
+   {
+    "name": "jeans blue/dark grey",
+    "art": "rozkresy_web/marol_pants_jeans_blue_dark_grey.ai.png"
+   },
+   {
+    "name": "khaki/dark grey",
+    "art": "rozkresy_web/marol_pants_khaki_dark_grey.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "PACO": {
+  "name": "PACO",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/PACO_orange_red_front.jpg",
+  "back": "resized/PACO_orange_red_back.jpg",
+  "desc": "Špičková bunda s velmi dobrou tepelnou izolací. Použitý velmi lehký a větruodolný svrchní materiál a kvalitní izolace zaručují komfort po celý rok. Můžete ji využít jako střední vrstvu ale také samostatně, jako bundu pro různé sportovní aktivity či volný čas.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon Ripstop",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/paco_jeans_blue_dark_lagoon.ai.png"
+   },
+   {
+    "name": "grafit black/black",
+    "art": "rozkresy_web/paco_grafit_black_black.ai.png"
+   },
+   {
+    "name": "orange/red",
+    "art": "rozkresy_web/paco_orange_red.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "METRIC": {
+  "name": "METRIC",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/METRIC_front.jpg",
+  "back": "resized/METRIC_back.jpg",
+  "desc": "Pánská bunda moderní konstrukce. Lehký nylon ripstop materiál s výplní v kombinaci se soft nylonem. Vhodná pro různé celoroční sportovní aktivity i nošení ve městě.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop + 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/Metric_jeans_blue_dark_lagoon.ai.png"
+   },
+   {
+    "name": "dark grey/black",
+    "art": "rozkresy_web/Metric_dark_grey_black.ai.png"
+   },
+   {
+    "name": "mustard/khaki",
+    "art": "rozkresy_web/Metric_mustard_khaki.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "DOUBLE": {
+  "name": "DOUBLE",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/DOUBLE_jeans_blue_dark_lagoon_front.jpg",
+  "back": "resized/DOUBLE_jeans_blue_dark_lagoon_back.jpg",
+  "desc": "Lehká universální sportovní oboustranná bunda určená pro různé outdoorové aktivity, krátké procházky do hor, nebo na výlety do města v chladnějších dnech. Vnitřní a vnější strana v různých barvách a provedení, na jedné straně hladká a na druhé straně prošívaná s lehkou výplní s dutého vlákna a vyteplenou kapucí. Integrovaná transportní kapsa pro složení do kompaktnější a praktičtější formy pro uložení do batohu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/Double_jeans_blue_dark_lagoon.ai.png"
+   },
+   {
+    "name": "dark grey/black",
+    "art": "rozkresy_web/Double_dark_grey_black.ai.png"
+   },
+   {
+    "name": "mustard/dark lagoon",
+    "art": "rozkresy_web/double_mustard_dark_lagoon.recolor.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "RONDO SHORT": {
+  "name": "RONDO SHORT",
+  "typ": "kalhoty",
+  "serie": "active",
+  "front": "resized/RONDO_SHORT_jeans_blue_dark_grey_front.jpg",
+  "back": "resized/RONDO_SHORT_jeans_blue_dark_grey_back.jpg",
+  "desc": "Zateplené sportovní lehké pánské kalhoty v kratší variantě vhodné pro zvýšení tepelného komfortu. Jednoduché provedení a výborná hřejivost je předurčují pro celou řadu zimních sportovních aktivit i běžné každodenní nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Celorozepínací kalhoty"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/rondo_short_grafit_black.ai.png"
+   },
+   {
+    "name": "jeans blue/dark grey",
+    "art": "rozkresy_web/rondo_short_jeans_blue_dark_grey.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ZENON": {
+  "name": "ZENON",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/ZENON_jeans_blue_grafit_black_front.jpg",
+  "back": "resized/ZENON_jeans_blue_grafit_black_back.jpg",
+  "desc": "Lehká pánská sportovní bunda poskytující tepelný komfort. Kombinovaná z lehké nylonové tkaniny s tenkou vrstvou tepelné izolace a strečové pleteniny. Můžete ji využít jako střední vrstvu pod vrchní bundu, nebo také samostatně jako bundu pro různé sportovní aktivity či volný čas.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/grafit black",
+    "art": "rozkresy_web/zenon_jeans_blue_grafit_black.ai.png"
+   },
+   {
+    "name": "red/grafit black",
+    "art": "rozkresy_web/zenon_red_grafit_black.ai.png"
+   },
+   {
+    "name": "black/grafit black",
+    "art": "rozkresy_web/zenon_black_grafit_black.ai.png"
+   },
+   {
+    "name": "orange/grafit black",
+    "art": "rozkresy_web/zenon_orange_grafit_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ZEN": {
+  "name": "ZEN",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/ZEN_front.jpg",
+  "back": "resized/ZEN_back.jpg",
+  "desc": "Lehká a zároveň teplá bunda, která kombinuje zateplené prvky a strečové díly pro dobrý odvod vlhkosti. Vhodná pro všechny sportovní aktivity. Maximální ochranu zajištuje integrovaná kapuce s vysokým límcem. Rukávy, dolní okraj a kapuce jsou lemovány pružnou lycrou.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "mustard/dark lagoon",
+    "art": "rozkresy_web/zen_mustard_dark_lagoon.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/zen_red.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/zen_black.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/zen_lime_green_jeans_blue.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/zen_orange_jeans_blue.ai.png"
+   },
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/zen_jeans_blue_dark_lagoon.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ZEN VEST": {
+  "name": "ZEN VEST",
+  "typ": "vesta",
+  "serie": "active",
+  "front": "resized/ZEN_VEST_front.jpg",
+  "back": "resized/ZEN_VEST_back.jpg",
+  "desc": "Lehká vesta pro univerzální použití kombinuje zateplené prvky a strečové díly pro dobrý odvod vlhkosti. Vhodná jako samostatná vrchní vesta i jako zateplovací vnitřní vložka.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/zen_vest_black.ai.png"
+   },
+   {
+    "name": "dark lagoon",
+    "art": "rozkresy_web/zen_vest_dark_lagoon.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/zen_vest_red.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/zen_vest_lime_green_jeans_blue.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/zen_vest_orange_jeans_blue.ai.png"
+   },
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/zen_vest_jeans_blue_dark_lagoon.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ZEN PANTS": {
+  "name": "ZEN PANTS",
+  "typ": "kalhoty",
+  "serie": "active",
+  "front": "resized/ZEN_PANTS_black_front.jpg",
+  "back": "resized/ZEN_PANTS_black_back.jpg",
+  "desc": "Lehké a prodyšné technické kalhoty přímo určené pro skialp. Taktéž vhodné i pro jiné sportovní aktivity. Díky kombinaci použitých materiálů poskytuje vše pro optimální výkon - maximální volnost pohybu, zvýšenou prodyšnost a dostatečnou hřejivost.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, 100 % PES BiStretch, Bi Stretch, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black/black",
+    "art": "rozkresy_web/zen_pants_grafit_black_black.ai.png"
+   },
+   {
+    "name": "dark lagoon",
+    "art": "rozkresy_web/zen_pants_dark_lagoon.pdf.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ROCHE": {
+  "name": "ROCHE",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/ROCHE_jeans_blue_dark_lagoon_front.jpg",
+  "back": "resized/ROCHE_jeans_blue_dark_lagoon_back.jpg",
+  "desc": "Designově propracovaná, lehká a pohodlná bunda z materialu Windshield, která neprofoukne a částečně Vás ochrání před deštěm. Bunda je vhodná pro veškeré outdoorové aktivity provozované po celý rok.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, Triguard Windshield - soft"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black/black",
+    "art": "rozkresy_web/roche_grafit_black_black.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/roche_lime_green_jeans_blue.ai.png"
+   },
+   {
+    "name": "orange/dark orange",
+    "art": "rozkresy_web/roche_orange_dark_orange.ai.png"
+   },
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/roche_jeans_blue_dark_lagoon.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ROCHE PANTS": {
+  "name": "ROCHE PANTS",
+  "typ": "kalhoty",
+  "serie": "active",
+  "front": "resized/ROCHE_PANTS_grafit_black_front.jpg",
+  "back": "resized/ROCHE_PANTS_grafit_black_back.jpg",
+  "desc": "Pánské kalhoty vhodné pro všechny sportovní a volnočasové aktivity. Díky propracovanému střihu perfektně sedí, pružný materiál zajišťuje absolutní pohodlí při jakýchkoli aktivitách a membrána zaručuje výbornou ochranu před nepřízní počasí.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, Triguard Windshield - soft"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/Roche_pants_grafit_black.ai.png"
+   },
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/Roche_pants_jeans_blue.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "TECHNO": {
+  "name": "TECHNO",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/TECHNO_jeans_blue_orange_front.jpg",
+  "back": "resized/TECHNO_jeans_blue_orange_back.jpg",
+  "desc": "Celorozepínací ultralehká univerzální bunda vhodná pro aktivní pohyb v přírodě, pro cyklisty, pěší turisty i vodáky. Zajišťuje vynikající ochranu proti větru a proti slabému dešti či vlhku. Bunda se dá složit do transportního obalu, a tím zabírá minimum místa.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, Down proof, DWR"
+  },
+  "features": [
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Cyklistika",
+   "Jogging",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/jeans blue",
+    "art": "rozkresy_web/techno_black_jeans_blue.ai.png"
+   },
+   {
+    "name": "jeans blue/orange",
+    "art": "rozkresy_web/techno_jeans_blue_orange.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/techno_orange_jeans_blue.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/techno_lime_green_jeans_blue.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "CONTRA": {
+  "name": "CONTRA",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/CONTRA_front.jpg",
+  "back": "resized/CONTRA_back.jpg",
+  "desc": "Extrémně prodyšná, lehká skialpová a touringová bunda vhodná i pro jiné sportovní aktivity. Odepnutím rukávů vznikne praktická vesta. Díky kombinaci použitých materiálů poskytuje vše potřebné - extra dávku tepla, zvýšenou prodyšnost a maximální volnost pohybu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, 100 % PES BiStretch, 100 % PES Softshell, Bi Stretch, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Manžeta v rukávu",
+   "Odepínací rukávy"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "azure/grafit black",
+    "art": "rozkresy_web/contra_azure_grafit_black.ai.png"
+   },
+   {
+    "name": "red/jeans blue",
+    "art": "rozkresy_web/contra_red_jeans_blue.ai.png"
+   },
+   {
+    "name": "black/grafit black",
+    "art": "rozkresy_web/contra_black_grafit_black.ai.png"
+   },
+   {
+    "name": "orange/grafit black",
+    "art": "rozkresy_web/contra_orange_grafit_black.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/contra_lime_green_jeans_blue.ai.png"
+   },
+   {
+    "name": "mustard/dark lagoon",
+    "art": "rozkresy_web/contra_mustard_dark_lagoon.recolor.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "CONTRA PANTS": {
+  "name": "CONTRA PANTS",
+  "typ": "kalhoty",
+  "serie": "active",
+  "front": "resized/CONTRA_PANTS_black_grafit_black_front.jpg",
+  "back": "resized/CONTRA_PANTS_black_grafit_black_back.jpg",
+  "desc": "Dámské kalhoty s vynikajícími vlastnostmi. Použitím kombinace tří funkčních materiálů s vysokou prodyšností a odolností a dokonalým střihovým technickým provedením jsou určeny pro nejnáročnější aktivity v přírodě. Vhodné pro skialpinismus, horolezectví, turistiku a celou řadu sportovních aktivit.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Spandex, 100 % Nylon Spandex Armortex, 100 % PES BiStretch, 100 % PES Softshell, Bi Stretch, DWR"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Odepínatelné šle",
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/grafit black",
+    "art": "rozkresy_web/contra_pants_black_grafit_black.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "MAROLA": {
+  "name": "MAROLA",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/MAROLA_front.jpg",
+  "back": "resized/MAROLA_back.jpg",
+  "desc": "Extrémně prodyšná, lehká dámská skialpová a touringová bunda vhodná i pro jiné sportovní aktivity. Díky kombinaci použitých materiálů poskytuje vše potřebné - extra dávku tepla, zvýšenou prodyšnost a maximální volnost pohybu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, 100 % PES BiStretch, 100 % PES Softshell, Bi Stretch, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Manžeta v rukávu"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "red",
+    "art": "rozkresy_web/marola_red.ai.png"
+   },
+   {
+    "name": "mustard/grafit black",
+    "art": "rozkresy_web/marola_mustard_grafit_black.ai.png"
+   },
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/marola_grafit_black.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/marola_lime_green_jeans_blue.ai.png"
+   },
+   {
+    "name": "pinky/jeans blue",
+    "art": "rozkresy_web/marola_pinky_jeans_blue.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "MAROLA PANTS": {
+  "name": "MAROLA PANTS",
+  "typ": "kalhoty",
+  "serie": "active",
+  "front": "resized/MAROLA_PANTS_jeans_blue_front.jpg",
+  "back": "resized/MAROLA_PANTS_jeans_blue_back.jpg",
+  "desc": "Dámské kalhoty s vynikajícími vlastnostmi. Použitím kombinace tří funkčních materiálů s vysokou prodyšností a odolností a dokonalým střihovým technickým provedením jsou určeny pro nejnáročnější aktivity v přírodě. Vhodné pro skialpinismus, horolezectví, turistiku a celou řadu sportovních aktivit.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Spandex, 100 % Nylon Spandex Armortex, 100 % PES BiStretch, 100 % PES Softshell, Bi Stretch"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Odepínatelné šle",
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/marola_pants_grafit_black.ai.png"
+   },
+   {
+    "name": "jeans blue/dark grey",
+    "art": "rozkresy_web/marola_pants_jeans_blue_dark_grey.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "PACO LADY": {
+  "name": "PACO LADY",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/PACO_LADY_front.jpg",
+  "back": "resized/PACO_LADY_back.jpg",
+  "desc": "Špičková bunda s velmi dobrou tepelnou izolací. Použitý velmi lehký a větruodolný svrchní materiál a kvalitní izolace zaručují komfort po celý rok. Můžete ji využít jako střední vrstvu ale také samostatně, jako bundu pro různé sportovní aktivity či volný čas.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon Ripstop",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/paco_lady_jeans_blue_dark_lagoon.ai.png"
+   },
+   {
+    "name": "grafit black/black",
+    "art": "rozkresy_web/paco_lady_grafit_black_black.ai.png"
+   },
+   {
+    "name": "azure/pinky",
+    "art": "rozkresy_web/paco_lady_azure_pinky.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "METRIC LADY": {
+  "name": "METRIC LADY",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/METRIC_LADY_front.jpg",
+  "back": "resized/METRIC_LADY_back.jpg",
+  "desc": "Dámská bunda moderní konstrukce. Lehký nylon ripstop materiál s výplní v kombinaci se soft nylonem. Vhodná pro různé celoroční aktivity i nošení ve městě.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop + 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "pinky/dark lagoon",
+    "art": "rozkresy_web/Metric_lady_pinky_dark_lagoon.ai.png"
+   },
+   {
+    "name": "dark grey/black",
+    "art": "rozkresy_web/Metric_lady_dark_grey_black.ai.png"
+   },
+   {
+    "name": "mustard/dark lagoon",
+    "art": "rozkresy_web/Metric_lady_mustard_dark_lagoon.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "DOUBLE LADY": {
+  "name": "DOUBLE LADY",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/DOUBLE_LADY_front.jpg",
+  "back": "resized/DOUBLE_LADY_back.jpg",
+  "desc": "Lehká universální sportovní oboustranná bunda určená pro různé outdoorové aktivity, krátké procházky do hor, nebo na výlety do města v chladnějších dnech. Vnitřní a vnější strana v různých barvách a provedení, na jedné straně hladká a na druhé straně prošívaná s lehkou výplní s dutého vlákna a vyteplenou kapucí. Integrovaná transportní kapsa pro složení do kompaktnější a praktičtější formy pro uložení do batohu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "pinky/dark lagoon",
+    "art": "rozkresy_web/Double_lady_pinky_dark_lagoon.ai.png"
+   },
+   {
+    "name": "dark grey/black",
+    "art": "rozkresy_web/Double_lady_dark_grey_black.ai.png"
+   },
+   {
+    "name": "azure/dark lagoon",
+    "art": "rozkresy_web/Double_lady_azure_dark_lagoon.ai.png"
+   },
+   {
+    "name": "mustard/dark lagoon",
+    "art": "rozkresy_web/double_lady_mustard_dark_lagoon.pdf.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "RONDA": {
+  "name": "RONDA",
+  "typ": "sukně",
+  "serie": "active",
+  "front": "resized/RONDA_front.jpg",
+  "back": "resized/RONDA_back.jpg",
+  "desc": "Zateplená sportovní sukně v kratší variantě, velmi vhodná pro zvýšení tepelného komfortu. Jednoduché provedení, nízká hmotnost a výborná hřejivost z ní činí jasnou volbu pro celou řadu zimních sportovních aktivit i běžné každodenní nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "red",
+    "art": "rozkresy_web/ronda_red.ai.png"
+   },
+   {
+    "name": "dark lagoon",
+    "art": "rozkresy_web/ronda_dark_lagoon.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/ronda_black.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/ronda_lime_green_jeans_blue.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/ronda_orange_jeans_blue.ai.png"
+   },
+   {
+    "name": "pinky/jeans blue",
+    "art": "rozkresy_web/ronda_pinky_jeans_blue.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ZIPPY": {
+  "name": "ZIPPY",
+  "typ": "sukně",
+  "serie": "active",
+  "front": "resized/ZIPPY_black_front.jpg",
+  "back": "resized/ZIPPY_black_back.jpg",
+  "desc": "Zateplená sportovní sukně v kratší variantě, velmi vhodná pro zvýšení teplotního komfortu. Jednoduché provedení, nízká hmotnost a výborná hřejivost z ní činí jasnou volbu pro celou řadu zimních sportovních aktivit i běžné každodenní nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/Zippy_black.ai.png"
+   }
+  ],
+  "size": "XS – XL+"
+ },
+ "RONDA SHORT": {
+  "name": "RONDA SHORT",
+  "typ": "kalhoty",
+  "serie": "active",
+  "front": "resized/RONDA_SHORT_jeans_blue_dark_grey_front.jpg",
+  "back": "resized/RONDA_SHORT_jeans_blue_dark_grey_back.jpg",
+  "desc": "Zateplené sportovní lehké dámské kalhoty v kratší variantě vhodné pro zvýšení tepelného komfortu. Jednoduché provedení a výborná hřejivost je předurčují pro celou řadu zimních sportovních aktivit i běžné každodenní nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Celorozepínací kalhoty"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/ronda_short_grafit_black.ai.png"
+   },
+   {
+    "name": "jeans blue/dark grey",
+    "art": "rozkresy_web/ronda_short_jeans_blue_dark_grey.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ZENONA": {
+  "name": "ZENONA",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/ZENONA_azure_grafit_black_front.jpg",
+  "back": "resized/ZENONA_azure_grafit_black_back.jpg",
+  "desc": "Lehká dámská sportovní bunda poskytující tepelný komfort. Kombinovaná z lehké nylonové tkaniny s tenkou vrstvou tepelné izolace a strečové pleteniny. Můžete ji využít jako střední vrstvu pod vrchní bundu, nebo také samostatně jako bundu pro různé sportovní aktivity či volný čas.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "azure/grafit black",
+    "art": "rozkresy_web/zenona_azure_grafit_black.ai.png"
+   },
+   {
+    "name": "red/grafit black",
+    "art": "rozkresy_web/zenona_red_grafit_black.ai.png"
+   },
+   {
+    "name": "black/grafit black",
+    "art": "rozkresy_web/zenona_black_grafit_black.ai.png"
+   },
+   {
+    "name": "orange/grafit black",
+    "art": "rozkresy_web/zenona_orange_grafit_black.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ZENA": {
+  "name": "ZENA",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/ZENA_front.jpg",
+  "back": "resized/ZENA_back.jpg",
+  "desc": "Lehká a zároveň teplá dámská bunda, která kombinuje zateplené prvky a strečové díly pro dobrý odvod vlhkosti. Vhodná pro všechny sportovní aktivity. Maximální ochranu zajištuje integrovaná kapuce s vysokým límcem. Rukávy, dolní okraj a kapuce jsou lemovány pružnou lycrou.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "mustard/dark lagoon",
+    "art": "rozkresy_web/zena_mustard_dark_lagoon.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/zena_red.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/zena_black.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/zena_lime_green_jeans_blue.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/zena_orange_jeans_blue.ai.png"
+   },
+   {
+    "name": "pinky/jeans blue",
+    "art": "rozkresy_web/zena_pinky_jeans_blue.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ZENA VEST": {
+  "name": "ZENA VEST",
+  "typ": "vesta",
+  "serie": "active",
+  "front": "resized/ZENA_VEST_orange_jeans_blue_front.jpg",
+  "back": "resized/ZENA_VEST_orange_jeans_blue_back.jpg",
+  "desc": "Lehká dámská vesta pro univerzální použití kombinuje zateplené prvky a strečové díly pro dobrý odvod vlhkosti. Vhodná jako samostatná vrchní vesta i jako zateplovací vnitřní vložka.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, Down proof, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "red",
+    "art": "rozkresy_web/zena_vest_red.ai.png"
+   },
+   {
+    "name": "dark lagoon",
+    "art": "rozkresy_web/zena_vest_dark_lagoon.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/zena_vest_black.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/zena_vest_lime_green_jeans_blue.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/zena_vest_orange_jeans_blue.ai.png"
+   },
+   {
+    "name": "pinky/jeans blue",
+    "art": "rozkresy_web/zena_vest_pinky_jeans_blue.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ZENA PANTS": {
+  "name": "ZENA PANTS",
+  "typ": "kalhoty",
+  "serie": "active",
+  "front": "resized/ZENA_PANTS_black_front.jpg",
+  "back": "resized/ZENA_PANTS_black_back.jpg",
+  "desc": "Lehké a prodyšné dámské technické kalhoty přímo určené pro skialp. Taktéž vhodné i pro jiné sportovní aktivity. Díky kombinaci použitých materiálů poskytuje vše pro optimální výkon - maximální volnost pohybu, zvýšenou prodyšnost a dostatečnou hřejivost.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, 100 % Nylon Spandex, 100 % PES BiStretch, Bi Stretch, DWR",
+   "VNITŘNÍ MATERIÁL": "100 % Nylon, 100 % PES",
+   "MATERIÁL VÝPLNĚ": "100 % PES"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black/black",
+    "art": "rozkresy_web/zena_pants_grafit_black_black.ai.png"
+   },
+   {
+    "name": "dark lagoon",
+    "art": "rozkresy_web/zena_pants_dark_lagoon.pdf.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ROCHE LADY": {
+  "name": "ROCHE LADY",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/ROCHE_LADY_grafit_black_black_front.jpg",
+  "back": "resized/ROCHE_LADY_grafit_black_black_back.jpg",
+  "desc": "Designově propracovaná, lehká a pohodlná bunda z materialu Windshield, která neprofoukne a částečně Vás ochrání před deštěm. Bunda je vhodná pro veškeré outdoorové aktivity provozované po celý rok.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, Triguard Windshield - soft"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black/black",
+    "art": "rozkresy_web/roche_lady_grafit_black_black.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue",
+    "art": "rozkresy_web/roche_lady_lime_green_jeans_blue.ai.png"
+   },
+   {
+    "name": "orange/dark orange",
+    "art": "rozkresy_web/roche_lady_orange_dark_orange.ai.png"
+   },
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/roche_lady_jeans_blue_dark_lagoon.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ROCHE LADY PANTS": {
+  "name": "ROCHE LADY PANTS",
+  "typ": "kalhoty",
+  "serie": "active",
+  "front": "resized/ROCHE_LADY_PANTS_grafit_black_front.jpg",
+  "back": "resized/ROCHE_LADY_PANTS_grafit_black_back.jpg",
+  "desc": "Dámské kalhoty vhodné pro všechny sportovní a volnočasové aktivity. Díky propracovanému střihu perfektně sedí, pružný materiál zajišťuje absolutní pohodlí při jakýchkoli aktivitách a membrána zaručuje výbornou ochranu před nepřízní počasí.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, Triguard Windshield - soft"
+  },
+  "features": [
+   "4-směrný elastický materiál",
+   "Prodyšnost 5 000 g/ m2 za 24 h",
+   "Reflexní prvky",
+   "Vodonepropustnost 8 000 mm"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/Roche_lady_pants_grafit_black.ai.png"
+   },
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/Roche_lady_pants_jeans_blue.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "TECHNO LADY": {
+  "name": "TECHNO LADY",
+  "typ": "bunda",
+  "serie": "active",
+  "front": "resized/TECHNO_LADY_orange_jeans_blue_front.jpg",
+  "back": "resized/TECHNO_LADY_orange_jeans_blue_back.jpg",
+  "desc": "Celorozepínací ultralehká univerzální bunda vhodná pro aktivní pohyb v přírodě, pro cyklisty, pěší turisty i vodáky. Zajišťuje vynikající ochranu proti větru a proti slabému dešti či vlhku. Bunda se dá složit do transportního obalu, a tím zabírá minimum místa.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon Ripstop, Down proof, DWR"
+  },
+  "features": [
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Cyklistika",
+   "Jogging",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/pinky",
+    "art": "rozkresy_web/techno_lady_black_pinky.ai.png"
+   },
+   {
+    "name": "jeans blue/orange",
+    "art": "rozkresy_web/techno_lady_jeans_blue_orange.ai.png"
+   },
+   {
+    "name": "orange/jeans blue",
+    "art": "rozkresy_web/techno_lady_orange_jeans_blue.ai.png"
+   },
+   {
+    "name": "pinky/jeans blue",
+    "art": "rozkresy_web/techno_lady_pinky_jeans_blue.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ERVI": {
+  "name": "ERVI",
+  "typ": "bunda",
+  "serie": "thermolayer",
+  "front": "resized/ERVI_dark_navy_navy_front.jpg",
+  "back": "resized/ERVI_dark_navy_navy_back.jpg",
+  "desc": "Velmi lehká multifunkční pánská bunda, která kombinuje zateplenou vestu z kvalitního materiálu s výplní a s rukávy z elastického fleecového materiálu. ideální pro aktivní odpočinek. Pružný a lehký materiál zajišťuje pohodlné nošení pro celou řadu sportovních aktivit. Vhodná jako samostatná vrchní bunda i jako zateplovací vnitřní vložka.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, 100 % PES Fleece, Down proof, DWR",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black/black",
+    "art": "rozkresy_web/ervi_grafit_black_black.ai.png"
+   },
+   {
+    "name": "dark navy/navy",
+    "art": "rozkresy_web/ervi_dark_navy_navy.ai.png"
+   },
+   {
+    "name": "dark khaki/khaki",
+    "art": "rozkresy_web/ervi_dark_khaki_khaki.ai.png"
+   },
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/ervi_jeans_blue_dark_lagoon.ai.png"
+   },
+   {
+    "name": "dark red/red",
+    "art": "rozkresy_web/ervi_dark_red_red.pdf.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "OASIS": {
+  "name": "OASIS",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/OASIS_jeans_blue_dark_navy_front.jpg",
+  "back": "resized/OASIS_jeans_blue_dark_navy_back.jpg",
+  "desc": "Pánská mikina, která díky elastické struktuře materiálu dobře padne a příjemně se nosí v chladných podmínkách, kdy nahrazuje druhou vrstvu oblečení. Za příznivějších podmínek dobře poslouží jako vnější vrstva oblečení, udržuje příjemný tepelný komfort při dobrém odvětrávání těla.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue/dark navy",
+    "art": "rozkresy_web/oasis_jeans_blue_dark_navy.ai.png"
+   },
+   {
+    "name": "khaki/grafit black",
+    "art": "rozkresy_web/oasis_khaki_grafit_black.ai.png"
+   },
+   {
+    "name": "orange/grafit black",
+    "art": "rozkresy_web/oasis_orange_grafit_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "BART": {
+  "name": "BART",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/BART_front.jpg",
+  "back": "resized/BART_back.jpg",
+  "desc": "Pánská celorozepínací mikina s kapucí, určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička. Zároveň je vkusným oblečením pro volný čas. Vhodná pro outdoorové i volnočasové aktivity, stejně jako pro každodenní nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/bart_jeans_blue.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/bart_red.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/bart_black.ai.png"
+   },
+   {
+    "name": "orange/dark orange",
+    "art": "rozkresy_web/bart_orange_dark_orange.ai.png"
+   },
+   {
+    "name": "khaki/black",
+    "art": "rozkresy_web/bart_khaki_black.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ECHO": {
+  "name": "ECHO",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/ECHO_dark_navy_front.jpg",
+  "back": "resized/ECHO_dark_navy_back.jpg",
+  "desc": "Velmi lehká multifunkční bunda, ideální pro aktivní odpočinek. Pružný a lehký materiál zajišťuje pohodlné nošení pro celou řadu sportovních aktivit.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Microfleece Spandex"
+  },
+  "features": [
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Běžecké lyžování",
+   "Jogging",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "dark navy",
+    "art": "rozkresy_web/echo_dark_navy.ai.png"
+   },
+   {
+    "name": "orange",
+    "art": "rozkresy_web/echo_orange.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/echo_black.ai.png"
+   },
+   {
+    "name": "mustard",
+    "art": "rozkresy_web/echo_mustard.pdf.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "THERM": {
+  "name": "THERM",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/THERM_front.jpg",
+  "back": null,
+  "desc": "Pánská termo mikina pro vrstvení nebo samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "mustard/dark lagoon/mustard",
+    "art": "rozkresy_web/therm_mustard.png"
+   },
+   {
+    "name": "jeans blue/dark lagoon/jeans blue",
+    "art": "rozkresy_web/therm_jeans_blue.png"
+   },
+   {
+    "name": "grey/black/red",
+    "art": "rozkresy_web/therm_grey_black_red.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "THERM 1/2 ZIP": {
+  "name": "THERM 1/2 ZIP",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/THERM_1_2_ZIP_front.jpg",
+  "back": "resized/THERM_1_2_ZIP_back.jpg",
+  "desc": "Pánská termo mikina s krátkým zipem pro vrstvení nebo samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/grey/jeans blue",
+    "art": "rozkresy_web/therm_short_black.png"
+   },
+   {
+    "name": "mustard/grey/dark lagoon",
+    "art": "rozkresy_web/therm_short_mustard.png"
+   },
+   {
+    "name": "jeans blue/grey/lime green",
+    "art": "rozkresy_web/therm_short_jeans_blue.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "MICRON": {
+  "name": "MICRON",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/MICRON_jeans_blue_front.jpg",
+  "back": "resized/MICRON_jeans_blue_back.jpg",
+  "desc": "Lehká pánská mikina primárně určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička, ale i jako vkusné oblečení pro volný čas. Použitá pletenina vyniká lehkostí a jedinečnou hodnotou termo izolace. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/micron_jeans_blue.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/micron_red.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/micron_black.ai.png"
+   },
+   {
+    "name": "grey/black",
+    "art": "rozkresy_web/micron_grey_black.ai.png"
+   },
+   {
+    "name": "mustard",
+    "art": "rozkresy_web/micron_mustard.pdf.png"
+   },
+   {
+    "name": "navy",
+    "art": "rozkresy_web/micron_navy.recolor.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "MICRON VEST": {
+  "name": "MICRON VEST",
+  "typ": "vesta",
+  "serie": "thermolayer",
+  "front": "resized/MICRON_VEST_front.jpg",
+  "back": "resized/MICRON_VEST_back.jpg",
+  "desc": "Pánská vesta z PES structured jersey, lehká a hřejivá. Vhodná jako střední vrstva i pro samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/micron_vest_black.pdf.png"
+   },
+   {
+    "name": "grey/black",
+    "art": "rozkresy_web/micron_vest_grey_black.pdf.png"
+   },
+   {
+    "name": "dark lagoon/mustard",
+    "art": "rozkresy_web/micron_vest_dark_lagoon_mustard.pdf.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "CAPE": {
+  "name": "CAPE",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/CAPE_grey_melange_front.jpg",
+  "back": "resized/CAPE_grey_melange_back.jpg",
+  "desc": "Pohodlná teplá pánská mikina Trimm CAPE přes hlavu, vyrobená z bavlněného materiálu, který je příjemně hebký, elastický a vhodný na denní nošení. Spodní lem je zakončen elastickým žebrováním, mikina je vybavena kapucí a klokaní kapsou.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "65% Cotton 35% PES"
+  },
+  "features": [],
+  "activities": [
+   "Běžné nošení",
+   "Freeride a Snowboarding",
+   "Jogging"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/cape_black.ai.png"
+   },
+   {
+    "name": "navy",
+    "art": "rozkresy_web/cape_navy.ai.png"
+   },
+   {
+    "name": "khaki",
+    "art": "rozkresy_web/cape_khaki.ai.png"
+   },
+   {
+    "name": "grey melange",
+    "art": "rozkresy_web/cape_grey_melange.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "CLINIC": {
+  "name": "CLINIC",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/CLINIC_grey_melange_orange_front.jpg",
+  "back": "resized/CLINIC_grey_melange_orange_back.jpg",
+  "desc": "Příjemná odlehčená fleecová mikina s krátkým zipem. Vhodná jako zateplovací vrstva i pro samostatné nošení. Nezklame u žádné sportovní aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grey melange/orange",
+    "art": "rozkresy_web/clinic_grey_melange_orange.ai.png"
+   },
+   {
+    "name": "grey melange/jeans blue",
+    "art": "rozkresy_web/clinic_grey_melange_jeans_blue.ai.png"
+   },
+   {
+    "name": "lite khaki/grey melange",
+    "art": "rozkresy_web/clinic_lite_khaki_grey_melange.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "CLINIC PANTS": {
+  "name": "CLINIC PANTS",
+  "typ": "kalhoty",
+  "serie": "thermolayer",
+  "front": "resized/CLINIC_PANTS_grey_melange_orange_front.jpg",
+  "back": "resized/CLINIC_PANTS_grey_melange_orange_back.jpg",
+  "desc": "Příjemné odlehčené fleecové kalhoty. Vhodné jako zateplovací vrstva i pro samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grey melange/orange",
+    "art": "rozkresy_web/clinic_pants_grey_melange_orange.ai.png"
+   },
+   {
+    "name": "grey melange/jeans blue",
+    "art": "rozkresy_web/clinic_pants_grey_melange_jeans_blue.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "CUBE": {
+  "name": "CUBE",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/CUBE_blue_front.jpg",
+  "back": "resized/CUBE_blue_back.jpg",
+  "desc": "Příjemná odlehčená fleecová mikina s krátkým zipem. Vhodná jako zateplovací vrstva i pro samostatné nošení. Nezklame u žádné sportovní aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Microfleece Spandex"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/Cube_grafit_black.ai.png"
+   },
+   {
+    "name": "dark navy",
+    "art": "rozkresy_web/Cube_dark_navy.ai.png"
+   },
+   {
+    "name": "orange",
+    "art": "rozkresy_web/Cube_orange.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "BRAVE": {
+  "name": "BRAVE",
+  "typ": "tričko",
+  "serie": "thermolayer",
+  "front": "resized/BRAVE_navy_front.jpg",
+  "back": "resized/BRAVE_navy_back.jpg",
+  "desc": "Pánské tričko s dlouhým rukávem ze strečového bavlněného materiálu. Hodí se na všechny druhy sportovních i nesportovních aktivit. Možnost využít jako spodní termo vrstvu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "95% Cotton 5% Spandex"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/brave_black.ai.png"
+   },
+   {
+    "name": "white",
+    "art": "rozkresy_web/brave_white.ai.png"
+   },
+   {
+    "name": "navy",
+    "art": "rozkresy_web/brave_navy.ai.png"
+   },
+   {
+    "name": "dark grey",
+    "art": "rozkresy_web/brave_dark_grey.ai.png"
+   },
+   {
+    "name": "dark lagoon",
+    "art": "rozkresy_web/brave_dark_lagoon.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/brave_red.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "DESTINY": {
+  "name": "DESTINY",
+  "typ": "tričko",
+  "serie": "thermolayer",
+  "front": "resized/DESTINY_front.jpg",
+  "back": "resized/DESTINY_back.jpg",
+  "desc": "Tričko Destiny ohromí svým hladkým strečovým rychleschnoucím materiálem. Ideální pro sport a pohybové aktivity.",
+  "fields": {
+   "MATERIÁL VÝPLNĚ": "100 % PES, 100 % PES Elastan"
+  },
+  "features": [],
+  "activities": [],
+  "colors": [
+   {
+    "name": "white",
+    "art": "rozkresy_web/destiny_white.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/destiny_black.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/destiny_red.ai.png"
+   },
+   {
+    "name": "lemon",
+    "art": "rozkresy_web/destiny_lemon.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "CHANGE": {
+  "name": "CHANGE",
+  "typ": "tričko",
+  "serie": "thermolayer",
+  "front": "resized/CHANGE_blue_melange_front.jpg",
+  "back": "resized/CHANGE_back.jpg",
+  "desc": "Tričko Change vyrobené ze 100 % recyklovaného micro polyesteru technologií interlokové pique. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu \"melange\". Ideální pro sport a všechny pohybové aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, 100 % PES Elastan"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Cyklistika",
+   "Jogging",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "blue melange",
+    "art": "rozkresy_web/change_blue_melange.ai.png"
+   },
+   {
+    "name": "black melange",
+    "art": "rozkresy_web/change_black_melange.ai.png"
+   },
+   {
+    "name": "grey melange",
+    "art": "rozkresy_web/change_grey_melange.ai.png"
+   },
+   {
+    "name": "orange melange",
+    "art": "rozkresy_web/change_orange_melange.ai.png"
+   }
+  ],
+  "size": "S – 3XL"
+ },
+ "ERVI LADY": {
+  "name": "ERVI LADY",
+  "typ": "bunda",
+  "serie": "thermolayer",
+  "front": "resized/ERVI_LADY_dark_navy_navy_front.jpg",
+  "back": "resized/ERVI_LADY_dark_navy_navy_back.jpg",
+  "desc": "Velmi lehká multifunkční dámská bunda, která kombinuje zateplenou vestu z kvalitního materiálu s výplní a s rukávy z elastického fleecového materiálu. ideální pro aktivní odpočinek. Pružný a lehký materiál zajišťuje pohodlné nošení pro celou řadu sportovních aktivit. Vhodná jako samostatná vrchní bunda i jako zateplovací vnitřní vložka.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, 100 % PES Fleece, Down proof, DWR",
+   "MATERIÁL VÝPLNĚ": "Synthetic down"
+  },
+  "features": [
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black/black",
+    "art": "rozkresy_web/ervi_lady_grafit_black_black.ai.png"
+   },
+   {
+    "name": "dark navy/navy",
+    "art": "rozkresy_web/ervi_lady_dark_navy_navy.ai.png"
+   },
+   {
+    "name": "dark khaki/khaki",
+    "art": "rozkresy_web/ervi_lady_dark_khaki_khaki.ai.png"
+   },
+   {
+    "name": "jeans blue/dark lagoon",
+    "art": "rozkresy_web/ervi_lady_jeans_blue_dark_lagoon.ai.png"
+   },
+   {
+    "name": "dark red/red",
+    "art": "rozkresy_web/ervi_lady_dark_red_red.pdf.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "OASIS LADY": {
+  "name": "OASIS LADY",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/OASIS_LADY_front.jpg",
+  "back": "resized/OASIS_LADY_back.jpg",
+  "desc": "Dámská mikina, která díky elastické struktuře materiálu dobře padne a příjemně se nosí v chladných podmínkách, kdy nahrazuje druhou vrstvu oblečení. Za příznivějších podmínek dobře poslouží jako vnější vrstva oblečení, udržuje příjemný tepelný komfort při dobrém odvětrávání těla.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "red/dark navy",
+    "art": "rozkresy_web/oasis_lady_red_dark_navy.ai.png"
+   },
+   {
+    "name": "khaki/grafit black",
+    "art": "rozkresy_web/oasis_lady_khaki_grafit_black.ai.png"
+   },
+   {
+    "name": "azure/dark navy",
+    "art": "rozkresy_web/oasis_lady_azure_dark_navy.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "VERONA": {
+  "name": "VERONA",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/VERONA_front.jpg",
+  "back": "resized/VERONA_back.jpg",
+  "desc": "Lehká dámská mikina s kapucí a konstrukcí střihu „přes hlavu“, primárně určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička, ale i jako vkusné oblečení pro volný čas. Použitá pletenina vyniká lehkostí a jedinečnou hodnotou termo izolace. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "pinky",
+    "art": "rozkresy_web/verona_pinky.ai.png"
+   },
+   {
+    "name": "grey",
+    "art": "rozkresy_web/verona_grey.ai.png"
+   },
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/verona_jeans_blue.ai.png"
+   },
+   {
+    "name": "mustard",
+    "art": "rozkresy_web/verona_mustard.pdf.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "BART LADY": {
+  "name": "BART LADY",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/BART_LADY_red_front.jpg",
+  "back": "resized/BART_LADY_red_back.jpg",
+  "desc": "Lehká dámská mikina primárně určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička, ale i jako vkusné oblečení pro volný čas. Použitá pletenina vyniká lehkostí a jedinečnou hodnotou termo izolace. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/bart_lady_jeans_blue.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/bart_lady_red.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/bart_lady_black.ai.png"
+   },
+   {
+    "name": "orange/dark orange",
+    "art": "rozkresy_web/bart_lady_orange_dark_orange.ai.png"
+   },
+   {
+    "name": "azure/black",
+    "art": "rozkresy_web/bart_lady_azure_black.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "ECHO LADY": {
+  "name": "ECHO LADY",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/ECHO_LADY_front.jpg",
+  "back": "resized/ECHO_LADY_back.jpg",
+  "desc": "Velmi lehká multifunkční bunda, ideální pro aktivní odpočinek. Pružný a lehký materiál zajišťuje pohodlné nošení pro celou řadu sportovních aktivit.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Microfleece Spandex"
+  },
+  "features": [
+   "Reflexní prvky"
+  ],
+  "activities": [
+   "Běžecké lyžování",
+   "Jogging",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "azure",
+    "art": "rozkresy_web/echo_lady_azure.ai.png"
+   },
+   {
+    "name": "orange",
+    "art": "rozkresy_web/echo_lady_orange.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/echo_lady_black.ai.png"
+   },
+   {
+    "name": "mustard",
+    "art": "rozkresy_web/echo_lady_mustard.pdf.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "THERM LADY": {
+  "name": "THERM LADY",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/THERM_LADY_front.jpg",
+  "back": "resized/THERM_LADY_back.jpg",
+  "desc": "Dámská termo mikina pro vrstvení nebo samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/grey/red",
+    "art": "rozkresy_web/therm_lady_black_grey_red.ai.png"
+   },
+   {
+    "name": "mustard/dark lagoon/mustard",
+    "art": "rozkresy_web/therm_lady_mustard_dark_lagoon_mustard.ai.png"
+   },
+   {
+    "name": "lime green/jeans blue/lime green",
+    "art": "rozkresy_web/therm_lady_lime_green_jeans_blue_lime_green.ai.png"
+   },
+   {
+    "name": "pinky/jeans blue/white",
+    "art": "rozkresy_web/therm_lady_pinky_jeans_blue_white.ai.png"
+   }
+  ],
+  "size": "XS – 2XL"
+ },
+ "THERM LADY 1/2 ZIP": {
+  "name": "THERM LADY 1/2 ZIP",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/THERM_LADY_1_2_ZIP_front.jpg",
+  "back": "resized/THERM_LADY_1_2_ZIP_back.jpg",
+  "desc": "Dámská termo mikina s krátkým zipem pro vrstvení nebo samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/grey/pinky",
+    "art": "rozkresy_web/therm_lady_short_black_grey_pink.png"
+   },
+   {
+    "name": "mustard/grey/dark lagoon",
+    "art": "rozkresy_web/therm_lady_short_mustad.png"
+   },
+   {
+    "name": "lime green/grey/jeans blue",
+    "art": "rozkresy_web/therm_lady_short_lime_green.png"
+   }
+  ],
+  "size": "XS – 2XL"
+ },
+ "MICRON LADY": {
+  "name": "MICRON LADY",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/MICRON_LADY_red_front.jpg",
+  "back": "resized/MICRON_LADY_red_back.jpg",
+  "desc": "Lehká dámská mikina primárně určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička, ale i jako vkusné oblečení pro volný čas. Použitá pletenina vyniká lehkostí a jedinečnou hodnotou termo izolace. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [
+   "Kapsa na mobil"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/micron_lady_jeans_blue.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/micron_lady_red.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/micron_lady_black.ai.png"
+   },
+   {
+    "name": "pinky",
+    "art": "rozkresy_web/micron_lady_pinky.ai.png"
+   },
+   {
+    "name": "mustard",
+    "art": "rozkresy_web/micron_lady_mustard.pdf.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "MICRON LADY VEST": {
+  "name": "MICRON LADY VEST",
+  "typ": "vesta",
+  "serie": "thermolayer",
+  "front": "resized/MICRON_LADY_VEST_front.jpg",
+  "back": "resized/MICRON_LADY_VEST_back.jpg",
+  "desc": "Dámská vesta z PES structured jersey, lehká a hřejivá. Vhodná jako střední vrstva i pro samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/micron_lady_vest_black.pdf.png"
+   },
+   {
+    "name": "grey/pinky",
+    "art": "rozkresy_web/micron_lady_vest_grey_pinky.pdf.png"
+   },
+   {
+    "name": "mustard/grey",
+    "art": "rozkresy_web/micron_lady_vest_mustard_grey.pdf.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "NEXA": {
+  "name": "NEXA",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/NEXA_blue_front.jpg",
+  "back": "resized/NEXA_blue_back.jpg",
+  "desc": "Lehká dámská mikina, která perfektně funguje jako druhá vrstva oblečení. Ideální na jakékoli sportovní či volnočasové aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Hardfleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grey melange",
+    "art": "rozkresy_web/nexa_grey_melange.ai.png"
+   },
+   {
+    "name": "blue melange",
+    "art": "rozkresy_web/nexa_blue_melange.ai.png"
+   }
+  ],
+  "size": "XS – XL"
+ },
+ "NEONA": {
+  "name": "NEONA",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/NEONA_blue_melange_front.jpg",
+  "back": "resized/NEONA_blue_melange_back.jpg",
+  "desc": "Fleecová mikina je vhodná jako druhá vrstva pod svrchní oblečení, ale díky kapuci a zajímavému designu je vhodná i jako samostatná bunda pro veškeré sportovní aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Soft Fleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "navy melange",
+    "art": "rozkresy_web/Neona_navy_melange.ai.png"
+   },
+   {
+    "name": "grey melange",
+    "art": "rozkresy_web/Neona_grey_melange.ai.png"
+   },
+   {
+    "name": "khaki melange",
+    "art": "rozkresy_web/Neona_khaki_melange.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "CAPE LADY": {
+  "name": "CAPE LADY",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/CAPE_LADY_front.jpg",
+  "back": "resized/CAPE_LADY_back.jpg",
+  "desc": "Pohodlná teplá dámská mikina Trimm CAPE LADY přes hlavu, vyrobená z bavlněného materiálu, který je příjemně hebký, elastický a vhodný na denní nošení. Spodní lem je zakončen elastickým žebrováním, mikina je vybavena kapucí a klokaní kapsou.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "65% Cotton 35% PES"
+  },
+  "features": [],
+  "activities": [
+   "Běžné nošení",
+   "Freeride a Snowboarding",
+   "Jogging"
+  ],
+  "colors": [
+   {
+    "name": "grey melange",
+    "art": "rozkresy_web/cape_lady_grey_melange.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/cape_lady_black.ai.png"
+   },
+   {
+    "name": "azure",
+    "art": "rozkresy_web/cape_lady_azure.ai.png"
+   },
+   {
+    "name": "khaki",
+    "art": "rozkresy_web/cape_lady_khaki.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "CLINIC LADY": {
+  "name": "CLINIC LADY",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/CLINIC_LADY_front.jpg",
+  "back": "resized/CLINIC_LADY_back.jpg",
+  "desc": "Příjemná odlehčená fleecová mikina s krátkým zipem. Vhodná jako zateplovací vrstva i pro samostatné nošení. Nezklame u žádné sportovní aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grey melange/pinky",
+    "art": "rozkresy_web/clinic_lady_grey_melange_pinky.ai.png"
+   },
+   {
+    "name": "grey melange/army green",
+    "art": "rozkresy_web/clinic_lady_grey_melange_army_green.ai.png"
+   },
+   {
+    "name": "lite khaki/grey melange",
+    "art": "rozkresy_web/clinic_lady_lite_khaki_grey_melange.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "CLINIC LADY PANTS": {
+  "name": "CLINIC LADY PANTS",
+  "typ": "kalhoty",
+  "serie": "thermolayer",
+  "front": "resized/CLINIC_LADY_PANTS_grey_melange_azure_front.jpg",
+  "back": "resized/CLINIC_LADY_PANTS_grey_melange_azure_back.jpg",
+  "desc": "Příjemné odlehčené dámské fleecové kalhoty. Vhodné jako zateplovací vrstva i pro samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grey melange/pinky",
+    "art": "rozkresy_web/clinic_lady_pants_grey_melange_pinky.ai.png"
+   },
+   {
+    "name": "grey melange/army green",
+    "art": "rozkresy_web/clinic_lady_pants_grey_melange_army_green.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "CUBE LADY": {
+  "name": "CUBE LADY",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/CUBE_LADY_azure_front.jpg",
+  "back": "resized/CUBE_LADY_azure_back.jpg",
+  "desc": "Příjemná odlehčená fleecová mikina s krátkým zipem. Vhodná jako zateplovací vrstva i pro samostatné nošení. Nezklame u žádné sportovní aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Microfleece Spandex"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "grafit black",
+    "art": "rozkresy_web/Cube_lady_grafit_black.ai.png"
+   },
+   {
+    "name": "pinky",
+    "art": "rozkresy_web/Cube_lady_pinky.ai.png"
+   },
+   {
+    "name": "azure",
+    "art": "rozkresy_web/Cube_lady_azure.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "BRAVE LADY": {
+  "name": "BRAVE LADY",
+  "typ": "tričko",
+  "serie": "thermolayer",
+  "front": "resized/BRAVE_LADY_front.jpg",
+  "back": "resized/BRAVE_LADY_back.jpg",
+  "desc": "Dámské tričko s dlouhým rukávem ze strečového bavlněného materiálu. Hodí se na všechny druhy sportovních i nesportovních aktivit. Možnost využít jako spodní termo vrstvu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "95% Cotton 5% Spandex"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/brave_lady_black.ai.png"
+   },
+   {
+    "name": "white",
+    "art": "rozkresy_web/brave_lady_white.ai.png"
+   },
+   {
+    "name": "navy",
+    "art": "rozkresy_web/brave_lady_navy.ai.png"
+   },
+   {
+    "name": "dark grey",
+    "art": "rozkresy_web/brave_lady_dark_grey.ai.png"
+   },
+   {
+    "name": "dark lagoon",
+    "art": "rozkresy_web/brave_lady_dark_lagoon.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/brave_lady_red.ai.png"
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "DESTINY LADY": {
+  "name": "DESTINY LADY",
+  "typ": "tričko",
+  "serie": "thermolayer",
+  "front": "resized/DESTINY_LADY_front.jpg",
+  "back": "resized/DESTINY_LADY_back.jpg",
+  "desc": "Tričko Destiny ohromí svým hladkým strečovým rychleschnoucím materiálem. Ideální pro sport a pohybové aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, 100 % PES Elastan"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Cyklistika",
+   "Jogging",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "white",
+    "art": "rozkresy_web/destiny_lady_white.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/destiny_lady_black.ai.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/destiny_lady_red.ai.png"
+   },
+   {
+    "name": "neon orange",
+    "art": "rozkresy_web/destiny_lady_neon_orange.ai.png"
+   },
+   {
+    "name": "neon pink",
+    "art": "rozkresy_web/destiny_lady_neon_pink.ai.png"
+   }
+  ],
+  "size": "XS – XL"
+ },
+ "CHANGE LADY": {
+  "name": "CHANGE LADY",
+  "typ": "tričko",
+  "serie": "thermolayer",
+  "front": "resized/CHANGE_LADY_white_front.jpg",
+  "back": "resized/CHANGE_LADY_back.jpg",
+  "desc": "Tričko Change vyrobené ze 100 % recyklovaného micro polyesteru technologií interlokové pique. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu \"melange\". Ideální pro sport a všechny pohybové aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, 100 % PES Elastan"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Cyklistika",
+   "Jogging",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "white",
+    "art": "rozkresy_web/change_lady_white.ai.png"
+   },
+   {
+    "name": "black melange",
+    "art": "rozkresy_web/change_lady_black_melange.ai.png"
+   },
+   {
+    "name": "grey melange",
+    "art": "rozkresy_web/change_lady_grey_melange.ai.png"
+   },
+   {
+    "name": "orange melange",
+    "art": "rozkresy_web/change_lady_orange_melange.ai.png"
+   },
+   {
+    "name": "blue melange",
+    "art": "rozkresy_web/change_lady_blue_melange.ai.png"
+   }
+  ],
+  "size": "XS – XL"
+ },
+ "BART JR": {
+  "name": "BART JR",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/BART_JR_jeans_blue_black_front.jpg",
+  "back": "resized/BART_JR_jeans_blue_black_back.jpg",
+  "desc": "Dětská celorozepínací mikina s kapucí, určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička. Zároveň je vkusným oblečením pro volný čas. Vhodná pro outdoorové i volnočasové aktivity, stejně jako pro každodenní nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "orange/dark orange",
+    "art": "rozkresy_web/bart_jr_orange_dark_orange.ai.png"
+   },
+   {
+    "name": "jeans blue/black",
+    "art": "rozkresy_web/bart_jr_jeans_blue_black.ai.png"
+   }
+  ],
+  "size": "116 – 164"
+ },
+ "BART LADY JR": {
+  "name": "BART LADY JR",
+  "typ": "mikina",
+  "serie": "thermolayer",
+  "front": "resized/BART_LADY_JR_orange_dark_orange_front.jpg",
+  "back": "resized/BART_LADY_JR_orange_dark_orange_back.jpg",
+  "desc": "Dětská celorozepínací mikina s kapucí, určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička. Zároveň je vkusným oblečením pro volný čas. Vhodná pro outdoorové i volnočasové aktivity, stejně jako pro každodenní nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "4-směrný elastický materiál"
+  ],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "orange/dark orange",
+    "art": "rozkresy_web/bart_lady_jr_orange_dark_orange.ai.png"
+   },
+   {
+    "name": "azure/black",
+    "art": "rozkresy_web/bart_lady_jr_azure_black.ai.png"
+   }
+  ],
+  "size": "116 – 164"
+ },
+ "ALPIN 40": {
+  "name": "ALPIN 40",
+  "typ": "batoh",
+  "serie": "backpacks",
+  "front": "resized/ALPIN_40_jeans_blue_orange_front.jpg",
+  "back": "resized/ALPIN_40_jeans_blue_orange_back.jpg",
+  "desc": "Odolný praktický batoh s propracovanými detaily. Anatomicky nastavitelný zádový systém. Vhodný pro víkendovou turistiku, kolo a všechny zimní lyžařské aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Nylon + 100 % PES, PU coating, Ripstop texture"
+  },
+  "features": [
+   "Anatomicky tvarované nosné popruhy",
+   "Boční kapsy",
+   "Boční kompresní popruhy",
+   "Integrovaná pláštěnka",
+   "Nastavitelný nosný systém",
+   "Přední přístup do hlavní komory",
+   "Příprava pro vodní rezervoár",
+   "Stabilizační polstrovaný bederní popruh"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "dark orange/orange",
+    "art": "rozkresy_web/alpin_40_dark_orange_orange.pdf.png"
+   },
+   {
+    "name": "black/orange",
+    "art": "rozkresy_web/alpin_40_black_orange.pdf.png"
+   },
+   {
+    "name": "jeans blue/orange",
+    "art": null
+   }
+  ],
+  "size": "40 l"
+ },
+ "COURIER 35": {
+  "name": "COURIER 35",
+  "typ": "batoh",
+  "serie": "backpacks",
+  "front": "resized/COURIER_35_blue_front.jpg",
+  "back": "resized/COURIER_35_blue_back.jpg",
+  "desc": "Pohodlný, lehký batoh pro víkendové výlety do hor s maximálně prodyšným zádovým systémem. Je propracovaný do nejmenších detailů se spoustou vychytávek a vyniká i moderními barevnými kombinacemi.",
+  "fields": {
+   "MATERIÁL": "100 % PES, 100 % PES Ripstop, PU coating, Ripstop texture"
+  },
+  "features": [
+   "Reflexní prvky",
+   "Nastavitelný nosný systém",
+   "Anatomicky tvarované nosné popruhy",
+   "Balanční dotahy pro zvýšení stability",
+   "Stabilizační polstrovaný bederní popruh",
+   "Poutko pro snazší manipulaci s batohem",
+   "Výstup pro hydratační systém",
+   "Přezka pro snazší připevnění výstroje",
+   "Příprava pro vodní rezervoár",
+   "Spodní popruhy pro uchycení karimatky",
+   "Samostatná vnitřní přihrádka pro elektroniku",
+   "Boční kompresní popruhy",
+   "Přední síťová kapsa",
+   "Boční kapsy",
+   "Kapsa na bederním pásu"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "blue/orange",
+    "art": null
+   },
+   {
+    "name": "black/orange",
+    "art": "rozkresy_web/courier_35_black_orange.pdf.png"
+   },
+   {
+    "name": "green/orange",
+    "art": "rozkresy_web/courier_35_green_orange.pdf.png"
+   }
+  ],
+  "size": "35 l"
+ },
+ "OTAWA 30": {
+  "name": "OTAWA 30",
+  "typ": "batoh",
+  "serie": "backpacks",
+  "front": "resized/OTAWA_30_black_front.jpg",
+  "back": "resized/OTAWA_30_black_back.jpg",
+  "desc": "Turistický batoh moderní konstrukce. Díky systému odvětrání zad je vhodný i pro delší turistické aktivity, ale i jednodenní túry.",
+  "fields": {
+   "MATERIÁL": "100 % PES, PU coating, Ripstop texture, 100 % Nylon Ripstop"
+  },
+  "features": [
+   "Anatomicky tvarované nosné popruhy",
+   "Poutko pro snazší manipulaci s batohem",
+   "Výstup pro hydratační systém",
+   "Přezka pro snazší připevnění výstroje",
+   "Integrovaná pláštěnka",
+   "Příprava pro vodní rezervoár",
+   "Spodní popruhy pro uchycení karimatky",
+   "Samostatná vnitřní přihrádka pro elektroniku",
+   "Boční kompresní popruhy",
+   "Boční kapsy",
+   "Nastavitelný dodatečný objem"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "black",
+    "art": null
+   },
+   {
+    "name": "blue",
+    "art": "rozkresy_web/otawa_30_blue.pdf.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/otawa_30_red.pdf.png"
+   }
+  ],
+  "size": "30 l"
+ },
+ "MANTA 30": {
+  "name": "MANTA 30",
+  "typ": "batoh",
+  "serie": "backpacks",
+  "front": "resized/MANTA_30_black_orange_front.jpg",
+  "back": "resized/MANTA_30_black_orange_back.jpg",
+  "desc": "Odolný praktický batoh s propracovanými detaily. Samozřejmostí je anatomicky nastavitelný zádový systém. Vhodný pro víkendovou turistiku, kolo i lyže.",
+  "fields": {
+   "MATERIÁL": "100 % PES, PU coating, Dobby texture"
+  },
+  "features": [
+   "Reflexní prvky",
+   "Nastavitelný nosný systém",
+   "Anatomicky tvarované nosné popruhy",
+   "Balanční dotahy pro zvýšení stability",
+   "Stabilizační polstrovaný bederní popruh",
+   "Poutko pro snazší manipulaci s batohem",
+   "Výstup pro hydratační systém",
+   "Přezka pro snazší připevnění výstroje",
+   "Integrovaná pláštěnka",
+   "Příprava pro vodní rezervoár",
+   "Samostatná vnitřní přihrádka pro elektroniku",
+   "Boční kompresní popruhy",
+   "Přední přístup do hlavní komory",
+   "Boční kapsy",
+   "Kapsa na bederním pásu",
+   "Nastavitelný dodatečný objem"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "black/orange",
+    "art": null
+   },
+   {
+    "name": "blue/orange",
+    "art": "rozkresy_web/manta_30_blue_orange.pdf.png"
+   },
+   {
+    "name": "green/orange",
+    "art": "rozkresy_web/manta_30_green_orange.pdf.png"
+   }
+  ],
+  "size": "30 l"
+ },
+ "HAVANA 28": {
+  "name": "HAVANA 28",
+  "typ": "batoh",
+  "serie": "backpacks",
+  "front": "resized/HAVANA_28_blue_front.jpg",
+  "back": "resized/HAVANA_28_blue_back.jpg",
+  "desc": "HAVANA 28 je menší model z řady batohů moderních konstrukčních tvarů. Anatomicky tvarovaný zádový systém a popruhy přes hruď i bedra přispívají k dobrému pocitu při nošení.Vybavením,lehkostí i objemem je vhodný pro veškeré sportovní aktivity",
+  "fields": {
+   "MATERIÁL": "100 % PES, PU coating, Ripstop texture, 100 % Nylon Ripstop"
+  },
+  "features": [
+   "Přezka se signální píšťalkou"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "blue",
+    "art": null
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/havana_28_black.pdf.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/havana_28_red.pdf.png"
+   }
+  ],
+  "size": "28 l"
+ },
+ "ESCAPE 25": {
+  "name": "ESCAPE 25",
+  "typ": "batoh",
+  "serie": "backpacks",
+  "front": "resized/ESCAPE_25_lagoon_blue_front.jpg",
+  "back": "resized/ESCAPE_25_lagoon_blue_back.jpg",
+  "desc": "Moderní a velice funkční turistický batoh. Provedením ve svěžích barvách zaujme zejména dívky a mladé ženy. Díky dokonalému systému odvětrání zad je vhodný i pro delší turistické aktivity.",
+  "fields": {
+   "MATERIÁL": "100 % PES, PU coating, 100 % Nylon Ripstop"
+  },
+  "features": [
+   "Reflexní prvky",
+   "Anatomicky tvarované nosné popruhy",
+   "Poutko pro snazší manipulaci s batohem",
+   "Přezka pro snazší připevnění výstroje",
+   "Spodní popruhy pro uchycení karimatky",
+   "Boční kompresní popruhy",
+   "Boční kapsy"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "lagoon/blue",
+    "art": null
+   },
+   {
+    "name": "grey/off white",
+    "art": "rozkresy_web/escape_25_grey_off_white.pdf.png"
+   },
+   {
+    "name": "lime green/grey",
+    "art": "rozkresy_web/escape_25_lime_green_grey.pdf.png"
+   }
+  ],
+  "size": "25 l"
+ },
+ "CRUISER 12": {
+  "name": "CRUISER 12",
+  "typ": "batoh",
+  "serie": "backpacks",
+  "front": "resized/CRUISER_12_black_orange_front.jpg",
+  "back": "resized/CRUISER_12_black_orange_back.jpg",
+  "desc": "Lehký batoh mimo jiné vybavený speciální kapsou pro vodní rezervoár je ideálním řešením pro pěší turistiku a cyklistiku. Hlavní kapsa na zip, kapsa s organizérem, vnější kapsa ze síťoviny. Ramenní popruh polstrován. Anatomicky tvarované popruhy, nastavitelný hrudní popruh.",
+  "fields": {
+   "MATERIÁL": "100 % PES, PU coating"
+  },
+  "features": [
+   "Reflexní prvky",
+   "Anatomicky tvarované nosné popruhy",
+   "Poutko pro snazší manipulaci s batohem",
+   "Výstup pro hydratační systém",
+   "Příprava pro vodní rezervoár",
+   "Spodní popruhy pro uchycení karimatky",
+   "Boční kompresní popruhy",
+   "Kapsa s organizérem",
+   "Vnitřní termokapsa",
+   "Systém pro upevnění helmy"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "black/orange",
+    "art": null
+   }
+  ],
+  "size": "12 l"
+ },
+ "BIKER 6": {
+  "name": "BIKER 6",
+  "typ": "batoh",
+  "serie": "backpacks",
+  "front": "resized/BIKER_6_blue_dark_grey_front.jpg",
+  "back": "resized/BIKER_6_blue_dark_grey_back.jpg",
+  "desc": "Speciální batoh s lehkou konstrukcí s vodním rezervoárem ideální pro extremně náročné vytrvalostní sporty. Hlavní kapsa na zip, vnější kapsa ze síťoviny, elastická šňůrka na předním panelu. Ramenní popruh polstrován. Anatomicky tvarované popruhy. Nastavitelný hrudní popruh.",
+  "fields": {
+   "MATERIÁL": "100 % PES, PU coating, Ripstop texture"
+  },
+  "features": [
+   "Reflexní prvky",
+   "Anatomicky tvarované nosné popruhy",
+   "Poutko pro snazší manipulaci s batohem",
+   "Výstup pro hydratační systém",
+   "Příprava pro vodní rezervoár",
+   "Spodní popruhy pro uchycení karimatky",
+   "Boční kompresní popruhy",
+   "Systém pro upevnění helmy",
+   "Přezka se signální píšťalkou"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "blue/dark grey",
+    "art": null
+   },
+   {
+    "name": "black/dark grey",
+    "art": "rozkresy_web/biker_6_black_dark_grey.pdf.png"
+   },
+   {
+    "name": "green/dark grey",
+    "art": "rozkresy_web/biker_6_green_dark_grey.pdf.png"
+   }
+  ],
+  "size": "6 l"
+ },
+ "START 4": {
+  "name": "START 4",
+  "typ": "batoh",
+  "serie": "backpacks",
+  "front": "resized/START_4_black_dark_grey_front.jpg",
+  "back": "resized/START_4_black_dark_grey_back.jpg",
+  "desc": "Lehký cyklo batůžek vhodný taktéž pro vytrvalostní sporty a běžky. Konstrukce počítá s vodním rezervoárem. Je opatřen nastavitelnými prodyšnými popruhy. Samozřejmostí jsou polstrovaná odvětraná záda.",
+  "fields": {
+   "MATERIÁL": "100 % PES, PU coating, Ripstop texture"
+  },
+  "features": [
+   "Reflexní prvky",
+   "Anatomicky tvarované nosné popruhy",
+   "Poutko pro snazší manipulaci s batohem",
+   "Výstup pro hydratační systém",
+   "Příprava pro vodní rezervoár",
+   "Spodní popruhy pro uchycení karimatky",
+   "Kapsa s organizérem"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "black/orange",
+    "art": "rozkresy_web/start_4_black_orange.pdf.png"
+   },
+   {
+    "name": "blue/orange",
+    "art": "rozkresy_web/start_4_blue_orange.pdf.png"
+   }
+  ],
+  "size": "4 l"
+ },
+ "NEW YORK 100": {
+  "name": "NEW YORK 100",
+  "typ": "taška",
+  "serie": "backpacks",
+  "front": "resized/NEW_YORK_100_black_melange_front.jpg",
+  "back": "resized/NEW_YORK_100_black_melange_back.jpg",
+  "desc": "Cestovní taška z odolných materiálů opatřená kolečky. Možnost otevření uprostřed (přepážka). Vysouvací madlo pro transport s využitím integrovaných koleček. Zesílené dno a ochrana hran zavazadla.",
+  "fields": {
+   "MATERIÁL": "100 % PES, PU coating"
+  },
+  "features": [
+   "Boční kompresní popruhy",
+   "Zesílené dno",
+   "Vysouvací madlo",
+   "Integrovaná kolečka"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "grey melange",
+    "art": "rozkresy_web/new_york_100_grey_melange.pdf.png"
+   }
+  ],
+  "size": "100 l"
+ },
+ "BOOTBAG 20": {
+  "name": "BOOTBAG 20",
+  "typ": "taška",
+  "serie": "backpacks",
+  "front": "resized/BOOTBAG_20_black_red_front.jpg",
+  "back": null,
+  "desc": "Vak na lyžařskou obuv z odolného materiálu. Celosezónní využití pro inline brusle i lyžařské boty včetně helmy a chráničů. Hlavní část se zadním vstupem, přední kapsa na doplňky, nastavitelný a odnímatelný ramenní popruh, polstrovaný úchyt.",
+  "fields": {
+   "MATERIÁL": "100 % PES, PU coating, Dobby texture"
+  },
+  "features": [
+   "Větrání",
+   "Odepínatelný popruh",
+   "Zesílené dno"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "black/red",
+    "art": null
+   }
+  ],
+  "size": "20 l"
+ },
+ "BACKUP 10": {
+  "name": "BACKUP 10",
+  "typ": "taška",
+  "serie": "backpacks",
+  "front": "resized/BACKUP_10_lime_green_front.jpg",
+  "back": null,
+  "desc": "Lehká sbalitelná taška přes rameno. Snadno ji zmanipulujete do malého balíčku, ideální pro nákupy nebo cestování. Všude výborně uskladnitelná díky své nízké váze a objemu.",
+  "fields": {
+   "MATERIÁL": "100 % Nylon Ripstop"
+  },
+  "features": [
+   "Boční kompresní popruhy"
+  ],
+  "activities": [],
+  "colors": [
+   {
+    "name": "lime green",
+    "art": null
+   },
+   {
+    "name": "orange",
+    "art": "rozkresy_web/backup_10_orange.pdf.png"
+   }
+  ],
+  "size": "10 l"
+ },
+ "MONEY BELT": {
+  "name": "MONEY BELT",
+  "typ": "ledvinka",
+  "serie": "backpacks",
+  "front": "resized/MONEY_BELT_beige_front.jpg",
+  "back": null,
+  "desc": "Praktická, nenápadná peněženka Money Belt je vhodná především na cestování a sport. Díky tělové barvě a tenkému provedení je pod oblečením takřka neviditelná. Uvnitř rozdělena na jednotlivé kapsy. Elastický pásek s přezkou umožňuje snadnou manipulaci.",
+  "fields": {
+   "MATERIÁL": "100 % Nylon Ripstop"
+  },
+  "features": [],
+  "activities": [],
+  "colors": [
+   {
+    "name": "beige",
+    "art": null
+   }
+  ],
+  "size": null
+ },
+ "MONEY": {
+  "name": "MONEY",
+  "typ": "peněženka",
+  "serie": "backpacks",
+  "front": "resized/MONEY_black_melange_front.jpg",
+  "back": null,
+  "desc": "Praktická peněženka na cestování a každodenní použití. Přihrádka na doklady, prostor na až čtyři platební karty uvnitř, přihrádka na mince, prostor pro bankovky.",
+  "fields": {
+   "MATERIÁL": "100 % PES, PU coating"
+  },
+  "features": [],
+  "activities": [],
+  "colors": [
+   {
+    "name": "black/melange",
+    "art": null
+   }
+  ],
+  "size": null
+ },
+ "BAGS RAIN COVER - S": {
+  "name": "BAGS RAIN COVER - S",
+  "typ": "pláštěnka",
+  "serie": "backpacks",
+  "front": "resized/BAGS_RAIN_COVER_S_signal_green_reflex_front.jpg",
+  "back": null,
+  "desc": "Pláštěnka na batohy Trimm ve velikosti S tedy pro batohy o velikosti 20-35l. Je vyrobená z odolného nepromokavého materiálu ve výrazné barvě s reflexním potiskem, zvyšuje se tak i vaše bezpečnost za zhoršené viditelnosti. Spolehlivě ochrání batoh i věci v něm před nepříznivým počasím. Uchycuje se na batoh pomocí gumového očka.",
+  "fields": {
+   "MATERIÁL": "100 % PES Oxford"
+  },
+  "features": [],
+  "activities": [],
+  "colors": [
+   {
+    "name": "signal green",
+    "art": null
+   }
+  ],
+  "size": "20-35 l"
+ },
+ "BAGS RAIN COVER - L": {
+  "name": "BAGS RAIN COVER - L",
+  "typ": "pláštěnka",
+  "serie": "backpacks",
+  "front": "resized/BAGS_RAIN_COVER_L_signal_green_reflex_front.jpg",
+  "back": null,
+  "desc": "Pláštěnka na batohy Trimm ve velikosti L, tedy pro batohy o velikosti 35-50l. Je vyrobená z odolného nepromokavého materiálu ve výrazné barvě s reflexním potiskem, zvyšuje se tak i vaše bezpečnost za zhoršené viditelnosti. Spolehlivě ochrání batoh i věci v něm před nepříznivým počasím. Uchycuje se na batoh pomocí gumového očka.",
+  "fields": {
+   "MATERIÁL": "100 % PES Oxford"
+  },
+  "features": [],
+  "activities": [],
+  "colors": [
+   {
+    "name": "signal green",
+    "art": null
+   }
+  ],
+  "size": "35-50 l"
+ },
+ "DOTS": {
+  "name": "DOTS",
+  "typ": "čepice",
+  "serie": "accessories",
+  "front": "resized/DOTS_front.jpg",
+  "back": null,
+  "desc": "Stylová pletená zimní čepice Trimm vás spolehlivě zahřeje i během toho nejchladnějšího počasí. Čepice je perfektní volbou na jakoukoli aktivitu v chladném počasí, ať už se jedná o horskou turistiku, lyže nebo běžky. Čepici samozřejmě můžete využít i na každodenní nošení v městské džungli. Microfleece na vnitřní straně je velmi příjemný.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, 100% Acrylic",
+   "VNITŘNÍ MATERIÁL": "100 % PES, fleece"
+  },
+  "features": [],
+  "activities": [
+   "Běžecké lyžování",
+   "Jogging",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/dots_black.pdf.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/dots_red.pdf.png"
+   },
+   {
+    "name": "white",
+    "art": "rozkresy_web/dots_white.pdf.png"
+   },
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/dots_jeans_blue.pdf.png"
+   },
+   {
+    "name": "navy",
+    "art": "rozkresy_web/dots_navy.pdf.png"
+   },
+   {
+    "name": "grey melange",
+    "art": "rozkresy_web/dots_grey_melange.pdf.png"
+   }
+  ],
+  "size": "one size"
+ },
+ "PURE": {
+  "name": "PURE",
+  "typ": "čepice",
+  "serie": "accessories",
+  "front": "resized/PURE_front.jpg",
+  "back": null,
+  "desc": "Stylová pletená zimní čepice Trimm Purevás spolehlivě zahřeje i během toho nejchladnějšího počasí. Čepice je perfektní volbou na jakoukoli aktivitu v chladném počasí, ať už se jedná o horskou turistiku, lyže nebo běžky. Čepici samozřejmě můžete využít i na každodenní nošení v městské džungli. Microfleece na vnitřní straně je velmi příjemný.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, 100% Acrylic",
+   "VNITŘNÍ MATERIÁL": "100 % PES, fleece"
+  },
+  "features": [],
+  "activities": [
+   "Běžecké lyžování",
+   "Jogging",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": null
+   },
+   {
+    "name": "red",
+    "art": null
+   },
+   {
+    "name": "white",
+    "art": null
+   },
+   {
+    "name": "jeans blue",
+    "art": null
+   },
+   {
+    "name": "navy",
+    "art": null
+   },
+   {
+    "name": "grey",
+    "art": null
+   },
+   {
+    "name": "grey melange",
+    "art": null
+   }
+  ],
+  "size": "one size"
+ },
+ "RIBBON": {
+  "name": "RIBBON",
+  "typ": "čepice",
+  "serie": "accessories",
+  "front": "resized/RIBBON_front.jpg",
+  "back": null,
+  "desc": "Pletená čepice s kontrastním designem pro chladné dny.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % Acrylic"
+  },
+  "features": [],
+  "activities": [
+   "Běžecké lyžování",
+   "Jogging",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/jeans blue",
+    "art": null
+   },
+   {
+    "name": "black/orange",
+    "art": null
+   },
+   {
+    "name": "black/grey",
+    "art": null
+   },
+   {
+    "name": "black/mustard",
+    "art": null
+   },
+   {
+    "name": "black/lime green",
+    "art": null
+   }
+  ],
+  "size": "one size"
+ },
+ "BREAK": {
+  "name": "BREAK",
+  "typ": "čepice",
+  "serie": "accessories",
+  "front": "resized/BREAK_front.jpg",
+  "back": null,
+  "desc": "Sportovní čepice z příjemného elastického materiálu, vhodná pro všechny sportovní aktivity – kolo, běžky, běh apod.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES + 100 % PES Elastan"
+  },
+  "features": [],
+  "activities": [
+   "Běžecké lyžování",
+   "Jogging",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/break_black.ai.png"
+   },
+   {
+    "name": "lime green",
+    "art": null
+   },
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/break_jeans_blue.recolor.png"
+   },
+   {
+    "name": "pinky",
+    "art": "rozkresy_web/break_pinky.recolor.png"
+   }
+  ],
+  "size": "S/M – L/XL"
+ },
+ "MICRO UNI": {
+  "name": "MICRO UNI",
+  "typ": "čepice",
+  "serie": "accessories",
+  "front": "resized/MICRO_UNI_black_front.jpg",
+  "back": null,
+  "desc": "Jednoduchá čepice s plochými švy, je mírně elastická a díky tomu dobře padne, neztratíte se s ní ani ve tmě díky reflexnímu logu na přední časti.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/micro_uni_black.ai.png"
+   },
+   {
+    "name": "lime green",
+    "art": "rozkresy_web/micro_uni_lime_green.ai.png"
+   }
+  ],
+  "size": "S/M – L/XL"
+ },
+ "MICRON UNI": {
+  "name": "MICRON UNI",
+  "typ": "Nákrčník/čepice",
+  "serie": "accessories",
+  "front": "resized/MICRON_UNI_front.jpg",
+  "back": null,
+  "desc": "MICRON UNI je univerzální doplněk 2v1, který slouží jako nákrčník i čepice. Díky plochým švům a elastickému materiálu (100 % PES structured jersey) perfektně padne. Stažení šňůrkou z jedné strany umožňuje snadné přizpůsobení. Reflexní logo na přední straně zajišťuje lepší viditelnost i za tmy, což oceníte při outdoorových aktivitách, jako je lyžování, jogging nebo trekking",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES structured jersey"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Freeride a Snowboarding",
+   "Jogging",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "red",
+    "art": "rozkresy_web/micron_uni_red.pdf.png"
+   },
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/micron_uni_jeans_blue.pdf.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/micron_uni_black.pdf.png"
+   },
+   {
+    "name": "grey",
+    "art": "rozkresy_web/micron_uni_grey.pdf.png"
+   },
+   {
+    "name": "pinky",
+    "art": "rozkresy_web/micron_uni_pinky.pdf.png"
+   }
+  ],
+  "size": "S/M – L/XL"
+ },
+ "SMOOTH": {
+  "name": "SMOOTH",
+  "typ": "kšiltovka",
+  "serie": "accessories",
+  "front": "resized/SMOOTH_front.jpg",
+  "back": null,
+  "desc": "Velmi moderní kšiltovka vyrobená ze 100% elastického polyesteru. Materiál na omak připomíná bavlnu, jedná se o nový trendy materiál. Čepice má nízký profil, zahnutý kšilt a zapínání je na gumový snapback. Zapínání je měkké a ohebné. Kšiltovka má 6 panelů, ale přední šev je skrytý.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES"
+  },
+  "features": [],
+  "activities": [],
+  "colors": [
+   {
+    "name": "navy",
+    "art": null
+   },
+   {
+    "name": "black",
+    "art": null
+   },
+   {
+    "name": "white",
+    "art": null
+   },
+   {
+    "name": "grey",
+    "art": null
+   },
+   {
+    "name": "warm green",
+    "art": null
+   }
+  ],
+  "size": "uni"
+ },
+ "COOL FEELING": {
+  "name": "COOL FEELING",
+  "typ": "kšiltovka",
+  "serie": "accessories",
+  "front": "resized/COOL_FEELING_grey_front.jpg",
+  "back": null,
+  "desc": "Kšiltovka z funkčního materiálu který zajišťuje vždy příjemný pocit z nošení. Zapínání vzadu pomocí suchého zipu a plastového očka.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES"
+  },
+  "features": [],
+  "activities": [],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/cool_feeling_black.ai.png"
+   },
+   {
+    "name": "grey",
+    "art": "rozkresy_web/cool_feeling_grey.ai.png"
+   },
+   {
+    "name": "pinky",
+    "art": "rozkresy_web/cool_feeling_pinky.ai.png"
+   },
+   {
+    "name": "jeans blue",
+    "art": "rozkresy_web/cool_feeling_jeans_blue.ai.png"
+   },
+   {
+    "name": "azure",
+    "art": "rozkresy_web/cool_feeling_azure.ai.png"
+   },
+   {
+    "name": "lime green",
+    "art": "rozkresy_web/cool_feeling_lime_green.ai.png"
+   },
+   {
+    "name": "navy",
+    "art": "rozkresy_web/cool_feeling_navy.recolor.png"
+   },
+   {
+    "name": "red",
+    "art": "rozkresy_web/cool_feeling_red.recolor.png"
+   },
+   {
+    "name": "white",
+    "art": "rozkresy_web/cool_feeling_white.recolor.png"
+   }
+  ],
+  "size": "uni"
+ },
+ "FIVE PANEL SNAP": {
+  "name": "FIVE PANEL SNAP",
+  "typ": "kšiltovka",
+  "serie": "accessories",
+  "front": "resized/FIVE_PANEL_SNAP_army_green_front.jpg",
+  "back": null,
+  "desc": "Příjemná kšiltovka se síťovanými zadními panely, které zajišťují přirozené odvětrání.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES + cotton"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Jogging",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "army green",
+    "art": "rozkresy_web/five_panel_snap_army_green.ai.png"
+   },
+   {
+    "name": "grey",
+    "art": "rozkresy_web/five_panel_snap_grey.ai.png"
+   },
+   {
+    "name": "black",
+    "art": "rozkresy_web/five_panel_snap_black.ai.png"
+   },
+   {
+    "name": "navy",
+    "art": "rozkresy_web/five_panel_snap_navy.ai.png"
+   }
+  ],
+  "size": "uni"
+ },
+ "POWER": {
+  "name": "POWER",
+  "typ": "kšiltovka",
+  "serie": "accessories",
+  "front": "resized/POWER_black_front.jpg",
+  "back": null,
+  "desc": "Velmi moderní a stylová kšiltovka vyrobená ze 100% polyesteru. Jedná se o vysoce kvalitní funkční polyster - RIPSTOP. Materiál se vyznačuje především vysokou pevností. Kšiltovka má vyztužené čelo, nízký profil, antibakteriální vnitřní potící pásek, perforované boční panely a je rychleschnoucí.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžné nošení",
+   "Jogging",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/power_black.ai.png"
+   },
+   {
+    "name": "royal blue",
+    "art": "rozkresy_web/power_royal_blue.ai.png"
+   }
+  ],
+  "size": "uni"
+ },
+ "SPORT": {
+  "name": "SPORT",
+  "typ": "nákrčník",
+  "serie": "accessories",
+  "front": "resized/SPORT_black_front.jpg",
+  "back": null,
+  "desc": "Lehký elastický unisex nákrčník Trimm SPORT. Vyroben ze strečového a rychleschnoucího 100% PES materiálu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES"
+  },
+  "features": [],
+  "activities": [
+   "Běžecké lyžování",
+   "Jogging",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/sport_black.ai.png"
+   }
+  ],
+  "size": "UNI"
+ },
+ "PORTY": {
+  "name": "PORTY",
+  "typ": "nákrčník",
+  "serie": "accessories",
+  "front": "resized/PORTY_black_front.jpg",
+  "back": null,
+  "desc": "Lehký elastický unisex multifunkční šátek Trimm PORTY. Vyroben ze strečového a rychleschnoucího 100% PES materiálu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES"
+  },
+  "features": [],
+  "activities": [
+   "Běžecké lyžování",
+   "Jogging",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/porty_black.ai.png"
+   }
+  ],
+  "size": "UNI"
+ },
+ "ONES": {
+  "name": "ONES",
+  "typ": "pláštěnka",
+  "serie": "accessories",
+  "front": "resized/ONES_khaki_front.jpg",
+  "back": null,
+  "desc": "Univerzální pončo včetně funkční kapuce a krytu na batoh spolehlivě ochrání před deštivým počasím.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, PU coating, Taped seams"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Lepené švy",
+   "Vodonepropustnost 2 000 mm"
+  ],
+  "activities": [
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "yellow",
+    "art": "rozkresy_web/ones_yellow.pdf.png"
+   },
+   {
+    "name": "orange",
+    "art": "rozkresy_web/ones_orange.pdf.png"
+   },
+   {
+    "name": "khaki",
+    "art": null
+   }
+  ],
+  "size": "uni"
+ },
+ "BASIC": {
+  "name": "BASIC",
+  "typ": "pláštěnka",
+  "serie": "accessories",
+  "front": "resized/BASIC_orange_front.jpg",
+  "back": null,
+  "desc": "Pláštěnka BASIC vás ochrání před nepříznivým počasím, jako je déšť nebo studený vítr.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, PU coating, Taped seams, 2 000 mm H₂O"
+  },
+  "features": [],
+  "activities": [],
+  "colors": [
+   {
+    "name": "khaki",
+    "art": "rozkresy_web/basic_khaki.pdf.png"
+   },
+   {
+    "name": "yellow",
+    "art": "rozkresy_web/basic_yellow.pdf.png"
+   },
+   {
+    "name": "orange",
+    "art": null
+   }
+  ],
+  "size": "uni"
+ },
+ "TOPIC": {
+  "name": "TOPIC",
+  "typ": "pláštěnka",
+  "serie": "accessories",
+  "front": "resized/TOPIC_yellow_front.jpg",
+  "back": null,
+  "desc": "Propracované pončo TOPIC je vyrobeno z lehkého voděodolného materiálu a je opatřeno lepenými švy. Pončo je dostatečně velké, aby překrylo i batoh. Je možné jej použít i jako přístřešek, nebo plachtu proti slunci.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, PU coating, Taped seams"
+  },
+  "features": [
+   "3D regulovatelná kapuce",
+   "Lepené švy",
+   "Vodonepropustnost 2 000 mm"
+  ],
+  "activities": [
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "orange",
+    "art": "rozkresy_web/topic_orange.pdf.png"
+   },
+   {
+    "name": "yellow",
+    "art": null
+   },
+   {
+    "name": "khaki",
+    "art": "rozkresy_web/topic_khaki.pdf.png"
+   }
+  ],
+  "size": "uni"
+ },
+ "STOPERS": {
+  "name": "STOPERS",
+  "typ": "návleky",
+  "serie": "accessories",
+  "front": "resized/STOPERS_black_front.jpg",
+  "back": null,
+  "desc": "Turistické návleky vyrobené z maximálně odolného materiálu. Součástí je přední masivní zip krytý légou a háčkem. Návleky zabraňují nepříjemnému pronikání sněhu a vlhka. V létě jsou ideální pro vysokohorskou turistiku. Také výborně ochrání před ušpiněním nebo protržením oděvu.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Ripstop, PU coating"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/stopers_black.ai.png"
+   }
+  ],
+  "size": "S – L"
+ },
+ "STOPERS SHORT": {
+  "name": "STOPERS SHORT",
+  "typ": "návleky",
+  "serie": "accessories",
+  "front": "resized/STOPERS_SHORT_black_front.jpg",
+  "back": "resized/STOPERS_SHORT_black_back.jpg",
+  "desc": "Nízké turistické návleky z maximálně odolného materiálu. Zabraňují pronikání sněhu, deště, vlhkosti a kamínků. V létě ideální pro vysokohorskou turistiku.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Ripstop, PU coating"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black",
+    "art": "rozkresy_web/stopers_short_black.ai.png"
+   }
+  ],
+  "size": "S – L"
+ },
+ "SNAKE 24MM W": {
+  "name": "SNAKE 24mm W",
+  "typ": "pásek",
+  "serie": "accessories",
+  "front": "resized/SNAKE_24mm_W_black_pinky_front.jpg",
+  "back": "resized/SNAKE_24mm_W_black_pinky_back.jpg",
+  "desc": "Dámský sportovní pásek s plastovou sponou a jednoduchým zapínáním. Opasek je z lehkého materiálu. V barvě tmavě černé s pinky vzorem. V různých velikostech XS/2XL. Díky své šířce je tento pásek použitelný do každých kalhot, vhodný pro cyklistiku, běžky či turistiku.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, Plastic"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/pinky",
+    "art": null
+   }
+  ],
+  "size": "XS – XXL"
+ },
+ "SNAKE 24MM M": {
+  "name": "SNAKE 24mm M",
+  "typ": "pásek",
+  "serie": "accessories",
+  "front": "resized/SNAKE_24mm_M_black_blue_front.jpg",
+  "back": "resized/SNAKE_24mm_M_black_blue_back.jpg",
+  "desc": "Pánský sportovní pásek s plastovou sponou a jednoduchým zapínáním. Opasek je z lehkého materiálu. V barvě tmavě černé s blue vzorem. V různých velikostech S/3XL. Díky své šířce je tento pásek použitelný do každých kalhot, vhodný pro cyklistiku, běžky či turistiku.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES, Plastic"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "colors": [
+   {
+    "name": "black/blue",
+    "art": null
+   }
+  ],
+  "size": "S – 3XL"
+ }
+}
