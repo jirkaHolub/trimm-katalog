@@ -180,7 +180,8 @@ def parse_column(sec,name,x0,x1,pno):
             else:       # vzorník dole, název pod ním; hranice = polovina vzdálenosti k sousednímu číslu
                 lab=[n for n in names if -8<=(n['x']-x)<26 and y<n['y']<y+100]
                 lab.sort(key=lambda n:n['y'])
-                box=fitz.Rect(x-4,y+8,x+41,(lab[0]['y']-2) if lab else y+70)
+                right=[u['x'] for u in nums if u['x']>x+5 and abs(u['y']-y)<8]
+                box=fitz.Rect(x-4,y+8,(x+41) if right else (x+64),(lab[0]['y']-2) if lab else y+70)
             label=fix(' '.join(n['text'] for n in sorted(lab,key=lambda n:(round(n['y']),n['x']))[:2])).strip()
             if box.width<10 or box.height<8: continue
             pix=d[pno].get_pixmap(dpi=300,clip=box,colorspace=fitz.csRGB)

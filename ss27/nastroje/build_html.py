@@ -132,7 +132,7 @@ for sec,meta in SECTIONS.items():
     toc+='</div></div>'
     chips+=f'<button class="chip" data-f="{sec}" style="--tc:{meta["color"]}">{E(meta["cz"].upper())}</button>'
     pages=''.join(f'<img src="data/pdf_pages/p{p:03d}.jpg" alt="Technické informace – strana {p}" loading="lazy">' for p in meta['pages'] if os.path.exists(os.path.join(DATA,'pdf_pages',f'p{p:03d}.jpg')))
-    info=f'<details class="info"><summary>Technické informace, materiály a technologie</summary><div class="info-pages">{pages}</div></details>' if pages else ''
+    info=''
     body+=f'<section class="sec" id="sec-{sec}" data-sec="{sec}" style="--tc:{meta["color"]}"><div class="sec-head"><div class="sec-bar"></div><div><h2>{E(meta["title"])}</h2><div class="sec-cz">{E(meta["cz"])}</div></div><span class="sec-cnt">{len(items)} modelů</span></div>{info}'
     for k,v in gs.items():
         col=serie_color(sec,k)
@@ -154,8 +154,8 @@ body{width:min(100%,104rem);margin:0 auto;background:var(--bg)}
 svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round}
 .ic{display:inline-flex;font-size:16px;color:var(--accent);margin-right:5px;vertical-align:middle}
 /* HERO */
-.hero{position:relative;background:#0b1b2b url("hero-ss27.jpg") center/cover no-repeat;min-height:420px;display:flex;align-items:flex-end;padding:60px;color:#fff;overflow:hidden}
-.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 30%,rgba(0,0,0,.65))}
+.hero{position:relative;background:#fff url("hero-ss27.jpg") center/cover no-repeat;min-height:420px;display:flex;align-items:flex-end;padding:60px;color:#fff;overflow:hidden}
+.hero::after{content:'';position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0) 35%,rgba(0,0,0,.6) 100%);mask:linear-gradient(90deg,#000 0,#000 55%,transparent 85%);-webkit-mask:linear-gradient(90deg,#000 0,#000 55%,transparent 85%)}
 .hero>div{position:relative;z-index:1}
 .hero .brand{font-size:14px;letter-spacing:.35em;font-weight:800;opacity:.9}
 .hero h1{font-size:clamp(34px,6vw,84px);font-weight:900;letter-spacing:.02em;line-height:1;margin-top:10px}
