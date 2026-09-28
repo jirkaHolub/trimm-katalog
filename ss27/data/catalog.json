@@ -63,7 +63,7 @@
   ],
   "new": false,
   "sort": 0,
-  "hero": "data/pdf_photos/PACK_DSL.jpg",
+  "hero": "foto_pdf/PACK_DSL.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/PACK_DSL.png",
   "badges": [
@@ -140,7 +140,7 @@
   ],
   "new": false,
   "sort": 1,
-  "hero": "data/pdf_photos/FLY_DSL.jpg",
+  "hero": "foto_pdf/FLY_DSL.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/FLY_DSL.png",
   "badges": [
@@ -218,7 +218,7 @@
   ],
   "new": false,
   "sort": 2,
-  "hero": "data/pdf_photos/HIMLITE_DSL.jpg",
+  "hero": "foto_pdf/HIMLITE_DSL.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/HIMLITE_DSL.png",
   "badges": [
@@ -295,7 +295,7 @@
   ],
   "new": false,
   "sort": 3,
-  "hero": "data/pdf_photos/VECTOR_DSL.jpg",
+  "hero": "foto_pdf/VECTOR_DSL.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/VECTOR_DSL.png",
   "badges": [
@@ -373,7 +373,7 @@
   ],
   "new": false,
   "sort": 4,
-  "hero": "data/pdf_photos/PIONEER_DSL.jpg",
+  "hero": "foto_pdf/PIONEER_DSL.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/PIONEER_DSL.png",
   "badges": [
@@ -450,7 +450,7 @@
   ],
   "new": false,
   "sort": 5,
-  "hero": "data/pdf_photos/DELTA_D.jpg",
+  "hero": "foto_pdf/DELTA_D.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/DELTA_D.png",
   "badges": [
@@ -520,7 +520,7 @@
   ],
   "new": false,
   "sort": 6,
-  "hero": "data/pdf_photos/SPARK_D.jpg",
+  "hero": "foto_pdf/SPARK_D.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/SPARK_D.png",
   "badges": [
@@ -591,7 +591,7 @@
   ],
   "new": false,
   "sort": 7,
-  "hero": "data/pdf_photos/APOLOS_D.jpg",
+  "hero": "foto_pdf/APOLOS_D.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/APOLOS_D.png",
   "badges": [
@@ -661,7 +661,7 @@
   ],
   "new": false,
   "sort": 8,
-  "hero": "data/pdf_photos/BIVAK_D.jpg",
+  "hero": "foto_pdf/BIVAK_D.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/BIVAK_D.png",
   "badges": [
@@ -732,7 +732,7 @@
   ],
   "new": false,
   "sort": 9,
-  "hero": "data/pdf_photos/ALFA_D.jpg",
+  "hero": "foto_pdf/ALFA_D.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/ALFA_D.png",
   "badges": [
@@ -803,7 +803,7 @@
   ],
   "new": false,
   "sort": 10,
-  "hero": "data/pdf_photos/FRONTIER_D.jpg",
+  "hero": "foto_pdf/FRONTIER_D.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/FRONTIER_D.png",
   "badges": [
@@ -874,7 +874,7 @@
   ],
   "new": false,
   "sort": 11,
-  "hero": "data/pdf_photos/APOLOM_D.jpg",
+  "hero": "foto_pdf/APOLOM_D.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/APOLOM_D.png",
   "badges": [
@@ -945,7 +945,7 @@
   ],
   "new": false,
   "sort": 12,
-  "hero": "data/pdf_photos/THUNDER_D.jpg",
+  "hero": "foto_pdf/THUNDER_D.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/THUNDER_D.png",
   "badges": [
@@ -1016,7 +1016,7 @@
   ],
   "new": false,
   "sort": 13,
-  "hero": "data/pdf_photos/LARGO_D.jpg",
+  "hero": "foto_pdf/LARGO_D.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/LARGO_D.png",
   "badges": [
@@ -1087,7 +1087,7 @@
   ],
   "new": false,
   "sort": 14,
-  "hero": "data/pdf_photos/GLOBE_D.jpg",
+  "hero": "foto_pdf/GLOBE_D.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/GLOBE_D.png",
   "badges": [
@@ -1156,7 +1156,7 @@
   ],
   "new": false,
   "sort": 15,
-  "hero": "data/pdf_photos/SOLO.jpg",
+  "hero": "foto_pdf/SOLO.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/SOLO.png",
   "badges": [
@@ -1225,7 +1225,7 @@
   ],
   "new": false,
   "sort": 16,
-  "hero": "data/pdf_photos/SPARK.jpg",
+  "hero": "foto_pdf/SPARK.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/SPARK.png",
   "badges": [
@@ -1296,7 +1296,7 @@
   ],
   "new": false,
   "sort": 17,
-  "hero": "data/pdf_photos/BIVAK.jpg",
+  "hero": "foto_pdf/BIVAK.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/BIVAK.png",
   "badges": [
@@ -1367,7 +1367,7 @@
   ],
   "new": false,
   "sort": 18,
-  "hero": "data/pdf_photos/COMPACT.jpg",
+  "hero": "foto_pdf/COMPACT.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/COMPACT.png",
   "badges": [
@@ -1438,7 +1438,7 @@
   ],
   "new": false,
   "sort": 19,
-  "hero": "data/pdf_photos/ALFA.jpg",
+  "hero": "foto_pdf/ALFA.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/ALFA.png",
   "badges": [
@@ -1509,7 +1509,7 @@
   ],
   "new": false,
   "sort": 20,
-  "hero": "data/pdf_photos/LARGO.jpg",
+  "hero": "foto_pdf/LARGO.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/LARGO.png",
   "badges": [
@@ -1580,7 +1580,7 @@
   ],
   "new": false,
   "sort": 21,
-  "hero": "data/pdf_photos/MAGNUM.jpg",
+  "hero": "foto_pdf/MAGNUM.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/MAGNUM.png",
   "badges": [
@@ -1651,7 +1651,7 @@
   ],
   "new": false,
   "sort": 22,
-  "hero": "data/pdf_photos/FOCUS.jpg",
+  "hero": "foto_pdf/FOCUS.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/FOCUS.png",
   "badges": [
@@ -1722,7 +1722,7 @@
   ],
   "new": false,
   "sort": 23,
-  "hero": "data/pdf_photos/TORNADO.jpg",
+  "hero": "foto_pdf/TORNADO.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/TORNADO.png",
   "badges": [
@@ -1797,7 +1797,7 @@
   ],
   "new": false,
   "sort": 24,
-  "hero": "data/pdf_photos/ENDURO.jpg",
+  "hero": "foto_pdf/ENDURO.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/ENDURO.png",
   "badges": [
@@ -1879,7 +1879,7 @@
   ],
   "new": false,
   "sort": 25,
-  "hero": "data/pdf_photos/DUO.jpg",
+  "hero": "foto_pdf/DUO.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/DUO.png",
   "badges": [
@@ -1961,7 +1961,7 @@
   ],
   "new": false,
   "sort": 26,
-  "hero": "data/pdf_photos/COMET.jpg",
+  "hero": "foto_pdf/COMET.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/COMET.png",
   "badges": [
@@ -2032,7 +2032,7 @@
   ],
   "new": false,
   "sort": 27,
-  "hero": "data/pdf_photos/HUDSON.jpg",
+  "hero": "foto_pdf/HUDSON.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/HUDSON.png",
   "badges": [
@@ -2115,7 +2115,7 @@
   ],
   "new": false,
   "sort": 28,
-  "hero": "data/pdf_photos/EAGLE_II.jpg",
+  "hero": "foto_pdf/EAGLE_II.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/EAGLE_II.png",
   "badges": [
@@ -2188,7 +2188,7 @@
   ],
   "new": false,
   "sort": 29,
-  "hero": "data/pdf_photos/CAMP_II.jpg",
+  "hero": "foto_pdf/CAMP_II.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/CAMP_II.png",
   "badges": [
@@ -2262,7 +2262,7 @@
   ],
   "new": false,
   "sort": 30,
-  "hero": "data/pdf_photos/ARIZONA_II.jpg",
+  "hero": "foto_pdf/ARIZONA_II.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/ARIZONA_II.png",
   "badges": [
@@ -2336,7 +2336,7 @@
   ],
   "new": false,
   "sort": 31,
-  "hero": "data/pdf_photos/COMFORT_II.jpg",
+  "hero": "foto_pdf/COMFORT_II.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/COMFORT_II.png",
   "badges": [
@@ -2407,7 +2407,7 @@
   ],
   "new": false,
   "sort": 32,
-  "hero": "data/pdf_photos/MACAO.jpg",
+  "hero": "foto_pdf/MACAO.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/MACAO.png",
   "badges": [
@@ -2532,7 +2532,7 @@
   ],
   "new": false,
   "sort": 33,
-  "hero": "data/pdf_photos/MONZUN.jpg",
+  "hero": "foto_pdf/MONZUN.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/MONZUN.png",
   "badges": [
@@ -2605,7 +2605,7 @@
   ],
   "new": false,
   "sort": 34,
-  "hero": "data/pdf_photos/GALAXY_II.jpg",
+  "hero": "foto_pdf/GALAXY_II.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/GALAXY_II.png",
   "badges": [
@@ -2692,7 +2692,7 @@
   ],
   "new": false,
   "sort": 35,
-  "hero": "data/pdf_photos/TRACE_ONE.jpg",
+  "hero": "foto_pdf/TRACE_ONE.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/TRACE_ONE.png",
   "badges": [
@@ -2779,7 +2779,7 @@
   ],
   "new": false,
   "sort": 36,
-  "hero": "data/pdf_photos/TRACE.jpg",
+  "hero": "foto_pdf/TRACE.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/TRACE.png",
   "badges": [
@@ -2866,7 +2866,7 @@
   ],
   "new": false,
   "sort": 37,
-  "hero": "data/pdf_photos/TRACE_XL.jpg",
+  "hero": "foto_pdf/TRACE_XL.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/TRACE_XL.png",
   "badges": [
@@ -2941,7 +2941,7 @@
   ],
   "new": false,
   "sort": 38,
-  "hero": "data/pdf_photos/PARTY_PARTY_PLUS.jpg",
+  "hero": "foto_pdf/PARTY_PARTY_PLUS.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/PARTY_PARTY_PLUS.png"
  },
@@ -2998,7 +2998,7 @@
   ],
   "new": false,
   "sort": 38,
-  "hero": "data/pdf_photos/PARTY_PARTY_PLUS.jpg",
+  "hero": "foto_pdf/PARTY_PARTY_PLUS.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/PARTY_PARTY_PLUS.png"
  },
@@ -3312,7 +3312,7 @@
   ],
   "new": false,
   "sort": 39,
-  "hero": "data/pdf_photos/PARTY_S.jpg",
+  "hero": "foto_pdf/PARTY_S.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/PARTY_S.png"
  },
@@ -3680,7 +3680,7 @@
   ],
   "new": false,
   "sort": 40,
-  "hero": "data/pdf_photos/FOOTPRINT_PACK.jpg",
+  "hero": "foto_pdf/FOOTPRINT_PACK.jpg",
   "hero_color": ""
  },
  {
@@ -3729,7 +3729,7 @@
   ],
   "new": false,
   "sort": 41,
-  "hero": "data/pdf_photos/FOOTPRINT_HIMLITE.jpg",
+  "hero": "foto_pdf/FOOTPRINT_HIMLITE.jpg",
   "hero_color": ""
  },
  {
@@ -3778,7 +3778,7 @@
   ],
   "new": false,
   "sort": 42,
-  "hero": "data/pdf_photos/FOOTPRINT_PIONEER.jpg",
+  "hero": "foto_pdf/FOOTPRINT_PIONEER.jpg",
   "hero_color": ""
  },
  {
@@ -3827,7 +3827,7 @@
   ],
   "new": false,
   "sort": 43,
-  "hero": "data/pdf_photos/Y_PEG_D23.jpg",
+  "hero": "foto_pdf/Y_PEG_D23.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -3883,7 +3883,7 @@
   ],
   "new": false,
   "sort": 44,
-  "hero": "data/pdf_photos/Y_PEG_D18.jpg",
+  "hero": "foto_pdf/Y_PEG_D18.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -3939,7 +3939,7 @@
   ],
   "new": false,
   "sort": 45,
-  "hero": "data/pdf_photos/V_PEG_D17.jpg",
+  "hero": "foto_pdf/V_PEG_D17.jpg",
   "hero_color": ""
  },
  {
@@ -3988,7 +3988,7 @@
   ],
   "new": false,
   "sort": 46,
-  "hero": "data/pdf_photos/ROCK_PEG_D16.jpg",
+  "hero": "foto_pdf/ROCK_PEG_D16.jpg",
   "hero_color": ""
  },
  {
@@ -4037,7 +4037,7 @@
   ],
   "new": false,
   "sort": 47,
-  "hero": "data/pdf_photos/SOLID_PEG_D18.jpg",
+  "hero": "foto_pdf/SOLID_PEG_D18.jpg",
   "hero_color": ""
  },
  {
@@ -4086,7 +4086,7 @@
   ],
   "new": false,
   "sort": 48,
-  "hero": "data/pdf_photos/SOLID_PEG_S19.jpg",
+  "hero": "foto_pdf/SOLID_PEG_S19.jpg",
   "hero_color": ""
  },
  {
@@ -4135,7 +4135,7 @@
   ],
   "new": false,
   "sort": 49,
-  "hero": "data/pdf_photos/SOLID_PEG_S26.jpg",
+  "hero": "foto_pdf/SOLID_PEG_S26.jpg",
   "hero_color": ""
  },
  {
@@ -4184,7 +4184,7 @@
   ],
   "new": false,
   "sort": 50,
-  "hero": "data/pdf_photos/NAILS_PEG_S27.jpg",
+  "hero": "foto_pdf/NAILS_PEG_S27.jpg",
   "hero_color": ""
  },
  {
@@ -4233,7 +4233,7 @@
   ],
   "new": false,
   "sort": 51,
-  "hero": "data/pdf_photos/V_PEG_S30.jpg",
+  "hero": "foto_pdf/V_PEG_S30.jpg",
   "hero_color": ""
  },
  {
@@ -4282,7 +4282,7 @@
   ],
   "new": false,
   "sort": 52,
-  "hero": "data/pdf_photos/POLES_D50_8_5_MM.jpg",
+  "hero": "foto_pdf/POLES_D50_8_5_MM.jpg",
   "hero_color": ""
  },
  {
@@ -4331,7 +4331,7 @@
   ],
   "new": false,
   "sort": 53,
-  "hero": "data/pdf_photos/POLES_DRW40_6_5_MM.jpg",
+  "hero": "foto_pdf/POLES_DRW40_6_5_MM.jpg",
   "hero_color": ""
  },
  {
@@ -4380,7 +4380,7 @@
   ],
   "new": false,
   "sort": 54,
-  "hero": "data/pdf_photos/POLES_DRW50_8_5_MM.jpg",
+  "hero": "foto_pdf/POLES_DRW50_8_5_MM.jpg",
   "hero_color": ""
  },
  {
@@ -4429,7 +4429,7 @@
   ],
   "new": false,
   "sort": 55,
-  "hero": "data/pdf_photos/POLES_DRW50_9_5_MM.jpg",
+  "hero": "foto_pdf/POLES_DRW50_9_5_MM.jpg",
   "hero_color": ""
  },
  {
@@ -4478,7 +4478,7 @@
   ],
   "new": false,
   "sort": 56,
-  "hero": "data/pdf_photos/POLES_DRW60_11_MM.jpg",
+  "hero": "foto_pdf/POLES_DRW60_11_MM.jpg",
   "hero_color": ""
  },
  {
@@ -4526,7 +4526,7 @@
   ],
   "new": false,
   "sort": 57,
-  "hero": "data/pdf_photos/POLES_S45_15_MM.jpg",
+  "hero": "foto_pdf/POLES_S45_15_MM.jpg",
   "hero_color": ""
  },
  {
@@ -4573,7 +4573,7 @@
   ],
   "new": false,
   "sort": 58,
-  "hero": "data/pdf_photos/TENTS_POLES_GUM.jpg",
+  "hero": "foto_pdf/TENTS_POLES_GUM.jpg",
   "hero_color": ""
  },
  {
@@ -4640,7 +4640,7 @@
   ],
   "new": false,
   "sort": 59,
-  "hero": "data/pdf_photos/NORD_750.jpg",
+  "hero": "foto_pdf/NORD_750.jpg",
   "hero_color": "Dark Lagoon",
   "draw": "data/pdf_draw/NORD_750.png"
  },
@@ -4708,7 +4708,7 @@
   ],
   "new": false,
   "sort": 60,
-  "hero": "data/pdf_photos/NORD_500.jpg",
+  "hero": "foto_pdf/NORD_500.jpg",
   "hero_color": "Dark Lagoon",
   "draw": "data/pdf_draw/NORD_500.png"
  },
@@ -4776,7 +4776,7 @@
   ],
   "new": false,
   "sort": 61,
-  "hero": "data/pdf_photos/NORD_350.jpg",
+  "hero": "foto_pdf/NORD_350.jpg",
   "hero_color": "Dark Lagoon",
   "draw": "data/pdf_draw/NORD_350.png"
  },
@@ -4845,7 +4845,7 @@
   ],
   "new": false,
   "sort": 62,
-  "hero": "data/pdf_photos/PEAK_400.jpg",
+  "hero": "foto_pdf/PEAK_400.jpg",
   "hero_color": "Grey",
   "draw": "data/pdf_draw/PEAK_400.png"
  },
@@ -4914,7 +4914,7 @@
   ],
   "new": false,
   "sort": 63,
-  "hero": "data/pdf_photos/PEAK_250.jpg",
+  "hero": "foto_pdf/PEAK_250.jpg",
   "hero_color": "Grey",
   "draw": "data/pdf_draw/PEAK_250.png"
  },
@@ -5010,7 +5010,7 @@
   ],
   "new": false,
   "sort": 64,
-  "hero": "data/pdf_photos/ARKTIS.jpg",
+  "hero": "foto_pdf/ARKTIS.jpg",
   "hero_color": "Blue/Dark grey",
   "draw": "data/pdf_draw/ARKTIS.png"
  },
@@ -5107,7 +5107,7 @@
   ],
   "new": false,
   "sort": 65,
-  "hero": "data/pdf_photos/RACK_1200.jpg",
+  "hero": "foto_pdf/RACK_1200.jpg",
   "hero_color": "Khaki/Olive",
   "draw": "data/pdf_draw/RACK_1200.png",
   "badges": [
@@ -5200,7 +5200,7 @@
   ],
   "new": false,
   "sort": 66,
-  "hero": "data/pdf_photos/GANT.jpg",
+  "hero": "foto_pdf/GANT.jpg",
   "hero_color": "Red/Dark red",
   "draw": "data/pdf_draw/GANT.png",
   "badges": [
@@ -5292,7 +5292,7 @@
   ],
   "new": false,
   "sort": 67,
-  "hero": "data/pdf_photos/BALANCE_WIDE.jpg",
+  "hero": "foto_pdf/BALANCE_WIDE.jpg",
   "hero_color": "Sea blue / Mid.blue",
   "draw": "data/pdf_draw/BALANCE_WIDE.png",
   "badges": [
@@ -5416,7 +5416,7 @@
   ],
   "new": false,
   "sort": 68,
-  "hero": "data/pdf_photos/BALANCE.jpg",
+  "hero": "foto_pdf/BALANCE.jpg",
   "hero_color": "Sea blue / Mid.blue",
   "draw": "data/pdf_draw/BALANCE.png",
   "badges": [
@@ -5504,7 +5504,7 @@
   ],
   "new": false,
   "sort": 69,
-  "hero": "data/pdf_photos/BALANCE_JUNIOR.jpg",
+  "hero": "foto_pdf/BALANCE_JUNIOR.jpg",
   "hero_color": "Kiwi green / Dark grey",
   "draw": "data/pdf_draw/BALANCE_JUNIOR.png"
  },
@@ -5616,7 +5616,7 @@
   ],
   "new": false,
   "sort": 70,
-  "hero": "data/pdf_photos/BATTLE_2IN1.jpg",
+  "hero": "foto_pdf/BATTLE_2IN1.jpg",
   "hero_color": "Brick/Royal blue",
   "draw": "data/pdf_draw/BATTLE_2IN1.png",
   "badges": [
@@ -5719,7 +5719,7 @@
   ],
   "new": false,
   "sort": 71,
-  "hero": "data/pdf_photos/TRAPER.jpg",
+  "hero": "foto_pdf/TRAPER.jpg",
   "hero_color": "Camouflage",
   "draw": "data/pdf_draw/TRAPER.png"
  },
@@ -5815,7 +5815,7 @@
   ],
   "new": false,
   "sort": 72,
-  "hero": "data/pdf_photos/WALKER.jpg",
+  "hero": "foto_pdf/WALKER.jpg",
   "hero_color": "Kiwi green / Mid.green",
   "draw": "data/pdf_draw/WALKER.png"
  },
@@ -5909,7 +5909,7 @@
   ],
   "new": false,
   "sort": 73,
-  "hero": "data/pdf_photos/WALKER_FLEX.jpg",
+  "hero": "foto_pdf/WALKER_FLEX.jpg",
   "hero_color": "Purple/Pinky",
   "draw": "data/pdf_draw/WALKER_FLEX.png"
  },
@@ -6026,7 +6026,7 @@
   ],
   "new": false,
   "sort": 74,
-  "hero": "data/pdf_photos/HIGHLANDER.jpg",
+  "hero": "foto_pdf/HIGHLANDER.jpg",
   "hero_color": "Grey/Olive",
   "draw": "data/pdf_draw/HIGHLANDER.png",
   "badges": [
@@ -6130,7 +6130,7 @@
   ],
   "new": false,
   "sort": 75,
-  "hero": "data/pdf_photos/RACK_800.jpg",
+  "hero": "foto_pdf/RACK_800.jpg",
   "hero_color": "Dark red / Red",
   "draw": "data/pdf_draw/RACK_800.png",
   "badges": [
@@ -6239,7 +6239,7 @@
   ],
   "new": false,
   "sort": 76,
-  "hero": "data/pdf_photos/IMPACT.jpg",
+  "hero": "foto_pdf/IMPACT.jpg",
   "hero_color": "Kiwi green / Dark grey",
   "draw": "data/pdf_draw/IMPACT.png",
   "badges": [
@@ -6343,7 +6343,7 @@
   ],
   "new": false,
   "sort": 77,
-  "hero": "data/pdf_photos/RACK_400.jpg",
+  "hero": "foto_pdf/RACK_400.jpg",
   "hero_color": "Blue/Sea blue",
   "draw": "data/pdf_draw/RACK_400.png",
   "badges": [
@@ -6444,7 +6444,7 @@
   ],
   "new": false,
   "sort": 78,
-  "hero": "data/pdf_photos/TRAVEL.jpg",
+  "hero": "foto_pdf/TRAVEL.jpg",
   "hero_color": "Olive",
   "draw": "data/pdf_draw/TRAVEL.png"
  },
@@ -6543,7 +6543,7 @@
   ],
   "new": false,
   "sort": 79,
-  "hero": "data/pdf_photos/TRAMP.jpg",
+  "hero": "foto_pdf/TRAMP.jpg",
   "hero_color": "Blue",
   "draw": "data/pdf_draw/TRAMP.png"
  },
@@ -6634,7 +6634,7 @@
   ],
   "new": false,
   "sort": 80,
-  "hero": "data/pdf_photos/DIVAN.jpg",
+  "hero": "foto_pdf/DIVAN.jpg",
   "hero_color": "Kiwi green / Mid.green",
   "draw": "data/pdf_draw/DIVAN.png"
  },
@@ -6706,7 +6706,7 @@
   ],
   "new": false,
   "sort": 81,
-  "hero": "data/pdf_photos/HAVEN.jpg",
+  "hero": "foto_pdf/HAVEN.jpg",
   "hero_color": ""
  },
  {
@@ -6755,7 +6755,7 @@
   ],
   "new": false,
   "sort": 82,
-  "hero": "data/pdf_photos/LINER_MUMMY_P.jpg",
+  "hero": "foto_pdf/LINER_MUMMY_P.jpg",
   "hero_color": ""
  },
  {
@@ -6804,7 +6804,7 @@
   ],
   "new": false,
   "sort": 83,
-  "hero": "data/pdf_photos/LINER_BLANKET_P.jpg",
+  "hero": "foto_pdf/LINER_BLANKET_P.jpg",
   "hero_color": ""
  },
  {
@@ -6853,7 +6853,7 @@
   ],
   "new": false,
   "sort": 84,
-  "hero": "data/pdf_photos/THERMAL_LINER_MUMMY_F.jpg",
+  "hero": "foto_pdf/THERMAL_LINER_MUMMY_F.jpg",
   "hero_color": ""
  },
  {
@@ -6902,7 +6902,7 @@
   ],
   "new": false,
   "sort": 85,
-  "hero": "data/pdf_photos/THERMAL_LINER_BLANKET_F.jpg",
+  "hero": "foto_pdf/THERMAL_LINER_BLANKET_F.jpg",
   "hero_color": ""
  },
  {
@@ -6950,7 +6950,7 @@
   ],
   "new": false,
   "sort": 86,
-  "hero": "data/pdf_photos/COMPRESS_BAG_S.jpg",
+  "hero": "foto_pdf/COMPRESS_BAG_S.jpg",
   "hero_color": ""
  },
  {
@@ -6998,7 +6998,7 @@
   ],
   "new": false,
   "sort": 87,
-  "hero": "data/pdf_photos/COMPRESS_BAG_M.jpg",
+  "hero": "foto_pdf/COMPRESS_BAG_M.jpg",
   "hero_color": ""
  },
  {
@@ -7069,7 +7069,7 @@
   ],
   "new": false,
   "sort": 88,
-  "hero": "data/pdf_photos/WAKE_5_5.jpg",
+  "hero": "foto_pdf/WAKE_5_5.jpg",
   "hero_color": "Blue",
   "draw": "data/pdf_draw/WAKE_5_5.png"
  },
@@ -7128,7 +7128,7 @@
   ],
   "new": false,
   "sort": 89,
-  "hero": "data/pdf_photos/TIGUAN_5_0.jpg",
+  "hero": "foto_pdf/TIGUAN_5_0.jpg",
   "hero_color": "Orange/Dark grey",
   "draw": "data/pdf_draw/TIGUAN_5_0.png"
  },
@@ -7188,7 +7188,7 @@
   ],
   "new": false,
   "sort": 90,
-  "hero": "data/pdf_photos/ZERO_5_5.jpg",
+  "hero": "foto_pdf/ZERO_5_5.jpg",
   "hero_color": "Green/Grey",
   "draw": "data/pdf_draw/ZERO_5_5.png"
  },
@@ -7258,7 +7258,7 @@
   ],
   "new": false,
   "sort": 91,
-  "hero": "data/pdf_photos/STEPPER_5_5.jpg",
+  "hero": "foto_pdf/STEPPER_5_5.jpg",
   "hero_color": "Blue",
   "draw": "data/pdf_draw/STEPPER_5_5.png"
  },
@@ -7327,7 +7327,7 @@
   ],
   "new": false,
   "sort": 92,
-  "hero": "data/pdf_photos/STEPPER_DUO_5_5.jpg",
+  "hero": "foto_pdf/STEPPER_DUO_5_5.jpg",
   "hero_color": "Blue",
   "draw": "data/pdf_draw/STEPPER_DUO_5_5.png"
  },
@@ -7399,7 +7399,7 @@
   ],
   "new": false,
   "sort": 93,
-  "hero": "data/pdf_photos/CHARGE_8_5.jpg",
+  "hero": "foto_pdf/CHARGE_8_5.jpg",
   "hero_color": "Grey",
   "draw": "data/pdf_draw/CHARGE_8_5.png"
  },
@@ -7469,7 +7469,7 @@
   ],
   "new": false,
   "sort": 94,
-  "hero": "data/pdf_photos/HIKER_2_5.jpg",
+  "hero": "foto_pdf/HIKER_2_5.jpg",
   "hero_color": "Blue",
   "draw": "data/pdf_draw/HIKER_2_5.png"
  },
@@ -7528,7 +7528,7 @@
   ],
   "new": false,
   "sort": 95,
-  "hero": "data/pdf_photos/SPACE_3_7.jpg",
+  "hero": "foto_pdf/SPACE_3_7.jpg",
   "hero_color": "Steel Blue",
   "draw": "data/pdf_draw/SPACE_3_7.png"
  },
@@ -7587,7 +7587,7 @@
   ],
   "new": false,
   "sort": 96,
-  "hero": "data/pdf_photos/CORNER_6_0.jpg",
+  "hero": "foto_pdf/CORNER_6_0.jpg",
   "hero_color": "Steel Blue",
   "draw": "data/pdf_draw/CORNER_6_0.png"
  },
@@ -7657,7 +7657,7 @@
   ],
   "new": false,
   "sort": 97,
-  "hero": "data/pdf_photos/FREEDOM_XL_5_0.jpg",
+  "hero": "foto_pdf/FREEDOM_XL_5_0.jpg",
   "hero_color": "Olive",
   "draw": "data/pdf_draw/FREEDOM_XL_5_0.png"
  },
@@ -7717,7 +7717,7 @@
   ],
   "new": false,
   "sort": 98,
-  "hero": "data/pdf_photos/ALTEA_L_5_0.jpg",
+  "hero": "foto_pdf/ALTEA_L_5_0.jpg",
   "hero_color": "Khaki",
   "draw": "data/pdf_draw/ALTEA_L_5_0.png"
  },
@@ -7777,7 +7777,7 @@
   ],
   "new": false,
   "sort": 99,
-  "hero": "data/pdf_photos/LANCER_7_0.jpg",
+  "hero": "foto_pdf/LANCER_7_0.jpg",
   "hero_color": "Blue",
   "draw": "data/pdf_draw/LANCER_7_0.png"
  },
@@ -7836,7 +7836,7 @@
   ],
   "new": false,
   "sort": 100,
-  "hero": "data/pdf_photos/YETTI_10_0.jpg",
+  "hero": "foto_pdf/YETTI_10_0.jpg",
   "hero_color": "Blue",
   "draw": "data/pdf_draw/YETTI_10_0.png"
  },
@@ -7890,7 +7890,7 @@
   ],
   "new": false,
   "sort": 101,
-  "hero": "data/pdf_photos/BUBBLES_1_8.jpg",
+  "hero": "foto_pdf/BUBBLES_1_8.jpg",
   "hero_color": "Black",
   "draw": "data/pdf_draw/BUBBLES_1_8.png"
  },
@@ -7956,7 +7956,7 @@
   ],
   "new": false,
   "sort": 102,
-  "hero": "data/pdf_photos/ROTTO_12_0.jpg",
+  "hero": "foto_pdf/ROTTO_12_0.jpg",
   "hero_color": "Blue",
   "draw": "data/pdf_draw/ROTTO_12_0.png"
  },
@@ -8011,7 +8011,7 @@
   ],
   "new": false,
   "sort": 103,
-  "hero": "data/pdf_photos/LEXUS_12_0.jpg",
+  "hero": "foto_pdf/LEXUS_12_0.jpg",
   "hero_color": "Black",
   "draw": "data/pdf_draw/LEXUS_12_0.png"
  },
@@ -8081,7 +8081,7 @@
   ],
   "new": false,
   "sort": 104,
-  "hero": "data/pdf_photos/BUDDY_5_0.jpg",
+  "hero": "foto_pdf/BUDDY_5_0.jpg",
   "hero_color": "Grey",
   "draw": "data/pdf_draw/BUDDY_5_0.png"
  },
@@ -8158,7 +8158,7 @@
   ],
   "new": false,
   "sort": 105,
-  "hero": "data/pdf_photos/OPAL_40.jpg",
+  "hero": "foto_pdf/OPAL_40.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -8252,7 +8252,7 @@
   ],
   "new": false,
   "sort": 106,
-  "hero": "data/pdf_photos/ALPIN_40.jpg",
+  "hero": "foto_pdf/ALPIN_40.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -8346,7 +8346,7 @@
   ],
   "new": false,
   "sort": 107,
-  "hero": "data/pdf_photos/COURIER_35.jpg",
+  "hero": "foto_pdf/COURIER_35.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -8433,7 +8433,7 @@
   ],
   "new": false,
   "sort": 108,
-  "hero": "data/pdf_photos/OTAWA_30.jpg",
+  "hero": "foto_pdf/OTAWA_30.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -8526,7 +8526,7 @@
   ],
   "new": false,
   "sort": 109,
-  "hero": "data/pdf_photos/MANTA_30.jpg",
+  "hero": "foto_pdf/MANTA_30.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -8612,7 +8612,7 @@
   ],
   "new": false,
   "sort": 110,
-  "hero": "data/pdf_photos/HAVANA_28.jpg",
+  "hero": "foto_pdf/HAVANA_28.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -8696,7 +8696,7 @@
   ],
   "new": false,
   "sort": 111,
-  "hero": "data/pdf_photos/ESCAPE_25.jpg",
+  "hero": "foto_pdf/ESCAPE_25.jpg",
   "hero_color": ""
  },
  {
@@ -8753,7 +8753,7 @@
   ],
   "new": false,
   "sort": 112,
-  "hero": "data/pdf_photos/CRUISER_12.jpg",
+  "hero": "foto_pdf/CRUISER_12.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -8839,7 +8839,7 @@
   ],
   "new": false,
   "sort": 113,
-  "hero": "data/pdf_photos/BIKER_6.jpg",
+  "hero": "foto_pdf/BIKER_6.jpg",
   "hero_color": ""
  },
  {
@@ -8905,7 +8905,7 @@
   ],
   "new": false,
   "sort": 114,
-  "hero": "data/pdf_photos/START_4.jpg",
+  "hero": "foto_pdf/START_4.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -8963,7 +8963,7 @@
   ],
   "new": false,
   "sort": 115,
-  "hero": "data/pdf_photos/NEW_YORK_100.jpg",
+  "hero": "foto_pdf/NEW_YORK_100.jpg",
   "hero_color": ""
  },
  {
@@ -9013,7 +9013,7 @@
   ],
   "new": false,
   "sort": 116,
-  "hero": "data/pdf_photos/BOOTBAG_20.jpg",
+  "hero": "foto_pdf/BOOTBAG_20.jpg",
   "hero_color": ""
  },
  {
@@ -9072,7 +9072,7 @@
   ],
   "new": false,
   "sort": 117,
-  "hero": "data/pdf_photos/BACKUP_10.jpg",
+  "hero": "foto_pdf/BACKUP_10.jpg",
   "hero_color": ""
  },
  {
@@ -9117,7 +9117,7 @@
   ],
   "new": false,
   "sort": 118,
-  "hero": "data/pdf_photos/MONEY_BELT.jpg",
+  "hero": "foto_pdf/MONEY_BELT.jpg",
   "hero_color": ""
  },
  {
@@ -9162,7 +9162,7 @@
   ],
   "new": false,
   "sort": 119,
-  "hero": "data/pdf_photos/MONEY.jpg",
+  "hero": "foto_pdf/MONEY.jpg",
   "hero_color": ""
  },
  {
@@ -9208,7 +9208,7 @@
   ],
   "new": false,
   "sort": 120,
-  "hero": "data/pdf_photos/BAGS_RAIN_COVER_S.jpg",
+  "hero": "foto_pdf/BAGS_RAIN_COVER_S.jpg",
   "hero_color": ""
  },
  {
@@ -9254,7 +9254,7 @@
   ],
   "new": false,
   "sort": 121,
-  "hero": "data/pdf_photos/BAGS_RAIN_COVER_L.jpg",
+  "hero": "foto_pdf/BAGS_RAIN_COVER_L.jpg",
   "hero_color": ""
  },
  {
@@ -9306,7 +9306,7 @@
   ],
   "new": false,
   "sort": 122,
-  "hero": "data/pdf_photos/TRANSIT_140.jpg",
+  "hero": "foto_pdf/TRANSIT_140.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -9363,7 +9363,7 @@
   ],
   "new": false,
   "sort": 124,
-  "hero": "data/pdf_photos/SAVER_25L_LONG.jpg",
+  "hero": "foto_pdf/SAVER_25L_LONG.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -9420,7 +9420,7 @@
   ],
   "new": false,
   "sort": 125,
-  "hero": "data/pdf_photos/SAVER_25L_SHORT.jpg",
+  "hero": "foto_pdf/SAVER_25L_SHORT.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -9477,7 +9477,7 @@
   ],
   "new": false,
   "sort": 126,
-  "hero": "data/pdf_photos/SAVER_X_28L.jpg",
+  "hero": "foto_pdf/SAVER_X_28L.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -9534,7 +9534,7 @@
   ],
   "new": false,
   "sort": 127,
-  "hero": "data/pdf_photos/SAVER_XL_51L.jpg",
+  "hero": "foto_pdf/SAVER_XL_51L.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -9589,7 +9589,7 @@
   ],
   "new": false,
   "sort": 128,
-  "hero": "data/pdf_photos/OMEGA_2L.jpg",
+  "hero": "foto_pdf/OMEGA_2L.jpg",
   "hero_color": ""
  },
  {
@@ -9637,7 +9637,7 @@
   ],
   "new": false,
   "sort": 129,
-  "hero": "data/pdf_photos/DESERT_2L.jpg",
+  "hero": "foto_pdf/DESERT_2L.jpg",
   "hero_color": ""
  },
  {
@@ -9685,7 +9685,7 @@
   ],
   "new": false,
   "sort": 130,
-  "hero": "data/pdf_photos/ARMADA_1_5L.jpg",
+  "hero": "foto_pdf/ARMADA_1_5L.jpg",
   "hero_color": ""
  },
  {
@@ -9733,7 +9733,7 @@
   ],
   "new": false,
   "sort": 131,
-  "hero": "data/pdf_photos/ARMAX_1_5L.jpg",
+  "hero": "foto_pdf/ARMAX_1_5L.jpg",
   "hero_color": ""
  },
  {
@@ -9781,7 +9781,7 @@
   ],
   "new": false,
   "sort": 132,
-  "hero": "data/pdf_photos/HYDRA_1_5L.jpg",
+  "hero": "foto_pdf/HYDRA_1_5L.jpg",
   "hero_color": "",
   "badges": [
    {
@@ -9836,7 +9836,7 @@
   ],
   "new": false,
   "sort": 133,
-  "hero": "data/pdf_photos/GEL_FLASK_T_600.jpg",
+  "hero": "foto_pdf/GEL_FLASK_T_600.jpg",
   "hero_color": ""
  },
  {
@@ -9884,7 +9884,7 @@
   ],
   "new": false,
   "sort": 134,
-  "hero": "data/pdf_photos/GEL_FLASK_A_500.jpg",
+  "hero": "foto_pdf/GEL_FLASK_A_500.jpg",
   "hero_color": ""
  },
  {
@@ -9932,7 +9932,7 @@
   ],
   "new": false,
   "sort": 135,
-  "hero": "data/pdf_photos/GEL_FLASK_H_350.jpg",
+  "hero": "foto_pdf/GEL_FLASK_H_350.jpg",
   "hero_color": ""
  },
  {

@@ -721,7 +721,9 @@ nh=nd=nb=0
 for r in catalog:
     p=_pdfrec(r)
     if p and r['section']!='sportswear' and p.get('pdf_photo') and os.path.exists(os.path.join(ROOT,p['pdf_photo'])):
-        r['hero']=p['pdf_photo']; r['hero_color']=(p.get('spec_small') or [''])[0]; nh+=1
+        # fotky z PDF patří do sledované složky foto_pdf/ (data/pdf_photos je v .gitignore)
+        os.makedirs(os.path.join(ROOT,'foto_pdf'),exist_ok=True); fn=os.path.basename(p['pdf_photo']); shutil.copy(os.path.join(ROOT,p['pdf_photo']),os.path.join(ROOT,'foto_pdf',fn))
+        r['hero']='foto_pdf/'+fn; r['hero_color']=(p.get('spec_small') or [''])[0]; nh+=1
     if p and p.get('pdf_draw') and os.path.exists(os.path.join(ROOT,p['pdf_draw'])): r['draw']=p['pdf_draw']; nd+=1
     badges=[]
     for f in (p.get('pdf_icons',[]) if p else []):
