@@ -18,6 +18,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Eloxed dural parts",
    "ROZMĚR": "210 x (80+60)/110 cm"
   },
+  "col": [
+   24.5,
+   290.1
+  ],
+  "first_label_y": 262.6,
   "desc": "Revoluční jednolůžkový stan s využitím trekingové hole s prostornou apsidou a širokým vchodem. Jedná se o jeden z nejlehčích modelů na outdoorovém trhu. Je vyrobený z maximálně odlehčených a přitom velmi odolných materiálů. Při plném využití kotevních šnůr je i dobře stabilní.",
   "features": [
    "Dostupná přídavná podlážka",
@@ -47,6 +52,11 @@
     "file": "data/pdf_swatch/PACK_DSL_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/PACK_DSL.png",
+  "pdf_icons": [
+   "data/pdf_icons/PACK_DSL_1.png",
+   "data/pdf_icons/PACK_DSL_2.png"
+  ],
   "serie": "EXTREME SERIE"
  },
  {
@@ -68,6 +78,11 @@
    "KONSTRUKCE": "",
    "ROZMĚR": "215 x (45+245)/115 cm"
   },
+  "col": [
+   290.1,
+   555.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Ultra lehký celoroční expediční stan s využitím moderní konstrukce a vysoce kvalitních odolných materiálů a doplňků. Dva vchody a dvě prostorné apsidy zajišťují dostatečný komfort uživatelů. Výhodou je také rychlá a jednoduchá stavba.",
   "features": [
    "Dostupná přídavná podlážka",
@@ -95,6 +110,11 @@
     "file": "data/pdf_swatch/FLY_DSL_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/FLY_DSL.png",
+  "pdf_icons": [
+   "data/pdf_icons/FLY_DSL_1.png",
+   "data/pdf_icons/FLY_DSL_2.png"
+  ],
   "serie": "EXTREME SERIE"
  },
  {
@@ -116,6 +136,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm DAC + Eloxed dural parts",
    "ROZMĚR": "(65+210) x 130/ 95 cm"
   },
+  "col": [
+   556.1,
+   821.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Velmi lehký stan pro dvě osoby určený k celoročnímu použití. Maximálně odlehčené a přitom velmi odolné materiály. Stan vyniká jednoduchou a odolnou duralovou konstrukcí, prostornou apsidou a širokým vchodem.",
   "features": [
    "Dostupná přídavná podlážka",
@@ -144,6 +169,11 @@
     "file": "data/pdf_swatch/HIMLITE_DSL_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/HIMLITE_DSL.png",
+  "pdf_icons": [
+   "data/pdf_icons/HIMLITE_DSL_1.png",
+   "data/pdf_icons/HIMLITE_DSL_2.png"
+  ],
   "serie": "EXTREME SERIE"
  },
  {
@@ -165,6 +195,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Eloxed dural parts",
    "ROZMĚR": "230 x (70+130+70)/ 100 cm"
   },
+  "col": [
+   47.3,
+   312.9
+  ],
+  "first_label_y": 262.6,
   "desc": "Ultralehký celoroční expediční stan pro 2 osoby. Moderní konstrukce vzniklá křížením tří dural- ových prutů a vysoce kvalitních odolných materiálů a doplňků. Dva vchody, dvě prostorné apsidy a dokonalé odvětrání zajišťují dostatečný komfort uživatelů. Výhodou je také rychlá a jednoduchá stavba.",
   "features": [
    "Lepené švy",
@@ -192,6 +227,11 @@
     "file": "data/pdf_swatch/VECTOR_DSL_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/VECTOR_DSL.png",
+  "pdf_icons": [
+   "data/pdf_icons/VECTOR_DSL_1.png",
+   "data/pdf_icons/VECTOR_DSL_2.png"
+  ],
   "serie": "EXTREME SERIE"
  },
  {
@@ -213,6 +253,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Eloxed dural parts",
    "ROZMĚR": "215 x (60 +125 +60)/ 110 cm"
   },
+  "col": [
+   312.9,
+   578.5
+  ],
+  "first_label_y": 262.6,
   "desc": "Ultra lehký celoroční expediční stan s využitím moderní konstrukce a vysoce kvalitních odolných materiálů a doplňků. Dva vchody a dvě prostorné apsidy zajišťují dostatečný komfort uživatelů. Výhodou je také rychlá a jednoduchá stavba.",
   "features": [
    "Dostupná přídavná podlážka",
@@ -241,6 +286,11 @@
     "file": "data/pdf_swatch/PIONEER_DSL_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/PIONEER_DSL.png",
+  "pdf_icons": [
+   "data/pdf_icons/PIONEER_DSL_1.png",
+   "data/pdf_icons/PIONEER_DSL_2.png"
+  ],
   "serie": "EXTREME SERIE"
  },
  {
@@ -262,6 +312,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Eloxed dural parts",
    "ROZMĚR": "(65 + 210) x 130 / 95 cm"
   },
+  "col": [
+   47.3,
+   312.7
+  ],
+  "first_label_y": 261.6,
   "desc": "Velmi lehký stan pro dvě osoby určený k celoročnímu použití. Vzhledem ke své váze a rozměrům je mimořádně ideální pro cykloturistiku a na vodu. Stan vyniká jednoduchou a odolnou duralovou konstrukcí s prostornou apsidou a širokým vchodem.",
   "features": [
    "Dostupná přídavná podlážka",
@@ -289,6 +344,10 @@
     "file": "data/pdf_swatch/DELTA_D_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/DELTA_D.png",
+  "pdf_icons": [
+   "data/pdf_icons/DELTA_D_1.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -310,6 +369,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Eloxed dural parts",
    "ROZMĚR": "(80 + 225) x 145 / 95 cm"
   },
+  "col": [
+   312.9,
+   578.3
+  ],
+  "first_label_y": 262.6,
   "desc": "Komfortní trekingový tunelový stan s dostatečně širokou a prostornou apsidou a ALU tyčkami. Jednoduchá konstrukce a rychlá stavba předurčují tento model pro široké využití.",
   "features": [
    "Lepené švy",
@@ -335,6 +399,10 @@
     "file": "data/pdf_swatch/SPARK_D_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/SPARK_D.png",
+  "pdf_icons": [
+   "data/pdf_icons/SPARK_D_1.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -356,6 +424,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Eloxed dural parts",
    "ROZMĚR": "(65+140+65) × 235 / 125 cm"
   },
+  "col": [
+   578.3,
+   843.7
+  ],
+  "first_label_y": 262.1,
   "desc": "Lehký celoroční expediční stan pro 2 osoby. Výbornou stabilitu zajišťuje čtyřprutová duralová konstrukce s křížením v pěti bodech a použité vysoce kvalitní odolné materiály a doplňky. Dva symetrické vchody, nadstandardně prostorné apsidy a dokonalé odvětrání zajišťují dostatečný komfort uživatelů.",
   "features": [
    "Lepené švy",
@@ -382,6 +455,10 @@
     "file": "data/pdf_swatch/APOLOS_D_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/APOLOS_D.png",
+  "pdf_icons": [
+   "data/pdf_icons/APOLOS_D_1.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -403,6 +480,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Eloxed dural parts",
    "ROZMĚR": "260 x (50 + 135 + 50) / 100 cm"
   },
+  "col": [
+   24.5,
+   290.1
+  ],
+  "first_label_y": 262.6,
   "desc": "Lehký a jednoduchý stan se dvěma apsidami oslní zejména uživatele, kteří upřednostňují nízkou hmotnost a snadnou stavbu. Velkou výhodou je i možnost postavit vnitřní stan samostatně.",
   "features": [
    "Lepené švy",
@@ -428,6 +510,8 @@
     "file": "data/pdf_swatch/BIVAK_D_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/BIVAK_D.png",
+  "pdf_icons": [],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -448,6 +532,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Eloxed dural parts",
    "ROZMĚR": "(220 + 90) x 150 / 110 cm"
   },
+  "col": [
+   290.1,
+   555.7
+  ],
+  "first_label_y": 262.1,
   "desc": "Model pro 2-3 osoby s duralovou konstrukcí a výjimečnou délkou pro větší komfort uživatele. Dostatečná apsida zajišťuje prostor pro uložení zavazadel. Výhodou stanu je nízká hmotnost a rychlá stavba. Duralové tyčky.",
   "features": [
    "Lepené švy",
@@ -469,6 +558,10 @@
     "file": "data/pdf_swatch/ALFA_D_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/ALFA_D.png",
+  "pdf_icons": [
+   "data/pdf_icons/ALFA_D_1.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -489,6 +582,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Dural 7001 T6 9.5 mm + Eloxed dural parts",
    "ROZMĚR": "(80 + 150 + 80) x 220 / 115 cm"
   },
+  "col": [
+   556.1,
+   821.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Stan pro 2-3 osoby. Dva vchody s apsidou zajišťují komfort uživatelů. Stan je vhodný i do náročných podmínek při vysokohorské turistice. Tříprutová konstrukce je odolná i v silném větru. Apsidy jsou dostatečně prostorné pro zavazadla či vaření. Duralové tyčky.",
   "features": [
    "Lepené švy",
@@ -509,6 +607,10 @@
     "label": "Lime green / Grey",
     "file": "data/pdf_swatch/FRONTIER_D_1.png"
    }
+  ],
+  "pdf_draw": "data/pdf_draw/FRONTIER_D.png",
+  "pdf_icons": [
+   "data/pdf_icons/FRONTIER_D_1.png"
   ],
   "serie": "ADVENTURE SERIE"
  },
@@ -531,6 +633,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Dural 7001 T6 9.5 mm + Eloxed dural parts",
    "ROZMĚR": "(75+190+75) x 240 / 125 cm"
   },
+  "col": [
+   47.3,
+   312.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Lehký celoroční expediční stan pro 3 osoby. Výbornou stabilitu zajišťuje čtyřprutová duralová konstrukce s křížením v pěti bodech a použité vysoce kvalitní odolné materiály a doplňky. Dva symetrické vchody, nadstandardně prostorné apsidy a dokonalé odvětrání zajišťují dostatečný komfort uživatelů.",
   "features": [
    "Lepené švy",
@@ -557,6 +664,10 @@
     "file": "data/pdf_swatch/APOLOM_D_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/APOLOM_D.png",
+  "pdf_icons": [
+   "data/pdf_icons/APOLOM_D_1.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -578,6 +689,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Dural 7001 T6 9.5 mm + Eloxed dural parts",
    "ROZMĚR": "(70+180+70) x 230 / 115 cm"
   },
+  "col": [
+   312.9,
+   578.3
+  ],
+  "first_label_y": 262.6,
   "desc": "Stabilní stan pro 3 osoby. Vnitřní duralová konstrukce s vnějším uchycením třetího prutu zajišťuje výbornou stabilitu. Dva symetrické vchody s možností otevírání vlevo nebo vpravo vás ochrání při změně i nepřízni počasí. Propracovaný větrací systém zajistí komfortní kempování.",
   "features": [
    "Lepené švy",
@@ -604,6 +720,10 @@
     "file": "data/pdf_swatch/THUNDER_D_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/THUNDER_D.png",
+  "pdf_icons": [
+   "data/pdf_icons/THUNDER_D_1.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -624,6 +744,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Dural 7001 T6 9.5 mm + Eloxed dural parts",
    "ROZMĚR": "(220 + 90) x 205 / 115 cm"
   },
+  "col": [
+   578.3,
+   843.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Stan pro 3-4 osoby s klasickou konstrukcí s apsidou a jedním vchodem. Ideální stan pro standardní použití i v náročných podmínkách. Výhodou je jeho jednoduchá stavba a nízká hmotnost. Duralové tyčky.",
   "features": [
    "Lepené švy",
@@ -645,6 +770,10 @@
     "file": "data/pdf_swatch/LARGO_D_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/LARGO_D.png",
+  "pdf_icons": [
+   "data/pdf_icons/LARGO_D_1.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -665,6 +794,11 @@
    "KONSTRUKCE": "Dural 7001 T6 8.5 mm + Dural 7001 T6 9.5 mm + Eloxed dural parts",
    "ROZMĚR": "(60 + 210 + 60) x 215 / 125 cm"
   },
+  "col": [
+   24.5,
+   290.5
+  ],
+  "first_label_y": 262.6,
   "desc": "Prostorný stan pro 3-4 osoby. Dva vchody a dvě prostorné apsidy poskytují dostatečný komfort uživatelů jak při vaření, tak pro uložení zavazadel. Tento model zaujme propracovanou konstrukcí, která zajišťuje dostatek stability a prostoru.",
   "features": [
    "Lepené švy",
@@ -685,6 +819,10 @@
     "label": "Lime green / Grey",
     "file": "data/pdf_swatch/GLOBE_D_1.png"
    }
+  ],
+  "pdf_draw": "data/pdf_draw/GLOBE_D.png",
+  "pdf_icons": [
+   "data/pdf_icons/GLOBE_D_1.png"
   ],
   "serie": "ADVENTURE SERIE"
  },
@@ -707,6 +845,11 @@
    "KONSTRUKCE": "Durawrap 6.3 mm",
    "ROZMĚR": "245 x 90 / 80 cm"
   },
+  "col": [
+   24.5,
+   290.1
+  ],
+  "first_label_y": 262.6,
   "desc": "Lehký trekingový tunelový stan pro jednu osobu s unikátním „vrchním“ i předním vstupem. Velkou výhodou je rychlá a jednoduchá stavba. Dokonalé odvětrání zajišťuje rolovatelný vrchní stan, po jehož srolování vznikne praktická moskytiéra, kterou oceníte především v teplých letních měsících.",
   "features": [
    "Lepené švy",
@@ -731,6 +874,10 @@
     "file": "data/pdf_swatch/SOLO_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/SOLO.png",
+  "pdf_icons": [
+   "data/pdf_icons/SOLO_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -752,6 +899,11 @@
    "KONSTRUKCE": "Durawrap 6.3 mm + Durawrap 7 mm",
    "ROZMĚR": "(80 + 225) x 145 / 95 cm"
   },
+  "col": [
+   290.1,
+   555.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Komfortní trekingový tunelový stan s dostatečně širokou a prostornou apsidou. Jednoduchá konstrukce a rychlá stavba předurčují tento model pro široké využití.",
   "features": [
    "Lepené švy",
@@ -776,6 +928,10 @@
     "file": "data/pdf_swatch/SPARK_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/SPARK.png",
+  "pdf_icons": [
+   "data/pdf_icons/SPARK_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -797,6 +953,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm",
    "ROZMĚR": "260 x (50 + 135 + 50) / 100 cm"
   },
+  "col": [
+   556.1,
+   821.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Lehký a jednoduchý stan se dvěma apsidami oslní zejména uživatele, kteří upřednostňují nízkou hmotnost a snadnou stavbu. Velkou výhodou je i možnost postavit vnitřní stan samostatně.",
   "features": [
    "Lepené švy",
@@ -822,6 +983,10 @@
     "file": "data/pdf_swatch/BIVAK_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/BIVAK.png",
+  "pdf_icons": [
+   "data/pdf_icons/BIVAK_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -843,6 +1008,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm",
    "ROZMĚR": "(90 + 140) x 225 / 105 cm"
   },
+  "col": [
+   47.3,
+   312.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Univerzální stan pro všechny outdoorové aktivity. Ideální pro každodenní přesun na kole, pešky či po vodě. Samonosná pevná konstrukce předurčuje tento model i do náročnějších podmínek. Při malé hmotnosti, jednoduchosti stavby a díky prostorné apsidě poskytne dostatečný komfort.",
   "features": [
    "Lepené švy",
@@ -864,6 +1034,10 @@
     "file": "data/pdf_swatch/COMPACT_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/COMPACT.png",
+  "pdf_icons": [
+   "data/pdf_icons/COMPACT_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -884,6 +1058,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm",
    "ROZMĚR": "(220 + 90) x 150 / 110 cm"
   },
+  "col": [
+   312.9,
+   578.3
+  ],
+  "first_label_y": 262.6,
   "desc": "Model pro 2-3 osoby s durawrapovou konstrukcí a výjimečnou délkou pro větší komfort uživatele. Dostatečná apsida zajišťuje prostor pro uložení zavazadel. Výhodou stanu je nízká hmotnost a rychlá stavba.",
   "features": [
    "Lepené švy",
@@ -905,6 +1084,10 @@
     "file": "data/pdf_swatch/ALFA_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/ALFA.png",
+  "pdf_icons": [
+   "data/pdf_icons/ALFA_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -925,6 +1108,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm + Durawrap 9.5 mm",
    "ROZMĚR": "(220 + 90) x 205 / 115 cm"
   },
+  "col": [
+   578.3,
+   843.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Stan pro 3-4 osoby s klasickou konstrukcí s apsidou a jedním vchodem. Ideální stan pro standardní použití i v náročných podmínkách. Výhodou je jeho jednoduchá stavba a nízká hmotnost.",
   "features": [
    "Lepené švy",
@@ -946,6 +1134,10 @@
     "file": "data/pdf_swatch/LARGO_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/LARGO.png",
+  "pdf_icons": [
+   "data/pdf_icons/LARGO_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -966,6 +1158,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm + Durawrap 9.5 mm",
    "ROZMĚR": "(85 + 210 + 85) x 220 / 125 cm"
   },
+  "col": [
+   24.5,
+   290.1
+  ],
+  "first_label_y": 262.6,
   "desc": "Stan pro 3-4 osoby. Dva vchody s apsidou zajišťují komfort uživatelů. Stan je vhodný i do náročných podmínek při vysokohorské turistice. Třiprutová konstrukce odolá i silnému větru. Apsidy jsou dostatečně prostorné pro zavazadla či vaření.",
   "features": [
    "Lepené švy",
@@ -987,6 +1184,10 @@
     "file": "data/pdf_swatch/MAGNUM_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/MAGNUM.png",
+  "pdf_icons": [
+   "data/pdf_icons/MAGNUM_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -1007,6 +1208,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm + Durawrap 9.5 mm",
    "ROZMĚR": "(205 + 160) x 220 / 130 cm"
   },
+  "col": [
+   290.1,
+   555.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Stan pro 3-4 osoby s velkou a dobře přístupnou předsíňkou, kterou lze otevřít ze dvou stran. Prostor může být využit pro nouzové přespání či uskladnění kol apod. Stan je vhodný také pro rodinné dovolené. Výhodou stanu je dostatečný komfort a variabilita použití.",
   "features": [
    "Lepené švy",
@@ -1027,6 +1233,10 @@
     "label": "Sand",
     "file": "data/pdf_swatch/FOCUS_1.png"
    }
+  ],
+  "pdf_draw": "data/pdf_draw/FOCUS.png",
+  "pdf_icons": [
+   "data/pdf_icons/FOCUS_1.png"
   ],
   "serie": "TREKKING SERIE"
  },
@@ -1049,6 +1259,11 @@
    "KONSTRUKCE": "Durawrap 11 mm + Durawrap 8.5 mm + Durawrap 9.5 mm",
    "ROZMĚR": "(100 + 205 + 100) x 240 / 135"
   },
+  "col": [
+   556.1,
+   821.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Prostorný stan pro 4 osoby. Klasická dvou- prutová konstrukce je zpevněná dalšími dvěma pruty a zajišťuje tak dostatečnou stabilitu i do náročnějších podmínek. Dva vchody a dvě prostorné apsidy zajišťují dostatečný komfort uživatelů jak pro vaření, tak pro uložení zavazadel.",
   "features": [
    "Lepené švy",
@@ -1075,6 +1290,10 @@
     "file": "data/pdf_swatch/TORNADO_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/TORNADO.png",
+  "pdf_icons": [
+   "data/pdf_icons/TORNADO_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -1096,6 +1315,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm",
    "ROZMĚR": "(90 + 225 + 60) x 260 / 145 cm"
   },
+  "col": [
+   47.3,
+   313.3
+  ],
+  "first_label_y": 262.6,
   "desc": "Celoroční perfektně řešený stan. Díky své konstrukci zajišťuje dokonalý komfort pro čtveřici uživatelů. Stan ENDURO má 2 vchody a předsíňky. Vchody jsou kryté tropikem, což zaručuje dokonalou ochranu před hmyzem a zároveň skvělé odvětrávání. Dvojice průhledných okének zajišťuje výborné prosvětlení a kontakt s okolím.",
   "features": [
    "100&% samonosná konstrukce",
@@ -1126,6 +1350,10 @@
     "file": "data/pdf_swatch/ENDURO_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/ENDURO.png",
+  "pdf_icons": [
+   "data/pdf_icons/ENDURO_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -1147,6 +1375,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm",
    "ROZMĚR": "(70 + 220) x 135 / 105 cm"
   },
+  "col": [
+   47.3,
+   312.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Jednoduchý stan s apsidou, nejmenší konstrukce z Trimm kolekce. Zaujme nízkou hmotností a snadnou stavbou.",
   "features": [
    "Lepené švy",
@@ -1178,6 +1411,10 @@
     "file": "data/pdf_swatch/DUO_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/DUO.png",
+  "pdf_icons": [
+   "data/pdf_icons/DUO_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -1198,6 +1435,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm",
    "ROZMĚR": "(90 + 220) x 150 / 110 cm"
   },
+  "col": [
+   312.9,
+   578.3
+  ],
+  "first_label_y": 262.6,
   "desc": "Model pro 2 -3 osoby s tradiční konstrukcí a výjimečnou délkou pro větší komfort uživatele. Dostatečná apsida zajišťuje prostor pro uložení zavazadel. Výhodou stanu je nízká hmotnost a rychlá stavba.",
   "features": [
    "Lepené švy",
@@ -1224,6 +1466,10 @@
     "file": "data/pdf_swatch/COMET_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/COMET.png",
+  "pdf_icons": [
+   "data/pdf_icons/COMET_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -1244,6 +1490,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm + Durawrap 9.5 mm",
    "ROZMĚR": "(90 + 220) x 205 / 125 cm"
   },
+  "col": [
+   578.3,
+   843.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Stan pro 3-4 osoby s klasickou konstrukcí a dostatečnou apsidou pro pohodlné kempování. Spolehlivý stan pro rodinné použití. Výhodou stanu je dostatečný komfort při nízké hmotnosti a rychlá stavba.",
   "features": [
    "Lepené švy",
@@ -1265,6 +1516,10 @@
     "file": "data/pdf_swatch/HUDSON_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/HUDSON.png",
+  "pdf_icons": [
+   "data/pdf_icons/HUDSON_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -1285,6 +1540,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm + Durawrap 9.5 mm",
    "ROZMĚR": "(160 + 205) x 220 / 130 cm"
   },
+  "col": [
+   24.5,
+   290.5
+  ],
+  "first_label_y": 262.6,
   "desc": "Stan pro 3-4 osoby s velkou a dobře přístupnou předsíňkou, kterou lze otevřít ze dvou stran. Prostor může být využit pro nouzové přespání či uskladnění kol apod. Stan je vhodný také pro rodinné dovolené. Výhodou stanu je dostatečný komfort a variabilita použití.",
   "features": [
    "Doplňková podlážka součástí produktu",
@@ -1312,6 +1572,10 @@
     "file": "data/pdf_swatch/EAGLE_II_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/EAGLE_II.png",
+  "pdf_icons": [
+   "data/pdf_icons/EAGLE_II_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -1332,6 +1596,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm + Durawrap 9.5 mm",
    "ROZMĚR": "(170 + 220 + 70) x 250 /170 cm"
   },
+  "col": [
+   24.5,
+   290.1
+  ],
+  "first_label_y": 262.6,
   "desc": "Prostorný stan s velkou variabilitou vchodů a rozměrnou předsíní zachovává výhodu malých stanů - snadnou a rychlou stavbu.",
   "features": [
    "100 % samonosná konstrukce",
@@ -1355,6 +1624,10 @@
     "file": "data/pdf_swatch/CAMP_II_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/CAMP_II.png",
+  "pdf_icons": [
+   "data/pdf_icons/CAMP_II_1.png"
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1375,6 +1648,11 @@
    "KONSTRUKCE": "Durawrap 11 mm + Durawrap 9.5 mm",
    "ROZMĚR": "(260 + 220) x 260 / 200 cm"
   },
+  "col": [
+   290.1,
+   555.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Stan pro 4-5 osob. Komfortní rodinný stan pro kempování nebo jako základna pro jiné sportovní aktivity. Prostorná obytná předsíň je vhodná pro společné stolováni, vaření nebo nouzové přespání dalších osob.",
   "features": [
    "100 % samonosná konstrukce",
@@ -1399,6 +1677,10 @@
     "file": "data/pdf_swatch/ARIZONA_II_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/ARIZONA_II.png",
+  "pdf_icons": [
+   "data/pdf_icons/ARIZONA_II_1.png"
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1419,6 +1701,11 @@
    "KONSTRUKCE": "Durawrap 11 mm + Durawrap 9.5 mm",
    "ROZMĚR": "(150 + 150 + 150) x 230/190 cm"
   },
+  "col": [
+   556.1,
+   821.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Velký, dvouložnicový stan pro celou rodinu. Čtyřprutová nosná konstrukce křížící se v pěti bodech je odolná proti větru a zaručuje stabilitu i v problematických podmínkách. Možnost vytvoření stříšky podepřením vchodového stanového dílce. Vhodný pro rodinné výlety do přírody.",
   "features": [
    "100 % samonosná konstrukce",
@@ -1443,6 +1730,10 @@
     "file": "data/pdf_swatch/COMFORT_II_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/COMFORT_II.png",
+  "pdf_icons": [
+   "data/pdf_icons/COMFORT_II_1.png"
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1463,6 +1754,11 @@
    "KONSTRUKCE": "Durawrap 8.5 mm + Durawrap 9.5 mm",
    "ROZMĚR": "300 x (70 + 245 +100) /190 cm"
   },
+  "col": [
+   47.3,
+   312.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Prostorný rodinný stan pro 5-6 osob. Tvarovaná tříprutová konstrukce zajišťuje dostatečnou stabilitu a prostor uvnitř stanu. Systém odepínacích panelů pak umožňuje dokonalé odvětrání. Tento model lze využít pro sepnutí s populárním přístřeškem z naší kolekce - stanem PARTY-S.",
   "features": [
    "Lepené švy",
@@ -1484,6 +1780,10 @@
     "file": "data/pdf_swatch/MACAO_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/MACAO.png",
+  "pdf_icons": [
+   "data/pdf_icons/MACAO_1.png"
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1504,6 +1804,11 @@
    "KONSTRUKCE": "Durawrap 11 mm + Durawrap 12.5 mm",
    "ROZMĚR": "(70+305+110+90)x305 /195 cm"
   },
+  "col": [
+   312.9,
+   578.3
+  ],
+  "first_label_y": 262.6,
   "desc": "Prostorný rodinný stan s odolnou šesti-prutovou konstrukcí, která zajištuje dostatek prostoru a stabilitu. Vnitřní stan s integrovanou podlážkou a propracovaným systémem odvětrání, chrání obyvatele před hmyzem, přehřátím i nepřízní počasí. Možnost vytvoření stříšky podepřením vchodového i bočního stanového dílce.",
   "features": [
    "Doplňková podlážka součástí produktu",
@@ -1526,6 +1831,10 @@
     "file": "data/pdf_swatch/MONZUN_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/MONZUN.png",
+  "pdf_icons": [
+   "data/pdf_icons/MONZUN_1.png"
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1546,6 +1855,11 @@
    "KONSTRUKCE": "Durawrap 11 mm + Durawrap 12.5 mm",
    "ROZMĚR": "(220+260+220)x260 /200 cm"
   },
+  "col": [
+   578.3,
+   843.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Stan pro 8 - 10 osob. Komfortní rodinný stan pro kempování nebo jako základna pro jiné sportovní aktivity. Prostorná obytná předsíň je vhodná pro společné stolováni, vaření nebo nouzové přespání dalších osob.",
   "features": [
    "100 % samonosná konstrukce",
@@ -1569,6 +1883,10 @@
     "file": "data/pdf_swatch/GALAXY_II_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/GALAXY_II.png",
+  "pdf_icons": [
+   "data/pdf_icons/GALAXY_II_1.png"
+  ],
   "serie": "FAMILY SERIE"
  },
  {
@@ -1591,6 +1909,11 @@
    "KONSTRUKCE": "",
    "ROZMĚR": "215 x 315 cm"
   },
+  "col": [
+   47.3,
+   312.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Lehký jednoplášťový přístřešek pro nenáročné turisty, rybáře, trampy a cyklisty. Neslibuje komfort jako klasický stan, ale jeho jednoznačnou výhodou je nízká hmotnost a snadná stavba s využitím teleskopických trekových holí.",
   "features": [
    "Konstrukce s využitím trekových hůlek",
@@ -1616,6 +1939,10 @@
     "file": "data/pdf_swatch/TRACE_ONE_3.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/TRACE_ONE.png",
+  "pdf_icons": [
+   "data/pdf_icons/TRACE_ONE_1.png"
+  ],
   "serie": "SHELTERS SERIE"
  },
  {
@@ -1638,6 +1965,11 @@
    "KONSTRUKCE": "",
    "ROZMĚR": "290 x 350 cm"
   },
+  "col": [
+   312.9,
+   578.3
+  ],
+  "first_label_y": 262.6,
   "desc": "Lehký jednoplášťový přístřešek pro nenáročné turisty, rybáře, trampy a cyklisty. Neslibuje komfort jako klasický stan, ale jeho jednoznačnou výhodou je nízká hmotnost a snadná stavba s využitím teleskopických trekových holí.",
   "features": [
    "Konstrukce s využitím trekových hůlek",
@@ -1663,6 +1995,10 @@
     "file": "data/pdf_swatch/TRACE_3.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/TRACE.png",
+  "pdf_icons": [
+   "data/pdf_icons/TRACE_1.png"
+  ],
   "serie": "SHELTERS SERIE"
  },
  {
@@ -1685,6 +2021,11 @@
    "KONSTRUKCE": "",
    "ROZMĚR": "370 x 500 cm"
   },
+  "col": [
+   578.3,
+   843.7
+  ],
+  "first_label_y": 262.6,
   "desc": "Lehký jednoplášťový přístřešek pro nenáročné turisty, rybáře, trampy a cyklisty. Neslibuje komfort jako klasický stan, ale jeho jednoznačnou výhodou je nízká hmotnost a snadná stavba s využitím teleskopických trekových holí.",
   "features": [
    "Konstrukce s využitím trekových hůlek",
@@ -1710,6 +2051,10 @@
     "file": "data/pdf_swatch/TRACE_XL_3.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/TRACE_XL.png",
+  "pdf_icons": [
+   "data/pdf_icons/TRACE_XL_1.png"
+  ],
   "serie": "SHELTERS SERIE"
  },
  {
@@ -1731,6 +2076,11 @@
    "KONSTRUKCE": "Steel 19 mm",
    "ROZMĚR": "(450x450)/228 cm"
   },
+  "col": [
+   24.5,
+   290.5
+  ],
+  "first_label_y": 262.6,
   "desc": "Elegantní a jednoduše řešený piknikový přístřešek využitelný např. pro garden party, poskytne ochranu před ostrým sluncem a deštěm. Při použití doplňkových zástěn je možné dosáhnout dokonalého stínu a závětří. Jedna zástěna je součástí základního balení.",
   "features": [
    "100 % samonosná konstrukce",
@@ -1751,6 +2101,8 @@
     "file": "data/pdf_swatch/PARTY_PARTY_PLUS_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/PARTY_PARTY_PLUS.png",
+  "pdf_icons": [],
   "serie": "SHELTERS SERIE"
  },
  {
@@ -1772,6 +2124,11 @@
    "KONSTRUKCE": "Steel 19 mm",
    "ROZMĚR": "(300 x 300)/220 cm"
   },
+  "col": [
+   47.3,
+   313.3
+  ],
+  "first_label_y": 262.6,
   "desc": "Elegantní a jednoduše řešený piknikový přístřešek ve zmenšené verzi využitelný např. pro garden party, poskytne ochranu před ostrým sluncem a deštěm. Při použití doplňkových zástěn je možné dosáhnout dokonalého stínu a závětří. Jedna zástěna je součástí základního balení.",
   "features": [
    "100 % samonosná konstrukce",
@@ -1786,6 +2143,8 @@
     "file": "data/pdf_swatch/PARTY_S_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/PARTY_S.png",
+  "pdf_icons": [],
   "serie": "SHELTERS SERIE"
  },
  {
@@ -1803,11 +2162,18 @@
    "MATERIÁL": "100 % PES Oxford , 10 000 mm H₂O",
    "ROZMĚRY": "210 x 140 cm"
   },
+  "col": [
+   23.7,
+   221.6
+  ],
+  "first_label_y": 381.1,
   "desc": "Externí podlážka pro stan Trimm PACK zajišťující lepší ochranu před vlhkem a chladem i v předsíňce. Hlavním účelem footprintu je ochrana podlážky před probodnutím nebo protržením. Výrazně tak díky své mechanické odolnosti zvyšuje životnost podlážky stanu, zvlášť při použití v náročných podmínkách a v nerovných terénech.",
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOOTPRINT_PACK.jpg",
   "swatches": [],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1825,11 +2191,18 @@
    "MATERIÁL": "100 % PES Oxford , 10 000 mm H₂O",
    "ROZMĚRY": "275 x 130 cm"
   },
+  "col": [
+   224.0,
+   422.0
+  ],
+  "first_label_y": 381.1,
   "desc": "Externí podlážka pro stan Trimm HIMLITE zajišťující lepší ochranu před vlhkem a chladem i v předsíňce. Hlavním účelem footprintu je ochrana podlážky před probodnutím, nebo protržením. Výrazně tak díky své mechanické odolnosti zvyšuje životnost podlážky stanu, zvlášť při použití v náročných podmínkách a v nerovných terénech.",
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOOTPRINT_HIMLITE.jpg",
   "swatches": [],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1847,11 +2220,18 @@
    "MATERIÁL": "100 % PES Oxford , 10 000 mm H₂O",
    "ROZMĚRY": "215 x 245 cm"
   },
+  "col": [
+   422.0,
+   619.9
+  ],
+  "first_label_y": 381.1,
   "desc": "Externí podlážka pro stan Trimm PIONEER zajišťující lepší ochranu před vlhkem a chladem i v předsíňce. Hlavním účelem footprintu je ochrana podlážky před probodnutím, nebo protržením. Výrazně tak díky své mechanické odolnosti zvyšuje životnost podlážky stanu, zvlášť při použití v náročných podmínkách a v nerovných terénech.",
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOOTPRINT_PIONEER.jpg",
   "swatches": [],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -1868,6 +2248,11 @@
   "fields": {
    "MATERIÁL": "Anodized hardened aluminium"
   },
+  "col": [
+   48.3,
+   246.7
+  ],
+  "first_label_y": 381.1,
   "desc": "Stanový kolík z eloxovaného hliníku o hmotnosti 18 g a délce 23 cm. Trojúhelníkový tvar je vhodný pro lepší stabilitu a zároveň díky své pevnosti použitelný i do tvrdších povrchů. Na vrchní části kolíku je zářez a očko ze šňůrky sloužící k lepšímu přístupu při vytahování ze země a fixaci napínací šnůry.",
   "features": [],
   "activities": [],
@@ -1883,6 +2268,10 @@
     "label": "Bordo Anodized",
     "file": "data/pdf_swatch/Y_PEG_D23_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/Y_PEG_D23_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -1900,6 +2289,11 @@
   "fields": {
    "MATERIÁL": "Anodized hardened aluminium"
   },
+  "col": [
+   246.7,
+   445.1
+  ],
+  "first_label_y": 381.1,
   "desc": "Stanový kolík z eloxovaného hliníku o hmotnosti 16 g a délce 18 cm. Trojúhelníkový tvar je vhodný pro lepší stabilitu a zároveň díky své pevnosti použitelný i do tvrdších povrchů. Na vrchní části kolíku je zářez a očko ze šňůrky sloužící k lepšímu přístupu při vytahování ze země a fixaci napínací šnůry.",
   "features": [],
   "activities": [],
@@ -1915,6 +2309,10 @@
     "label": "Bordo Anodized",
     "file": "data/pdf_swatch/Y_PEG_D18_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/Y_PEG_D18_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -1932,6 +2330,11 @@
   "fields": {
    "MATERIÁL": "Anodized hardened aluminium"
   },
+  "col": [
+   445.5,
+   643.9
+  ],
+  "first_label_y": 381.1,
   "desc": "Ultralehký stanový kolík z eloxovaného hliníku ve tvaru „V “, o hmotnosti 12 g a délce 17 cm. Nabízí velmi dobrý poměr stability a odolnosti. Díky svému tvaru vhodný k univerzálnímu použití. Na vrchní části kolíku je zářez sloužící k lepšímu přístupu při vytahování ze země a fixaci napínací šnůry.",
   "features": [],
   "activities": [],
@@ -1942,6 +2345,10 @@
     "label": "",
     "file": "data/pdf_swatch/V_PEG_D17_4.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/V_PEG_D17_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -1959,6 +2366,11 @@
   "fields": {
    "MATERIÁL": "Anodized hardened aluminium"
   },
+  "col": [
+   645.4,
+   843.7
+  ],
+  "first_label_y": 381.1,
   "desc": "Lehký stanový kolík z eloxovaného hliníku ve tvaru „čtverce“, o hmotnosti 11 g a délce 16 cm. Díky svému tvaru vhodný k použití do velmi tvrdých kamenitých povrchů.",
   "features": [],
   "activities": [],
@@ -1969,6 +2381,10 @@
     "label": "",
     "file": "data/pdf_swatch/ROCK_PEG_D16_4.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ROCK_PEG_D16_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -1987,6 +2403,11 @@
   "fields": {
    "MATERIÁL": "Anodized hardened aluminium"
   },
+  "col": [
+   32.7,
+   231.1
+  ],
+  "first_label_y": 381.2,
   "desc": "Lehký hliníkový kolík o průměru 7 mm, hmotnosti 13 g a délce 18 cm.cm. Dík vému tvaru je vhodný k univerzálnímu použití.",
   "features": [],
   "activities": [],
@@ -2002,6 +2423,10 @@
     "label": "Silver",
     "file": "data/pdf_swatch/SOLID_PEG_D18_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/SOLID_PEG_D18_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2020,6 +2445,11 @@
   "fields": {
    "MATERIÁL": "Galvanized steel"
   },
+  "col": [
+   231.1,
+   429.4
+  ],
+  "first_label_y": 381.2,
   "desc": "Klasický ocelový kolík o průměru 5 mm, hmotnosti 35 g a délce 19 cm. Díky svému tvaru a použitému materiálu vhodný k univerzálnímu použití.",
   "features": [],
   "activities": [],
@@ -2030,6 +2460,10 @@
     "label": "",
     "file": "data/pdf_swatch/SOLID_PEG_S19_5.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/SOLID_PEG_S19_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2048,6 +2482,11 @@
   "fields": {
    "MATERIÁL": "Galvanized steel"
   },
+  "col": [
+   429.9,
+   628.2
+  ],
+  "first_label_y": 381.2,
   "desc": "Klasický ocelový kolík o průměru 7 mm, hmotnosti 90 g a délce 26 cm. Díky své délce a tvaru určený pro větší zátěž a vhodný k univerzálnímu použití všude tam, kde se nemusí řešit váha.",
   "features": [],
   "activities": [],
@@ -2058,6 +2497,10 @@
     "label": "",
     "file": "data/pdf_swatch/SOLID_PEG_S26_5.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/SOLID_PEG_S26_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2076,6 +2519,11 @@
   "fields": {
    "MATERIÁL": "Galvanized steel"
   },
+  "col": [
+   629.7,
+   828.1
+  ],
+  "first_label_y": 381.2,
   "desc": "Klasický ocelový kolík o průměru 7 mm, hmotnosti 95 g a délce 27 cm. Díky své délce a konstrukci určený pro větší zátěž a tvrdší povrchy, Vhodný k univerzálnímu použití všude tam, kde se nemusí řešit váha.",
   "features": [],
   "activities": [],
@@ -2086,6 +2534,10 @@
     "label": "",
     "file": "data/pdf_swatch/NAILS_PEG_S27_4.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/NAILS_PEG_S27_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2104,6 +2556,11 @@
   "fields": {
    "MATERIÁL": "Galvanized steel"
   },
+  "col": [
+   48.3,
+   246.0
+  ],
+  "first_label_y": 381.1,
   "desc": "Ocelový kolík ve tvaru „V“, hmotnosti 75 g a délce 30 cm. Díky své délce a konstrukci je určený pro větší zátěž a měkké povrchy. Vhodný k univerzálnímu použití.",
   "features": [],
   "activities": [],
@@ -2119,6 +2576,10 @@
     "label": "Silver",
     "file": "data/pdf_swatch/V_PEG_S30_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/V_PEG_S30_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2137,6 +2598,11 @@
   "fields": {
    "MATERIÁL": "Anodized hardened aluminium"
   },
+  "col": [
+   246.0,
+   443.8
+  ],
+  "first_label_y": 381.1,
   "desc": "Univerzální sada tří stanových prutů o délce 50 cm, pomocí které je možné nahradit a zkrácením přizpůsobit délku poškozeného prutu u jakéhokoli stanu s tyčkami o průměru 8,5 mm. Tyčky jsou vyrobeny z odlehčeného Duralu 7001 T6, což zajišťuje jejich nízkou hmotnost a pevnost.",
   "features": [],
   "activities": [],
@@ -2147,6 +2613,10 @@
     "label": "",
     "file": "data/pdf_swatch/POLES_D50_8_5_MM_3.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/POLES_D50_8_5_MM_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2165,6 +2635,11 @@
   "fields": {
    "MATERIÁL": "Durawrap 6.5 mm"
   },
+  "col": [
+   445.5,
+   643.2
+  ],
+  "first_label_y": 381.1,
   "desc": "Univerzální sada tří prutů o délce 40 cm, pomocí které je možné nahradit a zkrácením přizpůsobit délku poškozeného prutu u jakéhokoli stanu s tyčkami o průměru 6,5 mm. Jsou vyrobeny z durawrapu, což zajišťuje jejich nízkou hmotnost. Použitím durawrapu se výrazně prodlužuje jejich životnost a zvyšuje se pevnost i pružnost.",
   "features": [],
   "activities": [],
@@ -2175,6 +2650,10 @@
     "label": "",
     "file": "data/pdf_swatch/POLES_DRW40_6_5_MM_3.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/POLES_DRW40_6_5_MM_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2193,6 +2672,11 @@
   "fields": {
    "MATERIÁL": "Durawrap 8.5 mm"
   },
+  "col": [
+   645.4,
+   843.1
+  ],
+  "first_label_y": 381.1,
   "desc": "Univerzální sada tří prutů o délce 50 cm, pomocí které je možné nahradit a zkrácením přizpůsobit délku poškozeného prutu u jakéhokoli stanu s tyčkami o průměru 8,5 mm. Jsou vyrobeny z durawrapu, což zajišťuje jejich nízkou hmotnost. Použitím durawrapu se výrazně prodlužuje jejich životnost a zvyšuje se pevnost i pružnost.",
   "features": [],
   "activities": [],
@@ -2203,6 +2687,10 @@
     "label": "",
     "file": "data/pdf_swatch/POLES_DRW50_8_5_MM_3.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/POLES_DRW50_8_5_MM_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2221,6 +2709,11 @@
   "fields": {
    "MATERIÁL": "Durawrap 9.5 mm"
   },
+  "col": [
+   24.0,
+   221.6
+  ],
+  "first_label_y": 381.6,
   "desc": "Univerzální sada tří prutů o délce 50 cm, pomocí které je možné nahradit a zkrácením přizpůsobit délku poškozeného prutu u jakéhokoli stanu s tyčkami o průměru 9,5 mm. Jsou vyrobeny z durawrapu, což zajišťuje jejich nízkou hmotnost. Použitím durawrapu se výrazně prodlužuje jejich životnost a zvyšuje se pevnost i pružnost.",
   "features": [],
   "activities": [],
@@ -2231,6 +2724,10 @@
     "label": "",
     "file": "data/pdf_swatch/POLES_DRW50_9_5_MM_3.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/POLES_DRW50_9_5_MM_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2248,6 +2745,11 @@
   "fields": {
    "MATERIÁL": "Durawrap 11 mm"
   },
+  "col": [
+   223.5,
+   421.0
+  ],
+  "first_label_y": 381.6,
   "desc": "Univerzální sada tří prutů o délce 60 cm, pomocí které je možné nahradit a zkrácením přizpůsobit délku poškozeného prutu u jakéhokoli stanu s tyčkami o průměru 11 mm. Jsou vyrobeny z durawrapu, což zajišťuje jejich nízkou hmotnost. Použitím durawrapu se výrazně prodlužuje jejich životnost a zvyšuje se pevnost i pružnost.",
   "features": [],
   "activities": [],
@@ -2258,6 +2760,10 @@
     "label": "",
     "file": "data/pdf_swatch/POLES_DRW60_11_MM_3.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/POLES_DRW60_11_MM_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2276,6 +2782,11 @@
   "fields": {
    "MATERIÁL": "Galvanized steel 15 mm"
   },
+  "col": [
+   423.4,
+   620.9
+  ],
+  "first_label_y": 381.6,
   "desc": "Univerzální sada 2x4 tyček o délce 45 cm, které využijete nejen jako náhradní opěrné tyče k vašemu stanu Trimm, ale je možné z nich postavit i vlastní stan například s využitím Trimm přístřešku z řady TRACE. Složením 2x4 dílů získáte 2x opěrnou tyč v délce 182 cm.",
   "features": [],
   "activities": [],
@@ -2286,6 +2797,10 @@
     "label": "Black",
     "file": "data/pdf_swatch/POLES_S45_15_MM_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/POLES_S45_15_MM_1.png"
   ],
   "serie": "TENTS ACCESSORIES"
  },
@@ -2303,6 +2818,11 @@
   "fields": {
    "MATERIÁL": "100 % PES + 100 % rubber"
   },
+  "col": [
+   620.9,
+   818.4
+  ],
+  "first_label_y": 381.6,
   "desc": "TENTS POLES GUM - 10m z řady repair set od Trimm, je určena pro opravu či výměnu gumičky ve stanových prutech. Set obsahuje elastickou gumičku a drát na provlékání gumičky.",
   "features": [],
   "activities": [],
@@ -2314,6 +2834,8 @@
     "file": "data/pdf_swatch/TENTS_POLES_GUM_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "TENTS ACCESSORIES"
  },
  {
@@ -2348,6 +2870,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon Soft Ripstop , DWR",
    "IZOLAČNÍ VRSTVA": "Husí peří , Peří 90/10 , 750 g goose down 90/10- 750 cuin"
   },
+  "col": [
+   47.9,
+   312.8
+  ],
+  "first_label_y": 358.5,
   "desc": "„Nejvýkonnější” péřový spací pytel NORD 750 z Trimm kolekce. Je určen pro vysokohorské expedice, kde je kladen důraz na minimální váhu a objem při sbalení, maximální tepelný komfort a ochranu proti sněhu a větru.",
   "features": [
    "EN 13537 Certifikováno",
@@ -2368,6 +2895,8 @@
     "file": "data/pdf_swatch/NORD_750_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/NORD_750.png",
+  "pdf_icons": [],
   "serie": "EXTREME DOWN SERIE"
  },
  {
@@ -2401,6 +2930,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon Soft Ripstop , DWR",
    "IZOLAČNÍ VRSTVA": "Husí peří , Peří 90/10 , 500 g goose down 90/10- 750 cuin"
   },
+  "col": [
+   313.3,
+   578.2
+  ],
+  "first_label_y": 358.5,
   "desc": "Lehký péřový spací pytel NORD 500 má ideální poměr váhy a tepelného komfortu. Je určen pro extrémní cestovatele, ale i pro aktivní dobrodruhy, kteří upřednostňují minimální sbalený objem a váhu.",
   "features": [
    "EN 13537 Certifikováno",
@@ -2421,6 +2955,8 @@
     "file": "data/pdf_swatch/NORD_500_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/NORD_500.png",
+  "pdf_icons": [],
   "serie": "EXTREME DOWN SERIE"
  },
  {
@@ -2454,6 +2990,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon Soft Ripstop , DWR",
    "IZOLAČNÍ VRSTVA": "Husí peří , Peří 90/10 , 350 g goose down 90/10- 750 cuin"
   },
+  "col": [
+   578.2,
+   843.1
+  ],
+  "first_label_y": 358.5,
   "desc": "Lehký péřový spací pytel NORD 350 má ideální poměr váhy a tepelného komfortu. Je určen pro extrémní cestovatele, ale i pro aktivní dobrodruhy, kteří upřednostňují minimální sbalený objem a váhu.",
   "features": [
    "EN 13537 Certifikováno",
@@ -2474,6 +3015,8 @@
     "file": "data/pdf_swatch/NORD_350_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/NORD_350.png",
+  "pdf_icons": [],
   "serie": "EXTREME DOWN SERIE"
  },
  {
@@ -2508,6 +3051,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon Soft Ripstop , DWR",
    "IZOLAČNÍ VRSTVA": "Husí peří , Peří 90/10 , 400 g goose down 90/10- 750 cuin"
   },
+  "col": [
+   25.2,
+   290.6
+  ],
+  "first_label_y": 358.5,
   "desc": "Lehký péřový spací pytel PEAK 400 má ideální poměr váhy a tepelného komfortu. Je určen pro extrémní cestovatele, ale i pro aktivní dobrodruhy, kteří upřednostňují minimální sbalený objem a váhu.",
   "features": [
    "EN 13537 Certifikováno",
@@ -2529,6 +3077,8 @@
     "file": "data/pdf_swatch/PEAK_400_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/PEAK_400.png",
+  "pdf_icons": [],
   "serie": "EXTREME DOWN SERIE"
  },
  {
@@ -2562,6 +3112,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon Soft Ripstop , DWR",
    "IZOLAČNÍ VRSTVA": "Husí peří , Peří 90/10 , 250 g goose down 90/10- 750 cuin"
   },
+  "col": [
+   290.6,
+   556.0
+  ],
+  "first_label_y": 358.5,
   "desc": "Nejlehčí spací pytel PEAK 250 z Trimm kolekce. Určen pro všechny, kteří hledají ultralehký péřový spací pytel s minimálním objemem a univerzálním využitím. Může se použít i jako doplňková vnitřní termo vložka pro zvýšení tepelného komfortu jiného spacího pytle.",
   "features": [
    "EN 13537 Certifikováno",
@@ -2583,6 +3138,8 @@
     "file": "data/pdf_swatch/PEAK_250_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/PEAK_250.png",
+  "pdf_icons": [],
   "serie": "EXTREME DOWN SERIE"
  },
  {
@@ -2622,6 +3179,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Hollowfibre - 4 , 400 g/m2 (2 x 200 g/ m2 )"
   },
+  "col": [
+   47.9,
+   312.8
+  ],
+  "first_label_y": 358.5,
   "desc": "Anatomicky tvarovaný mumiový spací pytel s kvalitní značkovou náplní Hollow Fibre. Je určen pro náročnější použití při zimním kempování a horolezeckých výpravách. Propracovaný střih zajišťuje komfortní přespání i v nouzových podmínkách.",
   "features": [
    "Antialergenní",
@@ -2654,6 +3216,8 @@
     "file": "data/pdf_swatch/ARKTIS_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/ARKTIS.png",
+  "pdf_icons": [],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2695,6 +3259,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon Soft Ripstop , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , PRIMALOFT , 380 g/m2 (2 x 190 g/m2 )"
   },
+  "col": [
+   313.3,
+   578.2
+  ],
+  "first_label_y": 358.5,
   "desc": "Spací pytel Trimm RACK 1200 je nejvýkonnější z nové řady RACK, inovativních spacích pytlů TRIMM. Hlavní výhodou je moderní konstrukce, propracovaný střih s použitím 1/4 dodatkového zipu zajišťuje vysoký komfort při užití spacího pytle. Vzhledem k použití vysoce kvalitní náplně vykazují parametry vynikající hodnoty izolace v poměru objemu a hmotnosti.",
   "features": [
    "Antialergenní",
@@ -2728,6 +3297,8 @@
     "file": "data/pdf_swatch/RACK_1200_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/RACK_1200.png",
+  "pdf_icons": [],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2764,6 +3335,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Thermolite Quallo 7 , 260 g/m2 (2 x 130 g/m2 )"
   },
+  "col": [
+   578.2,
+   843.1
+  ],
+  "first_label_y": 358.5,
   "desc": "Velice univerzální komfortní spací pytel atraktivního vzhledu je předurčen pro celoroční použití. Vzhledem k použitému špičkovému materiálu Tactel a náplně ve dvou vrstvách vykazují parametry vynikající hodnoty izolace při malém objemu a hmotnosti.",
   "features": [
    "Antialergenní",
@@ -2791,6 +3367,10 @@
     "label": "Sea blue / Mid.blue",
     "file": "data/pdf_swatch/GANT_2.png"
    }
+  ],
+  "pdf_draw": "data/pdf_draw/GANT.png",
+  "pdf_icons": [
+   "data/pdf_icons/GANT_1.png"
   ],
   "serie": "TREKKING SERIE"
  },
@@ -2828,6 +3408,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Thermolite Quallo 7 , 300 g/m2 (2 x 150 g/m2 )"
   },
+  "col": [
+   25.2,
+   290.2
+  ],
+  "first_label_y": 358.5,
   "desc": "Díky svým rozměrům se jedná o extrémně pohodlný spací pytel, který vyniká nízkou hmotností při zachování výborných termoizolačních vlastností. Vzhledem k použití vysoce kvalitní náplně, a to 7-dutinkového vlákna Thermolite Qualo, je tento spací pytel vhodný k celoročnímu použití.",
   "features": [
    "Antialergenní",
@@ -2855,6 +3440,10 @@
     "label": "Khaki/Dark grey",
     "file": "data/pdf_swatch/BALANCE_WIDE_2.png"
    }
+  ],
+  "pdf_draw": "data/pdf_draw/BALANCE_WIDE.png",
+  "pdf_icons": [
+   "data/pdf_icons/BALANCE_WIDE_1.png"
   ],
   "serie": "TREKKING SERIE"
  },
@@ -2897,6 +3486,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Thermolite Quallo 7 , 300 g/m2 (2 x 150 g/m2 )"
   },
+  "col": [
+   290.6,
+   555.5
+  ],
+  "first_label_y": 358.5,
   "desc": "Velmi pohodlný spací pytel, který vyniká nízkou hmotností při zachování výborných termoizolačních vlastností. Vzhledem k použití vysoce kvalitní náplně, a to 7-dutinkového vlákna Thermolite Qualo, je tento spací pytel vhodný k celoročnímu použití.",
   "features": [
    "Antialergenní",
@@ -2935,6 +3529,10 @@
     "file": "data/pdf_swatch/BALANCE_4.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/BALANCE.png",
+  "pdf_icons": [
+   "data/pdf_icons/BALANCE_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -2971,6 +3569,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Thermolite Quallo 7 , 300 g/m2 (2 x 150 g/m2 )"
   },
+  "col": [
+   555.5,
+   820.5
+  ],
+  "first_label_y": 358.5,
   "desc": "Velmi pohodlný spací pytel, který vyniká nízkou hmotností při zachování výborných termoizolačních vlastností. Vzhledem k použití vysoce kvalitní náplně, a to 7-dutinkového vlákna Thermolite Qualo, je tento spací pytel vhodný k celoročnímu použití.",
   "features": [
    "Antialergenní",
@@ -2998,6 +3601,8 @@
     "file": "data/pdf_swatch/BALANCE_JUNIOR_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/BALANCE_JUNIOR.png",
+  "pdf_icons": [],
   "serie": "TREKKING SERIE"
  },
  {
@@ -3040,6 +3645,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Thermolite Quallo 7 , 250 g/m2 (2 x 125 g/m2 )"
   },
+  "col": [
+   47.9,
+   312.8
+  ],
+  "first_label_y": 358.5,
   "desc": "Celoroční spací pytel s předním zipem a kvalitní náplní Thermolite Quallo. Předností je výborný poměr termoizolačních vlastností a nízké hmotnosti. Funkce 2in1 dává možnost využití tohoto spacího pytle jako prodloužené “zateplené vesty”.",
   "features": [
    "Antialergenní",
@@ -3080,6 +3690,10 @@
     "file": "data/pdf_swatch/BATTLE_2IN1_4.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/BATTLE_2IN1.png",
+  "pdf_icons": [
+   "data/pdf_icons/BATTLE_2IN1_1.png"
+  ],
   "serie": "TREKKING SERIE"
  },
  {
@@ -3119,6 +3733,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % PES Diamond , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Hollowfibre -1 , 300 g/m2 (2 x 150 g/ m2 )"
   },
+  "col": [
+   313.3,
+   578.2
+  ],
+  "first_label_y": 358.5,
   "desc": "Spací pytel Traper najde využití při vysokohorské turistice a trekkingových cestách. Mumiový střih spacího pytle a náplň z kvalitního mikrovlákna. Vhodný pro začátek a konec letní sezóny.",
   "features": [
    "Antialergenní",
@@ -3151,6 +3770,8 @@
     "file": "data/pdf_swatch/TRAPER_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/TRAPER.png",
+  "pdf_icons": [],
   "serie": "TREKKING SERIE"
  },
  {
@@ -3190,6 +3811,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % PES Diamond , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Thermolite Quallo 7 , 200 g/m2 (2 x 100 g/m2 )"
   },
+  "col": [
+   578.2,
+   843.1
+  ],
+  "first_label_y": 358.5,
   "desc": "Komfortní spací pytel určený pro letní pěší turistiku, vodáctví a cykloturistiku.",
   "features": [
    "Antialergenní",
@@ -3222,6 +3848,8 @@
     "file": "data/pdf_swatch/WALKER_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/WALKER.png",
+  "pdf_icons": [],
   "serie": "TREKKING SERIE"
  },
  {
@@ -3259,6 +3887,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % PES Diamond , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Thermolite Quallo 7 , 200 g/m2 (2 x 100 g/m2 )"
   },
+  "col": [
+   25.2,
+   290.2
+  ],
+  "first_label_y": 358.5,
   "desc": "„Rostoucí“ varianta spacího pytle Walker Junior. Ojedinělá konstrukce umožňuje prodloužení délky spacáku o 30 cm – spací pytel poroste spolu s vaším dítětem. Sbalený přebytek pak slouží jako dodatečná izolace v oblasti nohou.",
   "features": [
    "Antialergenní",
@@ -3291,6 +3924,8 @@
     "file": "data/pdf_swatch/WALKER_FLEX_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/WALKER_FLEX.png",
+  "pdf_icons": [],
   "serie": "TREKKING SERIE"
  },
  {
@@ -3332,6 +3967,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Thermolite Quallo 7 , 200 g/m2 (2 x 100 g/m2 )"
   },
+  "col": [
+   290.6,
+   555.5
+  ],
+  "first_label_y": 358.5,
   "desc": "Univerzální spací pytel, který najde uplatnění po celý rok. Anatomický tvar, nízká hmotnost a malé rozměry sbaleného spacího pytle potěší každého uživatele.",
   "features": [
    "Antialergenní",
@@ -3369,6 +4009,10 @@
     "label": "Lagoon/Lemon",
     "file": "data/pdf_swatch/HIGHLANDER_4.png"
    }
+  ],
+  "pdf_draw": "data/pdf_draw/HIGHLANDER.png",
+  "pdf_icons": [
+   "data/pdf_icons/HIGHLANDER_1.png"
   ],
   "serie": "TREKKING SERIE"
  },
@@ -3411,6 +4055,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon Soft Ripstop , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , PRIMALOFT , 240 g/m2 (2 x 120 g/m2 )"
   },
+  "col": [
+   555.5,
+   820.5
+  ],
+  "first_label_y": 358.5,
   "desc": "Další spací pytel z nové řady inovatívních spacích pytlů TRIMM je RACK 800. Také i tady je hlavní výhodou moderní konstrukce, propracovaný střih s použitím 1/4 dodatkového zipu zajišťuje vysoký komfort při užití spacího pytle. Vzhledem k použití vysoce kvalitní náplně vykazují parametry vynikající hodnoty izolace v poměru objemu a hmotnosti.",
   "features": [
    "Antialergenní",
@@ -3444,6 +4093,8 @@
     "file": "data/pdf_swatch/RACK_800_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/RACK_800.png",
+  "pdf_icons": [],
   "serie": "TREKKING SERIE"
  },
  {
@@ -3482,6 +4133,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Thermolite Quallo 7 , 100 g/m2 (1 x 100 g/m2 )"
   },
+  "col": [
+   47.9,
+   313.3
+  ],
+  "first_label_y": 358.5,
   "desc": "Velmi lehký spací pytel, který po sbalení a kompresi zabere minimum místa a je určený pro letní cestování, vhodný na cyklo a vodní turistiku a letní trek. Náplň z kvalitního mikrovlákna.",
   "features": [
    "Antialergenní",
@@ -3513,6 +4169,10 @@
     "label": "Red/Dark red",
     "file": "data/pdf_swatch/IMPACT_2.png"
    }
+  ],
+  "pdf_draw": "data/pdf_draw/IMPACT.png",
+  "pdf_icons": [
+   "data/pdf_icons/IMPACT_1.png"
   ],
   "serie": "LITE SERIE"
  },
@@ -3556,6 +4216,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % Nylon Soft Ripstop , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , PRIMALOFT , 120 g/m2 (2 x 60 g/m2 )"
   },
+  "col": [
+   313.3,
+   578.6
+  ],
+  "first_label_y": 358.5,
   "desc": "Nejlehčí spací pytel z nové řady inovatívních spacích pytlů TRIMM je RACK 400. I tady je hlavní výhodou moderní konstrukce, propracovaný střih s použitím 1/4 dodatkového zipu zajišťuje vysoký komfort při užití spacího pytle. Vzhledem k použití vysoce kvalitní náplně vykazují parametry vynikající hodnoty izolace při malém objemu a hmotnosti.",
   "features": [
    "Antialergenní",
@@ -3589,6 +4254,8 @@
     "file": "data/pdf_swatch/RACK_400_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/RACK_400.png",
+  "pdf_icons": [],
   "serie": "LITE SERIE"
  },
  {
@@ -3627,6 +4294,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % PES Diamond , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Hollowfibre -1 , 200 g/m2 (1 x 200 g/ m2 )"
   },
+  "col": [
+   25.2,
+   290.2
+  ],
+  "first_label_y": 358.5,
   "desc": "Velmi lehký dekový spacák. Díky nízké hmotnosti, dobré skladnosti a kvalitní náplni je vhodný pro nejširší použití při běžných návštěvách přírody.",
   "features": [
    "Antialergenní",
@@ -3657,6 +4329,8 @@
     "file": "data/pdf_swatch/TRAVEL_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/TRAVEL.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3696,6 +4370,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % PES Diamond , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Hollowfibre -1 , 300 g/m2 (2 x 150 g/ m2 )"
   },
+  "col": [
+   290.6,
+   555.5
+  ],
+  "first_label_y": 358.5,
   "desc": "Vysoce komfortní XXL dekový spací pytel vhodný pro všechny, kteří mají rádi pohodlí. Deková konstrukce umožňuje použít spací pytel nejenom k táboření a rodinným výletům, ale i jako klasickou přikrývku na chatu či chalupu nebo jednoduše do auta.",
   "features": [
    "Antialergenní",
@@ -3726,6 +4405,8 @@
     "file": "data/pdf_swatch/TRAMP_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/TRAMP.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3764,6 +4445,11 @@
    "VNĚJŠÍ MATERIÁL": "100 % PES Diamond , DWR",
    "IZOLAČNÍ VRSTVA": "100 % PES , Hollowfibre -1 , 300 g/m2 (2 x 150 g/ m2 )"
   },
+  "col": [
+   555.5,
+   820.5
+  ],
+  "first_label_y": 358.5,
   "desc": "Mimořádně komfortní spací pytel pro všechny, kteří milují pohodlí a volnost. Extra šířka a speciální konstrukce překonává dosavadní představy o komfortu spacích pytlů. Umožňuje neomezený pohyb během spánku nebo odpočinku.",
   "features": [
    "Antialergenní",
@@ -3794,6 +4480,8 @@
     "file": "data/pdf_swatch/DIVAN_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/DIVAN.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -3812,6 +4500,11 @@
    "MATERIÁL": "100 % PES , PU coating, Taped_seams",
    "ROZMĚRY": "192 x 143 cm"
   },
+  "col": [
+   47.9,
+   227.0
+  ],
+  "first_label_y": 379.7,
   "desc": "Bivakovací pytel HAVEN snadno sbalíte buď do menší ruličky, nebo do obdélníkového obalu. Vak můžete také použít jako sluneční plachtu nebo pončo. Výrobek je opatřen kevlarovými očky a lze z něj sestavit transportní „sáně“.",
   "features": [],
   "activities": [],
@@ -3833,6 +4526,8 @@
     "file": "data/pdf_swatch/HAVEN_2.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3851,6 +4546,11 @@
    "MATERIÁL": "100 % PES Pongee",
    "ROZMĚRY": "220 x 80/ 50 cm"
   },
+  "col": [
+   250.8,
+   429.9
+  ],
+  "first_label_y": 379.7,
   "desc": "Univerzální hygienická vložka do mumiových spacích pytlů, která zároveň zvyšuje teplotní komfort. Je vyrobená z vysoce prodyšného 100 % PES materiálu s broušeným povrchem, který je měkký a hladký na dotyk. Vhodná i k použití jako samostatná přikrývka. Mezi další přednosti patří především její malý objem, nízká hmotnost a transportní obal.",
   "features": [],
   "activities": [],
@@ -3862,6 +4562,8 @@
     "file": "data/pdf_swatch/LINER_MUMMY_P_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3880,6 +4582,11 @@
    "MATERIÁL": "100 % PES Pongee",
    "ROZMĚRY": "210/ 80 cm"
   },
+  "col": [
+   448.1,
+   627.2
+  ],
+  "first_label_y": 379.7,
   "desc": "Univerzální hygienická vložka do dekových spacích pytlů, která zároveň zvyšuje teplotní komfort. Je vyrobená z vysoce prodyšného 100 % PES materiálu s broušeným povrchem, který je měkký a hladký na dotyk. Vhodná i k použití jako samostatná přikrývka. Mezi další přednosti patří především její malý objem, nízká hmotnost a transportní obal.",
   "features": [],
   "activities": [],
@@ -3891,6 +4598,8 @@
     "file": "data/pdf_swatch/LINER_BLANKET_P_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3909,6 +4618,11 @@
    "MATERIÁL": "100 % PES Fleece",
    "ROZMĚRY": "220 x 80/ 50 cm"
   },
+  "col": [
+   627.2,
+   806.3
+  ],
+  "first_label_y": 379.5,
   "desc": "Univerzální termo vložka do mumiových spacích pytlů, která zvyšuje tepelný komfort. Je vyrobená z vysoce prodyšného 100% PES fleece materiálu, který je měkký a hladký na dotyk. Vhodná i jako samostatná přikrývka. Dalšími přednostmi jsou malý objem, nízká hmotnost a transportní obal.",
   "features": [],
   "activities": [],
@@ -3920,6 +4634,8 @@
     "file": "data/pdf_swatch/THERMAL_LINER_MUMMY_F_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3938,6 +4654,11 @@
    "MATERIÁL": "100 % PES Fleece",
    "ROZMĚRY": "210/ 80 cm"
   },
+  "col": [
+   24.9,
+   206.6
+  ],
+  "first_label_y": 379.7,
   "desc": "Univerzální termo vložka do dekových spacích pytlů, která zvyšuje tepelný komfort. Je vyrobená z vysoce prodyšného 100% PES fleece materiálu, který je měkký a hladký na dotyk. Vhodná i jako samostatná přikrývka. Dalšími přednostmi jsou malý objem, nízká hmotnost a transportní obal.",
   "features": [],
   "activities": [],
@@ -3949,6 +4670,8 @@
     "file": "data/pdf_swatch/THERMAL_LINER_BLANKET_F_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3967,6 +4690,11 @@
    "MATERIÁL": "100 % PES",
    "ROZMĚRY": "17 x 32 cm"
   },
+  "col": [
+   254.3,
+   436.0
+  ],
+  "first_label_y": 379.7,
   "desc": "Kompresní obal značky Trimm COMPRESS BAG S umožňuje zmenšení rozměrů sbaleného spacího pytle. Objem spacáku je možné zmenšit až na 40 %, a to stáhnutím pomocí 4 kompresních pásků.",
   "features": [],
   "activities": [],
@@ -3978,6 +4706,8 @@
     "file": "data/pdf_swatch/COMPRESS_BAG_S_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -3996,6 +4726,11 @@
    "MATERIÁL": "100 % PES",
    "ROZMĚRY": "24 x 45 cm"
   },
+  "col": [
+   436.0,
+   617.6
+  ],
+  "first_label_y": 379.7,
   "desc": "Kompresní obal značky Trimm COMPRESS BAG M umožňuje zmenšení rozměrů sbaleného spacího pytle. Objem spacáku je možné zmenšit až na 40 %, a to stáhnutím pomocí 4 kompresních pásků.",
   "features": [],
   "activities": [],
@@ -4007,6 +4742,8 @@
     "file": "data/pdf_swatch/COMPRESS_BAG_M_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SLEEPING BAGS ACCESSORIES"
  },
  {
@@ -4034,6 +4771,11 @@
    "VÝPLŇ": "Vzduch",
    "VENTIL": "Plastový + Plochý"
   },
+  "col": [
+   47.9,
+   313.4
+  ],
+  "first_label_y": 342.7,
   "desc": "Nafukovací matrace Trimm WAKE 5.5 vyniká hlavně malým objemem ve sbaleném stavu. Je lehká a perfektně izoluje od chladu i nerovností. Barevným provedením a vzorem určitě osloví především dámskou část v řadách cestovatelů.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4055,6 +4797,8 @@
     "file": "data/pdf_swatch/WAKE_5_5_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/WAKE_5_5.png",
+  "pdf_icons": [],
   "serie": "LITE SERIE"
  },
  {
@@ -4079,6 +4823,11 @@
    "VÝPLŇ": "Vzduch",
    "VENTIL": "Double lock + Plastový"
   },
+  "col": [
+   313.4,
+   578.9
+  ],
+  "first_label_y": 342.7,
   "desc": "Odlehčená verze nafukovací matrace Trimm TIGUAN 5.0 . Vyniká hlavně nízkým objemem a lehkostí díky použitému ultralehkému materiálu.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4095,6 +4844,8 @@
     "file": "data/pdf_swatch/TIGUAN_5_0_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/TIGUAN_5_0.png",
+  "pdf_icons": [],
   "serie": "LITE SERIE"
  },
  {
@@ -4121,6 +4872,11 @@
    "VÝPLŇ": "Vzduch",
    "VENTIL": "Double lock + Plastový"
   },
+  "col": [
+   583.9,
+   849.4
+  ],
+  "first_label_y": 342.0,
   "desc": "Nafukovací matrace ZERO vyniká unikátní kombinací použitého materiálu 100% polyester pongee spandex + 150D Oxford with TPU. Matrace je na omak velmi příjemná a díky své pružnosti se lépe přizpůsobuje tělu uživatele. Je lehká a dobře sbalitelná do malého transportního obalu.",
   "features": [
    "4-směrný elastický materiál",
@@ -4138,6 +4894,8 @@
     "file": "data/pdf_swatch/ZERO_5_5_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/ZERO_5_5.png",
+  "pdf_icons": [],
   "serie": "LITE SERIE"
  },
  {
@@ -4165,6 +4923,11 @@
    "VÝPLŇ": "Vzduch",
    "VENTIL": "Plastový + Plochý"
   },
+  "col": [
+   3.5,
+   287.3
+  ],
+  "first_label_y": 348.1,
   "desc": "Nafukovací matrace Trimm STEPPER 5.5 s 56 centimetrů šířky po celé délce karimatky a 190 cm zajistí plnohodnotný komfort. To vše navíc doplněno o integrovaný polštář a integovanou nafukovací pumpou. Nylonová tkanina s Ripstop úpravou o tloušťce vlákna 40D zaručuje vysokou odolnost.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4186,6 +4949,8 @@
     "file": "data/pdf_swatch/STEPPER_5_5_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/STEPPER_5_5.png",
+  "pdf_icons": [],
   "serie": "LITE SERIE"
  },
  {
@@ -4216,6 +4981,11 @@
    "VÝPLŇ": "Vzduch",
    "VENTIL": "Plastový + Plochý"
   },
+  "col": [
+   287.3,
+   571.1
+  ],
+  "first_label_y": 345.2,
   "desc": "Nafukovací matrace Trimm STEPPER DUO 5.5 s 120 centimetrů šířky po celé délce karimatky a 190 cm zajistí plnohodnotný komfort pro dva uživatele. To vše navíc doplněno o integrovaný polštář a integovanou nafukovací pumpou. Nylonová tkanina s Ripstop úpravou o tloušťce vlákna 40D zaručuje vysokou odolnost. Tepelní odpor 1,3.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4236,6 +5006,8 @@
     "file": "data/pdf_swatch/STEPPER_DUO_5_5_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/STEPPER_DUO_5_5.png",
+  "pdf_icons": [],
   "serie": "LITE SERIE"
  },
  {
@@ -4263,6 +5035,11 @@
    "VÝPLŇ": "Vzduch",
    "VENTIL": "Plastový + Plochý"
   },
+  "col": [
+   577.8,
+   861.6
+  ],
+  "first_label_y": 346.0,
   "desc": "Nafukovací matrace Trimm CHARGE 8.5 vyniká hlavně vysokým výkonem R-Value 3,6 a malým objemem ve sbaleném stavu. Díky své tloušce perfektně izoluje od chladu i nerovností.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4284,6 +5061,8 @@
     "file": "data/pdf_swatch/CHARGE_8_5_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/CHARGE_8_5.png",
+  "pdf_icons": [],
   "serie": "LITE SERIE"
  },
  {
@@ -4311,6 +5090,11 @@
    "VÝPLŇ": "Pěna",
    "VENTIL": "Mosazný"
   },
+  "col": [
+   47.9,
+   313.4
+  ],
+  "first_label_y": 342.7,
   "desc": "Karimatka Trimm Hiker 2.5 je dokonalý společník na cestách na slovo vzatý. Jedná se o velmi odolnou samonafukovací karimatku, která zajišťuje dostatečné pohodlí a tepelnou izolaci.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4332,6 +5116,8 @@
     "file": "data/pdf_swatch/HIKER_2_5_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/HIKER_2_5.png",
+  "pdf_icons": [],
   "serie": "TREKKING SERIE"
  },
  {
@@ -4358,6 +5144,11 @@
    "VÝPLŇ": "Pěna",
    "VENTIL": "Double lock + Plastový"
   },
+  "col": [
+   313.4,
+   578.9
+  ],
+  "first_label_y": 342.7,
   "desc": "Anatomický tvar karimatky Trimm SPACE 3.7 ji předurčuje k akčnímu použití, tedy všude tam, kde je potřeba redukovat hmotnost a objem. Konstrukce horizontálních dutin šetří hmotnost, při zachování vysokého tepelného komfortu.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4374,6 +5165,8 @@
     "file": "data/pdf_swatch/SPACE_3_7_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/SPACE_3_7.png",
+  "pdf_icons": [],
   "serie": "TREKKING SERIE"
  },
  {
@@ -4400,6 +5193,11 @@
    "VÝPLŇ": "Pěna",
    "VENTIL": "Double lock + Plastový"
   },
+  "col": [
+   578.9,
+   844.4
+  ],
+  "first_label_y": 342.7,
   "desc": "Obdélníková karimatka Trimm CORNER 6.0 se postará o Váš maximální komfort. Výška až 6 cm zase zajistí ideální vytlumení nerovností podkladu a zajišťuje vysoký výkon izolace R-Value 4,1. Konstrukce horizontálních dutin šetří hmotnost, při zachování vysokého tepelného komfortu.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4416,6 +5214,8 @@
     "file": "data/pdf_swatch/CORNER_6_0_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/CORNER_6_0.png",
+  "pdf_icons": [],
   "serie": "TREKKING SERIE"
  },
  {
@@ -4444,6 +5244,11 @@
    "VÝPLŇ": "Pěna",
    "VENTIL": "Mosazný"
   },
+  "col": [
+   25.2,
+   290.7
+  ],
+  "first_label_y": 342.7,
   "desc": "Vysoce komfortní a příjemná samonafukovací karimatka Trimm FREEDOM XL 5.0 s vynikajícími izolačními vlastnostmi a vysokým výkonem R-Value 3,6.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4465,6 +5270,8 @@
     "file": "data/pdf_swatch/FREEDOM_XL_5_0_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/FREEDOM_XL_5_0.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -4491,6 +5298,11 @@
    "VÝPLŇ": "Pěna",
    "VENTIL": "Mosazný"
   },
+  "col": [
+   290.7,
+   556.2
+  ],
+  "first_label_y": 342.7,
   "desc": "Samonafukovací matrace Trimm ALTEA L 5.0 mumiového tvaru s protiskluzovým povrchem a kovovým ventilem. Speciální konstrukce výrazně zlepšuje pohodlí a izolaci. Vybavena praktickým obalem a sadou pro opravu případného poškození s vynikajícími izolačními vlastnostmi a vysokým výkonem R-Value 5,6.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4508,6 +5320,8 @@
     "file": "data/pdf_swatch/ALTEA_L_5_0_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/ALTEA_L_5_0.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -4534,6 +5348,11 @@
    "VÝPLŇ": "Pěna",
    "VENTIL": "Mosazný"
   },
+  "col": [
+   556.2,
+   821.7
+  ],
+  "first_label_y": 342.7,
   "desc": "Samonafukovací karimatka LANCER 7.0 svojí tloušťkou a velikosti poskytuje maximalní komfort. Její maximální hodnota izolace R-Value 7.0 předurčuje k využití i do chladných klimatických podmínek. Vybavená s protiskluzovým povrchem.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4551,6 +5370,8 @@
     "file": "data/pdf_swatch/LANCER_7_0_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/LANCER_7_0.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -4577,6 +5398,11 @@
    "VÝPLŇ": "",
    "VENTIL": ""
   },
+  "col": [
+   47.9,
+   313.4
+  ],
+  "first_label_y": 342.7,
   "desc": "Komfortní matrace Trimm YETTI 10.0 v rozměrech manželského lůžka a 10 cm profilované pěny vám poskytne maximálním pohodlí a dokonalou izolací s teplotním odpor 10,7. Povrch je vyroben z broušeného polyesteru, který zabraňuje smekání spacáku po karimatce a je velice příjemný na dotek.Ideální pro rodinnou turistiku, na chaty nebo nouzové přespání pro nečekané návštěvy.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4593,6 +5419,8 @@
     "file": "data/pdf_swatch/YETTI_10_0_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/YETTI_10_0.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -4619,6 +5447,11 @@
    "VÝPLŇ": "Pěna IXPE",
    "VENTIL": ""
   },
+  "col": [
+   313.4,
+   578.9
+  ],
+  "first_label_y": 342.7,
   "desc": "Karimatka Bubbles je nezničitelná a všestranná. Díky uzavřeným pórům je extrémně tvarově stálá, nepohlcuje vlhkost a je velice odolná. Spolehlivě chrání před chladem, mokrem a tvrdými nebo ostrými povrchy. Vyvýšená voštinová struktura navíc zajišťuje příjemný komfort při ležení. Tloušťka pěny je silnější ve střední části podložky než na koncích pro maximální izolaci na trupu. Ve složeném stavu lze karimatku Bubbles použít také jako podsedák.",
   "features": [
    "Kompresní pásky"
@@ -4632,6 +5465,8 @@
     "file": "data/pdf_swatch/BUBBLES_1_8_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/BUBBLES_1_8.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -4657,6 +5492,11 @@
    "VÝPLŇ": "Vzduch",
    "VENTIL": "Plastový + Plochý"
   },
+  "col": [
+   578.9,
+   844.4
+  ],
+  "first_label_y": 342.7,
   "desc": "Nafukovací anatomický polštář Trimm ROTTO XL 12.0 doporučený pro klidný a pohodový spánek na cestách, ve stanu, v přírodě či jen pro odpočinek na zahradě. Vyniká příjemným povrchem díky použitému materiálu 100% polyester pongee spandex. Polštář má rozměr 46 x 32 cm. Po vyfouknutí ho sbalíte do malého balíčku 12x8 cm s hmotností 95 g.",
   "features": [
    "4-směrný elastický materiál"
@@ -4675,6 +5515,8 @@
     "file": "data/pdf_swatch/ROTTO_12_0_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/ROTTO_12_0.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -4698,6 +5540,11 @@
    "VÝPLŇ": "Pěna",
    "VENTIL": "Plastový + Plochý"
   },
+  "col": [
+   25.2,
+   290.7
+  ],
+  "first_label_y": 342.7,
   "desc": "Anatomický polštář Trimm LEXUS 12.0 doporučený pro klidný a pohodový spánek na cestách, ve stanu, v přírodě či jen pro odpočinek na zahradě. Vyniká příjemným povrchem díky použitému materiálu 100% polyester pongee spandex.",
   "features": [
    "4-směrný elastický materiál"
@@ -4711,6 +5558,8 @@
     "file": "data/pdf_swatch/LEXUS_12_0_1.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/LEXUS_12_0.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -4738,6 +5587,11 @@
    "VÝPLŇ": "Pěna",
    "VENTIL": "Plastový"
   },
+  "col": [
+   290.7,
+   556.2
+  ],
+  "first_label_y": 342.7,
   "desc": "Samonafukovací sedák Trimm BUDDY 5.0 poskytuje výbornou izolaci a pohodlné sezení při různých aktivitách v přírodě, sportovních utkáních, koncertech, atd.",
   "features": [
    "Bezpečnostní pojistný ventil",
@@ -4760,6 +5614,8 @@
     "file": "data/pdf_swatch/BUDDY_5_0_2.png"
    }
   ],
+  "pdf_draw": "data/pdf_draw/BUDDY_5_0.png",
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -4777,6 +5633,11 @@
   "fields": {
    "MATERIÁL": "100 % Nylon + 100 % PES , PU coating, Ripstop texture"
   },
+  "col": [
+   55.0,
+   320.5
+  ],
+  "first_label_y": 364.8,
   "desc": "Další batoh z nové generace Trimm. Ideální nejen pro krátkodobou turistiku a jednodenní výlety, ale i pro náročnější túry. Použitý materiál dává batohu ideální poměr objemu při zachování nízké hmotnosti. Batoh je vybaven komfortním zádovým systémem.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -4809,6 +5670,11 @@
     "file": "data/pdf_swatch/OPAL_40_2.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/OPAL_40_1.png",
+   "data/pdf_icons/OPAL_40_2.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -4826,6 +5692,11 @@
   "fields": {
    "MATERIÁL": "100 % Nylon + 100 % PES , PU coating, Ripstop texture"
   },
+  "col": [
+   320.5,
+   586.0
+  ],
+  "first_label_y": 364.8,
   "desc": "Odolný praktický batoh s propracovanými detaily. Samozřejmostí je anatomicky nastavitelný zádový systém. Vhodný pro víkendovou turistiku, kolo a všechny zimní lyžařské aktivity.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -4863,6 +5734,10 @@
     "file": "data/pdf_swatch/ALPIN_40_3.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ALPIN_40_1.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -4882,6 +5757,11 @@
   "fields": {
    "MATERIÁL": "100 % PES + 100 % PES Ripstop , PU coating, Ripstop texture"
   },
+  "col": [
+   587.0,
+   852.6
+  ],
+  "first_label_y": 366.4,
   "desc": "Pohodlný, lehký batoh pro víkendové výlety do hor s maximálně prodyšným zádovým systémem. Je propracovaný do nejmenších detailů se spoustou vychytávek a vyniká i moderními barevnými kombinacemi.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -4920,6 +5800,11 @@
     "file": "data/pdf_swatch/COURIER_35_3.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/COURIER_35_1.png",
+   "data/pdf_icons/COURIER_35_2.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -4937,6 +5822,11 @@
   "fields": {
    "MATERIÁL": "100 % Nylon Ripstop + 100 % PES , PU coating, Ripstop texture"
   },
+  "col": [
+   34.8,
+   300.3
+  ],
+  "first_label_y": 358.4,
   "desc": "Turistický batoh moderní konstrukce. Díky systému odvětrání zad je vhodný i pro delší turistické aktivity, ale i jednodenní túry.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -4970,6 +5860,10 @@
     "file": "data/pdf_swatch/OTAWA_30_3.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/OTAWA_30_1.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -4987,6 +5881,11 @@
   "fields": {
    "MATERIÁL": "100 % PES , Dobby texture, PU coating"
   },
+  "col": [
+   300.3,
+   565.8
+  ],
+  "first_label_y": 358.4,
   "desc": "Odolný praktický batoh s propracovanými detaily. Samozřejmostí je anatomicky nastavitelný zádový systém. Vhodný pro víkendovou turistiku, kolo i lyže.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -5025,6 +5924,11 @@
     "file": "data/pdf_swatch/MANTA_30_3.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/MANTA_30_1.png",
+   "data/pdf_icons/MANTA_30_2.png"
+  ],
   "serie": "ADVENTURE SERIE"
  },
  {
@@ -5041,6 +5945,11 @@
   "fields": {
    "MATERIÁL": "100 % Nylon Ripstop + 100 % PES , PU coating, Ripstop texture"
   },
+  "col": [
+   47.6,
+   313.1
+  ],
+  "first_label_y": 359.9,
   "desc": "HAVANA 28 je menší model z řady batohů moderních konstrukčních tvarů. Anatomicky tvarovaný zádový systém a popruhy přes hruď i bedra přispívají k dobrému pocitu při nošení. Vybavením, lehkostí i objemem je vhodný pro veškeré sportovní aktivity.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -5073,6 +5982,10 @@
     "file": "data/pdf_swatch/HAVANA_28_3.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/HAVANA_28_1.png"
+  ],
   "serie": "DAYPACK SERIE"
  },
  {
@@ -5089,6 +6002,11 @@
   "fields": {
    "MATERIÁL": "100 % Nylon Ripstop + 100 % PES , PU coating"
   },
+  "col": [
+   313.1,
+   578.6
+  ],
+  "first_label_y": 359.9,
   "desc": "Moderní a velice funkční turistický batoh. Provedením ve svěžích barvách zaujme zejména dívky a mladé ženy. Díky dokonalému systému odvětrání zad je vhodný i pro delší turistické aktivity.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -5118,6 +6036,8 @@
     "file": "data/pdf_swatch/ESCAPE_25_3.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "DAYPACK SERIE"
  },
  {
@@ -5136,6 +6056,11 @@
   "fields": {
    "MATERIÁL": "100 % PES , PU coating"
   },
+  "col": [
+   25.1,
+   290.6
+  ],
+  "first_label_y": 359.9,
   "desc": "Lehký batoh mimo jiné vybavený speciální kapsou pro vodní rezervoár je ideálním řešením pro pěší turistiku a cyklistiku. Hlavní kapsa na zip, kapsa s organizérem, vnější kapsa ze síťoviny. Ramenní popruh polstrován. Anatomicky tvarované popruhy, nastavitelný hrudní popruh.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -5158,6 +6083,10 @@
     "file": "data/pdf_swatch/CRUISER_12_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/CRUISER_12_1.png"
+  ],
   "serie": "CYKLO SERIE"
  },
  {
@@ -5176,6 +6105,11 @@
   "fields": {
    "MATERIÁL": "100 % PES , PU coating, Ripstop texture"
   },
+  "col": [
+   290.6,
+   556.1
+  ],
+  "first_label_y": 359.9,
   "desc": "Speciální batoh s lehkou konstrukcí s vodním rezervoárem ideální pro extremně náročné vytrvalostní sporty. Hlavní kapsa na zip, vnější kapsa ze síťoviny, elastická šňůrka na předním panelu. Ramenní popruh polstrován. Anatomicky tvarované popruhy. Nastavitelný hrudní popruh.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -5207,6 +6141,10 @@
     "file": "data/pdf_swatch/BIKER_6_3.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/BIKER_6_1.png"
+  ],
   "serie": "CYKLO SERIE"
  },
  {
@@ -5225,6 +6163,11 @@
   "fields": {
    "MATERIÁL": "100 % PES , PU coating, Ripstop texture"
   },
+  "col": [
+   556.1,
+   821.6
+  ],
+  "first_label_y": 359.9,
   "desc": "Lehký cyklo batůžek vhodný taktéž pro vytrvalostní sporty a běžky. Konstrukce počítá s vodním rezervoárem. Je opatřen nastavitelnými prodyšnými popruhy. Samozřejmostí jsou polstrovaná odvětraná záda.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -5249,6 +6192,10 @@
     "file": "data/pdf_swatch/START_4_2.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/START_4_1.png"
+  ],
   "serie": "CYKLO SERIE"
  },
  {
@@ -5265,6 +6212,11 @@
   "fields": {
    "MATERIÁL": "100 % PES , PU coating"
   },
+  "col": [
+   44.0,
+   309.6
+  ],
+  "first_label_y": 359.9,
   "desc": "Cestovní taška z odolných materiálů opatřená kolečky. Možnost otevření uprostřed špřepážka). Vysouvací madlo pro transport s využitím integrovaných koleček. Zesílené dno a ochrana hran zavazadla.",
   "features": [
    "Boční kompresní popruhy",
@@ -5281,6 +6233,8 @@
     "file": "data/pdf_swatch/NEW_YORK_100_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -5297,6 +6251,11 @@
   "fields": {
    "MATERIÁL": "100 % PES , Dobby texture, PU coating"
   },
+  "col": [
+   309.6,
+   575.3
+  ],
+  "first_label_y": 359.9,
   "desc": "Vak na lyžařskou obuv z odolného materiálu. Celosezónní využití pro inline brusle i lyžařské boty včetně helmy a chráničů. Hlavní část se zadním vstupem, přední kapsa na doplňky, nastavitelný a odnímatelný ramenní popruh, polstrovaný úchyt.",
   "features": [
    "Odepínatelný popruh",
@@ -5312,6 +6271,8 @@
     "file": "data/pdf_swatch/BOOTBAG_20_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "COMFORT SERIE"
  },
  {
@@ -5328,6 +6289,11 @@
   "fields": {
    "MATERIÁL": "100 % Nylon Ripstop"
   },
+  "col": [
+   25.1,
+   289.1
+  ],
+  "first_label_y": 359.9,
   "desc": "Lehká sbalitelná taška přes rameno. Snadno ji zmanipulujete do malého balíčku, ideální pro nákupy nebo cestování. Všude výborně uskladnitelná díky své nízké váze a objemu.",
   "features": [
    "Boční kompresní popruhy"
@@ -5346,6 +6312,8 @@
     "file": "data/pdf_swatch/BACKUP_10_2.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "TRAVEL LITE / TRAVEL SERIE"
  },
  {
@@ -5362,6 +6330,11 @@
   "fields": {
    "MATERIÁL": "100 % Nylon Ripstop"
   },
+  "col": [
+   290.6,
+   554.6
+  ],
+  "first_label_y": 359.9,
   "desc": "Praktická, nenápadná peněženka Money Belt je vhodná především na cestování a sport. Díky tělové barvě a tenkému provedení je pod oblečením takřka neviditelná. Uvnitř rozdělena na jednotlivé kapsy. Elastický pásek s přezkou umožňuje snadnou manipulaci.",
   "features": [],
   "activities": [],
@@ -5373,6 +6346,8 @@
     "file": "data/pdf_swatch/MONEY_BELT_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "TRAVEL LITE / TRAVEL SERIE"
  },
  {
@@ -5389,6 +6364,11 @@
   "fields": {
    "MATERIÁL": "100 % PES , PU coating"
   },
+  "col": [
+   554.6,
+   818.7
+  ],
+  "first_label_y": 359.9,
   "desc": "Praktická peněženka na cestování a každodenní použití. Přihrádka na doklady, prostor na až čtyři platební karty uvnitř, přihrádka na mince, prostor pro bankovky.",
   "features": [],
   "activities": [],
@@ -5400,6 +6380,8 @@
     "file": "data/pdf_swatch/MONEY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "TRAVEL LITE / TRAVEL SERIE"
  },
  {
@@ -5416,6 +6398,11 @@
   "fields": {
    "MATERIÁL": "100 % PES Oxford , 1000 mm"
   },
+  "col": [
+   48.3,
+   313.8
+  ],
+  "first_label_y": 359.9,
   "desc": "Pláštěnka na batohy Trimm ve velikosti S tedy pro batohy o velikosti 20-35 l. Je vyrobená z odolného nepromokavého materiálu ve výrazné barvě s reflexním potiskem, zvyšuje se tak i vaše bezpečnost za zhoršené viditelnosti. Spolehlivě ochrání batoh i věci v něm před nepříznivým počasím. Uchycuje se na batoh pomocí gumového očka.",
   "features": [],
   "activities": [],
@@ -5427,6 +6414,8 @@
     "file": "data/pdf_swatch/BAGS_RAIN_COVER_S_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "BACKPACKS ACCESSORIES"
  },
  {
@@ -5443,6 +6432,11 @@
   "fields": {
    "MATERIÁL": "100 % PES Oxford , 1000 mm"
   },
+  "col": [
+   313.8,
+   579.4
+  ],
+  "first_label_y": 359.9,
   "desc": "Pláštěnka na batohy Trimm ve velikosti L, tedy pro batohy o velikosti 35-50 l. Je vyrobená z odolného nepromokavého materiálu ve výrazné barvě s reflexním potiskem, zvyšuje se tak i vaše bezpečnost za zhoršené viditelnosti. Spolehlivě ochrání batoh i věci v něm před nepříznivým počasím. Uchycuje se na batoh pomocí gumového očka.",
   "features": [],
   "activities": [],
@@ -5454,6 +6448,8 @@
     "file": "data/pdf_swatch/BAGS_RAIN_COVER_L_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "BACKPACKS ACCESSORIES"
  },
  {
@@ -5470,6 +6466,11 @@
   "fields": {
    "MATERIÁL": "100 % PES Oxford , TPU coating"
   },
+  "col": [
+   24.8,
+   290.3
+  ],
+  "first_label_y": 359.9,
   "desc": "Prostorná cestovní taška, maximálně nepromokavá. Svařované spoje, vodotěsný rotační uzávěr na přezky zaručující maximální vodotěsnost. Kompresní popruhy.",
   "features": [
    "Boční kompresní popruhy",
@@ -5484,6 +6485,10 @@
     "label": "Army Brown",
     "file": "data/pdf_swatch/TRANSIT_140_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/TRANSIT_140_1.png"
   ],
   "serie": "WATERPROOF"
  },
@@ -5502,6 +6507,11 @@
   "fields": {
    "MATERIÁL": "100 % PES Oxford , TPU coating"
   },
+  "col": [
+   290.3,
+   555.8
+  ],
+  "first_label_y": 359.9,
   "desc": "Praktický transportní batoh/taška BOARD z řady AquaTrimm z maximálně nepromokavých materiálů. Svařované spoje a vodotěsný zip zaručující dostatečnou vodotěsnost. Ramenní popruhy z prodyšného materiálu s možností rychlého odepnutí. K dispozici ve třech velikostech.",
   "features": [
    "Anatomicky tvarované nosné popruhy",
@@ -5519,6 +6529,8 @@
     "file": "data/pdf_swatch/BOARD_65_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "WATERPROOF"
  },
  {
@@ -5536,6 +6548,11 @@
   "fields": {
    "MATERIÁL": "PVC , TPU coating"
   },
+  "col": [
+   555.9,
+   821.5
+  ],
+  "first_label_y": 359.9,
   "desc": "Vodotěsný lodní vak ideální na vodní sporty. Svařované spoje, vodotěsný rotační uzávěr na přezku zaručující maximální vodotěsnost.",
   "features": [
    "Vodotěsný"
@@ -5569,6 +6586,10 @@
     "file": "data/pdf_swatch/SAVER_25L_LONG_3.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/SAVER_25L_LONG_1.png"
+  ],
   "serie": "WATERPROOF"
  },
  {
@@ -5586,6 +6607,11 @@
   "fields": {
    "MATERIÁL": "PVC , TPU coating"
   },
+  "col": [
+   47.7,
+   313.0
+  ],
+  "first_label_y": 359.9,
   "desc": "Vodotěsný lodní vak ideální na vodní sporty. Svařované spoje, vodotěsný rotační uzávěr na přezku zaručující maximální vodotěsnost.",
   "features": [
    "Vodotěsný"
@@ -5619,6 +6645,10 @@
     "file": "data/pdf_swatch/SAVER_25L_SHORT_3.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/SAVER_25L_SHORT_1.png"
+  ],
   "serie": "WATERPROOF"
  },
  {
@@ -5636,6 +6666,11 @@
   "fields": {
    "MATERIÁL": "PVC , TPU coating"
   },
+  "col": [
+   313.3,
+   578.6
+  ],
+  "first_label_y": 359.9,
   "desc": "Vodotěsný transparentní lodní vak ideální na vodní sporty. Svařované spoje, vodotěsný rotační uzávěr na přezku zaručující maximální vodotěsnost.",
   "features": [
    "Vodotěsný"
@@ -5648,6 +6683,10 @@
     "label": "Transparent",
     "file": "data/pdf_swatch/SAVER_X_28L_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/SAVER_X_28L_1.png"
   ],
   "serie": "WATERPROOF"
  },
@@ -5666,6 +6705,11 @@
   "fields": {
    "MATERIÁL": "PVC , TPU coating"
   },
+  "col": [
+   578.6,
+   844.0
+  ],
+  "first_label_y": 359.9,
   "desc": "Vodotěsný transparentní lodní vak ideální na vodní sporty. Svařované spoje, vodotěsný rotační uzávěr na přezku zaručující maximální vodotěsnost.",
   "features": [
    "Vodotěsný"
@@ -5699,6 +6743,10 @@
     "file": "data/pdf_swatch/SAVER_XL_51L_3.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/SAVER_XL_51L_1.png"
+  ],
   "serie": "WATERPROOF"
  },
  {
@@ -5717,6 +6765,11 @@
   "fields": {
    "MATERIÁL": "TPU , TPU coating"
   },
+  "col": [
+   24.2,
+   289.7
+  ],
+  "first_label_y": 381.1,
   "desc": "Vysoce kvalitní vodní rezervoár s antibakteriální úpravou. Díky „MEGA“ uzávěru je vnitřek rezervoáru volně přístupný a umožňuje tak snadné čištění.",
   "features": [],
   "activities": [],
@@ -5728,6 +6781,8 @@
     "file": "data/pdf_swatch/OMEGA_2L_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "WATERBLADDER"
  },
  {
@@ -5746,6 +6801,11 @@
   "fields": {
    "MATERIÁL": "PEVA"
   },
+  "col": [
+   290.0,
+   555.5
+  ],
+  "first_label_y": 381.1,
   "desc": "Vysoce kvalitní vodní rezervoár Trimm DESERT s objemem 2 litry je opatřen antibakteriální úpravou. Díky velkému uzávěru je vnitřek rezervoáru volně přístupný a umožňuje tak snadné čištění po použití. Bude se Vám hodit na túře i při sportu, kdy se potřebujete snadno a rychle napít.",
   "features": [],
   "activities": [],
@@ -5757,6 +6817,8 @@
     "file": "data/pdf_swatch/DESERT_2L_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "WATERBLADDER"
  },
  {
@@ -5775,6 +6837,11 @@
   "fields": {
    "MATERIÁL": "TPU"
   },
+  "col": [
+   555.5,
+   821.0
+  ],
+  "first_label_y": 381.1,
   "desc": "Vysoce kvalitní vodní rezervoár Trimm ARMADA s objemem 1,5 litru je opatřen antibakteriální úpravou. Díky velkému uzávěru je vnitřek rezervoáru volně přístupný a umožňuje tak snadné čištění po použití. Bude se Vám hodit na túře i při sportu, kdy se potřebujete snadno a rychle napít.",
   "features": [],
   "activities": [],
@@ -5786,6 +6853,8 @@
     "file": "data/pdf_swatch/ARMADA_1_5L_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "WATERBLADDER"
  },
  {
@@ -5804,6 +6873,11 @@
   "fields": {
    "MATERIÁL": "TPU"
   },
+  "col": [
+   47.6,
+   313.1
+  ],
+  "first_label_y": 381.1,
   "desc": "Vysoce kvalitní vodní rezervoár Trimm ARMAX s objemem 1,5 litru je opatřen antibakteriální úpravou. Díky velkému uzávěru je vnitřek rezervoáru volně přístupný a umožňuje tak snadné čištění po použití. Bude se Vám hodit na túře i při sportu, kdy se potřebujete snadno a rychle napít.",
   "features": [],
   "activities": [],
@@ -5815,6 +6889,8 @@
     "file": "data/pdf_swatch/ARMAX_1_5L_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "WATERBLADDER"
  },
  {
@@ -5833,6 +6909,11 @@
   "fields": {
    "MATERIÁL": "PEVA"
   },
+  "col": [
+   313.4,
+   578.9
+  ],
+  "first_label_y": 381.1,
   "desc": "Vysoce kvalitní vodní rezervoár Trimm HYDRA s objemem 2,5 litru je použitelný téměř v jakémkoli batohu s přípravou na vodní rezervoár. Horní otvor Slide - T umožňuje snadné plnění a vyprazdňování vaku a samozřejmě i jeho čištění. Bude se Vám hodit na túře i při sportu, kdy se potřebujete snadno a rychle napít.",
   "features": [],
   "activities": [],
@@ -5844,6 +6925,8 @@
     "file": "data/pdf_swatch/HYDRA_1_5L_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "WATERBLADDER"
  },
  {
@@ -5862,6 +6945,11 @@
   "fields": {
    "MATERIÁL": "TPU"
   },
+  "col": [
+   578.9,
+   844.4
+  ],
+  "first_label_y": 381.1,
   "desc": "Vysoce kvalitní měkká láhev na nápoje Trimm GEL-FLASK-T 600 s objemem 0,6 litru je použitelná na túře i při sportu, kdy se potřebujete snadno a rychle napít. Díky snadnému pití z těchto typů lahví ušetříte energii na sání tekutiny. Pokud láhev stisknete, její obsah Vás automaticky zavlaží. Při nošení nedochází k pravidelnému šplouchání tekutiny.",
   "features": [],
   "activities": [],
@@ -5873,6 +6961,8 @@
     "file": "data/pdf_swatch/GEL_FLASK_T_600_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "WATERBLADDER"
  },
  {
@@ -5891,6 +6981,11 @@
   "fields": {
    "MATERIÁL": "TPU"
   },
+  "col": [
+   24.2,
+   290.0
+  ],
+  "first_label_y": 381.1,
   "desc": "Vysoce kvalitní měkká láhev na nápoje Trimm GEL-FLASK-A 500 s objemem 0,5 litru je použitelný na túře i při výkonu sportu, kdy se potřebujete snadno a rychle napít. Díky snadnému pití z těchto typů lahví ušetříte energii na sání tekutiny. Pokud láhev stisknete, její obsah Vás automaticky zavlaží. Při nošení nedochází k pravidelnému šplouchání tekutiny.",
   "features": [],
   "activities": [],
@@ -5902,6 +6997,8 @@
     "file": "data/pdf_swatch/GEL_FLASK_A_500_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "WATERBLADDER"
  },
  {
@@ -5920,6 +7017,11 @@
   "fields": {
    "MATERIÁL": "TPU"
   },
+  "col": [
+   290.0,
+   555.8
+  ],
+  "first_label_y": 381.1,
   "desc": "Vysoce kvalitní měkká láhev na nápoje Trimm GEL-FLASK-H 350 s objemem 0,35 litru. Nejuniverzálnější způsob pro udržení pravidelné hydratace na dlouhých i krátkých tratích při tréninku i při závodě. Díky snadnému pití z těchto typů lahví ušetříte energii na sání tekutiny. Pokud láhev stisknete, její obsah Vás automaticky zavlaží. Při nošení nedochází k pravidelnému šplouchání tekutiny.",
   "features": [],
   "activities": [],
@@ -5931,6 +7033,8 @@
     "file": "data/pdf_swatch/GEL_FLASK_H_350_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "WATERBLADDER"
  },
  {
@@ -5949,6 +7053,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Horská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý třívrstvý strečový membránový materiál s vysokou prodyšností a vodním sloupcem a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
   "features": [
    "3D regulovatelná kapuce",
@@ -5987,6 +7096,10 @@
     "file": "data/pdf_swatch/INTENSE_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/INTENSE_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6007,6 +7120,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Horská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý třívrstvý strečový membránový materiál s vysokou prodyšností a vodním sloupcem a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6045,6 +7163,10 @@
     "file": "data/pdf_swatch/ACCORD_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ACCORD_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6065,6 +7187,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Horská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý třívrstvý strečový membránový materiál s vysokou prodyšností a vodním sloupcem a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6098,6 +7225,10 @@
     "file": "data/pdf_swatch/HIMAL_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/HIMAL_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6116,6 +7247,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Horská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý membránový materiál a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6153,6 +7289,10 @@
     "file": "data/pdf_swatch/ORADO_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ORADO_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6171,6 +7311,11 @@
    "VNITŘNÍ MATERIÁL": "100 % PES",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Pánská outdoorová bunda vhodná na horské túry i pro další sportovní aktivity. Vrchní materiál je mimořádně oděruvzdorný a díky vodnímu sloupci 10 000 mm s lepenými švy prakticky nepromokavý. Pro ještě účinnější odvětrání je opatřená v podpaží zipovými otvory. Vsazená regulovatelná kapuce poslouží při náhlé změně počasí. Dokonalý tepelný komfort zajistí praktická regulace spodního kraje. Tato bunda vám bude skvělým společníkem v přírodě i ve městě.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6215,6 +7360,11 @@
     "file": "data/pdf_swatch/FOXTER_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/FOXTER_1.png",
+   "data/pdf_icons/FOXTER_2.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6233,6 +7383,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Bunda je vyrobena z 2,5 vrstvého materiálu, takže je velmi lehká a snadno sbalitelná. Konstrukce s odvětráním zaručuje výbornou voděodolnost a prodyšnost. Zaručeně vás tak ochrání před deštěm, sněhem i větrem a spolehlivě odvede vlhkost z povrchu těla pryč, takže se budete cítit velmi komfortně i v nepříznivém počasí. Nepromokavost zvyšují i 100% vodotěsné švy.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6273,6 +7428,11 @@
     "file": "data/pdf_swatch/EXPED_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/EXPED_1.png",
+   "data/pdf_icons/EXPED_2.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6291,6 +7451,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Kalhoty s vynikajícími vlastnostmi jsou určeny pro nejnáročnější aktivity v horské přírodě. Použitý membránový 2,5 L materiál a promyšlený střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodné pro skialpinismus, horolezectví, turistiku. Boční zipy umožňují odvětrání po celé délce a především navlečení kalhot bez nutnosti sundání bot.",
   "features": [
    "Celorozepínací kalhoty",
@@ -6315,6 +7480,11 @@
     "file": "data/pdf_swatch/EXPED_PANTS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/EXPED_PANTS_1.png",
+   "data/pdf_icons/EXPED_PANTS_2.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6335,6 +7505,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Anorak je vyrobený z 2,5 vrstvého materiálu, takže je velmi lehký a snadno sbalitelný. Konstrukce s odvětráním zaručuje výbornou voděodolnost a prodyšnost. Zaručeně vás tak ochrání před deštěm, sněhem i větrem a spolehlivě odvede vlhkost z povrchu těla pryč. Budete se tak cítit velmi komfortně i v nepříznivém počasí. Nepromokavost zvyšují i 100% vodotěsné švy.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6375,6 +7550,11 @@
     "file": "data/pdf_swatch/ANORAC_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ANORAC_1.png",
+   "data/pdf_icons/ANORAC_2.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6393,6 +7573,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Bunda je vyrobena z 2,5 vrstvého materiálu, takže je velmi lehká a snadno sbalitelná. Konstrukce s odvětráním zaručuje výbornou voděodolnost a prodyšnost. Zaručeně vás tak ochrání před deštěm, sněhem i větrem a spolehlivě odvede vlhkost z povrchu těla pryč, takže se budete cítit velmi komfortně i v nepříznivém počasí. Nepromokavost zvyšují i 100% vodotěsné švy.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6427,6 +7612,11 @@
     "file": "data/pdf_swatch/MARK_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/MARK_1.png",
+   "data/pdf_icons/MARK_2.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6445,6 +7635,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": "Synthetic down"
   },
+  "col": [
+   24.9,
+   278.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Maximálně funkční softshellová bunda, kombinovaná s použitím speciální bezešvé technologie, která vytváří zajímavé vzory a materiál zároveň minimalizuje nežádoucí únik peří. Ochrání a udrží v teple. ideální pro aktivní odpočinek a celou řadu sportovních aktivit.",
   "features": [
    "Reflexní prvky"
@@ -6485,6 +7680,10 @@
     "file": "data/pdf_swatch/ERWI_HARD_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ERWI_HARD_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6503,6 +7702,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   297.4,
+   550.9
+  ],
+  "first_label_y": 295.8,
   "desc": "Softshellové kalhoty vhodné pro všechny sportovní aktivity. Díky použité membráně ochrání před nepřízní počasí. Kolena a dolní část kalhot jsou tvarovány a vyztuženy tkaninou vysoce odolnou proti mechanickému poškození.",
   "features": [
    "Prodyšnost 5 000 g/ m2 za 24 h",
@@ -6522,6 +7726,10 @@
     "file": "data/pdf_swatch/JURRY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/JURRY_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6540,6 +7748,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   550.9,
+   804.4
+  ],
+  "first_label_y": 295.0,
   "desc": "Softshellové kalhoty, které jsou ideální pro všechny sportovní i volnočasové aktivity. Dobře poslouží zejména při chladných a větrných dnech v jakékoli roční době.",
   "features": [
    "Prodyšnost 5 000 g/ m2 za 24 h",
@@ -6560,6 +7773,10 @@
     "file": "data/pdf_swatch/MOTION_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/MOTION_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6578,6 +7795,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   51.2,
+   317.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Softshellové kalhoty, které jsou ideální pro všechny sportovní i volnočasové aktivity. Dobře poslouží zejména při chladných a větrných dnech v jakékoli roční době.",
   "features": [
    "Prodyšnost 5 000 g/ m2 za 24 h",
@@ -6595,6 +7817,10 @@
     "label": "Black",
     "file": "data/pdf_swatch/SIGMA_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/SIGMA_1.png"
   ],
   "serie": "OUTDOOR SERIE"
  },
@@ -6614,6 +7840,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Horská dámská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý třívrstvý strečový membránový materiál s vysokou prodyšností a vodním sloupcem a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6652,6 +7883,10 @@
     "file": "data/pdf_swatch/INTENSA_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/INTENSA_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6672,6 +7907,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Horská dámská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý třívrstvý strečový membránový materiál s vysokou prodyšností a vodním sloupcem a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6710,6 +7950,10 @@
     "file": "data/pdf_swatch/ACCORD_LADY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ACCORD_LADY_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6730,6 +7974,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Horská dámská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý třívrstvý strečový membránový materiál s vysokou prodyšností a vodním sloupcem a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6763,6 +8012,10 @@
     "file": "data/pdf_swatch/HIMAL_LADY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/HIMAL_LADY_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6781,6 +8034,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Horská bunda s vynikajícími vlastnostmi je určená pro nejnáročnější aktivity v přírodě. Použitý membránový materiál a propracovaný střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodná pro skialpinismus, horolezectví, turistiku, apod.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6818,6 +8076,10 @@
     "file": "data/pdf_swatch/ORADA_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ORADA_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6836,6 +8098,11 @@
    "VNITŘNÍ MATERIÁL": "100 % PES",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Dámská outdoorová bunda vhodná na horské túry i pro další sportovní aktivity. Vrchní materiál je mimořádně oděruvzdorný a díky vodnímu sloupci 10 000 mm s lepenými švy prakticky nepromokavý. Pro ještě účinnější odvětrání je opatřená v podpaží zipovými otvory. Vsazená regulovatelná kapuce poslouží při náhlé změně počasí. Dokonalý tepelný komfort zajistí praktická regulace spodního kraje. Tato bunda vám bude skvělým společníkem v přírodě i ve městě.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6880,6 +8147,11 @@
     "file": "data/pdf_swatch/FOXTERA_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/FOXTERA_1.png",
+   "data/pdf_icons/FOXTERA_2.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6898,6 +8170,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Bunda je vyrobena z 2,5 vrstvého materiálu, takže je velmi lehká a snadno sbalitelná. Konstrukce s odvětráním zaručuje výbornou voděodolnost a prodyšnost. Zaručeně vás tak ochrání před deštěm, sněhem i větrem a spolehlivě odvede vlhkost z povrchu těla pryč, takže se budete cítit velmi komfortně i v nepříznivém počasí. Nepromokavost zvyšují i 100% vodotěsné švy.",
   "features": [
    "3D regulovatelná kapuce",
@@ -6938,6 +8215,11 @@
     "file": "data/pdf_swatch/EXPED_LADY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/EXPED_LADY_1.png",
+   "data/pdf_icons/EXPED_LADY_2.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -6956,6 +8238,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Kalhoty s vynikajícími vlastnostmi jsou určeny pro nejnáročnější aktivity v horské přírodě. Použitý membránový 2,5 L materiál a promyšlený střih zajišťují vynikající ochranu v nejtěžších povětrnostních podmínkách. Vhodné pro skialpinismus, horolezectví, turistiku. Boční zipy umožňují odvětrání po celé délce a především navlečení kalhot bez nutnosti sundání bot.",
   "features": [
    "Celorozepínací kalhoty",
@@ -6980,6 +8267,11 @@
     "file": "data/pdf_swatch/EXPED_LADY_PANTS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/EXPED_LADY_PANTS_1.png",
+   "data/pdf_icons/EXPED_LADY_PANTS_2.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -7000,6 +8292,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Dámský anorak vyrobený z 2,5 vrstvého materiálu, takže je velmi lehký a snadno sbalitelný. Konstrukce s odvětráním zaručuje výbornou voděodolnost a prodyšnost. Zaručeně vás tak ochrání před deštěm, sněhem i větrem a spolehlivě odvede vlhkost z povrchu těla pryč. Budete se tak cítit velmi komfortně i v nepříznivém počasí. Nepromokavost zvyšují i 100% vodotěsné švy.",
   "features": [
    "3D regulovatelná kapuce",
@@ -7040,6 +8337,11 @@
     "file": "data/pdf_swatch/ANORAC_LADY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ANORAC_LADY_1.png",
+   "data/pdf_icons/ANORAC_LADY_2.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -7058,6 +8360,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Bunda je vyrobena z 2,5 vrstvého materiálu, takže je velmi lehká a snadno sbalitelná. Konstrukce s odvětráním zaručuje výbornou voděodolnost a prodyšnost. Zaručeně vás tak ochrání před deštěm, sněhem i větrem a spolehlivě odvede vlhkost z povrchu těla pryč, takže se budete cítit velmi komfortně i v nepříznivém počasí. Nepromokavost zvyšují i 100% vodotěsné švy.",
   "features": [
    "3D regulovatelná kapuce",
@@ -7092,6 +8399,11 @@
     "file": "data/pdf_swatch/MARK_LADY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/MARK_LADY_1.png",
+   "data/pdf_icons/MARK_LADY_2.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -7110,6 +8422,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": "Synthetic down"
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Maximálně funkční softshellová bunda, kombinovaná s použitím speciální bezešvé technologie, která vytváří zajímavé vzory a materiál zároveň minimalizuje nežádoucí únik peří. Ochrání a udrží v teple. ideální pro aktivní odpočinek a celou řadu sportovních aktivit.",
   "features": [
    "Reflexní prvky"
@@ -7145,6 +8462,10 @@
     "file": "data/pdf_swatch/ERWI_HARD_LADY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ERWI_HARD_LADY_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -7163,6 +8484,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Dámské softshellové kalhoty vhodné pro všechny sportovní aktivity. Díky použité membráně ochrání před nepřízní počasí. Kolena a dolní část kalhot jsou tvarovány a vyztuženy tkaninou vysoce odolnou proti mechanickému poškození.",
   "features": [
    "Prodyšnost 5 000 g/ m2 za 24 h",
@@ -7182,6 +8508,10 @@
     "file": "data/pdf_swatch/JURRA_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/JURRA_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -7200,6 +8530,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Dámské softshellové kalhoty, které jsou ideální pro všechny sportovní i volnočasové aktivity. Dobře poslouží zejména při chladných a větrných dnech v jakékoli roční době.",
   "features": [
    "Prodyšnost 5 000 g/ m2 za 24 h",
@@ -7220,6 +8555,10 @@
     "file": "data/pdf_swatch/MOTION_LADY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/MOTION_LADY_1.png"
+  ],
   "serie": "OUTDOOR SERIE"
  },
  {
@@ -7238,6 +8577,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Dámské softshellové kalhoty, které jsou ideální pro všechny sportovní i volnočasové aktivity. Dobře poslouží zejména při chladných a větrných dnech v jakékoli roční době.",
   "features": [
    "Prodyšnost 5 000 g/ m2 za 24 h",
@@ -7255,6 +8599,10 @@
     "label": "Black",
     "file": "data/pdf_swatch/SIGMA_LADY_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/SIGMA_LADY_1.png"
   ],
   "serie": "OUTDOOR SERIE"
  },
@@ -7275,6 +8623,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Softshellové kalhoty, které jsou ideální pro všechny sportovní i volnočasové aktivity. Dobře poslouží zejména při chladných a větrných dnech v jakékoli roční době.",
   "features": [
    "Prodyšnost 5 000 g/ m2 za 24 h",
@@ -7292,6 +8645,11 @@
     "label": "Black",
     "file": "data/pdf_swatch/SIGMA_JR_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/SIGMA_JR_1.png",
+   "data/pdf_icons/SIGMA_JR_2.png"
   ],
   "serie": "OUTDOOR SERIE"
  },
@@ -7311,6 +8669,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Extrémně prodyšná, lehká skialpová a touringová bunda vhodná i pro jiné sportovní aktivity. Odepnutím rukávů vznikne praktická vesta. Díky kombinaci použitých materiálů poskytuje vše potřebné - extra dávku tepla, zvýšenou prodyšnost a maximální volnost pohybu.",
   "features": [
    "3D regulovatelná kapuce",
@@ -7352,6 +8715,10 @@
     "file": "data/pdf_swatch/CONTRE_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/CONTRE_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7370,6 +8737,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Pánské kalhoty s vynikajícími vlastnostmi. Použitím kombinace tří funkčních materiálů s vysokou prodyšností a odolností a dokonalým střihovým technickým provedením jsou určeny pro nejnáročnější aktivity v přírodě. Vhodné pro skialpinismus, horolezectví, turistiku a celou řadu sportovních aktivit.",
   "features": [
    "4-směrný elastický materiál",
@@ -7390,6 +8762,10 @@
     "file": "data/pdf_swatch/CONTRE_PANTS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/CONTRE_PANTS_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7408,6 +8784,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Extrémně prodyšná, lehká skialpová a touringová bunda vhodná i pro jiné sportovní aktivity. Díky kombinaci použitých materiálů poskytuje vše potřebné - extra dávku tepla, zvýšenou prodyšnost a maximální volnost pohybu.",
   "features": [
    "3D regulovatelná kapuce",
@@ -7453,6 +8834,10 @@
     "file": "data/pdf_swatch/MAROL_6.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/MAROL_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7471,6 +8856,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Pánské kalhoty s vynikajícími vlastnostmi. Použitím kombinace tří funkčních materiálů s vysokou prodyšností a odolností a dokonalým střihovým technickým provedením jsou určeny pro nejnáročnější aktivity v přírodě. Vhodné pro skialpinismus, horolezectví, turistiku a celou řadu sportovních aktivit.",
   "features": [
    "4-směrný elastický materiál",
@@ -7501,6 +8891,10 @@
     "file": "data/pdf_swatch/MAROL_PANTS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/MAROL_PANTS_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7519,6 +8913,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon Ripstop",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Špičková bunda s velmi dobrou tepelnou izolací. Použitý velmi lehký a větruodolný svrchní materiál a kvalitní izolace zaručují komfort po celý rok. Můžete ji využít jako střední vrstvu ale také samostatně, jako bundu pro různé sportovní aktivity či volný čas.",
   "features": [
    "3D regulovatelná kapuce",
@@ -7549,6 +8948,8 @@
     "file": "data/pdf_swatch/PACO_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7569,6 +8970,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Pánská bunda moderní konstrukce. Použitý lehký nylon ripstop materiál s výplní v kombinaci se soft nylonem umožňuje využití tohoto netradičního modelu bundy nejen pro různé celoroční sportovní aktivity, ale i pro nošení ve městě.",
   "features": [
    "Kapsa na mobil"
@@ -7598,6 +9004,8 @@
     "file": "data/pdf_swatch/METRIC_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7618,6 +9026,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehká universální sportovní oboustranná bunda určená pro různé outdoorové aktivity, krátké procházky do hor, nebo na výlety do města v chladnějších dnech. Vnitřní a vnější strana v různých barvách a provedení, na jedné straně hladká a na druhé straně prošívaná s lehkou výplní s dutého vlákna a vyteplenou kapucí. Integrovaná transportní kapsa pro složení do kompaktnější a praktičtější formy pro uložení do batohu.",
   "features": [
    "Kapsa na mobil"
@@ -7647,6 +9060,8 @@
     "file": "data/pdf_swatch/DOUBLE_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7665,6 +9080,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Zateplené sportovní lehké pánské kalhoty v kratší variantě vhodné pro zvýšení tepelného komfortu. Jednoduché provedení a výborná hřejivost je předurčují pro celou řadu zimních sportovních aktivit i běžné každodenní nošení.",
   "features": [
    "Celorozepínací kalhoty"
@@ -7689,6 +9109,8 @@
     "file": "data/pdf_swatch/RONDO_SHORT_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7707,6 +9129,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehká pánská sportovní bunda poskytující tepelný komfort. Kombinovaná z lehké nylonové tkaniny s tenkou vrstvou tepelné izolace a strečové pleteniny. Můžete ji využít jako střední vrstvu pod vrchní bundu, nebo také samostatně jako bundu pro různé sportovní aktivity či volný čas.",
   "features": [
    "Kapsa na mobil"
@@ -7741,6 +9168,8 @@
     "file": "data/pdf_swatch/ZENON_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7759,6 +9188,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehká a zároveň teplá bunda, která kombinuje zateplené prvky a strečové díly pro dobrý odvod vlhkosti. Vhodná pro všechny sportovní aktivity. Maximální ochranu zajištuje integrovaná kapuce s vysokým límcem. Rukávy, dolní okraj a kapuce jsou lemovány pružnou lycrou.",
   "features": [
    "3D regulovatelná kapuce",
@@ -7804,6 +9238,8 @@
     "file": "data/pdf_swatch/ZEN_6.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7822,6 +9258,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehká vesta pro univerzální použití kombinuje zateplené prvky a strečové díly pro dobrý odvod vlhkosti. Vhodná jako samostatná vrchní vesta i jako zateplovací vnitřní vložka.",
   "features": [
    "Kapsa na mobil"
@@ -7866,6 +9307,8 @@
     "file": "data/pdf_swatch/ZEN_VEST_6.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7884,6 +9327,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehké a prodyšné technické kalhoty přímo určené pro skialp. Taktéž vhodné i pro jiné sportovní aktivity. Díky kombinaci použitých materiálů poskytuje vše pro optimální výkon - maximální volnost pohybu, zvýšenou prodyšnost a dostatečnou hřejivost.",
   "features": [
    "4-směrný elastický materiál",
@@ -7908,6 +9356,10 @@
     "file": "data/pdf_swatch/ZEN_PANTS_2.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ZEN_PANTS_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7926,6 +9378,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Designově propracovaná, lehká a pohodlná bunda z materialu Windshield, která neprofoukne a částečně Vás ochrání před deštěm. Bunda je vhodná pro veškeré outdoorové aktivity provozované po celý rok.",
   "features": [
    "3D regulovatelná kapuce",
@@ -7963,6 +9420,10 @@
     "file": "data/pdf_swatch/ROCHE_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ROCHE_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -7981,6 +9442,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Pánské kalhoty vhodné pro všechny sportovní a volnočasové aktivity. Díky propracovanému střihu perfektně sedí, pružný materiál zajišťuje absolutní pohodlí při jakýchkoli aktivitách a membrána zaručuje výbornou ochranu před nepřízní počasí.",
   "features": [
    "4-směrný elastický materiál",
@@ -8007,6 +9473,10 @@
     "file": "data/pdf_swatch/ROCHE_PANTS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ROCHE_PANTS_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8025,6 +9495,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Celorozepínací ultralehká univerzální bunda vhodná pro aktivní pohyb v přírodě, pro cyklisty, pěší turisty i vodáky. Zajišťuje vynikající ochranu proti větru a proti slabému dešti či vlhku. Bunda se dá složit do transportního obalu, a tím zabírá minimum místa.",
   "features": [
    "Reflexní prvky"
@@ -8061,6 +9536,8 @@
     "file": "data/pdf_swatch/TECHNO_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8079,6 +9556,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehké strečové turistické kalhoty odolné proti větru a lehkému dešti s technickým střihem a tvarovanými koleny. Kalhoty jsou vhodné pro celoroční sportovní a outdoorové aktivity jako jsou výlety a lezení v horách.",
   "features": [
    "4-směrný elastický materiál"
@@ -8095,6 +9577,11 @@
     "label": "Grafit Black",
     "file": "data/pdf_swatch/CALDO_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/CALDO_1.png",
+   "data/pdf_icons/CALDO_2.png"
   ],
   "serie": "ACTIVE SERIE"
  },
@@ -8114,6 +9601,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Dokonale padnoucí turistické kalhoty jsou propracované v každém detailu. Kombinace velice odolného nylonového materiálu s elastickými dílci v nejvíce namáhaných partiích zaručuje svobodu pohybu. Ideální nejen na turistiku, ale i na cestování či běžné nošení. Možnost zkrácení délky.",
   "features": [
    "4-směrný elastický materiál"
@@ -8131,6 +9623,11 @@
     "label": "Grafit Black",
     "file": "data/pdf_swatch/HARDY_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/HARDY_1.png",
+   "data/pdf_icons/HARDY_2.png"
   ],
   "serie": "ACTIVE SERIE"
  },
@@ -8150,6 +9647,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Propracovaný model lehkých strečových kalhot vhodných pro všestranné použití. Materiál vykazuje vysokou prodyšnost a dobrý odvod vlhkosti. Spodní část kalhot je opatřená zipovou regulací a zesílená materiálem oxford, který zajišťuje odolnost proti mechanické abrazi a namáhání.",
   "features": [
    "4-směrný elastický materiál",
@@ -8167,6 +9669,11 @@
     "label": "Grafit Black",
     "file": "data/pdf_swatch/FJORD_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/FJORD_1.png",
+   "data/pdf_icons/FJORD_2.png"
   ],
   "serie": "ACTIVE SERIE"
  },
@@ -8186,6 +9693,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehké a pohodlné kalhoty 2in1. Rychlým odepnutím dolní části získáme pohodlné šortky. Rychleschnoucího a strečového materiálu lze využit jako nouzových plavek. Vhodné pro trekking, letní turistiku a cestování.",
   "features": [
    "4-směrný elastický materiál"
@@ -8201,6 +9713,11 @@
     "label": "Grafit Black",
     "file": "data/pdf_swatch/TIMERO_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/TIMERO_1.png",
+   "data/pdf_icons/TIMERO_2.png"
   ],
   "serie": "ACTIVE SERIE"
  },
@@ -8220,6 +9737,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehké univerzální turistické kalhoty osvědčeného střihu z kvalitní strečové tkaniny. Vhodné zejména pro turistiku a cestování.",
   "features": [
    "4-směrný elastický materiál"
@@ -8235,6 +9757,10 @@
     "label": "Grafit black / Black",
     "file": "data/pdf_swatch/TAIPE_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/TAIPE_1.png"
   ],
   "serie": "ACTIVE SERIE"
  },
@@ -8254,6 +9780,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Zkrácená verze lehoučkých prodyšných kalhot, které jsou díky pružnému materiálu ideální pro jakékoli sportovní či volnočasové aktivity.",
   "features": [
    "4-směrný elastický materiál"
@@ -8288,6 +9819,10 @@
     "file": "data/pdf_swatch/TRACKY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/TRACKY_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8306,6 +9841,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Extrémně prodyšná, lehká skialpová a touringová bunda vhodná i pro jiné sportovní aktivity. Odepnutím rukávů vznikne praktická vesta. Díky kombinaci použitých materiálů poskytuje vše potřebné - extra dávku tepla, zvýšenou prodyšnost a maximální volnost pohybu.",
   "features": [
    "3D regulovatelná kapuce",
@@ -8347,6 +9887,10 @@
     "file": "data/pdf_swatch/CONTRA_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/CONTRA_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8365,6 +9909,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Dámské kalhoty s vynikajícími vlastnostmi. Použitím kombinace tří funkčních materiálů s vysokou prodyšností a odolností a dokonalým střihovým technickým provedením jsou určeny pro nejnáročnější aktivity v přírodě. Vhodné pro skialpinismus, horolezectví, turistiku a celou řadu sportovních aktivit.",
   "features": [
    "4-směrný elastický materiál",
@@ -8385,6 +9934,10 @@
     "file": "data/pdf_swatch/CONTRA_PANTS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/CONTRA_PANTS_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8403,6 +9956,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Extrémně prodyšná, lehká dámská skialpová a touringová bunda vhodná i pro jiné sportovní aktivity. Díky kombinaci použitých materiálů poskytuje vše potřebné - extra dávku tepla, zvýšenou prodyšnost a maximální volnost pohybu.",
   "features": [
    "3D regulovatelná kapuce",
@@ -8443,6 +10001,10 @@
     "file": "data/pdf_swatch/MAROLA_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/MAROLA_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8461,6 +10023,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Dámské kalhoty s vynikajícími vlastnostmi. Použitím kombinace tří funkčních materiálů s vysokou prodyšností a odolností a dokonalým střihovým technickým provedením jsou určeny pro nejnáročnější aktivity v přírodě. Vhodné pro skialpinismus, horolezectví, turistiku a celou řadu sportovních aktivit.",
   "features": [
    "4-směrný elastický materiál",
@@ -8486,6 +10053,10 @@
     "file": "data/pdf_swatch/MAROLA_PANTS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/MAROLA_PANTS_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8504,6 +10075,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon Ripstop",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Špičková bunda s velmi dobrou tepelnou izolací. Použitý velmi lehký a větruodolný svrchní materiál a kvalitní izolace zaručují komfort po celý rok. Můžete ji využít jako střední vrstvu ale také samostatně, jako bundu pro různé sportovní aktivity či volný čas.",
   "features": [
    "3D regulovatelná kapuce",
@@ -8534,6 +10110,8 @@
     "file": "data/pdf_swatch/PACO_LADY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8554,6 +10132,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Dámská bunda moderní konstrukce. Použitý lehký nylon ripstop materiál s výplní v kombinaci se soft nylonem umožňuje využití tohoto netradičního modelu bundy nejen pro různé celoroční sportovní aktivity, ale i pro nošení ve městě.",
   "features": [
    "Kapsa na mobil"
@@ -8583,6 +10166,8 @@
     "file": "data/pdf_swatch/METRIC_LADY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8603,6 +10188,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehká universální sportovní oboustranná bunda určená pro různé outdoorové aktivity, krátké procházky do hor, nebo na výlety do města v chladnějších dnech. Vnitřní a vnější strana v různých barvách a provedení, na jedné straně hladká a na druhé straně prošívaná s lehkou výplní s dutého vlákna a vyteplenou kapucí. Integrovaná transportní kapsa pro složení do kompaktnější a praktičtější formy pro uložení do batohu.",
   "features": [
    "Kapsa na mobil"
@@ -8637,6 +10227,8 @@
     "file": "data/pdf_swatch/DOUBLE_LADY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8655,6 +10247,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Zateplená sportovní sukně v kratší variantě, velmi vhodná pro zvýšení tepelného komfortu. Jednoduché provedení, nízká hmotnost a výborná hřejivost z ní činí jasnou volbu pro celou řadu zimních sportovních aktivit i běžné každodenní nošení.",
   "features": [],
   "activities": [
@@ -8698,6 +10295,8 @@
     "file": "data/pdf_swatch/RONDA_6.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8716,6 +10315,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Zateplené sportovní lehké dámské kalhoty v kratší variantě vhodné pro zvýšení tepelného komfortu. Jednoduché provedení a výborná hřejivost je předurčují pro celou řadu zimních sportovních aktivit i běžné každodenní nošení.",
   "features": [
    "Celorozepínací kalhoty"
@@ -8740,6 +10344,8 @@
     "file": "data/pdf_swatch/RONDA_SHORT_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8758,6 +10364,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehká dámská sportovní bunda poskytující tepelný komfort. Kombinovaná z lehké nylonové tkaniny s tenkou vrstvou tepelné izolace a strečové pleteniny. Můžete ji využít jako střední vrstvu pod vrchní bundu, nebo také samostatně jako bundu pro různé sportovní aktivity či volný čas.",
   "features": [
    "Kapsa na mobil"
@@ -8792,6 +10403,8 @@
     "file": "data/pdf_swatch/ZENONA_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8810,6 +10423,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehká a zároveň teplá dámská bunda, která kombinuje zateplené prvky a strečové díly pro dobrý odvod vlhkosti. Vhodná pro všechny sportovní aktivity. Maximální ochranu zajištuje integrovaná kapuce s vysokým límcem. Rukávy, dolní okraj a kapuce jsou lemovány pružnou lycrou.",
   "features": [
    "3D regulovatelná kapuce",
@@ -8855,6 +10473,8 @@
     "file": "data/pdf_swatch/ZENA_6.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8873,6 +10493,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehká dámská vesta pro univerzální použití kombinuje zateplené prvky a strečové díly pro dobrý odvod vlhkosti. Vhodná jako samostatná vrchní vesta i jako zateplovací vnitřní vložka.",
   "features": [
    "Kapsa na mobil"
@@ -8917,6 +10542,8 @@
     "file": "data/pdf_swatch/ZENA_VEST_6.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8935,6 +10562,11 @@
    "VNITŘNÍ MATERIÁL": "100 % Nylon + 100 % PES",
    "MATERIÁL VÝPLNĚ": "100 % PES"
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehké a prodyšné dámské technické kalhoty přímo určené pro skialp. Taktéž vhodné i pro jiné sportovní aktivity. Díky kombinaci použitých materiálů poskytuje vše pro optimální výkon - maximální volnost pohybu, zvýšenou prodyšnost a dostatečnou hřejivost.",
   "features": [
    "4-směrný elastický materiál",
@@ -8959,6 +10591,10 @@
     "file": "data/pdf_swatch/ZENA_PANTS_2.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ZENA_PANTS_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -8977,6 +10613,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Designově propracovaná, lehká a pohodlná bunda z materialu Windshield, která neprofoukne a částečně Vás ochrání před deštěm. Bunda je vhodná pro veškeré outdoorové aktivity provozované po celý rok.",
   "features": [
    "3D regulovatelná kapuce",
@@ -9014,6 +10655,10 @@
     "file": "data/pdf_swatch/ROCHE_LADY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ROCHE_LADY_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -9032,6 +10677,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Dámské kalhoty vhodné pro všechny sportovní a volnočasové aktivity. Díky propracovanému střihu perfektně sedí, pružný materiál zajišťuje absolutní pohodlí při jakýchkoli aktivitách a membrána zaručuje výbornou ochranu před nepřízní počasí.",
   "features": [
    "4-směrný elastický materiál",
@@ -9058,6 +10708,10 @@
     "file": "data/pdf_swatch/ROCHE_LADY_PANTS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ROCHE_LADY_PANTS_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -9076,6 +10730,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Celorozepínací ultralehká univerzální bunda vhodná pro aktivní pohyb v přírodě, pro cyklisty, pěší turisty i vodáky. Zajišťuje vynikající ochranu proti větru a proti slabému dešti či vlhku. Bunda se dá složit do transportního obalu, a tím zabírá minimum místa.",
   "features": [
    "Reflexní prvky"
@@ -9112,6 +10771,10 @@
     "file": "data/pdf_swatch/TECHNO_LADY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/TECHNO_LADY_1.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -9130,6 +10793,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehké strečové dámské turistické kalhoty odolné proti větru a lehkému dešti s technickým střihem a tvarovanými koleny. Kalhoty jsou vhodné pro celoroční sportovní a outdoorové aktivity jako jsou výlety a lezení v horách.",
   "features": [
    "4-směrný elastický materiál"
@@ -9146,6 +10814,10 @@
     "label": "Grafit Black",
     "file": "data/pdf_swatch/CALDA_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/CALDA_1.png"
   ],
   "serie": "ACTIVE SERIE"
  },
@@ -9165,6 +10837,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Propracovaný model lehkých dámských strečových kalhot vhodných pro všestranné použití. Materiál vykazuje vysokou prodyšnost a dobrý odvod vlhkosti. Spodní část kalhot je opatřená zipovou regulací a zesílená materiálem oxford, který zajišťuje odolnost proti mechanické abrazi a namáhání.",
   "features": [
    "4-směrný elastický materiál",
@@ -9182,6 +10859,11 @@
     "label": "Grafit Black",
     "file": "data/pdf_swatch/FJORDA_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/FJORDA_1.png",
+   "data/pdf_icons/FJORDA_2.png"
   ],
   "serie": "ACTIVE SERIE"
  },
@@ -9201,6 +10883,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehké a pohodlné kalhoty 2in1. Rychlým odepnutím dolní části získáme pohodlné šortky. Rychleschnoucího a strečového materiálu lze využit jako nouzových plavek. Vhodné pro trekking, letní turistiku a cestování.",
   "features": [
    "4-směrný elastický materiál"
@@ -9216,6 +10903,11 @@
     "label": "Grafit Black",
     "file": "data/pdf_swatch/TIMERA_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/TIMERA_1.png",
+   "data/pdf_icons/TIMERA_2.png"
   ],
   "serie": "ACTIVE SERIE"
  },
@@ -9235,6 +10927,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehké univerzální dámské turistické kalhoty osvědčeného střihu z kvalitní strečové tkaniny. Vhodné zejména pro turistiku a cestování.",
   "features": [
    "4-směrný elastický materiál"
@@ -9250,6 +10947,11 @@
     "label": "Grafit black / Black",
     "file": "data/pdf_swatch/TAIPA_1.png"
    }
+  ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/TAIPA_1.png",
+   "data/pdf_icons/TAIPA_2.png"
   ],
   "serie": "ACTIVE SERIE"
  },
@@ -9269,6 +10971,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Zkrácená verze lehoučkých prodyšných kalhot, které jsou díky pružnému materiálu ideální pro jakékoli sportovní či volnočasové aktivity.",
   "features": [
    "4-směrný elastický materiál"
@@ -9298,6 +11005,11 @@
     "file": "data/pdf_swatch/TRACKA_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/TRACKA_1.png",
+   "data/pdf_icons/TRACKA_2.png"
+  ],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -9316,6 +11028,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": "Synthetic down"
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Velmi lehká multifunkční bunda, ideální pro aktivní odpočinek. Pružný a lehký materiál zajišťuje pohodlné nošení pro celou řadu sportovních aktivit.",
   "features": [
    "Reflexní prvky"
@@ -9356,6 +11073,8 @@
     "file": "data/pdf_swatch/ERVI_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -9374,6 +11093,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Pánská mikina, která díky elastické struktuře materiálu dobře padne a příjemně se nosí v chladných podmínkách, kdy nahrazuje druhou vrstvu oblečení. Za příznivějších podmínek dobře poslouží jako vnější vrstva oblečení, udržuje příjemný tepelný komfort při dobrém odvětrávání těla.",
   "features": [
    "3D regulovatelná kapuce",
@@ -9405,6 +11129,8 @@
     "file": "data/pdf_swatch/OASIS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -9423,6 +11149,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Pánská celorozepínací mikina s kapucí, určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička. Zároveň je vkusným oblečením pro volný čas. Vhodná pro outdoorové i volnočasové aktivity, stejně jako pro každodenní nošení.",
   "features": [
    "3D regulovatelná kapuce",
@@ -9464,6 +11195,8 @@
     "file": "data/pdf_swatch/BART_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -9482,6 +11215,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Velmi lehká multifunkční bunda, ideální pro aktivní odpočinek. Pružný a lehký materiál zajišťuje pohodlné nošení pro celou řadu sportovních aktivit.",
   "features": [
    "Reflexní prvky"
@@ -9515,6 +11253,8 @@
     "file": "data/pdf_swatch/ECHO_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -9533,6 +11273,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehká pánská mikina primárně určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička, ale i jako vkusné oblečení pro volný čas. Použitá pletenina vyniká lehkostí a jedinečnou hodnotou termo izolace. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu.",
   "features": [
    "Kapsa na mobil"
@@ -9574,6 +11319,8 @@
     "file": "data/pdf_swatch/MICRON_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -9592,6 +11339,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Pánská mikina, která perfektně funguje jako druhá vrstva oblečení. Ideální na jakékoli sportovní či volnočasové aktivity.",
   "features": [],
   "activities": [
@@ -9620,6 +11372,8 @@
     "file": "data/pdf_swatch/NEO_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "ACTIVE SERIE"
  },
  {
@@ -9638,6 +11392,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Pohodlná teplá pánská mikina Trimm CAPE přes hlavu, vyrobená z bavlněného materiálu, který je příjemně hebký, elastický a vhodný na denní nošení. Spodní lem je zakončen elastickým žebrováním, mikina je vybavena kapucí a klokaní kapsou.",
   "features": [],
   "activities": [
@@ -9668,6 +11427,8 @@
     "file": "data/pdf_swatch/CAPE_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -9686,6 +11447,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Příjemná odlehčená fleecová mikina s krátkým zipem. Vhodná jako zateplovací vrstva i pro samostatné nošení. Nezklame u žádné sportovní aktivity.",
   "features": [],
   "activities": [
@@ -9715,6 +11481,8 @@
     "file": "data/pdf_swatch/CLINIC_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -9733,6 +11501,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Příjemné odlehčené fleecové kalhoty. Vhodné jako zateplovací vrstva i pro samostatné nošení. Nezklame u žádné sportovní aktivity.",
   "features": [],
   "activities": [
@@ -9757,6 +11530,8 @@
     "file": "data/pdf_swatch/CLINIC_PANTS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -9777,6 +11552,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   300.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Příjemná odlehčená fleecová mikina s krátkým zipem. Vhodná jako zateplovací vrstva i pro samostatné nošení. Nezklame u žádné sportovní aktivity.",
   "features": [],
   "activities": [
@@ -9806,6 +11586,8 @@
     "file": "data/pdf_swatch/CUBE_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -9824,6 +11606,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   300.2,
+   575.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Pánské tričko s dlouhým rukávem ze strečového bavlněného materiálu. Hodí se na všechny druhy sportovních i nesportovních aktivit. Možnost využít jako spodní termo vrstvu.",
   "features": [],
   "activities": [
@@ -9869,6 +11656,8 @@
     "file": "data/pdf_swatch/BRAVE_6.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -9887,6 +11676,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   576.8,
+   852.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Tričko Destiny ohromí svým hladkým strečovým rychleschnoucím materiálem. Ideální pro sport a pohybové aktivity.",
   "features": [],
   "activities": [
@@ -9919,6 +11713,8 @@
     "file": "data/pdf_swatch/DESTINY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -9935,6 +11731,11 @@
   "fields": {
    "VNĚJŠÍ MATERIÁL": "100 % PES + 100 % PES Elastan"
   },
+  "col": [
+   52.9,
+   318.9
+  ],
+  "first_label_y": 299.4,
   "desc": "Tričko Change vyrobené ze 100 % recyklovaného micro polyesteru technologií interlokové pique. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu “melange”. Ideální pro sport a všechny pohybové aktivity.",
   "features": [],
   "activities": [
@@ -9967,6 +11768,8 @@
     "file": "data/pdf_swatch/CHANGE_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -9985,6 +11788,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": "Synthetic down"
   },
+  "col": [
+   60.8,
+   323.1
+  ],
+  "first_label_y": 296.5,
   "desc": "Lehká prošívaná dámská bunda, která kombinuje zateplenou vestu z kvalitního nylonového materiálu s rukávy z elastického fleecového materiálu. Vhodná jako samostatná vrchní bunda i jako zateplovací vnitřní vložka.",
   "features": [
    "Reflexní prvky"
@@ -10025,6 +11833,8 @@
     "file": "data/pdf_swatch/ERVI_LADY_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10043,6 +11853,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   326.0,
+   588.4
+  ],
+  "first_label_y": 296.5,
   "desc": "Dámská mikina, která díky elastické struktuře materiálu dobře padne a příjemně se nosí v chladných podmínkách, kdy nahrazuje druhou vrstvu oblečení. Za příznivějších podmínek dobře poslouží jako vnější vrstva oblečení, udržuje příjemný tepelný komfort při dobrém odvětrávání těla.",
   "features": [
    "3D regulovatelná kapuce",
@@ -10074,6 +11889,8 @@
     "file": "data/pdf_swatch/OASIS_LADY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10092,6 +11909,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   588.4,
+   850.7
+  ],
+  "first_label_y": 295.0,
   "desc": "Lehká dámská mikina s kapucí a konstrukcí střihu „přes hlavu“, primárně určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička, ale i jako vkusné oblečení pro volný čas. Použitá pletenina vyniká lehkostí a jedinečnou hodnotou termo izolace. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu.",
   "features": [],
   "activities": [
@@ -10126,6 +11948,8 @@
     "file": "data/pdf_swatch/VERONA_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10144,6 +11968,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   38.5,
+   301.8
+  ],
+  "first_label_y": 294.4,
   "desc": "Dámská celorozepínací mikina s kapucí, určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička. Zároveň je vkusným oblečením pro volný čas. Vhodná pro outdoorové i volnočasové aktivity, stejně jako pro každodenní nošení.",
   "features": [
    "3D regulovatelná kapuce",
@@ -10185,6 +12014,8 @@
     "file": "data/pdf_swatch/BART_LADY_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10203,6 +12034,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   303.8,
+   567.1
+  ],
+  "first_label_y": 294.4,
   "desc": "Velmi lehká multifunkční bunda, ideální pro aktivní odpočinek. Pružný a lehký materiál zajišťuje pohodlné nošení pro celou řadu sportovních aktivit.",
   "features": [
    "Reflexní prvky"
@@ -10236,6 +12072,8 @@
     "file": "data/pdf_swatch/ECHO_LADY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10254,6 +12092,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   567.1,
+   830.3
+  ],
+  "first_label_y": 295.1,
   "desc": "Lehká dámská mikina! primárně určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička, ale i jako vkusné oblečení pro volný čas. Použitá pletenina vyniká lehkostí a jedinečnou hodnotou termo izolace. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu.",
   "features": [
    "Kapsa na mobil"
@@ -10295,6 +12138,8 @@
     "file": "data/pdf_swatch/MICRON_LADY_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10313,6 +12158,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   50.7,
+   309.7
+  ],
+  "first_label_y": 297.6,
   "desc": "Fleecová mikina je vhodná jako druhá vrstva pod svrchní oblečení, ale díky kapuci a zajímavému designu je vhodná i jako samostatná bunda pro veškeré sportovní aktivity.",
   "features": [],
   "activities": [
@@ -10343,6 +12193,8 @@
     "file": "data/pdf_swatch/NEONA_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10361,6 +12213,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   316.0,
+   575.0
+  ],
+  "first_label_y": 297.6,
   "desc": "Pohodlná teplá dámská mikina Trimm CAPE LADY přes hlavu, vyrobená z bavlněného materiálu, který je příjemně hebký, elastický a vhodný na denní nošení. Spodní lem je zakončen elastickým žebrováním, mikina je vybavena kapucí a klokaní kapsou.",
   "features": [],
   "activities": [
@@ -10391,6 +12248,8 @@
     "file": "data/pdf_swatch/CAPE_LADY_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10409,6 +12268,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   575.0,
+   834.0
+  ],
+  "first_label_y": 300.2,
   "desc": "Příjemná odlehčená fleecová mikina s krátkým zipem. Vhodná jako zateplovací vrstva i pro samostatné nošení. Nezklame u žádné sportovní aktivity.",
   "features": [],
   "activities": [
@@ -10438,6 +12302,8 @@
     "file": "data/pdf_swatch/CLINIC_LADY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10456,6 +12322,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   46.2,
+   305.1
+  ],
+  "first_label_y": 304.9,
   "desc": "Příjemné odlehčené fleecové kalhoty. Vhodné jako zateplovací vrstva i pro samostatné nošení. Nezklame u žádné sportovní aktivity.",
   "features": [],
   "activities": [
@@ -10480,6 +12351,8 @@
     "file": "data/pdf_swatch/CLINIC_LADY_PANTS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10500,6 +12373,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   311.4,
+   570.3
+  ],
+  "first_label_y": 304.9,
   "desc": "Příjemná odlehčená fleecová mikina s krátkým zipem. Vhodná jako zateplovací vrstva i pro samostatné nošení. Nezklame u žádné sportovní aktivity.",
   "features": [],
   "activities": [
@@ -10529,6 +12407,8 @@
     "file": "data/pdf_swatch/CUBE_LADY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10547,6 +12427,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   570.3,
+   829.2
+  ],
+  "first_label_y": 301.7,
   "desc": "Dámské tričko s dlouhým rukávem ze strečového bavlněného materiálu. Hodí se na všechny druhy sportovních i nesportovních aktivit. Možnost využít jako spodní termo vrstvu.",
   "features": [],
   "activities": [
@@ -10592,6 +12477,8 @@
     "file": "data/pdf_swatch/BRAVE_LADY_6.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10610,6 +12497,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   59.9,
+   312.9
+  ],
+  "first_label_y": 296.0,
   "desc": "Tričko Destiny ohromí svým hladkým strečovým rychleschnoucím materiálem. Ideální pro sport a pohybové aktivity.",
   "features": [],
   "activities": [
@@ -10647,6 +12539,8 @@
     "file": "data/pdf_swatch/DESTINY_LADY_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10665,6 +12559,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   312.9,
+   565.9
+  ],
+  "first_label_y": 296.0,
   "desc": "Tričko Change vyrobené ze 100 % recyklovaného micro polyesteru technologií interlokové pique. Díky speciální konstrukci materiálu bylo docíleno jedinečného barevného efektu “melange”. Ideální pro sport a všechny pohybové aktivity.",
   "features": [],
   "activities": [
@@ -10702,6 +12601,8 @@
     "file": "data/pdf_swatch/CHANGE_LADY_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10721,6 +12622,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   68.9,
+   334.7
+  ],
+  "first_label_y": 294.1,
   "desc": "Dětská celorozepínací mikina s kapucí, určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička. Zároveň je vkusným oblečením pro volný čas. Vhodná pro outdoorové i volnočasové aktivity, stejně jako pro každodenní nošení.",
   "features": [
    "3D regulovatelná kapuce",
@@ -10747,6 +12653,8 @@
     "file": "data/pdf_swatch/BART_JR_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10766,6 +12674,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   334.7,
+   600.4
+  ],
+  "first_label_y": 294.1,
   "desc": "Dětská celorozepínací mikina s kapucí, určená jako střední vrstva při nižších teplotách, nebo jako samostatná bundička. Zároveň je vkusným oblečením pro volný čas. Vhodná pro outdoorové i volnočasové aktivity, stejně jako pro každodenní nošení.",
   "features": [
    "3D regulovatelná kapuce",
@@ -10792,6 +12705,8 @@
     "file": "data/pdf_swatch/BART_LADY_JR_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "THERMOLAYER SERIE"
  },
  {
@@ -10810,6 +12725,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Kšiltovka z funkčního materiálu který zajišťuje vždy příjemný pocit z nošení. Zapínání vzadu pomocí suchého zipu a plastového očka.",
   "features": [],
   "activities": [
@@ -10851,6 +12771,8 @@
     "file": "data/pdf_swatch/COOL_FEELING_6.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -10869,6 +12791,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Příjemná kšiltovka se síťovanými zadními panely, které zajištují přirozené odvětrání.",
   "features": [],
   "activities": [
@@ -10900,6 +12827,8 @@
     "file": "data/pdf_swatch/FIVE_PANEL_SNAP_4.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -10918,6 +12847,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   555.9,
+   821.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Velmi lehká kšiltovka kterou nebudete na hlavě ani cítit. Materiál je seprané mikrovlákno a díky tomu je tak skvělá.",
   "features": [],
   "activities": [
@@ -10954,6 +12888,8 @@
     "file": "data/pdf_swatch/PLAIN_MICROFIBRE_5.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -10972,6 +12908,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Velmi moderní a stylová kšiltovka vyrobená ze 100% polyesteru. Jedná se o vysoce kvalitní funkční polyster - RIPSTOP. Materiál se vyznačuje především vysokou pevností. Kšiltovka má vyztužené čelo, nízký profil, antibakteriální vnitřní potící pásek, perforované boční panely a je rychleschnoucí.",
   "features": [],
   "activities": [
@@ -10993,6 +12934,8 @@
     "file": "data/pdf_swatch/POWER_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -11011,6 +12954,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehký elastický unisex nákrčník Trimm SPORT. Nákrčník je vyroben ze strechového a rychleschnoucího 100% PES materiálu.",
   "features": [],
   "activities": [
@@ -11027,6 +12975,8 @@
     "file": "data/pdf_swatch/SPORT_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -11045,6 +12995,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Lehký elastický unisex multifunkční šátek Trimm PORTY. Multifunkční šátek je vyroben ze strechového a rychleschnoucího 100% PES materiálu.",
   "features": [],
   "activities": [
@@ -11061,6 +13016,8 @@
     "file": "data/pdf_swatch/PORTY_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -11079,6 +13036,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Univerzální pončo včetně funkční kapuce a krytu na batoh spolehlivě ochrání před deštivým počasím.",
   "features": [
    "3D regulovatelná kapuce",
@@ -11106,6 +13068,10 @@
     "file": "data/pdf_swatch/ONES_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/ONES_1.png"
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -11124,6 +13090,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   290.2,
+   555.5
+  ],
+  "first_label_y": 297.3,
   "desc": "Pláštěnka BASIC vás ochrání před nepříznivým počasím, jako je déšť nebo studený vítr.",
   "features": [
    "Lepené švy",
@@ -11150,6 +13121,10 @@
     "file": "data/pdf_swatch/BASIC_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/BASIC_1.png"
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -11168,6 +13143,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   556.0,
+   821.3
+  ],
+  "first_label_y": 297.3,
   "desc": "Propracované pončo TOPIC je vyrobeno z lehkého voděodolného materiálu a je opatřeno lepenými švy. Pončo je dostatečně velké, aby překrylo i batoh. Je možné jej použít i jako přístřešek, nebo plachtu proti slunci.",
   "features": [
    "3D regulovatelná kapuce",
@@ -11195,6 +13175,10 @@
     "file": "data/pdf_swatch/TOPIC_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [
+   "data/pdf_icons/TOPIC_1.png"
+  ],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -11213,6 +13197,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   47.9,
+   313.1
+  ],
+  "first_label_y": 297.3,
   "desc": "Turistické návleky vyrobené z maximálně odolného materiálu. Součástí je přední masivní zip krytý légou a háčkem. Návleky zabraňují nepříjemnému pronikání sněhu a vlhka. V létě jsou ideální pro vysokohorskou turistiku. Také výborně ochrání před ušpiněním nebo protržením oděvu.",
   "features": [],
   "activities": [
@@ -11229,6 +13218,8 @@
     "file": "data/pdf_swatch/STOPERS_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -11247,6 +13238,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   313.1,
+   578.4
+  ],
+  "first_label_y": 297.3,
   "desc": "Nízké turistické návleky vyrobené z maximálně odolného materiálu. Součástí je přední masivní zip s předním háčkem na obuv. Návleky zabraňují nepříjemnému pronikání sněhu, deště, vlhkosti, nežadoucích kamínků a jiných nečistot. V létě jsou ideální pro vysokohorskou turistiku. Také výborně ochrání před ušpiněním nebo protržením oděvu.",
   "features": [],
   "activities": [
@@ -11263,6 +13259,8 @@
     "file": "data/pdf_swatch/STOPERS_SHORT_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -11281,6 +13279,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   578.9,
+   844.2
+  ],
+  "first_label_y": 297.3,
   "desc": "Dámský sportovní pásek s plastovou sponou a jednoduchým zapínáním. Opasek je z lehkého materiálu. V barvě tmavě černé s pinky vzorem. V různých velikostech XS/2XL. Díky své šířce je tento pásek použitelný do každých kalhot, vhodný pro cyklistiku, běžky či turistiku.",
   "features": [],
   "activities": [
@@ -11297,6 +13300,8 @@
     "file": "data/pdf_swatch/SNAKE_24MM_W_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SPORTSWEAR ACCESSORIES"
  },
  {
@@ -11315,6 +13320,11 @@
    "VNITŘNÍ MATERIÁL": "",
    "MATERIÁL VÝPLNĚ": ""
   },
+  "col": [
+   24.9,
+   290.9
+  ],
+  "first_label_y": 297.3,
   "desc": "Pánský sportovní pásek s plastovou sponou a jednoduchým zapínáním. Opasek je z lehkého materiálu. V barvě tmavě černé s blue vzorem. V různých velikostech S/3XL. Díky své šířce je tento pásek použitelný do každých kalhot, vhodný pro cyklistiku, běžky či turistiku.",
   "features": [],
   "activities": [
@@ -11331,6 +13341,8 @@
     "file": "data/pdf_swatch/SNAKE_24MM_M_1.png"
    }
   ],
+  "pdf_draw": null,
+  "pdf_icons": [],
   "serie": "SPORTSWEAR ACCESSORIES"
  }
 ]

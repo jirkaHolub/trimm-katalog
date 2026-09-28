@@ -77,6 +77,45 @@ def fw_path(p):
     for cand in [os.path.join(REPO,p),os.path.join(REPO,'archiv','resized-nepouzite',os.path.basename(p)),os.path.join(REPO,'archiv','rozkresy-nepouzite',os.path.basename(p))]:
         if os.path.exists(cand): return cand
     return None
+# ---------- sjednocení názvů barev oblečení podle odsouhlaseného FW katalogu ----------
+def _cn(s): return re.sub(r'[^a-z0-9]+','',s.lower())
+def _toks(s): return [t.strip().lower() for t in s.split('/')]
+def _nodark(s): return '/'.join(re.sub(r'^dark\s+','',t) for t in _toks(s))
+_SYN={'grafitblack':'grey','darkgrey':'grey','pink':'pinky'}
+def _ft(s): t=_cn(s.split('/')[0]); return _SYN.get(t,t)
+color_renames=[]
+for name,m in models.items():
+    if m['sk']!='T08': continue
+    fw=FWP.get(nkey(name))
+    if not fw or not fw.get('colors'): continue
+    fwn=[c['name'] for c in fw['colors'] if c.get('name')]
+    mine=list(m['colors'].keys())
+    used={f for f in fwn if any(_cn(f)==_cn(c) for c in mine)}
+    newmap={}
+    for c in mine:
+        if any(_cn(f)==_cn(c) for f in fwn): continue
+        free=[f for f in fwn if f not in used]; hit=None
+        pre=[f for f in free if _cn(f).startswith(_cn(c)) and '/' in f]
+        if len(pre)==1: hit=pre[0]
+        if not hit:
+            nd=[f for f in free if _cn(_nodark(f))==_cn(_nodark(c))]
+            if len(nd)==1: hit=nd[0]
+        if not hit and '/' not in c:
+            tk=[f for f in free if _SYN.get(_cn(c),_cn(c)) in [_SYN.get(_cn(t),_cn(t)) for t in _toks(f)]]
+            if len(tk)==1: hit=tk[0]
+        if not hit:
+            same_mine=[x for x in mine if _ft(x)==_ft(c)]; th=[f for f in free if _ft(f)==_ft(c)]
+            if len(same_mine)==1 and len(th)==1: hit=th[0]
+        if hit: used.add(hit); newmap[c]=hit
+    if newmap:
+        nc=collections.OrderedDict()
+        for c,v in m['colors'].items():
+            k=newmap.get(c,c); v['name']=k
+            if k!=c: v['excel_name']=c
+            nc[k]=v
+        m['colors']=nc; color_renames+=[(name,c,k) for c,k in newmap.items()]
+print('barvy oblečení přejmenované podle FW:',len(color_renames))
+for x in color_renames: print('   %-22s %-28s -> %s'%x)
 # ---------- web ----------
 web=json.load(open(WEB,encoding='utf-8'))
 code2var={}
@@ -275,6 +314,7 @@ for name,m in models.items():
     shared=collections.Counter(img_id(v['img']) for v in wvars.values() if v.get('img'))
     for i,(cname,c) in enumerate(m['colors'].items()):
         col=dict(n=i+1,name=cname,codes=c['codes'],front=None,back=None,art=None,src=None)
+        if c.get('excel_name'): col['excel_name']=c['excel_name']
         if wvars.get(cname) and wvars[cname].get('img') and shared[img_id(wvars[cname]['img'])]>1: col['generic']=True
         v=wvars.get(cname)
         # fotky v galerii pojmenované podle barvy, např. 'gant-red-dark-red-front.jpg' / '...-back.jpg'
@@ -503,6 +543,10 @@ try:
 except Exception as e: print('PARTY camo swatch:',e)
 # sjednocení fotek
 # vzorníky z SS26 PDF pro barvy bez rozkresu i bez barevně specifické fotky
+PREFER_PDF_SWATCH={'ALPIN 40'}
+for r in catalog:
+    if r['name'] in PREFER_PDF_SWATCH:
+        for c in r['colors']: c['art_fw']=c['art']; c['art']=None
 pdfsw={slug(p['name']):p.get('swatches',[]) for p in pdf}
 def cn2(s): return re.sub(r'[^a-z0-9]+','',s.lower())
 nsw=0
@@ -543,6 +587,11 @@ for r in catalog:
             key=slug(r['name']+' '+c['name']); shutil.copy(os.path.join(ROOT,hit[0]['file']),os.path.join(ROZ,key+'.png')); c['art']='rozkresy/'+key+'.png'; c['art_src']='pdf'; ncut+=1
         elif c.get('front') and not c.get('generic'):
             c['art']=None; c['art_cut']=True; ncut+=1
+for r in catalog:
+    for c in r['colors']:
+        if 'art_fw' in c:
+            if not c['art']: c['art']=c['art_fw']
+            del c['art_fw']
 print('vzorníky z PDF',nsw,'| oříznuté rozkresy nahrazeny',ncut)
 ORIG=os.path.join(DATA,'orig'); os.makedirs(ORIG,exist_ok=True)
 for _f in os.listdir(FOTO):
@@ -620,6 +669,70 @@ for r in catalog:
             shutil.copy(gf,os.path.join(FOTO,base+'_front.jpg')); shutil.copy(gb,os.path.join(FOTO,base+'_back.jpg'))
             c['front']='foto/'+base+'_front.jpg'; c['back']='foto/'+base+'_back.jpg'; c['src']='fw'; c['fw_pair']=round(best[0],2)
 import subprocess; subprocess.run([sys.executable,os.path.join(HERE,'normalize_photos.py')],stdout=subprocess.DEVNULL)
+# ---------- hlavní fotka, rozkres rozměrů a badge ikony ze SS26 PDF ----------
+pdfrec={slug(p['name']):p for p in pdf}
+def _pdfrec(r):
+    k=slug(r['name']); pk=ALIAS.get(nkey(r['name']))
+    return pdfrec.get(k) or (pdfrec.get(slug(pk)) if pk else None)
+IK=os.path.join(ROOT,'ikony')
+def _ahash(path):
+    im=Image.open(path).convert('L').resize((16,16)); px=list(im.getdata()); m=sum(px)/len(px); return [1 if v>m else 0 for v in px],(im.width/im.height)
+# referenční výřezy z PDF -> název badge (doplněno ručně podle kontaktního listu)
+ICON_REF=json.load(open(os.path.join(DATA,'icon_ref.json'))) if os.path.exists(os.path.join(DATA,'icon_ref.json')) else {}
+_refs=[]
+for f,nm in ICON_REF.items():
+    fp=os.path.join(ROOT,f)
+    if os.path.exists(fp):
+        h,_=_ahash(fp); ar=Image.open(fp).size; _refs.append((nm,h,ar[0]/ar[1],fp))
+def recog(path):
+    try: h,ar=_ahash(path)
+    except Exception: return None
+    best=None
+    for nm,rh,rar,fp in _refs:
+        if abs(rar-ar)>0.35: continue
+        d=sum(a!=b for a,b in zip(h,rh))
+        if d<=16 and (best is None or d<best[0]): best=(d,nm)
+    return best[1] if best else None
+BADGE_LABEL={'taped_seams':'Lepené švy','ykk':'Zipy YKK','raincover_inside':'Integrovaná pláštěnka','camel_bag_ready':'Příprava pro vodní rezervoár','siliconized':'Silikonizovaný materiál','utx_duraflex':'Přezky UTX Duraflex','teflon':'Teflon','primaloft':'Primaloft','cobrax':'Cobrax','dupont_sorona':'DuPont Sorona','triguard_softshell':'Triguard Softshell','triguard_softshell_lite':'Triguard Softshell Lite','triguard_bi_stretch':'Triguard Bi-Stretch','triguard_3l_membrane_extreme':'Triguard 3L Membrane Extreme','triguard_25l_membrane':'Triguard 2.5L Membrane','triguard_stretch_2l':'Triguard Stretch 2L Membrane','triguard_membrane':'Triguard Membrane','triguard_windshield':'Triguard Windshield','triguard_coating':'Triguard Coating','peg_shape':'Tvar kolíku','mummy_shape':'','dac':'Tyče DAC'}
+def text_badges(r):
+    t=' '.join([r['name']]+list(r['fields'].values())+r['features']).lower(); out=[]
+    def add(n): 
+        if n not in out: out.append(n)
+    if 'taped seams' in t or 'lepené švy' in t: add('taped_seams')
+    if 'ykk' in t: add('ykk')
+    if 'primaloft' in t: add('primaloft')
+    if 'teflon' in t: add('teflon')
+    if 'cobrax' in t: add('cobrax')
+    if 'sorona' in t: add('dupont_sorona')
+    if 'siliconized' in t or 'silikon' in t: add('siliconized')
+    if 'integrovaná pláštěnka' in t: add('raincover_inside')
+    if 'vodní rezervoár' in t or 'camel bag' in t or 'hydratační' in t: add('camel_bag_ready')
+    if 'softshell lite' in t: add('triguard_softshell_lite')
+    elif 'triguard softshell' in t: add('triguard_softshell')
+    if 'bi stretch' in t or 'bi-stretch' in t or 'bistretch' in t: add('triguard_bi_stretch')
+    if 'stretch 2l' in t: add('triguard_stretch_2l')
+    if '3l membrane' in t or 'triguard 3l' in t: add('triguard_3l_membrane_extreme')
+    if '2.5l' in t or '2,5l' in t: add('triguard_25l_membrane')
+    if 'windshield' in t: add('triguard_windshield')
+    if 'triguard coating' in t: add('triguard_coating')
+    if 'triguard membrane' in t: add('triguard_membrane')
+    return out
+nh=nd=nb=0
+for r in catalog:
+    p=_pdfrec(r)
+    if p and r['section']!='sportswear' and p.get('pdf_photo') and os.path.exists(os.path.join(ROOT,p['pdf_photo'])):
+        r['hero']=p['pdf_photo']; r['hero_color']=(p.get('spec_small') or [''])[0]; nh+=1
+    if p and p.get('pdf_draw') and os.path.exists(os.path.join(ROOT,p['pdf_draw'])): r['draw']=p['pdf_draw']; nd+=1
+    badges=[]
+    for f in (p.get('pdf_icons',[]) if p else []):
+        nm=recog(os.path.join(ROOT,f))
+        if nm and nm not in [b['name'] for b in badges]: badges.append(dict(name=nm,file=('ikony/'+nm+'.png') if os.path.exists(os.path.join(IK,nm+'.png')) else f,label=BADGE_LABEL.get(nm,nm)))
+    for nm in text_badges(r):
+        if nm in [b['name'] for b in badges]: continue
+        f=os.path.join(IK,nm+'.png')
+        if os.path.exists(f): badges.append(dict(name=nm,file='ikony/'+nm+'.png',label=BADGE_LABEL.get(nm,nm)))
+    if badges: r['badges']=badges; nb+=1
+print('hero z PDF',nh,'| rozkresy rozměrů',nd,'| produkty s badge ikonami',nb)
 json.dump(catalog,open(os.path.join(DATA,'catalog.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
 print('catalog',len(catalog),'models; sections',collections.Counter(r['section'] for r in catalog))
 print('no photo at all:',[r['name'] for r in catalog if not any(c['front'] for c in r['colors'])])

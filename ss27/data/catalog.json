@@ -62,7 +62,22 @@
    }
   ],
   "new": false,
-  "sort": 0
+  "sort": 0,
+  "hero": "data/pdf_photos/PACK_DSL.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/PACK_DSL.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "ykk",
+    "file": "ikony/ykk.png",
+    "label": "Zipy YKK"
+   }
+  ]
  },
  {
   "id": "fly_dsl",
@@ -124,7 +139,22 @@
    }
   ],
   "new": false,
-  "sort": 1
+  "sort": 1,
+  "hero": "data/pdf_photos/FLY_DSL.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/FLY_DSL.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "ykk",
+    "file": "ikony/ykk.png",
+    "label": "Zipy YKK"
+   }
+  ]
  },
  {
   "id": "himlite_dsl",
@@ -187,7 +217,22 @@
    }
   ],
   "new": false,
-  "sort": 2
+  "sort": 2,
+  "hero": "data/pdf_photos/HIMLITE_DSL.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/HIMLITE_DSL.png",
+  "badges": [
+   {
+    "name": "dac",
+    "file": "ikony/dac.png",
+    "label": "Tyče DAC"
+   },
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "vector_dsl",
@@ -249,7 +294,22 @@
    }
   ],
   "new": false,
-  "sort": 3
+  "sort": 3,
+  "hero": "data/pdf_photos/VECTOR_DSL.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/VECTOR_DSL.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "ykk",
+    "file": "ikony/ykk.png",
+    "label": "Zipy YKK"
+   }
+  ]
  },
  {
   "id": "pioneer_dsl",
@@ -312,7 +372,22 @@
    }
   ],
   "new": false,
-  "sort": 4
+  "sort": 4,
+  "hero": "data/pdf_photos/PIONEER_DSL.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/PIONEER_DSL.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "ykk",
+    "file": "ikony/ykk.png",
+    "label": "Zipy YKK"
+   }
+  ]
  },
  {
   "id": "delta_d",
@@ -374,7 +449,17 @@
    }
   ],
   "new": false,
-  "sort": 5
+  "sort": 5,
+  "hero": "data/pdf_photos/DELTA_D.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/DELTA_D.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "spark_d",
@@ -434,7 +519,17 @@
    }
   ],
   "new": false,
-  "sort": 6
+  "sort": 6,
+  "hero": "data/pdf_photos/SPARK_D.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/SPARK_D.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "apolos_d",
@@ -495,7 +590,17 @@
    }
   ],
   "new": false,
-  "sort": 7
+  "sort": 7,
+  "hero": "data/pdf_photos/APOLOS_D.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/APOLOS_D.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "bivak_d",
@@ -555,7 +660,17 @@
    }
   ],
   "new": false,
-  "sort": 8
+  "sort": 8,
+  "hero": "data/pdf_photos/BIVAK_D.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/BIVAK_D.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "alfa_d",
@@ -616,7 +731,17 @@
    }
   ],
   "new": false,
-  "sort": 9
+  "sort": 9,
+  "hero": "data/pdf_photos/ALFA_D.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/ALFA_D.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "frontier_d",
@@ -677,7 +802,17 @@
    }
   ],
   "new": false,
-  "sort": 10
+  "sort": 10,
+  "hero": "data/pdf_photos/FRONTIER_D.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/FRONTIER_D.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "apolom_d",
@@ -738,7 +873,17 @@
    }
   ],
   "new": false,
-  "sort": 11
+  "sort": 11,
+  "hero": "data/pdf_photos/APOLOM_D.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/APOLOM_D.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "thunder_d",
@@ -799,7 +944,17 @@
    }
   ],
   "new": false,
-  "sort": 12
+  "sort": 12,
+  "hero": "data/pdf_photos/THUNDER_D.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/THUNDER_D.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "largo_d",
@@ -860,7 +1015,17 @@
    }
   ],
   "new": false,
-  "sort": 13
+  "sort": 13,
+  "hero": "data/pdf_photos/LARGO_D.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/LARGO_D.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "globe_d",
@@ -921,7 +1086,17 @@
    }
   ],
   "new": false,
-  "sort": 14
+  "sort": 14,
+  "hero": "data/pdf_photos/GLOBE_D.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/GLOBE_D.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "solo",
@@ -980,7 +1155,17 @@
    }
   ],
   "new": false,
-  "sort": 15
+  "sort": 15,
+  "hero": "data/pdf_photos/SOLO.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/SOLO.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "spark",
@@ -1039,7 +1224,17 @@
    }
   ],
   "new": false,
-  "sort": 16
+  "sort": 16,
+  "hero": "data/pdf_photos/SPARK.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/SPARK.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "bivak",
@@ -1100,7 +1295,17 @@
    }
   ],
   "new": false,
-  "sort": 17
+  "sort": 17,
+  "hero": "data/pdf_photos/BIVAK.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/BIVAK.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "compact",
@@ -1161,7 +1366,17 @@
    }
   ],
   "new": false,
-  "sort": 18
+  "sort": 18,
+  "hero": "data/pdf_photos/COMPACT.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/COMPACT.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "alfa",
@@ -1222,7 +1437,17 @@
    }
   ],
   "new": false,
-  "sort": 19
+  "sort": 19,
+  "hero": "data/pdf_photos/ALFA.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/ALFA.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "largo",
@@ -1283,7 +1508,17 @@
    }
   ],
   "new": false,
-  "sort": 20
+  "sort": 20,
+  "hero": "data/pdf_photos/LARGO.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/LARGO.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "magnum",
@@ -1344,7 +1579,17 @@
    }
   ],
   "new": false,
-  "sort": 21
+  "sort": 21,
+  "hero": "data/pdf_photos/MAGNUM.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/MAGNUM.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "focus",
@@ -1405,7 +1650,17 @@
    }
   ],
   "new": false,
-  "sort": 22
+  "sort": 22,
+  "hero": "data/pdf_photos/FOCUS.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/FOCUS.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "tornado",
@@ -1466,7 +1721,17 @@
    }
   ],
   "new": false,
-  "sort": 23
+  "sort": 23,
+  "hero": "data/pdf_photos/TORNADO.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/TORNADO.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "enduro",
@@ -1531,7 +1796,17 @@
    }
   ],
   "new": false,
-  "sort": 24
+  "sort": 24,
+  "hero": "data/pdf_photos/ENDURO.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/ENDURO.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "duo",
@@ -1603,7 +1878,17 @@
    }
   ],
   "new": false,
-  "sort": 25
+  "sort": 25,
+  "hero": "data/pdf_photos/DUO.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/DUO.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "comet",
@@ -1675,7 +1960,17 @@
    }
   ],
   "new": false,
-  "sort": 26
+  "sort": 26,
+  "hero": "data/pdf_photos/COMET.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/COMET.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "hudson",
@@ -1736,7 +2031,17 @@
    }
   ],
   "new": false,
-  "sort": 27
+  "sort": 27,
+  "hero": "data/pdf_photos/HUDSON.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/HUDSON.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "eagle_ii",
@@ -1809,7 +2114,17 @@
    }
   ],
   "new": false,
-  "sort": 28
+  "sort": 28,
+  "hero": "data/pdf_photos/EAGLE_II.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/EAGLE_II.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "camp_ii",
@@ -1872,7 +2187,17 @@
    }
   ],
   "new": false,
-  "sort": 29
+  "sort": 29,
+  "hero": "data/pdf_photos/CAMP_II.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/CAMP_II.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "arizona_ii",
@@ -1936,7 +2261,17 @@
    }
   ],
   "new": false,
-  "sort": 30
+  "sort": 30,
+  "hero": "data/pdf_photos/ARIZONA_II.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/ARIZONA_II.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "comfort_ii",
@@ -2000,7 +2335,17 @@
    }
   ],
   "new": false,
-  "sort": 31
+  "sort": 31,
+  "hero": "data/pdf_photos/COMFORT_II.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/COMFORT_II.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "macao",
@@ -2061,7 +2406,17 @@
    }
   ],
   "new": false,
-  "sort": 32
+  "sort": 32,
+  "hero": "data/pdf_photos/MACAO.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/MACAO.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "macao_connector",
@@ -2107,7 +2462,14 @@
   ],
   "new": false,
   "base": "MACAO",
-  "sort": 32.5
+  "sort": 32.5,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "monzun",
@@ -2169,7 +2531,17 @@
    }
   ],
   "new": false,
-  "sort": 33
+  "sort": 33,
+  "hero": "data/pdf_photos/MONZUN.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/MONZUN.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "galaxy_ii",
@@ -2232,7 +2604,17 @@
    }
   ],
   "new": false,
-  "sort": 34
+  "sort": 34,
+  "hero": "data/pdf_photos/GALAXY_II.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/GALAXY_II.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "trace_one",
@@ -2309,7 +2691,17 @@
    }
   ],
   "new": false,
-  "sort": 35
+  "sort": 35,
+  "hero": "data/pdf_photos/TRACE_ONE.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/TRACE_ONE.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "trace",
@@ -2386,7 +2778,17 @@
    }
   ],
   "new": false,
-  "sort": 36
+  "sort": 36,
+  "hero": "data/pdf_photos/TRACE.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/TRACE.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "trace_xl",
@@ -2463,7 +2865,17 @@
    }
   ],
   "new": false,
-  "sort": 37
+  "sort": 37,
+  "hero": "data/pdf_photos/TRACE_XL.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/TRACE_XL.png",
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "party",
@@ -2528,7 +2940,10 @@
    }
   ],
   "new": false,
-  "sort": 38
+  "sort": 38,
+  "hero": "data/pdf_photos/PARTY_PARTY_PLUS.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/PARTY_PARTY_PLUS.png"
  },
  {
   "id": "party_plus",
@@ -2582,7 +2997,10 @@
    }
   ],
   "new": false,
-  "sort": 38
+  "sort": 38,
+  "hero": "data/pdf_photos/PARTY_PARTY_PLUS.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/PARTY_PARTY_PLUS.png"
  },
  {
   "id": "party_bedroom",
@@ -2893,7 +3311,10 @@
    }
   ],
   "new": false,
-  "sort": 39
+  "sort": 39,
+  "hero": "data/pdf_photos/PARTY_S.jpg",
+  "hero_color": "",
+  "draw": "data/pdf_draw/PARTY_S.png"
  },
  {
   "id": "party_s_bedroom",
@@ -3258,7 +3679,9 @@
    }
   ],
   "new": false,
-  "sort": 40
+  "sort": 40,
+  "hero": "data/pdf_photos/FOOTPRINT_PACK.jpg",
+  "hero_color": ""
  },
  {
   "id": "footprint_himlite",
@@ -3305,7 +3728,9 @@
    }
   ],
   "new": false,
-  "sort": 41
+  "sort": 41,
+  "hero": "data/pdf_photos/FOOTPRINT_HIMLITE.jpg",
+  "hero_color": ""
  },
  {
   "id": "footprint_pioneer",
@@ -3352,7 +3777,9 @@
    }
   ],
   "new": false,
-  "sort": 42
+  "sort": 42,
+  "hero": "data/pdf_photos/FOOTPRINT_PIONEER.jpg",
+  "hero_color": ""
  },
  {
   "id": "y_peg_d23",
@@ -3399,7 +3826,16 @@
    }
   ],
   "new": false,
-  "sort": 43
+  "sort": 43,
+  "hero": "data/pdf_photos/Y_PEG_D23.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "peg_shape",
+    "file": "data/pdf_icons/Y_PEG_D23_1.png",
+    "label": "Tvar kolíku"
+   }
+  ]
  },
  {
   "id": "y_peg_d18",
@@ -3446,7 +3882,16 @@
    }
   ],
   "new": false,
-  "sort": 44
+  "sort": 44,
+  "hero": "data/pdf_photos/Y_PEG_D18.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "peg_shape",
+    "file": "data/pdf_icons/Y_PEG_D18_1.png",
+    "label": "Tvar kolíku"
+   }
+  ]
  },
  {
   "id": "v_peg_d17",
@@ -3493,7 +3938,9 @@
    }
   ],
   "new": false,
-  "sort": 45
+  "sort": 45,
+  "hero": "data/pdf_photos/V_PEG_D17.jpg",
+  "hero_color": ""
  },
  {
   "id": "rock_peg_d16",
@@ -3540,7 +3987,9 @@
    }
   ],
   "new": false,
-  "sort": 46
+  "sort": 46,
+  "hero": "data/pdf_photos/ROCK_PEG_D16.jpg",
+  "hero_color": ""
  },
  {
   "id": "solid_peg_d18",
@@ -3587,7 +4036,9 @@
    }
   ],
   "new": false,
-  "sort": 47
+  "sort": 47,
+  "hero": "data/pdf_photos/SOLID_PEG_D18.jpg",
+  "hero_color": ""
  },
  {
   "id": "solid_peg_s19",
@@ -3634,7 +4085,9 @@
    }
   ],
   "new": false,
-  "sort": 48
+  "sort": 48,
+  "hero": "data/pdf_photos/SOLID_PEG_S19.jpg",
+  "hero_color": ""
  },
  {
   "id": "solid_peg_s26",
@@ -3681,7 +4134,9 @@
    }
   ],
   "new": false,
-  "sort": 49
+  "sort": 49,
+  "hero": "data/pdf_photos/SOLID_PEG_S26.jpg",
+  "hero_color": ""
  },
  {
   "id": "nails_peg_s27",
@@ -3728,7 +4183,9 @@
    }
   ],
   "new": false,
-  "sort": 50
+  "sort": 50,
+  "hero": "data/pdf_photos/NAILS_PEG_S27.jpg",
+  "hero_color": ""
  },
  {
   "id": "v_peg_s30",
@@ -3775,7 +4232,9 @@
    }
   ],
   "new": false,
-  "sort": 51
+  "sort": 51,
+  "hero": "data/pdf_photos/V_PEG_S30.jpg",
+  "hero_color": ""
  },
  {
   "id": "poles_d50_8_5_mm",
@@ -3822,7 +4281,9 @@
    }
   ],
   "new": false,
-  "sort": 52
+  "sort": 52,
+  "hero": "data/pdf_photos/POLES_D50_8_5_MM.jpg",
+  "hero_color": ""
  },
  {
   "id": "poles_drw40_6_5_mm",
@@ -3869,7 +4330,9 @@
    }
   ],
   "new": false,
-  "sort": 53
+  "sort": 53,
+  "hero": "data/pdf_photos/POLES_DRW40_6_5_MM.jpg",
+  "hero_color": ""
  },
  {
   "id": "poles_drw50_8_5_mm",
@@ -3916,7 +4379,9 @@
    }
   ],
   "new": false,
-  "sort": 54
+  "sort": 54,
+  "hero": "data/pdf_photos/POLES_DRW50_8_5_MM.jpg",
+  "hero_color": ""
  },
  {
   "id": "poles_drw50_9_5_mm",
@@ -3963,7 +4428,9 @@
    }
   ],
   "new": false,
-  "sort": 55
+  "sort": 55,
+  "hero": "data/pdf_photos/POLES_DRW50_9_5_MM.jpg",
+  "hero_color": ""
  },
  {
   "id": "poles_drw60_11_mm",
@@ -4010,7 +4477,9 @@
    }
   ],
   "new": false,
-  "sort": 56
+  "sort": 56,
+  "hero": "data/pdf_photos/POLES_DRW60_11_MM.jpg",
+  "hero_color": ""
  },
  {
   "id": "poles_s45_15_mm",
@@ -4056,7 +4525,9 @@
    }
   ],
   "new": false,
-  "sort": 57
+  "sort": 57,
+  "hero": "data/pdf_photos/POLES_S45_15_MM.jpg",
+  "hero_color": ""
  },
  {
   "id": "tents_poles_gum",
@@ -4101,7 +4572,9 @@
    }
   ],
   "new": false,
-  "sort": 58
+  "sort": 58,
+  "hero": "data/pdf_photos/TENTS_POLES_GUM.jpg",
+  "hero_color": ""
  },
  {
   "id": "nord_750",
@@ -4166,7 +4639,10 @@
    }
   ],
   "new": false,
-  "sort": 59
+  "sort": 59,
+  "hero": "data/pdf_photos/NORD_750.jpg",
+  "hero_color": "Dark Lagoon",
+  "draw": "data/pdf_draw/NORD_750.png"
  },
  {
   "id": "nord_500",
@@ -4231,7 +4707,10 @@
    }
   ],
   "new": false,
-  "sort": 60
+  "sort": 60,
+  "hero": "data/pdf_photos/NORD_500.jpg",
+  "hero_color": "Dark Lagoon",
+  "draw": "data/pdf_draw/NORD_500.png"
  },
  {
   "id": "nord_350",
@@ -4296,7 +4775,10 @@
    }
   ],
   "new": false,
-  "sort": 61
+  "sort": 61,
+  "hero": "data/pdf_photos/NORD_350.jpg",
+  "hero_color": "Dark Lagoon",
+  "draw": "data/pdf_draw/NORD_350.png"
  },
  {
   "id": "peak_400",
@@ -4362,7 +4844,10 @@
    }
   ],
   "new": false,
-  "sort": 62
+  "sort": 62,
+  "hero": "data/pdf_photos/PEAK_400.jpg",
+  "hero_color": "Grey",
+  "draw": "data/pdf_draw/PEAK_400.png"
  },
  {
   "id": "peak_250",
@@ -4428,7 +4913,10 @@
    }
   ],
   "new": false,
-  "sort": 63
+  "sort": 63,
+  "hero": "data/pdf_photos/PEAK_250.jpg",
+  "hero_color": "Grey",
+  "draw": "data/pdf_draw/PEAK_250.png"
  },
  {
   "id": "arktis",
@@ -4521,7 +5009,10 @@
    }
   ],
   "new": false,
-  "sort": 64
+  "sort": 64,
+  "hero": "data/pdf_photos/ARKTIS.jpg",
+  "hero_color": "Blue/Dark grey",
+  "draw": "data/pdf_draw/ARKTIS.png"
  },
  {
   "id": "rack_1200",
@@ -4615,7 +5106,17 @@
    }
   ],
   "new": false,
-  "sort": 65
+  "sort": 65,
+  "hero": "data/pdf_photos/RACK_1200.jpg",
+  "hero_color": "Khaki/Olive",
+  "draw": "data/pdf_draw/RACK_1200.png",
+  "badges": [
+   {
+    "name": "primaloft",
+    "file": "ikony/primaloft.png",
+    "label": "Primaloft"
+   }
+  ]
  },
  {
   "id": "gant",
@@ -4698,7 +5199,17 @@
    }
   ],
   "new": false,
-  "sort": 66
+  "sort": 66,
+  "hero": "data/pdf_photos/GANT.jpg",
+  "hero_color": "Red/Dark red",
+  "draw": "data/pdf_draw/GANT.png",
+  "badges": [
+   {
+    "name": "mummy_shape",
+    "file": "ikony/mummy_shape.png",
+    "label": ""
+   }
+  ]
  },
  {
   "id": "balance_wide",
@@ -4780,7 +5291,17 @@
    }
   ],
   "new": false,
-  "sort": 67
+  "sort": 67,
+  "hero": "data/pdf_photos/BALANCE_WIDE.jpg",
+  "hero_color": "Sea blue / Mid.blue",
+  "draw": "data/pdf_draw/BALANCE_WIDE.png",
+  "badges": [
+   {
+    "name": "mummy_shape",
+    "file": "ikony/mummy_shape.png",
+    "label": ""
+   }
+  ]
  },
  {
   "id": "balance",
@@ -4894,7 +5415,17 @@
    }
   ],
   "new": false,
-  "sort": 68
+  "sort": 68,
+  "hero": "data/pdf_photos/BALANCE.jpg",
+  "hero_color": "Sea blue / Mid.blue",
+  "draw": "data/pdf_draw/BALANCE.png",
+  "badges": [
+   {
+    "name": "mummy_shape",
+    "file": "ikony/mummy_shape.png",
+    "label": ""
+   }
+  ]
  },
  {
   "id": "balance_jr",
@@ -4972,7 +5503,10 @@
    }
   ],
   "new": false,
-  "sort": 69
+  "sort": 69,
+  "hero": "data/pdf_photos/BALANCE_JUNIOR.jpg",
+  "hero_color": "Kiwi green / Dark grey",
+  "draw": "data/pdf_draw/BALANCE_JUNIOR.png"
  },
  {
   "id": "battle_2in1",
@@ -5081,7 +5615,17 @@
    }
   ],
   "new": false,
-  "sort": 70
+  "sort": 70,
+  "hero": "data/pdf_photos/BATTLE_2IN1.jpg",
+  "hero_color": "Brick/Royal blue",
+  "draw": "data/pdf_draw/BATTLE_2IN1.png",
+  "badges": [
+   {
+    "name": "mummy_shape",
+    "file": "ikony/mummy_shape.png",
+    "label": ""
+   }
+  ]
  },
  {
   "id": "traper",
@@ -5174,7 +5718,10 @@
    }
   ],
   "new": false,
-  "sort": 71
+  "sort": 71,
+  "hero": "data/pdf_photos/TRAPER.jpg",
+  "hero_color": "Camouflage",
+  "draw": "data/pdf_draw/TRAPER.png"
  },
  {
   "id": "walker",
@@ -5267,7 +5814,10 @@
    }
   ],
   "new": false,
-  "sort": 72
+  "sort": 72,
+  "hero": "data/pdf_photos/WALKER.jpg",
+  "hero_color": "Kiwi green / Mid.green",
+  "draw": "data/pdf_draw/WALKER.png"
  },
  {
   "id": "walker_flex",
@@ -5358,7 +5908,10 @@
    }
   ],
   "new": false,
-  "sort": 73
+  "sort": 73,
+  "hero": "data/pdf_photos/WALKER_FLEX.jpg",
+  "hero_color": "Purple/Pinky",
+  "draw": "data/pdf_draw/WALKER_FLEX.png"
  },
  {
   "id": "highlander",
@@ -5472,7 +6025,17 @@
    }
   ],
   "new": false,
-  "sort": 74
+  "sort": 74,
+  "hero": "data/pdf_photos/HIGHLANDER.jpg",
+  "hero_color": "Grey/Olive",
+  "draw": "data/pdf_draw/HIGHLANDER.png",
+  "badges": [
+   {
+    "name": "mummy_shape",
+    "file": "ikony/mummy_shape.png",
+    "label": ""
+   }
+  ]
  },
  {
   "id": "rack_800",
@@ -5566,7 +6129,17 @@
    }
   ],
   "new": false,
-  "sort": 75
+  "sort": 75,
+  "hero": "data/pdf_photos/RACK_800.jpg",
+  "hero_color": "Dark red / Red",
+  "draw": "data/pdf_draw/RACK_800.png",
+  "badges": [
+   {
+    "name": "primaloft",
+    "file": "ikony/primaloft.png",
+    "label": "Primaloft"
+   }
+  ]
  },
  {
   "id": "impact",
@@ -5665,7 +6238,17 @@
    }
   ],
   "new": false,
-  "sort": 76
+  "sort": 76,
+  "hero": "data/pdf_photos/IMPACT.jpg",
+  "hero_color": "Kiwi green / Dark grey",
+  "draw": "data/pdf_draw/IMPACT.png",
+  "badges": [
+   {
+    "name": "mummy_shape",
+    "file": "ikony/mummy_shape.png",
+    "label": ""
+   }
+  ]
  },
  {
   "id": "rack_400",
@@ -5759,7 +6342,17 @@
    }
   ],
   "new": false,
-  "sort": 77
+  "sort": 77,
+  "hero": "data/pdf_photos/RACK_400.jpg",
+  "hero_color": "Blue/Sea blue",
+  "draw": "data/pdf_draw/RACK_400.png",
+  "badges": [
+   {
+    "name": "primaloft",
+    "file": "ikony/primaloft.png",
+    "label": "Primaloft"
+   }
+  ]
  },
  {
   "id": "travel",
@@ -5850,7 +6443,10 @@
    }
   ],
   "new": false,
-  "sort": 78
+  "sort": 78,
+  "hero": "data/pdf_photos/TRAVEL.jpg",
+  "hero_color": "Olive",
+  "draw": "data/pdf_draw/TRAVEL.png"
  },
  {
   "id": "tramp",
@@ -5946,7 +6542,10 @@
    }
   ],
   "new": false,
-  "sort": 79
+  "sort": 79,
+  "hero": "data/pdf_photos/TRAMP.jpg",
+  "hero_color": "Blue",
+  "draw": "data/pdf_draw/TRAMP.png"
  },
  {
   "id": "divan",
@@ -6034,7 +6633,10 @@
    }
   ],
   "new": false,
-  "sort": 80
+  "sort": 80,
+  "hero": "data/pdf_photos/DIVAN.jpg",
+  "hero_color": "Kiwi green / Mid.green",
+  "draw": "data/pdf_draw/DIVAN.png"
  },
  {
   "id": "haven",
@@ -6103,7 +6705,9 @@
    }
   ],
   "new": false,
-  "sort": 81
+  "sort": 81,
+  "hero": "data/pdf_photos/HAVEN.jpg",
+  "hero_color": ""
  },
  {
   "id": "liner_mummy_p",
@@ -6150,7 +6754,9 @@
    }
   ],
   "new": false,
-  "sort": 82
+  "sort": 82,
+  "hero": "data/pdf_photos/LINER_MUMMY_P.jpg",
+  "hero_color": ""
  },
  {
   "id": "liner_blanket_p",
@@ -6197,7 +6803,9 @@
    }
   ],
   "new": false,
-  "sort": 83
+  "sort": 83,
+  "hero": "data/pdf_photos/LINER_BLANKET_P.jpg",
+  "hero_color": ""
  },
  {
   "id": "thermal_liner_mummy_f",
@@ -6244,7 +6852,9 @@
    }
   ],
   "new": false,
-  "sort": 84
+  "sort": 84,
+  "hero": "data/pdf_photos/THERMAL_LINER_MUMMY_F.jpg",
+  "hero_color": ""
  },
  {
   "id": "thermal_liner_blanket_f",
@@ -6291,7 +6901,9 @@
    }
   ],
   "new": false,
-  "sort": 85
+  "sort": 85,
+  "hero": "data/pdf_photos/THERMAL_LINER_BLANKET_F.jpg",
+  "hero_color": ""
  },
  {
   "id": "compress_bag_s",
@@ -6337,7 +6949,9 @@
    }
   ],
   "new": false,
-  "sort": 86
+  "sort": 86,
+  "hero": "data/pdf_photos/COMPRESS_BAG_S.jpg",
+  "hero_color": ""
  },
  {
   "id": "compress_bag_m",
@@ -6383,7 +6997,9 @@
    }
   ],
   "new": false,
-  "sort": 87
+  "sort": 87,
+  "hero": "data/pdf_photos/COMPRESS_BAG_M.jpg",
+  "hero_color": ""
  },
  {
   "id": "wake_5_5",
@@ -6452,7 +7068,10 @@
    }
   ],
   "new": false,
-  "sort": 88
+  "sort": 88,
+  "hero": "data/pdf_photos/WAKE_5_5.jpg",
+  "hero_color": "Blue",
+  "draw": "data/pdf_draw/WAKE_5_5.png"
  },
  {
   "id": "tiguan_5_0",
@@ -6508,7 +7127,10 @@
    }
   ],
   "new": false,
-  "sort": 89
+  "sort": 89,
+  "hero": "data/pdf_photos/TIGUAN_5_0.jpg",
+  "hero_color": "Orange/Dark grey",
+  "draw": "data/pdf_draw/TIGUAN_5_0.png"
  },
  {
   "id": "zero_5_5",
@@ -6565,7 +7187,10 @@
    }
   ],
   "new": false,
-  "sort": 90
+  "sort": 90,
+  "hero": "data/pdf_photos/ZERO_5_5.jpg",
+  "hero_color": "Green/Grey",
+  "draw": "data/pdf_draw/ZERO_5_5.png"
  },
  {
   "id": "stepper_5_5",
@@ -6632,7 +7257,10 @@
    }
   ],
   "new": false,
-  "sort": 91
+  "sort": 91,
+  "hero": "data/pdf_photos/STEPPER_5_5.jpg",
+  "hero_color": "Blue",
+  "draw": "data/pdf_draw/STEPPER_5_5.png"
  },
  {
   "id": "stepper_duo_5_5",
@@ -6698,7 +7326,10 @@
    }
   ],
   "new": false,
-  "sort": 92
+  "sort": 92,
+  "hero": "data/pdf_photos/STEPPER_DUO_5_5.jpg",
+  "hero_color": "Blue",
+  "draw": "data/pdf_draw/STEPPER_DUO_5_5.png"
  },
  {
   "id": "charge_8_5",
@@ -6767,7 +7398,10 @@
    }
   ],
   "new": false,
-  "sort": 93
+  "sort": 93,
+  "hero": "data/pdf_photos/CHARGE_8_5.jpg",
+  "hero_color": "Grey",
+  "draw": "data/pdf_draw/CHARGE_8_5.png"
  },
  {
   "id": "hiker_2_5",
@@ -6834,7 +7468,10 @@
    }
   ],
   "new": false,
-  "sort": 94
+  "sort": 94,
+  "hero": "data/pdf_photos/HIKER_2_5.jpg",
+  "hero_color": "Blue",
+  "draw": "data/pdf_draw/HIKER_2_5.png"
  },
  {
   "id": "space_3_7",
@@ -6890,7 +7527,10 @@
    }
   ],
   "new": false,
-  "sort": 95
+  "sort": 95,
+  "hero": "data/pdf_photos/SPACE_3_7.jpg",
+  "hero_color": "Steel Blue",
+  "draw": "data/pdf_draw/SPACE_3_7.png"
  },
  {
   "id": "corner_6_0",
@@ -6946,7 +7586,10 @@
    }
   ],
   "new": false,
-  "sort": 96
+  "sort": 96,
+  "hero": "data/pdf_photos/CORNER_6_0.jpg",
+  "hero_color": "Steel Blue",
+  "draw": "data/pdf_draw/CORNER_6_0.png"
  },
  {
   "id": "freedom_xl_5_0",
@@ -7013,7 +7656,10 @@
    }
   ],
   "new": false,
-  "sort": 97
+  "sort": 97,
+  "hero": "data/pdf_photos/FREEDOM_XL_5_0.jpg",
+  "hero_color": "Olive",
+  "draw": "data/pdf_draw/FREEDOM_XL_5_0.png"
  },
  {
   "id": "altea_l_5_0",
@@ -7070,7 +7716,10 @@
    }
   ],
   "new": false,
-  "sort": 98
+  "sort": 98,
+  "hero": "data/pdf_photos/ALTEA_L_5_0.jpg",
+  "hero_color": "Khaki",
+  "draw": "data/pdf_draw/ALTEA_L_5_0.png"
  },
  {
   "id": "lancer_7_0",
@@ -7127,7 +7776,10 @@
    }
   ],
   "new": false,
-  "sort": 99
+  "sort": 99,
+  "hero": "data/pdf_photos/LANCER_7_0.jpg",
+  "hero_color": "Blue",
+  "draw": "data/pdf_draw/LANCER_7_0.png"
  },
  {
   "id": "yetty_10_0",
@@ -7183,7 +7835,10 @@
    }
   ],
   "new": false,
-  "sort": 100
+  "sort": 100,
+  "hero": "data/pdf_photos/YETTI_10_0.jpg",
+  "hero_color": "Blue",
+  "draw": "data/pdf_draw/YETTI_10_0.png"
  },
  {
   "id": "bubbles_1_8",
@@ -7234,7 +7889,10 @@
    }
   ],
   "new": false,
-  "sort": 101
+  "sort": 101,
+  "hero": "data/pdf_photos/BUBBLES_1_8.jpg",
+  "hero_color": "Black",
+  "draw": "data/pdf_draw/BUBBLES_1_8.png"
  },
  {
   "id": "rotto_12_0",
@@ -7297,7 +7955,10 @@
    }
   ],
   "new": false,
-  "sort": 102
+  "sort": 102,
+  "hero": "data/pdf_photos/ROTTO_12_0.jpg",
+  "hero_color": "Blue",
+  "draw": "data/pdf_draw/ROTTO_12_0.png"
  },
  {
   "id": "lexus_12_0",
@@ -7349,7 +8010,10 @@
    }
   ],
   "new": false,
-  "sort": 103
+  "sort": 103,
+  "hero": "data/pdf_photos/LEXUS_12_0.jpg",
+  "hero_color": "Black",
+  "draw": "data/pdf_draw/LEXUS_12_0.png"
  },
  {
   "id": "buddy_5_0",
@@ -7416,7 +8080,10 @@
    }
   ],
   "new": false,
-  "sort": 104
+  "sort": 104,
+  "hero": "data/pdf_photos/BUDDY_5_0.jpg",
+  "hero_color": "Grey",
+  "draw": "data/pdf_draw/BUDDY_5_0.png"
  },
  {
   "id": "opal_40",
@@ -7490,7 +8157,16 @@
    }
   ],
   "new": false,
-  "sort": 105
+  "sort": 105,
+  "hero": "data/pdf_photos/OPAL_40.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "raincover_inside",
+    "file": "ikony/raincover_inside.png",
+    "label": "Integrovaná pláštěnka"
+   }
+  ]
  },
  {
   "id": "alpin_40",
@@ -7547,7 +8223,8 @@
     "back": null,
     "art": "rozkresy/alpin_40_dark_orange_orange.png",
     "src": "pdf",
-    "generic": true
+    "generic": true,
+    "art_src": "pdf"
    },
    {
     "n": 2,
@@ -7558,7 +8235,8 @@
     "front": null,
     "back": null,
     "art": "rozkresy/alpin_40_black_orange.png",
-    "src": null
+    "src": null,
+    "art_src": "pdf"
    },
    {
     "n": 3,
@@ -7573,7 +8251,16 @@
    }
   ],
   "new": false,
-  "sort": 106
+  "sort": 106,
+  "hero": "data/pdf_photos/ALPIN_40.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "raincover_inside",
+    "file": "ikony/raincover_inside.png",
+    "label": "Integrovaná pláštěnka"
+   }
+  ]
  },
  {
   "id": "courier_35",
@@ -7658,7 +8345,16 @@
    }
   ],
   "new": false,
-  "sort": 107
+  "sort": 107,
+  "hero": "data/pdf_photos/COURIER_35.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "raincover_inside",
+    "file": "ikony/raincover_inside.png",
+    "label": "Integrovaná pláštěnka"
+   }
+  ]
  },
  {
   "id": "otawa_30",
@@ -7736,7 +8432,16 @@
    }
   ],
   "new": false,
-  "sort": 108
+  "sort": 108,
+  "hero": "data/pdf_photos/OTAWA_30.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "raincover_inside",
+    "file": "ikony/raincover_inside.png",
+    "label": "Integrovaná pláštěnka"
+   }
+  ]
  },
  {
   "id": "manta_30",
@@ -7820,7 +8525,16 @@
    }
   ],
   "new": false,
-  "sort": 109
+  "sort": 109,
+  "hero": "data/pdf_photos/MANTA_30.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "raincover_inside",
+    "file": "ikony/raincover_inside.png",
+    "label": "Integrovaná pláštěnka"
+   }
+  ]
  },
  {
   "id": "havana_28",
@@ -7897,7 +8611,16 @@
    }
   ],
   "new": false,
-  "sort": 110
+  "sort": 110,
+  "hero": "data/pdf_photos/HAVANA_28.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "raincover_inside",
+    "file": "ikony/raincover_inside.png",
+    "label": "Integrovaná pláštěnka"
+   }
+  ]
  },
  {
   "id": "escape_25",
@@ -7972,7 +8695,9 @@
    }
   ],
   "new": false,
-  "sort": 111
+  "sort": 111,
+  "hero": "data/pdf_photos/ESCAPE_25.jpg",
+  "hero_color": ""
  },
  {
   "id": "cruiser_12",
@@ -8027,7 +8752,16 @@
    }
   ],
   "new": false,
-  "sort": 112
+  "sort": 112,
+  "hero": "data/pdf_photos/CRUISER_12.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "ykk",
+    "file": "ikony/ykk.png",
+    "label": "Zipy YKK"
+   }
+  ]
  },
  {
   "id": "biker_6",
@@ -8104,7 +8838,9 @@
    }
   ],
   "new": false,
-  "sort": 113
+  "sort": 113,
+  "hero": "data/pdf_photos/BIKER_6.jpg",
+  "hero_color": ""
  },
  {
   "id": "start_4",
@@ -8168,7 +8904,16 @@
    }
   ],
   "new": false,
-  "sort": 114
+  "sort": 114,
+  "hero": "data/pdf_photos/START_4.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "ykk",
+    "file": "ikony/ykk.png",
+    "label": "Zipy YKK"
+   }
+  ]
  },
  {
   "id": "new_york_100",
@@ -8217,7 +8962,9 @@
    }
   ],
   "new": false,
-  "sort": 115
+  "sort": 115,
+  "hero": "data/pdf_photos/NEW_YORK_100.jpg",
+  "hero_color": ""
  },
  {
   "id": "bootbag_20",
@@ -8265,7 +9012,9 @@
    }
   ],
   "new": false,
-  "sort": 116
+  "sort": 116,
+  "hero": "data/pdf_photos/BOOTBAG_20.jpg",
+  "hero_color": ""
  },
  {
   "id": "backup_10",
@@ -8322,7 +9071,9 @@
    }
   ],
   "new": false,
-  "sort": 117
+  "sort": 117,
+  "hero": "data/pdf_photos/BACKUP_10.jpg",
+  "hero_color": ""
  },
  {
   "id": "money_belt",
@@ -8365,7 +9116,9 @@
    }
   ],
   "new": false,
-  "sort": 118
+  "sort": 118,
+  "hero": "data/pdf_photos/MONEY_BELT.jpg",
+  "hero_color": ""
  },
  {
   "id": "money",
@@ -8408,7 +9161,9 @@
    }
   ],
   "new": false,
-  "sort": 119
+  "sort": 119,
+  "hero": "data/pdf_photos/MONEY.jpg",
+  "hero_color": ""
  },
  {
   "id": "bags_rain_cover_s",
@@ -8452,7 +9207,9 @@
    }
   ],
   "new": false,
-  "sort": 120
+  "sort": 120,
+  "hero": "data/pdf_photos/BAGS_RAIN_COVER_S.jpg",
+  "hero_color": ""
  },
  {
   "id": "bags_rain_cover_l",
@@ -8496,7 +9253,9 @@
    }
   ],
   "new": false,
-  "sort": 121
+  "sort": 121,
+  "hero": "data/pdf_photos/BAGS_RAIN_COVER_L.jpg",
+  "hero_color": ""
  },
  {
   "id": "transit_140",
@@ -8546,7 +9305,16 @@
    }
   ],
   "new": false,
-  "sort": 122
+  "sort": 122,
+  "hero": "data/pdf_photos/TRANSIT_140.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "utx_duraflex",
+    "file": "ikony/utx_duraflex.png",
+    "label": "Přezky UTX Duraflex"
+   }
+  ]
  },
  {
   "id": "saver_25l_long",
@@ -8594,7 +9362,16 @@
    }
   ],
   "new": false,
-  "sort": 124
+  "sort": 124,
+  "hero": "data/pdf_photos/SAVER_25L_LONG.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "utx_duraflex",
+    "file": "ikony/utx_duraflex.png",
+    "label": "Přezky UTX Duraflex"
+   }
+  ]
  },
  {
   "id": "saver_25l_short",
@@ -8642,7 +9419,16 @@
    }
   ],
   "new": false,
-  "sort": 125
+  "sort": 125,
+  "hero": "data/pdf_photos/SAVER_25L_SHORT.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "utx_duraflex",
+    "file": "ikony/utx_duraflex.png",
+    "label": "Přezky UTX Duraflex"
+   }
+  ]
  },
  {
   "id": "saver_x_28l",
@@ -8690,7 +9476,16 @@
    }
   ],
   "new": false,
-  "sort": 126
+  "sort": 126,
+  "hero": "data/pdf_photos/SAVER_X_28L.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "utx_duraflex",
+    "file": "ikony/utx_duraflex.png",
+    "label": "Přezky UTX Duraflex"
+   }
+  ]
  },
  {
   "id": "saver_xl_51l",
@@ -8738,7 +9533,16 @@
    }
   ],
   "new": false,
-  "sort": 127
+  "sort": 127,
+  "hero": "data/pdf_photos/SAVER_XL_51L.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "utx_duraflex",
+    "file": "ikony/utx_duraflex.png",
+    "label": "Přezky UTX Duraflex"
+   }
+  ]
  },
  {
   "id": "omega_2l",
@@ -8784,7 +9588,9 @@
    }
   ],
   "new": false,
-  "sort": 128
+  "sort": 128,
+  "hero": "data/pdf_photos/OMEGA_2L.jpg",
+  "hero_color": ""
  },
  {
   "id": "desert_2l",
@@ -8830,7 +9636,9 @@
    }
   ],
   "new": false,
-  "sort": 129
+  "sort": 129,
+  "hero": "data/pdf_photos/DESERT_2L.jpg",
+  "hero_color": ""
  },
  {
   "id": "armada_1_5l",
@@ -8876,7 +9684,9 @@
    }
   ],
   "new": false,
-  "sort": 130
+  "sort": 130,
+  "hero": "data/pdf_photos/ARMADA_1_5L.jpg",
+  "hero_color": ""
  },
  {
   "id": "armax_1_5l",
@@ -8922,7 +9732,9 @@
    }
   ],
   "new": false,
-  "sort": 131
+  "sort": 131,
+  "hero": "data/pdf_photos/ARMAX_1_5L.jpg",
+  "hero_color": ""
  },
  {
   "id": "hydra_2_5l",
@@ -8968,7 +9780,16 @@
    }
   ],
   "new": false,
-  "sort": 132
+  "sort": 132,
+  "hero": "data/pdf_photos/HYDRA_1_5L.jpg",
+  "hero_color": "",
+  "badges": [
+   {
+    "name": "triguard_25l_membrane",
+    "file": "ikony/triguard_25l_membrane.png",
+    "label": "Triguard 2.5L Membrane"
+   }
+  ]
  },
  {
   "id": "gel_flask_t_600",
@@ -9014,7 +9835,9 @@
    }
   ],
   "new": false,
-  "sort": 133
+  "sort": 133,
+  "hero": "data/pdf_photos/GEL_FLASK_T_600.jpg",
+  "hero_color": ""
  },
  {
   "id": "gel_flask_a_500",
@@ -9060,7 +9883,9 @@
    }
   ],
   "new": false,
-  "sort": 134
+  "sort": 134,
+  "hero": "data/pdf_photos/GEL_FLASK_A_500.jpg",
+  "hero_color": ""
  },
  {
   "id": "gel_flask_h_350",
@@ -9106,7 +9931,9 @@
    }
   ],
   "new": false,
-  "sort": 135
+  "sort": 135,
+  "hero": "data/pdf_photos/GEL_FLASK_H_350.jpg",
+  "hero_color": ""
  },
  {
   "id": "intense",
@@ -9225,7 +10052,19 @@
    }
   ],
   "new": false,
-  "sort": 136
+  "sort": 136,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "triguard_3l_membrane_extreme",
+    "file": "ikony/triguard_3l_membrane_extreme.png",
+    "label": "Triguard 3L Membrane Extreme"
+   }
+  ]
  },
  {
   "id": "orado",
@@ -9342,7 +10181,19 @@
    }
   ],
   "new": false,
-  "sort": 139
+  "sort": 139,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "triguard_3l_membrane_extreme",
+    "file": "ikony/triguard_3l_membrane_extreme.png",
+    "label": "Triguard 3L Membrane Extreme"
+   }
+  ]
  },
  {
   "id": "foxter",
@@ -9477,7 +10328,14 @@
    }
   ],
   "new": false,
-  "sort": 140
+  "sort": 140,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "exped",
@@ -9598,7 +10456,19 @@
    }
   ],
   "new": false,
-  "sort": 141
+  "sort": 141,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "triguard_25l_membrane",
+    "file": "ikony/triguard_25l_membrane.png",
+    "label": "Triguard 2.5L Membrane"
+   }
+  ]
  },
  {
   "id": "exped_pants",
@@ -9666,7 +10536,19 @@
    }
   ],
   "new": false,
-  "sort": 142
+  "sort": 142,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "triguard_25l_membrane",
+    "file": "ikony/triguard_25l_membrane.png",
+    "label": "Triguard 2.5L Membrane"
+   }
+  ]
  },
  {
   "id": "mark",
@@ -9769,7 +10651,19 @@
    }
   ],
   "new": false,
-  "sort": 144
+  "sort": 144,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "triguard_25l_membrane",
+    "file": "ikony/triguard_25l_membrane.png",
+    "label": "Triguard 2.5L Membrane"
+   }
+  ]
  },
  {
   "id": "erwi_hard",
@@ -9871,7 +10765,7 @@
    },
    {
     "n": 4,
-    "name": "red",
+    "name": "dark red/red",
     "codes": [
      "T0856557",
      "T0856558",
@@ -9880,10 +10774,11 @@
      "T0856561",
      "T0856562"
     ],
-    "front": "foto/erwi_hard_red_front.jpg",
-    "back": "foto/erwi_hard_red_back.jpg",
-    "art": null,
+    "front": "foto/erwi_hard_dark_red_red_front.jpg",
+    "back": "foto/erwi_hard_dark_red_red_back.jpg",
+    "art": "rozkresy/erwi_hard_dark_red_red.png",
     "src": "web",
+    "excel_name": "red",
     "back_sim": 0.96
    },
    {
@@ -9905,7 +10800,14 @@
    }
   ],
   "new": false,
-  "sort": 145
+  "sort": 145,
+  "badges": [
+   {
+    "name": "triguard_softshell",
+    "file": "ikony/triguard_softshell.png",
+    "label": "Triguard Softshell"
+   }
+  ]
  },
  {
   "id": "jurry",
@@ -9969,7 +10871,14 @@
    }
   ],
   "new": false,
-  "sort": 146
+  "sort": 146,
+  "badges": [
+   {
+    "name": "triguard_softshell",
+    "file": "ikony/triguard_softshell.png",
+    "label": "Triguard Softshell"
+   }
+  ]
  },
  {
   "id": "motion",
@@ -10034,7 +10943,14 @@
    }
   ],
   "new": false,
-  "sort": 147
+  "sort": 147,
+  "badges": [
+   {
+    "name": "triguard_softshell",
+    "file": "ikony/triguard_softshell.png",
+    "label": "Triguard Softshell"
+   }
+  ]
  },
  {
   "id": "sigma",
@@ -10097,7 +11013,14 @@
    }
   ],
   "new": false,
-  "sort": 148
+  "sort": 148,
+  "badges": [
+   {
+    "name": "triguard_softshell",
+    "file": "ikony/triguard_softshell.png",
+    "label": "Triguard Softshell"
+   }
+  ]
  },
  {
   "id": "intensa",
@@ -10216,7 +11139,19 @@
    }
   ],
   "new": false,
-  "sort": 149
+  "sort": 149,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "triguard_3l_membrane_extreme",
+    "file": "ikony/triguard_3l_membrane_extreme.png",
+    "label": "Triguard 3L Membrane Extreme"
+   }
+  ]
  },
  {
   "id": "orada",
@@ -10333,7 +11268,19 @@
    }
   ],
   "new": false,
-  "sort": 152
+  "sort": 152,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "triguard_3l_membrane_extreme",
+    "file": "ikony/triguard_3l_membrane_extreme.png",
+    "label": "Triguard 3L Membrane Extreme"
+   }
+  ]
  },
  {
   "id": "foxtera",
@@ -10469,7 +11416,14 @@
    }
   ],
   "new": false,
-  "sort": 153
+  "sort": 153,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "exped_lady",
@@ -10593,7 +11547,19 @@
    }
   ],
   "new": false,
-  "sort": 154
+  "sort": 154,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "triguard_25l_membrane",
+    "file": "ikony/triguard_25l_membrane.png",
+    "label": "Triguard 2.5L Membrane"
+   }
+  ]
  },
  {
   "id": "exped_lady_pants",
@@ -10661,7 +11627,19 @@
    }
   ],
   "new": false,
-  "sort": 155
+  "sort": 155,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "triguard_25l_membrane",
+    "file": "ikony/triguard_25l_membrane.png",
+    "label": "Triguard 2.5L Membrane"
+   }
+  ]
  },
  {
   "id": "mark_lady",
@@ -10764,7 +11742,19 @@
    }
   ],
   "new": false,
-  "sort": 157
+  "sort": 157,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   },
+   {
+    "name": "triguard_25l_membrane",
+    "file": "ikony/triguard_25l_membrane.png",
+    "label": "Triguard 2.5L Membrane"
+   }
+  ]
  },
  {
   "id": "erwi_hard_lady",
@@ -10861,7 +11851,7 @@
    },
    {
     "n": 4,
-    "name": "red",
+    "name": "dark red/red",
     "codes": [
      "T0856569",
      "T0856570",
@@ -10870,14 +11860,22 @@
      "T0856573",
      "T0856574"
     ],
-    "front": "foto/erwi_hard_lady_red_front.jpg",
-    "back": "foto/erwi_hard_lady_red_back.jpg",
-    "art": null,
-    "src": "web"
+    "front": "foto/erwi_hard_lady_dark_red_red_front.jpg",
+    "back": "foto/erwi_hard_lady_dark_red_red_back.jpg",
+    "art": "rozkresy/erwi_hard_lady_dark_red_red.png",
+    "src": "web",
+    "excel_name": "red"
    }
   ],
   "new": false,
-  "sort": 158
+  "sort": 158,
+  "badges": [
+   {
+    "name": "triguard_softshell",
+    "file": "ikony/triguard_softshell.png",
+    "label": "Triguard Softshell"
+   }
+  ]
  },
  {
   "id": "jurra",
@@ -10941,7 +11939,14 @@
    }
   ],
   "new": false,
-  "sort": 159
+  "sort": 159,
+  "badges": [
+   {
+    "name": "triguard_softshell",
+    "file": "ikony/triguard_softshell.png",
+    "label": "Triguard Softshell"
+   }
+  ]
  },
  {
   "id": "motion_lady",
@@ -11004,7 +12009,14 @@
    }
   ],
   "new": false,
-  "sort": 160
+  "sort": 160,
+  "badges": [
+   {
+    "name": "triguard_softshell",
+    "file": "ikony/triguard_softshell.png",
+    "label": "Triguard Softshell"
+   }
+  ]
  },
  {
   "id": "sigma_lady",
@@ -11067,7 +12079,14 @@
    }
   ],
   "new": false,
-  "sort": 161
+  "sort": 161,
+  "badges": [
+   {
+    "name": "triguard_softshell",
+    "file": "ikony/triguard_softshell.png",
+    "label": "Triguard Softshell"
+   }
+  ]
  },
  {
   "id": "sigma_jr",
@@ -11128,7 +12147,14 @@
    }
   ],
   "new": false,
-  "sort": 162
+  "sort": 162,
+  "badges": [
+   {
+    "name": "triguard_softshell",
+    "file": "ikony/triguard_softshell.png",
+    "label": "Triguard Softshell"
+   }
+  ]
  },
  {
   "id": "contre",
@@ -11324,7 +12350,14 @@
    }
   ],
   "new": false,
-  "sort": 163
+  "sort": 163,
+  "badges": [
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "contre_pants",
@@ -11388,7 +12421,14 @@
    }
   ],
   "new": false,
-  "sort": 164
+  "sort": 164,
+  "badges": [
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "marol",
@@ -11538,7 +12578,14 @@
    }
   ],
   "new": false,
-  "sort": 165
+  "sort": 165,
+  "badges": [
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "marol_pants",
@@ -11636,7 +12683,14 @@
    }
   ],
   "new": false,
-  "sort": 166
+  "sort": 166,
+  "badges": [
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "paco",
@@ -12503,7 +13557,14 @@
    }
   ],
   "new": false,
-  "sort": 174
+  "sort": 174,
+  "badges": [
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "roche",
@@ -12620,7 +13681,14 @@
    }
   ],
   "new": false,
-  "sort": 175
+  "sort": 175,
+  "badges": [
+   {
+    "name": "triguard_windshield",
+    "file": "ikony/triguard_windshield.png",
+    "label": "Triguard Windshield"
+   }
+  ]
  },
  {
   "id": "roche_pants",
@@ -12701,7 +13769,14 @@
    }
   ],
   "new": false,
-  "sort": 176
+  "sort": 176,
+  "badges": [
+   {
+    "name": "triguard_windshield",
+    "file": "ikony/triguard_windshield.png",
+    "label": "Triguard Windshield"
+   }
+  ]
  },
  {
   "id": "techno",
@@ -12879,7 +13954,19 @@
    }
   ],
   "new": false,
-  "sort": 178
+  "sort": 178,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "hardy",
@@ -12942,7 +14029,19 @@
    }
   ],
   "new": false,
-  "sort": 179
+  "sort": 179,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "fjord",
@@ -13005,7 +14104,19 @@
    }
   ],
   "new": false,
-  "sort": 180
+  "sort": 180,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "timero",
@@ -13066,7 +14177,19 @@
    }
   ],
   "new": false,
-  "sort": 181
+  "sort": 181,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "taipe",
@@ -13127,7 +14250,19 @@
    }
   ],
   "new": false,
-  "sort": 182
+  "sort": 182,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "tracky",
@@ -13242,7 +14377,19 @@
    }
   ],
   "new": false,
-  "sort": 183
+  "sort": 183,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "contra",
@@ -13392,7 +14539,14 @@
    }
   ],
   "new": false,
-  "sort": 184
+  "sort": 184,
+  "badges": [
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "contra_pants",
@@ -13456,7 +14610,14 @@
    }
   ],
   "new": false,
-  "sort": 185
+  "sort": 185,
+  "badges": [
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "marola",
@@ -13588,7 +14749,14 @@
    }
   ],
   "new": false,
-  "sort": 186
+  "sort": 186,
+  "badges": [
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "marola_pants",
@@ -13669,7 +14837,14 @@
    }
   ],
   "new": false,
-  "sort": 187
+  "sort": 187,
+  "badges": [
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "paco_lady",
@@ -13943,7 +15118,7 @@
    },
    {
     "n": 3,
-    "name": "azure/pinky",
+    "name": "azure/dark lagoon",
     "codes": [
      "T0856181",
      "T0856182",
@@ -13952,11 +15127,11 @@
      "T0856185",
      "T0856186"
     ],
-    "front": "foto/double_lady_azure_pinky_front.jpg",
-    "back": "foto/double_lady_azure_pinky_back.jpg",
-    "art": "rozkresy/double_lady_azure_pinky.png",
+    "front": "foto/double_lady_azure_dark_lagoon_front.jpg",
+    "back": "foto/double_lady_azure_dark_lagoon_back.jpg",
+    "art": "rozkresy/double_lady_azure_dark_lagoon.png",
     "src": "web",
-    "back_sim": 0.96
+    "excel_name": "azure/pinky"
    }
   ],
   "new": false,
@@ -14683,7 +15858,14 @@
    }
   ],
   "new": false,
-  "sort": 196
+  "sort": 196,
+  "badges": [
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "roche_lady",
@@ -14797,7 +15979,14 @@
    }
   ],
   "new": false,
-  "sort": 197
+  "sort": 197,
+  "badges": [
+   {
+    "name": "triguard_windshield",
+    "file": "ikony/triguard_windshield.png",
+    "label": "Triguard Windshield"
+   }
+  ]
  },
  {
   "id": "roche_lady_pants",
@@ -14878,7 +16067,14 @@
    }
   ],
   "new": false,
-  "sort": 198
+  "sort": 198,
+  "badges": [
+   {
+    "name": "triguard_windshield",
+    "file": "ikony/triguard_windshield.png",
+    "label": "Triguard Windshield"
+   }
+  ]
  },
  {
   "id": "techno_lady",
@@ -15056,7 +16252,19 @@
    }
   ],
   "new": false,
-  "sort": 200
+  "sort": 200,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "fjorda",
@@ -15119,7 +16327,19 @@
    }
   ],
   "new": false,
-  "sort": 201
+  "sort": 201,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "timera",
@@ -15179,7 +16399,19 @@
    }
   ],
   "new": false,
-  "sort": 202
+  "sort": 202,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "taipa",
@@ -15240,7 +16472,19 @@
    }
   ],
   "new": false,
-  "sort": 203
+  "sort": 203,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "tracka",
@@ -15338,7 +16582,19 @@
    }
   ],
   "new": false,
-  "sort": 204
+  "sort": 204,
+  "badges": [
+   {
+    "name": "teflon",
+    "file": "ikony/teflon.png",
+    "label": "Teflon"
+   },
+   {
+    "name": "triguard_bi_stretch",
+    "file": "ikony/triguard_bi_stretch.png",
+    "label": "Triguard Bi-Stretch"
+   }
+  ]
  },
  {
   "id": "ervi",
@@ -15454,7 +16710,7 @@
    },
    {
     "n": 5,
-    "name": "red",
+    "name": "dark red/red",
     "codes": [
      "T0856575",
      "T0856576",
@@ -15463,10 +16719,11 @@
      "T0856579",
      "T0856580"
     ],
-    "front": "foto/ervi_red_front.jpg",
-    "back": "foto/ervi_red_back.jpg",
-    "art": null,
-    "src": "web"
+    "front": "foto/ervi_dark_red_red_front.jpg",
+    "back": "foto/ervi_dark_red_red_back.jpg",
+    "art": "rozkresy/ervi_dark_red_red.png",
+    "src": "web",
+    "excel_name": "red"
    }
   ],
   "new": false,
@@ -16996,7 +18253,7 @@
    },
    {
     "n": 5,
-    "name": "red",
+    "name": "dark red/red",
     "codes": [
      "T0856593",
      "T0856594",
@@ -17005,10 +18262,11 @@
      "T0856597",
      "T0856598"
     ],
-    "front": "foto/ervi_lady_red_front.jpg",
-    "back": "foto/ervi_lady_red_back.jpg",
-    "art": null,
-    "src": "web"
+    "front": "foto/ervi_lady_dark_red_red_front.jpg",
+    "back": "foto/ervi_lady_dark_red_red_back.jpg",
+    "art": "rozkresy/ervi_lady_dark_red_red.png",
+    "src": "web",
+    "excel_name": "red"
    }
   ],
   "new": false,
@@ -17676,7 +18934,7 @@
    },
    {
     "n": 2,
-    "name": "grafit black/pinky",
+    "name": "grey/pinky",
     "codes": [
      "T0856856",
      "T0856857",
@@ -17685,14 +18943,15 @@
      "T0856860",
      "T0856861"
     ],
-    "front": "foto/micron_lady_vest_grafit_black_pinky_front.jpg",
-    "back": "foto/micron_lady_vest_grafit_black_pinky_back.jpg",
-    "art": "rozkresy/micron_lady_vest_grafit_black_pinky.png",
-    "src": "fw"
+    "front": "foto/micron_lady_vest_grey_pinky_front.jpg",
+    "back": "foto/micron_lady_vest_grey_pinky_back.jpg",
+    "art": "rozkresy/micron_lady_vest_grey_pinky.png",
+    "src": "fw",
+    "excel_name": "grafit black/pinky"
    },
    {
     "n": 3,
-    "name": "mustard/grafit black",
+    "name": "mustard/grey",
     "codes": [
      "T0856862",
      "T0856863",
@@ -17701,10 +18960,11 @@
      "T0856866",
      "T0856867"
     ],
-    "front": "foto/micron_lady_vest_mustard_grafit_black_front.jpg",
-    "back": "foto/micron_lady_vest_mustard_grafit_black_back.jpg",
-    "art": "rozkresy/micron_lady_vest_mustard_grafit_black.png",
-    "src": "fw"
+    "front": "foto/micron_lady_vest_mustard_grey_front.jpg",
+    "back": "foto/micron_lady_vest_mustard_grey_back.jpg",
+    "art": "rozkresy/micron_lady_vest_mustard_grey.png",
+    "src": "fw",
+    "excel_name": "mustard/grafit black"
    }
   ],
   "new": true,
@@ -19203,7 +20463,14 @@
    }
   ],
   "new": false,
-  "sort": 240
+  "sort": 240,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "basic",
@@ -19275,7 +20542,14 @@
    }
   ],
   "new": false,
-  "sort": 241
+  "sort": 241,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "topic",
@@ -19348,7 +20622,14 @@
    }
   ],
   "new": false,
-  "sort": 242
+  "sort": 242,
+  "badges": [
+   {
+    "name": "taped_seams",
+    "file": "ikony/taped_seams.png",
+    "label": "Lepené švy"
+   }
+  ]
  },
  {
   "id": "stopers",
@@ -19497,15 +20778,17 @@
   "colors": [
    {
     "n": 1,
-    "name": "pink",
+    "name": "black/pinky",
     "codes": [
      "T0852038"
     ],
-    "front": "foto/snake_24mm_w_pink_front.jpg",
-    "back": "foto/snake_24mm_w_pink_back.jpg",
+    "front": "foto/snake_24mm_w_black_pinky_front.jpg",
+    "back": "foto/snake_24mm_w_black_pinky_back.jpg",
     "art": null,
     "src": "web",
-    "back_sim": 0.86
+    "excel_name": "pink",
+    "back_sim": 0.86,
+    "art_cut": true
    }
   ],
   "new": false,
@@ -19548,15 +20831,17 @@
   "colors": [
    {
     "n": 1,
-    "name": "blue",
+    "name": "black/blue",
     "codes": [
      "T0852039"
     ],
-    "front": "foto/snake_24mm_m_blue_front.jpg",
-    "back": "foto/snake_24mm_m_blue_back.jpg",
+    "front": "foto/snake_24mm_m_black_blue_front.jpg",
+    "back": "foto/snake_24mm_m_black_blue_back.jpg",
     "art": null,
     "src": "web",
-    "back_sim": 0.78
+    "excel_name": "blue",
+    "back_sim": 0.78,
+    "art_cut": true
    }
   ],
   "new": false,
@@ -20239,7 +21524,7 @@
   "colors": [
    {
     "n": 1,
-    "name": "mustard/dark lagoon",
+    "name": "mustard/dark lagoon/mustard",
     "codes": [
      "T0856760",
      "T0856761",
@@ -20248,16 +21533,17 @@
      "T0856764",
      "T0856765"
     ],
-    "front": "foto/therm_mustard_dark_lagoon_front.jpg",
-    "back": "foto/therm_mustard_dark_lagoon_back.jpg",
-    "art": "rozkresy/therm_mustard_dark_lagoon.png",
+    "front": "foto/therm_mustard_dark_lagoon_mustard_front.jpg",
+    "back": "foto/therm_mustard_dark_lagoon_mustard_back.jpg",
+    "art": "rozkresy/therm_mustard_dark_lagoon_mustard.png",
     "src": "fw",
+    "excel_name": "mustard/dark lagoon",
     "generic": true,
     "fw_pair": "other-color"
    },
    {
     "n": 2,
-    "name": "jeans blue/dark lagoon",
+    "name": "jeans blue/dark lagoon/jeans blue",
     "codes": [
      "T0856766",
      "T0856767",
@@ -20268,12 +21554,13 @@
     ],
     "front": null,
     "back": null,
-    "art": "rozkresy/therm_jeans_blue_dark_lagoon.png",
-    "src": null
+    "art": "rozkresy/therm_jeans_blue_dark_lagoon_jeans_blue.png",
+    "src": null,
+    "excel_name": "jeans blue/dark lagoon"
    },
    {
     "n": 3,
-    "name": "grey/black",
+    "name": "grey/black/red",
     "codes": [
      "T0856754",
      "T0856755",
@@ -20282,10 +21569,11 @@
      "T0856758",
      "T0856759"
     ],
-    "front": "foto/therm_grey_black_front.jpg",
+    "front": "foto/therm_grey_black_red_front.jpg",
     "back": null,
-    "art": "rozkresy/therm_grey_black.png",
-    "src": "fw"
+    "art": "rozkresy/therm_grey_black_red.png",
+    "src": "fw",
+    "excel_name": "grey/black"
    }
   ],
   "new": true,
@@ -20335,7 +21623,7 @@
   "colors": [
    {
     "n": 1,
-    "name": "black/grey",
+    "name": "black/grey/jeans blue",
     "codes": [
      "T0856772",
      "T0856773",
@@ -20344,15 +21632,16 @@
      "T0856776",
      "T0856777"
     ],
-    "front": "foto/therm_1_2_zip_black_grey_front.jpg",
-    "back": "foto/therm_1_2_zip_black_grey_back.jpg",
-    "art": "rozkresy/therm_1_2_zip_black_grey.png",
+    "front": "foto/therm_1_2_zip_black_grey_jeans_blue_front.jpg",
+    "back": "foto/therm_1_2_zip_black_grey_jeans_blue_back.jpg",
+    "art": "rozkresy/therm_1_2_zip_black_grey_jeans_blue.png",
     "src": "fw",
+    "excel_name": "black/grey",
     "generic": true
    },
    {
     "n": 2,
-    "name": "mustard/grafit black",
+    "name": "mustard/grey/dark lagoon",
     "codes": [
      "T0856778",
      "T0856779",
@@ -20363,12 +21652,13 @@
     ],
     "front": null,
     "back": null,
-    "art": "rozkresy/therm_1_2_zip_mustard_grafit_black.png",
-    "src": null
+    "art": "rozkresy/therm_1_2_zip_mustard_grey_dark_lagoon.png",
+    "src": null,
+    "excel_name": "mustard/grafit black"
    },
    {
     "n": 3,
-    "name": "jeans blue/dark grey",
+    "name": "jeans blue/grey/lime green",
     "codes": [
      "T0856784",
      "T0856785",
@@ -20377,10 +21667,11 @@
      "T0856788",
      "T0856789"
     ],
-    "front": "foto/therm_1_2_zip_jeans_blue_dark_grey_front.jpg",
-    "back": "foto/therm_1_2_zip_jeans_blue_dark_grey_back.jpg",
-    "art": "rozkresy/therm_1_2_zip_jeans_blue_dark_grey.png",
-    "src": "fw"
+    "front": "foto/therm_1_2_zip_jeans_blue_grey_lime_green_front.jpg",
+    "back": "foto/therm_1_2_zip_jeans_blue_grey_lime_green_back.jpg",
+    "art": "rozkresy/therm_1_2_zip_jeans_blue_grey_lime_green.png",
+    "src": "fw",
+    "excel_name": "jeans blue/dark grey"
    }
   ],
   "new": true,
@@ -20430,7 +21721,7 @@
   "colors": [
    {
     "n": 1,
-    "name": "black/grey",
+    "name": "black/grey/red",
     "codes": [
      "T0856790",
      "T0856791",
@@ -20439,15 +21730,16 @@
      "T0856794",
      "T0856795"
     ],
-    "front": "foto/therm_lady_black_grey_front.jpg",
-    "back": "foto/therm_lady_black_grey_back.jpg",
-    "art": "rozkresy/therm_lady_black_grey.png",
+    "front": "foto/therm_lady_black_grey_red_front.jpg",
+    "back": "foto/therm_lady_black_grey_red_back.jpg",
+    "art": "rozkresy/therm_lady_black_grey_red.png",
     "src": "fw",
+    "excel_name": "black/grey",
     "generic": true
    },
    {
     "n": 2,
-    "name": "mustard/dark lagoon",
+    "name": "mustard/dark lagoon/mustard",
     "codes": [
      "T0856796",
      "T0856797",
@@ -20458,12 +21750,13 @@
     ],
     "front": null,
     "back": null,
-    "art": "rozkresy/therm_lady_mustard_dark_lagoon.png",
-    "src": null
+    "art": "rozkresy/therm_lady_mustard_dark_lagoon_mustard.png",
+    "src": null,
+    "excel_name": "mustard/dark lagoon"
    },
    {
     "n": 3,
-    "name": "lime green/jeans blue",
+    "name": "lime green/jeans blue/lime green",
     "codes": [
      "T0856802",
      "T0856803",
@@ -20472,14 +21765,15 @@
      "T0856806",
      "T0856807"
     ],
-    "front": "foto/therm_lady_lime_green_jeans_blue_front.jpg",
-    "back": "foto/therm_lady_lime_green_jeans_blue_back.jpg",
-    "art": "rozkresy/therm_lady_lime_green_jeans_blue.png",
-    "src": "fw"
+    "front": "foto/therm_lady_lime_green_jeans_blue_lime_green_front.jpg",
+    "back": "foto/therm_lady_lime_green_jeans_blue_lime_green_back.jpg",
+    "art": "rozkresy/therm_lady_lime_green_jeans_blue_lime_green.png",
+    "src": "fw",
+    "excel_name": "lime green/jeans blue"
    },
    {
     "n": 4,
-    "name": "pinky/jeans blue",
+    "name": "pinky/jeans blue/white",
     "codes": [
      "T0856808",
      "T0856809",
@@ -20490,8 +21784,9 @@
     ],
     "front": null,
     "back": null,
-    "art": "rozkresy/therm_lady_pinky_jeans_blue.png",
-    "src": null
+    "art": "rozkresy/therm_lady_pinky_jeans_blue_white.png",
+    "src": null,
+    "excel_name": "pinky/jeans blue"
    }
   ],
   "new": true,
@@ -20541,7 +21836,7 @@
   "colors": [
    {
     "n": 1,
-    "name": "black/grey",
+    "name": "black/grey/pinky",
     "codes": [
      "T0856814",
      "T0856815",
@@ -20550,15 +21845,16 @@
      "T0856818",
      "T0856819"
     ],
-    "front": "foto/therm_lady_1_2_zip_black_grey_front.jpg",
-    "back": "foto/therm_lady_1_2_zip_black_grey_back.jpg",
-    "art": "rozkresy/therm_lady_1_2_zip_black_grey.png",
+    "front": "foto/therm_lady_1_2_zip_black_grey_pinky_front.jpg",
+    "back": "foto/therm_lady_1_2_zip_black_grey_pinky_back.jpg",
+    "art": "rozkresy/therm_lady_1_2_zip_black_grey_pinky.png",
     "src": "fw",
+    "excel_name": "black/grey",
     "generic": true
    },
    {
     "n": 2,
-    "name": "mustard/grafit black",
+    "name": "mustard/grey/dark lagoon",
     "codes": [
      "T0856820",
      "T0856821",
@@ -20569,12 +21865,13 @@
     ],
     "front": null,
     "back": null,
-    "art": "rozkresy/therm_lady_1_2_zip_mustard_grafit_black.png",
-    "src": null
+    "art": "rozkresy/therm_lady_1_2_zip_mustard_grey_dark_lagoon.png",
+    "src": null,
+    "excel_name": "mustard/grafit black"
    },
    {
     "n": 3,
-    "name": "lime green/grey",
+    "name": "lime green/grey/jeans blue",
     "codes": [
      "T0856826",
      "T0856827",
@@ -20585,8 +21882,9 @@
     ],
     "front": null,
     "back": null,
-    "art": "rozkresy/therm_lady_1_2_zip_lime_green_grey.png",
-    "src": null
+    "art": "rozkresy/therm_lady_1_2_zip_lime_green_grey_jeans_blue.png",
+    "src": null,
+    "excel_name": "lime green/grey"
    }
   ],
   "new": true,

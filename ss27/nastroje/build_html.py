@@ -7,7 +7,7 @@ cat=json.load(open(os.path.join(DATA,'catalog.json'),encoding='utf-8'))
 E=html.escape
 
 SECTIONS=collections.OrderedDict([
- ('tents',dict(title='TENTS COLLECTION',cz='Stany',color='#f39200',pages=[10,11,12])),
+ ('tents',dict(title='TENTS COLLECTION',cz='Stany',color='#f39200',pages=[10,12])),
  ('sleeping',dict(title='SLEEPING BAGS COLLECTION',cz='Spací pytle',color='#1e73be',pages=[44,45,46])),
  ('mattress',dict(title='MATTRESS COLLECTION',cz='Karimatky a matrace',color='#3aa55d',pages=[60,61])),
  ('backpacks',dict(title='BACKPACKS & WATERPROOF COLLECTION',cz='Batohy, vodotěsné vaky a rezervoáry',color='#8e44ad',pages=[71])),
@@ -69,17 +69,30 @@ def is_product_shot(path):
         im=Image.open(os.path.join(ROOT,path)).convert('L'); w,h=im.size; pts=[(3,3),(w-4,3),(3,h-4),(w-4,h-4),(w//2,3),(3,h//2),(w-4,h//2)]
         return sum(im.getpixel(p) for p in pts)/len(pts)>235
     except Exception: return False
+SMALL_TYP={'polštář','peněženka','pásek','nákrčník','kšiltovka','čepice','láhev','kolík','tyčky','náhradní','konektor'}
+WIDE={'BALANCE WIDE'}
 def photos_html(r):
+    cls='photo'
+    if r['typ'] in SMALL_TYP: cls+=' small'
+    if r['name'] in WIDE: cls+=' wide'
+    if r.get('hero'):
+        return f'<div class="{cls} has-hero"><img class="p-hero" src="{E(r["hero"])}" alt="{E(r["name"])}" loading="lazy"></div>'
     MAIN_COLOR={'CUBE LADY':'pinky'}
     fronts=[c for c in r['colors'] if c.get('front')]
     # hlavní fotka karty: přednost má barva s kompletní dvojicí (přední + zadní), pak barevně specifická, generická až nakonec
     ov=MAIN_COLOR.get(r['name'],'').lower()
     fronts=sorted(fronts,key=lambda c:(0 if c['name'].lower()==ov else 1, 0 if c.get('back') else 1, 1 if c.get('generic') else 0, r['colors'].index(c)))
-    if not fronts: return f'<div class="photo"><div class="ph"><span class="ph-n">{E(r["name"])}</span><span class="ph-t">foto doplníme</span></div></div>'
+    if not fronts: return f'<div class="{cls}"><div class="ph"><span class="ph-n">{E(r["name"])}</span><span class="ph-t">foto doplníme</span></div></div>'
     c=fronts[0]; imgs=''
-    if c.get('back') and r['section']=='sportswear' and is_product_shot(c['back']): imgs+=f'<img class="p-back" src="{E(c["back"])}" alt="{E(r["name"])} – zadní strana" loading="lazy">'
+    if c.get('back') and r['section'] in ('sportswear','backpacks') and is_product_shot(c['back']): imgs+=f'<img class="p-back" src="{E(c["back"])}" alt="{E(r["name"])} – zadní strana" loading="lazy">'
     imgs+=f'<img class="p-front" src="{E(c["front"])}" alt="{E(r["name"])}" loading="lazy">'
-    return f'<div class="photo">{imgs}</div>'
+    return f'<div class="{cls}">{imgs}</div>'
+def badges_html(r):
+    if not r.get('badges'): return ''
+    return '<div class="badges">'+''.join(f'<img src="{E(b["file"])}" alt="{E(b.get("label") or "")}" title="{E(b.get("label") or "")}" loading="lazy">' for b in r['badges'])+'</div>'
+def draw_html(r):
+    if not r.get('draw'): return ''
+    return f'<div class="draw"><img src="{E(r["draw"])}" alt="{E(r["name"])} – rozměry" loading="lazy"></div>'
 def colors_html(r):
     items=[]
     for c in r['colors']:
@@ -98,8 +111,19 @@ def feats_html(r):
     if r['features']: out+='<div class="feat"><div class="feat-l">VLASTNOSTI</div><ul>'+''.join(f'<li>{E(f)}</li>' for f in r['features'])+'</ul></div>'
     if r['activities']: out+='<div class="feat"><div class="feat-l">AKTIVITY</div><ul>'+''.join(f'<li>{E(f)}</li>' for f in r['activities'])+'</ul></div>'
     return out
+def est_height(r):
+    import math
+    ch=lambda t,w: max(1,math.ceil(len(t)/w))
+    left=sum(14+16*ch(v,42)+9 for v in r['fields'].values() if v)+(17.5*ch(r['desc'],46)+8 if r['desc'] else 0)
+    right=(18+16*len(r['features'])+12 if r['features'] else 0)+(18+16*len(r['activities'])+12 if r['activities'] else 0)
+    for f in r['features']: right+=16*(ch(f,34)-1)
+    h=22+46+(300 if r['name'] in WIDE else (170 if r['typ'] in SMALL_TYP else 240))+44+32+(50 if r.get('badges') else 0)+(46 if r['specs'].get('temps') else 0)+max(left,right)
+    if r.get('draw'): h+=18+min(130,110)
+    n=len(r['colors']); h+=12+ (100 if n<7 else 100*math.ceil(n/6))
+    return h
 def card(r):
     sec=r['section']; sk=serie_key(r['serie']); sc=serie_color(sec,r['serie'])
+    eh=est_height(r); dense=' dense2' if eh>1080 else (' dense' if eh>960 else '')
     g=r.get('gender'); meta=''
     if g: meta+=f'<span class="g" title="{GENDER_CZ[g]}">{icon(g,GENDER_CZ[g])}<span>{GENDER_CZ[g]}</span></span>'
     meta+=f'<span class="typ">{E(TYP_LABEL.get(r["typ"],r["typ"]))}</span>'
@@ -107,13 +131,15 @@ def card(r):
     badge='<span class="new">Novinka</span>' if r.get('new') else ''
     search=' '.join([r['name'],r['typ'],sk]+[c['name'] for c in r['colors']]).lower()
     desc=f'<p class="desc">{E(r["desc"])}</p>' if r['desc'] else '<p class="desc ph-desc">Popis doplníme.</p>'
-    return f'''<article class="card" id="m-{r['id']}" data-sec="{sec}" data-serie="{E(slug(sk))}" data-g="{g or ''}" data-s="{E(search)}" style="--sc:{sc}">
+    return f'''<article class="card{dense}" id="m-{r['id']}" data-eh="{int(eh)}" data-sec="{sec}" data-serie="{E(slug(sk))}" data-g="{g or ''}" data-s="{E(search)}" style="--sc:{sc}">
 <div class="head"><div class="head-l"><h3>{E(r['name'])}</h3>{badge}</div><span class="dmoc"><span class="dmoc-l">DMOC</span>{E(price(r))}</span></div>
 {photos_html(r)}
 <div class="meta">{meta}</div>
 <div class="specs">{spec_chips(r)}</div>
+{badges_html(r)}
 {temps_html(r)}
 <div class="body"><div class="mats">{fields_html(r)}{desc}</div><div class="feats">{feats_html(r)}</div></div>
+{draw_html(r)}
 {colors_html(r)}
 </article>'''
 
@@ -132,7 +158,7 @@ for sec,meta in SECTIONS.items():
     toc+='</div></div>'
     chips+=f'<button class="chip" data-f="{sec}" style="--tc:{meta["color"]}">{E(meta["cz"].upper())}</button>'
     pages=''.join(f'<img src="data/pdf_pages/p{p:03d}.jpg" alt="Technické informace – strana {p}" loading="lazy">' for p in meta['pages'] if os.path.exists(os.path.join(DATA,'pdf_pages',f'p{p:03d}.jpg')))
-    info=''
+    info=f'<div class="info-pages">{pages}</div>' if pages else ''
     body+=f'<section class="sec" id="sec-{sec}" data-sec="{sec}" style="--tc:{meta["color"]}"><div class="sec-head"><div class="sec-bar"></div><div><h2>{E(meta["title"])}</h2><div class="sec-cz">{E(meta["cz"])}</div></div><span class="sec-cnt">{len(items)} modelů</span></div>{info}'
     for k,v in gs.items():
         col=serie_color(sec,k)
@@ -200,7 +226,7 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .info summary{cursor:pointer;padding:14px 0;font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#444;list-style:none;display:flex;align-items:center;gap:10px}
 .info summary::before{content:'+';display:inline-flex;width:22px;height:22px;border-radius:50%;background:var(--tc);color:#fff;align-items:center;justify-content:center;font-weight:900}
 .info[open] summary::before{content:'–'}
-.info-pages{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:14px;padding:6px 0 24px}
+.info-pages{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:14px;padding:18px 60px 24px;background:#fff;border-bottom:1px solid var(--border)}
 .info-pages img{width:100%;height:auto;border:1px solid var(--border);background:#fff}
 .serie{background:#fff;margin-top:26px;scroll-margin-top:70px}
 .serie-head{padding:22px 60px 16px;display:flex;align-items:center;gap:14px;border-top:5px solid var(--sc);border-bottom:1px solid var(--border)}
@@ -222,6 +248,13 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .p-front{height:96%;max-width:62%}
 .p-back{height:70%;max-width:34%}
 .photo img:only-child{height:96%;max-width:85%}
+.p-hero{height:96%;max-width:100%}
+.photo.small{height:170px}.photo.small img{height:88%;max-width:60%}
+.photo.wide{height:300px}
+.badges{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin:2px 0 8px}
+.badges img{height:40px;width:auto;max-width:150px;object-fit:contain}
+.draw{margin-top:8px;padding:8px 0 2px;border-top:1px solid #eee;text-align:center}
+.draw img{max-width:100%;max-height:130px;width:auto;object-fit:contain}
 .ph{width:100%;height:100%;background:#f3f3f0;display:flex;flex-direction:column;align-items:center;justify-content:center;border-radius:3px}
 .ph-n{font-size:20px;font-weight:900;letter-spacing:.08em;color:#c4c4c4}
 .ph-t{font-size:9px;letter-spacing:.25em;text-transform:uppercase;color:#ccc;margin-top:4px}
@@ -267,7 +300,33 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
  .grid{grid-template-columns:1fr}.card{border-right:none!important;min-height:0;padding:18px 16px 0}
  .body{grid-template-columns:1fr}.sec-head h2{font-size:22px}.head h3{font-size:24px}.info-pages{grid-template-columns:1fr}
 }
-@media print{.fbar,.info{display:none}.card{page-break-inside:avoid}.sec{page-break-before:always}}
+@page{size:A4 landscape;margin:8mm 8mm 13mm 8mm;
+ @bottom-left{content:"TRIMM · SPRING – SUMMER 2027 · " string(sec);font:8px/1 'Helvetica Neue',Helvetica,Arial,sans-serif;color:#777;letter-spacing:.08em}
+ @bottom-right{content:counter(page);font:700 9px/1 'Helvetica Neue',Helvetica,Arial,sans-serif;color:#444}}
+@media print{
+ body{width:100%;background:#fff}
+ .fbar,footer,.stats-row{display:none}
+ .hero{min-height:0;height:184mm;page-break-after:always;padding:40px}
+ .toc{page-break-after:always;padding:30px 20px}
+ .sec{page-break-before:always;margin-top:0}
+ .sec-head{padding:20px 20px 14px;page-break-after:avoid}.sec-head h2{string-set:sec content()}
+ .info-pages{display:block;padding:0;border:none;zoom:1.3889}
+ .info-pages img{display:block;width:auto;max-width:100%;height:184mm;margin:0 auto;page-break-before:always;page-break-inside:avoid;border:none}
+ .info-pages img:first-child{page-break-before:avoid;height:150mm;margin-top:6mm}
+ .info-pages+.serie{page-break-before:always}
+ main{zoom:.72}
+ .photo{height:210px}.photo.wide{height:260px}.photo.small{height:150px}
+ .draw img{max-height:105px}
+ .colors{min-height:0;padding:8px 0 6px;margin-top:8px}.c-art,.c-photo,.c-none{height:50px}
+ .card.dense{zoom:.9}.card.dense2{zoom:.82}
+ .grid{grid-template-columns:repeat(2,1fr)}
+ .card{border-right:1px solid var(--border)!important;page-break-inside:avoid;break-inside:avoid;min-height:0;padding-bottom:10px}
+ .card:nth-child(2n){border-right:none!important}
+ .serie{margin-top:0;page-break-inside:auto;page-break-before:always}
+ .info-pages+.serie,.sec-head+.serie{page-break-before:always}
+ .serie-head{break-after:avoid;page-break-after:avoid;padding:14px 24px 10px}
+ .card img{break-inside:avoid}
+}
 '''
 JS='''
 const q=document.getElementById('q'),cards=[...document.querySelectorAll('.card')],secs=[...document.querySelectorAll('.sec')],series=[...document.querySelectorAll('.serie')],cnt=document.getElementById('cnt');

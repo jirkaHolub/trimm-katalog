@@ -81,7 +81,7 @@ def parse_column(sec,name,x0,x1,pno):
     sp=spans_in(pno,x0,x1); w=x1-x0; split=x0+146 if w>=230 else x0+w*0.9
     vl=[t['x'] for t in sp if t['text'].strip().upper().startswith('VLASTNOSTI') and t['x']-x0>100]
     if vl: split=min(vl)-4
-    left=to_lines([s for s in sp if s['x']<split or s['size']>=15]); right=to_lines([s for s in sp if not(s['x']<split or s['size']>=15)])
+    left=to_lines([s for s in sp if s['x']<split or s['size']>=15]); right=to_lines([s for s in sp if not(s['x']<split or s['size']>=15)]); right0=list(right)
     P=dict(name=fix(name),page=pno+1,section=sec)
     flags=[]
     for l in left+right:
@@ -114,6 +114,7 @@ def parse_column(sec,name,x0,x1,pno):
         else:
             if cur and l['y']<520: fields[cur].append(l['text'])
     P['fields']={k:fix(' '.join(v)) for k,v in fields.items()}
+    P['col']=[round(x0,1),round(x1,1)]; P['first_label_y']=round(first_label_y,1) if first_label_y<9999 else None
     P['desc']=fix(' '.join(desc))
     if P['desc'] and re.search(r'[A-Za-zÀ-ž0-9]$',P['desc']): P['desc']+='.'
     # pravý sloupec: VLASTNOSTI / AKTIVITY
@@ -138,7 +139,7 @@ def parse_column(sec,name,x0,x1,pno):
     try:
         spec_y=min([l['y'] for l in body+right if l['y']<first_label_y-2 and l['y']>50 and l['bold'] and 'DIN' in l['font'] and l['size']<9.5 and not re.fullmatch(r'\d',l['text'].strip()) and l['text'].strip().lower()!='new']+[first_label_y])
         head_y1=max([l['y1'] for l in left if l['size']>=15]+[66])
-        cx0=x0+(x1-x0)*0.56 if sec=='sleeping' else x0+2
+        cx0=x0+(x1-x0)*0.56 if (sec=='sleeping' and P['name'] not in ('HAVEN',)) else x0+2
         cy0=head_y1+3
         if sec=='sleeping':
             ty=[t['y'] for t in sp if 8.9<=t['size']<=9.4 and 'Bold' in t['font'] and t['y']<first_label_y-2]
@@ -148,21 +149,43 @@ def parse_column(sec,name,x0,x1,pno):
         fn=re.sub(r'[^A-Za-z0-9]+','_',P['name']).strip('_')+'.jpg'
         out=os.path.join(DATA,'pdf_photos',fn); os.makedirs(os.path.dirname(out),exist_ok=True)
         if not os.path.exists(out):
-            pix=d[pno].get_pixmap(dpi=220,clip=clip,colorspace=fitz.csRGB)
+            PDPI=300
+            pix=d[pno].get_pixmap(dpi=PDPI,clip=clip,colorspace=fitz.csRGB)
             img=Image.open(io.BytesIO(pix.tobytes('png'))).convert('RGB')
             from PIL import ImageDraw
-            W,H=img.size; scale=220/72
+            W,H=img.size; scale=PDPI/72
             if 'new' in P['flags']:
                 # vybělit diagonální stužku "new" v pravém horním rohu (cca 42 pt trojúhelník na stránce)
                 t=int(42*scale); ImageDraw.Draw(img).polygon([(W-t,0),(W,0),(W,t)],fill=(255,255,255))
             if sec=='mattress':
-                # vybělit vzorník barev vlevo nahoře (do y=127 pt na stránce)
-                nsw=max(1,len([t for t in sp if t['size']<=5.5 and 'DIN' in t['font'] and t['y']<first_label_y]))
-                ImageDraw.Draw(img).rectangle([0,0,int(W*0.30),int((127+33*(nsw-1)-cy0)*scale)],fill=(255,255,255))
+                # vybělit vzorník barev vlevo nahoře: až po spodní okraj posledního popisku barvy (malý text v levé třetině sloupce)
+                labs=[t for t in sp if t['size']<=6.5 and t['y']<first_label_y and t['y']>cy0 and t['x']<x0+0.34*(x1-x0) and re.search(r'[A-Za-z]',t['text'])]
+                ybot=(max(t['y1'] for t in labs)+4) if labs else 127
+                ImageDraw.Draw(img).rectangle([0,0,int(W*0.32),int((ybot-cy0)*scale)],fill=(255,255,255))
             from PIL import ImageChops
             bg=Image.new('RGB',img.size,(255,255,255)); diff=ImageChops.difference(img,bg).convert('L').point(lambda v:255 if v>18 else 0)
             bbox=diff.getbbox()
             if bbox: img=img.crop((max(0,bbox[0]-8),max(0,bbox[1]-8),min(img.width,bbox[2]+8),min(img.height,bbox[3]+8)))
+            # odstranit drobné zbytky (vzorníky, číslice) oddělené bílou mezerou od hlavního obsahu
+            def main_run(mask_line,minlen,mingap):
+                runs=[];i=0;n=len(mask_line)
+                while i<n:
+                    if not mask_line[i]: i+=1; continue
+                    j=i
+                    while j<n and (mask_line[j] or any(mask_line[min(n-1,j+g)] for g in range(1,mingap))): j+=1
+                    runs.append((i,j)); i=j
+                if not runs: return None
+                big=max(runs,key=lambda r:r[1]-r[0])
+                return big if (big[1]-big[0])>=minlen else None
+            dm=ImageChops.difference(img,Image.new('RGB',img.size,(255,255,255))).convert('L').point(lambda v:255 if v>18 else 0)
+            Wd,Hd=dm.size
+            cols=[dm.crop((x,0,x+1,Hd)).getbbox() is not None for x in range(Wd)]
+            rx=main_run(cols,int(Wd*0.3),max(6,int(Wd*0.03)))
+            if rx and (rx[1]-rx[0])<Wd-4:
+                img=img.crop((max(0,rx[0]-8),0,min(Wd,rx[1]+8),Hd)); dm=dm.crop((max(0,rx[0]-8),0,min(Wd,rx[1]+8),Hd)); Wd,Hd=dm.size
+            rows=[dm.crop((0,y,Wd,y+1)).getbbox() is not None for y in range(Hd)]
+            ry=main_run(rows,int(Hd*0.3),max(6,int(Hd*0.03)))
+            if ry and (ry[1]-ry[0])<Hd-4: img=img.crop((0,max(0,ry[0]-8),Wd,min(Hd,ry[1]+8)))
             img.save(out,quality=88)
         P['pdf_photo']='data/pdf_photos/'+fn
     except Exception as e: P['pdf_photo_err']=str(e)
@@ -196,6 +219,93 @@ def parse_column(sec,name,x0,x1,pno):
             img.save(os.path.join(DATA,'pdf_swatch',fn))
             P['swatches'].append(dict(n=t['text'].strip(),label=label,file='data/pdf_swatch/'+fn))
     except Exception as e: P['swatch_err']=str(e)
+    # rozkres rozměrů (vektorová kresba pod popisem, nad spodní řadou vzorníků) -> data/pdf_draw/<slug>.png
+    P['pdf_draw']=None
+    try:
+        if sec in ('tents','sleeping','mattress'):
+            alll=left+right0
+            bottom_nums=[t['y'] for t in sp if re.fullmatch(r'\d',t['text'].strip()) and 'Bold' in t['font'] and 5.5<=t['size']<=6.5 and t['y']>330]
+            sw_top=(min(bottom_nums)-4) if bottom_nums else 578
+            def is_text_line(l):
+                t=l['text'].strip()
+                if re.search(r'layer|padding|chambered|filling|hollow',t,re.I): return False
+                t=re.sub(r'\d+([/,.]\d+)?\s*(cm|mm)','',t)
+                return len(re.findall(r'[A-Za-zÀ-ž]',t))>=3
+            txt=[l for l in alll if l['y']>first_label_y-2 and l['y1']<sw_top and l['size']<9.5 and is_text_line(l)]
+            desc_bottom=max([l['y1'] for l in txt]+[first_label_y])
+            band=fitz.Rect(x0,desc_bottom+2,x1,sw_top)
+            if band.height>25:
+                pix=d[pno].get_pixmap(dpi=300,clip=band,colorspace=fitz.csRGB)
+                img=Image.open(io.BytesIO(pix.tobytes('png'))).convert('RGB')
+                from PIL import ImageChops
+                bb=ImageChops.difference(img,Image.new('RGB',img.size,(255,255,255))).convert('L').point(lambda v:255 if v>22 else 0).getbbox()
+                if bb and (bb[2]-bb[0])>200 and (bb[3]-bb[1])>80:
+                    img=img.crop((max(0,bb[0]-10),max(0,bb[1]-10),min(img.width,bb[2]+10),min(img.height,bb[3]+10)))
+                    os.makedirs(os.path.join(DATA,'pdf_draw'),exist_ok=True)
+                    fn=re.sub(r'[^A-Za-z0-9]+','_',P['name']).strip('_')+'.png'
+                    img.save(os.path.join(DATA,'pdf_draw',fn)); P['pdf_draw']='data/pdf_draw/'+fn
+    except Exception as e: P['draw_err']=str(e)
+    # pás ikon pod fotkou: oranžové ikony specifikací přeskočit, ostatní (badge: TAPED SEAMS, YKK, RAINCOVER, TRIGUARD…) uložit
+    P['pdf_icons']=[]
+    try:
+        vals=[l for l in body+right0 if l['y']<first_label_y-2 and l['y']>50 and l['bold'] and 'DIN' in l['font'] and l['size']<8.5 and l['text'].strip().lower()!='new' and not re.fullmatch(r'\d',l['text'].strip())]
+        if vals:
+            vy=max(l['y'] for l in vals); vy=min(l['y'] for l in vals if l['y']>vy-14); vy1=max(l['y1'] for l in vals if l['y']>=vy-1)
+            bx1=x1 if sec in ('tents','backpacks','sportswear') else x0+(x1-x0)*0.55   # spacáky/karimatky: fotka vpravo ve stejné výšce
+            band=fitz.Rect(x0,vy-(46 if sec in ('backpacks','sportswear') else 36),bx1,vy1+2)
+            pix=d[pno].get_pixmap(dpi=300,clip=band,colorspace=fitz.csRGB)
+            img=Image.open(io.BytesIO(pix.tobytes('png'))).convert('RGB')
+            W,H=img.size; px=img.load()
+            if os.environ.get('ICON_DEBUG'):
+                os.makedirs(os.path.join(DATA,'pdf_icons'),exist_ok=True); img.save(os.path.join(DATA,'pdf_icons','_band_'+re.sub(r'[^A-Za-z0-9]+','_',P['name']).strip('_')+'.png'))
+            colmask=[False]*W
+            Hicons=max(10,int((vy-band.y0)*300/72)-3)   # dělit jen podle řádků ikon (bez řádku hodnot/popisků pod nimi)
+            for x in range(W):
+                for y in range(min(H,Hicons)):
+                    r,g,b=px[x,y]
+                    if r+g+b<420: colmask[x]=True; break
+            comps=[]; x=0
+            while x<W:
+                if not colmask[x]: x+=1; continue
+                s=x
+                while x<W and (colmask[x] or any(colmask[min(W-1,x+k)] for k in range(1,9))): x+=1
+                comps.append((s,x))
+            os.makedirs(os.path.join(DATA,'pdf_icons'),exist_ok=True)
+            base=re.sub(r'[^A-Za-z0-9]+','_',P['name']).strip('_')
+            k=0
+            for s,e in comps:
+                if e-s<25: continue
+                crop=img.crop((max(0,s-4),0,min(W,e+4),H))
+                from PIL import ImageChops
+                bb=ImageChops.difference(crop,Image.new('RGB',crop.size,(255,255,255))).convert('L').point(lambda v:255 if v>22 else 0).getbbox()
+                if not bb: continue
+                if bb[1]<=1:
+                    # dotýká se horního okraje = zbytek fotky/stínu nad ikonou: odříznout horní běh řádků po první bílou mezeru
+                    g=crop.convert('L'); Wc,Hc=g.size; rows=[min(g.crop((0,y,Wc,y+1)).getdata())<235 for y in range(Hc)]
+                    y=0
+                    while y<Hc and rows[y]: y+=1
+                    while y<Hc and not rows[y]: y+=1
+                    if y>=Hc-20: continue
+                    crop=crop.crop((0,y,Wc,Hc))
+                    bb=ImageChops.difference(crop,Image.new('RGB',crop.size,(255,255,255))).convert('L').point(lambda v:255 if v>22 else 0).getbbox()
+                    if not bb: continue
+                crop=crop.crop(bb)
+                # klasifikace: oranžové ikony specifikací (kg, sbalený rozměr, osoby, objem, R-value, pohlaví, velikost)
+                import colorsys
+                n=0; orange=0; red=0; satn=0
+                for r,g,b in crop.getdata():
+                    if r+g+b>=720: continue
+                    n+=1
+                    h,sat,v=colorsys.rgb_to_hsv(r/255,g/255,b/255)
+                    if sat>0.25: satn+=1
+                    if sat>0.25 and 0.03<=h<=0.13: orange+=1
+                    if sat>0.6 and v>0.6 and (h<0.03 or h>0.95): red+=1
+                if os.environ.get('ICON_DEBUG'): print('   comp',P['name'],s,e,'n',n,'satn',satn,'orange',orange,'red',red,'bb',bb,'size',crop.size)
+                if n<400 or (satn and orange/satn>0.6): continue
+                if red/n>0.6 and (W-e)<12: continue   # stužka "new" u pravého okraje
+                if crop.width<30 or crop.height<30: continue
+                k+=1; fn=f'{base}_{k}.png'; crop.save(os.path.join(DATA,'pdf_icons',fn)); P['pdf_icons'].append('data/pdf_icons/'+fn)
+    except Exception as e: P['icon_err']=str(e)
     return P
 def main():
     prods=[]; serie=None
@@ -216,7 +326,7 @@ def main():
     os.makedirs(os.path.join(DATA,'pdf_pages'),exist_ok=True)
     for pno1 in [4,6,7,8,10,11,12,13,16,21,26,29,32,42,43,44,45,46,58,59,60,61,70,71,86,87,88,89,90,91,92,93]:
         out=os.path.join(DATA,'pdf_pages',f'p{pno1:03d}.jpg')
-        if not os.path.exists(out): d[pno1-1].get_pixmap(dpi=110).save(out)
+        if not os.path.exists(out): d[pno1-1].get_pixmap(dpi=160).save(out)
     # cover foto
     for im in d[0].get_image_info(xrefs=True):
         if im.get('xref'):
