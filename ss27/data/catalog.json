@@ -20180,7 +20180,8 @@
     "front": "foto/five_panel_snap_army_green_front.jpg",
     "back": null,
     "art": "rozkresy/five_panel_snap_army_green.png",
-    "src": "fw"
+    "src": "fw",
+    "src_front": "rucne"
    },
    {
     "n": 2,
@@ -20189,10 +20190,11 @@
      "T0855778"
     ],
     "front": "foto/five_panel_snap_grey_front.jpg",
-    "back": "foto/five_panel_snap_grey_back.jpg",
+    "back": null,
     "art": "rozkresy/five_panel_snap_grey.png",
     "src": "web",
-    "back_sim": 0.88
+    "back_sim": 0.88,
+    "src_front": "rucne"
    },
    {
     "n": 3,

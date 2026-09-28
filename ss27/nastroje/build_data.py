@@ -669,6 +669,19 @@ for r in catalog:
             shutil.copy(gf,os.path.join(FOTO,base+'_front.jpg')); shutil.copy(gb,os.path.join(FOTO,base+'_back.jpg'))
             c['front']='foto/'+base+'_front.jpg'; c['back']='foto/'+base+'_back.jpg'; c['src']='fw'; c['fw_pair']=round(best[0],2)
 import subprocess; subprocess.run([sys.executable,os.path.join(HERE,'normalize_photos.py')],stdout=subprocess.DEVNULL)
+# ---------- ruční přepisy fotek (ss27/foto_rucne: <slug>_front/back.jpg nahradí staženou fotku, _drop.json = fotky vynechat) ----------
+RUCNE=os.path.join(ROOT,'foto_rucne')
+if os.path.isdir(RUCNE):
+    drop=set(json.load(open(os.path.join(RUCNE,'_drop.json')))) if os.path.exists(os.path.join(RUCNE,'_drop.json')) else set()
+    for r in catalog:
+        for c in r['colors']:
+            base=slug(r['name']+' '+c['name'])
+            for kind in ('front','back'):
+                fn=base+'_'+kind+'.jpg'
+                if fn in drop: c[kind]=None; continue
+                if os.path.exists(os.path.join(RUCNE,fn)):
+                    shutil.copy(os.path.join(RUCNE,fn),os.path.join(FOTO,fn)); shutil.copy(os.path.join(RUCNE,fn),os.path.join(ORIG,fn))
+                    c[kind]='foto/'+fn; c['src_'+kind]='rucne'; c.pop('generic',None)
 # ---------- hlavní fotka, rozkres rozměrů a badge ikony ze SS26 PDF ----------
 pdfrec={slug(p['name']):p for p in pdf}
 def _pdfrec(r):
