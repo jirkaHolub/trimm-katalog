@@ -16971,7 +16971,7 @@
   "id": "echo",
   "name": "ECHO",
   "section": "sportswear",
-  "serie": "ACTIVE SERIE",
+  "serie": "THERMOLAYER SERIE",
   "typ": "mikina",
   "sk": "T08",
   "gender": "men",
@@ -17084,7 +17084,7 @@
   "id": "micron",
   "name": "MICRON",
   "section": "sportswear",
-  "serie": "ACTIVE SERIE",
+  "serie": "THERMOLAYER SERIE",
   "typ": "mikina",
   "sk": "T08",
   "gender": "men",
@@ -17233,7 +17233,7 @@
   "id": "micron_vest",
   "name": "MICRON VEST",
   "section": "sportswear",
-  "serie": "ACTIVE SERIE",
+  "serie": "THERMOLAYER SERIE",
   "typ": "vesta",
   "sk": "T08",
   "gender": "men",
@@ -19995,6 +19995,498 @@
   "sort": 233
  },
  {
+  "id": "nexa",
+  "name": "NEXA",
+  "section": "sportswear",
+  "serie": "THERMOLAYER SERIE",
+  "typ": "mikina",
+  "sk": "T08",
+  "gender": "women",
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL"
+  ],
+  "price_min": 1300,
+  "price_max": 1300,
+  "desc": "Lehká dámská mikina, která perfektně funguje jako druhá vrstva oblečení. Ideální na jakékoli sportovní či volnočasové aktivity.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Hardfleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "specs": {
+   "size": "XS – XL"
+  },
+  "pdf_page": null,
+  "pdf_order": null,
+  "web_url": "https://www.trimm.eu/obleceni/mikina-trimm-nexa/",
+  "desc_web": ".",
+  "src": "new",
+  "colors": [
+   {
+    "n": 1,
+    "name": "grey melange",
+    "codes": [
+     "T0852703",
+     "T0852704",
+     "T0852705",
+     "T0852706",
+     "T0852707"
+    ],
+    "front": "foto/nexa_grey_melange_front.jpg",
+    "back": "foto/nexa_grey_melange_back.jpg",
+    "art": "rozkresy/nexa_grey_melange.png",
+    "src": "web",
+    "back_sim": 0.98
+   },
+   {
+    "n": 2,
+    "name": "blue melange",
+    "codes": [
+     "T0852708",
+     "T0852709",
+     "T0852710",
+     "T0852711",
+     "T0852712"
+    ],
+    "front": "foto/nexa_blue_melange_front.jpg",
+    "back": "foto/nexa_blue_melange_back.jpg",
+    "art": "rozkresy/nexa_blue_melange.png",
+    "src": "web",
+    "back_sim": 0.95
+   }
+  ],
+  "new": true,
+  "src_desc": "fw",
+  "base": "NEXA",
+  "serie_src": "fw",
+  "sort": 233.5
+ },
+ {
+  "id": "therm",
+  "name": "THERM",
+  "section": "sportswear",
+  "serie": "THERMOLAYER SERIE",
+  "typ": "mikina",
+  "sk": "T08",
+  "gender": "men",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL",
+   "3XL"
+  ],
+  "price_min": 1540,
+  "price_max": 1540,
+  "desc": "Pánská termo mikina pro vrstvení nebo samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "specs": {
+   "size": "S – 3XL"
+  },
+  "pdf_page": null,
+  "pdf_order": null,
+  "web_url": null,
+  "desc_web": null,
+  "src": "new",
+  "colors": [
+   {
+    "n": 1,
+    "name": "mustard/dark lagoon/mustard",
+    "codes": [
+     "T0856760",
+     "T0856761",
+     "T0856762",
+     "T0856763",
+     "T0856764",
+     "T0856765"
+    ],
+    "front": "foto/therm_mustard_dark_lagoon_mustard_front.jpg",
+    "back": "foto/therm_mustard_dark_lagoon_mustard_back.jpg",
+    "art": "rozkresy/therm_mustard_dark_lagoon_mustard.png",
+    "src": "fw",
+    "excel_name": "mustard/dark lagoon",
+    "generic": true,
+    "fw_pair": "other-color"
+   },
+   {
+    "n": 2,
+    "name": "jeans blue/dark lagoon/jeans blue",
+    "codes": [
+     "T0856766",
+     "T0856767",
+     "T0856768",
+     "T0856769",
+     "T0856770",
+     "T0856771"
+    ],
+    "front": null,
+    "back": null,
+    "art": "rozkresy/therm_jeans_blue_dark_lagoon_jeans_blue.png",
+    "src": null,
+    "excel_name": "jeans blue/dark lagoon"
+   },
+   {
+    "n": 3,
+    "name": "grey/black/red",
+    "codes": [
+     "T0856754",
+     "T0856755",
+     "T0856756",
+     "T0856757",
+     "T0856758",
+     "T0856759"
+    ],
+    "front": "foto/therm_grey_black_red_front.jpg",
+    "back": null,
+    "art": "rozkresy/therm_grey_black_red.png",
+    "src": "fw",
+    "excel_name": "grey/black"
+   }
+  ],
+  "new": true,
+  "src_desc": "fw",
+  "base": "THERM",
+  "serie_src": "fw",
+  "sort": 233.5
+ },
+ {
+  "id": "therm_1_2_zip",
+  "name": "THERM 1/2 ZIP",
+  "section": "sportswear",
+  "serie": "THERMOLAYER SERIE",
+  "typ": "mikina",
+  "sk": "T08",
+  "gender": "men",
+  "sizes": [
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL",
+   "3XL"
+  ],
+  "price_min": 1340,
+  "price_max": 1600,
+  "desc": "Pánská termo mikina s krátkým zipem pro vrstvení nebo samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "specs": {
+   "size": "S – 3XL"
+  },
+  "pdf_page": null,
+  "pdf_order": null,
+  "web_url": null,
+  "desc_web": null,
+  "src": "new",
+  "colors": [
+   {
+    "n": 1,
+    "name": "black/grey/jeans blue",
+    "codes": [
+     "T0856772",
+     "T0856773",
+     "T0856774",
+     "T0856775",
+     "T0856776",
+     "T0856777"
+    ],
+    "front": "foto/therm_1_2_zip_black_grey_jeans_blue_front.jpg",
+    "back": "foto/therm_1_2_zip_black_grey_jeans_blue_back.jpg",
+    "art": "rozkresy/therm_1_2_zip_black_grey_jeans_blue.png",
+    "src": "fw",
+    "excel_name": "black/grey",
+    "generic": true
+   },
+   {
+    "n": 2,
+    "name": "mustard/grey/dark lagoon",
+    "codes": [
+     "T0856778",
+     "T0856779",
+     "T0856780",
+     "T0856781",
+     "T0856782",
+     "T0856783"
+    ],
+    "front": null,
+    "back": null,
+    "art": "rozkresy/therm_1_2_zip_mustard_grey_dark_lagoon.png",
+    "src": null,
+    "excel_name": "mustard/grafit black"
+   },
+   {
+    "n": 3,
+    "name": "jeans blue/grey/lime green",
+    "codes": [
+     "T0856784",
+     "T0856785",
+     "T0856786",
+     "T0856787",
+     "T0856788",
+     "T0856789"
+    ],
+    "front": "foto/therm_1_2_zip_jeans_blue_grey_lime_green_front.jpg",
+    "back": "foto/therm_1_2_zip_jeans_blue_grey_lime_green_back.jpg",
+    "art": "rozkresy/therm_1_2_zip_jeans_blue_grey_lime_green.png",
+    "src": "fw",
+    "excel_name": "jeans blue/dark grey"
+   }
+  ],
+  "new": true,
+  "src_desc": "fw",
+  "base": "THERM",
+  "serie_src": "fw",
+  "sort": 233.5
+ },
+ {
+  "id": "therm_lady",
+  "name": "THERM LADY",
+  "section": "sportswear",
+  "serie": "THERMOLAYER SERIE",
+  "typ": "mikina",
+  "sk": "T08",
+  "gender": "women",
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "price_min": 1420,
+  "price_max": 1420,
+  "desc": "Dámská termo mikina pro vrstvení nebo samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "specs": {
+   "size": "XS – XXL"
+  },
+  "pdf_page": null,
+  "pdf_order": null,
+  "web_url": null,
+  "desc_web": null,
+  "src": "new",
+  "colors": [
+   {
+    "n": 1,
+    "name": "black/grey/red",
+    "codes": [
+     "T0856790",
+     "T0856791",
+     "T0856792",
+     "T0856793",
+     "T0856794",
+     "T0856795"
+    ],
+    "front": "foto/therm_lady_black_grey_red_front.jpg",
+    "back": "foto/therm_lady_black_grey_red_back.jpg",
+    "art": "rozkresy/therm_lady_black_grey_red.png",
+    "src": "fw",
+    "excel_name": "black/grey",
+    "generic": true
+   },
+   {
+    "n": 2,
+    "name": "mustard/dark lagoon/mustard",
+    "codes": [
+     "T0856796",
+     "T0856797",
+     "T0856798",
+     "T0856799",
+     "T0856800",
+     "T0856801"
+    ],
+    "front": null,
+    "back": null,
+    "art": "rozkresy/therm_lady_mustard_dark_lagoon_mustard.png",
+    "src": null,
+    "excel_name": "mustard/dark lagoon"
+   },
+   {
+    "n": 3,
+    "name": "lime green/jeans blue/lime green",
+    "codes": [
+     "T0856802",
+     "T0856803",
+     "T0856804",
+     "T0856805",
+     "T0856806",
+     "T0856807"
+    ],
+    "front": "foto/therm_lady_lime_green_jeans_blue_lime_green_front.jpg",
+    "back": "foto/therm_lady_lime_green_jeans_blue_lime_green_back.jpg",
+    "art": "rozkresy/therm_lady_lime_green_jeans_blue_lime_green.png",
+    "src": "fw",
+    "excel_name": "lime green/jeans blue"
+   },
+   {
+    "n": 4,
+    "name": "pinky/jeans blue/white",
+    "codes": [
+     "T0856808",
+     "T0856809",
+     "T0856810",
+     "T0856811",
+     "T0856812",
+     "T0856813"
+    ],
+    "front": null,
+    "back": null,
+    "art": "rozkresy/therm_lady_pinky_jeans_blue_white.png",
+    "src": null,
+    "excel_name": "pinky/jeans blue"
+   }
+  ],
+  "new": true,
+  "src_desc": "fw",
+  "base": "THERM",
+  "serie_src": "fw",
+  "sort": 233.5
+ },
+ {
+  "id": "therm_lady_1_2_zip",
+  "name": "THERM LADY 1/2 ZIP",
+  "section": "sportswear",
+  "serie": "THERMOLAYER SERIE",
+  "typ": "mikina",
+  "sk": "T08",
+  "gender": "women",
+  "sizes": [
+   "XS",
+   "S",
+   "M",
+   "L",
+   "XL",
+   "XXL"
+  ],
+  "price_min": 1300,
+  "price_max": 1300,
+  "desc": "Dámská termo mikina s krátkým zipem pro vrstvení nebo samostatné nošení.",
+  "fields": {
+   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
+  },
+  "features": [],
+  "activities": [
+   "Adventure",
+   "Běžecké lyžování",
+   "Běžné nošení",
+   "Lyžování",
+   "Ski Alp",
+   "Trekking"
+  ],
+  "specs": {
+   "size": "XS – XXL"
+  },
+  "pdf_page": null,
+  "pdf_order": null,
+  "web_url": null,
+  "desc_web": null,
+  "src": "new",
+  "colors": [
+   {
+    "n": 1,
+    "name": "black/grey/pinky",
+    "codes": [
+     "T0856814",
+     "T0856815",
+     "T0856816",
+     "T0856817",
+     "T0856818",
+     "T0856819"
+    ],
+    "front": "foto/therm_lady_1_2_zip_black_grey_pinky_front.jpg",
+    "back": "foto/therm_lady_1_2_zip_black_grey_pinky_back.jpg",
+    "art": "rozkresy/therm_lady_1_2_zip_black_grey_pinky.png",
+    "src": "fw",
+    "excel_name": "black/grey",
+    "generic": true
+   },
+   {
+    "n": 2,
+    "name": "mustard/grey/dark lagoon",
+    "codes": [
+     "T0856820",
+     "T0856821",
+     "T0856822",
+     "T0856823",
+     "T0856824",
+     "T0856825"
+    ],
+    "front": null,
+    "back": null,
+    "art": "rozkresy/therm_lady_1_2_zip_mustard_grey_dark_lagoon.png",
+    "src": null,
+    "excel_name": "mustard/grafit black"
+   },
+   {
+    "n": 3,
+    "name": "lime green/grey/jeans blue",
+    "codes": [
+     "T0856826",
+     "T0856827",
+     "T0856828",
+     "T0856829",
+     "T0856830",
+     "T0856831"
+    ],
+    "front": null,
+    "back": null,
+    "art": "rozkresy/therm_lady_1_2_zip_lime_green_grey_jeans_blue.png",
+    "src": null,
+    "excel_name": "lime green/grey"
+   }
+  ],
+  "new": true,
+  "src_desc": "fw",
+  "base": "THERM LADY",
+  "serie_src": "fw",
+  "sort": 233.5
+ },
+ {
   "id": "cool_feeling",
   "name": "COOL FEELING",
   "section": "sportswear",
@@ -21012,83 +21504,6 @@
   "sort": 246.5
  },
  {
-  "id": "nexa",
-  "name": "NEXA",
-  "section": "sportswear",
-  "serie": "SPORTSWEAR ACCESSORIES",
-  "typ": "mikina",
-  "sk": "T08",
-  "gender": "women",
-  "sizes": [
-   "XS",
-   "S",
-   "M",
-   "L",
-   "XL"
-  ],
-  "price_min": 1300,
-  "price_max": 1300,
-  "desc": "Lehká dámská mikina, která perfektně funguje jako druhá vrstva oblečení. Ideální na jakékoli sportovní či volnočasové aktivity.",
-  "fields": {
-   "VNĚJŠÍ MATERIÁL": "100 % PES Hardfleece"
-  },
-  "features": [],
-  "activities": [
-   "Adventure",
-   "Běžecké lyžování",
-   "Běžné nošení",
-   "Lyžování",
-   "Ski Alp",
-   "Trekking"
-  ],
-  "specs": {
-   "size": "XS – XL"
-  },
-  "pdf_page": null,
-  "pdf_order": null,
-  "web_url": "https://www.trimm.eu/obleceni/mikina-trimm-nexa/",
-  "desc_web": ".",
-  "src": "new",
-  "colors": [
-   {
-    "n": 1,
-    "name": "grey melange",
-    "codes": [
-     "T0852703",
-     "T0852704",
-     "T0852705",
-     "T0852706",
-     "T0852707"
-    ],
-    "front": "foto/nexa_grey_melange_front.jpg",
-    "back": "foto/nexa_grey_melange_back.jpg",
-    "art": "rozkresy/nexa_grey_melange.png",
-    "src": "web",
-    "back_sim": 0.98
-   },
-   {
-    "n": 2,
-    "name": "blue melange",
-    "codes": [
-     "T0852708",
-     "T0852709",
-     "T0852710",
-     "T0852711",
-     "T0852712"
-    ],
-    "front": "foto/nexa_blue_melange_front.jpg",
-    "back": "foto/nexa_blue_melange_back.jpg",
-    "art": "rozkresy/nexa_blue_melange.png",
-    "src": "web",
-    "back_sim": 0.95
-   }
-  ],
-  "new": true,
-  "src_desc": "fw",
-  "base": "NEXA",
-  "sort": 246.5
- },
- {
   "id": "smooth",
   "name": "SMOOTH",
   "section": "sportswear",
@@ -21176,6 +21591,7 @@
   "new": true,
   "src_desc": "fw",
   "base": "SMOOTH",
+  "serie_src": "fw",
   "sort": 246.5
  },
  {
@@ -21472,416 +21888,6 @@
   ],
   "new": true,
   "base": "STANLEY",
-  "sort": 246.5
- },
- {
-  "id": "therm",
-  "name": "THERM",
-  "section": "sportswear",
-  "serie": "SPORTSWEAR ACCESSORIES",
-  "typ": "mikina",
-  "sk": "T08",
-  "gender": "men",
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL",
-   "3XL"
-  ],
-  "price_min": 1540,
-  "price_max": 1540,
-  "desc": "Pánská termo mikina pro vrstvení nebo samostatné nošení.",
-  "fields": {
-   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
-  },
-  "features": [],
-  "activities": [
-   "Adventure",
-   "Běžecké lyžování",
-   "Běžné nošení",
-   "Lyžování",
-   "Ski Alp",
-   "Trekking"
-  ],
-  "specs": {
-   "size": "S – 3XL"
-  },
-  "pdf_page": null,
-  "pdf_order": null,
-  "web_url": null,
-  "desc_web": null,
-  "src": "new",
-  "colors": [
-   {
-    "n": 1,
-    "name": "mustard/dark lagoon/mustard",
-    "codes": [
-     "T0856760",
-     "T0856761",
-     "T0856762",
-     "T0856763",
-     "T0856764",
-     "T0856765"
-    ],
-    "front": "foto/therm_mustard_dark_lagoon_mustard_front.jpg",
-    "back": "foto/therm_mustard_dark_lagoon_mustard_back.jpg",
-    "art": "rozkresy/therm_mustard_dark_lagoon_mustard.png",
-    "src": "fw",
-    "excel_name": "mustard/dark lagoon",
-    "generic": true,
-    "fw_pair": "other-color"
-   },
-   {
-    "n": 2,
-    "name": "jeans blue/dark lagoon/jeans blue",
-    "codes": [
-     "T0856766",
-     "T0856767",
-     "T0856768",
-     "T0856769",
-     "T0856770",
-     "T0856771"
-    ],
-    "front": null,
-    "back": null,
-    "art": "rozkresy/therm_jeans_blue_dark_lagoon_jeans_blue.png",
-    "src": null,
-    "excel_name": "jeans blue/dark lagoon"
-   },
-   {
-    "n": 3,
-    "name": "grey/black/red",
-    "codes": [
-     "T0856754",
-     "T0856755",
-     "T0856756",
-     "T0856757",
-     "T0856758",
-     "T0856759"
-    ],
-    "front": "foto/therm_grey_black_red_front.jpg",
-    "back": null,
-    "art": "rozkresy/therm_grey_black_red.png",
-    "src": "fw",
-    "excel_name": "grey/black"
-   }
-  ],
-  "new": true,
-  "src_desc": "fw",
-  "base": "THERM",
-  "sort": 246.5
- },
- {
-  "id": "therm_1_2_zip",
-  "name": "THERM 1/2 ZIP",
-  "section": "sportswear",
-  "serie": "SPORTSWEAR ACCESSORIES",
-  "typ": "mikina",
-  "sk": "T08",
-  "gender": "men",
-  "sizes": [
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL",
-   "3XL"
-  ],
-  "price_min": 1340,
-  "price_max": 1600,
-  "desc": "Pánská termo mikina s krátkým zipem pro vrstvení nebo samostatné nošení.",
-  "fields": {
-   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
-  },
-  "features": [],
-  "activities": [
-   "Adventure",
-   "Běžecké lyžování",
-   "Běžné nošení",
-   "Lyžování",
-   "Ski Alp",
-   "Trekking"
-  ],
-  "specs": {
-   "size": "S – 3XL"
-  },
-  "pdf_page": null,
-  "pdf_order": null,
-  "web_url": null,
-  "desc_web": null,
-  "src": "new",
-  "colors": [
-   {
-    "n": 1,
-    "name": "black/grey/jeans blue",
-    "codes": [
-     "T0856772",
-     "T0856773",
-     "T0856774",
-     "T0856775",
-     "T0856776",
-     "T0856777"
-    ],
-    "front": "foto/therm_1_2_zip_black_grey_jeans_blue_front.jpg",
-    "back": "foto/therm_1_2_zip_black_grey_jeans_blue_back.jpg",
-    "art": "rozkresy/therm_1_2_zip_black_grey_jeans_blue.png",
-    "src": "fw",
-    "excel_name": "black/grey",
-    "generic": true
-   },
-   {
-    "n": 2,
-    "name": "mustard/grey/dark lagoon",
-    "codes": [
-     "T0856778",
-     "T0856779",
-     "T0856780",
-     "T0856781",
-     "T0856782",
-     "T0856783"
-    ],
-    "front": null,
-    "back": null,
-    "art": "rozkresy/therm_1_2_zip_mustard_grey_dark_lagoon.png",
-    "src": null,
-    "excel_name": "mustard/grafit black"
-   },
-   {
-    "n": 3,
-    "name": "jeans blue/grey/lime green",
-    "codes": [
-     "T0856784",
-     "T0856785",
-     "T0856786",
-     "T0856787",
-     "T0856788",
-     "T0856789"
-    ],
-    "front": "foto/therm_1_2_zip_jeans_blue_grey_lime_green_front.jpg",
-    "back": "foto/therm_1_2_zip_jeans_blue_grey_lime_green_back.jpg",
-    "art": "rozkresy/therm_1_2_zip_jeans_blue_grey_lime_green.png",
-    "src": "fw",
-    "excel_name": "jeans blue/dark grey"
-   }
-  ],
-  "new": true,
-  "src_desc": "fw",
-  "base": "THERM",
-  "sort": 246.5
- },
- {
-  "id": "therm_lady",
-  "name": "THERM LADY",
-  "section": "sportswear",
-  "serie": "SPORTSWEAR ACCESSORIES",
-  "typ": "mikina",
-  "sk": "T08",
-  "gender": "women",
-  "sizes": [
-   "XS",
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL"
-  ],
-  "price_min": 1420,
-  "price_max": 1420,
-  "desc": "Dámská termo mikina pro vrstvení nebo samostatné nošení.",
-  "fields": {
-   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
-  },
-  "features": [],
-  "activities": [
-   "Adventure",
-   "Běžecké lyžování",
-   "Běžné nošení",
-   "Lyžování",
-   "Ski Alp",
-   "Trekking"
-  ],
-  "specs": {
-   "size": "XS – XXL"
-  },
-  "pdf_page": null,
-  "pdf_order": null,
-  "web_url": null,
-  "desc_web": null,
-  "src": "new",
-  "colors": [
-   {
-    "n": 1,
-    "name": "black/grey/red",
-    "codes": [
-     "T0856790",
-     "T0856791",
-     "T0856792",
-     "T0856793",
-     "T0856794",
-     "T0856795"
-    ],
-    "front": "foto/therm_lady_black_grey_red_front.jpg",
-    "back": "foto/therm_lady_black_grey_red_back.jpg",
-    "art": "rozkresy/therm_lady_black_grey_red.png",
-    "src": "fw",
-    "excel_name": "black/grey",
-    "generic": true
-   },
-   {
-    "n": 2,
-    "name": "mustard/dark lagoon/mustard",
-    "codes": [
-     "T0856796",
-     "T0856797",
-     "T0856798",
-     "T0856799",
-     "T0856800",
-     "T0856801"
-    ],
-    "front": null,
-    "back": null,
-    "art": "rozkresy/therm_lady_mustard_dark_lagoon_mustard.png",
-    "src": null,
-    "excel_name": "mustard/dark lagoon"
-   },
-   {
-    "n": 3,
-    "name": "lime green/jeans blue/lime green",
-    "codes": [
-     "T0856802",
-     "T0856803",
-     "T0856804",
-     "T0856805",
-     "T0856806",
-     "T0856807"
-    ],
-    "front": "foto/therm_lady_lime_green_jeans_blue_lime_green_front.jpg",
-    "back": "foto/therm_lady_lime_green_jeans_blue_lime_green_back.jpg",
-    "art": "rozkresy/therm_lady_lime_green_jeans_blue_lime_green.png",
-    "src": "fw",
-    "excel_name": "lime green/jeans blue"
-   },
-   {
-    "n": 4,
-    "name": "pinky/jeans blue/white",
-    "codes": [
-     "T0856808",
-     "T0856809",
-     "T0856810",
-     "T0856811",
-     "T0856812",
-     "T0856813"
-    ],
-    "front": null,
-    "back": null,
-    "art": "rozkresy/therm_lady_pinky_jeans_blue_white.png",
-    "src": null,
-    "excel_name": "pinky/jeans blue"
-   }
-  ],
-  "new": true,
-  "src_desc": "fw",
-  "base": "THERM",
-  "sort": 246.5
- },
- {
-  "id": "therm_lady_1_2_zip",
-  "name": "THERM LADY 1/2 ZIP",
-  "section": "sportswear",
-  "serie": "SPORTSWEAR ACCESSORIES",
-  "typ": "mikina",
-  "sk": "T08",
-  "gender": "women",
-  "sizes": [
-   "XS",
-   "S",
-   "M",
-   "L",
-   "XL",
-   "XXL"
-  ],
-  "price_min": 1300,
-  "price_max": 1300,
-  "desc": "Dámská termo mikina s krátkým zipem pro vrstvení nebo samostatné nošení.",
-  "fields": {
-   "VNĚJŠÍ MATERIÁL": "100 % PES Fleece"
-  },
-  "features": [],
-  "activities": [
-   "Adventure",
-   "Běžecké lyžování",
-   "Běžné nošení",
-   "Lyžování",
-   "Ski Alp",
-   "Trekking"
-  ],
-  "specs": {
-   "size": "XS – XXL"
-  },
-  "pdf_page": null,
-  "pdf_order": null,
-  "web_url": null,
-  "desc_web": null,
-  "src": "new",
-  "colors": [
-   {
-    "n": 1,
-    "name": "black/grey/pinky",
-    "codes": [
-     "T0856814",
-     "T0856815",
-     "T0856816",
-     "T0856817",
-     "T0856818",
-     "T0856819"
-    ],
-    "front": "foto/therm_lady_1_2_zip_black_grey_pinky_front.jpg",
-    "back": "foto/therm_lady_1_2_zip_black_grey_pinky_back.jpg",
-    "art": "rozkresy/therm_lady_1_2_zip_black_grey_pinky.png",
-    "src": "fw",
-    "excel_name": "black/grey",
-    "generic": true
-   },
-   {
-    "n": 2,
-    "name": "mustard/grey/dark lagoon",
-    "codes": [
-     "T0856820",
-     "T0856821",
-     "T0856822",
-     "T0856823",
-     "T0856824",
-     "T0856825"
-    ],
-    "front": null,
-    "back": null,
-    "art": "rozkresy/therm_lady_1_2_zip_mustard_grey_dark_lagoon.png",
-    "src": null,
-    "excel_name": "mustard/grafit black"
-   },
-   {
-    "n": 3,
-    "name": "lime green/grey/jeans blue",
-    "codes": [
-     "T0856826",
-     "T0856827",
-     "T0856828",
-     "T0856829",
-     "T0856830",
-     "T0856831"
-    ],
-    "front": null,
-    "back": null,
-    "art": "rozkresy/therm_lady_1_2_zip_lime_green_grey_jeans_blue.png",
-    "src": null,
-    "excel_name": "lime green/grey"
-   }
-  ],
-  "new": true,
-  "src_desc": "fw",
-  "base": "THERM LADY",
   "sort": 246.5
  }
 ]

@@ -34,7 +34,9 @@ print('excel models',len(models))
 # ---------- PDF ----------
 pdf=json.load(open(os.path.join(DATA,'pdf_products.json'),encoding='utf-8'))
 pdf_by={}
-for i,p in enumerate(pdf): p['idx']=i; pdf_by.setdefault(nkey(p['name']),p)
+for i,p in enumerate(pdf):
+    p['idx']=i; pdf_by.setdefault(nkey(p['name']),p)
+    if p['page']==120: p['serie']='THERMOLAYER SERIE'   # patička str. 120 v SS26 říká ACTIVE, ale ECHO/MICRON/NEO jsou THERMOLAYER (dle FW)
 # ---------- náhledy z webu a barevný podpis (pro párování zadních fotek) ----------
 import colorsys
 THUMBS=os.path.join(DATA,'thumbs'); os.makedirs(THUMBS,exist_ok=True)
@@ -302,6 +304,8 @@ for name,m in models.items():
     if not rec['serie'] and p is None:
         b=base_name(name); bp=pdf_by.get(b) or pdf_by.get(ALIAS.get(b,b))
         rec['serie']=bp['serie'] if bp else None; rec['base']=b
+        FW_SERIE={'thermolayer':'THERMOLAYER SERIE','active':'ACTIVE SERIE','outdoor':'OUTDOOR SERIE','accessories':'SPORTSWEAR ACCESSORIES'}
+        if not rec['serie'] and fw and FW_SERIE.get((fw.get('serie') or '').lower()): rec['serie']=FW_SERIE[fw['serie'].lower()]; rec['serie_src']='fw'
     gal=gallery_map(wp) if wp else {}
     variant_fronts={img_id(v['img']) for v in wvars.values() if v.get('img')}
     variant_fns={re.search(r'/user/shop/[a-z_]+/([^?]+)',v['img']).group(1) for v in wvars.values() if v.get('img')}
@@ -388,6 +392,9 @@ for r in catalog:
         b=r.get('base'); anchor=None
         for o in catalog:
             if o['pdf_order'] is not None and nkey(o['name'])==b: anchor=o
+        if anchor is None and r.get('serie'):
+            cands=[o for o in catalog if o['pdf_order'] is not None and o['section']==r['section'] and o['serie']==r['serie']]
+            anchor=max(cands,key=lambda o:o['pdf_order']) if cands else None
         if anchor is None:
             # poslední produkt stejné sekce
             cands=[o for o in catalog if o['pdf_order'] is not None and o['section']==r['section']]

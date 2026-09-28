@@ -147,22 +147,31 @@ def card(r):
 by_sec=collections.OrderedDict((s,[]) for s in SECTIONS)
 for r in cat: by_sec[r['section']].append(r)
 def groups(items):
-    g=collections.OrderedDict()
-    for r in items: g.setdefault(serie_key(r['serie']),[]).append(r)
-    return g
+    # souvislé běhy sérií v pořadí katalogu (SS26 PDF); stejná série přerušená jinou = dva bloky
+    g=[]
+    for r in items:
+        k=serie_key(r['serie'])
+        if g and g[-1][0]==k: g[-1][1].append(r)
+        else: g.append((k,[r]))
+    od=collections.OrderedDict(); seen=collections.Counter()
+    for k,v in g:
+        seen[k]+=1; od[k if seen[k]==1 else f'{k} #{seen[k]}']=v
+    return od
 toc=''; body=''; chips=''
 for sec,meta in SECTIONS.items():
     items=by_sec[sec]; gs=groups(items)
     toc+=f'<div class="toc-sec" style="--tc:{meta["color"]}"><a href="#sec-{sec}" class="toc-h"><span class="toc-dot"></span>{E(meta["title"])}<span class="toc-cz">{E(meta["cz"])}</span><span class="toc-cnt">{len(items)}</span></a><div class="toc-series">'
-    toc+=''.join(f'<a href="#s-{sec}-{slug(k)}" class="toc-s" data-sec="{sec}"><i style="background:{serie_color(sec,k)}"></i>{E(k)}<span>{len(v)}</span></a>' for k,v in gs.items())
+    _tc=collections.OrderedDict()
+    for k,v in gs.items(): _tc.setdefault(k.split(' #')[0],[k,0]); _tc[k.split(' #')[0]][1]+=len(v)
+    toc+=''.join(f'<a href="#s-{sec}-{slug(k0)}" class="toc-s" data-sec="{sec}"><i style="background:{serie_color(sec,k0)}"></i>{E(k0)}<span>{n}</span></a>' for k0,(k,n) in _tc.items())
     toc+='</div></div>'
     chips+=f'<button class="chip" data-f="{sec}" style="--tc:{meta["color"]}">{E(meta["cz"].upper())}</button>'
     pages=''.join(f'<img src="data/pdf_pages/p{p:03d}.jpg" alt="Technické informace – strana {p}" loading="lazy">' for p in meta['pages'] if os.path.exists(os.path.join(DATA,'pdf_pages',f'p{p:03d}.jpg')))
     info=f'<div class="info-pages">{pages}</div>' if pages else ''
     body+=f'<section class="sec" id="sec-{sec}" data-sec="{sec}" style="--tc:{meta["color"]}"><div class="sec-head"><div class="sec-bar"></div><div><h2>{E(meta["title"])}</h2><div class="sec-cz">{E(meta["cz"])}</div></div><span class="sec-cnt">{len(items)} modelů</span></div>{info}'
     for k,v in gs.items():
-        col=serie_color(sec,k)
-        body+=f'<div class="serie" id="s-{sec}-{slug(k)}" data-serie="{slug(k)}" style="--sc:{col}"><div class="serie-head"><div class="serie-bar"></div><h3>{E(k)}{"" if "ACCESSORIES" in k or k in ("WATERPROOF","WATERBLADDER") else " SERIE"}</h3><span class="serie-cnt">{len(v)}</span></div><div class="grid">'
+        k0=k.split(' #')[0]; col=serie_color(sec,k0)
+        body+=f'<div class="serie" id="s-{sec}-{slug(k)}" data-serie="{slug(k0)}" style="--sc:{col}"><div class="serie-head"><div class="serie-bar"></div><h3>{E(k0)}{"" if "ACCESSORIES" in k0 or k0 in ("WATERPROOF","WATERBLADDER") else " SERIE"}</h3><span class="serie-cnt">{len(v)}</span></div><div class="grid">'
         body+=''.join(card(r) for r in v)
         body+='</div></div>'
     body+='</section>'
@@ -345,7 +354,7 @@ document.querySelectorAll('.toc-h,.toc-s').forEach(a=>a.addEventListener('click'
 const u=new URLSearchParams(location.search);if(u.get('sec'))setF(u.get('sec'));if(u.get('g'))setG(u.get('g'));if(u.get('q')){q.value=u.get('q')}
 go();
 '''
-n_series=sum(len(groups(v)) for v in by_sec.values())
+n_series=sum(len({k.split(' #')[0] for k in groups(v)}) for v in by_sec.values())
 doc=f'''<!DOCTYPE html>
 <html lang="cs">
 <head>
