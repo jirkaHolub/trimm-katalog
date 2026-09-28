@@ -138,7 +138,7 @@ def parse_column(sec,name,x0,x1,pno):
     P['pdf_photo']=None
     try:
         spec_y=min([l['y'] for l in body+right if l['y']<first_label_y-2 and l['y']>50 and l['bold'] and 'DIN' in l['font'] and l['size']<9.5 and not re.fullmatch(r'\d',l['text'].strip()) and l['text'].strip().lower()!='new']+[first_label_y])
-        head_y1=max([l['y1'] for l in left if l['size']>=15]+[66])
+        head_y1=max([l['y1'] for l in left if l['size']>=15 and l['y']<200]+[66])
         cx0=x0+(x1-x0)*0.56 if (sec=='sleeping' and P['name'] not in ('HAVEN',)) else x0+2
         cy0=head_y1+3
         if sec=='sleeping':
@@ -146,6 +146,28 @@ def parse_column(sec,name,x0,x1,pno):
             cy1=(min(ty)-12) if ty else first_label_y-6
         else: cy1=max(spec_y-24,cy0+80)
         clip=fitz.Rect(cx0,cy0,x1-2,cy1)
+        # skutečný rozsah fotky podle rastrových obrázků na stránce (fotky často přesahují sloupec; dlaždice sloučit)
+        blocks=[]
+        for im_ in d[pno].get_image_info():
+            b=fitz.Rect(im_['bbox'])
+            if b.width<8 or b.height<8 or b.y0>=first_label_y-20 or b.y1<=head_y1-30: continue
+            if not (x0-6<=(b.x0+b.x1)/2<=x1+6): continue
+            blocks.append(b)
+        merged=True
+        while merged:
+            merged=False
+            for i in range(len(blocks)):
+                for j in range(i+1,len(blocks)):
+                    bj=blocks[j]
+                    if blocks[i].intersects(fitz.Rect(bj.x0-2,bj.y0-2,bj.x1+2,bj.y1+2)): blocks[i]|=bj; del blocks[j]; merged=True; break
+                if merged: break
+        big=[b for b in blocks if b.width>=100 or b.height>=100]
+        photo_u=None
+        if big:
+            u=fitz.Rect(big[0])
+            for b in big[1:]: u|=b
+            photo_u=u
+            clip=fitz.Rect(u.x0-2,max(head_y1+1,u.y0-2),u.x1+2,min(cy1,u.y1+2))
         fn=re.sub(r'[^A-Za-z0-9]+','_',P['name']).strip('_')+'.jpg'
         out=os.path.join(DATA,'pdf_photos',fn); os.makedirs(os.path.dirname(out),exist_ok=True)
         if not os.path.exists(out):
@@ -154,14 +176,18 @@ def parse_column(sec,name,x0,x1,pno):
             img=Image.open(io.BytesIO(pix.tobytes('png'))).convert('RGB')
             from PIL import ImageDraw
             W,H=img.size; scale=PDPI/72
-            if 'new' in P['flags']:
-                # vybělit diagonální stužku "new" v pravém horním rohu (cca 42 pt trojúhelník na stránce)
-                t=int(42*scale); ImageDraw.Draw(img).polygon([(W-t,0),(W,0),(W,t)],fill=(255,255,255))
+            # stužka "new" v pravém horním rohu: podle příznaku, nebo když je roh výrazně červený
+            t=int(42*scale); corner=img.crop((max(0,W-t),0,W,min(H,t)))
+            nred=sum(1 for r_,g_,b_ in corner.getdata() if r_>170 and g_<80 and b_<80); ncor=max(1,corner.width*corner.height)
+            if 'new' in P['flags'] or nred/ncor>0.12:
+                t2=int(60*scale); ImageDraw.Draw(img).polygon([(W-t2,0),(W,0),(W,t2)],fill=(255,255,255))
             if sec=='mattress':
                 # vybělit vzorník barev vlevo nahoře: až po spodní okraj posledního popisku barvy (malý text v levé třetině sloupce)
-                labs=[t for t in sp if t['size']<=6.5 and t['y']<first_label_y and t['y']>cy0 and t['x']<x0+0.34*(x1-x0) and re.search(r'[A-Za-z]',t['text'])]
-                ybot=(max(t['y1'] for t in labs)+4) if labs else 127
-                ImageDraw.Draw(img).rectangle([0,0,int(W*0.32),int((ybot-cy0)*scale)],fill=(255,255,255))
+                labs=[t for t in sp if t['size']<=6.5 and t['y']<spec_y-4 and t['y']>clip.y0 and clip.x0-2<=t['x']<clip.x0+0.4*clip.width and re.search(r'[A-Za-z]',t['text']) and not is_label(t['text'])]
+                if labs:
+                    xr=max(t['x1'] for t in labs)+16; ybot=max(t['y1'] for t in labs)+4
+                    ImageDraw.Draw(img).rectangle([0,0,int((xr-clip.x0)*scale),int((ybot-clip.y0)*scale)],fill=(255,255,255))
+                if os.environ.get('PHOTO_DEBUG'): print('   WHITEN',P['name'],[(t['text'],round(t['x']),round(t['y'])) for t in labs])
             from PIL import ImageChops
             bg=Image.new('RGB',img.size,(255,255,255)); diff=ImageChops.difference(img,bg).convert('L').point(lambda v:255 if v>18 else 0)
             bbox=diff.getbbox()
@@ -174,18 +200,19 @@ def parse_column(sec,name,x0,x1,pno):
                     j=i
                     while j<n and (mask_line[j] or any(mask_line[min(n-1,j+g)] for g in range(1,mingap))): j+=1
                     runs.append((i,j)); i=j
-                if not runs: return None
-                big=max(runs,key=lambda r:r[1]-r[0])
-                return big if (big[1]-big[0])>=minlen else None
+                keep=[r for r in runs if (r[1]-r[0])>=minlen]
+                if not keep: return None
+                return (keep[0][0],keep[-1][1])
             dm=ImageChops.difference(img,Image.new('RGB',img.size,(255,255,255))).convert('L').point(lambda v:255 if v>18 else 0)
             Wd,Hd=dm.size
             cols=[dm.crop((x,0,x+1,Hd)).getbbox() is not None for x in range(Wd)]
-            rx=main_run(cols,int(Wd*0.3),max(6,int(Wd*0.03)))
+            rx=main_run(cols,int(Wd*0.12),max(6,int(Wd*0.03)))
             if rx and (rx[1]-rx[0])<Wd-4:
                 img=img.crop((max(0,rx[0]-8),0,min(Wd,rx[1]+8),Hd)); dm=dm.crop((max(0,rx[0]-8),0,min(Wd,rx[1]+8),Hd)); Wd,Hd=dm.size
             rows=[dm.crop((0,y,Wd,y+1)).getbbox() is not None for y in range(Hd)]
-            ry=main_run(rows,int(Hd*0.3),max(6,int(Hd*0.03)))
+            ry=main_run(rows,int(Hd*0.12),max(6,int(Hd*0.03)))
             if ry and (ry[1]-ry[0])<Hd-4: img=img.crop((0,max(0,ry[0]-8),Wd,min(Hd,ry[1]+8)))
+            if os.environ.get('PHOTO_DEBUG'): print('   PHOTO',P['name'],'clip',[round(v) for v in clip],'cy1',round(cy1),'spec_y',round(spec_y),'bbox',bbox,'rx',rx,'ry',ry,'final',img.size)
             img.save(out,quality=88)
         P['pdf_photo']='data/pdf_photos/'+fn
     except Exception as e: P['pdf_photo_err']=str(e)

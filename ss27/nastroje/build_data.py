@@ -720,7 +720,11 @@ def text_badges(r):
 nh=nd=nb=0
 for r in catalog:
     p=_pdfrec(r)
-    if p and r['section']!='sportswear' and p.get('pdf_photo') and os.path.exists(os.path.join(ROOT,p['pdf_photo'])):
+    def _usable(path):
+        try: w,h=Image.open(path).size
+        except Exception: return False
+        return w>=60 and h>=60 and 0.15<=w/h<=6   # tyčky apod. (úzké proužky) nechat na webové fotce
+    if p and r['section']!='sportswear' and p.get('pdf_photo') and os.path.exists(os.path.join(ROOT,p['pdf_photo'])) and _usable(os.path.join(ROOT,p['pdf_photo'])):
         # fotky z PDF patří do sledované složky foto_pdf/ (data/pdf_photos je v .gitignore)
         os.makedirs(os.path.join(ROOT,'foto_pdf'),exist_ok=True); fn=os.path.basename(p['pdf_photo']); shutil.copy(os.path.join(ROOT,p['pdf_photo']),os.path.join(ROOT,'foto_pdf',fn))
         r['hero']='foto_pdf/'+fn; r['hero_color']=(p.get('spec_small') or [''])[0]; nh+=1

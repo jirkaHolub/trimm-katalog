@@ -4281,9 +4281,7 @@
    }
   ],
   "new": false,
-  "sort": 52,
-  "hero": "foto_pdf/POLES_D50_8_5_MM.jpg",
-  "hero_color": ""
+  "sort": 52
  },
  {
   "id": "poles_drw40_6_5_mm",
@@ -4330,9 +4328,7 @@
    }
   ],
   "new": false,
-  "sort": 53,
-  "hero": "foto_pdf/POLES_DRW40_6_5_MM.jpg",
-  "hero_color": ""
+  "sort": 53
  },
  {
   "id": "poles_drw50_8_5_mm",
@@ -4379,9 +4375,7 @@
    }
   ],
   "new": false,
-  "sort": 54,
-  "hero": "foto_pdf/POLES_DRW50_8_5_MM.jpg",
-  "hero_color": ""
+  "sort": 54
  },
  {
   "id": "poles_drw50_9_5_mm",
@@ -4428,9 +4422,7 @@
    }
   ],
   "new": false,
-  "sort": 55,
-  "hero": "foto_pdf/POLES_DRW50_9_5_MM.jpg",
-  "hero_color": ""
+  "sort": 55
  },
  {
   "id": "poles_drw60_11_mm",
@@ -4477,9 +4469,7 @@
    }
   ],
   "new": false,
-  "sort": 56,
-  "hero": "foto_pdf/POLES_DRW60_11_MM.jpg",
-  "hero_color": ""
+  "sort": 56
  },
  {
   "id": "poles_s45_15_mm",
