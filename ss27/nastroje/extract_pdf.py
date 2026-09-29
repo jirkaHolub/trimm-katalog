@@ -85,7 +85,7 @@ def raw_rgba(xref):
     if sm:
         mp=fitz.Pixmap(d,sm); m=Image.open(io.BytesIO(mp.tobytes('png'))).convert('L').resize(im.size); im.putalpha(m)
     return im
-def composite_photo(pno,x0,x1,y_top,y_bot,dpi=300):
+def composite_photo(pno,x0,x1,y_top,y_bot,dpi=300,main_only=False):
     """Fotka produktu složená z původních rastrů na stránce (sazba je někdy ořezává rámečkem). Vrací (PIL RGB, Rect) nebo None."""
     infos=[]; tf={}
     for i in d[pno].get_image_info(xrefs=True):
@@ -112,6 +112,7 @@ def composite_photo(pno,x0,x1,y_top,y_bot,dpi=300):
     sel=[bl for bl in blocks if (bl[0].width>=60 or bl[0].height>=60) and (x0-6<=(bl[0].x0+bl[0].x1)/2<=x1+6 or (bl[0].intersects(main) and incol_frac(bl[0])>=0.4))]
     sel=[bl for bl in sel if max(bl[0].width,bl[0].height)>=45]   # malé kulaté badge ikony přes fotku vynechat
     sel=[bl for bl in sel if bl[0].intersects(main) or max(bl[0].width,bl[0].height)>=100]   # samostatné vzorníky barev vynechat
+    if main_only: sel=[bl for bl in sel if bl[0]==main]
     items=[t for bl in sel for t in bl[1]]
     # duplicitní umístění (celý + oříznutý rastr se stejným počátkem): nechat větší
     keep=[]
@@ -326,6 +327,16 @@ def parse_column(sec,name,x0,x1,pno):
             if os.environ.get('PHOTO_DEBUG'): print('   PHOTO',P['name'],'clip',[round(v) for v in clip],'cy1',round(cy1),'spec_y',round(spec_y),'bbox',bbox,'rx',rx,'ry',ry,'final',img.size)
             img.save(out,quality=88)
         P['pdf_photo']='data/pdf_photos/'+fn
+        # stany: i samotná hlavní fotka bez vloženého pohledu (pro případ, že vnitřní stan přijde z webu)
+        if sec=='tents':
+            outm=os.path.join(DATA,'pdf_photos',fn[:-4]+'__main.jpg')
+            if not os.path.exists(outm):
+                cm=composite_photo(pno,x0,x1,head_y1-40,cy1+30,main_only=True)
+                if cm:
+                    from PIL import ImageChops as _IC2
+                    im2=cm[0]; bb2=_IC2.difference(im2,Image.new('RGB',im2.size,(255,255,255))).convert('L').point(lambda v:255 if v>18 else 0).getbbox()
+                    if bb2: im2=im2.crop((max(0,bb2[0]-8),max(0,bb2[1]-8),min(im2.width,bb2[2]+8),min(im2.height,bb2[3]+8)))
+                    im2.save(outm,quality=88); P['pdf_photo_main']='data/pdf_photos/'+fn[:-4]+'__main.jpg'
     except Exception as e: P['pdf_photo_err']=str(e)
     # vzorníky barev z PDF (malé obrázky u čísel barev) -> data/pdf_swatch/<slug>_<n>.png + popisek
     P['swatches']=[]

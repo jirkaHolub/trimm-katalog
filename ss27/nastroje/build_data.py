@@ -758,6 +758,78 @@ for r in catalog:
         f=os.path.join(IK,nm+'.png')
         if os.path.exists(f): badges.append(dict(name=nm,file='ikony/'+nm+'.png',label=BADGE_LABEL.get(nm,nm)))
     if badges: r['badges']=badges; nb+=1
+# ---------- stany: hlavní fotka a vnitřní stan z trimm.eu (barva podle kódu varianty z Excelu) ----------
+WEBT=os.path.join(ROOT,'foto_web'); os.makedirs(WEBT,exist_ok=True); WCACHE=os.path.join(DATA,'web_tents'); os.makedirs(WCACHE,exist_ok=True)
+byurl_t={p_['url']:p_ for p_ in web}
+def _web_orig(fn):
+    dst=os.path.join(WCACHE,fn.rsplit('.',1)[0]+'.jpg')
+    if os.path.exists(dst): return dst
+    for i in range(3):
+        try:
+            b=urlopen(Request(orig_url(fn),headers=UA),timeout=60).read(); im=Image.open(io.BytesIO(b)); im.load()
+            if im.mode in ('RGBA','LA','P'):
+                bg=Image.new('RGB',im.size,(255,255,255)); im=im.convert('RGBA'); bg.paste(im,mask=im.split()[-1]); im=bg
+            im.convert('RGB').save(dst,quality=90); return dst
+        except Exception: time.sleep(1.5)
+    return None
+def _whiten_crop(src,dst,pad=0.04):
+    from PIL import ImageChops, ImageDraw
+    im=Image.open(src).convert('RGB'); w,h=im.size
+    for pt in [(0,0),(w-1,0),(0,h-1),(w-1,h-1),(w//2,0),(w//2,h-1),(0,h//2),(w-1,h//2)]:
+        if im.getpixel(pt)!=(255,255,255): ImageDraw.floodfill(im,pt,(255,255,255),thresh=30)
+    bb=ImageChops.difference(im,Image.new('RGB',im.size,(255,255,255))).convert('L').point(lambda v:255 if v>18 else 0).getbbox()
+    if bb:
+        pd=int(max(bb[2]-bb[0],bb[3]-bb[1])*pad); im=im.crop((max(0,bb[0]-pd),max(0,bb[1]-pd),min(w,bb[2]+pd),min(h,bb[3]+pd)))
+    im.thumbnail((1400,1400)); im.save(dst,quality=88); return dst
+def _kind(path):
+    """'product' (bílé pozadí, barevný objekt) / 'drawing' (čárová kresba) / 'lifestyle'"""
+    im=Image.open(path).convert('RGB'); im.thumbnail((200,200)); w,h=im.size; g=im.convert('L')
+    k=max(3,min(w,h)//12); corners=[sum(g.crop(b).getdata())/(k*k) for b in [(0,0,k,k),(w-k,0,w,k),(0,h-k,k,h),(w-k,h-k,w,h)]]
+    if min(corners)<225: return 'lifestyle'
+    n=0; sat=0; nonwhite=0
+    for r_,g_,b_ in im.getdata():
+        n+=1
+        if max(r_,g_,b_)<240: nonwhite+=1
+        if max(r_,g_,b_)-min(r_,g_,b_)>40: sat+=1
+    if nonwhite/n<0.35 and sat/n<0.04: return 'drawing'
+    return 'product'
+TENT_FRONT_FROM_PDF={'BIVAK D'}   # web má jen sand, správná barva (lime green) je v SS26
+nw=0; ni=0
+for r in catalog:
+    if r['section']!='tents' or r['typ']!='stan' or not r.get('web_url'): continue
+    wp=byurl_t.get(r['web_url'])
+    if not wp: continue
+    vimg={}
+    for v in (wp.get('variants') or {}).values():
+        fn=((v.get('variantImage') or {}).get('big') or '').split('/')[-1].split('?')[0]
+        if fn: vimg[v['code']]=fn
+    ids={re.match(r'(\d+)',fn).group(1) for fn in vimg.values() if re.match(r'(\d+)',fn)}
+    gal=[fn for fn in wp.get('gallery',[]) if re.match(r'(\d+)',fn) and re.match(r'(\d+)',fn).group(1) in ids and 'symboly' not in fn]
+    base=slug(r['name'])
+    # hlavní fotka: varianta první barvy z Excelu
+    if r['name'] in TENT_FRONT_FROM_PDF:
+        p_=_pdfrec(r)
+        if p_ and p_.get('pdf_photo_main') and os.path.exists(os.path.join(ROOT,p_['pdf_photo_main'])):
+            dst=os.path.join(WEBT,base+'_front.jpg'); shutil.copy(os.path.join(ROOT,p_['pdf_photo_main']),dst); r['hero']='foto_web/'+base+'_front.jpg'; r['hero_src']='pdf-main'; nw+=1
+            # i vzorník první barvy: webová fotka varianty má špatnou barvu
+            c0=r['colors'][0]; fn0=slug(r['name']+' '+c0['name'])+'_front.jpg'; shutil.copy(dst,os.path.join(FOTO,fn0)); shutil.copy(dst,os.path.join(ORIG,fn0)); c0['front']='foto/'+fn0; c0['back']=None; c0['src']='pdf'; c0.pop('generic',None)
+    else:
+        fn=None
+        for c in r['colors']:
+            for code in c['codes']:
+                if vimg.get(code): fn=vimg[code]; break
+            if fn: break
+        src=_web_orig(fn) if fn else None
+        if src and _kind(src)=='product':
+            r['hero']='foto_web/'+base+'_front.jpg'; _whiten_crop(src,os.path.join(WEBT,base+'_front.jpg')); r['hero_src']='web'; nw+=1
+    # vnitřní stan: první produktová fotka v galerii, která není fotkou žádné barevné varianty
+    vset=set(vimg.values())
+    for fn in gal:
+        if fn in vset: continue
+        src=_web_orig(fn)
+        if src and _kind(src)=='product':
+            r['hero_inner']='foto_web/'+base+'_inner.jpg'; _whiten_crop(src,os.path.join(WEBT,base+'_inner.jpg')); ni+=1; break
+print('stany: hlavní fotka z webu/PDF',nw,'| vnitřní stan z webu',ni)
 print('hero z PDF',nh,'| rozkresy rozměrů',nd,'| produkty s badge ikonami',nb)
 json.dump(catalog,open(os.path.join(DATA,'catalog.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
 print('catalog',len(catalog),'models; sections',collections.Counter(r['section'] for r in catalog))

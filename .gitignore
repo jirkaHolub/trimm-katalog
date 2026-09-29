@@ -28,3 +28,5 @@ ss27/data/photo_status.json
 ss27/nastroje/*.log
 ss27/data/orig/
 ss27/data/pdf_swatch/
+ss27/data/web_tents/
+ss27/data/web_tents_meta.json

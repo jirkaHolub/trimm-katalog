@@ -41,6 +41,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/PACK_DSL.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/PACK_DSL__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -100,6 +101,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/FLY_DSL.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/FLY_DSL__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -160,6 +162,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/HIMLITE_DSL.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/HIMLITE_DSL__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -219,6 +222,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/VECTOR_DSL.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/VECTOR_DSL__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -279,6 +283,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/PIONEER_DSL.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/PIONEER_DSL__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -338,6 +343,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/DELTA_D.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/DELTA_D__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -394,6 +400,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/SPARK_D.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/SPARK_D__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -451,6 +458,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/APOLOS_D.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/APOLOS_D__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -507,6 +515,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/BIVAK_D.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/BIVAK_D__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -561,6 +570,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/ALFA_D.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/ALFA_D__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -612,6 +622,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/FRONTIER_D.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/FRONTIER_D__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -664,6 +675,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/APOLOM_D.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/APOLOM_D__main.jpg",
   "swatches": [
    {
     "n": "3",
@@ -721,6 +733,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/THUNDER_D.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/THUNDER_D__main.jpg",
   "swatches": [
    {
     "n": "3",
@@ -777,6 +790,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/LARGO_D.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/LARGO_D__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -828,6 +842,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/GLOBE_D.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/GLOBE_D__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -878,6 +893,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/SOLO.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/SOLO__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -933,6 +949,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/SPARK.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/SPARK__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -989,6 +1006,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/BIVAK.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/BIVAK__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -1046,6 +1064,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/COMPACT.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/COMPACT__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1097,6 +1116,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/ALFA.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/ALFA__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1148,6 +1168,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/LARGO.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/LARGO__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1199,6 +1220,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/MAGNUM.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/MAGNUM__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1250,6 +1272,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOCUS.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/FOCUS__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1302,6 +1325,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/TORNADO.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/TORNADO__main.jpg",
   "swatches": [
    {
     "n": "4",
@@ -1363,6 +1387,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/ENDURO.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/ENDURO__main.jpg",
   "swatches": [
    {
     "n": "4",
@@ -1420,6 +1445,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/DUO.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/DUO__main.jpg",
   "swatches": [
    {
     "n": "2",
@@ -1481,6 +1507,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/COMET.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/COMET__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1537,6 +1564,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/HUDSON.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/HUDSON__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1589,6 +1617,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/EAGLE_II.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/EAGLE_II__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1647,6 +1676,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/CAMP_II.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/CAMP_II__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1701,6 +1731,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/ARIZONA_II.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/ARIZONA_II__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1755,6 +1786,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/COMFORT_II.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/COMFORT_II__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1806,6 +1838,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/MACAO.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/MACAO__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1858,6 +1891,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/MONZUN.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/MONZUN__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1911,6 +1945,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/GALAXY_II.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/GALAXY_II__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -1958,6 +1993,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRACE_ONE.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/TRACE_ONE__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -2015,6 +2051,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRACE.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/TRACE__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -2072,6 +2109,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRACE_XL.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/TRACE_XL__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -2128,6 +2166,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/PARTY_PARTY_PLUS.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/PARTY_PARTY_PLUS__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -2176,6 +2215,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/PARTY_S.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/PARTY_S__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -2212,6 +2252,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOOTPRINT_PACK.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/FOOTPRINT_PACK__main.jpg",
   "swatches": [],
   "pdf_draw": "data/pdf_draw/FOOTPRINT_PACK.png",
   "pdf_icons": [],
@@ -2242,6 +2283,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOOTPRINT_HIMLITE.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/FOOTPRINT_HIMLITE__main.jpg",
   "swatches": [],
   "pdf_draw": "data/pdf_draw/FOOTPRINT_HIMLITE.png",
   "pdf_icons": [],
@@ -2272,6 +2314,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/FOOTPRINT_PIONEER.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/FOOTPRINT_PIONEER__main.jpg",
   "swatches": [],
   "pdf_draw": "data/pdf_draw/FOOTPRINT_PIONEER.png",
   "pdf_icons": [],
@@ -2301,6 +2344,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/Y_PEG_D23.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/Y_PEG_D23__main.jpg",
   "swatches": [
    {
     "n": "4",
@@ -2343,6 +2387,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/Y_PEG_D18.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/Y_PEG_D18__main.jpg",
   "swatches": [
    {
     "n": "4",
@@ -2385,6 +2430,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/V_PEG_D17.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/V_PEG_D17__main.jpg",
   "swatches": [
    {
     "n": "4",
@@ -2422,6 +2468,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/ROCK_PEG_D16.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/ROCK_PEG_D16__main.jpg",
   "swatches": [
    {
     "n": "4",
@@ -2460,6 +2507,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/SOLID_PEG_D18.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/SOLID_PEG_D18__main.jpg",
   "swatches": [
    {
     "n": "4",
@@ -2579,6 +2627,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/NAILS_PEG_S27.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/NAILS_PEG_S27__main.jpg",
   "swatches": [
    {
     "n": "4",
@@ -2617,6 +2666,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/V_PEG_S30.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/V_PEG_S30__main.jpg",
   "swatches": [
    {
     "n": "4",
@@ -2660,6 +2710,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/POLES_D50_8_5_MM.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/POLES_D50_8_5_MM__main.jpg",
   "swatches": [
    {
     "n": "3",
@@ -2774,6 +2825,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/POLES_DRW50_9_5_MM.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/POLES_DRW50_9_5_MM__main.jpg",
   "swatches": [
    {
     "n": "3",
@@ -2849,6 +2901,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/POLES_S45_15_MM.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/POLES_S45_15_MM__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -2886,6 +2939,7 @@
   "activities": [],
   "pdf_photo": "data/pdf_photos/TENTS_POLES_GUM.jpg",
   "pdf_photo_src": "composite",
+  "pdf_photo_main": "data/pdf_photos/TENTS_POLES_GUM__main.jpg",
   "swatches": [
    {
     "n": "1",
@@ -5717,7 +5771,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/OPAL_40.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -5777,7 +5830,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ALPIN_40.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -5844,7 +5896,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/COURIER_35.jpg",
-  "pdf_photo_src": "render",
   "swatches": [
    {
     "n": "1",
@@ -5905,7 +5956,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/OTAWA_30.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -5970,7 +6020,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/MANTA_30.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6029,7 +6078,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/HAVANA_28.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6084,7 +6132,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ESCAPE_25.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6142,7 +6189,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/CRUISER_12.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6191,7 +6237,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BIKER_6.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6248,7 +6293,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/START_4.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6295,7 +6339,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/NEW_YORK_100.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6334,7 +6377,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BOOTBAG_20.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6371,7 +6413,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BACKUP_10.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6411,7 +6452,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/MONEY_BELT.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6446,7 +6486,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/MONEY.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6481,7 +6520,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BAGS_RAIN_COVER_S.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6516,7 +6554,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BAGS_RAIN_COVER_L.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6555,7 +6592,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/TRANSIT_140.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6599,7 +6635,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/BOARD_65.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6637,7 +6672,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SAVER_25L_LONG.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6697,7 +6731,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SAVER_25L_SHORT.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6757,7 +6790,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SAVER_X_28L.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6797,7 +6829,6 @@
   ],
   "activities": [],
   "pdf_photo": "data/pdf_photos/SAVER_XL_51L.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6856,7 +6887,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/OMEGA_2L.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -6893,7 +6923,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/DESERT_2L.jpg",
-  "pdf_photo_src": "render",
   "swatches": [
    {
     "n": "1",
@@ -6930,7 +6959,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ARMADA_1_5L.jpg",
-  "pdf_photo_src": "render",
   "swatches": [
    {
     "n": "1",
@@ -6967,7 +6995,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/ARMAX_1_5L.jpg",
-  "pdf_photo_src": "render",
   "swatches": [
    {
     "n": "1",
@@ -7004,7 +7031,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/HYDRA_1_5L.jpg",
-  "pdf_photo_src": "render",
   "swatches": [
    {
     "n": "1",
@@ -7041,7 +7067,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/GEL_FLASK_T_600.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -7078,7 +7103,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/GEL_FLASK_A_500.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
@@ -7115,7 +7139,6 @@
   "features": [],
   "activities": [],
   "pdf_photo": "data/pdf_photos/GEL_FLASK_H_350.jpg",
-  "pdf_photo_src": "composite",
   "swatches": [
    {
     "n": "1",
