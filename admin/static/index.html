@@ -63,8 +63,7 @@ table.colors .dz{width:78px;height:64px;border:1px dashed var(--b);border-radius
 table.colors .dz.over{border-color:var(--acc)}
 table.colors .dz img{max-width:100%;max-height:100%;object-fit:contain}
 table.colors .dz span{color:#ccc;font-size:10px}
-table.colors .dz .rm{position:absolute;top:-6px;right:-6px;background:#fff;border:1px solid var(--b);border-radius:50%;width:18px;height:18px;font-size:11px;line-height:15px;text-align:center;cursor:pointer;display:none}
-table.colors .dz:hover .rm{display:block}
+table.colors .dz{width:96px;height:78px}
 .badges{display:flex;flex-wrap:wrap;gap:8px}
 .bd{display:flex;align-items:center;gap:6px;border:1px solid var(--b);border-radius:4px;padding:4px 8px;cursor:pointer;background:#fff}
 .bd.on{border-color:var(--acc);background:#fff4ec}
@@ -75,6 +74,21 @@ table.colors .dz:hover .rm{display:block}
 .bar h1{font-size:20px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .status{font-size:11px;color:var(--mut)}
 .empty{padding:60px 20px;text-align:center;color:var(--mut)}
+.slot .dz .tb,table.colors .dz .tb{position:absolute;left:0;right:0;bottom:0;display:none;justify-content:center;gap:2px;padding:3px;background:rgba(255,255,255,.92)}
+.slot .dz:hover .tb,table.colors .dz:hover .tb{display:flex}
+.tb button{padding:2px 6px;font-size:11px;line-height:1.2}
+.dz.active{outline:2px solid var(--acc)}
+#pm{position:fixed;inset:0;background:rgba(0,0,0,.55);display:none;align-items:center;justify-content:center;z-index:60}
+#pm .box{background:#fff;border-radius:8px;padding:14px;width:min(1000px,94vw);max-height:92vh;display:flex;flex-direction:column;gap:10px}
+#pm .tools{display:flex;gap:6px;flex-wrap:wrap;align-items:center}
+#pm .stage{position:relative;background:repeating-conic-gradient(#eee 0 25%,#fff 0 50%) 0 0/20px 20px;display:flex;align-items:center;justify-content:center;overflow:hidden;height:min(62vh,640px);user-select:none}
+#pm .stage img{max-width:100%;max-height:100%;display:block;pointer-events:none}
+#pm .stage canvas{position:absolute;left:0;top:0}
+#pm .crop{position:absolute;border:2px dashed var(--acc);background:rgba(255,107,26,.12);pointer-events:none}
+#pm .lib{display:grid;grid-template-columns:repeat(auto-fill,minmax(120px,1fr));gap:8px;overflow:auto;max-height:62vh}
+#pm .lib div{border:1px solid var(--b);border-radius:4px;padding:4px;cursor:pointer;text-align:center;font-size:10px;color:#555;word-break:break-all}
+#pm .lib div:hover{border-color:var(--acc)}
+#pm .lib img{width:100%;height:90px;object-fit:contain;background:#fff}
 #modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:50}
 #modal .box{background:#fff;border-radius:8px;padding:18px;width:min(640px,92vw);max-height:80vh;display:flex;flex-direction:column;gap:10px}
 #modal pre{background:#111;color:#ddd;padding:12px;border-radius:6px;font-size:12px;overflow:auto;flex:1;white-space:pre-wrap}
@@ -99,6 +113,7 @@ table.colors .dz:hover .rm{display:block}
  <section id="form"><div class="empty">Vyber produkt vlevo nebo založ nový.</div></section>
  <aside id="preview"><div class="ph">Náhled karty <span class="sp"></span><button class="sm" id="bPrev">Obnovit</button></div><iframe id="pv"></iframe></aside>
 </main>
+<div id="pm"><div class="box"><div class="inline"><b id="pmTitle">Fotka</b><span class="sp"></span><button id="pmClose">Zavřít</button></div><div id="pmBody"></div></div></div>
 <div id="modal"><div class="box"><b id="mTitle">Generování katalogu</b><div class="inline"><label class="inline"><input type="checkbox" id="gPdf" checked> Vytvořit i PDF</label><label class="inline"><input type="checkbox" id="gPush"> Odeslat na GitHub (commit + push)</label></div><pre id="mLog">Připraveno.</pre><div class="inline"><button id="mRun" class="pri">Spustit</button><a id="mHtml" target="_blank" style="display:none">Otevřít HTML</a><a id="mPdf" target="_blank" style="display:none">Otevřít PDF</a><span class="sp"></span><button id="mClose">Zavřít</button></div></div></div>
 
 <script>
@@ -179,6 +194,7 @@ function renderForm(){
    <div class="inline" style="align-self:end"><label class="inline"><input type="checkbox" id="fNew"${p.new?' checked':''}> Novinka</label><label class="inline"><input type="checkbox" id="fWide"${p.wide?' checked':''}> Široká fotka</label></div>
   </div>
   <label>Popis</label><textarea id="fDesc">${esc(p.desc||'')}</textarea>
+  <div class="row" style="margin-top:10px"><div style="grid-column:span 3"><label>Odkaz na trimm.eu (pro načítání fotek z webu)</label><input type="text" id="fWeb" value="${esc(p.web_url||'')}"></div></div>
  </div>
  <div class="sec"><h2>Specifikace (ikony pod fotkou)</h2><div class="row">${specs}${extraSpecs}</div>
   ${S.temps?`<label>Teploty (°C)</label><div class="temps"><div><label>Komfort</label><input type="text" id="tC" value="${esc(T.comfort??'')}"></div><div><label>Limit</label><input type="text" id="tL" value="${esc(T.limit??'')}"></div><div><label>Extrém</label><input type="text" id="tE" value="${esc(T.extreme??'')}"></div></div>`:''}
@@ -205,14 +221,25 @@ function renderForm(){
  $('#addColor').onclick=()=>{collect();cur.colors.push({name:'',codes:[],front:null,back:null,art:null,generic:false});renderColors();setDirty()};
 }
 function fieldRow(k,v){return `<div class="fld"><input type="text" value="${esc(k)}" data-fk><input type="text" value="${esc(v||'')}" data-fv><button class="x" data-k="${esc(k)}" title="Odebrat">×</button></div>`}
-function slot(k,l,v){return `<div class="slot" data-slot="${k}"><div class="dz">${v?`<img src="/${v}">`:`<span>${l}<br>přetáhni sem</span>`}</div><div class="cap"><b>${l}</b>${v?`<button class="sm" data-rm>odebrat</button>`:''}</div></div>`}
-function bindSlot(s){
- const dz=s.querySelector('.dz'), k=s.dataset.slot;
- dz.onclick=()=>pick(f=>uploadTo(f,k==='hero_inner'?'inner':(k==='draw'?'rozkresy':'foto'),p=>{cur[k]=p;renderForm();setDirty();preview()}));
+function toolbar(has){return `<div class="tb">${has?`<button data-act="edit" title="Upravit (ořez, otočení, pozadí)">✎</button>`:''}<button data-act="up" title="Nahrát ze souboru">⬆</button><button data-act="lib" title="Vybrat z knihovny">☰</button><button data-act="web" title="Z webu trimm.eu / z URL">🌐</button>${has?`<button data-act="rm" title="Odebrat">×</button>`:''}</div>`}
+function slot(k,l,v){return `<div class="slot" data-slot="${k}"><div class="dz">${v?`<img src="/${v}">`:`<span>${l}<br>přetáhni, vlož (Cmd+V) nebo klikni</span>`}${toolbar(!!v)}</div><div class="cap"><b>${l}</b></div></div>`}
+function kindFor(k){return k==='hero_inner'?'inner':(k==='draw'||k==='art'?'rozkresy':'foto')}
+// jednotné chování políčka s fotkou: get/set hodnoty, druh (kind) a přepočet
+function bindDz(dz,get,set,kind){
+ const apply=p=>{set(p);setDirty();preview()};
+ dz.onclick=e=>{const b=e.target.closest('button[data-act]'); const act=b?b.dataset.act:(get()?'edit':'up'); activeDz={get,set,kind};
+  if(act==='up')pick(f=>uploadTo(f,kind,apply));
+  else if(act==='rm')apply(null);
+  else if(act==='edit')openEditor(get(),kind,apply);
+  else if(act==='lib')openLibrary(kind,apply);
+  else if(act==='web')openWeb(kind,apply);};
  dz.ondragover=e=>{e.preventDefault();dz.classList.add('over')}; dz.ondragleave=()=>dz.classList.remove('over');
- dz.ondrop=e=>{e.preventDefault();dz.classList.remove('over');const f=e.dataTransfer.files[0];if(f)uploadTo(f,k==='hero_inner'?'inner':(k==='draw'?'rozkresy':'foto'),p=>{cur[k]=p;renderForm();setDirty();preview()})};
- const rm=s.querySelector('[data-rm]'); if(rm)rm.onclick=()=>{cur[k]=null;renderForm();setDirty();preview()};
+ dz.ondrop=e=>{e.preventDefault();dz.classList.remove('over');const f=e.dataTransfer.files[0];if(f)uploadTo(f,kind,apply)};
+ dz.onmouseenter=()=>{activeDz={get,set,kind};$$('.dz.active').forEach(x=>x.classList.remove('active'));dz.classList.add('active')};
 }
+let activeDz=null;
+document.addEventListener('paste',e=>{if(!activeDz||!cur)return;const it=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith('image/'));if(!it)return;e.preventDefault();const {set,kind}=activeDz;uploadTo(it.getAsFile(),kind,p=>{set(p);setDirty();preview()})});
+function bindSlot(s){const k=s.dataset.slot; bindDz(s.querySelector('.dz'),()=>cur[k],p=>{cur[k]=p;renderForm()},kindFor(k))}
 function pick(cb){const i=document.createElement('input');i.type='file';i.accept='image/*';i.onchange=()=>i.files[0]&&cb(i.files[0]);i.click()}
 async function uploadTo(file,kind,cb){
  const fd=new FormData();fd.append('file',file);fd.append('kind',kind);fd.append('name',(cur.name||'obr')+'_'+kind);
@@ -222,13 +249,11 @@ async function uploadTo(file,kind,cb){
 }
 function renderColors(){
  const S=META.schemas[cur.section]; const tb=$('#colors');
- tb.innerHTML=cur.colors.map((c,i)=>`<tr data-i="${i}"><td>${i+1}<br><button class="sm" data-cm="-1">▲</button><button class="sm" data-cm="1">▼</button></td><td><input type="text" data-cn value="${esc(c.name)}"></td><td><input type="text" data-cc value="${esc((c.codes||[]).join(', '))}"></td>${S.color_photos.map(k=>`<td><div class="dz" data-ck="${k}">${c[k]?`<img src="/${c[k]}"><span class="rm" title="odebrat">×</span>`:'<span>+</span>'}</div></td>`).join('')}<td><input type="checkbox" data-cg${c.generic?' checked':''}></td><td><button class="x" data-cx title="Smazat barvu">×</button></td></tr>`).join('');
+ tb.innerHTML=cur.colors.map((c,i)=>`<tr data-i="${i}"><td>${i+1}<br><button class="sm" data-cm="-1">▲</button><button class="sm" data-cm="1">▼</button></td><td><input type="text" data-cn value="${esc(c.name)}"></td><td><input type="text" data-cc value="${esc((c.codes||[]).join(', '))}"></td>${S.color_photos.map(k=>`<td><div class="dz" data-ck="${k}">${c[k]?`<img src="/${c[k]}">`:'<span>+</span>'}${toolbar(!!c[k])}</div></td>`).join('')}<td><input type="checkbox" data-cg${c.generic?' checked':''}></td><td><button class="x" data-cx title="Smazat barvu">×</button></td></tr>`).join('');
  tb.querySelectorAll('input').forEach(el=>el.addEventListener('input',setDirty));
  tb.querySelectorAll('.dz').forEach(dz=>{
-  const i=+dz.closest('tr').dataset.i,k=dz.dataset.ck; const kind=k==='art'?'rozkresy':'foto';
-  dz.onclick=e=>{if(e.target.classList.contains('rm')){collect();cur.colors[i][k]=null;renderColors();setDirty();preview();return}pick(f=>uploadTo(f,kind,p=>{collect();cur.colors[i][k]=p;renderColors();setDirty();preview()}))};
-  dz.ondragover=e=>{e.preventDefault();dz.classList.add('over')};dz.ondragleave=()=>dz.classList.remove('over');
-  dz.ondrop=e=>{e.preventDefault();dz.classList.remove('over');const f=e.dataTransfer.files[0];if(f)uploadTo(f,kind,p=>{collect();cur.colors[i][k]=p;renderColors();setDirty();preview()})};
+  const i=+dz.closest('tr').dataset.i,k=dz.dataset.ck;
+  bindDz(dz,()=>cur.colors[i][k],p=>{collect();cur.colors[i][k]=p;renderColors()},kindFor(k));
  });
  tb.onclick=e=>{const b=e.target.closest('button');if(!b)return;const i=+b.closest('tr').dataset.i;collect();
   if(b.dataset.cx!==undefined){if(!confirm('Smazat barvu?'))return;cur.colors.splice(i,1)}
@@ -240,7 +265,7 @@ function collect(){
  p.name=$('#fName').value.trim(); p.serie=$('#fSerie').value.trim(); p.typ=$('#fTyp').value.trim(); p.desc=$('#fDesc').value.trim();
  p.gender=S.gender?($('#fGender').value||null):null;
  p.price_min=$('#fPmin').value?+$('#fPmin').value:null; p.price_max=$('#fPmax').value?+$('#fPmax').value:(p.price_min);
- p.new=$('#fNew').checked; p.wide=$('#fWide').checked;
+ p.new=$('#fNew').checked; p.wide=$('#fWide').checked; p.web_url=$('#fWeb').value.trim()||null;
  p.specs=p.specs||{}; $$('[data-spec]').forEach(el=>{const v=el.value.trim(); if(v)p.specs[el.dataset.spec]=v; else delete p.specs[el.dataset.spec]});
  if(S.gender){p.sizes=$('#fSizes').value.split(',').map(s=>s.trim()).filter(Boolean); const sz=$('#fSize').value.trim(); if(sz)p.specs.size=sz; else delete p.specs.size}
  if(S.temps){const t={comfort:$('#tC').value.trim(),limit:$('#tL').value.trim(),extreme:$('#tE').value.trim()}; if(t.comfort||t.limit||t.extreme)p.specs.temps=t; else delete p.specs.temps}
@@ -262,6 +287,50 @@ async function preview(){
  const html=await api('/api/preview',{method:'POST',body:JSON.stringify(cur)}); $('#pv').srcdoc=html;
 }
 document.addEventListener('input',e=>{if(cur&&e.target.closest('#form'))clearTimeout(window._pt),window._pt=setTimeout(preview,600)});
+// ---------- fotky: editor, knihovna, web ----------
+function pmOpen(title,html){$('#pmTitle').textContent=title;$('#pmBody').innerHTML=html;$('#pm').style.display='flex'}
+function pmClose(){$('#pm').style.display='none';$('#pmBody').innerHTML=''}
+$('#pmClose').onclick=pmClose;
+async function openEditor(path,kind,apply){
+ let work=path; const hist=[path];
+ pmOpen('Úprava fotky',`<div class="tools">
+  <button data-op="rotate" data-deg="-90">↺ Otočit vlevo</button><button data-op="rotate" data-deg="90">↻ Otočit vpravo</button><button data-op="flip">⇄ Zrcadlit</button>
+  <button data-op="trim">Oříznout okraje</button><button data-op="whiten">Vybělit pozadí</button><button data-op="alpha">Průhledné pozadí (PNG)</button>
+  <label class="inline" style="margin:0">tolerance <input type="range" id="edTol" min="8" max="90" value="30" style="width:110px"><span id="edTolV">30</span></label>
+  <button id="edCrop" disabled>Oříznout výběr</button><button id="edUndo">Zpět</button></div>
+  <div class="stage" id="edStage"><img id="edImg" src="/${path}"><div class="crop" id="edCropBox" style="display:none"></div></div>
+  <div class="hint">Ořez: tažením myší přes obrázek vyber oblast a klikni „Oříznout výběr“. Úpravy vytvářejí novou kopii, původní soubor zůstává v knihovně.</div>
+  <div class="inline"><span class="status" id="edSt"></span><span class="sp"></span><button id="edCancel">Zrušit</button><button id="edApply" class="pri">Použít</button></div>`);
+ const img=$('#edImg'), stage=$('#edStage'), box=$('#edCropBox'); let sel=null, drag=null;
+ const tol=$('#edTol'); tol.oninput=()=>$('#edTolV').textContent=tol.value;
+ const show=p=>{work=p;img.src='/'+p+'?t='+Date.now();sel=null;box.style.display='none';$('#edCrop').disabled=true};
+ const run=async body=>{$('#edSt').textContent='pracuji…';try{const r=await api('/api/edit',{method:'POST',body:JSON.stringify({path:work,...body})});hist.push(r.path);show(r.path);$('#edSt').textContent=`${r.w}×${r.h}`}catch(e){$('#edSt').textContent='CHYBA: '+e.message}};
+ $('#pmBody').querySelectorAll('[data-op]').forEach(b=>b.onclick=()=>{const o={op:b.dataset.op};if(b.dataset.deg)o.deg=+b.dataset.deg;if(o.op==='whiten'||o.op==='alpha')o.thresh=+tol.value;run(o)});
+ $('#edUndo').onclick=()=>{if(hist.length>1){hist.pop();show(hist[hist.length-1])}};
+ $('#edCancel').onclick=pmClose; $('#edApply').onclick=()=>{apply(work);pmClose()};
+ const rect=()=>img.getBoundingClientRect();
+ stage.onmousedown=e=>{const r=rect();if(e.clientX<r.left||e.clientX>r.right||e.clientY<r.top||e.clientY>r.bottom)return;drag={x:e.clientX,y:e.clientY};e.preventDefault()};
+ stage.onmousemove=e=>{if(!drag)return;const r=rect(),sr=stage.getBoundingClientRect();const x0=Math.max(r.left,Math.min(drag.x,e.clientX)),y0=Math.max(r.top,Math.min(drag.y,e.clientY)),x1=Math.min(r.right,Math.max(drag.x,e.clientX)),y1=Math.min(r.bottom,Math.max(drag.y,e.clientY));
+  box.style.display='block';box.style.left=(x0-sr.left)+'px';box.style.top=(y0-sr.top)+'px';box.style.width=(x1-x0)+'px';box.style.height=(y1-y0)+'px';
+  sel={x:(x0-r.left)/r.width,y:(y0-r.top)/r.height,w:(x1-x0)/r.width,h:(y1-y0)/r.height}};
+ stage.onmouseup=()=>{drag=null;$('#edCrop').disabled=!(sel&&sel.w>0.02&&sel.h>0.02)};
+ $('#edCrop').onclick=()=>sel&&run({op:'crop',...sel});
+}
+async function openLibrary(kind,apply){
+ pmOpen('Knihovna fotek',`<div class="inline"><input type="text" id="libQ" placeholder="hledat podle názvu souboru…" style="flex:1"><select id="libSub"><option value="">vše</option><option value="foto">fotky</option><option value="rozkresy">rozkresy</option><option value="ikony">ikony</option></select></div><div class="lib" id="lib"></div>`);
+ const load=async()=>{const l=await api('/api/library?q='+encodeURIComponent($('#libQ').value)+'&sub='+$('#libSub').value);$('#lib').innerHTML=l.map(f=>`<div data-p="${f.path}"><img src="/${f.path}" loading="lazy">${esc(f.name)}</div>`).join('')||'<div class="hint">nic nenalezeno</div>'};
+ $('#libQ').oninput=()=>{clearTimeout(window._lq);window._lq=setTimeout(load,300)}; $('#libSub').onchange=load; $('#libSub').value=kind==='rozkresy'?'rozkresy':'';
+ $('#lib').onclick=e=>{const d=e.target.closest('[data-p]');if(d){apply(d.dataset.p);pmClose()}}; load();
+}
+async function openWeb(kind,apply){
+ pmOpen('Fotky z webu',`<div class="inline"><input type="text" id="webUrl" placeholder="URL produktu na trimm.eu nebo přímý odkaz na obrázek" style="flex:1" value="${esc(cur.web_url||'')}"><button id="webGo">Načíst</button></div><div class="lib" id="web"></div><div class="hint">Klikni na fotku, stáhne se do knihovny a vloží do políčka.</div>`);
+ const go=async()=>{const u=$('#webUrl').value.trim();if(!u)return;$('#web').innerHTML='<div class="hint">načítám…</div>';
+  if(/\.(jpe?g|png|webp)(\?|$)/i.test(u)){try{const r=await api('/api/fetch',{method:'POST',body:JSON.stringify({url:u,kind,name:cur.name})});apply(r.path);pmClose()}catch(e){$('#web').innerHTML='CHYBA: '+e.message}return}
+  try{const l=await api('/api/webgallery?url='+encodeURIComponent(u));$('#web').innerHTML=l.map(f=>`<div data-u="${f.url}" data-n="${esc(f.name)}"><img src="${f.thumb}" loading="lazy">${esc(f.name)}</div>`).join('')||'<div class="hint">na stránce nejsou žádné fotky</div>'}catch(e){$('#web').innerHTML='CHYBA: '+e.message}};
+ $('#webGo').onclick=go; $('#webUrl').onkeydown=e=>{if(e.key==='Enter')go()};
+ $('#web').onclick=async e=>{const d=e.target.closest('[data-u]');if(!d)return;d.style.opacity=.4;try{const r=await api('/api/fetch',{method:'POST',body:JSON.stringify({url:d.dataset.u,kind,name:cur.name+'_'+kind})});apply(r.path);pmClose()}catch(err){alert('Stažení selhalo: '+err.message)}};
+ if(cur.web_url)go();
+}
 // ---------- generování ----------
 function openGen(){$('#modal').style.display='flex';$('#mLog').textContent='Připraveno.';$('#mHtml').style.display=$('#mPdf').style.display='none'}
 async function runGen(){

@@ -91,6 +91,101 @@ async def upload(file: UploadFile = File(...), kind: str = Form('foto'), name: s
         im = im.convert('RGB'); im.thumbnail((1600, 1600)); fn = f'{base}_{h}.jpg'; im.save(os.path.join(UP, sub, fn), quality=88, optimize=True)
     return dict(path=f'uploads/{sub}/{fn}', w=im.width, h=im.height)
 
+def _save_image(im, sub, base, force_png=False):
+    os.makedirs(os.path.join(UP, sub), exist_ok=True)
+    has_alpha = im.mode in ('RGBA', 'LA') and im.getextrema()[-1][0] < 255
+    b = io.BytesIO()
+    if has_alpha or force_png:
+        im = im.convert('RGBA'); im.save(b, 'PNG', optimize=True); ext = 'png'
+    else:
+        if im.mode != 'RGB':
+            bg = Image.new('RGB', im.size, (255, 255, 255)); im = im.convert('RGBA'); bg.paste(im, mask=im.split()[-1]); im = bg
+        im.save(b, 'JPEG', quality=88, optimize=True); ext = 'jpg'
+    h = hashlib.md5(b.getvalue()).hexdigest()[:8]; fn = f'{base}_{h}.{ext}'
+    open(os.path.join(UP, sub, fn), 'wb').write(b.getvalue())
+    return dict(path=f'uploads/{sub}/{fn}', w=im.width, h=im.height)
+
+def _load_upload(path):
+    if not path.startswith('uploads/') or '..' in path: raise HTTPException(400, 'neplatná cesta')
+    fp = os.path.join(HERE, path)
+    if not os.path.exists(fp): raise HTTPException(404, 'soubor neexistuje')
+    im = Image.open(fp); im.load(); return im, path.split('/')[1], re.sub(r'_[0-9a-f]{8}$', '', os.path.splitext(os.path.basename(path))[0])
+
+def _edge_mask(im, thresh):
+    """maska pozadí: pixely blízké bílé/světle šedé napojené na okraj obrázku"""
+    from PIL import ImageDraw, ImageChops
+    rgb = im.convert('RGB'); w, h = rgb.size
+    r, g, b = rgb.split(); mn = ImageChops.darker(ImageChops.darker(r, g), b); mx = ImageChops.lighter(ImageChops.lighter(r, g), b)
+    sat = ImageChops.subtract(mx, mn)
+    cand = ImageChops.darker(mn.point(lambda v: 255 if v >= 255 - thresh * 2 else 0), sat.point(lambda v: 255 if v <= max(12, thresh // 2) else 0))
+    pad = Image.new('L', (w + 2, h + 2), 255); pad.paste(cand, (1, 1))
+    for pt in ((0, 0), (w + 1, 0), (0, h + 1), (w + 1, h + 1), (w // 2, 0), (w // 2, h + 1), (0, h // 2), (w + 1, h // 2)):
+        if pad.getpixel(pt) == 255: ImageDraw.floodfill(pad, pt, 128)
+    return pad.crop((1, 1, w + 1, h + 1)).point(lambda v: 255 if v == 128 else 0)
+
+@app.post('/api/edit')
+def edit(body: dict):
+    """Úprava fotky: op = rotate(deg) | flip | crop(x,y,w,h v poměrech 0–1) | trim | whiten(thresh) | alpha(thresh)"""
+    im, sub, base = _load_upload(body['path']); op = body.get('op'); force_png = False
+    from PIL import ImageOps, ImageChops, ImageFilter
+    if op == 'rotate':
+        fill = (255, 255, 255, 0) if im.mode == 'RGBA' else (255, 255, 255)
+        im = im.convert('RGBA' if im.mode == 'RGBA' else 'RGB').rotate(-int(body.get('deg', 90)), expand=True, fillcolor=fill)
+    elif op == 'flip': im = ImageOps.mirror(im)
+    elif op == 'crop':
+        w, h = im.size; x0 = int(w * float(body['x'])); y0 = int(h * float(body['y'])); x1 = int(w * (float(body['x']) + float(body['w']))); y1 = int(h * (float(body['y']) + float(body['h'])))
+        im = im.crop((max(0, x0), max(0, y0), min(w, max(x0 + 1, x1)), min(h, max(y0 + 1, y1))))
+    elif op == 'trim':
+        if im.mode == 'RGBA': bb = im.split()[-1].point(lambda v: 255 if v > 8 else 0).getbbox()
+        else: bb = ImageChops.difference(im.convert('RGB'), Image.new('RGB', im.size, (255, 255, 255))).convert('L').point(lambda v: 255 if v > 18 else 0).getbbox()
+        if bb:
+            pad = int(max(bb[2] - bb[0], bb[3] - bb[1]) * 0.03); w, h = im.size
+            im = im.crop((max(0, bb[0] - pad), max(0, bb[1] - pad), min(w, bb[2] + pad), min(h, bb[3] + pad)))
+    elif op in ('whiten', 'alpha'):
+        thresh = int(body.get('thresh', 30)); m = _edge_mask(im, thresh)
+        if op == 'whiten':
+            rgb = im.convert('RGB'); im = Image.composite(Image.new('RGB', im.size, (255, 255, 255)), rgb, m)
+        else:
+            rgba = im.convert('RGBA'); alpha = ImageChops.invert(m).filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(0.8))
+            if rgba.getextrema()[3][0] < 255: alpha = ImageChops.darker(alpha, rgba.split()[3])
+            rgba.putalpha(alpha); im = rgba; force_png = True
+    else: raise HTTPException(400, 'neznámá operace')
+    return _save_image(im, sub, base, force_png)
+
+@app.get('/api/library')
+def library(q: str = '', sub: str = ''):
+    out = []
+    for d in sorted(os.listdir(UP)):
+        if not os.path.isdir(os.path.join(UP, d)) or (sub and d != sub) or d == 'pages': continue
+        for f in os.listdir(os.path.join(UP, d)):
+            if not f.lower().endswith(('.jpg', '.jpeg', '.png')): continue
+            if q and q.lower() not in f.lower(): continue
+            fp = os.path.join(UP, d, f); out.append(dict(path=f'uploads/{d}/{f}', name=f, sub=d, mtime=os.path.getmtime(fp)))
+    out.sort(key=lambda x: -x['mtime']); return out[:400]
+
+@app.post('/api/fetch')
+def fetch_url(body: dict):
+    """stáhne obrázek z URL (např. trimm.eu) a uloží ho jako nahraný soubor"""
+    from urllib.request import Request, urlopen
+    url = body['url']; kind = body.get('kind', 'foto')
+    raw = urlopen(Request(url, headers={'User-Agent': 'Mozilla/5.0 katalog-admin'}), timeout=60).read()
+    im = Image.open(io.BytesIO(raw)); im.load(); im.thumbnail((1600, 1600))
+    base = slugify(body.get('name') or os.path.splitext(os.path.basename(url.split('?')[0]))[0]) or 'obr'
+    return _save_image(im, 'foto' if kind in ('foto', 'inner') else kind, base)
+
+@app.get('/api/webgallery')
+def webgallery(url: str):
+    """seznam produktových fotek na stránce trimm.eu"""
+    from urllib.request import Request, urlopen
+    try: html_ = urlopen(Request(url, headers={'User-Agent': 'Mozilla/5.0 katalog-admin'}), timeout=60).read().decode('utf-8', 'ignore')
+    except Exception as e: raise HTTPException(400, f'Stránku se nepodařilo načíst: {e}')
+    files = []
+    for m in re.finditer(r'user/shop/(?:big|detail|orig|detail_small)/([^"\'?\s]+\.(?:jpe?g|png))', html_, re.I):
+        fn = m.group(1)
+        if fn not in files: files.append(fn)
+    base = 'https://cdn.myshoptet.com/usr/www.trimm.eu/user/shop/'
+    return [dict(name=fn, thumb=base + 'detail_small/' + fn, url=base + 'orig/' + fn) for fn in files]
+
 @app.get('/api/preview/{pid}', response_class=HTMLResponse)
 def preview(pid: str):
     p = db.get_product(pid)

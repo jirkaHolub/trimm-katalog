@@ -19,5 +19,7 @@ Otevře se http://localhost:8765. Potřebuje Python 3.9+, balíčky `fastapi`, `
 
 ## Práce
 1. Vlevo vyber produkt (filtr podle kategorie, hledání). Šipky ▲▼ mění pořadí v kategorii.
-2. Uprav pole, fotky (přetažením), barvy, štítky. Vpravo je náhled karty. Ulož (Cmd+S).
+2. Uprav pole, barvy, štítky. Vpravo je náhled karty. Ulož (Cmd+S).
+   Fotky: přetáhni soubor do políčka, vlož ze schránky (Cmd+V nad políčkem) nebo použij lištu po najetí myší:
+   ✎ upravit (ořez tažením, otočení, zrcadlení, oříznutí okrajů, vybělení nebo zprůhlednění pozadí), ⬆ nahrát, ☰ knihovna už nahraných fotek, 🌐 fotky z trimm.eu (podle odkazu u produktu) nebo z URL, × odebrat.
 3. „Vygenerovat katalog“ vytvoří HTML a PDF, volitelně odešle na GitHub.
