@@ -76,7 +76,7 @@ def photos_html(r):
     if r['typ'] in SMALL_TYP: cls+=' small'
     if r['name'] in WIDE: cls+=' wide'
     if r.get('hero') and r.get('hero_inner'):
-        return f'<div class="{cls} has-hero two"><img class="p-hero" src="{E(r["hero"])}" alt="{E(r["name"])}" loading="lazy"><img class="p-inner" src="{E(r["hero_inner"])}" alt="{E(r["name"])} – vnitřní stan" loading="lazy"></div>'
+        return f'<div class="{cls} has-hero two"><div class="two-wrap"><img class="p-hero" src="{E(r["hero"])}" alt="{E(r["name"])}" loading="lazy"><img class="p-inner" src="{E(r["hero_inner"])}" alt="{E(r["name"])} – vnitřní stan" loading="lazy"></div></div>'
     if r.get('hero'):
         return f'<div class="{cls} has-hero"><img class="p-hero" src="{E(r["hero"])}" alt="{E(r["name"])}" loading="lazy"></div>'
     MAIN_COLOR={'CUBE LADY':'pinky'}
@@ -260,7 +260,7 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .p-back{height:70%;max-width:34%}
 .photo img:only-child{height:96%;max-width:85%}
 .p-hero{height:96%;max-width:100%}
-.photo.two{gap:2%}.photo.two .p-hero{height:96%;max-width:66%}.photo.two .p-inner{height:60%;max-width:32%}
+.photo.two{justify-content:center;padding-right:12%}.two-wrap{position:relative;height:100%;display:flex;align-items:flex-end}.photo.two .p-hero{height:96%;max-width:none}.photo.two .p-inner{position:absolute;right:-20%;bottom:0;height:50%;max-width:none;z-index:1}
 .photo.small{height:170px}.photo.small img{height:88%;max-width:60%}
 .photo.wide{height:300px}
 .badges{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin:2px 0 8px}

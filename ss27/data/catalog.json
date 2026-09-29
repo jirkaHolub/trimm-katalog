@@ -79,7 +79,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/pack_dsl_inner.jpg"
+  "hero_inner": "foto_web/pack_dsl_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "fly_dsl",
@@ -158,7 +159,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/fly_dsl_inner.jpg"
+  "hero_inner": "foto_web/fly_dsl_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "himlite_dsl",
@@ -238,7 +240,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/himlite_dsl_inner.jpg"
+  "hero_inner": "foto_web/himlite_dsl_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "vector_dsl",
@@ -316,7 +319,9 @@
     "label": "Zipy YKK"
    }
   ],
-  "hero_src": "web"
+  "hero_src": "web",
+  "hero_inner": "foto_web/vector_dsl_inner.png",
+  "inner_src": "pdf"
  },
  {
   "id": "pioneer_dsl",
@@ -396,7 +401,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/pioneer_dsl_inner.jpg"
+  "hero_inner": "foto_web/pioneer_dsl_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "delta_d",
@@ -470,7 +476,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/delta_d_inner.jpg"
+  "hero_inner": "foto_web/delta_d_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "spark_d",
@@ -542,7 +549,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/spark_d_inner.jpg"
+  "hero_inner": "foto_web/spark_d_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "apolos_d",
@@ -615,7 +623,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/apolos_d_inner.jpg"
+  "hero_inner": "foto_web/apolos_d_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "bivak_d",
@@ -686,8 +695,9 @@
     "label": "Lepené švy"
    }
   ],
-  "hero_src": "pdf-main",
-  "hero_inner": "foto_web/bivak_d_inner.jpg"
+  "hero_inner": "foto_web/bivak_d_inner.png",
+  "inner_src": "web",
+  "hero_src": "pdf-main"
  },
  {
   "id": "alfa_d",
@@ -760,7 +770,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/alfa_d_inner.jpg"
+  "hero_inner": "foto_web/alfa_d_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "frontier_d",
@@ -833,7 +844,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/frontier_d_inner.jpg"
+  "hero_inner": "foto_web/frontier_d_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "apolom_d",
@@ -906,7 +918,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/apolom_d_inner.jpg"
+  "hero_inner": "foto_web/apolom_d_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "thunder_d",
@@ -979,7 +992,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/thunder_d_inner.jpg"
+  "hero_inner": "foto_web/thunder_d_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "largo_d",
@@ -1052,7 +1066,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/largo_d_inner.jpg"
+  "hero_inner": "foto_web/largo_d_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "globe_d",
@@ -1124,7 +1139,9 @@
     "label": "Lepené švy"
    }
   ],
-  "hero_src": "web"
+  "hero_src": "web",
+  "hero_inner": "foto_web/globe_d_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "solo",
@@ -1195,7 +1212,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/solo_inner.jpg"
+  "hero_inner": "foto_web/solo_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "spark",
@@ -1265,7 +1283,9 @@
     "label": "Lepené švy"
    }
   ],
-  "hero_src": "web"
+  "hero_src": "web",
+  "hero_inner": "foto_web/spark_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "bivak",
@@ -1409,7 +1429,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/compact_inner.jpg"
+  "hero_inner": "foto_web/compact_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "alfa",
@@ -1482,7 +1503,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/alfa_inner.jpg"
+  "hero_inner": "foto_web/alfa_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "largo",
@@ -1555,7 +1577,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/largo_inner.jpg"
+  "hero_inner": "foto_web/largo_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "magnum",
@@ -1628,7 +1651,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/magnum_inner.jpg"
+  "hero_inner": "foto_web/magnum_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "focus",
@@ -1701,7 +1725,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/focus_inner.jpg"
+  "hero_inner": "foto_web/focus_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "tornado",
@@ -1933,7 +1958,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/duo_inner.jpg"
+  "hero_inner": "foto_web/duo_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "comet",
@@ -2017,7 +2043,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/comet_inner.jpg"
+  "hero_inner": "foto_web/comet_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "hudson",
@@ -2090,7 +2117,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/hudson_inner.jpg"
+  "hero_inner": "foto_web/hudson_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "eagle_ii",
@@ -2175,7 +2203,8 @@
    }
   ],
   "hero_src": "web",
-  "hero_inner": "foto_web/eagle_ii_inner.jpg"
+  "hero_inner": "foto_web/eagle_ii_inner.png",
+  "inner_src": "web"
  },
  {
   "id": "camp_ii",
@@ -2597,7 +2626,9 @@
     "label": "Lepené švy"
    }
   ],
-  "hero_src": "web"
+  "hero_src": "web",
+  "hero_inner": "foto_web/monzun_inner.png",
+  "inner_src": "pdf"
  },
  {
   "id": "galaxy_ii",
@@ -3004,7 +3035,9 @@
   "hero": "foto_web/party_front.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/PARTY_PARTY_PLUS.png",
-  "hero_src": "web"
+  "hero_src": "web",
+  "hero_inner": "foto_web/party_inner.png",
+  "inner_src": "pdf"
  },
  {
   "id": "party_plus",
@@ -3062,7 +3095,9 @@
   "hero": "foto_web/party_plus_front.jpg",
   "hero_color": "",
   "draw": "data/pdf_draw/PARTY_PARTY_PLUS.png",
-  "hero_src": "web"
+  "hero_src": "web",
+  "hero_inner": "foto_web/party_plus_inner.png",
+  "inner_src": "pdf"
  },
  {
   "id": "party_bedroom",

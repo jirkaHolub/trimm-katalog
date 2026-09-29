@@ -781,6 +781,17 @@ def _whiten_crop(src,dst,pad=0.04):
     if bb:
         pd=int(max(bb[2]-bb[0],bb[3]-bb[1])*pad); im=im.crop((max(0,bb[0]-pd),max(0,bb[1]-pd),min(w,bb[2]+pd),min(h,bb[3]+pd)))
     im.thumbnail((1400,1400)); im.save(dst,quality=88); return dst
+def _to_png_alpha(src,dst):
+    """vložený pohled: bílé pozadí spojené s okrajem -> průhledné (PNG)"""
+    from PIL import ImageChops, ImageDraw, ImageFilter
+    im=Image.open(src).convert('RGB'); w,h=im.size
+    r_,g_,b_=im.split(); mn=ImageChops.darker(ImageChops.darker(r_,g_),b_)
+    m=mn.point(lambda v:255 if v>=238 else 0); pad=Image.new('L',(w+2,h+2),255); pad.paste(m,(1,1))
+    for pt in ((0,0),(w+1,0),(0,h+1),(w+1,h+1),(w//2,0),(w//2,h+1),(0,h//2),(w+1,h//2)):
+        if pad.getpixel(pt)==255: ImageDraw.floodfill(pad,pt,128)
+    bg=pad.crop((1,1,w+1,h+1)).point(lambda v:255 if v==128 else 0)
+    alpha=ImageChops.invert(bg).filter(ImageFilter.MinFilter(3)).filter(ImageFilter.GaussianBlur(0.8))
+    out=im.convert('RGBA'); out.putalpha(alpha); out.save(dst,optimize=True); return dst
 def _kind(path):
     """'product' (bílé pozadí, barevný objekt) / 'drawing' (čárová kresba) / 'lifestyle'"""
     im=Image.open(path).convert('RGB'); im.thumbnail((200,200)); w,h=im.size; g=im.convert('L')
@@ -791,7 +802,7 @@ def _kind(path):
         n+=1
         if max(r_,g_,b_)<240: nonwhite+=1
         if max(r_,g_,b_)-min(r_,g_,b_)>40: sat+=1
-    if nonwhite/n<0.35 and sat/n<0.04: return 'drawing'
+    if nonwhite/n<0.15 and sat/n<0.04: return 'drawing'
     return 'product'
 TENT_FRONT_FROM_PDF={'BIVAK D'}   # web má jen sand, správná barva (lime green) je v SS26
 nw=0; ni=0
@@ -822,14 +833,21 @@ for r in catalog:
         src=_web_orig(fn) if fn else None
         if src and _kind(src)=='product':
             r['hero']='foto_web/'+base+'_front.jpg'; _whiten_crop(src,os.path.join(WEBT,base+'_front.jpg')); r['hero_src']='web'; nw+=1
-    # vnitřní stan: první produktová fotka v galerii, která není fotkou žádné barevné varianty
+    # vnitřní stan: ruční přepis (foto_rucne/<slug>_inner.jpg), jinak první produktová fotka v galerii, která není fotkou žádné barevné varianty
+    man=os.path.join(RUCNE,base+'_inner.jpg')
+    if os.path.exists(man):
+        _to_png_alpha(man,os.path.join(WEBT,base+'_inner.png')); r['hero_inner']='foto_web/'+base+'_inner.png'; r['inner_src']='rucne'; ni+=1; continue
     vset=set(vimg.values())
     for fn in gal:
         if fn in vset: continue
         src=_web_orig(fn)
         if src and _kind(src)=='product':
-            r['hero_inner']='foto_web/'+base+'_inner.jpg'; _whiten_crop(src,os.path.join(WEBT,base+'_inner.jpg')); ni+=1; break
-print('stany: hlavní fotka z webu/PDF',nw,'| vnitřní stan z webu',ni)
+            tmp=_whiten_crop(src,os.path.join(WCACHE,'_tmp_inner.jpg')); _to_png_alpha(tmp,os.path.join(WEBT,base+'_inner.png')); r['hero_inner']='foto_web/'+base+'_inner.png'; r['inner_src']='web'; ni+=1; break
+    if not r.get('hero_inner'):
+        p_=_pdfrec(r)
+        if p_ and p_.get('pdf_photo_inset') and os.path.exists(os.path.join(ROOT,p_['pdf_photo_inset'])):
+            _to_png_alpha(os.path.join(ROOT,p_['pdf_photo_inset']),os.path.join(WEBT,base+'_inner.png')); r['hero_inner']='foto_web/'+base+'_inner.png'; r['inner_src']='pdf'; ni+=1
+print('stany: hlavní fotka z webu/PDF',nw,'| vnitřní stan (web/PDF)',ni)
 print('hero z PDF',nh,'| rozkresy rozměrů',nd,'| produkty s badge ikonami',nb)
 json.dump(catalog,open(os.path.join(DATA,'catalog.json'),'w',encoding='utf-8'),ensure_ascii=False,indent=1)
 print('catalog',len(catalog),'models; sections',collections.Counter(r['section'] for r in catalog))

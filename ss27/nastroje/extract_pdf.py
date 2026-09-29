@@ -85,7 +85,7 @@ def raw_rgba(xref):
     if sm:
         mp=fitz.Pixmap(d,sm); m=Image.open(io.BytesIO(mp.tobytes('png'))).convert('L').resize(im.size); im.putalpha(m)
     return im
-def composite_photo(pno,x0,x1,y_top,y_bot,dpi=300,main_only=False):
+def composite_photo(pno,x0,x1,y_top,y_bot,dpi=300,main_only=False,part=None):
     """Fotka produktu složená z původních rastrů na stránce (sazba je někdy ořezává rámečkem). Vrací (PIL RGB, Rect) nebo None."""
     infos=[]; tf={}
     for i in d[pno].get_image_info(xrefs=True):
@@ -114,6 +114,27 @@ def composite_photo(pno,x0,x1,y_top,y_bot,dpi=300,main_only=False):
     sel=[bl for bl in sel if bl[0].intersects(main) or max(bl[0].width,bl[0].height)>=100]   # samostatné vzorníky barev vynechat
     if main_only: sel=[bl for bl in sel if bl[0]==main]
     items=[t for bl in sel for t in bl[1]]
+    if part in ('main','inset'):
+        # bez slučování bloků: 'main' = největší samostatný rastr, 'inset' = ostatní rastry (vložený pohled) i když se s hlavním překrývají
+        allr=[(b,x) for b,x in cand if incol_frac(b)>=0.4 or x0-6<=(b.x0+b.x1)/2<=x1+6]
+        allr=[(b,x) for b,x in allr if b.width>=60 or b.height>=60]
+        if not allr: return None
+        big=max(allr,key=lambda t:t[0].width*t[0].height)
+        if part=='main': items=[big]
+        else:
+            # vložený pohled: ostatní rastry (i mozaika dlaždic) sloučit do bloků, vzít bloky aspoň 45 pt
+            rest=[(b,x) for b,x in cand if (x0-6<=(b.x0+b.x1)/2<=x1+6 or incol_frac(b)>=0.4) and x!=big[1]]
+            bls=[[fitz.Rect(b),[(b,x)]] for b,x in rest]
+            merged=True
+            while merged:
+                merged=False
+                for i in range(len(bls)):
+                    for j in range(i+1,len(bls)):
+                        r2=bls[j][0]
+                        if bls[i][0].intersects(fitz.Rect(r2.x0-2,r2.y0-2,r2.x1+2,r2.y1+2)): bls[i][0]|=r2; bls[i][1]+=bls[j][1]; del bls[j]; merged=True; break
+                    if merged: break
+            items=[t for bl in bls if max(bl[0].width,bl[0].height)>=45 and bl[0].intersects(fitz.Rect(big[0].x0-40,big[0].y0-40,big[0].x1+40,big[0].y1+40)) for t in bl[1]]
+        if not items: return None
     # duplicitní umístění (celý + oříznutý rastr se stejným počátkem): nechat větší
     keep=[]
     for b,x in items:
@@ -330,13 +351,23 @@ def parse_column(sec,name,x0,x1,pno):
         # stany: i samotná hlavní fotka bez vloženého pohledu (pro případ, že vnitřní stan přijde z webu)
         if sec=='tents':
             outm=os.path.join(DATA,'pdf_photos',fn[:-4]+'__main.jpg')
-            if not os.path.exists(outm):
-                cm=composite_photo(pno,x0,x1,head_y1-40,cy1+30,main_only=True)
+            if os.path.exists(outm): P['pdf_photo_main']='data/pdf_photos/'+fn[:-4]+'__main.jpg'
+            else:
+                cm=composite_photo(pno,x0,x1,head_y1-40,cy1+30,part='main')
                 if cm:
                     from PIL import ImageChops as _IC2
                     im2=cm[0]; bb2=_IC2.difference(im2,Image.new('RGB',im2.size,(255,255,255))).convert('L').point(lambda v:255 if v>18 else 0).getbbox()
                     if bb2: im2=im2.crop((max(0,bb2[0]-8),max(0,bb2[1]-8),min(im2.width,bb2[2]+8),min(im2.height,bb2[3]+8)))
                     im2.save(outm,quality=88); P['pdf_photo_main']='data/pdf_photos/'+fn[:-4]+'__main.jpg'
+            outi=os.path.join(DATA,'pdf_photos',fn[:-4]+'__inset.jpg')
+            if os.path.exists(outi): P['pdf_photo_inset']='data/pdf_photos/'+fn[:-4]+'__inset.jpg'
+            else:
+                ci=composite_photo(pno,x0,x1,head_y1-40,cy1+30,part='inset')
+                if ci:
+                    from PIL import ImageChops as _IC3
+                    im3=ci[0]; bb3=_IC3.difference(im3,Image.new('RGB',im3.size,(255,255,255))).convert('L').point(lambda v:255 if v>18 else 0).getbbox()
+                    if bb3: im3=im3.crop((max(0,bb3[0]-8),max(0,bb3[1]-8),min(im3.width,bb3[2]+8),min(im3.height,bb3[3]+8)))
+                    if im3.width>80 and im3.height>60: im3.save(outi,quality=88); P['pdf_photo_inset']='data/pdf_photos/'+fn[:-4]+'__inset.jpg'
     except Exception as e: P['pdf_photo_err']=str(e)
     # vzorníky barev z PDF (malé obrázky u čísel barev) -> data/pdf_swatch/<slug>_<n>.png + popisek
     P['swatches']=[]
