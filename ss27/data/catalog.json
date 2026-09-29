@@ -3681,7 +3681,8 @@
   "new": false,
   "sort": 40,
   "hero": "foto_pdf/FOOTPRINT_PACK.jpg",
-  "hero_color": ""
+  "hero_color": "",
+  "draw": "data/pdf_draw/FOOTPRINT_PACK.png"
  },
  {
   "id": "footprint_himlite",
@@ -3730,7 +3731,8 @@
   "new": false,
   "sort": 41,
   "hero": "foto_pdf/FOOTPRINT_HIMLITE.jpg",
-  "hero_color": ""
+  "hero_color": "",
+  "draw": "data/pdf_draw/FOOTPRINT_HIMLITE.png"
  },
  {
   "id": "footprint_pioneer",
@@ -3779,7 +3781,8 @@
   "new": false,
   "sort": 42,
   "hero": "foto_pdf/FOOTPRINT_PIONEER.jpg",
-  "hero_color": ""
+  "hero_color": "",
+  "draw": "data/pdf_draw/FOOTPRINT_PIONEER.png"
  },
  {
   "id": "y_peg_d23",

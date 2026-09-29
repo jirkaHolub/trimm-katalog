@@ -90,7 +90,7 @@ def composite_photo(pno,x0,x1,y_top,y_bot,dpi=300):
     infos=[]; tf={}
     for i in d[pno].get_image_info(xrefs=True):
         if not i.get('xref'): continue
-        infos.append((fitz.Rect(i['bbox']),i['xref'])); tf[i['xref']]=i.get('transform')
+        infos.append((fitz.Rect(i['bbox']),i['xref'])); tf[(i['xref'],round(i['bbox'][0]),round(i['bbox'][1]))]=i.get('transform')
     def incol_frac(b): return max(0,min(b.x1,x1)-max(b.x0,x0))/max(1,b.width)
     cand=[(b,x) for b,x in infos if b.width>=20 and b.height>=20 and b.y0<y_bot and b.y1>y_top and (x0-6<=(b.x0+b.x1)/2<=x1+6 or incol_frac(b)>=0.4)]
     if not cand: return None
@@ -111,33 +111,55 @@ def composite_photo(pno,x0,x1,y_top,y_bot,dpi=300):
     main=max(incol,key=lambda bl:bl[0].width*bl[0].height)[0]
     sel=[bl for bl in blocks if (bl[0].width>=60 or bl[0].height>=60) and (x0-6<=(bl[0].x0+bl[0].x1)/2<=x1+6 or (bl[0].intersects(main) and incol_frac(bl[0])>=0.4))]
     sel=[bl for bl in sel if max(bl[0].width,bl[0].height)>=45]   # malé kulaté badge ikony přes fotku vynechat
+    sel=[bl for bl in sel if bl[0].intersects(main) or max(bl[0].width,bl[0].height)>=100]   # samostatné vzorníky barev vynechat
     items=[t for bl in sel for t in bl[1]]
     # duplicitní umístění (celý + oříznutý rastr se stejným počátkem): nechat větší
     keep=[]
     for b,x in items:
         dup=any(x2!=x and abs(b2.x0-b.x0)<1.5 and abs(b2.y0-b.y0)<1.5 and b2.contains(b) and (b2.width*b2.height)>(b.width*b.height) for b2,x2 in items)
         if not dup: keep.append((b,x))
+    if os.environ.get('PHOTO_DEBUG'): print('   COMPDBG cand',len(cand),'blocks',[[round(v) for v in bl[0]] for bl in blocks],'incol',len(incol),'sel',len(sel),'keep',len(keep))
     if not keep: return None
     u=fitz.Rect(keep[0][0])
     for b,_ in keep[1:]: u|=b
     sc=dpi/72; W=int(u.width*sc)+1; H=int(u.height*sc)+1
     if W<50 or H<50: return None
-    # otočené/zrcadlené umístění rastru neskládáme (jen prostý posun+měřítko)
-    for b,x in keep:
-        t=tf.get(x)
-        if t and (t[0]<=0 or t[3]<=0 or abs(t[1])>0.01*abs(t[0]) or abs(t[2])>0.01*abs(t[3])): return None
+    # otočené/zrcadlené umístění rastru neskládáme (jen prostý posun+měřítko): u hlavní fotky vzdát, vedlejší vynechat
+    def _odd(b,x):
+        t=tf.get((x,round(b.x0),round(b.y0))); return bool(t and (t[0]<=0 or t[3]<=0 or abs(t[1])>0.01*abs(t[0]) or abs(t[2])>0.01*abs(t[3])))
+    mainb0=max(keep,key=lambda t:t[0].width*t[0].height)
+    if _odd(mainb0[0],mainb0[1]):
+        if os.environ.get('PHOTO_DEBUG'): print('   COMPDBG hlavní rastr má otočení/zrcadlení')
+        return None
+    keep=[(b,x) for b,x in keep if not _odd(b,x)]
     canvas=Image.new('RGBA',(W,H),(255,255,255,255))
     order={x:i for i,(_,x) in enumerate(infos)}
     mainb=max(keep,key=lambda t:t[0].width*t[0].height)[0]
-    for b,x in sorted(keep,key=lambda t:order.get(t[1],0)):
+    def edge_alpha(im,shadow=False):
+        # průhledné jen pozadí spojené s okrajem; u hlavní fotky i měkký stín (poloprůhledný), aby nezakrýval vložený rastr
+        r,g,bb,a=im.split(); from PIL import ImageChops as IC, ImageDraw as ID
+        mn=IC.darker(IC.darker(r,g),bb)
+        def flood(th):
+            m=mn.point(lambda v:255 if v>=th else 0); Wm,Hm=m.size; pad=Image.new('L',(Wm+2,Hm+2),255); pad.paste(m,(1,1))
+            for pt in ((0,0),(Wm+1,0),(0,Hm+1),(Wm+1,Hm+1)):
+                if pad.getpixel(pt)==255: ID.floodfill(pad,pt,128)
+            return pad.crop((1,1,Wm+1,Hm+1)).point(lambda v:255 if v==128 else 0)
+        bg=flood(244)
+        alpha=IC.invert(bg)
+        if shadow:
+            # hlavní fotka: bílé pozadí průhledné i bez napojení na okraj, stín napojený na okraj poloprůhledný
+            alpha=IC.darker(alpha,mn.point(lambda v:0 if v>=246 else 255))
+            sh=flood(190)
+            grad=mn.point(lambda v:int(max(0,min(255,(246-v)*255/95))))
+            alpha=Image.composite(grad,alpha,sh)
+        im.putalpha(alpha); return im
+    for b,x in sorted(keep,key=lambda t:(1 if t[0]==mainb else 0,order.get(t[1],0))):
         try: im=raw_rgba(x)
-        except Exception: return None
+        except Exception:
+            if os.environ.get('PHOTO_DEBUG'): import traceback; traceback.print_exc()
+            return None
         im=im.resize((max(1,int(b.width*sc)),max(1,int(b.height*sc))))
-        if b!=mainb and im.getextrema()[3][0]==255:
-            # vložený rastr bez masky: bílé pozadí udělat průhledné, aby nepřekryl hlavní fotku bílým obdélníkem
-            r,g,bb,a=im.split(); from PIL import ImageChops as IC
-            mn=IC.darker(IC.darker(r,g),bb); alpha=mn.point(lambda v:0 if v>=246 else (255 if v<=232 else int((246-v)/14*255)))
-            im.putalpha(alpha)
+        if len(keep)>1 and im.getextrema()[3][0]==255: im=edge_alpha(im,shadow=(b==mainb))
         canvas.alpha_composite(im,(int((b.x0-u.x0)*sc),int((b.y0-u.y0)*sc)))
     if os.environ.get('PHOTO_DEBUG'): print('   COMPOSITE items',[(x,[round(v) for v in b]) for b,x in keep])
     return canvas.convert('RGB'),u
@@ -236,15 +258,22 @@ def parse_column(sec,name,x0,x1,pno):
         out=os.path.join(DATA,'pdf_photos',fn); os.makedirs(os.path.dirname(out),exist_ok=True)
         if not os.path.exists(out):
             PDPI=300
-            comp=composite_photo(pno,x0,x1,head_y1-40,cy1+30) if (os.environ.get('PHOTO_RENDER')!='1' and sec!='mattress') else None   # karimatky: render je věrnější
+            comp=composite_photo(pno,x0,x1,head_y1-40,cy1+(90 if sec=='mattress' else 30)) if os.environ.get('PHOTO_RENDER')!='1' else None
             pix=d[pno].get_pixmap(dpi=PDPI,clip=clip,colorspace=fitz.csRGB)
             img=Image.open(io.BytesIO(pix.tobytes('png'))).convert('RGB'); P['pdf_photo_src']='render'
+            if P['pdf_photo_src']=='render':
+                from PIL import ImageDraw as _ID
+                for _i in d[pno].get_image_info():
+                    _b=fitz.Rect(_i['bbox'])
+                    if _b.width<32 and _b.height<32 and _b.intersects(clip) and _b.y0>clip.y0+20:
+                        _ID.Draw(img).rectangle([int((_b.x0-clip.x0-2)*PDPI/72),int((_b.y0-clip.y0-2)*PDPI/72),int((_b.x1-clip.x0+2)*PDPI/72),int((_b.y1-clip.y0+2)*PDPI/72)],fill=(255,255,255))
             if comp:
                 from PIL import ImageChops as _IC
                 def _content(im_):
                     m=_IC.difference(im_,Image.new('RGB',im_.size,(255,255,255))).convert('L').point(lambda v:255 if v>18 else 0)
                     bb=m.getbbox(); return ((bb[2]-bb[0])*(bb[3]-bb[1])) if bb else 0
-                if _content(comp[0])>=0.85*_content(img): img,clip=comp[0],comp[1]; P['pdf_photo_src']='composite'
+                if os.environ.get('PHOTO_DEBUG'): print('   SANITY',P['name'],'composite',_content(comp[0]),'render',_content(img),comp[0].size,img.size)
+                if _content(comp[0])>=0.6*_content(img): img,clip=comp[0],comp[1]; P['pdf_photo_src']='composite'
             from PIL import ImageDraw
             W,H=img.size; scale=PDPI/72
             # stužka "new" v pravém horním rohu: podle příznaku, nebo když je roh výrazně červený
@@ -331,10 +360,22 @@ def parse_column(sec,name,x0,x1,pno):
                 return len(re.findall(r'[A-Za-zÀ-ž]',t))>=3
             txt=[l for l in alll if l['y']>first_label_y-2 and l['y1']<sw_top and l['size']<9.5 and is_text_line(l)]
             desc_bottom=max([l['y1'] for l in txt]+[first_label_y])
-            band=fitz.Rect(x0,desc_bottom+2,x1,sw_top)
+            band=fitz.Rect(x0-8,desc_bottom+2,x1+8,sw_top)
+            # přesněji podle vektorových kreseb ve sloupci (rozkres může začínat výš než končí popis vlevo)
+            vr=[fitz.Rect(dr_['rect']) for dr_ in d[pno].get_drawings() if dr_.get('rect') and x0-4<=(dr_['rect'].x0+dr_['rect'].x1)/2<=x1+4 and dr_['rect'].y0>first_label_y+8 and dr_['rect'].y1<sw_top and (dr_['rect'].width>1 or dr_['rect'].height>1)]
+            if vr:
+                vu=fitz.Rect(vr[0])
+                for r_ in vr[1:]: vu|=r_
+                band=fitz.Rect(max(x0-14,vu.x0-16),max(first_label_y+8,vu.y0-6),min(x1+14,vu.x1+16),min(sw_top,vu.y1+6))
             if band.height>25:
                 pix=d[pno].get_pixmap(dpi=300,clip=band,colorspace=fitz.csRGB)
                 img=Image.open(io.BytesIO(pix.tobytes('png'))).convert('RGB')
+                # vybělit řádky popisu/vlastností, které zasahují do pásu (kóty jsou číslice, ty zůstanou)
+                from PIL import ImageDraw as _ID
+                _sc=300/72
+                for l in alll:
+                    if l['y1']>band.y0 and l['y']<band.y1 and l['size']<9.5 and is_text_line(l):
+                        _ID.Draw(img).rectangle([int((l['x']-band.x0-1)*_sc),int((l['y']-band.y0-1)*_sc),int((l['x1']-band.x0+1)*_sc),int((l['y1']-band.y0+1)*_sc)],fill=(255,255,255))
                 from PIL import ImageChops
                 bb=ImageChops.difference(img,Image.new('RGB',img.size,(255,255,255))).convert('L').point(lambda v:255 if v>22 else 0).getbbox()
                 if bb and (bb[2]-bb[0])>200 and (bb[3]-bb[1])>80:
@@ -349,7 +390,7 @@ def parse_column(sec,name,x0,x1,pno):
         vals=[l for l in body+right0 if l['y']<first_label_y-2 and l['y']>50 and l['bold'] and 'DIN' in l['font'] and l['size']<8.5 and l['text'].strip().lower()!='new' and not re.fullmatch(r'\d',l['text'].strip())]
         if vals:
             vy=max(l['y'] for l in vals); vy=min(l['y'] for l in vals if l['y']>vy-14); vy1=max(l['y1'] for l in vals if l['y']>=vy-1)
-            bx1=x1 if sec in ('tents','backpacks','sportswear') else x0+(x1-x0)*0.55   # spacáky/karimatky: fotka vpravo ve stejné výšce
+            bx1=x1 if sec in ('tents','backpacks','sportswear') else x0+(x1-x0)*0.64   # spacáky/karimatky: fotka vpravo ve stejné výšce
             band=fitz.Rect(x0,vy-(46 if sec in ('backpacks','sportswear') else 36),bx1,vy1+2)
             pix=d[pno].get_pixmap(dpi=300,clip=band,colorspace=fitz.csRGB)
             img=Image.open(io.BytesIO(pix.tobytes('png'))).convert('RGB')
