@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>TRIMM katalog – administrace</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{--b:#e3e3e0;--bg:#f4f4f2;--acc:#ff6b1a;--txt:#1a1a1a;--mut:#777}
+html,body{height:100%}
+body{font:13px/1.45 'Helvetica Neue',Helvetica,Arial,sans-serif;color:var(--txt);background:var(--bg);display:flex;flex-direction:column}
+header{display:flex;align-items:center;gap:14px;padding:10px 16px;background:#111;color:#fff}
+header b{letter-spacing:.3em;font-size:15px}
+header .sp{flex:1}
+button{font:inherit;padding:7px 12px;border:1px solid var(--b);background:#fff;border-radius:4px;cursor:pointer;color:var(--txt)}
+button:hover{border-color:#999}
+button.pri{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:700}
+button.dan{color:#c0392b}
+button.sm{padding:3px 8px;font-size:11px}
+main{flex:1;display:grid;grid-template-columns:320px 1fr 480px;min-height:0}
+#list{border-right:1px solid var(--b);background:#fff;display:flex;flex-direction:column;min-height:0}
+#list .tools{padding:10px;border-bottom:1px solid var(--b);display:flex;flex-direction:column;gap:8px}
+#list input{width:100%;padding:7px 10px;border:1px solid var(--b);border-radius:4px;font:inherit}
+.chips{display:flex;flex-wrap:wrap;gap:4px}
+.chip{padding:4px 9px;border:1px solid var(--b);border-radius:20px;font-size:11px;background:#fff;cursor:pointer}
+.chip.on{background:#111;color:#fff;border-color:#111}
+#items{overflow:auto;flex:1}
+.serie-h{padding:8px 12px 4px;font-size:10px;font-weight:800;letter-spacing:.1em;color:var(--mut);text-transform:uppercase;background:#fafaf8;border-top:1px solid var(--b);border-bottom:1px solid var(--b);position:sticky;top:0}
+.item{display:flex;align-items:center;gap:10px;padding:6px 10px;border-bottom:1px solid #f0f0ee;cursor:pointer}
+.item:hover{background:#fff8f3}.item.on{background:#fff1e8}
+.item img{width:44px;height:34px;object-fit:contain;background:#fff;border:1px solid #eee;border-radius:3px;flex-shrink:0}
+.item .nm{font-weight:700;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.item .nm small{display:block;font-weight:400;color:var(--mut);font-size:11px}
+.item .mv{display:none;gap:2px}.item:hover .mv{display:flex}
+.item .mv button{padding:1px 5px;font-size:10px}
+#form{overflow:auto;padding:16px 20px;min-height:0}
+#preview{border-left:1px solid var(--b);background:#fff;display:flex;flex-direction:column;min-height:0}
+#preview .ph{padding:8px 12px;border-bottom:1px solid var(--b);font-size:11px;color:var(--mut);display:flex;gap:8px;align-items:center}
+#preview iframe{flex:1;border:0;width:100%}
+.sec{background:#fff;border:1px solid var(--b);border-radius:6px;padding:14px 16px;margin-bottom:14px}
+.sec h2{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
+.row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:10px}
+label{display:block;font-size:11px;font-weight:700;color:#444;margin-bottom:3px}
+input[type=text],input[type=number],select,textarea{width:100%;padding:7px 9px;border:1px solid var(--b);border-radius:4px;font:inherit;background:#fff}
+textarea{min-height:70px;resize:vertical}
+input:focus,select:focus,textarea:focus{outline:none;border-color:var(--acc)}
+.fld{display:grid;grid-template-columns:190px 1fr 28px;gap:8px;align-items:center;margin-bottom:6px}
+.fld input:first-child{font-weight:700;text-transform:uppercase;font-size:11px}
+.x{border:none;background:none;color:#bbb;font-size:16px;cursor:pointer;padding:0}
+.x:hover{color:#c0392b}
+.photos{display:flex;flex-wrap:wrap;gap:12px}
+.slot{width:170px}
+.slot .dz{height:120px;border:2px dashed var(--b);border-radius:6px;display:flex;align-items:center;justify-content:center;background:#fafaf8;position:relative;overflow:hidden;cursor:pointer}
+.slot .dz.over{border-color:var(--acc);background:#fff4ec}
+.slot .dz img{max-width:100%;max-height:100%;object-fit:contain}
+.slot .dz span{color:#bbb;font-size:11px;text-align:center;padding:8px}
+.slot .cap{display:flex;justify-content:space-between;align-items:center;margin-top:4px;font-size:11px}
+.slot .cap b{font-size:11px}
+table.colors{width:100%;border-collapse:collapse}
+table.colors th{font-size:10px;text-transform:uppercase;letter-spacing:.06em;color:var(--mut);text-align:left;padding:4px 6px;border-bottom:1px solid var(--b)}
+table.colors td{padding:6px;border-bottom:1px solid #f0f0ee;vertical-align:top}
+table.colors .dz{width:78px;height:64px;border:1px dashed var(--b);border-radius:4px;display:flex;align-items:center;justify-content:center;background:#fafaf8;cursor:pointer;position:relative}
+table.colors .dz.over{border-color:var(--acc)}
+table.colors .dz img{max-width:100%;max-height:100%;object-fit:contain}
+table.colors .dz span{color:#ccc;font-size:10px}
+table.colors .dz .rm{position:absolute;top:-6px;right:-6px;background:#fff;border:1px solid var(--b);border-radius:50%;width:18px;height:18px;font-size:11px;line-height:15px;text-align:center;cursor:pointer;display:none}
+table.colors .dz:hover .rm{display:block}
+.badges{display:flex;flex-wrap:wrap;gap:8px}
+.bd{display:flex;align-items:center;gap:6px;border:1px solid var(--b);border-radius:4px;padding:4px 8px;cursor:pointer;background:#fff}
+.bd.on{border-color:var(--acc);background:#fff4ec}
+.bd img{height:26px;max-width:80px;object-fit:contain}
+.bd small{font-size:10px;color:#555}
+.temps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.bar{display:flex;gap:8px;align-items:center;position:sticky;top:0;background:var(--bg);padding:6px 0 12px;z-index:5}
+.bar h1{font-size:20px;flex:1;min-width:0;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.status{font-size:11px;color:var(--mut)}
+.empty{padding:60px 20px;text-align:center;color:var(--mut)}
+#modal{position:fixed;inset:0;background:rgba(0,0,0,.45);display:none;align-items:center;justify-content:center;z-index:50}
+#modal .box{background:#fff;border-radius:8px;padding:18px;width:min(640px,92vw);max-height:80vh;display:flex;flex-direction:column;gap:10px}
+#modal pre{background:#111;color:#ddd;padding:12px;border-radius:6px;font-size:12px;overflow:auto;flex:1;white-space:pre-wrap}
+.hint{font-size:11px;color:var(--mut)}
+.inline{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+</style>
+</head>
+<body>
+<header><b>TRIMM</b><span>Katalog SS27 · administrace</span><span class="sp"></span>
+ <button id="bNew">+ Nový produkt</button>
+ <button id="bOpen">Otevřít katalog</button>
+ <button id="bGen" class="pri">Vygenerovat katalog</button>
+</header>
+<main>
+ <aside id="list">
+  <div class="tools">
+   <input id="q" type="search" placeholder="Hledat model…">
+   <div class="chips" id="secChips"></div>
+  </div>
+  <div id="items"></div>
+ </aside>
+ <section id="form"><div class="empty">Vyber produkt vlevo nebo založ nový.</div></section>
+ <aside id="preview"><div class="ph">Náhled karty <span class="sp"></span><button class="sm" id="bPrev">Obnovit</button></div><iframe id="pv"></iframe></aside>
+</main>
+<div id="modal"><div class="box"><b id="mTitle">Generování katalogu</b><div class="inline"><label class="inline"><input type="checkbox" id="gPdf" checked> Vytvořit i PDF</label><label class="inline"><input type="checkbox" id="gPush"> Odeslat na GitHub (commit + push)</label></div><pre id="mLog">Připraveno.</pre><div class="inline"><button id="mRun" class="pri">Spustit</button><a id="mHtml" target="_blank" style="display:none">Otevřít HTML</a><a id="mPdf" target="_blank" style="display:none">Otevřít PDF</a><span class="sp"></span><button id="mClose">Zavřít</button></div></div></div>
+
+<script>
+const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
+const api=async(u,o={})=>{const r=await fetch(u,{headers:{'Content-Type':'application/json'},...o});if(!r.ok)throw new Error(await r.text());return r.headers.get('content-type')?.includes('json')?r.json():r.text()};
+let META, LIST=[], cur=null, dirty=false, curSec='all';
+
+async function init(){
+ META=await api('/api/meta');
+ const ch=$('#secChips'); ch.innerHTML='<span class="chip on" data-s="all">Vše</span>'+META.sections.map(s=>`<span class="chip" data-s="${s.key}" style="--c:${s.color}">${s.cz}</span>`).join('');
+ ch.onclick=e=>{const c=e.target.closest('.chip');if(!c)return;curSec=c.dataset.s;$$('#secChips .chip').forEach(x=>x.classList.toggle('on',x===c));renderList()};
+ $('#q').oninput=renderList;
+ await loadList();
+ const pid=new URLSearchParams(location.search).get('id'); if(pid) open(pid);
+ $('#bNew').onclick=newProduct; $('#bGen').onclick=openGen; $('#bOpen').onclick=()=>window.open('/repo/ss27/trimm_katalog_SS27.html');
+ $('#bPrev').onclick=()=>preview();
+ $('#mClose').onclick=()=>$('#modal').style.display='none'; $('#mRun').onclick=runGen;
+ document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='s'){e.preventDefault();if(cur)save()}});
+ window.onbeforeunload=()=>dirty?'Neuložené změny':null;
+}
+async function loadList(){LIST=await api('/api/products');renderList()}
+function renderList(){
+ const q=$('#q').value.trim().toLowerCase(); const el=$('#items'); let h='',last=null;
+ const items=LIST.filter(p=>(curSec==='all'||p.section===curSec)&&(!q||(p.name+' '+(p.serie||'')+' '+(p.typ||'')).toLowerCase().includes(q)));
+ for(const p of items){
+  const key=p.section+'|'+p.serie; if(key!==last){h+=`<div class="serie-h">${secName(p.section)} · ${p.serie||'bez série'}</div>`;last=key}
+  h+=`<div class="item${cur&&cur.id===p.id?' on':''}" data-id="${p.id}"><img src="${p.thumb?'/'+p.thumb:''}" onerror="this.style.visibility='hidden'"><div class="nm">${esc(p.name)}${p.new?' <span style="color:var(--acc);font-size:9px">NOVINKA</span>':''}<small>${esc(p.typ||'')} · ${p.n_colors} barev</small></div><div class="mv"><button data-mv="-1" title="Nahoru">▲</button><button data-mv="1" title="Dolů">▼</button></div></div>`;
+ }
+ el.innerHTML=h||'<div class="empty">Nic nenalezeno</div>';
+ el.onclick=async e=>{const b=e.target.closest('button[data-mv]');const it=e.target.closest('.item');if(!it)return;
+  if(b){e.stopPropagation();await move(it.dataset.id,+b.dataset.mv);return}
+  open(it.dataset.id)};
+}
+function secName(k){return (META.sections.find(s=>s.key===k)||{}).cz||k}
+function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+async function move(id,d){
+ const p=LIST.find(x=>x.id===id); const ids=LIST.filter(x=>x.section===p.section).map(x=>x.id); const i=ids.indexOf(id), j=i+d;
+ if(j<0||j>=ids.length)return; [ids[i],ids[j]]=[ids[j],ids[i]];
+ await api('/api/reorder',{method:'POST',body:JSON.stringify({section:p.section,ids})}); await loadList();
+}
+async function open(id){
+ if(dirty&&!confirm('Zahodit neuložené změny?'))return;
+ cur=await api('/api/products/'+id); dirty=false; renderForm(); renderList(); preview();
+}
+async function newProduct(){
+ if(dirty&&!confirm('Zahodit neuložené změny?'))return;
+ const section=curSec==='all'?'tents':curSec; const name=prompt('Název produktu:'); if(!name)return;
+ cur=await api('/api/products',{method:'POST',body:JSON.stringify({section,name:name.toUpperCase()})}); dirty=false; await loadList(); renderForm(); preview();
+}
+function setDirty(){dirty=true;$('#st').textContent='neuloženo'}
+
+// ---------- formulář ----------
+function renderForm(){
+ const p=cur, S=META.schemas[p.section]; const f=$('#form');
+ const secOpts=META.sections.map(s=>`<option value="${s.key}"${s.key===p.section?' selected':''}>${s.cz}</option>`).join('');
+ const serieList=(META.series[p.section]||[]).map(s=>`<option value="${esc(s)}">`).join('');
+ const typList=(META.typs[p.section]||[]).map(s=>`<option value="${esc(s)}">`).join('');
+ const specs=S.specs.filter(k=>k!=='size').map(k=>`<div><label>${META.spec_labels[k]}</label><input type="text" data-spec="${k}" value="${esc(p.specs?.[k]||'')}"></div>`).join('');
+ const extraSpecs=Object.keys(p.specs||{}).filter(k=>!S.specs.includes(k)&&k!=='temps'&&k!=='size').map(k=>`<div><label>${META.spec_labels[k]||k}</label><input type="text" data-spec="${k}" value="${esc(p.specs[k]||'')}"></div>`).join('');
+ const fieldKeys=[...S.fields.filter(k=>k in (p.fields||{})),...Object.keys(p.fields||{}).filter(k=>!S.fields.includes(k))];
+ const fields=fieldKeys.map(k=>fieldRow(k,p.fields[k])).join('');
+ const photos=S.photos.map(([k,l])=>slot(k,l,p[k])).join('');
+ const T=p.specs?.temps||{};
+ f.innerHTML=`
+ <div class="bar"><h1>${esc(p.name)}</h1><span class="status" id="st">uloženo</span><button id="bDup" class="sm">Duplikovat</button><button id="bDel" class="sm dan">Smazat</button><button id="bSave" class="pri">Uložit</button></div>
+ <div class="sec"><h2>Základ</h2>
+  <div class="row">
+   <div style="grid-column:span 2"><label>Název</label><input type="text" id="fName" value="${esc(p.name)}"></div>
+   <div><label>Kategorie</label><select id="fSection">${secOpts}</select></div>
+   <div><label>Série</label><input type="text" id="fSerie" list="dlSerie" value="${esc(p.serie||'')}"><datalist id="dlSerie">${serieList}</datalist></div>
+   <div><label>Typ</label><input type="text" id="fTyp" list="dlTyp" value="${esc(p.typ||'')}"><datalist id="dlTyp">${typList}</datalist></div>
+   ${S.gender?`<div><label>Pohlaví</label><select id="fGender">${Object.entries(META.genders).map(([k,v])=>`<option value="${k}"${(p.gender||'')===k?' selected':''}>${v}</option>`).join('')}</select></div>`:''}
+   <div><label>DMOC od (Kč)</label><input type="number" id="fPmin" value="${p.price_min??''}"></div>
+   <div><label>DMOC do (Kč)</label><input type="number" id="fPmax" value="${p.price_max??''}"></div>
+   ${S.gender?`<div><label>Velikosti (čárkou)</label><input type="text" id="fSizes" value="${esc((p.sizes||[]).join(', '))}"></div><div><label>Rozsah velikostí (zobrazí se)</label><input type="text" id="fSize" value="${esc(p.specs?.size||'')}"></div>`:''}
+   <div class="inline" style="align-self:end"><label class="inline"><input type="checkbox" id="fNew"${p.new?' checked':''}> Novinka</label><label class="inline"><input type="checkbox" id="fWide"${p.wide?' checked':''}> Široká fotka</label></div>
+  </div>
+  <label>Popis</label><textarea id="fDesc">${esc(p.desc||'')}</textarea>
+ </div>
+ <div class="sec"><h2>Specifikace (ikony pod fotkou)</h2><div class="row">${specs}${extraSpecs}</div>
+  ${S.temps?`<label>Teploty (°C)</label><div class="temps"><div><label>Komfort</label><input type="text" id="tC" value="${esc(T.comfort??'')}"></div><div><label>Limit</label><input type="text" id="tL" value="${esc(T.limit??'')}"></div><div><label>Extrém</label><input type="text" id="tE" value="${esc(T.extreme??'')}"></div></div>`:''}
+ </div>
+ <div class="sec"><h2>Materiály a parametry</h2><div id="fields">${fields}</div>
+  <div class="inline"><select id="addField"><option value="">+ přidat pole…</option>${S.fields.filter(k=>!(k in (p.fields||{}))).map(k=>`<option>${k}</option>`).join('')}<option value="__custom">vlastní název…</option></select></div>
+ </div>
+ <div class="sec"><h2>Vlastnosti a aktivity</h2><div class="row"><div><label>Vlastnosti (jedna na řádek)</label><textarea id="fFeat" style="min-height:130px">${esc((p.features||[]).join('\n'))}</textarea></div><div><label>Aktivity (jedna na řádek)</label><textarea id="fAct" style="min-height:130px">${esc((p.activities||[]).join('\n'))}</textarea></div></div></div>
+ <div class="sec"><h2>Ikony (štítky)</h2><div class="badges" id="badges">${META.badges.map(b=>`<div class="bd${(p.badges||[]).some(x=>x.name===b.name)?' on':''}" data-name="${b.name}" data-file="${b.file}" data-label="${esc(b.label)}"><img src="/${b.file}"><small>${esc(b.label)}</small></div>`).join('')}</div></div>
+ ${S.photos.length?`<div class="sec"><h2>Fotky produktu</h2><div class="photos" id="photos">${photos}</div><div class="hint">Přetáhni obrázek do rámečku nebo klikni. Vnitřní stan s průhledným pozadím nahraj jako PNG.</div></div>`:''}
+ <div class="sec"><h2>Barevné varianty</h2>
+  <table class="colors"><thead><tr><th>#</th><th>Barva</th><th>Kódy (čárkou)</th>${S.color_photos.map(k=>`<th>${({front:'Předek',back:'Zadek',art:'Rozkres'})[k]}</th>`).join('')}<th>Společná fotka</th><th></th></tr></thead><tbody id="colors"></tbody></table>
+  <div class="inline" style="margin-top:8px"><button class="sm" id="addColor">+ přidat barvu</button><span class="hint">„Společná fotka“ = předek není barevně specifický, ve vzorníku se pak zobrazí rozkres nebo prázdné pole.</span></div>
+ </div>`;
+ renderColors();
+ // handlers
+ $('#bSave').onclick=save; $('#bDel').onclick=del; $('#bDup').onclick=dup;
+ f.querySelectorAll('input,select,textarea').forEach(el=>el.addEventListener('input',setDirty));
+ $('#fSection').onchange=()=>{collect();cur.section=$('#fSection').value;renderForm();setDirty()};
+ $('#addField').onchange=e=>{let k=e.target.value;if(!k)return;if(k==='__custom'){k=prompt('Název pole:');if(!k)return;k=k.toUpperCase()}collect();cur.fields[k]='';renderForm();setDirty();$$('#fields input')[Object.keys(cur.fields).indexOf(k)*2+1]?.focus()};
+ $('#fields').addEventListener('click',e=>{const b=e.target.closest('.x');if(!b)return;collect();delete cur.fields[b.dataset.k];renderForm();setDirty()});
+ $('#badges').onclick=e=>{const b=e.target.closest('.bd');if(!b)return;b.classList.toggle('on');setDirty()};
+ $$('#photos .slot').forEach(s=>bindSlot(s));
+ $('#addColor').onclick=()=>{collect();cur.colors.push({name:'',codes:[],front:null,back:null,art:null,generic:false});renderColors();setDirty()};
+}
+function fieldRow(k,v){return `<div class="fld"><input type="text" value="${esc(k)}" data-fk><input type="text" value="${esc(v||'')}" data-fv><button class="x" data-k="${esc(k)}" title="Odebrat">×</button></div>`}
+function slot(k,l,v){return `<div class="slot" data-slot="${k}"><div class="dz">${v?`<img src="/${v}">`:`<span>${l}<br>přetáhni sem</span>`}</div><div class="cap"><b>${l}</b>${v?`<button class="sm" data-rm>odebrat</button>`:''}</div></div>`}
+function bindSlot(s){
+ const dz=s.querySelector('.dz'), k=s.dataset.slot;
+ dz.onclick=()=>pick(f=>uploadTo(f,k==='hero_inner'?'inner':(k==='draw'?'rozkresy':'foto'),p=>{cur[k]=p;renderForm();setDirty();preview()}));
+ dz.ondragover=e=>{e.preventDefault();dz.classList.add('over')}; dz.ondragleave=()=>dz.classList.remove('over');
+ dz.ondrop=e=>{e.preventDefault();dz.classList.remove('over');const f=e.dataTransfer.files[0];if(f)uploadTo(f,k==='hero_inner'?'inner':(k==='draw'?'rozkresy':'foto'),p=>{cur[k]=p;renderForm();setDirty();preview()})};
+ const rm=s.querySelector('[data-rm]'); if(rm)rm.onclick=()=>{cur[k]=null;renderForm();setDirty();preview()};
+}
+function pick(cb){const i=document.createElement('input');i.type='file';i.accept='image/*';i.onchange=()=>i.files[0]&&cb(i.files[0]);i.click()}
+async function uploadTo(file,kind,cb){
+ const fd=new FormData();fd.append('file',file);fd.append('kind',kind);fd.append('name',(cur.name||'obr')+'_'+kind);
+ $('#st').textContent='nahrávám…';
+ const r=await fetch('/api/upload',{method:'POST',body:fd}); if(!r.ok){alert('Nahrání selhalo');return}
+ const j=await r.json(); cb(j.path);
+}
+function renderColors(){
+ const S=META.schemas[cur.section]; const tb=$('#colors');
+ tb.innerHTML=cur.colors.map((c,i)=>`<tr data-i="${i}"><td>${i+1}<br><button class="sm" data-cm="-1">▲</button><button class="sm" data-cm="1">▼</button></td><td><input type="text" data-cn value="${esc(c.name)}"></td><td><input type="text" data-cc value="${esc((c.codes||[]).join(', '))}"></td>${S.color_photos.map(k=>`<td><div class="dz" data-ck="${k}">${c[k]?`<img src="/${c[k]}"><span class="rm" title="odebrat">×</span>`:'<span>+</span>'}</div></td>`).join('')}<td><input type="checkbox" data-cg${c.generic?' checked':''}></td><td><button class="x" data-cx title="Smazat barvu">×</button></td></tr>`).join('');
+ tb.querySelectorAll('input').forEach(el=>el.addEventListener('input',setDirty));
+ tb.querySelectorAll('.dz').forEach(dz=>{
+  const i=+dz.closest('tr').dataset.i,k=dz.dataset.ck; const kind=k==='art'?'rozkresy':'foto';
+  dz.onclick=e=>{if(e.target.classList.contains('rm')){collect();cur.colors[i][k]=null;renderColors();setDirty();preview();return}pick(f=>uploadTo(f,kind,p=>{collect();cur.colors[i][k]=p;renderColors();setDirty();preview()}))};
+  dz.ondragover=e=>{e.preventDefault();dz.classList.add('over')};dz.ondragleave=()=>dz.classList.remove('over');
+  dz.ondrop=e=>{e.preventDefault();dz.classList.remove('over');const f=e.dataTransfer.files[0];if(f)uploadTo(f,kind,p=>{collect();cur.colors[i][k]=p;renderColors();setDirty();preview()})};
+ });
+ tb.onclick=e=>{const b=e.target.closest('button');if(!b)return;const i=+b.closest('tr').dataset.i;collect();
+  if(b.dataset.cx!==undefined){if(!confirm('Smazat barvu?'))return;cur.colors.splice(i,1)}
+  else{const j=i+ +b.dataset.cm;if(j<0||j>=cur.colors.length)return;[cur.colors[i],cur.colors[j]]=[cur.colors[j],cur.colors[i]]}
+  renderColors();setDirty();preview()};
+}
+function collect(){
+ const p=cur, S=META.schemas[p.section];
+ p.name=$('#fName').value.trim(); p.serie=$('#fSerie').value.trim(); p.typ=$('#fTyp').value.trim(); p.desc=$('#fDesc').value.trim();
+ p.gender=S.gender?($('#fGender').value||null):null;
+ p.price_min=$('#fPmin').value?+$('#fPmin').value:null; p.price_max=$('#fPmax').value?+$('#fPmax').value:(p.price_min);
+ p.new=$('#fNew').checked; p.wide=$('#fWide').checked;
+ p.specs=p.specs||{}; $$('[data-spec]').forEach(el=>{const v=el.value.trim(); if(v)p.specs[el.dataset.spec]=v; else delete p.specs[el.dataset.spec]});
+ if(S.gender){p.sizes=$('#fSizes').value.split(',').map(s=>s.trim()).filter(Boolean); const sz=$('#fSize').value.trim(); if(sz)p.specs.size=sz; else delete p.specs.size}
+ if(S.temps){const t={comfort:$('#tC').value.trim(),limit:$('#tL').value.trim(),extreme:$('#tE').value.trim()}; if(t.comfort||t.limit||t.extreme)p.specs.temps=t; else delete p.specs.temps}
+ const F={}; $$('#fields .fld').forEach(r=>{const k=r.querySelector('[data-fk]').value.trim().toUpperCase(), v=r.querySelector('[data-fv]').value.trim(); if(k)F[k]=v}); p.fields=F;
+ p.features=$('#fFeat').value.split('\n').map(s=>s.trim()).filter(Boolean); p.activities=$('#fAct').value.split('\n').map(s=>s.trim()).filter(Boolean);
+ p.badges=$$('#badges .bd.on').map(b=>({name:b.dataset.name,file:b.dataset.file,label:b.dataset.label}));
+ $$('#colors tr').forEach((r,i)=>{const c=p.colors[i]; c.name=r.querySelector('[data-cn]').value.trim(); c.codes=r.querySelector('[data-cc]').value.split(',').map(s=>s.trim()).filter(Boolean); c.generic=r.querySelector('[data-cg]').checked});
+ return p;
+}
+async function save(){
+ collect(); if(!cur.name){alert('Chybí název');return}
+ cur=await api('/api/products/'+cur.id,{method:'PUT',body:JSON.stringify(cur)}); dirty=false; $('#st').textContent='uloženo';
+ META=await api('/api/meta'); await loadList(); renderForm(); preview();
+}
+async function del(){ if(!confirm(`Smazat „${cur.name}“?`))return; await api('/api/products/'+cur.id,{method:'DELETE'}); cur=null; dirty=false; $('#form').innerHTML='<div class="empty">Produkt smazán.</div>'; $('#pv').src='about:blank'; await loadList(); }
+async function dup(){ collect(); const c=JSON.parse(JSON.stringify(cur)); delete c.id; c.name=c.name+' KOPIE'; cur=await api('/api/products',{method:'POST',body:JSON.stringify(c)}); dirty=false; await loadList(); renderForm(); preview(); }
+async function preview(){
+ if(!cur)return; collect();
+ const html=await api('/api/preview',{method:'POST',body:JSON.stringify(cur)}); $('#pv').srcdoc=html;
+}
+document.addEventListener('input',e=>{if(cur&&e.target.closest('#form'))clearTimeout(window._pt),window._pt=setTimeout(preview,600)});
+// ---------- generování ----------
+function openGen(){$('#modal').style.display='flex';$('#mLog').textContent='Připraveno.';$('#mHtml').style.display=$('#mPdf').style.display='none'}
+async function runGen(){
+ if(dirty&&!confirm('Máš neuložené změny. Generovat bez nich?'))return;
+ $('#mRun').disabled=true; $('#mLog').textContent='Generuji… (PDF trvá zhruba minutu)';
+ try{const r=await api('/api/generate',{method:'POST',body:JSON.stringify({pdf:$('#gPdf').checked,push:$('#gPush').checked})});
+  $('#mLog').textContent=r.log; $('#mHtml').href=r.html; $('#mHtml').style.display='inline'; if($('#gPdf').checked){$('#mPdf').href=r.pdf;$('#mPdf').style.display='inline'}}
+ catch(e){$('#mLog').textContent='CHYBA: '+e.message}
+ $('#mRun').disabled=false;
+}
+init();
+</script>
+</body>
+</html>
