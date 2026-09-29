@@ -135,31 +135,42 @@ def composite_photo(pno,x0,x1,y_top,y_bot,dpi=300):
     canvas=Image.new('RGBA',(W,H),(255,255,255,255))
     order={x:i for i,(_,x) in enumerate(infos)}
     mainb=max(keep,key=lambda t:t[0].width*t[0].height)[0]
-    def edge_alpha(im,shadow=False):
-        # průhledné jen pozadí spojené s okrajem; u hlavní fotky i měkký stín (poloprůhledný), aby nezakrýval vložený rastr
-        r,g,bb,a=im.split(); from PIL import ImageChops as IC, ImageDraw as ID
-        mn=IC.darker(IC.darker(r,g),bb)
-        def flood(th):
-            m=mn.point(lambda v:255 if v>=th else 0); Wm,Hm=m.size; pad=Image.new('L',(Wm+2,Hm+2),255); pad.paste(m,(1,1))
-            for pt in ((0,0),(Wm+1,0),(0,Hm+1),(Wm+1,Hm+1)):
-                if pad.getpixel(pt)==255: ID.floodfill(pad,pt,128)
-            return pad.crop((1,1,Wm+1,Hm+1)).point(lambda v:255 if v==128 else 0)
-        bg=flood(244)
-        alpha=IC.invert(bg)
+    def edge_alpha(im,shadow=False,light=None):
+        # průhledné pozadí napojené na okraj; shadow=True: i neutrálně šedý stín (světlý, nesaturovaný) napojený na okraj
+        r,g,bb,a=im.split(); from PIL import ImageChops as IC, ImageDraw as ID, ImageFilter as IF
+        mn=IC.darker(IC.darker(r,g),bb); mx=IC.lighter(IC.lighter(r,g),bb); sat=IC.subtract(mx,mn)
         if shadow:
-            # hlavní fotka: bílé pozadí průhledné i bez napojení na okraj, stín napojený na okraj poloprůhledný
-            alpha=IC.darker(alpha,mn.point(lambda v:0 if v>=246 else 255))
-            sh=flood(190)
-            grad=mn.point(lambda v:int(max(0,min(255,(246-v)*255/95))))
-            alpha=Image.composite(grad,alpha,sh)
+            m=IC.darker(mn.point(lambda v:255 if v>=120 else 0),sat.point(lambda v:255 if v<=18 else 0))
+        elif light:
+            m=IC.darker(mn.point(lambda v:255 if v>=light else 0),sat.point(lambda v:255 if v<=14 else 0))
+        else:
+            m=mn.point(lambda v:255 if v>=244 else 0)
+        Wm,Hm=m.size; pad=Image.new('L',(Wm+2,Hm+2),255); pad.paste(m,(1,1))
+        for pt in ((0,0),(Wm+1,0),(0,Hm+1),(Wm+1,Hm+1),(Wm//2,0),(Wm//2,Hm+1),(0,Hm//2),(Wm+1,Hm//2)):
+            if pad.getpixel(pt)==255: ID.floodfill(pad,pt,128)
+        bg=pad.crop((1,1,Wm+1,Hm+1)).point(lambda v:255 if v==128 else 0)
+        # bílé plochy nenapojené na okraj (uzavřené zbytky pozadí): průhledné, pokud jsou větší než logo (>0,3 % plochy)
+        wm=mn.point(lambda v:255 if v>=244 else 0); wm=IC.subtract(wm,bg); px=wm.load(); minarea=int(Wm*Hm*0.003)
+        for yy in range(0,Hm,6):
+            for xx in range(0,Wm,6):
+                if px[xx,yy]==255:
+                    ID.floodfill(wm,(xx,yy),128); cnt=sum(1 for v in wm.getdata() if v==128)
+                    if cnt>=minarea: ID.floodfill(wm,(xx,yy),200)
+                    else: ID.floodfill(wm,(xx,yy),0)
+        bg=IC.lighter(bg,wm.point(lambda v:255 if v==200 else 0))
+        alpha=IC.invert(bg).filter(IF.MinFilter(3)).filter(IF.GaussianBlur(0.8))
         im.putalpha(alpha); return im
-    for b,x in sorted(keep,key=lambda t:(1 if t[0]==mainb else 0,order.get(t[1],0))):
+    multi=len(keep)>1
+    # pořadí: hlavní fotka vespod, vložené pohledy (vnitřní stan, zadní strana) nahoře; u vícevrstvých bez stínů
+    for b,x in sorted(keep,key=lambda t:(0 if t[0]==mainb else 1,order.get(t[1],0))):
         try: im=raw_rgba(x)
         except Exception:
             if os.environ.get('PHOTO_DEBUG'): import traceback; traceback.print_exc()
             return None
         im=im.resize((max(1,int(b.width*sc)),max(1,int(b.height*sc))))
-        if len(keep)>1 and im.getextrema()[3][0]==255: im=edge_alpha(im,shadow=(b==mainb))
+        if multi and im.getextrema()[3][0]==255:
+            # hlavní fotka: pryč pozadí i stín (stín by překrýval vložený pohled); vložený pohled: jen bílé pozadí (síťovina je světle šedá)
+            im=edge_alpha(im,shadow=(b==mainb),light=None if b==mainb else 195)
         canvas.alpha_composite(im,(int((b.x0-u.x0)*sc),int((b.y0-u.y0)*sc)))
     if os.environ.get('PHOTO_DEBUG'): print('   COMPOSITE items',[(x,[round(v) for v in b]) for b,x in keep])
     return canvas.convert('RGB'),u
