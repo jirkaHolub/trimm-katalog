@@ -44,7 +44,7 @@ SCHEMAS = {
     'backpacks': dict(
         fields=['MATERIÁL', 'ROZMĚR'],
         specs=['volume', 'weight', 'dims', 'pack'],
-        photos=[('hero', 'Hlavní fotka (nepovinná – jinak předek a zadek barvy)'), ('draw', 'Rozkres')],
+        photos=[('hero', 'Přední pohled'), ('hero_back', 'Zadní pohled'), ('draw', 'Rozkres')],
         color_photos=['front', 'back', 'art'], temps=False, gender=False,
         typ=['batoh', 'lodní', 'vodní', 'taška', 'láhev', 'pláštěnka', 'ledvinka', 'peněženka'],
     ),

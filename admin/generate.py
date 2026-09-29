@@ -76,6 +76,8 @@ class Renderer:
         cls = 'photo'
         if r.get('typ') in SMALL_TYP: cls += ' small'
         if r.get('wide'): cls += ' wide'
+        if r.get('hero') and r.get('hero_back'):
+            return f'<div class="{cls} has-hero"><img class="p-back" src="{self.src(r["hero_back"])}" alt="{E(r["name"])} – zadní strana" loading="lazy"><img class="p-front" src="{self.src(r["hero"])}" alt="{E(r["name"])}" loading="lazy"></div>'
         if r.get('hero') and r.get('hero_inner'):
             return f'<div class="{cls} has-hero two"><img class="p-hero" src="{self.src(r["hero"])}" alt="{E(r["name"])}" loading="lazy"><img class="p-inner" src="{self.src(r["hero_inner"])}" alt="{E(r["name"])} – vnitřní stan" loading="lazy"></div>'
         if r.get('hero'):
