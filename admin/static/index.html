@@ -204,7 +204,7 @@ function renderForm(){
  </div>
  <div class="sec"><h2>Vlastnosti a aktivity</h2><div class="row"><div><label>Vlastnosti (jedna na řádek)</label><textarea id="fFeat" style="min-height:130px">${esc((p.features||[]).join('\n'))}</textarea></div><div><label>Aktivity (jedna na řádek)</label><textarea id="fAct" style="min-height:130px">${esc((p.activities||[]).join('\n'))}</textarea></div></div></div>
  <div class="sec"><h2>Ikony (štítky)</h2><div class="badges" id="badges">${META.badges.map(b=>`<div class="bd${(p.badges||[]).some(x=>x.name===b.name)?' on':''}" data-name="${b.name}" data-file="${b.file}" data-label="${esc(b.label)}"><img src="/${b.file}"><small>${esc(b.label)}</small></div>`).join('')}</div></div>
- ${S.photos.length?`<div class="sec"><h2>Fotky produktu</h2><div class="photos" id="photos">${photos}</div><div class="hint">Přetáhni obrázek do rámečku nebo klikni. Vnitřní stan s průhledným pozadím nahraj jako PNG.</div>${S.color_photos.includes('back')?`<div class="inline" style="margin-top:8px"><button class="sm" id="bCompose">Složit hlavní fotku z předku + zadku</button><select id="composeColor">${(p.colors||[]).map((c,i)=>`<option value="${i}"${c.front&&c.back?'':' disabled'}>${esc(c.name||('barva '+(i+1)))}${c.front&&c.back?'':' (chybí předek/zadek)'}</option>`).join('')}</select><span class="hint">zadek menší vlevo, předek vpravo – jako v SS26</span></div>`:''}</div>`:''}
+ ${S.photos.length?`<div class="sec"><h2>Fotky produktu</h2><div class="photos" id="photos">${photos}</div><div class="hint">Přetáhni obrázek do rámečku nebo klikni. Vnitřní stan s průhledným pozadím nahraj jako PNG.</div></div>`:''}
  <div class="sec"><h2>Barevné varianty</h2>
   <table class="colors"><thead><tr><th>#</th><th>Barva</th><th>Kódy (čárkou)</th>${S.color_photos.map(k=>`<th>${({front:'Předek',back:'Zadek',art:'Rozkres'})[k]}</th>`).join('')}<th>Společná fotka</th><th></th></tr></thead><tbody id="colors"></tbody></table>
   <div class="inline" style="margin-top:8px"><button class="sm" id="addColor">+ přidat barvu</button><span class="hint">„Společná fotka“ = předek není barevně specifický, ve vzorníku se pak zobrazí rozkres nebo prázdné pole.</span></div>
@@ -218,7 +218,6 @@ function renderForm(){
  $('#fields').addEventListener('click',e=>{const b=e.target.closest('.x');if(!b)return;collect();delete cur.fields[b.dataset.k];renderForm();setDirty()});
  $('#badges').onclick=e=>{const b=e.target.closest('.bd');if(!b)return;b.classList.toggle('on');setDirty()};
  $$('#photos .slot').forEach(s=>bindSlot(s));
- const bc=$('#bCompose'); if(bc)bc.onclick=async()=>{collect();const c=cur.colors[+$('#composeColor').value];if(!c||!c.front||!c.back){alert('Vybraná barva nemá předek i zadek.');return}$('#st').textContent='skládám…';try{const r=await api('/api/compose',{method:'POST',body:JSON.stringify({front:c.front,back:c.back})});cur.hero=r.path;renderForm();setDirty();preview()}catch(e){alert('Složení selhalo: '+e.message)}};
  $('#addColor').onclick=()=>{collect();cur.colors.push({name:'',codes:[],front:null,back:null,art:null,generic:false});renderColors();setDirty()};
 }
 function fieldRow(k,v){return `<div class="fld"><input type="text" value="${esc(k)}" data-fk><input type="text" value="${esc(v||'')}" data-fv><button class="x" data-k="${esc(k)}" title="Odebrat">×</button></div>`}
