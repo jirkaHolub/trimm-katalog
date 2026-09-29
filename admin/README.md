@@ -3,6 +3,7 @@
 Jednoduchá aplikace pro správu produktů katalogu a generování HTML + PDF.
 
 ## Spuštění
+Dvojklik na `admin/start.command` (poprvé macOS možná zeptá na povolení), nebo v Terminálu:
 ```
 python3 admin/app.py
 ```

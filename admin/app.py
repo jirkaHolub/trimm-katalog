@@ -1,6 +1,10 @@
 """Administrace katalogu TRIMM. Spuštění: python3 admin/app.py  ->  http://localhost:8765"""
-import os, re, io, json, hashlib, unicodedata, threading
-from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+import os, re, io, json, hashlib, unicodedata, threading, sys
+try:
+    from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+except ImportError:
+    print('Chybí balíčky. Nainstaluj je příkazem:\n  ' + sys.executable + ' -m pip install --user fastapi "uvicorn[standard]" python-multipart pillow pymupdf')
+    sys.exit(1)
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from PIL import Image
@@ -111,7 +115,13 @@ def gen(body: dict):
     return dict(log='\n'.join(log), html='/repo/ss27/trimm_katalog_SS27.html', pdf='/repo/vystupy/trimm_katalog_SS27_CZ.pdf')
 
 if __name__ == '__main__':
-    import uvicorn, webbrowser, threading
+    import uvicorn, webbrowser, socket
     if not os.path.exists(db.DB_PATH): print('Databáze neexistuje, spusť nejdřív: python3 admin/import_catalog.py')
-    threading.Timer(1.0, lambda: webbrowser.open('http://localhost:8765')).start()
-    uvicorn.run(app, host='127.0.0.1', port=8765, log_level='warning')
+    port = int(os.environ.get('PORT', 8765))
+    for cand in range(port, port + 10):
+        with socket.socket() as sk:
+            if sk.connect_ex(('127.0.0.1', cand)) != 0: port = cand; break
+    url = f'http://localhost:{port}'
+    print(f'Administrace běží na {url}  (ukončení: Ctrl+C)')
+    threading.Timer(1.0, lambda: webbrowser.open(url)).start()
+    uvicorn.run(app, host='127.0.0.1', port=port, log_level='warning')
