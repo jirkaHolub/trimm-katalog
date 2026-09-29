@@ -102,6 +102,8 @@ table.colors .dz:hover .rm{display:block}
 <div id="modal"><div class="box"><b id="mTitle">Generování katalogu</b><div class="inline"><label class="inline"><input type="checkbox" id="gPdf" checked> Vytvořit i PDF</label><label class="inline"><input type="checkbox" id="gPush"> Odeslat na GitHub (commit + push)</label></div><pre id="mLog">Připraveno.</pre><div class="inline"><button id="mRun" class="pri">Spustit</button><a id="mHtml" target="_blank" style="display:none">Otevřít HTML</a><a id="mPdf" target="_blank" style="display:none">Otevřít PDF</a><span class="sp"></span><button id="mClose">Zavřít</button></div></div></div>
 
 <script>
+window.addEventListener('error',e=>{const st=document.getElementById('st');if(st)st.textContent='CHYBA: '+e.message;console.error(e.error||e.message)});
+window.addEventListener('unhandledrejection',e=>{const st=document.getElementById('st');if(st)st.textContent='CHYBA: '+(e.reason&&e.reason.message||e.reason);console.error(e.reason)});
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const api=async(u,o={})=>{const r=await fetch(u,{headers:{'Content-Type':'application/json'},...o});if(!r.ok)throw new Error(await r.text());return r.headers.get('content-type')?.includes('json')?r.json():r.text()};
 let META, LIST=[], cur=null, dirty=false, curSec='all';
@@ -112,8 +114,8 @@ async function init(){
  ch.onclick=e=>{const c=e.target.closest('.chip');if(!c)return;curSec=c.dataset.s;$$('#secChips .chip').forEach(x=>x.classList.toggle('on',x===c));renderList()};
  $('#q').oninput=renderList;
  await loadList();
- const pid=new URLSearchParams(location.search).get('id'); if(pid) open(pid);
- $('#bNew').onclick=newProduct; $('#bGen').onclick=openGen; $('#bOpen').onclick=()=>window.open('/repo/ss27/trimm_katalog_SS27.html');
+ const pid=new URLSearchParams(location.search).get('id'); if(pid) openProduct(pid);
+ $('#bNew').onclick=newProduct; $('#bGen').onclick=openGen; $('#bOpen').onclick=()=>window.open('/repo/ss27/trimm_katalog_SS27.html','_blank');
  $('#bPrev').onclick=()=>preview();
  $('#mClose').onclick=()=>$('#modal').style.display='none'; $('#mRun').onclick=runGen;
  document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='s'){e.preventDefault();if(cur)save()}});
@@ -130,7 +132,7 @@ function renderList(){
  el.innerHTML=h||'<div class="empty">Nic nenalezeno</div>';
  el.onclick=async e=>{const b=e.target.closest('button[data-mv]');const it=e.target.closest('.item');if(!it)return;
   if(b){e.stopPropagation();await move(it.dataset.id,+b.dataset.mv);return}
-  open(it.dataset.id)};
+  openProduct(it.dataset.id).catch(e=>alert('Nepodařilo se otevřít produkt: '+e.message))};
 }
 function secName(k){return (META.sections.find(s=>s.key===k)||{}).cz||k}
 function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
@@ -139,7 +141,7 @@ async function move(id,d){
  if(j<0||j>=ids.length)return; [ids[i],ids[j]]=[ids[j],ids[i]];
  await api('/api/reorder',{method:'POST',body:JSON.stringify({section:p.section,ids})}); await loadList();
 }
-async function open(id){
+async function openProduct(id){
  if(dirty&&!confirm('Zahodit neuložené změny?'))return;
  cur=await api('/api/products/'+id); dirty=false; renderForm(); renderList(); preview();
 }
