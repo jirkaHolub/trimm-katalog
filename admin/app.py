@@ -152,6 +152,23 @@ def edit(body: dict):
     else: raise HTTPException(400, 'neznámá operace')
     return _save_image(im, sub, base, force_png)
 
+@app.post('/api/compose')
+def compose(body: dict):
+    """složí hlavní fotku batohu: zadní pohled menší vlevo, přední větší vpravo (jako v SS26)"""
+    from PIL import ImageChops
+    def load_trim(path):
+        im, sub, base = _load_upload(path); rgb = im.convert('RGB')
+        m = _edge_mask(rgb, int(body.get('thresh', 30))); rgb = Image.composite(Image.new('RGB', rgb.size, (255, 255, 255)), rgb, m)
+        bb = ImageChops.difference(rgb, Image.new('RGB', rgb.size, (255, 255, 255))).convert('L').point(lambda v: 255 if v > 18 else 0).getbbox()
+        return (rgb.crop(bb) if bb else rgb), base
+    front, base = load_trim(body['front']); back, _ = load_trim(body['back'])
+    H = 1200; fr = front.resize((int(front.width * H / front.height), H)); bh = int(H * float(body.get('back_scale', 0.72))); bk = back.resize((int(back.width * bh / back.height), bh))
+    gap = int(H * float(body.get('gap', -0.04)))   # záporná mezera = mírný překryv
+    W = bk.width + gap + fr.width; canvas = Image.new('RGB', (max(W, 1), H), (255, 255, 255))
+    canvas.paste(bk, (0, H - bk.height)); canvas.paste(fr, (bk.width + gap, 0))
+    pad = int(H * 0.03); out = Image.new('RGB', (canvas.width + 2 * pad, H + 2 * pad), (255, 255, 255)); out.paste(canvas, (pad, pad))
+    return _save_image(out, 'foto', re.sub(r'_front$', '', base) + '_composite')
+
 @app.get('/api/library')
 def library(q: str = '', sub: str = ''):
     out = []
