@@ -57,7 +57,10 @@ def white_corners(im):
 class Renderer:
     def __init__(self, img_prefix):
         self.pfx = img_prefix
-    def src(self, path): return E(self.pfx + path)
+        self.sized = img_prefix == '/'   # zobrazení přímo z aplikace: místo originálů (až 1600 px) posílat zmenšeniny podle velikosti v kartě
+    def src(self, path, w=700):
+        if self.sized and path.startswith('uploads/'): return E(f'/thumb/{path}?w={w}')
+        return E(self.pfx + path)
     def is_product_shot(self, path):
         """produktová fotka na bílém pozadí (ne lifestylová) – jen taková se ukazuje jako zadní pohled"""
         try:
@@ -106,7 +109,7 @@ class Renderer:
         return f'<div class="{cls}">{imgs}</div>'
     def badges_html(self, r):
         if not r.get('badges'): return ''
-        return '<div class="badges">' + ''.join(f'<img src="{self.src(b["file"])}" alt="{E(b.get("label") or "")}" title="{E(b.get("label") or "")}" loading="lazy">' for b in r['badges'] if b.get('file')) + '</div>'
+        return '<div class="badges">' + ''.join(f'<img src="{self.src(b["file"], 240)}" alt="{E(b.get("label") or "")}" title="{E(b.get("label") or "")}" loading="lazy">' for b in r['badges'] if b.get('file')) + '</div>'
     def draw_html(self, r):
         if not r.get('draw'): return ''
         return f'<div class="draw"><img src="{self.src(r["draw"])}" alt="{E(r["name"])} – rozměry" loading="lazy"></div>'
@@ -114,7 +117,7 @@ class Renderer:
         items = []
         for i, c in enumerate(r['colors']):
             art = c.get('art') or (c.get('front') if not c.get('generic') else None)
-            img = f'<img class="c-art{" c-photo" if not c.get("art") else ""}" src="{self.src(art)}" alt="{E(r["name"])} {E(c["name"])}" loading="lazy">' if art else '<span class="c-none" title="vizuál doplníme"></span>'
+            img = f'<img class="c-art{" c-photo" if not c.get("art") else ""}" src="{self.src(art, 200)}" alt="{E(r["name"])} {E(c["name"])}" loading="lazy">' if art else '<span class="c-none" title="vizuál doplníme"></span>'
             items.append(f'<div class="c-item" title="{E(c["name"])}"><div class="c-n">{i + 1}</div>{img}<div class="c-name">{E(c["name"])}</div></div>')
         return f'<div class="colors">{"".join(items)}</div>'
     def fields_html(self, r):
@@ -169,7 +172,7 @@ def groups(items):
     return od
 
 def css(img_prefix, hero, label=''):
-    return CSS_BASE.replace('__HERO__', img_prefix + hero if hero else '').replace('__LABEL__', label.replace('"', ''))
+    return CSS_BASE.replace('__HERO__', (f'/thumb/{hero}?w=1600' if img_prefix == '/' else img_prefix + hero) if hero else '').replace('__LABEL__', label.replace('"', ''))
 
 def render_document(cat, products, sections, img_prefix):
     R = Renderer(img_prefix); cfg = catalog_cfg(cat)
@@ -185,7 +188,7 @@ def render_document(cat, products, sections, img_prefix):
         toc += ''.join(f'<a href="#s-{sec}-{slug(k0)}" class="toc-s" data-sec="{sec}"><i style="background:{serie_color(sec, k0, s["color"])}"></i>{E(k0)}<span>{n}</span></a>' for k0, (k, n) in tc.items())
         toc += '</div></div>'
         chips += f'<button class="chip" data-f="{sec}" style="--tc:{s["color"]}">{E(s["cz"].upper())}</button>'
-        pages = ''.join(f'<img src="{R.src(p)}" alt="Technické informace" loading="lazy">' for p in (s.get('pages') or []) if store.exists(p))
+        pages = ''.join(f'<img src="{R.src(p, 1600)}" alt="Technické informace" loading="lazy">' for p in (s.get('pages') or []) if store.exists(p))
         info = f'<div class="info-pages">{pages}</div>' if pages else ''
         body += f'<section class="sec" id="sec-{sec}" data-sec="{sec}" style="--tc:{s["color"]}"><div class="sec-head"><div class="sec-bar"></div><div><h2>{E(s["title"])}</h2><div class="sec-cz">{E(s["cz"])}</div></div><span class="sec-cnt">{len(items)} modelů</span></div>{info}'
         for k, v in gs.items():

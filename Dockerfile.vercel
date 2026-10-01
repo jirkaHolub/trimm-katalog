@@ -17,6 +17,9 @@ RUN mkdir -p /app/base && curl -fsSL https://codeload.github.com/jirkaHolub/trim
 WORKDIR /app/admin
 COPY admin/requirements.txt .
 RUN pip install --no-cache-dir -r requirements.txt
+# zmenšeniny fotek předem, ať je katalog online neskládá z originálů (vlastní krok, aby se při změně kódu nemusel opakovat)
+COPY admin/prethumb.py ./
+RUN python prethumb.py /app/base
 COPY admin/*.py ./
 COPY admin/static ./static
 

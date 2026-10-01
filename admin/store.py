@@ -18,7 +18,17 @@ BASE = os.environ.get('KATALOG_BLOB_BASE') or (f'https://{TOKEN.split("_")[3].lo
 def fs_path(key):
     """skutečná cesta v repu (lokální režim)"""
     return os.path.join(HERE, key) if key.startswith('uploads/') else os.path.join(REPO, key)
-def base_path(key): return os.path.join(BASE_DIR, key)
+_ci = None
+def base_path(key):
+    """cesta souboru v základu; data vznikla na Macu, kde se velká a malá písmena v názvech nerozlišují, proto se při neshodě hledá bez ohledu na velikost"""
+    global _ci
+    fp = os.path.join(BASE_DIR, key)
+    if os.path.exists(fp) or not REMOTE: return fp
+    if _ci is None:
+        _ci = {}
+        for root, _, files in os.walk(BASE_DIR):
+            for f in files: p = os.path.join(root, f); _ci.setdefault(os.path.relpath(p, BASE_DIR).lower(), p)
+    return _ci.get(key.lower(), fp)
 def cache_dir(name):
     d = os.path.join(TMP if REMOTE else HERE, 'cache', name); os.makedirs(d, exist_ok=True); return d
 def safe(key): return bool(key) and '..' not in key and not key.startswith('/')

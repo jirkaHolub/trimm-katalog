@@ -208,13 +208,17 @@ def thumb(path, width=320):
     from PIL import Image
     st = store.stat(path)
     if not store.safe(path) or not path.startswith('uploads/') or not st: return None
+    if store.REMOTE and not st.get('blob'):   # zmenšeniny souborů ze základu se chystají už při sestavení obrazu (prethumb.py)
+        for ext in ('jpg', 'png'):
+            pre = os.path.join(store.BASE_DIR + '-thumbs', str(width), os.path.relpath(store.base_path(path), store.BASE_DIR) + '.' + ext)
+            if os.path.exists(pre): return pre
     d = store.cache_dir('thumbs'); h = hashlib.md5(f'{path}|{int(st["mtime"]) if store.REMOTE else st["mtime"]}|{width}'.encode()).hexdigest()
     for ext in ('jpg', 'png'):
         if os.path.exists(os.path.join(d, f'{h}.{ext}')): return os.path.join(d, f'{h}.{ext}')
     im = Image.open(store.local(path)); im.load(); alpha = im.mode in ('RGBA', 'LA', 'P')
     im = im.convert('RGBA' if alpha else 'RGB'); im.thumbnail((width, width))
     out = os.path.join(d, f'{h}.{"png" if alpha else "jpg"}')
-    im.save(out, optimize=True) if alpha else im.save(out, quality=80)
+    im.save(out, optimize=True) if alpha else im.save(out, quality=84 if width >= 600 else 80)
     return out
 
 # ---------- úložiště fotek ----------
