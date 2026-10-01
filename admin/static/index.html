@@ -434,7 +434,7 @@ function renderColors(){
   const i=+dz.closest('tr').dataset.i,k=dz.dataset.ck;
   bindDz(dz,()=>cur.colors[i][k],p=>{collect();cur.colors[i][k]=p;renderColors()},kindFor(k));
  });
- tb.onclick=e=>{const b=e.target.closest('button');if(!b)return;const i=+b.closest('tr').dataset.i;collect();
+ tb.onclick=e=>{const b=e.target.closest('button[data-cx],button[data-cm]');if(!b)return;const i=+b.closest('tr').dataset.i;collect();
   if(b.dataset.cx!==undefined){if(!confirm('Smazat barvu?'))return;cur.colors.splice(i,1)}
   else{const j=i+ +b.dataset.cm;if(j<0||j>=cur.colors.length)return;[cur.colors[i],cur.colors[j]]=[cur.colors[j],cur.colors[i]]}
   renderColors();setDirty();preview()};
@@ -632,10 +632,14 @@ function renderFormView(){
   h+=`<div class="hint" style="margin-bottom:10px">Načteno: ${P.files.map(esc).join(', ')} · ${P.rows} řádků · ${P.n_models} modelů</div>
   ${P.warnings.map(w=>`<div class="lock">${esc(w)}</div>`).join('')}
   <div class="tiles"><div><b>${same}</b>karet sedí s formulářem</div><div><b>${chg.length}</b>karet ke změně</div><div><b>${P.new.length}</b>modelů bez karty</div><div><b>${P.missing.length}</b>karet není ve formuláři</div></div>`;
-  if(!chg.length&&!P.new.length&&!P.missing.length)h+='<div class="sec"><h2>Hotovo</h2>Katalog odpovídá formuláři, není co měnit.</div>';
+  const sk=Object.entries(P.skipped||{});
+  if(sk.length)h+=`<div class="hint" style="margin-bottom:10px">Formulář neobsahuje žádný model ze sekcí: ${sk.map(([k,n])=>esc(sec(k))+' ('+n+')').join(', ')}. Jejich karty zůstávají beze změny.</div>`;
+  if(!chg.length&&!P.new.length&&!P.missing.length&&!P.order.moved)h+='<div class="sec"><h2>Hotovo</h2>Katalog odpovídá formuláři včetně pořadí produktů, není co měnit.</div>';
   else{
-   h+=`<div class="sec"><h2>Co se má podle formuláře upravit</h2><div class="inline"><label class="inline"><input type="checkbox" id="oPrice" checked> ceny</label><label class="inline"><input type="checkbox" id="oAdd" checked> přidat nové barvy</label><label class="inline"><input type="checkbox" id="oRem" checked> ubrat barvy, které ve formuláři nejsou</label><label class="inline"><input type="checkbox" id="oSize" checked> velikosti</label><label class="inline"><input type="checkbox" id="oRen"> přepsat názvy barev podle formuláře</label></div>
+   h+=`<div class="sec"><h2>Co se má podle formuláře upravit</h2><div class="inline"><label class="inline"><input type="checkbox" id="oPrice" checked> ceny</label><label class="inline"><input type="checkbox" id="oAdd" checked> přidat nové barvy</label><label class="inline"><input type="checkbox" id="oRem" checked> ubrat barvy, které ve formuláři nejsou</label><label class="inline"><input type="checkbox" id="oSize" checked> velikosti</label><label class="inline"><input type="checkbox" id="oRen"> přepsat názvy barev podle formuláře</label><label class="inline"><input type="checkbox" id="oOrd" checked> pořadí produktů přesně podle formuláře</label></div>
     <div class="hint">Texty, fotky, rozkresy a ikony hotových karet zůstávají. Nová barva dostane fotku a rozkres, pokud je už má stejný model v jiném katalogu.</div></div>`;
+   h+=`<div class="sec"><h2>Pořadí produktů</h2>${P.order.moved?`<b class="chg" style="color:#c77700">${pl(P.order.moved,'karta je','karty jsou','karet je')} na jiném místě než ve formuláři</b> – seřadí se přesně podle formuláře. Pořadí barev u karet se nemění.`:'Pořadí produktů odpovídá formuláři.'}
+    ${P.order.splits.map(x=>`<div class="lock" style="margin:8px 0 0"><b>${x.names.map(esc).join(', ')}</b> (série „${esc(x.serie||'bez série')}“): po seřazení bude stát samostatně za sérií „${esc(x.after||'bez série')}“ a v katalogu tak vznikne další nadpis série. Jestli patří do série „${esc(x.after||'bez série')}“, oprav u karty pole Série; jinak je to v pořádku.</div>`).join('')}</div>`;
    if(chg.length)h+=`<div class="sec"><h2>Změny u hotových karet (${chg.length})</h2><table class="plan">${chg.map(x=>`<tr><td><input type="checkbox" data-mk="${esc(x.key)}" checked></td><td class="nm"><a href="#/k/${c.code}/p/${encodeURIComponent(x.pid)}" style="color:inherit">${esc(x.name)}</a></td><td>${chgHtml(x.changes)}</td></tr>`).join('')}</table></div>`;
    if(P.new.length)h+=`<div class="sec"><h2>Modely ve formuláři, které v katalogu nemají kartu (${P.new.length})</h2><table class="plan">${P.new.map(n=>`<tr><td></td><td class="nm">${esc(n.name)}</td><td>${esc(sec(n.section))} · ${esc(n.typ)} · ${n.price_min!=null?fmtKc(n.price_min)+' Kč':'bez ceny'} · ${pl(n.colors.length,'barva','barvy','barev')}<br><span class="hint">${n.colors.map(esc).join(', ')}</span></td>
      <td><select data-nk="${esc(n.key)}">${n.source?`<option value="copy">převzít hotovou kartu z ${esc(n.source.label)}</option>`:''}<option value="create">založit novou prázdnou kartu</option>${P.missing.filter(m=>m.section===n.section).map(m=>`<option value="pair:${esc(m.pid)}"${n.suggest===m.pid?' selected':''}>je to přejmenovaný model: ${esc(m.name)}</option>`).join('')}<option value="skip">přeskočit</option></select></td></tr>`).join('')}</table>
@@ -654,13 +658,13 @@ function renderFormView(){
  const sync=()=>{const paired=$$('[data-nk]').map(s=>s.value).filter(v=>v.startsWith('pair:')).map(v=>v.slice(5));$$('[data-rm]').forEach(x=>{const p=paired.includes(x.dataset.rm);x.disabled=p;if(p)x.checked=false})};
  $$('[data-nk]').forEach(s=>s.onchange=sync);sync();
  if($('#fGo'))$('#fGo').onclick=async()=>{
-  const body={opts:{prices:$('#oPrice').checked,add_colors:$('#oAdd').checked,remove_colors:$('#oRem').checked,sizes:$('#oSize').checked,rename_colors:$('#oRen').checked},
+  const body={opts:{prices:$('#oPrice').checked,add_colors:$('#oAdd').checked,remove_colors:$('#oRem').checked,sizes:$('#oSize').checked,rename_colors:$('#oRen').checked,order:$('#oOrd').checked},
    skip:$$('[data-mk]').filter(x=>!x.checked).map(x=>x.dataset.mk),new:Object.fromEntries($$('[data-nk]').map(s=>[s.dataset.nk,s.value])),remove:$$('[data-rm]').filter(x=>x.checked).map(x=>x.dataset.rm)};
   const nNew=Object.values(body.new).filter(v=>v!=='skip').length;
-  if(!confirm(`Provést v katalogu ${c.label}?\n\n• upravit ${$$('[data-mk]').filter(x=>x.checked).length} karet\n• doplnit ${nNew} modelů\n• vyřadit ${body.remove.length} karet`))return;
+  if(!confirm(`Provést v katalogu ${c.label}?\n\n• upravit ${$$('[data-mk]').filter(x=>x.checked).length} karet\n• doplnit ${nNew} modelů\n• vyřadit ${body.remove.length} karet${body.opts.order&&P.order.moved?'\n• seřadit produkty podle formuláře':''}`))return;
   $('#fGo').disabled=true;$('#fSt').textContent='provádím…';
   try{const r=await api('/api/c/'+c.code+'/form/apply',{method:'POST',body:JSON.stringify(body)});META=null;await loadCats();PLAN=await api('/api/c/'+c.code+'/form');renderFormView();
-   $('#fSt').textContent=`hotovo: upraveno ${r.updated||0}, nových karet ${r.created||0}, převzatých ${r.copied||0}, přejmenovaných ${r.paired||0}, vyřazeno ${r.removed||0}`}
+   $('#fSt').textContent=`hotovo: upraveno ${r.updated||0}, nových karet ${r.created||0}, převzatých ${r.copied||0}, přejmenovaných ${r.paired||0}, vyřazeno ${r.removed||0}${r.moved?', přeřazeno '+r.moved:''}`}
   catch(e){alert(errText(e));$('#fGo').disabled=false;$('#fSt').textContent=''}};
 }
 // ---------- úložiště fotek ----------

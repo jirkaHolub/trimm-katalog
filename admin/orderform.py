@@ -72,7 +72,7 @@ def parse(files):
                 m = models.get(norm(name))
                 if not m:
                     section = SEC_BY_SK.get(sk) or next((k for k, s in SCHEMAS.items() if typ in s['typ']), 'sportswear')
-                    m = models[norm(name)] = dict(key=norm(name), name=name.upper(), typ=typ, sk=sk, section=section, colors=collections.OrderedDict(), sizes=[], prices=[], file=fname)
+                    m = models[norm(name)] = dict(key=norm(name), name=name, typ=typ, sk=sk, section=section, colors=collections.OrderedDict(), sizes=[], prices=[], file=fname)
                 c = m['colors'].setdefault(norm(color), dict(name=color, codes=[]))
                 code = (sk + get(r, 'reg')) if get(r, 'reg') else get(r, 'ean')
                 if code and code not in c['codes']: c['codes'].append(code)
@@ -151,14 +151,42 @@ def plan(code, form=None):
         src = others.get(m['key'])
         new.append(dict(key=m['key'], name=m['name'], section=m['section'], typ=m['typ'], price_min=m['price_min'], price_max=m['price_max'], colors=[c['name'] for c in m['colors']],
                         sizes=m['sizes'], source=dict(catalog=src[0]['code'], label=catalogs.catalog_label(src[0]), id=src[1]['id']) if src else None, suggest=None))
-    missing = [p for p in prods if p['id'] not in used]
+    in_form = {m['section'] for m in form['models']} | {x['section'] for x in matched}
+    missing = [p for p in prods if p['id'] not in used and p['section'] in in_form]   # sekce, kterou formulář vůbec neobsahuje (např. jen oblečení), se nevyřazuje
+    skipped = collections.Counter(p['section'] for p in prods if p['id'] not in used and p['section'] not in in_form)
+    rank = {m['key']: i for i, m in enumerate(form['models'])}; order = form_order(prods, {x['pid']: rank[x['key']] for x in matched})
     # přejmenované modely: nový název ve formuláři je hodně podobný kartě, která ve formuláři chybí
     free = {p['id']: norm(p['name']) for p in missing}
     for n in new:
         best = max(free.items(), key=lambda kv: difflib.SequenceMatcher(None, n['key'], kv[1]).ratio(), default=None)
         if best and difflib.SequenceMatcher(None, n['key'], best[1]).ratio() >= 0.8 and by_id[best[0]]['section'] == n['section']: n['suggest'] = best[0]; free.pop(best[0])
     return dict(files=form['files'], rows=form['rows'], n_models=len(form['models']), warnings=form.get('warnings') or [], matched=matched, new=new,
+                skipped=dict(skipped), order=dict(moved=order['moved'], splits=order['splits']),
                 missing=[dict(pid=p['id'], name=p['name'], section=p['section'], serie=p.get('serie') or '', n_colors=len(p.get('colors') or [])) for p in missing])
+
+def form_order(prods, rank):
+    """pořadí produktů v sekcích přesně podle formuláře (rank = {id karty: pořadí modelu ve formuláři});
+    karta, která ve formuláři není, zůstane za svým dosavadním předchůdcem"""
+    by_sec = collections.OrderedDict(); moved = 0; splits = []
+    for p in prods: by_sec.setdefault(p['section'], []).append(p)
+    ids = {}
+    for sec, cur in by_sec.items():
+        if not any(p['id'] in rank for p in cur): continue
+        key = {}; last = -1
+        for j, p in enumerate(cur):
+            if p['id'] in rank: last = rank[p['id']]; key[p['id']] = (last, 0, 0)
+            else: key[p['id']] = (last, 1, j)
+        new = sorted(cur, key=lambda p: key[p['id']]); ids[sec] = [p['id'] for p in new]
+        moved += sum(1 for a, b in zip(cur, new) if a['id'] != b['id'])
+        runs = []
+        for p in new:
+            if runs and runs[-1][0] == (p.get('serie') or ''): runs[-1][1].append(p['name'])
+            else: runs.append([p.get('serie') or '', [p['name']]])
+        # krátký blok (do 3 karet) uprostřed jiné série nebo oddělený od zbytku své série: v katalogu z něj vznikne další nadpis série
+        for i in range(1, len(runs)):
+            lone = sum(1 for r in runs if r[0] == runs[i][0]) > 1 or (i + 1 < len(runs) and runs[i - 1][0] == runs[i + 1][0])
+            if len(runs[i][1]) <= 3 and lone: splits.append(dict(section=sec, serie=runs[i][0], after=runs[i - 1][0], names=runs[i][1]))
+    return dict(ids=ids, moved=moved, splits=splits)
 
 # ---------- provedení ----------
 def _photo_index(code):
@@ -181,20 +209,17 @@ def update_product(p, m, opts, photos):
         for w in add:
             src = photos.get((m['key'], norm(w['name']))) or {}
             p['colors'].append(dict(name=w['name'], codes=w['codes'], front=src.get('front'), back=src.get('back'), art=src.get('art'), generic=False))
-    # pořadí barev podle formuláře, barvy mimo formulář na konec
-    pos = {norm(w['name']): i for i, w in enumerate(m['colors'])}
-    p['colors'].sort(key=lambda c: next((m['colors'].index(w) for h, w in pairs if h is c), pos.get(norm(c.get('name')), 999)))
     if opts.get('prices', True) and m['price_min'] is not None: p['price_min'] = m['price_min']; p['price_max'] = m['price_max']
     if opts.get('sizes', True) and m['sizes'] and [norm(s) for s in p.get('sizes') or []] != [norm(s) for s in m['sizes']]:
         p['sizes'] = m['sizes']
         if SCHEMAS[p['section']]['gender']: p.setdefault('specs', {})['size'] = size_range(m['sizes'])
-    if opts.get('rename', True): p['name'] = m['name']
+    if opts.get('rename', True) and (norm(p.get('name')) != m['key'] or not p.get('name')): p['name'] = m['name']
     if m['typ'] and not p.get('typ'): p['typ'] = m['typ']
     if m.get('sk'): p['sk'] = m['sk']
     return p
 
 def apply(code, body):
-    """body: opts{prices,add_colors,remove_colors,sizes,rename_colors}, skip[klíče modelů], new{klíč: 'create'|'copy'|'pair:<id>'|'skip'}, remove[id karet]"""
+    """body: opts{prices,add_colors,remove_colors,sizes,rename_colors,order}, skip[klíče modelů], new{klíč: 'create'|'copy'|'pair:<id>'|'skip'}, remove[id karet]"""
     form = load(code)
     if not form: raise ValueError('U katalogu není nahraný formulář')
     pl = plan(code, form); opts = body.get('opts') or {}; skip = set(body.get('skip') or []); choice = body.get('new') or {}
@@ -224,4 +249,9 @@ def apply(code, body):
     for pid in body.get('remove') or []:
         if pid in paired or not any(x['pid'] == pid for x in pl['missing']): continue
         db.delete_product(code, pid); res['removed'] += 1
+    if opts.get('order', True):
+        pl2 = plan(code, form); rank = {m['key']: i for i, m in enumerate(form['models'])}
+        o = form_order(db.list_products(code), {x['pid']: rank[x['key']] for x in pl2['matched']})
+        for sec, ids in o['ids'].items(): db.renumber(code, sec, ids)
+        res['moved'] = o['moved']
     return dict(res)
