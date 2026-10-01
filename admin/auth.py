@@ -10,7 +10,8 @@ AUTH_DB = os.environ.get('KATALOG_AUTH_DB', os.path.join(HERE, 'users.sqlite'))
 DOMAINS = [d.strip().lower() for d in os.environ.get('KATALOG_EMAIL_DOMAIN', 'trimm.cz').split(',') if d.strip()]
 ENABLED = os.environ.get('KATALOG_AUTH', '1') != '0'   # app.py ho při lokálním spuštění vypne
 COOKIE = 'katalog_session'; TTL = 30 * 24 * 3600
-PUBLIC = ('/login', '/api/auth/login', '/api/auth/register', '/api/auth/me')
+PUBLIC = ('/login', '/api/auth/login', '/api/auth/register', '/api/auth/me', '/setup', '/api/setup/admin', '/api/setup/import')
+SETUP_TOKEN = os.environ.get('KATALOG_SETUP_TOKEN')   # jen po dobu prvního nastavení online verze; bez něj jsou /setup adresy vypnuté
 # soubory repa, které se nesmí dát stáhnout ani přihlášenému (databáze s hesly, zdrojáky, git)
 BLOCKED = re.compile(r'^/repo/(\.git|\.claude|admin/(cache/|[^/]+\.(sqlite|py|command|md)$))')
 
@@ -117,6 +118,38 @@ def register(body: dict, request: Request):
     if get_user(email): raise HTTPException(400, 'Účet s tímto e-mailem už existuje.')
     save_user(email, body['password'], 'user', False)
     return dict(ok=True, message='Účet je založený a čeká na schválení správcem.')
+
+def _setup(token):
+    if not SETUP_TOKEN or not hmac.compare_digest(token or '', SETUP_TOKEN): raise HTTPException(404)
+
+@router.get('/setup', response_class=HTMLResponse)
+def setup_page(token: str = ''):
+    _setup(token)
+    return '''<!DOCTYPE html><html lang="cs"><meta charset="UTF-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>TRIMM katalogy – první správce</title>
+<body style="font:14px Helvetica,Arial,sans-serif;background:#f4f4f2;display:flex;justify-content:center;padding:40px 16px"><form id="f" style="background:#fff;border:1px solid #e3e3e0;border-radius:8px;padding:28px;width:min(380px,100%)">
+<b style="letter-spacing:.3em;font-size:18px">TRIMM</b><p style="color:#777;font-size:12px;margin:4px 0 18px">Založení prvního správce aplikace</p>
+<label style="font-size:11px;font-weight:700">E-mail</label><input id="e" type="email" required style="width:100%;padding:9px;margin:3px 0 10px;border:1px solid #e3e3e0;border-radius:4px">
+<label style="font-size:11px;font-weight:700">Heslo (aspoň 8 znaků)</label><input id="p" type="password" required minlength="8" style="width:100%;padding:9px;margin:3px 0 10px;border:1px solid #e3e3e0;border-radius:4px">
+<button style="width:100%;padding:10px;border:0;border-radius:4px;background:#ff6b1a;color:#fff;font-weight:700;cursor:pointer">Založit správce</button><p id="m" style="font-size:12px;margin-top:12px"></p></form>
+<script>f.onsubmit=async ev=>{ev.preventDefault();const r=await fetch('/api/setup/admin',{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({token:new URLSearchParams(location.search).get('token'),email:e.value,password:p.value})});
+const j=await r.json().catch(()=>({}));m.textContent=r.ok?'Hotovo, přesměrovávám na přihlášení…':(j.detail||'Nepodařilo se.');if(r.ok)setTimeout(()=>location.href='/login',1200)}</script></body></html>'''
+
+@router.post('/api/setup/admin')
+def setup_admin(body: dict):
+    """první správce – smí mít e-mail i mimo povolenou doménu"""
+    _setup(body.get('token')); email = norm_email(body.get('email'))
+    if not re.fullmatch(r'[^@\s]+@[^@\s]+\.[a-z]{2,}', email): raise HTTPException(400, 'Neplatný e-mail.')
+    check_new_password(body.get('password')); save_user(email, body['password'], 'admin', True); return dict(ok=True)
+
+@router.post('/api/setup/import')
+async def setup_import(request: Request, token: str = '', force: int = 0):
+    """tělo požadavku = soubor katalog.sqlite; zkopíruje ho do online databáze"""
+    _setup(token)
+    import tempfile, to_online
+    with tempfile.NamedTemporaryFile(suffix='.sqlite') as f:
+        f.write(await request.body()); f.flush()
+        try: return to_online.copy(f.name, bool(force))
+        except ValueError as e: raise HTTPException(400, str(e))
 
 @router.post('/api/auth/logout')
 def logout():
