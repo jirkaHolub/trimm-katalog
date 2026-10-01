@@ -178,7 +178,7 @@ table.colors .dz{width:96px;height:78px}
 <header><a class="logo" href="#/"><b>TRIMM</b></a><a href="#/" id="nHome">Katalogy</a><a href="#/fotky" id="nFoto">Úložiště fotek</a>
  <span class="ctx" id="ctx"><span style="color:#666">›</span><span class="code" id="ctxCode"></span><a id="nEdit">Produkty</a><a id="nForm">Objednávkový formulář</a><a id="nSet">Nastavení katalogu</a></span>
  <span class="sp"></span>
- <span class="ctx" id="ctxBtn"><button id="bNew">+ Nový produkt</button><button id="bOpen">Otevřít katalog</button><button id="bGen" class="pri">Vygenerovat katalog</button></span>
+ <span class="ctx" id="ctxBtn"><button id="bNew">+ Nový produkt</button><button id="bOpen" title="Celý katalog s aktuálně uloženými změnami (bez generování)">Otevřít katalog</button><button id="bGen" class="pri">Vygenerovat katalog</button></span>
 </header>
 <div class="view" id="vHome"><div class="page" id="home"></div></div>
 <div class="view" id="vEditor">
@@ -237,7 +237,7 @@ function boot(){
  $('#q').oninput=renderList;
  $('#secChips').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;curSec=c.dataset.s;renderList()};
  $('#prevChips').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;curPrev=c.dataset.p;renderList()};
- $('#bNew').onclick=newProduct; $('#bGen').onclick=()=>openGen(CODE); $('#bOpen').onclick=()=>{const f=(META.catalog.files_all||[]).find(f=>f.ext==='html');if(f)window.open(f.url,'_blank');else alert('Katalog ještě nebyl vygenerován.')};
+ $('#bNew').onclick=newProduct; $('#bGen').onclick=()=>openGen(CODE); $('#bOpen').onclick=()=>window.open('/nahled/'+CODE+(cur?'#m-'+cur.id:''),'_blank');
  $('#bPrev').onclick=()=>preview();
  $('#pvSeg').onclick=e=>{const m=e.target.dataset.m;if(m)setMode(m)};
  $('#mClose').onclick=()=>$('#modal').style.display='none'; $('#mRun').onclick=runGen;
@@ -476,17 +476,17 @@ async function openEditor(path,kind,apply){
  let work=path; const hist=[path];
  pmOpen('Úprava fotky',`<div class="tools">
   <button data-op="rotate" data-deg="-90">↺ Otočit vlevo</button><button data-op="rotate" data-deg="90">↻ Otočit vpravo</button><button data-op="flip">⇄ Zrcadlit</button>
-  <button data-op="trim">Oříznout okraje</button><button data-op="whiten">Vybělit pozadí</button><button data-op="alpha">Průhledné pozadí (PNG)</button>
+  <button data-op="pad" data-f="0.9" title="Přidá kolem fotky okraj, produkt bude v kartě menší">− Zmenšit (přidat okraj)</button><button data-op="pad" data-f="1.1" title="Ubere okraj, produkt bude v kartě větší">+ Zvětšit (ubrat okraj)</button><button data-op="trim">Oříznout okraje</button><button data-op="whiten">Vybělit pozadí</button><button data-op="alpha">Průhledné pozadí (PNG)</button>
   <label class="inline" style="margin:0">tolerance <input type="range" id="edTol" min="8" max="90" value="30" style="width:110px"><span id="edTolV">30</span></label>
   <button id="edCrop" disabled>Oříznout výběr</button><button id="edUndo">Zpět</button></div>
   <div class="stage" id="edStage"><img id="edImg" src="/${path}"><div class="crop" id="edCropBox" style="display:none"></div></div>
-  <div class="hint">Ořez: tažením myší přes obrázek vyber oblast a klikni „Oříznout výběr“. Úpravy vytvářejí novou kopii, původní soubor zůstává v knihovně.</div>
+  <div class="hint">Zmenšit / Zvětšit mění velikost produktu v kartě po 10 %: přidává nebo ubírá okraj (bílý, u PNG průhledný), samotný produkt se nikdy neořízne. Jde klikat opakovaně. Ořez: tažením myší přes obrázek vyber oblast a klikni „Oříznout výběr“. Úpravy vytvářejí novou kopii, původní soubor zůstává v knihovně.</div>
   <div class="inline"><span class="status" id="edSt"></span><span class="sp"></span><button id="edCancel">Zrušit</button><button id="edApply" class="pri">Použít</button></div>`);
  const img=$('#edImg'), stage=$('#edStage'), box=$('#edCropBox'); let sel=null, drag=null;
  const tol=$('#edTol'); tol.oninput=()=>$('#edTolV').textContent=tol.value;
  const show=p=>{work=p;img.src='/'+p+'?t='+Date.now();sel=null;box.style.display='none';$('#edCrop').disabled=true};
- const run=async body=>{$('#edSt').textContent='pracuji…';try{const r=await api('/api/edit',{method:'POST',body:JSON.stringify({path:work,...body})});hist.push(r.path);show(r.path);$('#edSt').textContent=`${r.w}×${r.h}`}catch(e){$('#edSt').textContent='CHYBA: '+e.message}};
- $('#pmBody').querySelectorAll('[data-op]').forEach(b=>b.onclick=()=>{const o={op:b.dataset.op};if(b.dataset.deg)o.deg=+b.dataset.deg;if(o.op==='whiten'||o.op==='alpha')o.thresh=+tol.value;run(o)});
+ const run=async body=>{$('#edSt').textContent='pracuji…';try{const r=await api('/api/edit',{method:'POST',body:JSON.stringify({path:work,...body})});hist.push(r.path);show(r.path);$('#edSt').textContent=`${r.w}×${r.h}`}catch(e){$('#edSt').textContent=errText(e)}};
+ $('#pmBody').querySelectorAll('[data-op]').forEach(b=>b.onclick=()=>{const o={op:b.dataset.op};if(b.dataset.deg)o.deg=+b.dataset.deg;if(b.dataset.f)o.factor=+b.dataset.f;if(o.op==='whiten'||o.op==='alpha')o.thresh=+tol.value;run(o)});
  $('#edUndo').onclick=()=>{if(hist.length>1){hist.pop();show(hist[hist.length-1])}};
  $('#edCancel').onclick=pmClose; $('#edApply').onclick=()=>{apply(work);pmClose()};
  const rect=()=>img.getBoundingClientRect();

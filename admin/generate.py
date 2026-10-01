@@ -119,7 +119,7 @@ class Renderer:
         left = sum(14 + 16 * ch(v, 42) + 9 for v in F.values() if v) + (17.5 * ch(r.get('desc') or '', 46) + 8 if r.get('desc') else 0)
         right = (18 + 16 * len(r.get('features') or []) + 12 if r.get('features') else 0) + (18 + 16 * len(r.get('activities') or []) + 12 if r.get('activities') else 0)
         for f in r.get('features') or []: right += 16 * (ch(f, 34) - 1)
-        h = 22 + 46 + (300 if r.get('wide') else (170 if r.get('typ') in SMALL_TYP else 240)) + 44 + 32 + (50 if r.get('badges') else 0) + (46 if S.get('temps') else 0) + max(left, right)
+        h = 22 + 46 + (300 if r.get('wide') else 240) + 44 + 32 + (50 if r.get('badges') else 0) + (46 if S.get('temps') else 0) + max(left, right)
         if r.get('draw'): h += 18 + 110
         n = len(r['colors']); h += 12 + (100 if n < 7 else 100 * math.ceil(n / 6))
         return h
@@ -138,12 +138,12 @@ class Renderer:
 <div class="head"><div class="head-l"><h3>{E(r['name'])}</h3>{badge}</div><span class="dmoc"><span class="dmoc-l">DMOC</span>{E(price(r))}</span></div>
 {self.photos_html(r)}
 <div class="meta">{meta}</div>
-<div class="specs">{self.spec_chips(r)}</div>
+<div class="rest"><div class="specs">{self.spec_chips(r)}</div>
 {self.badges_html(r)}
 {self.temps_html(r)}
 <div class="body"><div class="mats">{self.fields_html(r)}{desc}</div><div class="feats">{self.feats_html(r)}</div></div>
 {self.draw_html(r)}
-{self.colors_html(r)}
+{self.colors_html(r)}</div>
 </article>'''
 
 def groups(items):
@@ -208,6 +208,7 @@ def render_document(cat, products, sections, img_prefix):
  <input type="search" id="q" placeholder="Vyhledat model, barvu, typ">
  <div class="chips f"><button class="chip active" data-f="all">VŠE</button>{chips}</div>
  <div class="chips g"><button class="chip active" data-g="all">VŠICHNI</button><button class="chip" data-g="men">PÁNSKÉ</button><button class="chip" data-g="women">DÁMSKÉ</button><button class="chip" data-g="kids">DĚTSKÉ</button></div>
+ <div class="chips cols" title="Počet karet na řádek"><span class="cols-l">NA ŘÁDEK</span><button class="chip" data-c="2">2</button><button class="chip" data-c="3">3</button></div>
  <span class="fcount" id="cnt"></span>
 </div>
 <main id="products">
@@ -222,7 +223,7 @@ def render_card_preview(r, img_prefix, sec_color=None):
     sec = dict(SEC_DEF.get(r['section'], {})); R = Renderer(img_prefix)
     if sec_color: sec['color'] = sec_color
     return f'''<!DOCTYPE html><html lang="cs"><head><meta charset="UTF-8"><style>{css(img_prefix, "")}
-body{{background:#f6f6f4;padding:12px}}.grid{{grid-template-columns:1fr;max-width:460px;border:1px solid #e4e4e4}}.card{{min-height:0;border-right:none!important}}</style></head>
+body{{background:#f6f6f4;padding:12px}}.grid{{grid-template-columns:1fr;max-width:460px;border:1px solid #e4e4e4}}.card{{min-height:0;border-right:none!important}}.card>.rest{{min-height:0}}</style></head>
 <body><div class="grid" style="--tc:{sec.get('color', '#888')}">{R.card(r, sec.get('color', '#888'))}</div></body></html>'''
 
 def build(season='SS27', pdf=True, log=print):
@@ -293,6 +294,10 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .chip.active{background:var(--tc,#1a1a1a);color:#fff;border-color:var(--tc,#1a1a1a)}
 .chips.g .chip.active{background:#1a1a1a;border-color:#1a1a1a}
 .fcount{margin-left:auto;font-size:11px;color:var(--muted)}
+.chips.cols{align-items:center}.chips.cols .chip.active{background:#1a1a1a;border-color:#1a1a1a}
+.cols-l{font-size:10px;letter-spacing:.1em;color:var(--muted);margin-right:2px}
+@media screen and (min-width:1101px){body.cols2 .grid{grid-template-columns:repeat(2,1fr)}body.cols2 .card:nth-child(3n){border-right:1px solid var(--border)}body.cols2 .card:nth-child(2n){border-right:none}}
+@media(max-width:1100px){.chips.cols{display:none}}
 .sec{margin-top:40px;scroll-margin-top:70px}
 .sec-head{background:#fff;border-top:10px solid var(--tc);padding:34px 60px 24px;display:flex;align-items:center;gap:18px;border-bottom:1px solid var(--border)}
 .sec-bar{width:12px;height:54px;background:var(--tc);border-radius:2px}
@@ -315,8 +320,8 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .new{align-self:flex-start;color:var(--accent);font-size:10px;font-weight:900;letter-spacing:.18em;text-transform:uppercase;border-bottom:2px solid var(--accent);padding-bottom:1px}
 .dmoc{margin-left:auto;font-size:13px;font-weight:900;color:#071426;white-space:nowrap}
 .dmoc-l{color:#888;font-size:8px;font-weight:800;letter-spacing:.12em;margin-right:5px}
-.photo{position:relative;height:240px;display:flex;align-items:flex-end;justify-content:center;gap:4%;padding:4px;background:#fff;overflow:hidden}
-.photo img{object-fit:contain;object-position:bottom center;display:block}
+.photo{position:relative;height:240px;display:flex;align-items:center;justify-content:center;gap:4%;padding:4px;background:#fff;overflow:hidden}
+.photo img{object-fit:contain;object-position:center;display:block}
 .p-front{height:96%;max-width:62%}
 .p-back{height:70%;max-width:34%}
 .photo img:only-child{height:96%;max-width:85%}
@@ -324,7 +329,14 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .photo.three{gap:2%}.photo.three .p-front{max-width:46%}.photo.three .p-back{max-width:25%}
 .p-hero{height:96%;max-width:100%}
 .photo.two{gap:2%}.photo.two .p-hero{height:96%;max-width:66%}.photo.two .p-inner{height:60%;max-width:32%}
-.photo.small{height:170px}.photo.small img{height:88%;max-width:60%}
+.photo.small img{height:62%;max-width:60%}
+.rest{display:flex;flex-direction:column;flex:1;min-height:0}
+.head{min-height:46px}
+@media screen{@supports (grid-template-rows:subgrid){
+ /* název, fotka a řádek s typem leží v řadě karet vždy ve stejné výšce, i když má některá karta delší název nebo vyšší fotku */
+ .card{display:grid;grid-template-rows:subgrid;grid-row:span 4;min-height:0}
+ .card>.rest{min-height:470px}
+}}
 .photo.wide{height:300px}
 .badges{display:flex;align-items:center;flex-wrap:wrap;gap:6px 10px;margin:2px 0 8px}
 .badges img{height:40px;width:auto;max-width:150px;object-fit:contain}
@@ -390,7 +402,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
  .info-pages img:first-child{page-break-before:avoid;height:150mm;margin-top:6mm}
  .info-pages+.serie{page-break-before:always}
  main{zoom:.72}
- .photo{height:210px}.photo.wide{height:260px}.photo.small{height:150px}
+ .photo{height:210px}.photo.wide{height:260px}
  .draw img{max-height:105px}
  .colors{min-height:0;padding:8px 0 6px;margin-top:8px}.c-art,.c-photo,.c-none{height:50px}
  .card.dense{zoom:.9}.card.dense2{zoom:.82}
@@ -417,7 +429,10 @@ q.addEventListener('input',go);
 document.querySelectorAll('.chips.f .chip').forEach(c=>c.addEventListener('click',()=>setF(c.dataset.f)));
 document.querySelectorAll('.chips.g .chip').forEach(c=>c.addEventListener('click',()=>setG(c.dataset.g)));
 document.querySelectorAll('.toc-h,.toc-s').forEach(a=>a.addEventListener('click',()=>{setF('all')}));
-const u=new URLSearchParams(location.search);if(u.get('sec'))setF(u.get('sec'));if(u.get('g'))setG(u.get('g'));if(u.get('q')){q.value=u.get('q')}
+function setC(c){document.body.classList.toggle('cols2',c==='2');document.querySelectorAll('.chips.cols .chip').forEach(x=>x.classList.toggle('active',x.dataset.c===c));try{localStorage.setItem('trimmCols',c)}catch(e){}}
+document.querySelectorAll('.chips.cols .chip').forEach(c=>c.addEventListener('click',()=>setC(c.dataset.c)));
+const u=new URLSearchParams(location.search);let cc=u.get('cols');if(!cc){try{cc=localStorage.getItem('trimmCols')}catch(e){}}setC(cc==='2'?'2':'3');
+if(u.get('sec'))setF(u.get('sec'));if(u.get('g'))setG(u.get('g'));if(u.get('q')){q.value=u.get('q')}
 go();
 '''
 

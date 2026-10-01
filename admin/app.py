@@ -258,7 +258,7 @@ def _edge_mask(im, thresh):
 
 @app.post('/api/edit')
 def edit(body: dict):
-    """Úprava fotky: op = rotate(deg) | flip | crop(x,y,w,h v poměrech 0–1) | trim | whiten(thresh) | alpha(thresh)"""
+    """Úprava fotky: op = rotate(deg) | flip | crop(x,y,w,h v poměrech 0–1) | trim | pad(factor) | whiten(thresh) | alpha(thresh)"""
     im, sub, base = _load_upload(body['path']); op = body.get('op'); force_png = False
     from PIL import ImageOps, ImageChops, ImageFilter
     if op == 'rotate':
@@ -274,6 +274,20 @@ def edit(body: dict):
         if bb:
             pad = int(max(bb[2] - bb[0], bb[3] - bb[1]) * 0.03); w, h = im.size
             im = im.crop((max(0, bb[0] - pad), max(0, bb[1] - pad), min(w, bb[2] + pad), min(h, bb[3] + pad)))
+    elif op == 'pad':
+        # factor < 1: zmenšit = přidat okraj (bílý, u PNG průhledný); factor > 1: zvětšit = ubrat okraj, ale nikdy neoříznout samotný produkt
+        f = float(body.get('factor', 0.9)); w, h = im.size; alpha = im.mode == 'RGBA'
+        if f < 1:
+            nw, nh = int(round(w / f)), int(round(h / f)); src = im if alpha else im.convert('RGB')
+            canvas = Image.new('RGBA' if alpha else 'RGB', (nw, nh), (255, 255, 255, 0) if alpha else (255, 255, 255))
+            canvas.paste(src, ((nw - w) // 2, (nh - h) // 2)); im = canvas; im.thumbnail((3000, 3000)); force_png = alpha
+        else:
+            if alpha: bb = im.split()[-1].point(lambda v: 255 if v > 8 else 0).getbbox()
+            else: bb = ImageChops.difference(im.convert('RGB'), Image.new('RGB', im.size, (255, 255, 255))).convert('L').point(lambda v: 255 if v > 18 else 0).getbbox()
+            bb = bb or (0, 0, w, h); dx, dy = (w - w / f) / 2, (h - h / f) / 2
+            box = (int(min(dx, bb[0])), int(min(dy, bb[1])), int(max(w - dx, bb[2])), int(max(h - dy, bb[3])))
+            if box == (0, 0, w, h): raise HTTPException(400, 'Fotka už nemá žádný okraj, který by šel ubrat. Produkt je až u kraje.')
+            im = im.crop(box); force_png = alpha
     elif op in ('whiten', 'alpha'):
         thresh = int(body.get('thresh', 30)); m = _edge_mask(im, thresh)
         if op == 'whiten':
@@ -360,6 +374,12 @@ def preview(code: str, pid: str):
 def preview_draft(code: str, body: dict):
     body.setdefault('colors', []); body.setdefault('id', 'draft'); body.setdefault('name', '')
     return generate.render_card_preview(body, '/', _sec_color(code, body.get('section')))
+
+@app.get('/nahled/{code}', response_class=HTMLResponse)
+def live_catalog(code: str):
+    """celý katalog vykreslený rovnou z databáze – ukazuje uložené změny hned, bez generování"""
+    cat = need_catalog(code)
+    return HTMLResponse(generate.render_document(cat, db.list_products(code), db.list_sections(code), '/'), headers={'Cache-Control': 'no-store'})
 
 def _sec_color(code, section): return next((s['color'] for s in db.list_sections(code) if s['key'] == section), None)
 
