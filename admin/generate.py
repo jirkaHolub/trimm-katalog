@@ -8,10 +8,12 @@ HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.abspath(os.pat
 E = html.escape
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
-SEASONS = {
-    'SS27': dict(title='SPRING – SUMMER', year='2027', label='SPRING – SUMMER 2027', out_html=os.path.join(REPO, 'ss27', 'trimm_katalog_SS27.html'),
-                 out_pdf=os.path.join(REPO, 'vystupy', 'trimm_katalog_SS27_CZ.pdf'), img_prefix='../admin/', hero='uploads/hero-ss27.jpg', doc_title='TRIMM — Katalog SS 27'),
-}
+def catalog_cfg(cat):
+    """cesty a popisky pro generování z uloženého záznamu katalogu"""
+    code = cat['code']; out_html = cat.get('out_html') or f'{code.lower()}/trimm_katalog_{code}.html'
+    return dict(title=cat.get('title') or '', year=cat.get('year') or '', label=f'{cat.get("title") or ""} {cat.get("year") or ""}'.strip(),
+                out_html=os.path.join(REPO, out_html), out_pdf=os.path.join(REPO, cat.get('out_pdf') or f'vystupy/trimm_katalog_{code}_CZ.pdf'),
+                img_prefix='../' * (out_html.count('/')) + 'admin/', hero=cat.get('hero') or '', doc_title=cat.get('doc_title') or f'TRIMM — Katalog {code}')
 
 def serie_key(s): return (s or 'OSTATNÍ').upper().replace(' SERIE', '').strip()
 def serie_color(sec, s, sec_color):
@@ -153,11 +155,11 @@ def groups(items):
         seen[k] += 1; od[k if seen[k] == 1 else f'{k} #{seen[k]}'] = v
     return od
 
-def css(img_prefix, hero):
-    return CSS_BASE.replace('__HERO__', img_prefix + hero)
+def css(img_prefix, hero, label=''):
+    return CSS_BASE.replace('__HERO__', img_prefix + hero if hero else '').replace('__LABEL__', label.replace('"', ''))
 
-def render_document(season, products, sections, img_prefix):
-    R = Renderer(img_prefix); cfg = SEASONS[season]
+def render_document(cat, products, sections, img_prefix):
+    R = Renderer(img_prefix); cfg = catalog_cfg(cat)
     by_sec = collections.OrderedDict((s['key'], []) for s in sections)
     for r in products:
         by_sec.setdefault(r['section'], []).append(r)
@@ -175,7 +177,7 @@ def render_document(season, products, sections, img_prefix):
         body += f'<section class="sec" id="sec-{sec}" data-sec="{sec}" style="--tc:{s["color"]}"><div class="sec-head"><div class="sec-bar"></div><div><h2>{E(s["title"])}</h2><div class="sec-cz">{E(s["cz"])}</div></div><span class="sec-cnt">{len(items)} modelů</span></div>{info}'
         for k, v in gs.items():
             k0 = k.split(' #')[0]; col = serie_color(sec, k0, s['color'])
-            body += f'<div class="serie" id="s-{sec}-{slug(k)}" data-serie="{slug(k0)}" style="--sc:{col}"><div class="serie-head"><div class="serie-bar"></div><h3>{E(k0)}{"" if "ACCESSORIES" in k0 or k0 in ("WATERPROOF", "WATERBLADDER") else " SERIE"}</h3><span class="serie-cnt">{len(v)}</span></div><div class="grid">'
+            body += f'<div class="serie" id="s-{sec}-{slug(k)}" data-serie="{slug(k0)}" style="--sc:{col}"><div class="serie-head"><div class="serie-bar"></div><h3>{E(k0)}{"" if "ACCESSORIES" in k0 or k0 in ("WATERPROOF", "WATERBLADDER", "BACKPACKS") else " SERIE"}</h3><span class="serie-cnt">{len(v)}</span></div><div class="grid">'
             body += ''.join(R.card(r, s['color']) for r in v)
             body += '</div></div>'
         body += '</section>'
@@ -187,7 +189,7 @@ def render_document(season, products, sections, img_prefix):
 <meta charset="UTF-8">
 <title>{E(cfg['doc_title'])}</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<style>{css(img_prefix, cfg['hero'])}</style>
+<style>{css(img_prefix, cfg['hero'], cfg['label'])}</style>
 </head>
 <body>
 <section class="hero" aria-label="TRIMM {E(cfg['label'])}"><div><div class="brand">TRIMM · OUTDOOR PRODUCTS</div><h1>{E(cfg['title'])} <span>{E(cfg['year'])}</span></h1><div class="sub">KATALOG · CZ</div></div></section>
@@ -214,18 +216,24 @@ def render_document(season, products, sections, img_prefix):
 </body>
 </html>'''
 
-def render_card_preview(r, img_prefix):
-    sec = SEC_DEF.get(r['section'], {}); R = Renderer(img_prefix)
-    return f'''<!DOCTYPE html><html lang="cs"><head><meta charset="UTF-8"><style>{css(img_prefix, "uploads/hero-ss27.jpg")}
+def render_card_preview(r, img_prefix, sec_color=None):
+    sec = dict(SEC_DEF.get(r['section'], {})); R = Renderer(img_prefix)
+    if sec_color: sec['color'] = sec_color
+    return f'''<!DOCTYPE html><html lang="cs"><head><meta charset="UTF-8"><style>{css(img_prefix, "")}
 body{{background:#f6f6f4;padding:12px}}.grid{{grid-template-columns:1fr;max-width:460px;border:1px solid #e4e4e4}}.card{{min-height:0;border-right:none!important}}</style></head>
 <body><div class="grid" style="--tc:{sec.get('color', '#888')}">{R.card(r, sec.get('color', '#888'))}</div></body></html>'''
 
 def build(season='SS27', pdf=True, log=print):
-    cfg = SEASONS[season]
+    cat = db.get_catalog(season)
+    if not cat: raise ValueError(f'Katalog {season} neexistuje')
+    cfg = catalog_cfg(cat)
     products = db.list_products(season); sections = db.list_sections(season)
-    doc = render_document(season, products, sections, cfg['img_prefix'])
+    doc = render_document(cat, products, sections, cfg['img_prefix'])
     os.makedirs(os.path.dirname(cfg['out_html']), exist_ok=True)
     open(cfg['out_html'], 'w', encoding='utf-8').write(doc)
+    idx = os.path.join(os.path.dirname(cfg['out_html']), 'index.html'); fn = os.path.basename(cfg['out_html'])
+    if not os.path.exists(idx):
+        open(idx, 'w', encoding='utf-8').write(f'<!DOCTYPE html>\n<html lang="cs">\n<head>\n<meta charset="utf-8">\n<title>{E(cfg["doc_title"])}</title>\n<meta http-equiv="refresh" content="0; url={fn}">\n<link rel="canonical" href="{fn}">\n</head>\n<body>\n<p>Přesměrování na <a href="{fn}">katalog</a>…</p>\n</body>\n</html>\n')
     log(f'HTML: {os.path.relpath(cfg["out_html"], REPO)} ({len(doc) // 1024} kB, {len(products)} modelů)')
     if pdf:
         os.makedirs(os.path.dirname(cfg['out_pdf']), exist_ok=True)
@@ -238,8 +246,8 @@ def build(season='SS27', pdf=True, log=print):
         except Exception as e: log(f'PDF hotovo ({e})')
     return cfg
 
-def git_push(log=print):
-    for cmd in (['git', 'add', '-A', 'admin', 'ss27', 'vystupy'], ['git', 'commit', '-q', '-m', 'Katalog: aktualizace z administrace'], ['git', 'push']):
+def git_push(log=print, dirs=()):
+    for cmd in (['git', 'add', '-A', 'admin', 'vystupy', *dirs], ['git', 'commit', '-q', '-m', 'Katalog: aktualizace z administrace'], ['git', 'push']):
         p = subprocess.run(cmd, cwd=REPO, capture_output=True, text=True)
         log('$ ' + ' '.join(cmd) + (('\n' + (p.stdout + p.stderr).strip()) if (p.stdout + p.stderr).strip() else ''))
 
@@ -364,7 +372,7 @@ footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
  .body{grid-template-columns:1fr}.sec-head h2{font-size:22px}.head h3{font-size:24px}.info-pages{grid-template-columns:1fr}
 }
 @page{size:A4 landscape;margin:8mm 8mm 13mm 8mm;
- @bottom-left{content:"TRIMM · SPRING – SUMMER 2027 · " string(sec);font:8px/1 'Helvetica Neue',Helvetica,Arial,sans-serif;color:#777;letter-spacing:.08em}
+ @bottom-left{content:"TRIMM · __LABEL__ · " string(sec);font:8px/1 'Helvetica Neue',Helvetica,Arial,sans-serif;color:#777;letter-spacing:.08em}
  @bottom-right{content:counter(page);font:700 9px/1 'Helvetica Neue',Helvetica,Arial,sans-serif;color:#444}}
 @media print{
  body{width:100%;background:#fff}
@@ -411,4 +419,5 @@ go();
 
 if __name__ == '__main__':
     import sys
-    build(pdf='--no-pdf' not in sys.argv)
+    args = [a for a in sys.argv[1:] if not a.startswith('--')]
+    build(args[0] if args else 'SS27', pdf='--no-pdf' not in sys.argv)

@@ -30,3 +30,6 @@ ss27/data/orig/
 ss27/data/pdf_swatch/
 ss27/data/web_tents/
 ss27/data/web_tents_meta.json
+
+# aplikace na katalogy – zmenšeniny a náhledy PDF se generují samy
+admin/cache/

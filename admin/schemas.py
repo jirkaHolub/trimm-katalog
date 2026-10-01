@@ -11,6 +11,7 @@ SECTIONS = collections.OrderedDict([
 
 SERIE_COLORS = {'EXTREME': '#e2001a', 'EXTREME DOWN': '#e2001a', 'ADVENTURE': '#f39200', 'TREKKING': '#009fe3', 'OUTDOOR': '#7ab929',
                 'FAMILY': '#9b2fae', 'SHELTERS': '#1d5fb0', 'LITE': '#00a99d', 'COMFORT': '#8a6a3a', 'ACTIVE': '#8c8c8c', 'THERMOLAYER': '#c8a24a',
+                'SKI': '#e22d2d', 'SNOW & CITY': '#2a8fc8', 'BACKPACKS': '#9a3aa8', 'SPORTSWEAR ACCESSORIES': '#e0a82e',
                 'DAYPACK': '#2a8fc8', 'CYKLO': '#e0a82e', 'TRAVEL LITE / TRAVEL': '#5c7c9a', 'WATERPROOF': '#0072bc', 'WATERBLADDER': '#00b3e6'}
 
 # specifikace = ikonové "čipy" pod fotkou

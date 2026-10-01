@@ -2,22 +2,101 @@
 <html lang="cs">
 <head>
 <meta charset="UTF-8">
-<title>TRIMM katalog – administrace</title>
+<title>TRIMM katalogy</title>
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <style>
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--b:#e3e3e0;--bg:#f4f4f2;--acc:#ff6b1a;--txt:#1a1a1a;--mut:#777}
 html,body{height:100%}
 body{font:13px/1.45 'Helvetica Neue',Helvetica,Arial,sans-serif;color:var(--txt);background:var(--bg);display:flex;flex-direction:column}
-header{display:flex;align-items:center;gap:14px;padding:10px 16px;background:#111;color:#fff}
+header{display:flex;align-items:center;gap:14px;padding:10px 16px;background:#111;color:#fff;flex-shrink:0}
 header b{letter-spacing:.3em;font-size:15px}
-header .sp{flex:1}
+header a{color:#bbb;text-decoration:none;padding:5px 2px;border-bottom:2px solid transparent;cursor:pointer}
+header a:hover{color:#fff}header a.on{color:#fff;border-color:var(--acc)}
+header a.logo{color:#fff;border:none}
+header .ctx{display:none;align-items:center;gap:8px}
+header .ctx .code{background:#2a2a2a;border-radius:4px;padding:4px 10px;font-weight:700}
+.sp{flex:1}
+.view{display:none;flex:1;min-height:0}
+.page{overflow:auto;padding:22px 28px 60px;width:100%}
+.page h1{font-size:22px;letter-spacing:.02em}
+.phead{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:18px}
+.gh{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--mut);margin:22px 0 10px;font-weight:800}
+.cats{display:grid;grid-template-columns:repeat(auto-fill,minmax(360px,1fr));gap:16px}
+.cat{background:#fff;border:1px solid var(--b);border-radius:8px;overflow:hidden;display:flex;flex-direction:column}
+.cat .cov{height:170px;background:#ddd center/cover no-repeat;position:relative;cursor:pointer}
+.cat .cov.pdf{background-size:contain;background-color:#ecece8}
+.cat .tag{position:absolute;left:10px;top:10px;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:800;letter-spacing:.1em;color:#fff;background:#f39200}
+.cat .tag.FW{background:#1e73be}
+.cat .st{position:absolute;right:10px;top:10px;padding:3px 9px;border-radius:20px;font-size:10px;font-weight:700;background:rgba(255,255,255,.92);color:#333}
+.cat .st.draft{background:var(--acc);color:#fff}
+.cat .bd2{padding:12px 14px;display:flex;flex-direction:column;gap:8px;flex:1}
+.cat h3{font-size:16px;letter-spacing:.03em}.cat h3 small{color:var(--mut);font-weight:400;font-size:12px;margin-left:6px}
+.cat .nums{font-size:12px;color:#444}.cat .vs{font-size:11px;color:var(--mut)}
+.vs b.plus,.strip b.plus{color:#2e8b3d}.vs b.minus,.strip b.minus{color:#c0392b}.vs b.chg,.strip b.chg{color:#c77700}
+.files{display:flex;flex-direction:column;gap:3px}
+.files a{display:flex;gap:8px;align-items:center;padding:5px 8px;border:1px solid #eee;border-radius:4px;text-decoration:none;color:var(--txt);font-size:12px;background:#fafaf8}
+.files a:hover{border-color:var(--acc)}
+.ext{font-size:9px;font-weight:800;color:#fff;background:#c0392b;border-radius:3px;padding:2px 5px;letter-spacing:.05em}
+.ext.html{background:#2a8fc8}
+.files small{color:var(--mut);margin-left:auto;white-space:nowrap}
+.cat .acts{display:flex;gap:6px;flex-wrap:wrap;margin-top:auto;padding-top:6px}
+.tile-new{border:2px dashed var(--b);border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:6px;min-height:96px;cursor:pointer;background:#fafaf8;color:#555;font-weight:700;padding:14px;text-align:center}
+.tile-new:hover{border-color:var(--acc);color:var(--acc)}.tile-new small{font-weight:400;color:var(--mut)}
+.news{display:grid;grid-template-columns:repeat(auto-fill,minmax(240px,1fr));gap:12px}
+.lock{background:#fff7e0;border:1px solid #ecd9a0;border-radius:6px;padding:8px 12px;margin-bottom:12px;font-size:12px}
+.lock a{color:var(--acc)}
+.pst{font-size:9px;font-weight:800;letter-spacing:.06em;border-radius:3px;padding:1px 5px;margin-left:4px;vertical-align:middle}
+.pst.new{background:#e3f4e6;color:#2e8b3d}.pst.changed{background:#fff0d6;color:#c77700}
+.seg{display:inline-flex;border:1px solid var(--b);border-radius:4px;overflow:hidden}
+.seg span{padding:4px 10px;font-size:11px;cursor:pointer;background:#fff;border-right:1px solid var(--b);color:var(--txt)}.seg span:last-child{border:none}
+.seg span.on{background:#111;color:#fff}
+.strip{padding:7px 12px;border-bottom:1px solid var(--b);font-size:11.5px;line-height:1.5;background:#fafaf8}
+.strip a{color:var(--acc);cursor:pointer;text-decoration:underline;margin-left:8px;white-space:nowrap}
+.panes{flex:1;display:flex;min-height:0}
+.pane{flex:1;display:flex;flex-direction:column;min-width:0;min-height:0}
+.pane+.pane{border-left:1px solid var(--b)}
+.pane .pt{font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);padding:5px 12px;border-bottom:1px solid #eee;background:#fff}
+.pane iframe{flex:1;border:0;width:100%}
+.pane .pb{flex:1;overflow:auto;display:flex;flex-direction:column;min-height:0}
+.pane .pb img{width:100%;display:block}
+#preview[data-mode=cur] #paPrev,#preview[data-mode=prev] #paCur{display:none}
+.stor{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:10px}
+.stor .f{background:#fff;border:1px solid var(--b);border-radius:6px;padding:6px;cursor:pointer;font-size:10px;color:#555;word-break:break-all;position:relative}
+.stor .f:hover{border-color:var(--acc)}
+.stor .f img{width:100%;height:110px;object-fit:contain;display:block;margin-bottom:4px;background:repeating-conic-gradient(#f3f3f3 0 25%,#fff 0 50%) 0 0/14px 14px}
+.stor .u{position:absolute;right:8px;top:8px;border-radius:20px;padding:1px 7px;font-size:10px;font-weight:700;background:#111;color:#fff}
+.stor .u.no{background:#c0392b}
+.drop{outline:3px dashed var(--acc);outline-offset:-8px}
+.det{display:grid;grid-template-columns:1.3fr 1fr;gap:16px;min-height:0;overflow:auto}
+.det img{max-width:100%;max-height:62vh;object-fit:contain;background:repeating-conic-gradient(#eee 0 25%,#fff 0 50%) 0 0/20px 20px}
+.det ul{list-style:none;max-height:40vh;overflow:auto}.det li{padding:3px 0;border-bottom:1px solid #f0f0ee;font-size:12px}.det li a{color:var(--acc)}
+.srow{display:grid;grid-template-columns:54px 1fr 1.4fr 60px 28px;gap:8px;align-items:center;margin-bottom:6px}
+.pgs{display:flex;flex-wrap:wrap;gap:8px;margin:2px 0 14px 62px}
+.pgs .pg{position:relative;border:1px solid var(--b);border-radius:4px;background:#fff}.pgs .pg img{height:84px;display:block}
+.pgs .pg .x{position:absolute;right:2px;top:-2px;background:#fff;border-radius:50%;width:18px;height:18px;line-height:16px;color:#c0392b}
+.pgs .add{height:86px;width:70px;border:2px dashed var(--b);border-radius:4px;display:flex;align-items:center;justify-content:center;color:#aaa;cursor:pointer;font-size:11px;text-align:center}
+.pgs .add:hover{border-color:var(--acc);color:var(--acc)}
+.frow{display:flex;gap:8px;align-items:center;padding:5px 0;border-bottom:1px solid #f0f0ee;font-size:12px}
+.frow a{color:var(--txt);font-weight:700}
+.wrap{max-width:980px}
+.tiles{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:14px}
+.tiles div{background:#fff;border:1px solid var(--b);border-radius:6px;padding:12px 14px;font-size:11px;color:var(--mut)}
+.tiles b{display:block;font-size:26px;line-height:1.1;color:var(--txt)}
+table.plan{width:100%;border-collapse:collapse;font-size:12px}
+table.plan td{padding:6px 8px;border-bottom:1px solid #f0f0ee;vertical-align:top}
+table.plan td:first-child{width:26px}table.plan td.nm{font-weight:700;white-space:nowrap;width:210px}
+table.plan select{width:auto;max-width:330px;padding:4px 6px}
+table.plan b.plus{color:#2e8b3d}table.plan b.minus{color:#c0392b}table.plan b.chg{color:#c77700}
+.upz{border:2px dashed var(--b);border-radius:8px;padding:22px;text-align:center;background:#fafaf8;cursor:pointer;margin-bottom:14px}
+.upz:hover,.upz.over{border-color:var(--acc);background:#fff4ec}
 button{font:inherit;padding:7px 12px;border:1px solid var(--b);background:#fff;border-radius:4px;cursor:pointer;color:var(--txt)}
 button:hover{border-color:#999}
 button.pri{background:var(--acc);border-color:var(--acc);color:#fff;font-weight:700}
 button.dan{color:#c0392b}
 button.sm{padding:3px 8px;font-size:11px}
-main{flex:1;display:grid;grid-template-columns:320px 1fr 480px;min-height:0}
+main{flex:1;display:grid;grid-template-columns:300px 1fr 470px;min-height:0;width:100%}
+main.side{grid-template-columns:270px minmax(340px,1fr) minmax(680px,47vw)}
 #list{border-right:1px solid var(--b);background:#fff;display:flex;flex-direction:column;min-height:0}
 #list .tools{padding:10px;border-bottom:1px solid var(--b);display:flex;flex-direction:column;gap:8px}
 #list input{width:100%;padding:7px 10px;border:1px solid var(--b);border-radius:4px;font:inherit}
@@ -36,7 +115,6 @@ main{flex:1;display:grid;grid-template-columns:320px 1fr 480px;min-height:0}
 #form{overflow:auto;padding:16px 20px;min-height:0}
 #preview{border-left:1px solid var(--b);background:#fff;display:flex;flex-direction:column;min-height:0}
 #preview .ph{padding:8px 12px;border-bottom:1px solid var(--b);font-size:11px;color:var(--mut);display:flex;gap:8px;align-items:center}
-#preview iframe{flex:1;border:0;width:100%}
 .sec{background:#fff;border:1px solid var(--b);border-radius:6px;padding:14px 16px;margin-bottom:14px}
 .sec h2{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:10px}
 .row{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;margin-bottom:10px}
@@ -97,22 +175,32 @@ table.colors .dz{width:96px;height:78px}
 </style>
 </head>
 <body>
-<header><b>TRIMM</b><span>Katalog SS27 · administrace</span><span class="sp"></span>
- <button id="bNew">+ Nový produkt</button>
- <button id="bOpen">Otevřít katalog</button>
- <button id="bGen" class="pri">Vygenerovat katalog</button>
+<header><a class="logo" href="#/"><b>TRIMM</b></a><a href="#/" id="nHome">Katalogy</a><a href="#/fotky" id="nFoto">Úložiště fotek</a>
+ <span class="ctx" id="ctx"><span style="color:#666">›</span><span class="code" id="ctxCode"></span><a id="nEdit">Produkty</a><a id="nForm">Objednávkový formulář</a><a id="nSet">Nastavení katalogu</a></span>
+ <span class="sp"></span>
+ <span class="ctx" id="ctxBtn"><button id="bNew">+ Nový produkt</button><button id="bOpen">Otevřít katalog</button><button id="bGen" class="pri">Vygenerovat katalog</button></span>
 </header>
+<div class="view" id="vHome"><div class="page" id="home"></div></div>
+<div class="view" id="vEditor">
 <main>
  <aside id="list">
   <div class="tools">
    <input id="q" type="search" placeholder="Hledat model…">
    <div class="chips" id="secChips"></div>
+   <div class="chips" id="prevChips"></div>
   </div>
   <div id="items"></div>
  </aside>
  <section id="form"><div class="empty">Vyber produkt vlevo nebo založ nový.</div></section>
- <aside id="preview"><div class="ph">Náhled karty <span class="sp"></span><button class="sm" id="bPrev">Obnovit</button></div><iframe id="pv"></iframe></aside>
+ <aside id="preview" data-mode="cur"><div class="ph"><div class="seg" id="pvSeg"><span data-m="cur">Letos</span><span data-m="prev">Loni</span><span data-m="side">Vedle sebe</span></div><span class="sp"></span><button class="sm" id="bPrev">Obnovit</button></div>
+  <div class="strip" id="pvStrip" style="display:none"></div>
+  <div class="panes"><div class="pane" id="paCur"><div class="pt" id="ptCur">Letos</div><iframe id="pv"></iframe></div><div class="pane" id="paPrev"><div class="pt" id="ptPrev">Loni</div><div class="pb" id="pvPrev"></div></div></div>
+ </aside>
 </main>
+</div>
+<div class="view" id="vStorage"><div class="page" id="storage"></div></div>
+<div class="view" id="vForm"><div class="page" id="formv"></div></div>
+<div class="view" id="vSettings"><div class="page" id="settings"></div></div>
 <div id="pm"><div class="box"><div class="inline"><b id="pmTitle">Fotka</b><span class="sp"></span><button id="pmClose">Zavřít</button></div><div id="pmBody"></div></div></div>
 <div id="modal"><div class="box"><b id="mTitle">Generování katalogu</b><div class="inline"><label class="inline"><input type="checkbox" id="gPdf" checked> Vytvořit i PDF</label><label class="inline"><input type="checkbox" id="gPush"> Odeslat na GitHub (commit + push)</label></div><pre id="mLog">Připraveno.</pre><div class="inline"><button id="mRun" class="pri">Spustit</button><a id="mHtml" target="_blank" style="display:none">Otevřít HTML</a><a id="mPdf" target="_blank" style="display:none">Otevřít PDF</a><span class="sp"></span><button id="mClose">Zavřít</button></div></div></div>
 
@@ -121,51 +209,141 @@ window.addEventListener('error',e=>{const st=document.getElementById('st');if(st
 window.addEventListener('unhandledrejection',e=>{const st=document.getElementById('st');if(st)st.textContent='CHYBA: '+(e.reason&&e.reason.message||e.reason);console.error(e.reason)});
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
 const api=async(u,o={})=>{const r=await fetch(u,{headers:{'Content-Type':'application/json'},...o});if(!r.ok)throw new Error(await r.text());return r.headers.get('content-type')?.includes('json')?r.json():r.text()};
-let META, LIST=[], cur=null, dirty=false, curSec='all';
+const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+const fmtSize=n=>n>1048576?(n/1048576).toFixed(n>10485760?0:1).replace('.',',')+' MB':Math.max(1,Math.round(n/1024))+' kB';
+const fmtDate=t=>new Date(t*1000).toLocaleDateString('cs-CZ',{day:'numeric',month:'numeric',year:'numeric'});
+const fmtKc=v=>v==null?'—':String(v).replace(/\B(?=(\d{3})+(?!\d))/g,' ');
+const pl=(n,a,b,c)=>n+' '+(n===1?a:(n>=2&&n<=4?b:c));
+const store={get(k,d){try{return localStorage.getItem(k)??d}catch(e){return d}},set(k,v){try{localStorage.setItem(k,v)}catch(e){}}};
+function errText(e){try{return JSON.parse(e.message).detail||e.message}catch(_){return e.message}}
+let META, LIST=[], REMOVED=[], cur=null, dirty=false, curSec='all', curPrev='all', CODE=null, API='', CATS=[], KINDS=[], lastHash='';
 
-async function init(){
- META=await api('/api/meta');
- const ch=$('#secChips'); ch.innerHTML='<span class="chip on" data-s="all">Vše</span>'+META.sections.map(s=>`<span class="chip" data-s="${s.key}" style="--c:${s.color}">${s.cz}</span>`).join('');
- ch.onclick=e=>{const c=e.target.closest('.chip');if(!c)return;curSec=c.dataset.s;$$('#secChips .chip').forEach(x=>x.classList.toggle('on',x===c));renderList()};
- $('#q').oninput=renderList;
- await loadList();
- const pid=new URLSearchParams(location.search).get('id'); if(pid) openProduct(pid);
- $('#bNew').onclick=newProduct; $('#bGen').onclick=openGen; $('#bOpen').onclick=()=>window.open('/repo/ss27/trimm_katalog_SS27.html','_blank');
- $('#bPrev').onclick=()=>preview();
- $('#mClose').onclick=()=>$('#modal').style.display='none'; $('#mRun').onclick=runGen;
- document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='s'){e.preventDefault();if(cur)save()}});
- window.onbeforeunload=()=>dirty?'Neuložené změny':null;
+// ---------- směrování: #/ katalogy · #/k/SS27 produkty · #/k/SS27/p/<id> · #/k/SS27/nastaveni · #/fotky ----------
+function show(v){$$('.view').forEach(x=>x.style.display=x.id===v?'flex':'none');$('#nHome').classList.toggle('on',v==='vHome');$('#nFoto').classList.toggle('on',v==='vStorage');
+ const inCat=v==='vEditor'||v==='vSettings'||v==='vForm';$('#nForm').classList.toggle('on',v==='vForm');$('#ctx').style.display=inCat?'flex':'none';$('#ctxBtn').style.display=v==='vEditor'?'flex':'none';
+ $('#nEdit').classList.toggle('on',v==='vEditor');$('#nSet').classList.toggle('on',v==='vSettings')}
+async function route(){
+ if(dirty&&location.hash!==lastHash&&!confirm('Zahodit neuložené změny?')){history.replaceState(null,'',lastHash||'#/');return}
+ if(location.hash!==lastHash)dirty=false; lastHash=location.hash;
+ const [a,b,c,d]=location.hash.replace(/^#\/?/,'').split('/');
+ try{
+  if(a==='k'&&b){$('#ctxCode').textContent=b;$('#nEdit').href='#/k/'+b;$('#nSet').href='#/k/'+b+'/nastaveni';$('#nForm').href='#/k/'+b+'/formular';
+   if(c==='nastaveni')await showSettings(b); else if(c==='formular')await showForm(b); else await showEditor(b,c==='p'&&d?decodeURIComponent(d):null)}
+  else if(a==='fotky')await showStorage(); else await showHome();
+ }catch(e){alert(errText(e))}
 }
-async function loadList(){LIST=await api('/api/products');renderList()}
-function renderList(){
- const q=$('#q').value.trim().toLowerCase(); const el=$('#items'); let h='',last=null;
- const items=LIST.filter(p=>(curSec==='all'||p.section===curSec)&&(!q||(p.name+' '+(p.serie||'')+' '+(p.typ||'')).toLowerCase().includes(q)));
- for(const p of items){
-  const key=p.section+'|'+p.serie; if(key!==last){h+=`<div class="serie-h">${secName(p.section)} · ${p.serie||'bez série'}</div>`;last=key}
-  h+=`<div class="item${cur&&cur.id===p.id?' on':''}" data-id="${p.id}"><img src="${p.thumb?'/'+p.thumb:''}" onerror="this.style.visibility='hidden'"><div class="nm">${esc(p.name)}${p.new?' <span style="color:var(--acc);font-size:9px">NOVINKA</span>':''}<small>${esc(p.typ||'')} · ${p.n_colors} barev</small></div><div class="mv"><button data-mv="-1" title="Nahoru">▲</button><button data-mv="1" title="Dolů">▼</button></div></div>`;
+window.addEventListener('hashchange',route);
+function boot(){
+ $('#q').oninput=renderList;
+ $('#secChips').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;curSec=c.dataset.s;renderList()};
+ $('#prevChips').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;curPrev=c.dataset.p;renderList()};
+ $('#bNew').onclick=newProduct; $('#bGen').onclick=()=>openGen(CODE); $('#bOpen').onclick=()=>{const f=(META.catalog.files_all||[]).find(f=>f.ext==='html');if(f)window.open(f.url,'_blank');else alert('Katalog ještě nebyl vygenerován.')};
+ $('#bPrev').onclick=()=>preview();
+ $('#pvSeg').onclick=e=>{const m=e.target.dataset.m;if(m)setMode(m)};
+ $('#mClose').onclick=()=>$('#modal').style.display='none'; $('#mRun').onclick=runGen;
+ document.addEventListener('keydown',e=>{if((e.metaKey||e.ctrlKey)&&e.key==='s'){e.preventDefault();if(cur&&$('#vEditor').style.display!=='none')save()}});
+ window.onbeforeunload=()=>dirty?'Neuložené změny':null;
+ setMode(store.get('pvMode',innerWidth>=1650?'side':'cur'));
+ route();
+}
+function setMode(m){$('#preview').dataset.mode=m;$('main').classList.toggle('side',m==='side');$$('#pvSeg span').forEach(x=>x.classList.toggle('on',x.dataset.m===m));store.set('pvMode',m)}
+async function showEditor(code,pid){
+ show('vEditor');
+ if(CODE!==code||!META){
+  const c=await api('/api/c/'+code); if(c.source!=='db'){location.hash='#/k/'+code+'/nastaveni';return}
+  CODE=code;API='/api/c/'+code;cur=null;dirty=false;curSec='all';curPrev='all';
+  META=await api(API+'/meta'); META.catalog.files_all=c.files;
+  $('#form').innerHTML='<div class="empty">Vyber produkt vlevo nebo založ nový.</div>';$('#pv').srcdoc='';renderPrev(null);
+  $('#ptCur').textContent='Letos · '+META.catalog.label;
+  await loadList();
  }
- el.innerHTML=h||'<div class="empty">Nic nenalezeno</div>';
+ if(pid&&(!cur||cur.id!==pid))await openProduct(pid,true);
+}
+async function loadList(){const r=await api(API+'/products');LIST=r.products;REMOVED=r.removed;META.prev=r.prev;META.prev_kind=r.prev_kind;renderList()}
+function prevLabel(){const c=CATS.find(c=>c.code===META.prev);return c?c.label:(META.prev||'')}
+function renderList(){
+ const ch=$('#secChips'); ch.innerHTML=`<span class="chip${curSec==='all'?' on':''}" data-s="all">Vše</span>`+META.sections.map(s=>`<span class="chip${curSec===s.key?' on':''}" data-s="${s.key}">${esc(s.cz)}</span>`).join('');
+ const cnt={new:0,changed:0,same:0}; LIST.forEach(p=>{if(p.prev)cnt[p.prev.status]++});
+ $('#prevChips').innerHTML=META.prev?[['all','oproti '+prevLabel()+': vše'],['new','nové '+cnt.new],['changed','změněné '+cnt.changed],['same','beze změny '+cnt.same],['removed','vyřazené '+REMOVED.length]].map(([k,l])=>`<span class="chip${curPrev===k?' on':''}" data-p="${k}">${esc(l)}</span>`).join(''):'';
+ const q=$('#q').value.trim().toLowerCase(); const el=$('#items'); let h='',last=null;
+ if(curPrev==='removed'){
+  const items=REMOVED.filter(r=>(curSec==='all'||r.section===curSec)&&(!q||r.name.toLowerCase().includes(q)));
+  h=`<div class="serie-h">Byly v ${esc(prevLabel())}, letos chybí</div>`+items.map(r=>`<div class="item" data-rk="${esc(r.key)}"><div class="nm">${esc(r.name)}<small>${esc(secName(r.section))}${r.page?' · str. '+r.page:''}</small></div></div>`).join('');
+  el.innerHTML=items.length?h:'<div class="empty">Nic nechybí</div>';
+ }else{
+  const items=LIST.filter(p=>(curSec==='all'||p.section===curSec)&&(curPrev==='all'||(p.prev&&p.prev.status===curPrev))&&(!q||(p.name+' '+(p.serie||'')+' '+(p.typ||'')).toLowerCase().includes(q)));
+  for(const p of items){
+   const key=p.section+'|'+p.serie; if(key!==last){h+=`<div class="serie-h">${esc(secName(p.section))} · ${esc(p.serie||'bez série')}</div>`;last=key}
+   const ps=p.prev?(p.prev.status==='new'?`<span class="pst new" title="V ${esc(prevLabel())} nebyl">NOVÝ</span>`:p.prev.status==='changed'?`<span class="pst changed" title="Změna oproti ${esc(prevLabel())}">${p.prev.added||p.prev.removed?((p.prev.added?'+'+p.prev.added:'')+(p.prev.removed?' −'+p.prev.removed:'')).trim()+' barev':'ZMĚNA'}</span>`:''):'';
+   h+=`<div class="item${cur&&cur.id===p.id?' on':''}" data-id="${esc(p.id)}"><img src="${p.thumb?'/thumb/'+p.thumb+'?w=120':''}" loading="lazy" onerror="this.style.visibility='hidden'"><div class="nm">${esc(p.name)}${p.new?' <span style="color:var(--acc);font-size:9px">NOVINKA</span>':''}${ps}<small>${esc(p.typ||'')} · ${p.n_colors} barev</small></div><div class="mv"><button data-mv="-1" title="Nahoru">▲</button><button data-mv="1" title="Dolů">▼</button></div></div>`;
+  }
+  el.innerHTML=h||'<div class="empty">Nic nenalezeno</div>';
+ }
  el.onclick=async e=>{const b=e.target.closest('button[data-mv]');const it=e.target.closest('.item');if(!it)return;
+  if(it.dataset.rk){showRemoved(it.dataset.rk);return}
   if(b){e.stopPropagation();await move(it.dataset.id,+b.dataset.mv);return}
   openProduct(it.dataset.id).catch(e=>alert('Nepodařilo se otevřít produkt: '+e.message))};
 }
-function secName(k){return (META.sections.find(s=>s.key===k)||{}).cz||k}
-function esc(s){return String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]))}
+function secName(k){return (META.sections.find(s=>s.key===k)||{}).cz||k||''}
+function setHash(h){history.replaceState(null,'',h);lastHash=location.hash}
 async function move(id,d){
  const p=LIST.find(x=>x.id===id); const ids=LIST.filter(x=>x.section===p.section).map(x=>x.id); const i=ids.indexOf(id), j=i+d;
  if(j<0||j>=ids.length)return; [ids[i],ids[j]]=[ids[j],ids[i]];
- await api('/api/reorder',{method:'POST',body:JSON.stringify({section:p.section,ids})}); await loadList();
+ try{await api(API+'/reorder',{method:'POST',body:JSON.stringify({section:p.section,ids})})}catch(e){alert(errText(e))} await loadList();
 }
-async function openProduct(id){
- if(dirty&&!confirm('Zahodit neuložené změny?'))return;
- cur=await api('/api/products/'+id); dirty=false; renderForm(); renderList(); preview();
+async function openProduct(id,fromRoute){
+ if(!fromRoute&&dirty&&!confirm('Zahodit neuložené změny?'))return;
+ cur=await api(API+'/products/'+encodeURIComponent(id)); dirty=false; setHash(`#/k/${CODE}/p/${encodeURIComponent(id)}`); renderForm(); renderList(); preview();
 }
 async function newProduct(){
  if(dirty&&!confirm('Zahodit neuložené změny?'))return;
- const section=curSec==='all'?'tents':curSec; const name=prompt('Název produktu:'); if(!name)return;
- cur=await api('/api/products',{method:'POST',body:JSON.stringify({section,name:name.toUpperCase()})}); dirty=false; await loadList(); renderForm(); preview();
+ const section=curSec==='all'?META.sections[0].key:curSec; const name=prompt('Název produktu:'); if(!name)return;
+ try{cur=await api(API+'/products',{method:'POST',body:JSON.stringify({section,name:name.toUpperCase()})})}catch(e){return alert(errText(e))}
+ dirty=false; await loadList(); setHash(`#/k/${CODE}/p/${encodeURIComponent(cur.id)}`); renderForm(); preview();
 }
-function setDirty(){dirty=true;$('#st').textContent='neuloženo'}
+// produkt, který byl loni a letos chybí: ukáže loňskou kartu a nabídne vrácení do katalogu
+async function showRemoved(key){
+ if(dirty&&!confirm('Zahodit neuložené změny?'))return;
+ cur=null;dirty=false;const r=REMOVED.find(x=>x.key===key);
+ $('#form').innerHTML=`<div class="bar"><h1>${esc(r.name)}</h1></div><div class="sec"><h2>Vyřazený model</h2><p>Tento model byl v katalogu ${esc(prevLabel())}${r.page?' (strana '+r.page+')':''}, v ${esc(META.catalog.label)} není.</p>
+  <div class="inline" style="margin-top:12px"><button class="pri" id="bRestore">Vrátit do katalogu</button><span class="hint">${META.prev_kind==='card'?'Převezme celý loňský záznam včetně fotek a barev.':'Převezme texty vytěžené z PDF; fotky a ceny je potřeba doplnit.'}</span></div></div>`;
+ $('#bRestore').onclick=async()=>{try{const p=await api(API+'/restore',{method:'POST',body:JSON.stringify({key})});curPrev='all';await loadList();openProduct(p.id)}catch(e){alert(errText(e))}};
+ $('#pv').srcdoc='<body style="font:13px Helvetica;color:#999;padding:30px;text-align:center">V letošním katalogu není</body>';
+ renderPrev(await api(API+'/prev',{method:'POST',body:JSON.stringify({key})}));
+ if($('#preview').dataset.mode==='cur')setMode('prev');
+}
+// ---------- loňská karta ----------
+function diffText(d){
+ const p=[];
+ if(d.colors_added.length)p.push(`<b class="plus">+ ${pl(d.colors_added.length,'barva','barvy','barev')}</b> (${d.colors_added.map(esc).join(', ')})`);
+ if(d.colors_removed.length)p.push(`<b class="minus">− ${pl(d.colors_removed.length,'barva','barvy','barev')}</b> (${d.colors_removed.map(esc).join(', ')})`);
+ if(d.colors_count)p.push(`<b class="${d.colors_count[1]>d.colors_count[0]?'plus':'minus'}">barev loni ${d.colors_count[0]}, letos ${d.colors_count[1]}</b>`);
+ if(d.price)p.push(`<b class="chg">cena ${fmtKc(d.price[0])} → ${fmtKc(d.price[1])} Kč</b>`);
+ if(d.changed.length)p.push('<b class="chg">upraveno:</b> '+d.changed.map(esc).join(', '));
+ return p.length?p.join(' · '):'beze změny';
+}
+function renderPrev(info){
+ const strip=$('#pvStrip'), box=$('#pvPrev');
+ if(!info||!info.kind){strip.style.display='none';box.dataset.sig='';$('#ptPrev').textContent='Loni';
+  box.innerHTML=`<div class="empty">${info?'Katalog nemá loňský katalog k porovnání.<br>Nastavíš ho v nastavení katalogu.':''}</div>`;return}
+ $('#ptPrev').textContent='Loni · '+info.label+(info.found&&info.page?' · str. '+info.page:'');
+ const links=cur?`<a id="pvAssign">${info.found?'jiná karta':'přiřadit loňskou kartu'}</a>`:'';
+ strip.style.display='block';
+ strip.innerHTML=info.found?`<b>Oproti ${esc(info.label)}:</b> ${info.diff?diffText(info.diff):esc(info.name)}${info.name&&cur&&info.name!==cur.name?` · loni jako „${esc(info.name)}“`:''}${links}${info.pdf?`<a href="${info.pdf}" target="_blank">strana v PDF ↗</a>`:''}`
+  :`<b class="plus">Nový model</b> – v ${esc(info.label)} nebyl.${links}`;
+ if($('#pvAssign'))$('#pvAssign').onclick=assignPrev;
+ const sig=info.found?info.catalog+'|'+info.key:'none';
+ if(box.dataset.sig!==sig){box.dataset.sig=sig;
+  box.innerHTML=!info.found?'<div class="empty">Loňská karta neexistuje.<br>Produkt je v katalogu nově.</div>':info.kind==='image'?`<img src="/${info.image}" alt="">`:`<iframe src="/api/c/${info.catalog}/preview/${encodeURIComponent(info.key)}"></iframe>`}
+}
+async function assignPrev(){
+ const l=await api(API+'/prevlist');
+ pmOpen('Loňská karta produktu',`<div class="inline"><input type="text" id="apQ" placeholder="hledat v ${esc(prevLabel())}…" style="flex:1"><button data-k="">Podle názvu (automaticky)</button><button data-k="-">Žádná – nový model</button></div><div class="lib" id="apL" style="grid-template-columns:repeat(auto-fill,minmax(180px,1fr))"></div>`);
+ const draw=()=>{const q=$('#apQ').value.trim().toLowerCase();$('#apL').innerHTML=l.filter(x=>!q||x.name.toLowerCase().includes(q)).map(x=>`<div data-k="${esc(x.key)}" style="text-align:left;font-size:12px;padding:8px"><b>${esc(x.name)}</b><br>${esc(secName(x.section))}${x.page?' · str. '+x.page:''}</div>`).join('')};
+ $('#apQ').oninput=draw;draw();$('#apQ').focus();
+ $('#pmBody').onclick=e=>{const d=e.target.closest('[data-k]');if(!d)return;$('#pmBody').onclick=null;cur.prev_id=d.dataset.k||null;pmClose();setDirty();preview()};
+}
+function setDirty(){if(!cur)return;dirty=true;if($('#st'))$('#st').textContent='neuloženo'}
 
 // ---------- formulář ----------
 function renderForm(){
@@ -179,7 +357,7 @@ function renderForm(){
  const fields=fieldKeys.map(k=>fieldRow(k,p.fields[k])).join('');
  const photos=S.photos.map(([k,l])=>slot(k,l,p[k])).join('');
  const T=p.specs?.temps||{};
- f.innerHTML=`
+ f.innerHTML=`${META.catalog.status==='done'?`<div class="lock">Katalog ${esc(META.catalog.label)} je uzavřený – změny nejdou uložit. Odemkneš ho v <a href="#/k/${CODE}/nastaveni">nastavení katalogu</a>.</div>`:''}
  <div class="bar"><h1>${esc(p.name)}</h1><span class="status" id="st">uloženo</span><button id="bDup" class="sm">Duplikovat</button><button id="bDel" class="sm dan">Smazat</button><button id="bSave" class="pri">Uložit</button></div>
  <div class="sec"><h2>Základ</h2>
   <div class="row">
@@ -225,8 +403,8 @@ function toolbar(has){return `<div class="tb">${has?`<button data-act="edit" tit
 function slot(k,l,v){return `<div class="slot" data-slot="${k}"><div class="dz">${v?`<img src="/${v}">`:`<span>${l}<br>přetáhni, vlož (Cmd+V) nebo klikni</span>`}${toolbar(!!v)}</div><div class="cap"><b>${l}</b></div></div>`}
 function kindFor(k){return k==='hero_inner'?'inner':(k==='draw'||k==='art'?'rozkresy':'foto')}
 // jednotné chování políčka s fotkou: get/set hodnoty, druh (kind) a přepočet
-function bindDz(dz,get,set,kind){
- const apply=p=>{set(p);setDirty();preview()};
+function bindDz(dz,get,set,kind,after){
+ const apply=p=>{set(p);if(after)after();else{setDirty();preview()}};
  dz.onclick=e=>{const b=e.target.closest('button[data-act]'); const act=b?b.dataset.act:(get()?'edit':'up'); activeDz={get,set,kind};
   if(act==='up')pick(f=>uploadTo(f,kind,apply));
   else if(act==='rm')apply(null);
@@ -238,12 +416,13 @@ function bindDz(dz,get,set,kind){
  dz.onmouseenter=()=>{activeDz={get,set,kind};$$('.dz.active').forEach(x=>x.classList.remove('active'));dz.classList.add('active')};
 }
 let activeDz=null;
-document.addEventListener('paste',e=>{if(!activeDz||!cur)return;const it=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith('image/'));if(!it)return;e.preventDefault();const {set,kind}=activeDz;uploadTo(it.getAsFile(),kind,p=>{set(p);setDirty();preview()})});
+document.addEventListener('paste',e=>{if(!activeDz||!cur||$('#vEditor').style.display==='none')return;const it=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith('image/'));if(!it)return;e.preventDefault();const {set,kind}=activeDz;uploadTo(it.getAsFile(),kind,p=>{set(p);setDirty();preview()})});
 function bindSlot(s){const k=s.dataset.slot; bindDz(s.querySelector('.dz'),()=>cur[k],p=>{cur[k]=p;renderForm()},kindFor(k))}
 function pick(cb){const i=document.createElement('input');i.type='file';i.accept='image/*';i.onchange=()=>i.files[0]&&cb(i.files[0]);i.click()}
 async function uploadTo(file,kind,cb){
- const fd=new FormData();fd.append('file',file);fd.append('kind',kind);fd.append('name',(cur.name||'obr')+'_'+kind);
- $('#st').textContent='nahrávám…';
+ const inEd=cur&&$('#vEditor').style.display!=='none';
+ const fd=new FormData();fd.append('file',file);fd.append('kind',kind);fd.append('name',inEd?(cur.name||'obr')+'_'+kind:file.name.replace(/\.[^.]+$/,''));
+ if($('#st'))$('#st').textContent='nahrávám…';
  const r=await fetch('/api/upload',{method:'POST',body:fd}); if(!r.ok){alert('Nahrání selhalo');return}
  const j=await r.json(); cb(j.path);
 }
@@ -277,14 +456,16 @@ function collect(){
 }
 async function save(){
  collect(); if(!cur.name){alert('Chybí název');return}
- cur=await api('/api/products/'+cur.id,{method:'PUT',body:JSON.stringify(cur)}); dirty=false; $('#st').textContent='uloženo';
- META=await api('/api/meta'); await loadList(); renderForm(); preview();
+ try{cur=await api(API+'/products/'+encodeURIComponent(cur.id),{method:'PUT',body:JSON.stringify(cur)})}catch(e){return alert(errText(e))}
+ dirty=false; $('#st').textContent='uloženo';
+ const keep=META.catalog.files_all; META=await api(API+'/meta'); META.catalog.files_all=keep; await loadList(); renderForm(); preview();
 }
-async function del(){ if(!confirm(`Smazat „${cur.name}“?`))return; await api('/api/products/'+cur.id,{method:'DELETE'}); cur=null; dirty=false; $('#form').innerHTML='<div class="empty">Produkt smazán.</div>'; $('#pv').src='about:blank'; await loadList(); }
-async function dup(){ collect(); const c=JSON.parse(JSON.stringify(cur)); delete c.id; c.name=c.name+' KOPIE'; cur=await api('/api/products',{method:'POST',body:JSON.stringify(c)}); dirty=false; await loadList(); renderForm(); preview(); }
+async function del(){ if(!confirm(`Smazat „${cur.name}“?`))return; try{await api(API+'/products/'+encodeURIComponent(cur.id),{method:'DELETE'})}catch(e){return alert(errText(e))} cur=null; dirty=false; $('#form').innerHTML='<div class="empty">Produkt smazán.</div>'; $('#pv').srcdoc=''; renderPrev(null); setHash('#/k/'+CODE); await loadList(); }
+async function dup(){ collect(); const c=JSON.parse(JSON.stringify(cur)); delete c.id; delete c.prev_id; c.name=c.name+' KOPIE'; try{cur=await api(API+'/products',{method:'POST',body:JSON.stringify(c)})}catch(e){return alert(errText(e))} dirty=false; await loadList(); setHash(`#/k/${CODE}/p/${encodeURIComponent(cur.id)}`); renderForm(); preview(); }
 async function preview(){
  if(!cur)return; collect();
- const html=await api('/api/preview',{method:'POST',body:JSON.stringify(cur)}); $('#pv').srcdoc=html;
+ api(API+'/prev',{method:'POST',body:JSON.stringify({product:cur})}).then(renderPrev).catch(()=>{});
+ const html=await api(API+'/preview',{method:'POST',body:JSON.stringify(cur)}); $('#pv').srcdoc=html;
 }
 document.addEventListener('input',e=>{if(cur&&e.target.closest('#form'))clearTimeout(window._pt),window._pt=setTimeout(preview,600)});
 // ---------- fotky: editor, knihovna, web ----------
@@ -317,31 +498,209 @@ async function openEditor(path,kind,apply){
  $('#edCrop').onclick=()=>sel&&run({op:'crop',...sel});
 }
 async function openLibrary(kind,apply){
- pmOpen('Knihovna fotek',`<div class="inline"><input type="text" id="libQ" placeholder="hledat podle názvu souboru…" style="flex:1"><select id="libSub"><option value="">vše</option><option value="foto">fotky</option><option value="rozkresy">rozkresy</option><option value="ikony">ikony</option></select></div><div class="lib" id="lib"></div>`);
- const load=async()=>{const l=await api('/api/library?q='+encodeURIComponent($('#libQ').value)+'&sub='+$('#libSub').value);$('#lib').innerHTML=l.map(f=>`<div data-p="${f.path}"><img src="/${f.path}" loading="lazy">${esc(f.name)}</div>`).join('')||'<div class="hint">nic nenalezeno</div>'};
- $('#libQ').oninput=()=>{clearTimeout(window._lq);window._lq=setTimeout(load,300)}; $('#libSub').onchange=load; $('#libSub').value=kind==='rozkresy'?'rozkresy':'';
+ pmOpen('Knihovna fotek',`<div class="inline"><input type="text" id="libQ" placeholder="hledat podle názvu souboru…" style="flex:1"><select id="libSub"><option value="">vše</option><option value="foto">fotky</option><option value="rozkresy">rozkresy</option><option value="ikony">ikony</option><option value="pages">technické strany</option><option value="hero">úvodní fotky</option></select></div><div class="lib" id="lib"></div>`);
+ const load=async()=>{const l=await api('/api/library?q='+encodeURIComponent($('#libQ').value)+'&sub='+$('#libSub').value);$('#lib').innerHTML=l.map(f=>`<div data-p="${f.path}"><img src="/thumb/${f.path}?w=240" loading="lazy">${esc(f.name)}</div>`).join('')||'<div class="hint">nic nenalezeno</div>'};
+ $('#libQ').oninput=()=>{clearTimeout(window._lq);window._lq=setTimeout(load,300)}; $('#libSub').onchange=load; $('#libSub').value=['rozkresy','pages','hero'].includes(kind)?kind:'';
  $('#lib').onclick=e=>{const d=e.target.closest('[data-p]');if(d){apply(d.dataset.p);pmClose()}}; load();
 }
 async function openWeb(kind,apply){
- pmOpen('Fotky z webu',`<div class="inline"><input type="text" id="webUrl" placeholder="URL produktu na trimm.eu nebo přímý odkaz na obrázek" style="flex:1" value="${esc(cur.web_url||'')}"><button id="webGo">Načíst</button></div><div class="lib" id="web"></div><div class="hint">Klikni na fotku, stáhne se do knihovny a vloží do políčka.</div>`);
+ pmOpen('Fotky z webu',`<div class="inline"><input type="text" id="webUrl" placeholder="URL produktu na trimm.eu nebo přímý odkaz na obrázek" style="flex:1" value="${esc(cur?.web_url||'')}"><button id="webGo">Načíst</button></div><div class="lib" id="web"></div><div class="hint">Klikni na fotku, stáhne se do knihovny a vloží do políčka.</div>`);
  const go=async()=>{const u=$('#webUrl').value.trim();if(!u)return;$('#web').innerHTML='<div class="hint">načítám…</div>';
-  if(/\.(jpe?g|png|webp)(\?|$)/i.test(u)){try{const r=await api('/api/fetch',{method:'POST',body:JSON.stringify({url:u,kind,name:cur.name})});apply(r.path);pmClose()}catch(e){$('#web').innerHTML='CHYBA: '+e.message}return}
+  if(/\.(jpe?g|png|webp)(\?|$)/i.test(u)){try{const r=await api('/api/fetch',{method:'POST',body:JSON.stringify({url:u,kind,name:cur?.name||CODE})});apply(r.path);pmClose()}catch(e){$('#web').innerHTML='CHYBA: '+e.message}return}
   try{const l=await api('/api/webgallery?url='+encodeURIComponent(u));$('#web').innerHTML=l.map(f=>`<div data-u="${f.url}" data-n="${esc(f.name)}"><img src="${f.thumb}" loading="lazy">${esc(f.name)}</div>`).join('')||'<div class="hint">na stránce nejsou žádné fotky</div>'}catch(e){$('#web').innerHTML='CHYBA: '+e.message}};
  $('#webGo').onclick=go; $('#webUrl').onkeydown=e=>{if(e.key==='Enter')go()};
- $('#web').onclick=async e=>{const d=e.target.closest('[data-u]');if(!d)return;d.style.opacity=.4;try{const r=await api('/api/fetch',{method:'POST',body:JSON.stringify({url:d.dataset.u,kind,name:cur.name+'_'+kind})});apply(r.path);pmClose()}catch(err){alert('Stažení selhalo: '+err.message)}};
- if(cur.web_url)go();
+ $('#web').onclick=async e=>{const d=e.target.closest('[data-u]');if(!d)return;d.style.opacity=.4;try{const r=await api('/api/fetch',{method:'POST',body:JSON.stringify({url:d.dataset.u,kind,name:(cur?.name||CODE)+'_'+kind})});apply(r.path);pmClose()}catch(err){alert('Stažení selhalo: '+err.message)}};
+ if(cur?.web_url)go();
 }
 // ---------- generování ----------
-function openGen(){$('#modal').style.display='flex';$('#mLog').textContent='Připraveno.';$('#mHtml').style.display=$('#mPdf').style.display='none'}
+let GEN=null;
+function openGen(code){GEN=code;const c=CATS.find(c=>c.code===code);$('#mTitle').textContent='Generování katalogu '+(c?c.label:code);$('#modal').style.display='flex';$('#mLog').textContent='Připraveno.';$('#mHtml').style.display=$('#mPdf').style.display='none'}
 async function runGen(){
  if(dirty&&!confirm('Máš neuložené změny. Generovat bez nich?'))return;
  $('#mRun').disabled=true; $('#mLog').textContent='Generuji… (PDF trvá zhruba minutu)';
- try{const r=await api('/api/generate',{method:'POST',body:JSON.stringify({pdf:$('#gPdf').checked,push:$('#gPush').checked})});
-  $('#mLog').textContent=r.log; $('#mHtml').href=r.html; $('#mHtml').style.display='inline'; if($('#gPdf').checked){$('#mPdf').href=r.pdf;$('#mPdf').style.display='inline'}}
- catch(e){$('#mLog').textContent='CHYBA: '+e.message}
+ try{const r=await api('/api/c/'+GEN+'/generate',{method:'POST',body:JSON.stringify({pdf:$('#gPdf').checked,push:$('#gPush').checked})});
+  $('#mLog').textContent=r.log; $('#mHtml').href=r.html; $('#mHtml').style.display='inline'; if($('#gPdf').checked){$('#mPdf').href=r.pdf;$('#mPdf').style.display='inline'}
+  await loadCats(); if($('#vHome').style.display!=='none')renderHome(); if(META&&CODE===GEN)META.catalog.files_all=(CATS.find(c=>c.code===GEN)||{}).files||[]}
+ catch(e){$('#mLog').textContent='CHYBA: '+errText(e)}
  $('#mRun').disabled=false;
 }
-init();
+// ---------- úvodní stránka: katalogy ----------
+async function loadCats(){const r=await api('/api/catalogs');CATS=r.catalogs;KINDS=r.kinds;return CATS}
+async function showHome(){show('vHome');await loadCats();renderHome()}
+function filesHtml(c){return c.files.length?`<div class="files">${c.files.map(f=>`<a href="${esc(f.url)}" target="_blank"><span class="ext ${f.ext}">${f.ext.toUpperCase()}</span>${esc(f.label)}<small>${f.pages?f.pages+' stran · ':''}${fmtSize(f.size)} · ${fmtDate(f.mtime)}</small></a>`).join('')}</div>`:'<div class="hint">Zatím žádný výstup – katalog ještě nebyl vygenerován.</div>'}
+function catCard(c){
+ const kind=KINDS.find(k=>k.key===c.kind)||{}; const db_=c.source==='db'; const v=c.vs_prev;
+ const cov=c.cover?`style="background-image:url('/thumb/${c.cover}?w=800')"`:(c.cover_pdf?`style="background-image:url('/api/pdfcover?path=${encodeURIComponent(c.cover_pdf)}')"`:'');
+ const st=!db_?'<span class="st">archiv · jen PDF</span>':(c.status==='done'?'<span class="st">hotový · uzavřený</span>':'<span class="st draft">rozpracovaný</span>');
+ return `<div class="cat" data-code="${c.code}"><div class="cov${c.cover?'':' pdf'}" ${cov} data-act="open"><span class="tag ${c.kind}">${esc((kind.cz||'').toUpperCase())}</span>${st}</div>
+ <div class="bd2"><h3>${esc(c.title)} ${esc(c.year)}<small>${c.code}</small></h3>
+ ${db_?`<div class="nums"><b>${c.n_products}</b> modelů · <b>${c.n_colors}</b> barevných variant · <b>${c.n_new_flag}</b> novinek</div>`:(c.n_products?`<div class="nums"><b>${c.n_products}</b> karet vytěžených z PDF (slouží jako loňské karty)</div>`:'')}
+ ${v?`<div class="vs">oproti ${esc(v.prev)}: <b class="plus">${v.new} nových</b> · <b class="chg">${v.changed} změněných</b> · ${v.same} beze změny · <b class="minus">${v.removed} vyřazených</b></div>`:''}
+ ${c.note?`<div class="hint">${esc(c.note)}</div>`:''}
+ ${filesHtml(c)}
+ <div class="acts">${db_?`<button class="pri" data-act="open">${c.status==='done'?'Prohlédnout':'Upravovat'}</button>${c.status==='done'?'':'<button data-act="gen">Vygenerovat PDF</button>'}<button data-act="set">Nastavení</button>`:'<button data-act="set">Nastavení a PDF</button>'}</div></div></div>`;
+}
+function renderHome(){
+ const drafts=CATS.filter(c=>c.source==='db'&&c.status!=='done'), done=CATS.filter(c=>!(c.source==='db'&&c.status!=='done'));
+ $('#home').innerHTML=`<div class="phead"><h1>Katalogy</h1></div>
+ <div class="news">${KINDS.map(k=>`<div class="tile-new" data-new="${k.key}">+ ${esc(k.cz)} katalog<small>${esc(k.title)} · vyjde z loňského, změníš jen to, co je nové</small></div>`).join('')}<div class="tile-new" data-new="archive">+ Hotové PDF do archivu<small>starší ročník nebo katalog od grafika</small></div></div>
+ ${drafts.length?`<div class="gh">Rozpracované</div><div class="cats">${drafts.map(catCard).join('')}</div>`:''}
+ <div class="gh">Hotové katalogy</div><div class="cats">${done.map(catCard).join('')||'<div class="hint">Zatím žádné.</div>'}</div>`;
+ $('#home').onclick=e=>{const n=e.target.closest('[data-new]');if(n){n.dataset.new==='archive'?dlgArchive():dlgNew(n.dataset.new);return}
+  const a=e.target.closest('[data-act]');if(!a)return;const code=a.closest('.cat').dataset.code,c=CATS.find(c=>c.code===code);
+  if(a.dataset.act==='gen')openGen(code);else if(a.dataset.act==='set'||c.source!=='db')location.hash='#/k/'+code+'/nastaveni';else location.hash='#/k/'+code};
+}
+function dlgNew(kind){
+ const k=KINDS.find(x=>x.key===kind), same=CATS.filter(c=>c.kind===kind), year=same.length?Math.max(...same.map(c=>c.year_num||0))+1:new Date().getFullYear()+1;
+ const bases=[...same,...CATS.filter(c=>c.kind!==kind)]; const def=same.find(c=>c.source==='db')||bases.find(c=>c.source==='db');
+ pmOpen(`Nový ${k.cz.toLowerCase()} katalog`,`<div class="row"><div><label>${kind==='FW'?'Rok začátku sezóny (2027 = FW 27/28)':'Rok'}</label><input type="number" id="ncY" value="${year}"></div>
+  <div style="grid-column:span 2"><label>Vyjít z katalogu (stane se „loňským“ pro porovnání)</label><select id="ncB"><option value="">— prázdný katalog —</option>${bases.map(c=>`<option value="${c.code}"${def&&def.code===c.code?' selected':''}>${esc(c.label)}${c.source==='db'?` · ${c.n_products} modelů`:' · jen PDF, produkty se nepřevezmou'}</option>`).join('')}</select></div></div>
+  <label>Předobjednávkový formulář (.xlsx; camp i oblečení můžeš vybrat najednou)</label><input type="file" id="ncF" accept=".xlsx" multiple style="margin-bottom:10px">
+  <label class="inline"><input type="checkbox" id="ncC" checked> Převzít všechny produkty, barvy a fotky (pak jen přidáš a ubereš, co se mění)</label>
+  <label class="inline"><input type="checkbox" id="ncN" checked> Zrušit štítek „Novinka“ u převzatých produktů</label>
+  <div class="hint">Katalog vznikne jako kopie loňského. S formulářem se pak karty spárují podle názvu modelu a ukáže se návrh: nové modely, vyřazené modely, přidané a ubrané barvy, ceny. Nic se nezmění, dokud návrh nepotvrdíš. Původní katalog zůstane beze změny.</div>
+  <div class="inline"><span class="status" id="ncSt"></span><span class="sp"></span><button id="ncGo" class="pri">Založit katalog</button></div>`);
+ $('#ncGo').onclick=async()=>{$('#ncSt').textContent='zakládám…';try{const r=await api('/api/catalogs',{method:'POST',body:JSON.stringify({kind,year:+$('#ncY').value,base:$('#ncB').value,copy_products:$('#ncC').checked,reset_new:$('#ncN').checked})});
+   const fs=[...$('#ncF').files];if(fs.length){$('#ncSt').textContent='čtu formulář…';try{await uploadForm(r.catalog.code,fs)}catch(e){alert('Katalog je založený, ale formulář se nepodařilo načíst: '+errText(e))}}
+   pmClose();location.hash='#/k/'+r.catalog.code+(fs.length?'/formular':'')}catch(e){$('#ncSt').textContent='CHYBA: '+errText(e)}};
+}
+function dlgArchive(){
+ pmOpen('Hotové PDF do archivu',`<div class="row"><div><label>Typ</label><select id="arK">${KINDS.map(k=>`<option value="${k.key}">${esc(k.cz)} (${k.key})</option>`).join('')}</select></div><div><label>Rok (u zimy rok začátku sezóny)</label><input type="number" id="arY" value="${new Date().getFullYear()}"></div><div><label>Popisek souboru</label><input type="text" id="arL" value="PDF · CZ"></div></div>
+  <input type="file" id="arF" accept="application/pdf"><div class="inline"><span class="status" id="arSt"></span><span class="sp"></span><button id="arGo" class="pri">Přidat</button></div>`);
+ $('#arGo').onclick=async()=>{const f=$('#arF').files[0];if(!f){$('#arSt').textContent='vyber PDF';return}const fd=new FormData();fd.append('file',f);fd.append('kind',$('#arK').value);fd.append('year',$('#arY').value);fd.append('label',$('#arL').value);
+  $('#arSt').textContent='nahrávám…';const r=await fetch('/api/archive',{method:'POST',body:fd});if(!r.ok){$('#arSt').textContent='CHYBA: '+((await r.json()).detail||r.status);return}pmClose();showHome()};
+}
+// ---------- nastavení katalogu ----------
+let SET=null;
+async function showSettings(code){show('vSettings');if(!CATS.length)await loadCats();SET=await api('/api/c/'+code);renderSettings()}
+function renderSettings(){
+ const c=SET, db_=c.source==='db', locked=c.status==='done'&&db_;
+ const prevOpts=CATS.filter(x=>x.code!==c.code).map(x=>`<option value="${x.code}"${c.prev===x.code?' selected':''}>${esc(x.label)}${x.source==='db'?'':' (PDF)'}</option>`).join('');
+ const avail=c.section_defs.filter(d=>!c.sections.some(s=>s.key===d.key));
+ $('#settings').innerHTML=`<div class="wrap"><div class="phead"><h1>${esc(c.title)} ${esc(c.year)} · nastavení</h1><span class="status" id="sSt"></span><span class="sp"></span>${db_?`<button id="sLock">${locked?'Odemknout katalog':'Uzavřít jako hotový'}</button>`:''}<button id="sSave" class="pri">Uložit nastavení</button></div>
+ ${locked?'<div class="lock">Katalog je uzavřený: produkty nejdou měnit ani generovat. Slouží jako hotový ročník a základ pro další.</div>':''}
+ <div class="sec"><h2>Titulní strana</h2><div class="row"><div><label>Nadpis</label><input type="text" id="sTitle" value="${esc(c.title)}"></div><div><label>Ročník (na titulu žlutě)</label><input type="text" id="sYear" value="${esc(c.year)}"></div><div><label>Titulek dokumentu</label><input type="text" id="sDoc" value="${esc(c.doc_title||'')}"></div></div>
+  ${db_?`<div class="photos"><div class="slot" style="width:340px"><div class="dz" id="sHero" style="height:190px">${c.hero?`<img src="/thumb/${c.hero}?w=700">`:'<span>Úvodní fotka<br>přetáhni nebo klikni</span>'}${toolbar(!!c.hero)}</div><div class="cap"><b>Úvodní fotka</b></div></div></div><div class="hint">Každý rok se mění hlavně tahle fotka. Nahraj novou, původní zůstane u loňského katalogu.</div>`:''}</div>
+ ${db_?`<div class="sec"><h2>Loňský katalog (pro porovnání karet)</h2><div class="row"><div><select id="sPrev"><option value="">— žádný —</option>${prevOpts}</select></div></div><div class="hint">U každého produktu se v editoru ukazuje, jak jeho karta vypadala v tomto katalogu a co se změnilo.</div></div>
+ <div class="sec"><h2>Sekce a technické strany</h2><div id="sSecs">${c.sections.map((s,i)=>`<div class="srow" data-i="${i}"><div><button class="sm" data-sm="-1">▲</button><button class="sm" data-sm="1">▼</button></div><input type="text" data-k="cz" value="${esc(s.cz)}"><input type="text" data-k="title" value="${esc(s.title)}"><input type="color" data-k="color" value="${esc(s.color)}" style="height:30px;padding:2px"><button class="x" data-sx title="Odebrat sekci">×</button></div>
+  <div class="pgs" data-i="${i}">${(s.pages||[]).map((p,j)=>`<div class="pg"><img src="/thumb/${p}?w=240"><button class="x" data-px="${j}" title="Odebrat stranu">×</button></div>`).join('')}<div class="add" data-padd>+ strana</div></div>`).join('')}</div>
+  ${avail.length?`<div class="inline"><select id="sAdd" style="width:auto"><option value="">+ přidat sekci…</option>${avail.map(d=>`<option value="${d.key}">${esc(d.cz)}</option>`).join('')}</select></div>`:''}
+  <div class="hint">Pořadí sekcí = pořadí v katalogu. Technické strany (obrázky celých stran s tabulkami a piktogramy) se vloží na začátek sekce.</div></div>`:''}
+ <div class="sec"><h2>Hotové soubory katalogu</h2><div id="sFiles">${c.files.map(f=>`<div class="frow"><span class="ext ${f.ext}">${f.ext.toUpperCase()}</span><a href="${esc(f.url)}" target="_blank">${esc(f.label)}</a><span class="hint">${f.pages?f.pages+' stran · ':''}${fmtSize(f.size)} · ${fmtDate(f.mtime)} · ${esc(f.path)}</span><span class="sp"></span>${f.generated?'<span class="hint">generuje aplikace</span>':`<button class="sm" data-fx="${esc(f.path)}">Odebrat ze seznamu</button>`}</div>`).join('')||'<div class="hint">Žádné soubory.</div>'}</div>
+  <div class="inline" style="margin-top:10px"><input type="text" id="sFL" placeholder="popisek, např. PDF · EN" style="width:220px"><input type="file" id="sFF" accept="application/pdf"><button id="sFAdd">Přidat PDF</button></div></div>
+ <div class="sec"><h2>Smazání</h2><div class="inline"><button class="dan" id="sDel">Smazat katalog ${c.code}</button><span class="hint">Smaže záznam katalogu a jeho produkty z databáze. Fotky v úložišti a soubory PDF zůstanou.</span></div></div></div>`;
+ const mark=()=>{$('#sSt').textContent='neuloženo'};
+ const pull=()=>{c.title=$('#sTitle').value.trim();c.year=$('#sYear').value.trim();c.doc_title=$('#sDoc').value.trim();if($('#sPrev'))c.prev=$('#sPrev').value;
+  $$('#sSecs .srow').forEach(r=>{const s=c.sections[+r.dataset.i];r.querySelectorAll('[data-k]').forEach(el=>s[el.dataset.k]=el.value.trim())})};
+ const redraw=()=>{renderSettings();mark()};
+ $('#settings').querySelectorAll('input[type=text],input[type=color],select').forEach(el=>el.addEventListener('input',mark));
+ const saveSet=async extra=>{pull();SET=await api('/api/c/'+c.code,{method:'PUT',body:JSON.stringify({title:c.title,year:c.year,doc_title:c.doc_title,hero:c.hero,prev:c.prev,sections:db_?c.sections:undefined,...extra})});await loadCats();if(CODE===c.code)META=null;renderSettings();$('#sSt').textContent='uloženo'};
+ $('#sSave').onclick=()=>saveSet({}).catch(e=>alert(errText(e)));
+ if($('#sLock'))$('#sLock').onclick=()=>saveSet({status:locked?'draft':'done'}).catch(e=>alert(errText(e)));
+ if($('#sHero'))bindDz($('#sHero'),()=>c.hero,p=>{pull();c.hero=p||''},'hero',redraw);
+ if($('#sSecs'))$('#sSecs').onclick=e=>{const row=e.target.closest('[data-i]');if(!row)return;const i=+row.dataset.i,t=e.target;
+  if(t.dataset.sm){pull();const j=i+ +t.dataset.sm;if(j<0||j>=c.sections.length)return;[c.sections[i],c.sections[j]]=[c.sections[j],c.sections[i]];redraw()}
+  else if(t.dataset.sx!==undefined){if(!confirm('Odebrat sekci z katalogu?'))return;pull();c.sections.splice(i,1);redraw()}
+  else if(t.dataset.px!==undefined){pull();c.sections[i].pages.splice(+t.dataset.px,1);redraw()}
+  else if(t.dataset.padd!==undefined){const add=p=>{pull();(c.sections[i].pages=c.sections[i].pages||[]).push(p);redraw()};
+   pmOpen('Technická strana',`<div class="inline"><button id="tpUp" class="pri">Nahrát obrázek strany</button><button id="tpLib">Vybrat z úložiště</button></div>`);
+   $('#tpUp').onclick=()=>pick(f=>uploadTo(f,'pages',p=>{pmClose();add(p)}));$('#tpLib').onclick=()=>openLibrary('pages',add)}};
+ if($('#sAdd'))$('#sAdd').onchange=e=>{const d=c.section_defs.find(d=>d.key===e.target.value);if(!d)return;pull();c.sections.push({key:d.key,title:d.title,cz:d.cz,color:d.color,pages:[]});redraw()};
+ $('#sFiles').onclick=async e=>{const p=e.target.dataset.fx;if(!p||!confirm('Odebrat soubor ze seznamu? Na disku zůstane.'))return;await api('/api/c/'+c.code+'/files?path='+encodeURIComponent(p),{method:'DELETE'});showSettings(c.code)};
+ $('#sFAdd').onclick=async()=>{const f=$('#sFF').files[0];if(!f)return alert('Vyber PDF');const fd=new FormData();fd.append('file',f);fd.append('label',$('#sFL').value);const r=await fetch('/api/c/'+c.code+'/files',{method:'POST',body:fd});if(!r.ok)return alert((await r.json()).detail||'Nahrání selhalo');showSettings(c.code)};
+ $('#sDel').onclick=async()=>{if(prompt(`Opravdu smazat katalog ${c.code}? Pro potvrzení napiš jeho kód:`)!==c.code)return;try{await api('/api/c/'+c.code,{method:'DELETE'});if(CODE===c.code){CODE=null;META=null}location.hash='#/'}catch(e){alert(errText(e))}};
+}
+// ---------- předobjednávkový formulář ----------
+let PLAN=null, FCODE=null;
+async function uploadForm(code,files){const fd=new FormData();files.forEach(f=>fd.append('files',f));const r=await fetch('/api/c/'+code+'/form',{method:'POST',body:fd});if(!r.ok)throw new Error(await r.text());return r.json()}
+async function showForm(code){show('vForm');if(!CATS.length)await loadCats();FCODE=code;const c=await api('/api/c/'+code);if(c.source!=='db'){location.hash='#/k/'+code+'/nastaveni';return}
+ FCODE_C=c;PLAN=await api('/api/c/'+code+'/form');renderFormView()}
+let FCODE_C=null;
+function chgHtml(c){const p=[];
+ if(c.name)p.push(`<b class="chg">název</b> ${esc(c.name[0])} → ${esc(c.name[1])}`);
+ if(c.colors_added.length)p.push(`<b class="plus">+ ${pl(c.colors_added.length,'barva','barvy','barev')}</b> ${c.colors_added.map(esc).join(', ')}`);
+ if(c.colors_removed.length)p.push(`<b class="minus">− ${pl(c.colors_removed.length,'barva','barvy','barev')}</b> ${c.colors_removed.map(esc).join(', ')}`);
+ if(c.price){const f=a=>a[0]==null?'—':(a[0]===a[1]||a[1]==null?fmtKc(a[0]):fmtKc(a[0])+'–'+fmtKc(a[1]));p.push(`<b class="chg">cena</b> ${f(c.price[0])} → ${f(c.price[1])} Kč`)}
+ if(c.sizes)p.push(`<b class="chg">velikosti</b> ${esc(c.sizes[0].join(', ')||'—')} → ${esc(c.sizes[1].join(', '))}`);
+ return p.join(' · ')}
+function renderFormView(){
+ const c=FCODE_C, P=PLAN&&!PLAN.none?PLAN:null, sec=k=>(c.sections.find(s=>s.key===k)||{}).cz||k, locked=c.status==='done';
+ let h=`<div class="wrap"><div class="phead"><h1>Předobjednávkový formulář · ${esc(c.label)}</h1><span class="status" id="fSt"></span></div>
+ ${locked?'<div class="lock">Katalog je uzavřený – formulář nejde nahrát ani použít. Odemkneš ho v nastavení katalogu.</div>':`<div class="upz" id="fUp"><b>${P?'Nahrát novou verzi formuláře':'Nahraj předobjednávkový formulář (.xlsx)'}</b><br><span class="hint">Klikni nebo sem soubory přetáhni. Camp i oblečení můžeš nahrát najednou. Stačí sloupce Model, Položka a cena; Barva, Velikost, SK a registrační číslo se použijí, když tam jsou.</span></div>`}`;
+ if(P){
+  const chg=P.matched.filter(x=>x.changes.any), same=P.matched.length-chg.length;
+  h+=`<div class="hint" style="margin-bottom:10px">Načteno: ${P.files.map(esc).join(', ')} · ${P.rows} řádků · ${P.n_models} modelů</div>
+  ${P.warnings.map(w=>`<div class="lock">${esc(w)}</div>`).join('')}
+  <div class="tiles"><div><b>${same}</b>karet sedí s formulářem</div><div><b>${chg.length}</b>karet ke změně</div><div><b>${P.new.length}</b>modelů bez karty</div><div><b>${P.missing.length}</b>karet není ve formuláři</div></div>`;
+  if(!chg.length&&!P.new.length&&!P.missing.length)h+='<div class="sec"><h2>Hotovo</h2>Katalog odpovídá formuláři, není co měnit.</div>';
+  else{
+   h+=`<div class="sec"><h2>Co se má podle formuláře upravit</h2><div class="inline"><label class="inline"><input type="checkbox" id="oPrice" checked> ceny</label><label class="inline"><input type="checkbox" id="oAdd" checked> přidat nové barvy</label><label class="inline"><input type="checkbox" id="oRem" checked> ubrat barvy, které ve formuláři nejsou</label><label class="inline"><input type="checkbox" id="oSize" checked> velikosti</label><label class="inline"><input type="checkbox" id="oRen"> přepsat názvy barev podle formuláře</label></div>
+    <div class="hint">Texty, fotky, rozkresy a ikony hotových karet zůstávají. Nová barva dostane fotku a rozkres, pokud je už má stejný model v jiném katalogu.</div></div>`;
+   if(chg.length)h+=`<div class="sec"><h2>Změny u hotových karet (${chg.length})</h2><table class="plan">${chg.map(x=>`<tr><td><input type="checkbox" data-mk="${esc(x.key)}" checked></td><td class="nm"><a href="#/k/${c.code}/p/${encodeURIComponent(x.pid)}" style="color:inherit">${esc(x.name)}</a></td><td>${chgHtml(x.changes)}</td></tr>`).join('')}</table></div>`;
+   if(P.new.length)h+=`<div class="sec"><h2>Modely ve formuláři, které v katalogu nemají kartu (${P.new.length})</h2><table class="plan">${P.new.map(n=>`<tr><td></td><td class="nm">${esc(n.name)}</td><td>${esc(sec(n.section))} · ${esc(n.typ)} · ${n.price_min!=null?fmtKc(n.price_min)+' Kč':'bez ceny'} · ${pl(n.colors.length,'barva','barvy','barev')}<br><span class="hint">${n.colors.map(esc).join(', ')}</span></td>
+     <td><select data-nk="${esc(n.key)}">${n.source?`<option value="copy">převzít hotovou kartu z ${esc(n.source.label)}</option>`:''}<option value="create">založit novou prázdnou kartu</option>${P.missing.filter(m=>m.section===n.section).map(m=>`<option value="pair:${esc(m.pid)}"${n.suggest===m.pid?' selected':''}>je to přejmenovaný model: ${esc(m.name)}</option>`).join('')}<option value="skip">přeskočit</option></select></td></tr>`).join('')}</table>
+     <div class="hint" style="margin-top:8px">Nové karty dostanou štítek „Novinka“. U přejmenovaného modelu zůstane celá karta a změní se jen název a údaje z formuláře.</div></div>`;
+   if(P.missing.length)h+=`<div class="sec"><h2>Karty, které ve formuláři nejsou (${P.missing.length})</h2><div class="inline" style="margin-bottom:6px"><button class="sm" id="mAll">zaškrtnout vše</button><button class="sm" id="mNone">odškrtnout vše</button><span class="hint">Zaškrtnuté se z katalogu vyřadí. V loňském katalogu zůstávají a jdou kdykoli vrátit (filtr „vyřazené“).</span></div>
+     <table class="plan">${P.missing.map(m=>`<tr><td><input type="checkbox" data-rm="${esc(m.pid)}" checked></td><td class="nm"><a href="#/k/${c.code}/p/${encodeURIComponent(m.pid)}" style="color:inherit">${esc(m.name)}</a></td><td>${esc(sec(m.section))} · ${esc(m.serie)} · ${pl(m.n_colors,'barva','barvy','barev')}</td></tr>`).join('')}</table></div>`;
+   h+=`<div class="inline"><span class="sp"></span><button class="pri" id="fGo" style="padding:10px 22px"${locked?' disabled':''}>Provést změny v katalogu</button></div>`;
+  }
+ }
+ $('#formv').innerHTML=h+'</div>';
+ const up=async files=>{files=files.filter(f=>/\.xlsx$/i.test(f.name));if(!files.length)return alert('Vyber soubory .xlsx');$('#fSt').textContent='čtu formulář…';try{PLAN=await uploadForm(c.code,files);renderFormView()}catch(e){$('#fSt').textContent='';alert(errText(e))}};
+ const z=$('#fUp');if(z){z.onclick=()=>{const i=document.createElement('input');i.type='file';i.accept='.xlsx';i.multiple=true;i.onchange=()=>up([...i.files]);i.click()};
+  z.ondragover=e=>{e.preventDefault();z.classList.add('over')};z.ondragleave=()=>z.classList.remove('over');z.ondrop=e=>{e.preventDefault();z.classList.remove('over');up([...e.dataTransfer.files])}}
+ if($('#mAll'))$('#mAll').onclick=()=>$$('[data-rm]').forEach(x=>x.checked=true);if($('#mNone'))$('#mNone').onclick=()=>$$('[data-rm]').forEach(x=>x.checked=false);
+ // karta spárovaná jako přejmenovaný model se nesmí zároveň vyřadit
+ const sync=()=>{const paired=$$('[data-nk]').map(s=>s.value).filter(v=>v.startsWith('pair:')).map(v=>v.slice(5));$$('[data-rm]').forEach(x=>{const p=paired.includes(x.dataset.rm);x.disabled=p;if(p)x.checked=false})};
+ $$('[data-nk]').forEach(s=>s.onchange=sync);sync();
+ if($('#fGo'))$('#fGo').onclick=async()=>{
+  const body={opts:{prices:$('#oPrice').checked,add_colors:$('#oAdd').checked,remove_colors:$('#oRem').checked,sizes:$('#oSize').checked,rename_colors:$('#oRen').checked},
+   skip:$$('[data-mk]').filter(x=>!x.checked).map(x=>x.dataset.mk),new:Object.fromEntries($$('[data-nk]').map(s=>[s.dataset.nk,s.value])),remove:$$('[data-rm]').filter(x=>x.checked).map(x=>x.dataset.rm)};
+  const nNew=Object.values(body.new).filter(v=>v!=='skip').length;
+  if(!confirm(`Provést v katalogu ${c.label}?\n\n• upravit ${$$('[data-mk]').filter(x=>x.checked).length} karet\n• doplnit ${nNew} modelů\n• vyřadit ${body.remove.length} karet`))return;
+  $('#fGo').disabled=true;$('#fSt').textContent='provádím…';
+  try{const r=await api('/api/c/'+c.code+'/form/apply',{method:'POST',body:JSON.stringify(body)});META=null;await loadCats();PLAN=await api('/api/c/'+c.code+'/form');renderFormView();
+   $('#fSt').textContent=`hotovo: upraveno ${r.updated||0}, nových karet ${r.created||0}, převzatých ${r.copied||0}, přejmenovaných ${r.paired||0}, vyřazeno ${r.removed||0}`}
+  catch(e){alert(errText(e));$('#fGo').disabled=false;$('#fSt').textContent=''}};
+}
+// ---------- úložiště fotek ----------
+let ST={q:'',folder:'',used:'',catalog:'',n:240,data:null};
+async function showStorage(){show('vStorage');if(!CATS.length)await loadCats();
+ $('#storage').innerHTML=`<div class="phead"><h1>Úložiště fotek</h1><span class="hint" id="stSum"></span><span class="sp"></span><select id="stUpF" style="width:auto"><option value="foto">nahrát do: fotky produktů</option><option value="rozkresy">nahrát do: rozkresy</option><option value="ikony">nahrát do: ikony</option><option value="pages">nahrát do: technické strany</option><option value="hero">nahrát do: úvodní fotky</option></select><button class="pri" id="stUp">Nahrát soubory</button></div>
+ <div class="inline" style="margin-bottom:10px"><input type="search" id="stQ" placeholder="hledat podle názvu souboru nebo produktu…" style="width:320px;padding:7px 10px;border:1px solid var(--b);border-radius:4px;font:inherit" value="${esc(ST.q)}">
+  <select id="stUsed" style="width:auto"><option value="">použité i nepoužité</option><option value="yes">jen použité</option><option value="no">jen nepoužité</option></select>
+  <select id="stCat" style="width:auto"><option value="">všechny katalogy</option>${CATS.map(c=>`<option value="${c.code}">použité v ${esc(c.label)}</option>`).join('')}</select></div>
+ <div class="chips" id="stFold" style="margin-bottom:14px"></div><div class="stor" id="stGrid"></div><div class="inline" style="justify-content:center;margin-top:16px"><button id="stMore" style="display:none">Zobrazit další</button></div>
+ <div class="hint" style="margin-top:14px">Soubory můžeš přetáhnout kamkoli na tuto stránku. Smazat jde jen soubor, který žádný katalog nepoužívá.</div>`;
+ $('#stUsed').value=ST.used;$('#stCat').value=ST.catalog;
+ $('#stQ').oninput=()=>{clearTimeout(window._sq);window._sq=setTimeout(()=>{ST.q=$('#stQ').value;ST.n=240;loadStorage()},300)};
+ $('#stUsed').onchange=e=>{ST.used=e.target.value;ST.n=240;loadStorage()};$('#stCat').onchange=e=>{ST.catalog=e.target.value;ST.n=240;loadStorage()};
+ $('#stFold').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;ST.folder=c.dataset.f;ST.n=240;loadStorage()};
+ $('#stMore').onclick=()=>{ST.n+=480;drawStorage()};
+ const upMany=async files=>{files=files.filter(f=>f.type.startsWith('image/'));if(!files.length)return;$('#stSum').textContent='nahrávám '+files.length+' souborů…';for(const f of files){const fd=new FormData();fd.append('file',f);fd.append('kind',$('#stUpF').value);fd.append('name',f.name.replace(/\.[^.]+$/,''));await fetch('/api/upload',{method:'POST',body:fd})}loadStorage()};
+ $('#stUp').onclick=()=>{const i=document.createElement('input');i.type='file';i.accept='image/*';i.multiple=true;i.onchange=()=>upMany([...i.files]);i.click()};
+ const pg=$('#storage');pg.ondragover=e=>{e.preventDefault();pg.classList.add('drop')};pg.ondragleave=()=>pg.classList.remove('drop');pg.ondrop=e=>{e.preventDefault();pg.classList.remove('drop');upMany([...e.dataTransfer.files])};
+ $('#stGrid').onclick=e=>{const d=e.target.closest('.f');if(d)storageDetail(ST.data.files.find(f=>f.path===d.dataset.p))};
+ await loadStorage();
+}
+async function loadStorage(){ST.data=await api(`/api/storage?q=${encodeURIComponent(ST.q)}&folder=${ST.folder}&used=${ST.used}&catalog=${ST.catalog}`);drawStorage()}
+function drawStorage(){
+ const d=ST.data, all=d.folders.reduce((a,f)=>a+f.n,0);
+ $('#stSum').textContent=`${all} souborů · ${fmtSize(d.total_size)} · zobrazeno ${Math.min(ST.n,d.files.length)} z ${d.files.length}`;
+ $('#stFold').innerHTML=`<span class="chip${ST.folder?'':' on'}" data-f="">Vše ${all}</span>`+d.folders.map(f=>`<span class="chip${ST.folder===f.key?' on':''}" data-f="${f.key}">${esc(f.label)} ${f.n}</span>`).join('');
+ $('#stGrid').innerHTML=d.files.slice(0,ST.n).map(f=>`<div class="f" data-p="${esc(f.path)}"><img src="/thumb/${f.path}?w=240" loading="lazy"><span class="u${f.uses.length?'':' no'}">${f.uses.length?f.uses.length+'×':'nepoužito'}</span>${esc(f.name)}<br>${fmtSize(f.size)}</div>`).join('')||'<div class="hint">Nic nenalezeno.</div>';
+ $('#stMore').style.display=d.files.length>ST.n?'':'none';
+}
+function storageDetail(f){
+ pmOpen(f.name,`<div class="det"><div style="text-align:center"><img src="/${f.path}"></div><div><div class="hint">${esc(f.path)}<br>${fmtSize(f.size)} · nahráno ${fmtDate(f.mtime)}</div>
+  <div class="gh" style="margin-top:14px">${f.uses.length?'Použito '+f.uses.length+'×':'Nikde nepoužito'}</div><ul>${f.uses.map(u=>`<li><b>${esc(u.catalog)}</b> · ${u.id?`<a href="#/k/${u.catalog}/p/${encodeURIComponent(u.id)}" data-go>${esc(u.name)}</a> · `:''}${esc(u.what)}</li>`).join('')}</ul>
+  <div class="inline" style="margin-top:14px"><a href="/${f.path}" target="_blank"><button>Otevřít originál</button></a><button id="sdEdit">Upravit kopii</button>${f.uses.length?'':'<button class="dan" id="sdDel">Smazat soubor</button>'}</div></div></div>`);
+ $('#pmBody').querySelectorAll('[data-go]').forEach(a=>a.onclick=pmClose);
+ $('#sdEdit').onclick=()=>openEditor(f.path,f.folder,()=>loadStorage());
+ if($('#sdDel'))$('#sdDel').onclick=async()=>{if(!confirm('Smazat soubor natrvalo?'))return;try{await api('/api/storage?path='+encodeURIComponent(f.path),{method:'DELETE'});pmClose();loadStorage()}catch(e){alert(errText(e))}};
+}
+loadCats().then(boot);
+
 </script>
 </body>
 </html>

@@ -1,86 +1,218 @@
-"""Administrace katalogu TRIMM. Spuštění: python3 admin/app.py  ->  http://localhost:8765"""
-import os, re, io, json, hashlib, unicodedata, threading, sys
+"""Aplikace na tvorbu katalogů TRIMM. Spuštění: python3 admin/app.py  ->  http://localhost:8765"""
+import os, re, io, json, hashlib, threading, sys
 try:
     from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 except ImportError:
-    print('Chybí balíčky. Nainstaluj je příkazem:\n  ' + sys.executable + ' -m pip install --user fastapi "uvicorn[standard]" python-multipart pillow pymupdf')
+    print('Chybí balíčky. Nainstaluj je příkazem:\n  ' + sys.executable + ' -m pip install --user fastapi "uvicorn[standard]" python-multipart pillow pymupdf openpyxl')
     sys.exit(1)
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from PIL import Image
-import db, generate
+import db, generate, catalogs, orderform
+from typing import List
 from schemas import SECTIONS, SCHEMAS, SPEC_LABELS, GENDERS, BADGE_LABELS, empty_product
 
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.abspath(os.path.join(HERE, '..'))
 UP = os.path.join(HERE, 'uploads'); os.makedirs(UP, exist_ok=True)
-app = FastAPI(title='TRIMM katalog – administrace')
+app = FastAPI(title='TRIMM katalogy')
 app.mount('/uploads', StaticFiles(directory=UP), name='uploads')
 app.mount('/repo', StaticFiles(directory=REPO), name='repo')
 
-def slugify(s):
-    s = unicodedata.normalize('NFKD', s).encode('ascii', 'ignore').decode()
-    return re.sub(r'[^a-z0-9]+', '_', s.lower()).strip('_')
+from catalogs import slugify
+
+def need_catalog(code, write=False):
+    cat = db.get_catalog(code)
+    if not cat: raise HTTPException(404, f'Katalog {code} neexistuje')
+    if write and cat.get('source') != 'db': raise HTTPException(400, 'Archivní katalog (jen PDF) nemá produkty')
+    if write and cat.get('status') == 'done': raise HTTPException(423, 'Katalog je uzavřený. Odemkni ho v nastavení katalogu.')
+    return cat
 
 @app.get('/', response_class=HTMLResponse)
 def index(): return open(os.path.join(HERE, 'static', 'index.html'), encoding='utf-8').read()
 
-@app.get('/api/meta')
-def meta():
-    season = 'SS27'
+# ---------- katalogy ----------
+@app.get('/api/catalogs')
+def catalogs_list():
+    cats = [catalogs.summary(c) for c in db.list_catalogs()]
+    cats.sort(key=lambda c: (-(c.get('year_num') or 0), 0 if c.get('kind') == 'FW' else 1))
+    return dict(catalogs=cats, kinds=[dict(key=k, **v) for k, v in catalogs.KINDS.items()])
+
+@app.post('/api/catalogs')
+def catalog_create(body: dict):
+    try: cat, n = catalogs.create(body.get('kind'), int(body.get('year')), body.get('base') or '', bool(body.get('copy_products', True)), bool(body.get('reset_new', True)))
+    except ValueError as e: raise HTTPException(400, str(e))
+    return dict(catalog=cat, copied=n)
+
+@app.post('/api/archive')
+async def archive_create(file: UploadFile = File(...), kind: str = Form('SS'), year: int = Form(...), label: str = Form('')):
+    """katalog, který existuje jen jako hotové PDF (starší ročníky, katalog od grafika)"""
+    cat = catalogs.blank_catalog(kind, year, source='archive', status='done')
+    if db.get_catalog(cat['code']): raise HTTPException(400, f'Katalog {cat["code"]} už existuje – PDF k němu přidej na jeho kartě.')
+    cat['files'] = [await _store_pdf(file, cat['code'], label)]; db.save_catalog(cat); return cat
+
+async def _store_pdf(file, code, label=''):
+    raw = await file.read()
+    if raw[:5] != b'%PDF-': raise HTTPException(400, 'Soubor není PDF')
+    base = slugify(os.path.splitext(file.filename)[0]) or 'katalog'; fn = f'{base}.pdf'; i = 2
+    os.makedirs(os.path.join(REPO, 'vystupy'), exist_ok=True)
+    while os.path.exists(os.path.join(REPO, 'vystupy', fn)): fn = f'{base}_{i}.pdf'; i += 1
+    open(os.path.join(REPO, 'vystupy', fn), 'wb').write(raw)
+    return dict(label=label.strip() or 'PDF', path=f'vystupy/{fn}')
+
+@app.get('/api/c/{code}')
+def catalog_get(code: str):
+    cat = need_catalog(code); c = catalogs.summary(cat); c['sections'] = db.list_sections(code)
+    c['section_defs'] = [dict(key=k, **v) for k, v in SECTIONS.items()]
+    return c
+
+@app.put('/api/c/{code}')
+def catalog_update(code: str, body: dict):
+    cat = need_catalog(code)
+    for k in ('title', 'year', 'doc_title', 'hero', 'prev', 'status', 'note'):
+        if k in body: cat[k] = body[k]
+    if cat.get('prev') == code: cat['prev'] = ''
+    db.save_catalog(cat)
+    if 'sections' in body:
+        keep = set()
+        for i, s in enumerate(body['sections']):
+            if s.get('key') not in SECTIONS: continue
+            keep.add(s['key']); db.save_section(code, dict(key=s['key'], title=s.get('title') or SECTIONS[s['key']]['title'], cz=s.get('cz') or SECTIONS[s['key']]['cz'],
+                                                           color=s.get('color') or SECTIONS[s['key']]['color'], pages=s.get('pages') or [], sort=i))
+        for s in db.list_sections(code):
+            if s['key'] not in keep:
+                if db.list_products(code, s['key']): raise HTTPException(400, f'Sekce „{s["cz"]}“ obsahuje produkty, nejde odebrat.')
+                db.delete_section(code, s['key'])
+    return catalog_get(code)
+
+@app.delete('/api/c/{code}')
+def catalog_delete(code: str):
+    cat = need_catalog(code)
+    if cat.get('status') == 'done' and cat.get('source') == 'db': raise HTTPException(423, 'Uzavřený katalog nejde smazat. Nejdřív ho odemkni.')
+    if any(c.get('prev') == code for c in db.list_catalogs()): raise HTTPException(400, 'Na tento katalog navazuje novější katalog jako na loňský.')
+    db.delete_catalog(code); return dict(ok=True)
+
+@app.post('/api/c/{code}/files')
+async def catalog_file_add(code: str, file: UploadFile = File(...), label: str = Form('')):
+    cat = need_catalog(code); cat.setdefault('files', []).append(await _store_pdf(file, code, label)); db.save_catalog(cat); return catalogs.summary(cat)
+
+@app.delete('/api/c/{code}/files')
+def catalog_file_remove(code: str, path: str):
+    """odebere PDF ze seznamu u katalogu (soubor na disku zůstává)"""
+    cat = need_catalog(code); cat['files'] = [f for f in cat.get('files') or [] if f['path'] != path]; db.save_catalog(cat); return catalogs.summary(cat)
+
+@app.get('/api/pdfcover')
+def pdfcover(path: str):
+    fp = catalogs.pdf_cover(path)
+    if not fp: raise HTTPException(404)
+    return FileResponse(fp)
+
+@app.get('/thumb/{path:path}')
+def thumb(path: str, w: int = 320):
+    fp = catalogs.thumb(path, min(max(w, 60), 800))
+    if not fp: raise HTTPException(404)
+    return FileResponse(fp, headers={'Cache-Control': 'max-age=3600'})
+
+# ---------- produkty katalogu ----------
+@app.get('/api/c/{code}/meta')
+def meta(code: str):
+    cat = need_catalog(code)
     badges = sorted(f[:-4] for f in os.listdir(os.path.join(UP, 'ikony')) if f.endswith('.png')) if os.path.isdir(os.path.join(UP, 'ikony')) else []
-    prods = db.list_products(season)
+    prods = db.list_products(code)
     series = {}
     for p in prods: series.setdefault(p['section'], []); (series[p['section']].append(p['serie']) if p['serie'] and p['serie'] not in series[p['section']] else None)
-    typs = {}
+    typs = {k: set() for k in SCHEMAS}
     for p in prods: typs.setdefault(p['section'], set()).add(p.get('typ') or '')
-    return dict(season=season, sections=[dict(key=k, **v) for k, v in SECTIONS.items()], schemas=SCHEMAS, spec_labels=SPEC_LABELS, genders=GENDERS,
+    secs = db.list_sections(code)
+    return dict(season=code, catalog=dict(cat, label=catalogs.catalog_label(cat)), sections=[dict(key=s['key'], title=s['title'], cz=s['cz'], color=s['color']) for s in secs if s['key'] in SCHEMAS],
+                schemas=SCHEMAS, spec_labels=SPEC_LABELS, genders=GENDERS,
                 badges=[dict(name=b, file=f'uploads/ikony/{b}.png', label=BADGE_LABELS.get(b, b)) for b in badges], series=series,
-                typs={k: sorted(v | set(SCHEMAS[k]['typ'])) for k, v in typs.items()})
+                typs={k: sorted(v | set(SCHEMAS[k]['typ'])) for k, v in typs.items() if k in SCHEMAS})
 
-@app.get('/api/products')
-def products(section: str = None):
-    out = []
-    for p in db.list_products('SS27', section):
+@app.get('/api/c/{code}/products')
+def products(code: str, section: str = None):
+    cat = need_catalog(code); prods = db.list_products(code); ov = catalogs.overview(cat, prods); out = []
+    for p in prods:
+        if section and p['section'] != section: continue
         out.append(dict(id=p['id'], name=p['name'], section=p['section'], serie=p['serie'], sort=p['sort'], typ=p.get('typ'), new=p.get('new'),
-                        thumb=p.get('hero') or next((c.get('front') for c in p['colors'] if c.get('front')), None), n_colors=len(p['colors'])))
-    return out
+                        thumb=p.get('hero') or next((c.get('front') for c in p['colors'] if c.get('front')), None), n_colors=len(p['colors']), prev=ov['status'].get(p['id'])))
+    return dict(products=out, removed=ov['removed'], prev=ov['prev'], prev_kind=ov['kind'])
 
-@app.get('/api/products/{pid}')
-def product(pid: str):
-    p = db.get_product(pid)
+@app.get('/api/c/{code}/products/{pid}')
+def product(code: str, pid: str):
+    p = db.get_product(code, pid)
     if not p: raise HTTPException(404)
     return p
 
-@app.post('/api/products')
-def create(body: dict):
+@app.post('/api/c/{code}/products')
+def create(code: str, body: dict):
+    need_catalog(code, write=True)
     section = body.get('section') or 'tents'; name = (body.get('name') or 'NOVÝ PRODUKT').strip()
-    p = empty_product(section); p.update(body); p['name'] = name; p['season'] = 'SS27'
+    p = empty_product(section); p.update(body); p['name'] = name; p['season'] = code
     base = slugify(name) or 'produkt'; pid = base; i = 2
-    while db.get_product(pid): pid = f'{base}_{i}'; i += 1
-    p['id'] = pid; p['sort'] = db.next_sort('SS27', section)
+    while db.get_product(code, pid): pid = f'{base}_{i}'; i += 1
+    p['id'] = pid; p['sort'] = db.next_sort(code, section)
     db.save_product(p); return p
 
-@app.put('/api/products/{pid}')
-def update(pid: str, body: dict):
-    old = db.get_product(pid)
+@app.put('/api/c/{code}/products/{pid}')
+def update(code: str, pid: str, body: dict):
+    need_catalog(code, write=True); old = db.get_product(code, pid)
     if not old: raise HTTPException(404)
-    body['id'] = pid; body['season'] = 'SS27'
-    if body.get('section') != old['section']: body['sort'] = db.next_sort('SS27', body['section'])
-    db.save_product(body); return db.get_product(pid)
+    body['id'] = pid; body['season'] = code
+    if body.get('section') != old['section']: body['sort'] = db.next_sort(code, body['section'])
+    db.save_product(body); return db.get_product(code, pid)
 
-@app.delete('/api/products/{pid}')
-def delete(pid: str): db.delete_product(pid); return dict(ok=True)
+@app.delete('/api/c/{code}/products/{pid}')
+def delete(code: str, pid: str): need_catalog(code, write=True); db.delete_product(code, pid); return dict(ok=True)
 
-@app.post('/api/reorder')
-def reorder(body: dict):
-    db.renumber('SS27', body['section'], body['ids']); return dict(ok=True)
+@app.post('/api/c/{code}/reorder')
+def reorder(code: str, body: dict):
+    need_catalog(code, write=True); db.renumber(code, body['section'], body['ids']); return dict(ok=True)
+
+# ---------- předobjednávkový formulář ----------
+@app.post('/api/c/{code}/form')
+async def form_upload(code: str, files: List[UploadFile] = File(...)):
+    """nahraje formulář (i víc souborů: camp + oblečení), uloží ho ke katalogu a vrátí návrh změn"""
+    need_catalog(code, write=True); fs = [(f.filename, await f.read()) for f in files]
+    try: parsed = orderform.parse(fs)
+    except ValueError as e: raise HTTPException(400, str(e))
+    if not parsed['models']: raise HTTPException(400, ' '.join(parsed['warnings']) or 'Ve formuláři nejsou žádné modely.')
+    orderform.store(code, fs, parsed); return orderform.plan(code, parsed)
+
+@app.get('/api/c/{code}/form')
+def form_plan(code: str):
+    need_catalog(code); return orderform.plan(code) or dict(none=True)
+
+@app.post('/api/c/{code}/form/apply')
+def form_apply(code: str, body: dict):
+    need_catalog(code, write=True)
+    try: return orderform.apply(code, body)
+    except ValueError as e: raise HTTPException(400, str(e))
+
+# ---------- loňská karta ----------
+@app.post('/api/c/{code}/prev')
+def prev_card(code: str, body: dict):
+    """loňská karta k rozpracovanému produktu (posílá se celý záznam, aby rozdíly odpovídaly neuloženým úpravám) nebo podle klíče"""
+    cat = need_catalog(code)
+    if body.get('key'): return catalogs.prev_info(cat, key=body['key'])
+    p = body.get('product') or {}; p.setdefault('id', ''); p.setdefault('name', '')
+    return catalogs.prev_info(cat, p)
+
+@app.get('/api/c/{code}/prevlist')
+def prev_list(code: str):
+    kind, pc, idx = catalogs.prev_index(need_catalog(code))
+    return [dict(key=k, name=q['name'], section=q.get('section'), page=q.get('page')) for k, q in idx.items()]
+
+@app.post('/api/c/{code}/restore')
+def restore(code: str, body: dict):
+    try: return catalogs.restore(need_catalog(code, write=True), body['key'])
+    except ValueError as e: raise HTTPException(400, str(e))
 
 @app.post('/api/upload')
 async def upload(file: UploadFile = File(...), kind: str = Form('foto'), name: str = Form('')):
-    """kind: foto | rozkresy | ikony | pages | inner (PNG s průhledností)"""
+    """kind: foto | rozkresy | ikony | pages | hero | inner (PNG s průhledností)"""
     raw = await file.read()
     im = Image.open(io.BytesIO(raw)); im.load()
-    sub = 'foto' if kind in ('foto', 'inner') else kind; os.makedirs(os.path.join(UP, sub), exist_ok=True)
+    sub = 'foto' if kind in ('foto', 'inner') else (kind if kind in ('rozkresy', 'ikony', 'pages', 'hero') else 'ostatni'); os.makedirs(os.path.join(UP, sub), exist_ok=True)
     h = hashlib.md5(raw).hexdigest()[:8]; base = slugify(name or os.path.splitext(file.filename)[0]) or 'obr'
     keep_alpha = kind in ('inner', 'rozkresy', 'ikony') and im.mode in ('RGBA', 'LA', 'P') and (im.convert('RGBA').getextrema()[3][0] < 255)
     if keep_alpha:
@@ -88,7 +220,8 @@ async def upload(file: UploadFile = File(...), kind: str = Form('foto'), name: s
     else:
         if im.mode in ('RGBA', 'LA', 'P'):
             bg = Image.new('RGB', im.size, (255, 255, 255)); im = im.convert('RGBA'); bg.paste(im, mask=im.split()[-1]); im = bg
-        im = im.convert('RGB'); im.thumbnail((1600, 1600)); fn = f'{base}_{h}.jpg'; im.save(os.path.join(UP, sub, fn), quality=88, optimize=True)
+        big = 3000 if kind in ('hero', 'pages') else 1600
+        im = im.convert('RGB'); im.thumbnail((big, big)); fn = f'{base}_{h}.jpg'; im.save(os.path.join(UP, sub, fn), quality=88, optimize=True)
     return dict(path=f'uploads/{sub}/{fn}', w=im.width, h=im.height)
 
 def _save_image(im, sub, base, force_png=False):
@@ -203,28 +336,45 @@ def webgallery(url: str):
     base = 'https://cdn.myshoptet.com/usr/www.trimm.eu/user/shop/'
     return [dict(name=fn, thumb=base + 'detail_small/' + fn, url=base + 'orig/' + fn) for fn in files]
 
-@app.get('/api/preview/{pid}', response_class=HTMLResponse)
-def preview(pid: str):
-    p = db.get_product(pid)
-    if not p: raise HTTPException(404)
-    return generate.render_card_preview(p, '/')
+@app.get('/api/storage')
+def storage(q: str = '', folder: str = '', used: str = '', catalog: str = ''):
+    return catalogs.storage(q, folder, used, catalog)
 
-@app.post('/api/preview', response_class=HTMLResponse)
-def preview_draft(body: dict):
+@app.delete('/api/storage')
+def storage_delete(path: str):
+    """smaže soubor z úložiště – jen když ho žádný katalog nepoužívá"""
+    if not path.startswith('uploads/') or '..' in path: raise HTTPException(400, 'neplatná cesta')
+    use = catalogs.photo_usage().get(path)
+    if use: raise HTTPException(400, f'Soubor je použitý ({use[0]["catalog"]} · {use[0].get("name") or use[0]["what"]}).')
+    fp = os.path.join(HERE, path)
+    if os.path.exists(fp): os.remove(fp)
+    return dict(ok=True)
+
+@app.get('/api/c/{code}/preview/{pid}', response_class=HTMLResponse)
+def preview(code: str, pid: str):
+    p = db.get_product(code, pid)
+    if not p: raise HTTPException(404)
+    return generate.render_card_preview(p, '/', _sec_color(code, p['section']))
+
+@app.post('/api/c/{code}/preview', response_class=HTMLResponse)
+def preview_draft(code: str, body: dict):
     body.setdefault('colors', []); body.setdefault('id', 'draft'); body.setdefault('name', '')
-    return generate.render_card_preview(body, '/')
+    return generate.render_card_preview(body, '/', _sec_color(code, body.get('section')))
+
+def _sec_color(code, section): return next((s['color'] for s in db.list_sections(code) if s['key'] == section), None)
 
 _gen_lock = threading.Lock()
-@app.post('/api/generate')
-def gen(body: dict):
+@app.post('/api/c/{code}/generate')
+def gen(code: str, body: dict):
+    cat = need_catalog(code, write=True)
     if not _gen_lock.acquire(blocking=False): raise HTTPException(409, 'Generování už běží')
-    log = []
+    log = []; cfg = generate.catalog_cfg(cat)
     try:
-        generate.build('SS27', pdf=bool(body.get('pdf', True)), log=log.append)
-        if body.get('push'): generate.git_push(log=log.append)
+        generate.build(code, pdf=bool(body.get('pdf', True)), log=log.append)
+        if body.get('push'): generate.git_push(log=log.append, dirs=[os.path.relpath(os.path.dirname(cfg['out_html']), REPO)])
     except Exception as e: log.append('CHYBA: ' + str(e))
     finally: _gen_lock.release()
-    return dict(log='\n'.join(log), html='/repo/ss27/trimm_katalog_SS27.html', pdf='/repo/vystupy/trimm_katalog_SS27_CZ.pdf')
+    return dict(log='\n'.join(log), html='/repo/' + os.path.relpath(cfg['out_html'], REPO), pdf='/repo/' + os.path.relpath(cfg['out_pdf'], REPO))
 
 if __name__ == '__main__':
     import uvicorn, webbrowser, socket
