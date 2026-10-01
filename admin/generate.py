@@ -88,6 +88,8 @@ class Renderer:
         fronts = sorted(fronts, key=lambda c: (0 if c.get('main') else 1, 0 if c.get('back') else 1, 1 if c.get('generic') else 0, r['colors'].index(c)))
         if not fronts: return f'<div class="{cls}"><div class="ph"><span class="ph-n">{E(r["name"])}</span><span class="ph-t">foto doplníme</span></div></div>'
         c = fronts[0]; imgs = ''
+        if r.get('hero_reverse'):   # oboustranná bunda: rub + zadek + předek (jako DOUBLE ve FW 26/27)
+            cls += ' three'; imgs += f'<img class="p-rev" src="{self.src(r["hero_reverse"])}" alt="{E(r["name"])} – rubová strana" loading="lazy">'
         if c.get('back') and r['section'] in ('sportswear', 'backpacks') and self.is_product_shot(c['back']): imgs += f'<img class="p-back" src="{self.src(c["back"])}" alt="{E(r["name"])} – zadní strana" loading="lazy">'
         imgs += f'<img class="p-front" src="{self.src(c["front"])}" alt="{E(r["name"])}" loading="lazy">'
         return f'<div class="{cls}">{imgs}</div>'
@@ -318,6 +320,8 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .p-front{height:96%;max-width:62%}
 .p-back{height:70%;max-width:34%}
 .photo img:only-child{height:96%;max-width:85%}
+.p-rev{height:80%;max-width:25%}
+.photo.three{gap:2%}.photo.three .p-front{max-width:46%}.photo.three .p-back{max-width:25%}
 .p-hero{height:96%;max-width:100%}
 .photo.two{gap:2%}.photo.two .p-hero{height:96%;max-width:66%}.photo.two .p-inner{height:60%;max-width:32%}
 .photo.small{height:170px}.photo.small img{height:88%;max-width:60%}

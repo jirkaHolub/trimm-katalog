@@ -52,7 +52,7 @@ SCHEMAS = {
     'sportswear': dict(
         fields=['VNĚJŠÍ MATERIÁL', 'VNITŘNÍ MATERIÁL', 'MATERIÁL VÝPLNĚ', 'MATERIÁL'],
         specs=['size'],
-        photos=[],
+        photos=[('hero_reverse', 'Rubová strana (oboustranné bundy)')],
         color_photos=['front', 'back', 'art'], temps=False, gender=True,
         typ=['bunda', 'kalhoty', 'mikina', 'tričko', 'vesta', 'kšiltovka', 'pláštěnka', 'šortky', 'nákrčník', 'návleky', 'pásek', 'sukně', 'čepice'],
     ),

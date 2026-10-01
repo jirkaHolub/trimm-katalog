@@ -10,7 +10,7 @@ KINDS = collections.OrderedDict([
     ('SS', dict(title='SPRING – SUMMER', cz='Letní', short='léto')),
     ('FW', dict(title='FALL – WINTER', cz='Zimní', short='zima')),
 ])
-PHOTO_SLOTS = [('hero', 'hlavní fotka'), ('hero_inner', 'vnitřní stan'), ('hero_back', 'zadní pohled'), ('draw', 'rozkres rozměrů')]
+PHOTO_SLOTS = [('hero', 'hlavní fotka'), ('hero_inner', 'vnitřní stan'), ('hero_back', 'zadní pohled'), ('hero_reverse', 'rubová strana'), ('draw', 'rozkres rozměrů')]
 COLOR_SLOTS = [('front', 'předek'), ('back', 'zadek'), ('art', 'rozkres')]
 
 def slugify(s):
