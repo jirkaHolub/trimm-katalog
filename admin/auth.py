@@ -15,15 +15,24 @@ SETUP_TOKEN = os.environ.get('KATALOG_SETUP_TOKEN')   # jen po dobu prvního nas
 # soubory repa, které se nesmí dát stáhnout ani přihlášenému (databáze s hesly, zdrojáky, git)
 BLOCKED = re.compile(r'^/repo/(\.git|\.claude|admin/(cache/|[^/]+\.(sqlite|py|command|md)$))')
 
+_made = False
 def _con():
+    global _made
     import db
     if db.PG_URL: con = db.connect()   # online jsou účty ve stejné databázi jako katalog (ta se nikam neverzuje)
     else: con = sqlite3.connect(AUTH_DB); con.row_factory = sqlite3.Row
+    if _made and db.PG_URL: return con
+    _made = True
     con.execute('CREATE TABLE IF NOT EXISTS config(key TEXT PRIMARY KEY, value TEXT)')
     con.execute('CREATE TABLE IF NOT EXISTS users(email TEXT PRIMARY KEY, password TEXT NOT NULL, role TEXT NOT NULL DEFAULT \'user\', active INTEGER NOT NULL DEFAULT 0, created REAL, last_login REAL)')
     return con
 
+_secret = None
 def secret():
+    global _secret
+    if _secret: return _secret
+    _secret = _load_secret(); return _secret
+def _load_secret():
     if os.environ.get('KATALOG_SECRET'): return os.environ['KATALOG_SECRET'].encode()
     con = _con(); r = con.execute("SELECT value FROM config WHERE key='secret'").fetchone()
     if not r: con.execute("INSERT INTO config VALUES('secret', ?)", (secrets.token_hex(32),)); con.commit(); r = con.execute("SELECT value FROM config WHERE key='secret'").fetchone()
@@ -56,7 +65,9 @@ def save_user(email, password=None, role=None, active=None):
         if role is not None: con.execute('UPDATE users SET role=? WHERE email=?', (role, email))
         if active is not None: con.execute('UPDATE users SET active=? WHERE email=?', (int(bool(active)), email))
     con.commit(); con.close()
+    _seen.pop(email, None)
 def delete_user(email):
+    _seen.pop(email, None)
     con = _con(); con.execute('DELETE FROM users WHERE email=?', (email,)); con.commit(); con.close()
 
 def make_token(email):
@@ -66,8 +77,11 @@ def read_token(tok):
     try: email, exp, sig = (tok or '').rsplit('|', 2)
     except ValueError: return None
     if not hmac.compare_digest(sig, hmac.new(secret(), f'{email}|{exp}'.encode(), hashlib.sha256).hexdigest()) or int(exp) < time.time(): return None
-    u = get_user(email)
+    hit = _seen.get(email)   # ověření účtu v databázi stačí jednou za půl minuty, ne u každého obrázku
+    if not hit or time.time() - hit[0] > 30: hit = _seen[email] = (time.time(), get_user(email))
+    u = hit[1]
     return u if u and u['active'] else None
+_seen = {}
 
 def current(request: Request):
     if not ENABLED: return dict(email='', role='admin', active=1, local=True)
@@ -138,6 +152,7 @@ const j=await r.json().catch(()=>({}));m.textContent=r.ok?'Hotovo, přesměrová
 def setup_admin(body: dict):
     """první správce – smí mít e-mail i mimo povolenou doménu"""
     _setup(body.get('token')); email = norm_email(body.get('email'))
+    if body.get('remove'): delete_user(email); return dict(ok=True, removed=email)
     if not re.fullmatch(r'[^@\s]+@[^@\s]+\.[a-z]{2,}', email): raise HTTPException(400, 'Neplatný e-mail.')
     check_new_password(body.get('password')); save_user(email, body['password'], 'admin', True); return dict(ok=True)
 

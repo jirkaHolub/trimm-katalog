@@ -23,15 +23,29 @@ def cache_dir(name):
     d = os.path.join(TMP if REMOTE else HERE, 'cache', name); os.makedirs(d, exist_ok=True); return d
 def safe(key): return bool(key) and '..' not in key and not key.startswith('/')
 
+_made = False
 def _db():
+    global _made
     import db
     con = db.connect()
-    con.execute('CREATE TABLE IF NOT EXISTS files(key TEXT PRIMARY KEY, size BIGINT, mtime REAL, meta TEXT)')
+    if not _made: con.execute('CREATE TABLE IF NOT EXISTS files(key TEXT PRIMARY KEY, size BIGINT, mtime REAL, meta TEXT)'); _made = True
     return con
 
+# tabulka files je malá (jen přírůstky) a čte se u každého obrázku, proto se drží pár vteřin v paměti
+_cache = dict(t=0, rows={})
+def _rows():
+    if time.time() - _cache['t'] > 5:
+        con = _db(); rows = con.execute('SELECT * FROM files').fetchall(); con.close()
+        _cache.update(t=time.time(), rows={r['key']: dict(json.loads(r['meta'] or '{}'), size=r['size'], mtime=r['mtime'], blob=True) for r in rows})
+    return _cache['rows']
+def _fresh(): _cache['t'] = 0
+
 def _row(key):
-    con = _db(); r = con.execute('SELECT * FROM files WHERE key=?', (key,)).fetchone(); con.close()
-    return dict(json.loads(r['meta'] or '{}'), size=r['size'], mtime=r['mtime'], blob=True) if r else None
+    r = _rows().get(key)
+    if r is None and not os.path.isfile(base_path(key)):   # jiná instance mohla soubor právě nahrát – zeptat se databáze napřímo
+        con = _db(); x = con.execute('SELECT * FROM files WHERE key=?', (key,)).fetchone(); con.close()
+        if x: r = dict(json.loads(x['meta'] or '{}'), size=x['size'], mtime=x['mtime'], blob=True)
+    return r
 
 def stat(key):
     """dict(size, mtime, + uložené údaje jako pages, shot; blob=True u souboru v Blob) nebo None, když soubor není"""
@@ -55,7 +69,7 @@ def set_meta(key, **meta):
     if not REMOTE: return
     con = _db(); r = con.execute('SELECT meta FROM files WHERE key=?', (key,)).fetchone()
     if r: con.execute('UPDATE files SET meta=? WHERE key=?', (json.dumps(dict(json.loads(r['meta'] or '{}'), **meta)), key)); con.commit()
-    con.close()
+    con.close(); _fresh()
 
 def local(key, st=None):
     """cesta k souboru na disku pro čtení (PIL, PyMuPDF); soubor z Blob se nejdřív stáhne do dočasné složky"""
@@ -98,7 +112,7 @@ def index(key, size, mtime, **meta):
     con = _db()
     con.execute('INSERT INTO files(key,size,mtime,meta) VALUES(?,?,?,?) ON CONFLICT(key) DO UPDATE SET size=excluded.size, mtime=excluded.mtime, meta=excluded.meta',
                 (key, size, mtime, json.dumps(meta)))
-    con.commit(); con.close()
+    con.commit(); con.close(); _fresh()
 
 def delete(key):
     if not safe(key): return
@@ -109,7 +123,7 @@ def delete(key):
     if r and not r.get('deleted'):
         from vercel import blob
         blob.delete([f'{BASE}/{quote(key)}'], token=TOKEN)
-    con = _db(); con.execute('DELETE FROM files WHERE key=?', (key,)); con.commit(); con.close()
+    con = _db(); con.execute('DELETE FROM files WHERE key=?', (key,)); con.commit(); con.close(); _fresh()
     if os.path.isfile(base_path(key)): index(key, 0, time.time(), deleted=True)   # soubor ze základu smazat nejde, jen ho skrýt
 
 def _walk_dir(root0, prefix):
@@ -124,8 +138,8 @@ def walk(prefix):
     prefix = prefix.rstrip('/') + '/'
     if not REMOTE: return _walk_dir(fs_path(prefix), prefix)
     files = {f['key']: f for f in _walk_dir(base_path(prefix), prefix)}
-    con = _db(); rows = con.execute('SELECT key, size, mtime, meta FROM files WHERE key LIKE ?', (prefix + '%',)).fetchall(); con.close()
-    for r in rows:
-        if json.loads(r['meta'] or '{}').get('deleted'): files.pop(r['key'], None)
-        else: files[r['key']] = dict(key=r['key'], size=r['size'], mtime=r['mtime'])
+    for key, r in _rows().items():
+        if not key.startswith(prefix): continue
+        if r.get('deleted'): files.pop(key, None)
+        else: files[key] = dict(key=key, size=r['size'], mtime=r['mtime'])
     return list(files.values())

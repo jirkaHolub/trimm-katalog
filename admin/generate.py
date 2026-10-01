@@ -48,6 +48,7 @@ GENDER_CZ = {'men': 'Pánské', 'women': 'Dámské', 'kids': 'Dětské', 'uni': 
 TYP_LABEL = {'s.p.': 'spací pytel', 'lodní': 'lodní vak', 'vodní': 'vodní vak', 'kompresní': 'kompresní vak', 'bivakovací': 'bivakovací pytel', 'náhradní': 'náhradní díl', 'tyčky': 'tyčky', 'vložka': 'vložka do spacáku'}
 SMALL_TYP = {'polštář', 'peněženka', 'pásek', 'nákrčník', 'kšiltovka', 'čepice', 'láhev', 'kolík', 'tyčky', 'náhradní', 'konektor'}
 
+_shots = {}
 def white_corners(im):
     im = im.convert('RGBA'); bg = Image.new('RGBA', im.size, (255, 255, 255, 255)); bg.alpha_composite(im); im = bg.convert('L'); w, h = im.size
     pts = [(3, 3), (w - 4, 3), (3, h - 4), (w - 4, h - 4), (w // 2, 3), (3, h // 2), (w - 4, h // 2)]
@@ -62,7 +63,11 @@ class Renderer:
         try:
             st = store.stat(path) or {}
             if 'shot' in st: return bool(st['shot'])
-            shot = white_corners(Image.open(store.local(path))); store.set_meta(path, shot=shot); return shot
+            k = (path, st.get('mtime'))
+            if k not in _shots:
+                im = Image.open(store.local(path, st)); im.draft('L', (200, 200))   # JPEG se dekóduje rovnou zmenšený
+                _shots[k] = white_corners(im)
+            return _shots[k]
         except Exception: return False
 
     def spec_chips(self, r):
