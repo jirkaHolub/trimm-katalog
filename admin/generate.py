@@ -1,7 +1,7 @@
 """Generátor katalogu (HTML + PDF) z databáze. Přenesený z ss27/nastroje/build_html.py."""
 import os, re, html, collections, math, subprocess, json
 from PIL import Image
-import db
+import db, store
 from schemas import SECTIONS as SEC_DEF, SERIE_COLORS
 
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.abspath(os.path.join(HERE, '..'))
@@ -48,15 +48,21 @@ GENDER_CZ = {'men': 'Pánské', 'women': 'Dámské', 'kids': 'Dětské', 'uni': 
 TYP_LABEL = {'s.p.': 'spací pytel', 'lodní': 'lodní vak', 'vodní': 'vodní vak', 'kompresní': 'kompresní vak', 'bivakovací': 'bivakovací pytel', 'náhradní': 'náhradní díl', 'tyčky': 'tyčky', 'vložka': 'vložka do spacáku'}
 SMALL_TYP = {'polštář', 'peněženka', 'pásek', 'nákrčník', 'kšiltovka', 'čepice', 'láhev', 'kolík', 'tyčky', 'náhradní', 'konektor'}
 
+def white_corners(im):
+    im = im.convert('RGBA'); bg = Image.new('RGBA', im.size, (255, 255, 255, 255)); bg.alpha_composite(im); im = bg.convert('L'); w, h = im.size
+    pts = [(3, 3), (w - 4, 3), (3, h - 4), (w - 4, h - 4), (w // 2, 3), (3, h // 2), (w - 4, h // 2)]
+    return sum(im.getpixel(p) for p in pts) / len(pts) > 235
+
 class Renderer:
     def __init__(self, img_prefix):
         self.pfx = img_prefix
     def src(self, path): return E(self.pfx + path)
     def is_product_shot(self, path):
+        """produktová fotka na bílém pozadí (ne lifestylová) – jen taková se ukazuje jako zadní pohled"""
         try:
-            im = Image.open(os.path.join(HERE, path)).convert('L'); w, h = im.size
-            pts = [(3, 3), (w - 4, 3), (3, h - 4), (w - 4, h - 4), (w // 2, 3), (3, h // 2), (w - 4, h // 2)]
-            return sum(im.getpixel(p) for p in pts) / len(pts) > 235
+            st = store.stat(path) or {}
+            if 'shot' in st: return bool(st['shot'])
+            shot = white_corners(Image.open(store.local(path))); store.set_meta(path, shot=shot); return shot
         except Exception: return False
 
     def spec_chips(self, r):
@@ -174,7 +180,7 @@ def render_document(cat, products, sections, img_prefix):
         toc += ''.join(f'<a href="#s-{sec}-{slug(k0)}" class="toc-s" data-sec="{sec}"><i style="background:{serie_color(sec, k0, s["color"])}"></i>{E(k0)}<span>{n}</span></a>' for k0, (k, n) in tc.items())
         toc += '</div></div>'
         chips += f'<button class="chip" data-f="{sec}" style="--tc:{s["color"]}">{E(s["cz"].upper())}</button>'
-        pages = ''.join(f'<img src="{R.src(p)}" alt="Technické informace" loading="lazy">' for p in (s.get('pages') or []) if os.path.exists(os.path.join(HERE, p)))
+        pages = ''.join(f'<img src="{R.src(p)}" alt="Technické informace" loading="lazy">' for p in (s.get('pages') or []) if store.exists(p))
         info = f'<div class="info-pages">{pages}</div>' if pages else ''
         body += f'<section class="sec" id="sec-{sec}" data-sec="{sec}" style="--tc:{s["color"]}"><div class="sec-head"><div class="sec-bar"></div><div><h2>{E(s["title"])}</h2><div class="sec-cz">{E(s["cz"])}</div></div><span class="sec-cnt">{len(items)} modelů</span></div>{info}'
         for k, v in gs.items():
@@ -232,22 +238,36 @@ def build(season='SS27', pdf=True, log=print):
     cfg = catalog_cfg(cat)
     products = db.list_products(season); sections = db.list_sections(season)
     doc = render_document(cat, products, sections, cfg['img_prefix'])
-    os.makedirs(os.path.dirname(cfg['out_html']), exist_ok=True)
-    open(cfg['out_html'], 'w', encoding='utf-8').write(doc)
-    idx = os.path.join(os.path.dirname(cfg['out_html']), 'index.html'); fn = os.path.basename(cfg['out_html'])
-    if not os.path.exists(idx):
-        open(idx, 'w', encoding='utf-8').write(f'<!DOCTYPE html>\n<html lang="cs">\n<head>\n<meta charset="utf-8">\n<title>{E(cfg["doc_title"])}</title>\n<meta http-equiv="refresh" content="0; url={fn}">\n<link rel="canonical" href="{fn}">\n</head>\n<body>\n<p>Přesměrování na <a href="{fn}">katalog</a>…</p>\n</body>\n</html>\n')
-    log(f'HTML: {os.path.relpath(cfg["out_html"], REPO)} ({len(doc) // 1024} kB, {len(products)} modelů)')
+    key_html = os.path.relpath(cfg['out_html'], REPO); key_pdf = os.path.relpath(cfg['out_pdf'], REPO); fn = os.path.basename(key_html)
+    store.write(key_html, doc.encode('utf-8'), 'text/html; charset=utf-8', max_age=60)
+    idx = os.path.dirname(key_html) + '/index.html'
+    if not store.exists(idx):
+        store.write(idx, f'<!DOCTYPE html>\n<html lang="cs">\n<head>\n<meta charset="utf-8">\n<title>{E(cfg["doc_title"])}</title>\n<meta http-equiv="refresh" content="0; url={fn}">\n<link rel="canonical" href="{fn}">\n</head>\n<body>\n<p>Přesměrování na <a href="{fn}">katalog</a>…</p>\n</body>\n</html>\n'.encode('utf-8'), 'text/html; charset=utf-8')
+    log(f'HTML: {key_html} ({len(doc) // 1024} kB, {len(products)} modelů)')
     if pdf:
-        os.makedirs(os.path.dirname(cfg['out_pdf']), exist_ok=True)
-        cmd = [CHROME, '--headless=new', '--disable-gpu', '--no-pdf-header-footer', f'--print-to-pdf={cfg["out_pdf"]}', '--virtual-time-budget=30000',
-               '--run-all-compositor-stages-before-draw', 'file://' + cfg['out_html']]
-        subprocess.run(cmd, capture_output=True, timeout=600)
+        if store.REMOTE:   # online: Chrome tiskne z dočasného souboru
+            work = os.path.join(store.TMP, 'print'); os.makedirs(work, exist_ok=True); src = os.path.join(work, fn); out = os.path.join(work, os.path.basename(key_pdf))
+            import catalogs
+            root = store.overlay([k for k, u in catalogs.photo_usage().items() if any(x['catalog'] == season for x in u)])   # obrázky pod jednou složkou, ať je Chrome čte z disku
+            open(src, 'w', encoding='utf-8').write(render_document(cat, products, sections, 'file://' + root + '/'))
+        else:
+            src = cfg['out_html']; out = cfg['out_pdf']; os.makedirs(os.path.dirname(out), exist_ok=True)
+        if os.path.exists(out) and store.REMOTE: os.remove(out)
+        cmd = [chrome_path(), '--headless=new', '--disable-gpu', '--no-pdf-header-footer', f'--print-to-pdf={out}', '--virtual-time-budget=30000',
+               '--run-all-compositor-stages-before-draw'] + (['--no-sandbox', '--disable-dev-shm-usage', f'--user-data-dir={os.path.join(store.TMP, "chrome")}'] if store.REMOTE else []) + ['file://' + src]
+        r = subprocess.run(cmd, capture_output=True, timeout=280 if store.REMOTE else 600)
+        if not os.path.exists(out): raise RuntimeError('PDF se nepodařilo vytvořit: ' + (r.stderr.decode('utf-8', 'ignore')[-400:] or 'Chrome nic nevrátil'))
         try:
-            import fitz; d = fitz.open(cfg['out_pdf']); n = len(d); cnt = collections.Counter(p.get_text().count('DMOC') for p in d)
-            log(f'PDF: {os.path.relpath(cfg["out_pdf"], REPO)} ({n} stran; stránky se 2 kartami: {cnt.get(2, 0)}, s 1: {cnt.get(1, 0)})')
-        except Exception as e: log(f'PDF hotovo ({e})')
+            import fitz; d = fitz.open(out); n = len(d); cnt = collections.Counter(p.get_text().count('DMOC') for p in d); d.close()
+            log(f'PDF: {key_pdf} ({n} stran; stránky se 2 kartami: {cnt.get(2, 0)}, s 1: {cnt.get(1, 0)})')
+        except Exception as e: n = None; log(f'PDF hotovo ({e})')
+        if store.REMOTE: store.write(key_pdf, open(out, 'rb').read(), 'application/pdf', max_age=60, pages=n)
     return cfg
+
+def chrome_path():
+    for c in (os.environ.get('CHROME'), CHROME, '/usr/bin/chromium', '/usr/bin/chromium-browser', '/usr/bin/google-chrome'):
+        if c and os.path.exists(c): return c
+    raise RuntimeError('Nenašel jsem Chrome/Chromium pro tisk PDF.')
 
 def git_push(log=print, dirs=()):
     for cmd in (['git', 'add', '-A', 'admin', 'vystupy', *dirs], ['git', 'commit', '-q', '-m', 'Katalog: aktualizace z administrace'], ['git', 'push']):

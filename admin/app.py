@@ -1,5 +1,5 @@
 """Aplikace na tvorbu katalogů TRIMM. Spuštění: python3 admin/app.py  ->  http://localhost:8765"""
-import os, re, io, json, hashlib, threading, sys
+import os, re, io, json, time, hashlib, threading, sys
 try:
     from fastapi import FastAPI, UploadFile, File, Form, HTTPException
 except ImportError:
@@ -8,15 +8,36 @@ except ImportError:
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse, RedirectResponse
 from fastapi.staticfiles import StaticFiles
 from PIL import Image
-import db, generate, catalogs, orderform
+import db, generate, catalogs, orderform, auth, store
 from typing import List
 from schemas import SECTIONS, SCHEMAS, SPEC_LABELS, GENDERS, BADGE_LABELS, empty_product
 
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.abspath(os.path.join(HERE, '..'))
-UP = os.path.join(HERE, 'uploads'); os.makedirs(UP, exist_ok=True)
+UP = os.path.join(HERE, 'uploads')
+IMG = '/'   # odkud si náhledy karet berou obrázky
+if not store.REMOTE: os.makedirs(UP, exist_ok=True)
 app = FastAPI(title='TRIMM katalogy')
-app.mount('/uploads', StaticFiles(directory=UP), name='uploads')
-app.mount('/repo', StaticFiles(directory=REPO), name='repo')
+app.middleware('http')(auth.middleware)
+app.include_router(auth.router)
+if store.REMOTE:
+    # online: soubor je buď v základu přibaleném k aplikaci (vrátí se rovnou), nebo ve Vercel Blob (přesměrování); HTML se vrací přímo kvůli relativním odkazům
+    @app.get('/uploads/{path:path}')
+    def uploads_file(path: str): return _file_response('uploads/' + path, 'public, max-age=86400, s-maxage=2592000')
+
+    @app.get('/repo/{path:path}')
+    def repo_file(path: str):
+        up = path.startswith('admin/uploads/')
+        return _file_response('uploads/' + path[len('admin/uploads/'):] if up else path, 'public, max-age=86400, s-maxage=2592000' if up else 'private, max-age=60')
+
+    def _file_response(key, cache):
+        st = store.stat(key)
+        if not st: raise HTTPException(404)
+        if key.lower().endswith(('.html', '.htm')): return HTMLResponse(store.read(key).decode('utf-8'), headers={'Cache-Control': 'no-store'})
+        if st.get('blob'): return RedirectResponse(store.url(key, st), 302, headers={'Cache-Control': 'private, max-age=300'})
+        return FileResponse(store.base_path(key), headers={'Cache-Control': cache})
+else:
+    app.mount('/uploads', StaticFiles(directory=UP), name='uploads')
+    app.mount('/repo', StaticFiles(directory=REPO), name='repo')
 
 from catalogs import slugify
 
@@ -54,9 +75,8 @@ async def _store_pdf(file, code, label=''):
     raw = await file.read()
     if raw[:5] != b'%PDF-': raise HTTPException(400, 'Soubor není PDF')
     base = slugify(os.path.splitext(file.filename)[0]) or 'katalog'; fn = f'{base}.pdf'; i = 2
-    os.makedirs(os.path.join(REPO, 'vystupy'), exist_ok=True)
-    while os.path.exists(os.path.join(REPO, 'vystupy', fn)): fn = f'{base}_{i}.pdf'; i += 1
-    open(os.path.join(REPO, 'vystupy', fn), 'wb').write(raw)
+    while store.exists(f'vystupy/{fn}'): fn = f'{base}_{i}.pdf'; i += 1
+    store.write(f'vystupy/{fn}', raw, 'application/pdf', pages=catalogs.pdf_pages(raw))
     return dict(label=label.strip() or 'PDF', path=f'vystupy/{fn}')
 
 @app.get('/api/c/{code}')
@@ -104,19 +124,19 @@ def catalog_file_remove(code: str, path: str):
 def pdfcover(path: str):
     fp = catalogs.pdf_cover(path)
     if not fp: raise HTTPException(404)
-    return FileResponse(fp)
+    return FileResponse(fp, headers={'Cache-Control': 'public, max-age=86400, s-maxage=2592000'} if store.REMOTE else None)
 
 @app.get('/thumb/{path:path}')
 def thumb(path: str, w: int = 320):
     fp = catalogs.thumb(path, min(max(w, 60), 800))
     if not fp: raise HTTPException(404)
-    return FileResponse(fp, headers={'Cache-Control': 'max-age=3600'})
+    return FileResponse(fp, headers={'Cache-Control': 'public, max-age=86400, s-maxage=2592000' if store.REMOTE else 'max-age=3600'})
 
 # ---------- produkty katalogu ----------
 @app.get('/api/c/{code}/meta')
 def meta(code: str):
     cat = need_catalog(code)
-    badges = sorted(f[:-4] for f in os.listdir(os.path.join(UP, 'ikony')) if f.endswith('.png')) if os.path.isdir(os.path.join(UP, 'ikony')) else []
+    badges = sorted(os.path.basename(f['key'])[:-4] for f in store.walk('uploads/ikony') if f['key'].endswith('.png') and f['key'].count('/') == 2)
     prods = db.list_products(code)
     series = {}
     for p in prods: series.setdefault(p['section'], []); (series[p['section']].append(p['serie']) if p['serie'] and p['serie'] not in series[p['section']] else None)
@@ -212,20 +232,22 @@ async def upload(file: UploadFile = File(...), kind: str = Form('foto'), name: s
     """kind: foto | rozkresy | ikony | pages | hero | inner (PNG s průhledností)"""
     raw = await file.read()
     im = Image.open(io.BytesIO(raw)); im.load()
-    sub = 'foto' if kind in ('foto', 'inner') else (kind if kind in ('rozkresy', 'ikony', 'pages', 'hero') else 'ostatni'); os.makedirs(os.path.join(UP, sub), exist_ok=True)
+    sub = 'foto' if kind in ('foto', 'inner') else (kind if kind in ('rozkresy', 'ikony', 'pages', 'hero') else 'ostatni')
     h = hashlib.md5(raw).hexdigest()[:8]; base = slugify(name or os.path.splitext(file.filename)[0]) or 'obr'
     keep_alpha = kind in ('inner', 'rozkresy', 'ikony') and im.mode in ('RGBA', 'LA', 'P') and (im.convert('RGBA').getextrema()[3][0] < 255)
     if keep_alpha:
-        im = im.convert('RGBA'); im.thumbnail((1600, 1600)); fn = f'{base}_{h}.png'; im.save(os.path.join(UP, sub, fn), optimize=True)
+        im = im.convert('RGBA'); im.thumbnail((1600, 1600)); fn = f'{base}_{h}.png'; _put_image(im, f'uploads/{sub}/{fn}', 'PNG', optimize=True)
     else:
         if im.mode in ('RGBA', 'LA', 'P'):
             bg = Image.new('RGB', im.size, (255, 255, 255)); im = im.convert('RGBA'); bg.paste(im, mask=im.split()[-1]); im = bg
         big = 3000 if kind in ('hero', 'pages') else 1600
-        im = im.convert('RGB'); im.thumbnail((big, big)); fn = f'{base}_{h}.jpg'; im.save(os.path.join(UP, sub, fn), quality=88, optimize=True)
+        im = im.convert('RGB'); im.thumbnail((big, big)); fn = f'{base}_{h}.jpg'; _put_image(im, f'uploads/{sub}/{fn}', 'JPEG', quality=88, optimize=True)
     return dict(path=f'uploads/{sub}/{fn}', w=im.width, h=im.height)
 
+def _put_image(im, key, fmt, **kw):
+    b = io.BytesIO(); im.save(b, fmt, **kw); store.write(key, b.getvalue(), shot=generate.white_corners(im))
+
 def _save_image(im, sub, base, force_png=False):
-    os.makedirs(os.path.join(UP, sub), exist_ok=True)
     has_alpha = im.mode in ('RGBA', 'LA') and im.getextrema()[-1][0] < 255
     b = io.BytesIO()
     if has_alpha or force_png:
@@ -235,14 +257,13 @@ def _save_image(im, sub, base, force_png=False):
             bg = Image.new('RGB', im.size, (255, 255, 255)); im = im.convert('RGBA'); bg.paste(im, mask=im.split()[-1]); im = bg
         im.save(b, 'JPEG', quality=88, optimize=True); ext = 'jpg'
     h = hashlib.md5(b.getvalue()).hexdigest()[:8]; fn = f'{base}_{h}.{ext}'
-    open(os.path.join(UP, sub, fn), 'wb').write(b.getvalue())
+    store.write(f'uploads/{sub}/{fn}', b.getvalue(), shot=generate.white_corners(im))
     return dict(path=f'uploads/{sub}/{fn}', w=im.width, h=im.height)
 
 def _load_upload(path):
     if not path.startswith('uploads/') or '..' in path: raise HTTPException(400, 'neplatná cesta')
-    fp = os.path.join(HERE, path)
-    if not os.path.exists(fp): raise HTTPException(404, 'soubor neexistuje')
-    im = Image.open(fp); im.load(); return im, path.split('/')[1], re.sub(r'_[0-9a-f]{8}$', '', os.path.splitext(os.path.basename(path))[0])
+    if not store.exists(path): raise HTTPException(404, 'soubor neexistuje')
+    im = Image.open(store.local(path)); im.load(); return im, path.split('/')[1], re.sub(r'_[0-9a-f]{8}$', '', os.path.splitext(os.path.basename(path))[0])
 
 def _edge_mask(im, thresh):
     """maska pozadí: pixely blízké bílé/světle šedé napojené na okraj obrázku"""
@@ -319,12 +340,11 @@ def compose(body: dict):
 @app.get('/api/library')
 def library(q: str = '', sub: str = ''):
     out = []
-    for d in sorted(os.listdir(UP)):
-        if not os.path.isdir(os.path.join(UP, d)) or (sub and d != sub) or d == 'pages': continue
-        for f in os.listdir(os.path.join(UP, d)):
-            if not f.lower().endswith(('.jpg', '.jpeg', '.png')): continue
-            if q and q.lower() not in f.lower(): continue
-            fp = os.path.join(UP, d, f); out.append(dict(path=f'uploads/{d}/{f}', name=f, sub=d, mtime=os.path.getmtime(fp)))
+    for f in store.walk('uploads'):
+        parts = f['key'].split('/'); d = parts[1] if len(parts) > 2 else ''; name = parts[-1]
+        if not d or (sub and d != sub) or (d in ('pages', 'prev') and sub != d) or not name.lower().endswith(('.jpg', '.jpeg', '.png')): continue
+        if q and q.lower() not in name.lower(): continue
+        out.append(dict(path=f['key'], name=name, sub=d, mtime=f['mtime']))
     out.sort(key=lambda x: -x['mtime']); return out[:400]
 
 @app.post('/api/fetch')
@@ -360,26 +380,25 @@ def storage_delete(path: str):
     if not path.startswith('uploads/') or '..' in path: raise HTTPException(400, 'neplatná cesta')
     use = catalogs.photo_usage().get(path)
     if use: raise HTTPException(400, f'Soubor je použitý ({use[0]["catalog"]} · {use[0].get("name") or use[0]["what"]}).')
-    fp = os.path.join(HERE, path)
-    if os.path.exists(fp): os.remove(fp)
+    store.delete(path)
     return dict(ok=True)
 
 @app.get('/api/c/{code}/preview/{pid}', response_class=HTMLResponse)
 def preview(code: str, pid: str):
     p = db.get_product(code, pid)
     if not p: raise HTTPException(404)
-    return generate.render_card_preview(p, '/', _sec_color(code, p['section']))
+    return generate.render_card_preview(p, IMG, _sec_color(code, p['section']))
 
 @app.post('/api/c/{code}/preview', response_class=HTMLResponse)
 def preview_draft(code: str, body: dict):
     body.setdefault('colors', []); body.setdefault('id', 'draft'); body.setdefault('name', '')
-    return generate.render_card_preview(body, '/', _sec_color(code, body.get('section')))
+    return generate.render_card_preview(body, IMG, _sec_color(code, body.get('section')))
 
 @app.get('/nahled/{code}', response_class=HTMLResponse)
 def live_catalog(code: str):
     """celý katalog vykreslený rovnou z databáze – ukazuje uložené změny hned, bez generování"""
     cat = need_catalog(code)
-    return HTMLResponse(generate.render_document(cat, db.list_products(code), db.list_sections(code), '/'), headers={'Cache-Control': 'no-store'})
+    return HTMLResponse(generate.render_document(cat, db.list_products(code), db.list_sections(code), IMG), headers={'Cache-Control': 'no-store'})
 
 def _sec_color(code, section): return next((s['color'] for s in db.list_sections(code) if s['key'] == section), None)
 
@@ -391,13 +410,14 @@ def gen(code: str, body: dict):
     log = []; cfg = generate.catalog_cfg(cat)
     try:
         generate.build(code, pdf=bool(body.get('pdf', True)), log=log.append)
-        if body.get('push'): generate.git_push(log=log.append, dirs=[os.path.relpath(os.path.dirname(cfg['out_html']), REPO)])
+        if body.get('push') and not store.REMOTE: generate.git_push(log=log.append, dirs=[os.path.relpath(os.path.dirname(cfg['out_html']), REPO)])
     except Exception as e: log.append('CHYBA: ' + str(e))
     finally: _gen_lock.release()
-    return dict(log='\n'.join(log), html='/repo/' + os.path.relpath(cfg['out_html'], REPO), pdf='/repo/' + os.path.relpath(cfg['out_pdf'], REPO))
+    return dict(log='\n'.join(log), html='/repo/' + os.path.relpath(cfg['out_html'], REPO), pdf=store.url(os.path.relpath(cfg['out_pdf'], REPO)))
 
 if __name__ == '__main__':
     import uvicorn, webbrowser, socket
+    if 'KATALOG_AUTH' not in os.environ: auth.ENABLED = False   # lokální spuštění na vlastním počítači je bez přihlášení
     if not os.path.exists(db.DB_PATH): print('Databáze neexistuje, spusť nejdřív: python3 admin/import_catalog.py')
     port = int(os.environ.get('PORT', 8765))
     for cand in range(port, port + 10):

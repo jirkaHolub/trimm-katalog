@@ -10,6 +10,14 @@ python3 admin/app.py
 Otevře se http://localhost:8765. Potřebuje Python 3.9+, balíčky `fastapi`, `uvicorn`, `python-multipart`, `pillow`, `pymupdf`, `openpyxl`
 (`python3 -m pip install --user fastapi "uvicorn[standard]" python-multipart pillow pymupdf openpyxl`) a Google Chrome (tisk PDF).
 
+## Přihlášení (pro provoz na serveru)
+Lokálně (`python3 admin/app.py`, `start.command`) běží aplikace bez přihlášení. Na serveru (spuštění přes `uvicorn app:app`) je přihlášení zapnuté.
+- Účet = e-mail + heslo. Registrovat se jde jen s e-mailem z povolené domény (`KATALOG_EMAIL_DOMAIN`, výchozí `trimm.cz`, víc domén čárkou)
+  a nový účet musí schválit správce na stránce „Uživatelé“. Správce tam účty i přidává, blokuje, maže a nastavuje hesla.
+- První správce: `python3 admin/auth.py jmeno@trimm.cz` (heslo se zadá skrytě; tímto příkazem jde založit i účet mimo doménu).
+- Účty jsou v `admin/users.sqlite` (není v gitu; jinde přes `KATALOG_AUTH_DB`). Podpis relací: `KATALOG_SECRET`, jinak se vygeneruje.
+- `KATALOG_AUTH=1` zapne přihlášení i lokálně, `KATALOG_AUTH=0` ho vypne na serveru.
+
 ## Soubory
 - `katalog.sqlite` – databáze: katalogy, jejich sekce a produkty, karty vytěžené ze starších PDF (verzovaná v gitu)
 - `uploads/` – úložiště fotek: fotky, rozkresy, ikony, technické strany, úvodní fotky, `prev/` = výřezy karet z loňských PDF

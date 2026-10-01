@@ -1,0 +1,24 @@
+# Aplikace na tvorbu katalogů TRIMM na Vercelu: FastAPI + Chromium pro tisk PDF.
+# Databáze je Neon Postgres (DATABASE_URL). Soubory: základ z repa je přibalený tady v obrazu (jen ke čtení),
+# vše nové jde do Vercel Blob (BLOB_READ_WRITE_TOKEN) – viz admin/store.py.
+FROM python:3.12-slim
+
+RUN apt-get update && apt-get install -y --no-install-recommends chromium fonts-liberation fonts-dejavu-core curl ca-certificates \
+    && rm -rf /var/lib/apt/lists/*
+
+# základ souborů = stav veřejného repa v daném commitu (fotky, rozkresy, hotová PDF a HTML)
+ARG BASE_COMMIT=main
+RUN mkdir -p /app/base && curl -fsSL https://codeload.github.com/jirkaHolub/trimm-katalog/tar.gz/${BASE_COMMIT} \
+    | tar -xz --strip-components=1 -C /app/base --wildcards \
+      '*/admin/uploads/*' '*/vystupy/*' '*/podklady/katalogy/*' '*/podklady/formulare/*' '*/resized/*' '*/rozkresy_web/*' \
+      '*/ss27/*.html' '*/trimm_katalog_FW_26_27_3.html' '*/trimm_katalog_FW_26_27_3_en.html' '*/hero-fw-26-27.jpg' \
+    && mv /app/base/admin/uploads /app/base/uploads && rm -rf /app/base/admin
+
+WORKDIR /app/admin
+COPY admin/requirements.txt .
+RUN pip install --no-cache-dir -r requirements.txt
+COPY admin/*.py ./
+COPY admin/static ./static
+
+ENV CHROME=/usr/bin/chromium PYTHONUNBUFFERED=1 KATALOG_BASE_DIR=/app/base
+CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-80}"]

@@ -33,3 +33,8 @@ ss27/data/web_tents_meta.json
 
 # aplikace na katalogy – zmenšeniny a náhledy PDF se generují samy
 admin/cache/
+
+# účty a hesla aplikace – nikdy do gitu
+admin/users.sqlite
+.vercel
+.env*

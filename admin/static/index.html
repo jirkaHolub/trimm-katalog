@@ -175,10 +175,11 @@ table.colors .dz{width:96px;height:78px}
 </style>
 </head>
 <body>
-<header><a class="logo" href="#/"><b>TRIMM</b></a><a href="#/" id="nHome">Katalogy</a><a href="#/fotky" id="nFoto">Úložiště fotek</a>
+<header><a class="logo" href="#/"><b>TRIMM</b></a><a href="#/" id="nHome">Katalogy</a><a href="#/fotky" id="nFoto">Úložiště fotek</a><a href="#/uzivatele" id="nUsers" style="display:none">Uživatelé</a>
  <span class="ctx" id="ctx"><span style="color:#666">›</span><span class="code" id="ctxCode"></span><a id="nEdit">Produkty</a><a id="nForm">Objednávkový formulář</a><a id="nSet">Nastavení katalogu</a></span>
  <span class="sp"></span>
  <span class="ctx" id="ctxBtn"><button id="bNew">+ Nový produkt</button><button id="bOpen" title="Celý katalog s aktuálně uloženými změnami (bez generování)">Otevřít katalog</button><button id="bGen" class="pri">Vygenerovat katalog</button></span>
+ <span id="who" style="display:none;align-items:center;gap:8px;font-size:12px;color:#bbb"><span id="whoMail"></span><a id="bPw">heslo</a><a id="bOut">odhlásit</a></span>
 </header>
 <div class="view" id="vHome"><div class="page" id="home"></div></div>
 <div class="view" id="vEditor">
@@ -200,6 +201,7 @@ table.colors .dz{width:96px;height:78px}
 </div>
 <div class="view" id="vStorage"><div class="page" id="storage"></div></div>
 <div class="view" id="vForm"><div class="page" id="formv"></div></div>
+<div class="view" id="vUsers"><div class="page" id="usersv"></div></div>
 <div class="view" id="vSettings"><div class="page" id="settings"></div></div>
 <div id="pm"><div class="box"><div class="inline"><b id="pmTitle">Fotka</b><span class="sp"></span><button id="pmClose">Zavřít</button></div><div id="pmBody"></div></div></div>
 <div id="modal"><div class="box"><b id="mTitle">Generování katalogu</b><div class="inline"><label class="inline"><input type="checkbox" id="gPdf" checked> Vytvořit i PDF</label><label class="inline"><input type="checkbox" id="gPush"> Odeslat na GitHub (commit + push)</label></div><pre id="mLog">Připraveno.</pre><div class="inline"><button id="mRun" class="pri">Spustit</button><a id="mHtml" target="_blank" style="display:none">Otevřít HTML</a><a id="mPdf" target="_blank" style="display:none">Otevřít PDF</a><span class="sp"></span><button id="mClose">Zavřít</button></div></div></div>
@@ -208,7 +210,7 @@ table.colors .dz{width:96px;height:78px}
 window.addEventListener('error',e=>{const st=document.getElementById('st');if(st)st.textContent='CHYBA: '+e.message;console.error(e.error||e.message)});
 window.addEventListener('unhandledrejection',e=>{const st=document.getElementById('st');if(st)st.textContent='CHYBA: '+(e.reason&&e.reason.message||e.reason);console.error(e.reason)});
 const $=s=>document.querySelector(s), $$=s=>[...document.querySelectorAll(s)];
-const api=async(u,o={})=>{const r=await fetch(u,{headers:{'Content-Type':'application/json'},...o});if(!r.ok)throw new Error(await r.text());return r.headers.get('content-type')?.includes('json')?r.json():r.text()};
+const api=async(u,o={})=>{const r=await fetch(u,{headers:{'Content-Type':'application/json'},...o});if(r.status===401){location.href='/login';throw new Error('Nepřihlášeno')}if(!r.ok)throw new Error(await r.text());return r.headers.get('content-type')?.includes('json')?r.json():r.text()};
 const esc=s=>String(s??'').replace(/[&<>"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
 const fmtSize=n=>n>1048576?(n/1048576).toFixed(n>10485760?0:1).replace('.',',')+' MB':Math.max(1,Math.round(n/1024))+' kB';
 const fmtDate=t=>new Date(t*1000).toLocaleDateString('cs-CZ',{day:'numeric',month:'numeric',year:'numeric'});
@@ -219,7 +221,7 @@ function errText(e){try{return JSON.parse(e.message).detail||e.message}catch(_){
 let META, LIST=[], REMOVED=[], cur=null, dirty=false, curSec='all', curPrev='all', CODE=null, API='', CATS=[], KINDS=[], lastHash='';
 
 // ---------- směrování: #/ katalogy · #/k/SS27 produkty · #/k/SS27/p/<id> · #/k/SS27/nastaveni · #/fotky ----------
-function show(v){$$('.view').forEach(x=>x.style.display=x.id===v?'flex':'none');$('#nHome').classList.toggle('on',v==='vHome');$('#nFoto').classList.toggle('on',v==='vStorage');
+function show(v){$$('.view').forEach(x=>x.style.display=x.id===v?'flex':'none');$('#nHome').classList.toggle('on',v==='vHome');$('#nFoto').classList.toggle('on',v==='vStorage');$('#nUsers').classList.toggle('on',v==='vUsers');
  const inCat=v==='vEditor'||v==='vSettings'||v==='vForm';$('#nForm').classList.toggle('on',v==='vForm');$('#ctx').style.display=inCat?'flex':'none';$('#ctxBtn').style.display=v==='vEditor'?'flex':'none';
  $('#nEdit').classList.toggle('on',v==='vEditor');$('#nSet').classList.toggle('on',v==='vSettings')}
 async function route(){
@@ -229,7 +231,7 @@ async function route(){
  try{
   if(a==='k'&&b){$('#ctxCode').textContent=b;$('#nEdit').href='#/k/'+b;$('#nSet').href='#/k/'+b+'/nastaveni';$('#nForm').href='#/k/'+b+'/formular';
    if(c==='nastaveni')await showSettings(b); else if(c==='formular')await showForm(b); else await showEditor(b,c==='p'&&d?decodeURIComponent(d):null)}
-  else if(a==='fotky')await showStorage(); else await showHome();
+  else if(a==='fotky')await showStorage(); else if(a==='uzivatele')await showUsers(); else await showHome();
  }catch(e){alert(errText(e))}
 }
 window.addEventListener('hashchange',route);
@@ -419,7 +421,17 @@ let activeDz=null;
 document.addEventListener('paste',e=>{if(!activeDz||!cur||$('#vEditor').style.display==='none')return;const it=[...(e.clipboardData?.items||[])].find(i=>i.type.startsWith('image/'));if(!it)return;e.preventDefault();const {set,kind}=activeDz;uploadTo(it.getAsFile(),kind,p=>{set(p);setDirty();preview()})});
 function bindSlot(s){const k=s.dataset.slot; bindDz(s.querySelector('.dz'),()=>cur[k],p=>{cur[k]=p;renderForm()},kindFor(k))}
 function pick(cb){const i=document.createElement('input');i.type='file';i.accept='image/*';i.onchange=()=>i.files[0]&&cb(i.files[0]);i.click()}
+// online smí jeden požadavek nést nejvýš ~4 MB: větší fotku zmenší prohlížeč ještě před odesláním (server ji stejně zmenšuje na 1600 / 3000 px)
+async function shrink(file,kind){
+ if(!ME.online||file.size<3.5e6||!file.type.startsWith('image/'))return file;
+ const img=await createImageBitmap(file), max=(kind==='hero'||kind==='pages')?3000:1600, k=Math.min(1,max/Math.max(img.width,img.height));
+ const c=document.createElement('canvas');c.width=Math.round(img.width*k);c.height=Math.round(img.height*k);c.getContext('2d').drawImage(img,0,0,c.width,c.height);
+ const png=file.type==='image/png'; let b=await new Promise(r=>c.toBlob(r,png?'image/png':'image/jpeg',0.92));
+ if(b.size>4e6)b=await new Promise(r=>c.toBlob(r,'image/jpeg',0.88));
+ return new File([b],file.name.replace(/\.[^.]+$/,'')+(b.type==='image/png'?'.png':'.jpg'),{type:b.type});
+}
 async function uploadTo(file,kind,cb){
+ file=await shrink(file,kind);
  const inEd=cur&&$('#vEditor').style.display!=='none';
  const fd=new FormData();fd.append('file',file);fd.append('kind',kind);fd.append('name',inEd?(cur.name||'obr')+'_'+kind:file.name.replace(/\.[^.]+$/,''));
  if($('#st'))$('#st').textContent='nahrávám…';
@@ -514,7 +526,7 @@ async function openWeb(kind,apply){
 }
 // ---------- generování ----------
 let GEN=null;
-function openGen(code){GEN=code;const c=CATS.find(c=>c.code===code);$('#mTitle').textContent='Generování katalogu '+(c?c.label:code);$('#modal').style.display='flex';$('#mLog').textContent='Připraveno.';$('#mHtml').style.display=$('#mPdf').style.display='none'}
+function openGen(code){GEN=code;if(ME.online){$('#gPush').checked=false;$('#gPush').closest('label').style.display='none'}const c=CATS.find(c=>c.code===code);$('#mTitle').textContent='Generování katalogu '+(c?c.label:code);$('#modal').style.display='flex';$('#mLog').textContent='Připraveno.';$('#mHtml').style.display=$('#mPdf').style.display='none'}
 async function runGen(){
  if(dirty&&!confirm('Máš neuložené změny. Generovat bez nich?'))return;
  $('#mRun').disabled=true; $('#mLog').textContent='Generuji… (PDF trvá zhruba minutu)';
@@ -566,7 +578,7 @@ function dlgNew(kind){
 }
 function dlgArchive(){
  pmOpen('Hotové PDF do archivu',`<div class="row"><div><label>Typ</label><select id="arK">${KINDS.map(k=>`<option value="${k.key}">${esc(k.cz)} (${k.key})</option>`).join('')}</select></div><div><label>Rok (u zimy rok začátku sezóny)</label><input type="number" id="arY" value="${new Date().getFullYear()}"></div><div><label>Popisek souboru</label><input type="text" id="arL" value="PDF · CZ"></div></div>
-  <input type="file" id="arF" accept="application/pdf"><div class="inline"><span class="status" id="arSt"></span><span class="sp"></span><button id="arGo" class="pri">Přidat</button></div>`);
+  <input type="file" id="arF" accept="application/pdf">${ME.online?'<div class="hint">Online verze zatím přijme PDF jen do 4 MB.</div>':''}<div class="inline"><span class="status" id="arSt"></span><span class="sp"></span><button id="arGo" class="pri">Přidat</button></div>`);
  $('#arGo').onclick=async()=>{const f=$('#arF').files[0];if(!f){$('#arSt').textContent='vyber PDF';return}const fd=new FormData();fd.append('file',f);fd.append('kind',$('#arK').value);fd.append('year',$('#arY').value);fd.append('label',$('#arL').value);
   $('#arSt').textContent='nahrávám…';const r=await fetch('/api/archive',{method:'POST',body:fd});if(!r.ok){$('#arSt').textContent='CHYBA: '+((await r.json()).detail||r.status);return}pmClose();showHome()};
 }
@@ -587,7 +599,7 @@ function renderSettings(){
   ${avail.length?`<div class="inline"><select id="sAdd" style="width:auto"><option value="">+ přidat sekci…</option>${avail.map(d=>`<option value="${d.key}">${esc(d.cz)}</option>`).join('')}</select></div>`:''}
   <div class="hint">Pořadí sekcí = pořadí v katalogu. Technické strany (obrázky celých stran s tabulkami a piktogramy) se vloží na začátek sekce.</div></div>`:''}
  <div class="sec"><h2>Hotové soubory katalogu</h2><div id="sFiles">${c.files.map(f=>`<div class="frow"><span class="ext ${f.ext}">${f.ext.toUpperCase()}</span><a href="${esc(f.url)}" target="_blank">${esc(f.label)}</a><span class="hint">${f.pages?f.pages+' stran · ':''}${fmtSize(f.size)} · ${fmtDate(f.mtime)} · ${esc(f.path)}</span><span class="sp"></span>${f.generated?'<span class="hint">generuje aplikace</span>':`<button class="sm" data-fx="${esc(f.path)}">Odebrat ze seznamu</button>`}</div>`).join('')||'<div class="hint">Žádné soubory.</div>'}</div>
-  <div class="inline" style="margin-top:10px"><input type="text" id="sFL" placeholder="popisek, např. PDF · EN" style="width:220px"><input type="file" id="sFF" accept="application/pdf"><button id="sFAdd">Přidat PDF</button></div></div>
+  <div class="inline" style="margin-top:10px"><input type="text" id="sFL" placeholder="popisek, např. PDF · EN" style="width:220px"><input type="file" id="sFF" accept="application/pdf"><button id="sFAdd">Přidat PDF</button>${ME.online?'<span class="hint">online zatím jen do 4 MB</span>':''}</div></div>
  <div class="sec"><h2>Smazání</h2><div class="inline"><button class="dan" id="sDel">Smazat katalog ${c.code}</button><span class="hint">Smaže záznam katalogu a jeho produkty z databáze. Fotky v úložišti a soubory PDF zůstanou.</span></div></div></div>`;
  const mark=()=>{$('#sSt').textContent='neuloženo'};
  const pull=()=>{c.title=$('#sTitle').value.trim();c.year=$('#sYear').value.trim();c.doc_title=$('#sDoc').value.trim();if($('#sPrev'))c.prev=$('#sPrev').value;
@@ -681,7 +693,7 @@ async function showStorage(){show('vStorage');if(!CATS.length)await loadCats();
  $('#stUsed').onchange=e=>{ST.used=e.target.value;ST.n=240;loadStorage()};$('#stCat').onchange=e=>{ST.catalog=e.target.value;ST.n=240;loadStorage()};
  $('#stFold').onclick=e=>{const c=e.target.closest('.chip');if(!c)return;ST.folder=c.dataset.f;ST.n=240;loadStorage()};
  $('#stMore').onclick=()=>{ST.n+=480;drawStorage()};
- const upMany=async files=>{files=files.filter(f=>f.type.startsWith('image/'));if(!files.length)return;$('#stSum').textContent='nahrávám '+files.length+' souborů…';for(const f of files){const fd=new FormData();fd.append('file',f);fd.append('kind',$('#stUpF').value);fd.append('name',f.name.replace(/\.[^.]+$/,''));await fetch('/api/upload',{method:'POST',body:fd})}loadStorage()};
+ const upMany=async files=>{files=files.filter(f=>f.type.startsWith('image/'));if(!files.length)return;$('#stSum').textContent='nahrávám '+files.length+' souborů…';for(let f of files){f=await shrink(f,$('#stUpF').value);const fd=new FormData();fd.append('file',f);fd.append('kind',$('#stUpF').value);fd.append('name',f.name.replace(/\.[^.]+$/,''));await fetch('/api/upload',{method:'POST',body:fd})}loadStorage()};
  $('#stUp').onclick=()=>{const i=document.createElement('input');i.type='file';i.accept='image/*';i.multiple=true;i.onchange=()=>upMany([...i.files]);i.click()};
  const pg=$('#storage');pg.ondragover=e=>{e.preventDefault();pg.classList.add('drop')};pg.ondragleave=()=>pg.classList.remove('drop');pg.ondrop=e=>{e.preventDefault();pg.classList.remove('drop');upMany([...e.dataTransfer.files])};
  $('#stGrid').onclick=e=>{const d=e.target.closest('.f');if(d)storageDetail(ST.data.files.find(f=>f.path===d.dataset.p))};
@@ -703,7 +715,27 @@ function storageDetail(f){
  $('#sdEdit').onclick=()=>openEditor(f.path,f.folder,()=>loadStorage());
  if($('#sdDel'))$('#sdDel').onclick=async()=>{if(!confirm('Smazat soubor natrvalo?'))return;try{await api('/api/storage?path='+encodeURIComponent(f.path),{method:'DELETE'});pmClose();loadStorage()}catch(e){alert(errText(e))}};
 }
-loadCats().then(boot);
+// ---------- přihlášení a uživatelé ----------
+let ME={};
+async function loadMe(){ME=await api('/api/auth/me');if(!ME.auth)return;
+ $('#who').style.display='flex';$('#whoMail').textContent=ME.email;$('#nUsers').style.display=ME.role==='admin'?'':'none';$('#nUsers').textContent='Uživatelé'+(ME.pending?' ('+ME.pending+')':'');
+ $('#bOut').onclick=async()=>{await api('/api/auth/logout',{method:'POST'});location.href='/login'};
+ $('#bPw').onclick=()=>{pmOpen('Změna hesla',`<div class="row"><div><label>Současné heslo</label><input type="password" id="pwO" style="width:100%;padding:7px 9px;border:1px solid var(--b);border-radius:4px"></div><div><label>Nové heslo (aspoň 8 znaků)</label><input type="password" id="pwN" style="width:100%;padding:7px 9px;border:1px solid var(--b);border-radius:4px"></div></div><div class="inline"><span class="status" id="pwSt"></span><span class="sp"></span><button class="pri" id="pwGo">Změnit heslo</button></div>`);
+  $('#pwGo').onclick=async()=>{try{await api('/api/auth/password',{method:'POST',body:JSON.stringify({old:$('#pwO').value,new:$('#pwN').value})});pmClose()}catch(e){$('#pwSt').textContent=errText(e)}}};
+}
+async function showUsers(){show('vUsers');const L=await api('/api/users');const dt=t=>t?fmtDate(t):'—';
+ $('#usersv').innerHTML=`<div class="wrap"><div class="phead"><h1>Uživatelé</h1><span class="hint">Účet jde založit jen s e-mailem ${ME.domains.map(d=>'@'+esc(d)).join(', ')}. Kdo se zaregistruje sám, čeká tady na schválení.</span></div>
+ <div class="sec"><h2>Přidat uživatele</h2><div class="inline"><input type="text" id="uE" placeholder="jmeno@${esc(ME.domains[0])}" style="width:260px"><input type="text" id="uP" placeholder="první heslo (aspoň 8 znaků)" style="width:240px"><label class="inline"><input type="checkbox" id="uA"> správce</label><button class="pri" id="uAdd">Přidat</button></div></div>
+ <div class="sec"><h2>Účty (${L.length})</h2><table class="plan">${L.map(u=>`<tr data-e="${esc(u.email)}"><td></td><td class="nm">${esc(u.email)}</td><td>${u.active?(u.role==='admin'?'<b>správce</b>':'uživatel'):'<b class="chg">čeká na schválení</b>'} · založen ${dt(u.created)} · naposledy přihlášen ${dt(u.last_login)}</td>
+  <td style="white-space:nowrap">${u.active?'':'<button class="sm pri" data-a="approve">Schválit</button> '}${u.email===ME.email?'<span class="hint">to jsi ty</span>':`${u.active?`<button class="sm" data-a="role">${u.role==='admin'?'Odebrat správce':'Udělat správcem'}</button> <button class="sm" data-a="block">Zablokovat</button> `:''}<button class="sm" data-a="pw">Nové heslo</button> <button class="sm dan" data-a="del">Smazat</button>`}</td></tr>`).join('')}</table></div></div>`;
+ const call=async(m,u,b)=>{try{await api(u,{method:m,body:b?JSON.stringify(b):undefined});await loadMe();showUsers()}catch(e){alert(errText(e))}};
+ $('#uAdd').onclick=()=>call('POST','/api/users',{email:$('#uE').value,password:$('#uP').value,role:$('#uA').checked?'admin':'user'});
+ $('#usersv').querySelector('table').onclick=e=>{const a=e.target.dataset.a;if(!a)return;const em=e.target.closest('tr').dataset.e,u=L.find(x=>x.email===em),url='/api/users/'+encodeURIComponent(em);
+  if(a==='approve')call('PUT',url,{active:true});else if(a==='block')call('PUT',url,{active:false});else if(a==='role')call('PUT',url,{role:u.role==='admin'?'user':'admin'});
+  else if(a==='pw'){const p=prompt('Nové heslo pro '+em+' (aspoň 8 znaků):');if(p)call('PUT',url,{password:p})}
+  else if(a==='del'&&confirm('Smazat účet '+em+'?'))call('DELETE',url)};
+}
+loadMe().then(loadCats).then(boot);
 
 </script>
 </body>

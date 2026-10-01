@@ -4,29 +4,60 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 DB_PATH = os.path.join(HERE, 'katalog.sqlite')
 _ready = False
 
+PG_URL = os.environ.get('DATABASE_URL')   # online (Vercel + Neon Postgres); bez něj lokální SQLite soubor
+
+class _PG:
+    """Postgres za stejným rozhraním, jaké kód používá u sqlite3: execute s otazníky, commit, close. Jedno sdílené spojení na proces."""
+    conn = None
+    def _open(self):
+        import psycopg
+        from psycopg.rows import dict_row
+        _PG.conn = psycopg.connect(PG_URL, autocommit=True, row_factory=dict_row)
+    def execute(self, sql, params=()):
+        if sql.lstrip().upper().startswith('CREATE TABLE'): sql = sql.replace(' REAL', ' DOUBLE PRECISION')
+        sql = sql.replace('?', '%s')
+        for attempt in (0, 1):
+            try:
+                if _PG.conn is None or _PG.conn.closed: self._open()
+                return _PG.conn.execute(sql, params)
+            except Exception as e:
+                import psycopg
+                if attempt or not isinstance(e, (psycopg.OperationalError, psycopg.InterfaceError)): raise
+                _PG.conn = None   # spojení mezitím spadlo (uspaná databáze) – zkusit jednou znovu
+    def commit(self): pass
+    def close(self): pass
+
+SCHEMA = [
+    '''CREATE TABLE IF NOT EXISTS products(
+        id TEXT NOT NULL, season TEXT NOT NULL, section TEXT NOT NULL, serie TEXT, sort REAL NOT NULL DEFAULT 0,
+        name TEXT NOT NULL, data TEXT NOT NULL, updated_at REAL, PRIMARY KEY(season, id))''',
+    '''CREATE TABLE IF NOT EXISTS sections(
+        key TEXT, season TEXT, title TEXT, cz TEXT, color TEXT, pages TEXT, sort INTEGER, PRIMARY KEY(key, season))''',
+    'CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY, value TEXT)',
+    'CREATE TABLE IF NOT EXISTS catalogs(code TEXT PRIMARY KEY, data TEXT NOT NULL, created REAL)',
+    # karty z katalogů, které existují jen jako PDF (výřez karty + vytěžený text)
+    '''CREATE TABLE IF NOT EXISTS prev_cards(
+        season TEXT NOT NULL, key TEXT NOT NULL, name TEXT NOT NULL, section TEXT, page INTEGER, image TEXT, data TEXT, PRIMARY KEY(season, key))''',
+]
+
 def connect():
     global _ready
+    if PG_URL:
+        con = _PG()
+        if not _ready:
+            for q in SCHEMA: con.execute(q)
+            _ready = True
+        return con
     con = sqlite3.connect(DB_PATH)
     con.row_factory = sqlite3.Row
     if _ready: return con
-    con.execute('''CREATE TABLE IF NOT EXISTS products(
-        id TEXT NOT NULL, season TEXT NOT NULL, section TEXT NOT NULL, serie TEXT, sort REAL NOT NULL DEFAULT 0,
-        name TEXT NOT NULL, data TEXT NOT NULL, updated_at REAL, PRIMARY KEY(season, id))''')
     # starší databáze měla klíč jen podle id – produkt se stejným id pak nemohl být ve dvou katalozích
     if [r['name'] for r in con.execute('PRAGMA table_info(products)') if r['pk']] == ['id']:
         con.execute('ALTER TABLE products RENAME TO products_old')
-        con.execute('''CREATE TABLE products(
-            id TEXT NOT NULL, season TEXT NOT NULL, section TEXT NOT NULL, serie TEXT, sort REAL NOT NULL DEFAULT 0,
-            name TEXT NOT NULL, data TEXT NOT NULL, updated_at REAL, PRIMARY KEY(season, id))''')
+        con.execute(SCHEMA[0].replace('IF NOT EXISTS ', ''))
         con.execute('INSERT INTO products SELECT id,season,section,serie,sort,name,data,updated_at FROM products_old')
         con.execute('DROP TABLE products_old'); con.commit()
-    con.execute('''CREATE TABLE IF NOT EXISTS sections(
-        key TEXT, season TEXT, title TEXT, cz TEXT, color TEXT, pages TEXT, sort INTEGER, PRIMARY KEY(key, season))''')
-    con.execute('CREATE TABLE IF NOT EXISTS settings(key TEXT PRIMARY KEY, value TEXT)')
-    con.execute('CREATE TABLE IF NOT EXISTS catalogs(code TEXT PRIMARY KEY, data TEXT NOT NULL, created REAL)')
-    # karty z katalogů, které existují jen jako PDF (výřez karty + vytěžený text)
-    con.execute('''CREATE TABLE IF NOT EXISTS prev_cards(
-        season TEXT NOT NULL, key TEXT NOT NULL, name TEXT NOT NULL, section TEXT, page INTEGER, image TEXT, data TEXT, PRIMARY KEY(season, key))''')
+    for q in SCHEMA: con.execute(q)
     _ready = True
     return con
 

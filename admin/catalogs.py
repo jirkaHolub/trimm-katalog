@@ -1,6 +1,6 @@
 """Katalogy (sezóny): založení nového z loňského, vazba na loňský katalog a rozdíly proti němu, soubory katalogu, využití fotek."""
 import os, re, time, hashlib, unicodedata, collections
-import db, generate
+import db, generate, store
 from schemas import SECTIONS, empty_product
 
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.abspath(os.path.join(HERE, '..'))
@@ -124,7 +124,7 @@ def prev_info(cat, p=None, key=None):
     out.update(key=prev_key(q), name=q['name'], page=q.get('page'))
     if kind == 'image':
         out['image'] = q.get('image'); pdf = next((f['path'] for f in pc.get('files') or [] if f['path'].lower().endswith('.pdf')), None)
-        if pdf and q.get('page'): out['pdf'] = f'/repo/{pdf}#page={q["page"]}'
+        if pdf and q.get('page'): out['pdf'] = f'{store.url(pdf)}#page={q["page"]}'
         out['n_colors'] = q.get('n_colors')
     else:
         out['colors'] = [c.get('name') for c in q.get('colors') or []]; out['price_min'] = q.get('price_min')
@@ -148,17 +148,22 @@ def restore(cat, key):
 # ---------- soubory a přehled ----------
 def catalog_label(cat): return f'{cat["kind"]} {cat["year"]}' if cat.get('kind') else cat['code']
 
+def pdf_pages(src):
+    """počet stran PDF (cesta nebo bytes); None, když se nedá přečíst"""
+    try:
+        import fitz
+        doc = fitz.open(stream=src, filetype='pdf') if isinstance(src, (bytes, bytearray)) else fitz.open(src); n = len(doc); doc.close(); return n
+    except Exception: return None
+
 _pdf_pages = {}
 def file_info(path, label):
-    fp = os.path.join(REPO, path)
-    if not os.path.exists(fp): return None
-    st = os.stat(fp); d = dict(label=label, path=path, url='/repo/' + path, size=st.st_size, mtime=st.st_mtime, ext=os.path.splitext(path)[1].lower().lstrip('.'))
+    st = store.stat(path)
+    if not st: return None
+    d = dict(label=label, path=path, url='/repo/' + path if path.lower().endswith('.html') else store.url(path, st), size=st['size'], mtime=st['mtime'],
+             ext=os.path.splitext(path)[1].lower().lstrip('.'))
     if d['ext'] == 'pdf':
-        k = (path, st.st_mtime)
-        if k not in _pdf_pages:
-            try:
-                import fitz; doc = fitz.open(fp); _pdf_pages[k] = len(doc); doc.close()
-            except Exception: _pdf_pages[k] = None
+        k = (path, st['mtime'])
+        if k not in _pdf_pages: _pdf_pages[k] = st['pages'] if 'pages' in st else pdf_pages(store.local(path, st))
         d['pages'] = _pdf_pages[k]
     return d
 
@@ -189,27 +194,26 @@ def summary(cat):
 
 def pdf_cover(path, width=560):
     """náhled první strany PDF (cache podle času změny souboru)"""
-    fp = os.path.join(REPO, path)
-    if '..' in path or not path.lower().endswith('.pdf') or not os.path.exists(fp): return None
-    os.makedirs(os.path.join(CACHE, 'covers'), exist_ok=True)
-    out = os.path.join(CACHE, 'covers', hashlib.md5(f'{path}|{os.path.getmtime(fp)}|{width}'.encode()).hexdigest() + '.jpg')
-    if not os.path.exists(out):
-        import fitz
-        doc = fitz.open(fp); pg = doc[0]; pg.get_pixmap(matrix=fitz.Matrix(width / pg.rect.width, width / pg.rect.width)).save(out); doc.close()
+    st = store.stat(path)
+    if not store.safe(path) or not path.lower().endswith('.pdf') or not st: return None
+    name = hashlib.md5(f'{path}|{int(st["mtime"])}|{width}'.encode()).hexdigest() + '.jpg'
+    out = os.path.join(store.cache_dir('covers'), name)
+    if os.path.exists(out): return out
+    import fitz
+    doc = fitz.open(store.local(path)); pg = doc[0]; pg.get_pixmap(matrix=fitz.Matrix(width / pg.rect.width, width / pg.rect.width)).save(out); doc.close()
     return out
 
 def thumb(path, width=320):
     """zmenšenina nahraného obrázku pro přehledy (cache podle času změny)"""
     from PIL import Image
-    fp = os.path.join(HERE, path)
-    if '..' in path or not path.startswith('uploads/') or not os.path.exists(fp): return None
-    os.makedirs(os.path.join(CACHE, 'thumbs'), exist_ok=True)
-    h = hashlib.md5(f'{path}|{os.path.getmtime(fp)}|{width}'.encode()).hexdigest()
+    st = store.stat(path)
+    if not store.safe(path) or not path.startswith('uploads/') or not st: return None
+    d = store.cache_dir('thumbs'); h = hashlib.md5(f'{path}|{int(st["mtime"]) if store.REMOTE else st["mtime"]}|{width}'.encode()).hexdigest()
     for ext in ('jpg', 'png'):
-        if os.path.exists(os.path.join(CACHE, 'thumbs', f'{h}.{ext}')): return os.path.join(CACHE, 'thumbs', f'{h}.{ext}')
-    im = Image.open(fp); im.load(); alpha = im.mode in ('RGBA', 'LA', 'P')
+        if os.path.exists(os.path.join(d, f'{h}.{ext}')): return os.path.join(d, f'{h}.{ext}')
+    im = Image.open(store.local(path)); im.load(); alpha = im.mode in ('RGBA', 'LA', 'P')
     im = im.convert('RGBA' if alpha else 'RGB'); im.thumbnail((width, width))
-    out = os.path.join(CACHE, 'thumbs', f'{h}.{"png" if alpha else "jpg"}')
+    out = os.path.join(d, f'{h}.{"png" if alpha else "jpg"}')
     im.save(out, optimize=True) if alpha else im.save(out, quality=80)
     return out
 
@@ -238,17 +242,16 @@ FOLDERS = collections.OrderedDict([('foto', 'Fotky produktů'), ('rozkresy', 'Ro
 
 def storage(q='', folder='', used='', catalog=''):
     use = photo_usage(); out = []; counts = collections.Counter(); total = 0
-    for root, dirs, files in os.walk(UP):
-        rel = os.path.relpath(root, HERE).replace(os.sep, '/'); top = rel.split('/')[1] if '/' in rel else 'hero'
-        for f in files:
-            if not f.lower().endswith(('.jpg', '.jpeg', '.png')): continue
-            path = f'{rel}/{f}'; u = use.get(path, []); st = os.stat(os.path.join(root, f)); counts[top] += 1; total += st.st_size
-            if folder and top != folder: continue
-            if q and q.lower() not in path.lower() and not any(q.lower() in (x.get('name') or '').lower() for x in u): continue
-            if used == 'yes' and not u: continue
-            if used == 'no' and u: continue
-            if catalog and not any(x['catalog'] == catalog for x in u): continue
-            out.append(dict(path=path, name=f, folder=top, size=st.st_size, mtime=st.st_mtime, uses=u))
+    for f in store.walk('uploads'):
+        path = f['key']; name = os.path.basename(path); top = path.split('/')[1] if path.count('/') > 1 else 'hero'
+        if not name.lower().endswith(('.jpg', '.jpeg', '.png')): continue
+        u = use.get(path, []); counts[top] += 1; total += f['size']
+        if folder and top != folder: continue
+        if q and q.lower() not in path.lower() and not any(q.lower() in (x.get('name') or '').lower() for x in u): continue
+        if used == 'yes' and not u: continue
+        if used == 'no' and u: continue
+        if catalog and not any(x['catalog'] == catalog for x in u): continue
+        out.append(dict(path=path, name=name, folder=top, size=f['size'], mtime=f['mtime'], uses=u))
     out.sort(key=lambda x: (x['folder'] == 'prev', -x['mtime']))
     return dict(files=out, counts=counts, total_size=total, folders=[dict(key=k, label=v, n=counts.get(k, 0)) for k, v in FOLDERS.items() if counts.get(k)] +
                 [dict(key=k, label=k, n=n) for k, n in counts.items() if k not in FOLDERS])

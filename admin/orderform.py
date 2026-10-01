@@ -91,8 +91,8 @@ def parse(files):
 
 # ---------- uložení formuláře u katalogu ----------
 def store(code, files, parsed):
-    d = os.path.join(REPO, 'podklady', 'formulare', code); os.makedirs(d, exist_ok=True)
-    for fname, raw in files: open(os.path.join(d, os.path.basename(fname)), 'wb').write(raw)
+    import store as files_store
+    for fname, raw in files: files_store.write(f'podklady/formulare/{code}/{os.path.basename(fname)}', raw)
     db.set_setting(f'form:{code}', parsed)
 def load(code): return db.get_setting(f'form:{code}')
 

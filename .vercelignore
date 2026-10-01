@@ -1,0 +1,9 @@
+# na Vercel jde jen kód aplikace; data jsou v databázi a v úložišti souborů
+/*
+!/Dockerfile.vercel
+!/vercel.json
+!/admin
+/admin/uploads
+/admin/cache
+/admin/*.sqlite
+/admin/__pycache__

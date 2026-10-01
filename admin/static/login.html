@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<title>TRIMM katalogy – přihlášení</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:14px/1.45 'Helvetica Neue',Helvetica,Arial,sans-serif;color:#1a1a1a;background:#f4f4f2;min-height:100vh;display:flex;align-items:center;justify-content:center;padding:16px}
+.box{background:#fff;border:1px solid #e3e3e0;border-radius:8px;padding:28px;width:min(380px,100%)}
+.logo{letter-spacing:.3em;font-weight:800;font-size:18px;margin-bottom:4px}
+.sub{color:#777;font-size:12px;margin-bottom:20px}
+.tabs{display:flex;border-bottom:1px solid #e3e3e0;margin-bottom:18px}
+.tabs span{padding:8px 14px;cursor:pointer;color:#777;border-bottom:2px solid transparent;margin-bottom:-1px}
+.tabs span.on{color:#1a1a1a;border-color:#ff6b1a;font-weight:700}
+label{display:block;font-size:11px;font-weight:700;color:#444;margin:10px 0 3px}
+input{width:100%;padding:9px 10px;border:1px solid #e3e3e0;border-radius:4px;font:inherit}
+input:focus{outline:none;border-color:#ff6b1a}
+button{width:100%;margin-top:18px;padding:10px;border:0;border-radius:4px;background:#ff6b1a;color:#fff;font:inherit;font-weight:700;cursor:pointer}
+button:disabled{opacity:.6}
+.msg{margin-top:12px;font-size:12px;min-height:18px;color:#c0392b}.msg.ok{color:#2e8b3d}
+.hint{font-size:11px;color:#777;margin-top:6px}
+</style>
+</head>
+<body>
+<form class="box" id="f">
+ <div class="logo">TRIMM</div><div class="sub">Aplikace na tvorbu katalogů</div>
+ <div class="tabs"><span class="on" data-m="login">Přihlášení</span><span data-m="register">Nový účet</span></div>
+ <label for="e">E-mail</label><input id="e" type="email" autocomplete="username" required>
+ <label for="p">Heslo</label><input id="p" type="password" autocomplete="current-password" required minlength="8">
+ <div id="p2w" style="display:none"><label for="p2">Heslo znovu</label><input id="p2" type="password" autocomplete="new-password"><div class="hint">Účet jde založit jen s e-mailem __DOMAINS__. Přístup pak musí schválit správce.</div></div>
+ <button id="b">Přihlásit se</button>
+ <div class="msg" id="m"></div>
+</form>
+<script>
+const $=s=>document.querySelector(s);let mode='login';
+document.querySelectorAll('.tabs span').forEach(t=>t.onclick=()=>{mode=t.dataset.m;document.querySelectorAll('.tabs span').forEach(x=>x.classList.toggle('on',x===t));
+ $('#p2w').style.display=mode==='register'?'block':'none';$('#b').textContent=mode==='register'?'Založit účet':'Přihlásit se';$('#p').autocomplete=mode==='register'?'new-password':'current-password';$('#m').textContent=''});
+$('#f').onsubmit=async e=>{e.preventDefault();const m=$('#m');m.className='msg';m.textContent='';
+ if(mode==='register'&&$('#p').value!==$('#p2').value){m.textContent='Hesla se neshodují.';return}
+ $('#b').disabled=true;
+ try{const r=await fetch('/api/auth/'+mode,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({email:$('#e').value,password:$('#p').value})});const j=await r.json().catch(()=>({}));
+  if(!r.ok){m.textContent=j.detail||'Nepodařilo se.'}else if(mode==='login'){location.href='/'}else{m.className='msg ok';m.textContent=j.message||'Účet je založený.';$('#p').value=$('#p2').value=''}}
+ catch(err){m.textContent='Server neodpovídá.'}
+ $('#b').disabled=false};
+</script>
+</body>
+</html>
