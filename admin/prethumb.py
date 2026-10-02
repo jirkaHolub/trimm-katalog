@@ -5,7 +5,7 @@ from concurrent.futures import ProcessPoolExecutor
 from PIL import Image
 
 BASE = sys.argv[1] if len(sys.argv) > 1 else '/app/base'; OUT = BASE + '-thumbs'
-WIDTHS = {'foto': (120, 200, 240, 700), 'rozkresy': (200, 240, 700), 'ikony': (240,), 'ikony_produkt': (240,), 'pages': (240, 1600), 'hero': (700, 800, 1600), 'ostatni': (200, 240, 700), 'prev': (240,)}
+WIDTHS = {'foto': (120, 200, 240, 700), 'rozkresy': (200, 240, 700), 'ikony': (240,), 'ikony_produkt': (240,), 'pages': (240, 2400), 'hero': (700, 800, 1600), 'ostatni': (200, 240, 700), 'prev': (240,)}
 
 def one(job):
     key, width = job

@@ -128,7 +128,7 @@ def pdfcover(path: str):
 
 @app.get('/thumb/{path:path}')
 def thumb(path: str, w: int = 320):
-    fp = catalogs.thumb(path, min(max(w, 60), 1600))
+    fp = catalogs.thumb(path, min(max(w, 60), 2400))
     if not fp: raise HTTPException(404)
     return FileResponse(fp, headers={'Cache-Control': 'public, max-age=86400, s-maxage=2592000' if store.REMOTE else 'max-age=3600'})
 

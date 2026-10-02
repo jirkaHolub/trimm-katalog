@@ -188,7 +188,7 @@ def render_document(cat, products, sections, img_prefix):
         toc += ''.join(f'<a href="#s-{sec}-{slug(k0)}" class="toc-s" data-sec="{sec}"><i style="background:{serie_color(sec, k0, s["color"])}"></i>{E(k0)}<span>{n}</span></a>' for k0, (k, n) in tc.items())
         toc += '</div></div>'
         chips += f'<button class="chip" data-f="{sec}" style="--tc:{s["color"]}">{E(s["cz"].upper())}</button>'
-        pages = ''.join(f'<img src="{R.src(p, 1600)}" alt="Technické informace" loading="lazy">' for p in (s.get('pages') or []) if store.exists(p))
+        pages = ''.join(f'<img src="{R.src(p, 2400)}" alt="Technické informace" loading="lazy">' for p in (s.get('pages') or []) if store.exists(p))
         info = f'<div class="info-pages">{pages}</div>' if pages else ''
         body += f'<section class="sec" id="sec-{sec}" data-sec="{sec}" style="--tc:{s["color"]}"><div class="sec-head"><div class="sec-bar"></div><div><h2>{E(s["title"])}</h2><div class="sec-cz">{E(s["cz"])}</div></div><span class="sec-cnt">{len(items)} modelů</span></div>{info}'
         for k, v in gs.items():
@@ -327,7 +327,7 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .sec-head h2{font-size:32px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;color:#071426;line-height:1.05}
 .sec-cz{font-size:13px;color:var(--muted);letter-spacing:.1em;margin-top:4px;text-transform:uppercase}
 .sec-cnt{margin-left:auto;background:var(--tc);color:#fff;padding:5px 14px;border-radius:20px;font-size:11px;font-weight:800;white-space:nowrap}
-.info-pages{display:grid;grid-template-columns:repeat(auto-fit,minmax(460px,1fr));gap:14px;padding:18px 60px 24px;background:#fff;border-bottom:1px solid var(--border)}
+.info-pages{display:grid;grid-template-columns:1fr;gap:18px;padding:18px 60px 24px;background:#fff;border-bottom:1px solid var(--border)}
 .info-pages img{width:100%;height:auto;border:1px solid var(--border);background:#fff}
 .serie{background:#fff;margin-top:26px;scroll-margin-top:70px}
 .serie-head{padding:22px 60px 16px;display:flex;align-items:center;gap:14px;border-top:5px solid var(--sc);border-bottom:1px solid var(--border)}
