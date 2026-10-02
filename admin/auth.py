@@ -94,7 +94,8 @@ def need_admin(request: Request):
 async def middleware(request: Request, call_next):
     path = request.url.path
     if BLOCKED.match(path): return JSONResponse(dict(detail='Nedostupné'), 404)
-    if ENABLED and path not in PUBLIC and not current(request):
+    # zmenšeniny fotek jsou veřejné: drží je CDN a po nasazení se dají znovu připravit bez přihlášení (warm.py)
+    if ENABLED and path not in PUBLIC and not path.startswith('/thumb/') and not current(request):
         if path.startswith('/api/'): return JSONResponse(dict(detail='Nepřihlášeno'), 401)
         return RedirectResponse('/login', 302)
     return await call_next(request)
