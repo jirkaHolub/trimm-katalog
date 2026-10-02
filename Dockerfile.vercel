@@ -7,7 +7,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends chromium fonts-
     && rm -rf /var/lib/apt/lists/*
 
 # základ souborů = stav veřejného repa v daném commitu (fotky, rozkresy, hotová PDF a HTML)
-ARG BASE_COMMIT=58fc90710d8352c6c777baff3e5d5ac03df0a811
+ARG BASE_COMMIT=971ad8d076609182aa0bb5978899fb113be76097
 RUN mkdir -p /app/base && curl -fsSL https://codeload.github.com/jirkaHolub/trimm-katalog/tar.gz/${BASE_COMMIT} \
     | tar -xz --strip-components=1 -C /app/base --wildcards \
       '*/admin/uploads/*' '*/vystupy/*' '*/podklady/katalogy/*' '*/podklady/formulare/*' '*/resized/*' '*/rozkresy_web/*' \
