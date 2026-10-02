@@ -222,7 +222,6 @@ def render_document(cat, products, sections, img_prefix):
  <input type="search" id="q" placeholder="Vyhledat model, barvu, typ">
  <div class="chips f"><button class="chip active" data-f="all">VŠE</button>{chips}</div>
  <div class="chips g"><button class="chip active" data-g="all">VŠICHNI</button><button class="chip" data-g="men">PÁNSKÉ</button><button class="chip" data-g="women">DÁMSKÉ</button><button class="chip" data-g="kids">DĚTSKÉ</button></div>
- <div class="chips cols" title="Počet karet na řádek"><span class="cols-l">NA ŘÁDEK</span><button class="chip" data-c="2">2</button><button class="chip" data-c="3">3</button></div>
  <span class="fcount" id="cnt"></span>
 </div>
 <main id="products">
@@ -322,10 +321,6 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .chip.active{background:var(--tc,#1a1a1a);color:#fff;border-color:var(--tc,#1a1a1a)}
 .chips.g .chip.active{background:#1a1a1a;border-color:#1a1a1a}
 .fcount{margin-left:auto;font-size:11px;color:var(--muted)}
-.chips.cols{align-items:center}.chips.cols .chip.active{background:#1a1a1a;border-color:#1a1a1a}
-.cols-l{font-size:10px;letter-spacing:.1em;color:var(--muted);margin-right:2px}
-@media screen and (min-width:1101px){body.cols2 .grid{grid-template-columns:repeat(2,1fr)}body.cols2 .card:nth-child(3n){border-right:1px solid var(--border)}body.cols2 .card:nth-child(2n){border-right:none}}
-@media(max-width:1100px){.chips.cols{display:none}}
 .sec{margin-top:40px;scroll-margin-top:70px}
 .sec-head{background:#fff;border-top:10px solid var(--tc);padding:34px 60px 24px;display:flex;align-items:center;gap:18px;border-bottom:1px solid var(--border)}
 .sec-bar{width:12px;height:54px;background:var(--tc);border-radius:2px}
@@ -339,9 +334,9 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .serie-bar{width:8px;height:36px;background:var(--sc);border-radius:2px}
 .serie-head h3{font-size:22px;font-weight:900;letter-spacing:.05em;text-transform:uppercase;color:#071426}
 .serie-cnt{margin-left:auto;background:var(--sc);color:#fff;padding:3px 12px;border-radius:20px;font-size:11px;font-weight:800}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--border)}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);border-top:1px solid var(--border)}
 .card{border-right:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--card);display:flex;flex-direction:column;padding:22px 24px 0;min-height:820px}
-.card:nth-child(3n){border-right:none}
+.card:nth-child(2n){border-right:none}
 .head{display:flex;align-items:flex-start;gap:10px;margin-bottom:8px}
 .head h3{font-size:28px;font-weight:900;letter-spacing:.03em;line-height:1;text-transform:uppercase;color:#071426}
 .head-l{display:flex;flex-direction:column;gap:5px;min-width:0}
@@ -408,7 +403,6 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 footer{background:#111;color:#888;padding:50px 60px;text-align:center;margin-top:40px;font-size:12px;line-height:1.7}
 footer b{color:#fff;letter-spacing:.3em;font-size:16px}
 footer .sub{font-size:10px;letter-spacing:.25em;margin-top:16px}
-@media(max-width:1100px){.grid{grid-template-columns:repeat(2,1fr)}.card:nth-child(3n){border-right:1px solid var(--border)}.card:nth-child(2n){border-right:none}}
 @media(max-width:700px){
  .hero,.toc,.fbar,.sec-head,.serie-head,.info,footer{padding-left:16px;padding-right:16px}
  .hero{min-height:300px;padding-top:30px;padding-bottom:30px}
@@ -457,9 +451,7 @@ q.addEventListener('input',go);
 document.querySelectorAll('.chips.f .chip').forEach(c=>c.addEventListener('click',()=>setF(c.dataset.f)));
 document.querySelectorAll('.chips.g .chip').forEach(c=>c.addEventListener('click',()=>setG(c.dataset.g)));
 document.querySelectorAll('.toc-h,.toc-s').forEach(a=>a.addEventListener('click',()=>{setF('all')}));
-function setC(c){document.body.classList.toggle('cols2',c==='2');document.querySelectorAll('.chips.cols .chip').forEach(x=>x.classList.toggle('active',x.dataset.c===c));try{localStorage.setItem('trimmCols',c)}catch(e){}}
-document.querySelectorAll('.chips.cols .chip').forEach(c=>c.addEventListener('click',()=>setC(c.dataset.c)));
-const u=new URLSearchParams(location.search);let cc=u.get('cols');if(!cc){try{cc=localStorage.getItem('trimmCols')}catch(e){}}setC(cc==='2'?'2':'3');
+const u=new URLSearchParams(location.search);
 if(u.get('sec'))setF(u.get('sec'));if(u.get('g'))setG(u.get('g'));if(u.get('q')){q.value=u.get('q')}
 go();
 '''

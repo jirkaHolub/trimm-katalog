@@ -2283,21 +2283,10 @@ q.addEventListener('input',go);
 chips.forEach(c=>c.addEventListener('click',()=>setFilter(c.dataset.f)));
 tocLinks.forEach(a=>a.addEventListener('click',()=>setFilter(a.dataset.f)));
 </script>
-<!-- cols-toggle -->
+<!-- cols-2 -->
 <style>
-.cols-t{display:inline-flex;align-items:center;gap:6px;margin-left:10px}
-.cols-t span{font-size:10px;letter-spacing:.1em;color:#777}
-.cols-t button{padding:7px 14px;border:1px solid #e4e4e4;background:#fff;border-radius:20px;font:700 11px/1 inherit;cursor:pointer}
-.cols-t button.active{background:#1a1a1a;color:#fff;border-color:#1a1a1a}
-@media screen and (min-width:1101px){body.cols2 .pgrid{grid-template-columns:repeat(2,1fr)}body.cols2 .product-card:nth-child(3n){border-right:1px solid var(--border)}body.cols2 .product-card:nth-child(2n){border-right:none}}
-@media(max-width:1100px),print{.cols-t{display:none}}
+@media screen and (min-width:1101px){.pgrid{grid-template-columns:repeat(2,1fr)}.product-card:nth-child(3n){border-right:1px solid var(--border)}.product-card:nth-child(2n){border-right:none}}
 </style>
-<script>
-(function(){var bar=document.querySelector('.fbar');if(!bar)return;var w=document.createElement('div');w.className='cols-t';w.innerHTML='<span>NA ŘÁDEK</span><button data-c="2">2</button><button data-c="3">3</button>';bar.appendChild(w);
-function set(c){document.body.classList.toggle('cols2',c==='2');w.querySelectorAll('button').forEach(function(b){b.classList.toggle('active',b.dataset.c===c)});try{localStorage.setItem('trimmCols',c)}catch(e){}}
-w.addEventListener('click',function(e){if(e.target.dataset.c)set(e.target.dataset.c)});
-var c=new URLSearchParams(location.search).get('cols');if(!c){try{c=localStorage.getItem('trimmCols')}catch(e){}}set(c==='2'?'2':'3')})();
-</script>
-<!-- /cols-toggle -->
+<!-- /cols-2 -->
 </body>
 </html>
