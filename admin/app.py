@@ -1,14 +1,14 @@
 """Aplikace na tvorbu katalogů TRIMM. Spuštění: python3 admin/app.py  ->  http://localhost:8765"""
 import os, re, io, json, time, hashlib, threading, sys
 try:
-    from fastapi import FastAPI, UploadFile, File, Form, HTTPException
+    from fastapi import FastAPI, UploadFile, File, Form, HTTPException, Request
 except ImportError:
     print('Chybí balíčky. Nainstaluj je příkazem:\n  ' + sys.executable + ' -m pip install --user fastapi "uvicorn[standard]" python-multipart pillow pymupdf openpyxl')
     sys.exit(1)
-from fastapi.responses import HTMLResponse, JSONResponse, FileResponse, RedirectResponse
+from fastapi.responses import HTMLResponse, JSONResponse, FileResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from PIL import Image
-import db, generate, catalogs, orderform, auth, store
+import db, generate, catalogs, orderform, auth, store, versions, cards
 from typing import List
 from schemas import SECTIONS, SCHEMAS, SPEC_LABELS, GENDERS, BADGE_LABELS, empty_product
 
@@ -87,11 +87,15 @@ def catalog_get(code: str):
 
 @app.put('/api/c/{code}')
 def catalog_update(code: str, body: dict):
-    cat = need_catalog(code)
+    cat = need_catalog(code); was = cat.get('status')
     for k in ('title', 'year', 'doc_title', 'hero', 'prev', 'status', 'note'):
         if k in body: cat[k] = body[k]
     if cat.get('prev') == code: cat['prev'] = ''
     db.save_catalog(cat)
+    if cat.get('source') == 'db' and cat.get('status') != was:
+        # uzavřený katalog si karty zkopíruje, aby se už neměnil; po odemknutí se ke společným kartám vrátí sám jen tehdy, když se mezitím nezměnily
+        if cat['status'] == 'done': cards.freeze(code)
+        elif cards.matches(code): cards.link(code)
     if 'sections' in body:
         keep = set()
         for i, s in enumerate(body['sections']):
@@ -151,11 +155,13 @@ def meta(code: str):
 @app.get('/api/c/{code}/products')
 def products(code: str, section: str = None):
     cat = need_catalog(code); prods = db.list_products(code); ov = catalogs.overview(cat, prods); out = []
+    others = {c['code'] for c in db.list_catalogs() if c.get('linked') and c['code'] != code} if cat.get('linked') else set()
+    use = db.card_usage() if others else {}
     for p in prods:
         if section and p['section'] != section: continue
-        out.append(dict(id=p['id'], name=p['name'], section=p['section'], serie=p['serie'], sort=p['sort'], typ=p.get('typ'), new=p.get('new'),
+        out.append(dict(id=p['id'], shared=[k for k in use.get(p['id'], []) if k in others], name=p['name'], section=p['section'], serie=p['serie'], sort=p['sort'], typ=p.get('typ'), new=p.get('new'),
                         thumb=p.get('hero') or next((c.get('front') for c in p['colors'] if c.get('front')), None), n_colors=len(p['colors']), prev=ov['status'].get(p['id'])))
-    return dict(products=out, removed=ov['removed'], prev=ov['prev'], prev_kind=ov['kind'])
+    return dict(products=out, removed=ov['removed'], prev=ov['prev'], prev_kind=ov['kind'], linked=bool(cat.get('linked')))
 
 @app.get('/api/c/{code}/products/{pid}')
 def product(code: str, pid: str):
@@ -168,9 +174,7 @@ def create(code: str, body: dict):
     need_catalog(code, write=True)
     section = body.get('section') or 'tents'; name = (body.get('name') or 'NOVÝ PRODUKT').strip()
     p = empty_product(section); p.update(body); p['name'] = name; p['season'] = code
-    base = slugify(name) or 'produkt'; pid = base; i = 2
-    while db.get_product(code, pid): pid = f'{base}_{i}'; i += 1
-    p['id'] = pid; p['sort'] = db.next_sort(code, section)
+    p['id'] = db.free_id(code, slugify(name) or 'produkt'); p['sort'] = db.next_sort(code, section)
     db.save_product(p); return p
 
 @app.put('/api/c/{code}/products/{pid}')
@@ -203,8 +207,8 @@ def form_plan(code: str):
     need_catalog(code); return orderform.plan(code) or dict(none=True)
 
 @app.post('/api/c/{code}/form/apply')
-def form_apply(code: str, body: dict):
-    need_catalog(code, write=True)
+def form_apply(code: str, body: dict, request: Request):
+    need_catalog(code, write=True); versions.create(code, 'Před použitím objednávkového formuláře', _who(request), auto=True)
     try: return orderform.apply(code, body)
     except ValueError as e: raise HTTPException(400, str(e))
 
@@ -226,6 +230,97 @@ def prev_list(code: str):
 def restore(code: str, body: dict):
     try: return catalogs.restore(need_catalog(code, write=True), body['key'])
     except ValueError as e: raise HTTPException(400, str(e))
+
+# ---------- podněty uživatelů k aplikaci ----------
+FEEDBACK_KINDS = ('chyba', 'napad', 'dotaz')
+
+@app.post('/api/feedback')
+def feedback_add(body: dict, request: Request):
+    text = (body.get('text') or '').strip()[:5000]; image = body.get('image') or ''
+    if image and not (image.startswith('data:image/') and ';base64,' in image[:40] and len(image) < 4_200_000): raise HTTPException(400, 'Obrázek se nepodařilo přijmout (je moc velký nebo to není obrázek).')
+    if not text and not image: raise HTTPException(400, 'Napiš, o co jde, nebo přilož obrázek.')
+    import secrets
+    db.add_feedback(dict(id=secrets.token_hex(6), author=_who(request), kind=body.get('kind') if body.get('kind') in FEEDBACK_KINDS else 'napad', text=text,
+                         page=str(body.get('page') or '')[:300], meta={k: str(v)[:300] for k, v in (body.get('meta') or {}).items()}, image=image))
+    return dict(ok=True)
+
+@app.get('/api/feedback')
+def feedback_list(request: Request, mine: int = 0):
+    """správce vidí všechno, ostatní jen své podněty (a odpověď na ně)"""
+    u = auth.current(request) or {}
+    return db.list_feedback(None if u.get('role') == 'admin' and not mine else u.get('email') or '')
+
+@app.get('/api/feedback/{fid}/image')
+def feedback_image(fid: str, request: Request):
+    import base64
+    f = db.get_feedback(fid); u = auth.current(request) or {}
+    if not f or not f['image'] or not (u.get('role') == 'admin' or f['author'] == u.get('email')): raise HTTPException(404)
+    head, data = f['image'].split(',', 1)
+    return Response(base64.b64decode(data), media_type=head[5:].split(';')[0], headers={'Cache-Control': 'private, max-age=86400'})
+
+@app.put('/api/feedback/{fid}')
+def feedback_update(fid: str, body: dict, request: Request):
+    auth.need_admin(request); kw = {}
+    if body.get('status') in ('new', 'done'): kw['status'] = body['status']
+    if 'reply' in body: kw['reply'] = str(body['reply'] or '').strip()[:3000]
+    db.update_feedback(fid, **kw); return dict(ok=True)
+
+@app.delete('/api/feedback/{fid}')
+def feedback_delete(fid: str, request: Request): auth.need_admin(request); db.delete_feedback(fid); return dict(ok=True)
+
+# ---------- společné karty produktů ----------
+@app.get('/api/cards')
+def cards_list():
+    return dict(cards=cards.listing(), migrated=bool(db.get_setting('cards_migrated')), sections=[dict(key=k, cz=v['cz']) for k, v in SECTIONS.items()])
+
+@app.post('/api/cards/migrate')
+def cards_migrate(request: Request):
+    auth.need_admin(request); log = []; r = cards.migrate(log.append); return dict(r, log=log)
+
+@app.delete('/api/cards/{cid}')
+def card_delete(cid: str):
+    try: cards.remove(cid)
+    except ValueError as e: raise HTTPException(400, str(e))
+    return dict(ok=True)
+
+@app.post('/api/c/{code}/cards')
+def cards_add(code: str, body: dict):
+    """zařadí do katalogu existující karty"""
+    if not need_catalog(code, write=True).get('linked'): raise HTTPException(400, 'Katalog má vlastní kopie karet. Napoj ho na společné karty v nastavení katalogu.')
+    return cards.add(code, body.get('ids') or [])
+
+@app.get('/api/c/{code}/link')
+def link_info(code: str):
+    """čím by se katalog s vlastními kopiemi změnil, kdyby se napojil na společné karty"""
+    need_catalog(code); return dict(differing=cards.differing(code))
+
+@app.post('/api/c/{code}/link')
+def link_do(code: str, request: Request):
+    need_catalog(code, write=True); versions.create(code, 'Před napojením na společné karty', _who(request), auto=True); cards.link(code); return dict(ok=True)
+
+# ---------- verze (zálohy) katalogu ----------
+def _who(request): return (auth.current(request) or {}).get('email') or ''
+
+@app.get('/api/c/{code}/versions')
+def versions_list(code: str): need_catalog(code); return versions.listing(code)
+
+@app.post('/api/c/{code}/versions')
+def version_create(code: str, body: dict, request: Request):
+    if need_catalog(code).get('source') != 'db': raise HTTPException(400, 'Archivní katalog (jen PDF) nemá co zálohovat')
+    versions.create(code, body.get('label'), _who(request)); return versions.listing(code)
+
+@app.put('/api/c/{code}/versions/{bid}')
+def version_rename(code: str, bid: str, body: dict): need_catalog(code); db.rename_backup(code, bid, (body.get('label') or '').strip()[:120]); return versions.listing(code)
+
+@app.delete('/api/c/{code}/versions/{bid}')
+def version_delete(code: str, bid: str): need_catalog(code); db.delete_backup(code, bid); return versions.listing(code)
+
+@app.post('/api/c/{code}/versions/{bid}/restore')
+def version_restore(code: str, bid: str, request: Request):
+    need_catalog(code, write=True)
+    try: versions.restore(code, bid, _who(request))
+    except ValueError as e: raise HTTPException(404, str(e))
+    return versions.listing(code)
 
 @app.post('/api/upload')
 async def upload(file: UploadFile = File(...), kind: str = Form('foto'), name: str = Form('')):
@@ -404,11 +499,12 @@ def _sec_color(code, section): return next((s['color'] for s in db.list_sections
 
 _gen_lock = threading.Lock()
 @app.post('/api/c/{code}/generate')
-def gen(code: str, body: dict):
+def gen(code: str, body: dict, request: Request):
     cat = need_catalog(code, write=True)
     if not _gen_lock.acquire(blocking=False): raise HTTPException(409, 'Generování už běží')
     log = []; cfg = generate.catalog_cfg(cat)
     try:
+        versions.create(code, 'Vygenerovaný katalog', _who(request), auto=True)   # ať jde dohledat stav, ze kterého PDF vzniklo
         generate.build(code, pdf=bool(body.get('pdf', True)), log=log.append)
         if body.get('push') and not store.REMOTE: generate.git_push(log=log.append, dirs=[os.path.relpath(os.path.dirname(cfg['out_html']), REPO)])
     except Exception as e: log.append('CHYBA: ' + str(e))

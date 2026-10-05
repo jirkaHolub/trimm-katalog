@@ -4,7 +4,7 @@ Heslo k online databázi se z Vercelu nedá stáhnout, proto kopie běží na se
 import sqlite3
 import db
 
-TABLES = ('products', 'sections', 'settings', 'catalogs', 'prev_cards')
+TABLES = ('products', 'sections', 'settings', 'catalogs', 'prev_cards', 'cards')
 
 def copy(sqlite_path, force=False):
     src = sqlite3.connect(sqlite_path); src.row_factory = sqlite3.Row; dst = db.connect(); out = {}

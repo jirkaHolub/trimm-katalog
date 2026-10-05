@@ -1,6 +1,6 @@
 """Katalogy (sezóny): založení nového z loňského, vazba na loňský katalog a rozdíly proti němu, soubory katalogu, využití fotek."""
 import os, re, time, hashlib, unicodedata, collections
-import db, generate, store
+import db, generate, store, cards
 from schemas import SECTIONS, empty_product
 
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.abspath(os.path.join(HERE, '..'))
@@ -29,10 +29,11 @@ def blank_catalog(kind, year, **kw):
     yl = year_label(kind, year)
     c = dict(code=code_for(kind, year), kind=kind, year_num=int(year), title=KINDS[kind]['title'], year=yl, doc_title=f'TRIMM — Katalog {kind} {yl}',
              hero='', prev='', status='draft', source='db', files=[])
-    c.update(kw); return c
+    c.update(kw); c.setdefault('linked', c['source'] == 'db' and c['status'] != 'done'); return c   # nový katalog skládá společné karty
 
 def create(kind, year, base='', copy_products=True, reset_new=True):
-    """Nový katalog. Z výchozího (loňského) převezme sekce, technické strany, úvodní fotku a produkty; ten se zároveň stane „loňským“ pro porovnání."""
+    """Nový katalog. Z výchozího (loňského) převezme sekce, technické strany, úvodní fotku a výběr a pořadí karet; ten se zároveň stane „loňským“ pro porovnání.
+    Karty se nekopírují: katalog se napojí na společné karty (obsah karty platí současný, ne ten z výchozího katalogu)."""
     if kind not in KINDS: raise ValueError('neznámý typ katalogu')
     cat = blank_catalog(kind, year)
     if db.get_catalog(cat['code']): raise ValueError(f'Katalog {cat["code"]} už existuje')
@@ -44,10 +45,11 @@ def create(kind, year, base='', copy_products=True, reset_new=True):
     for s in secs: db.save_section(cat['code'], s)
     n = 0
     if b and b.get('source') == 'db' and copy_products:
-        for p in db.list_products(b['code']):
-            p['season'] = cat['code']; p.pop('prev_id', None)
+        prods = db.list_products(b['code'])
+        for p in prods:
+            p.pop('prev_id', None)
             if reset_new: p['new'] = False
-            db.save_product(p); n += 1
+        db.set_products(cat['code'], prods, linked=True); n = len(prods)
     return cat, n
 
 # ---------- loňský katalog ----------
@@ -135,14 +137,13 @@ def restore(cat, key):
     """vrátí do katalogu produkt, který byl loni a letos chybí"""
     kind, pc, idx = prev_index(cat); q = idx.get(key)
     if not q: raise ValueError('loňská karta nenalezena')
-    if kind == 'card': p = dict(q); p.pop('prev_id', None); p['new'] = False
+    if kind == 'card': p = cards.take(cat['code'], q); p.pop('prev_id', None); p['new'] = False; pid = p['id']
     else:
         sec = q.get('section') if q.get('section') in SECTIONS else 'tents'; p = empty_product(sec)
         p.update(name=q['name'], serie=q.get('serie') or '', desc=q.get('desc') or '', fields=q.get('fields') or {}, features=q.get('features') or [], activities=q.get('activities') or [],
                  colors=[dict(name=c['name'], codes=[], front=None, back=None, art=None, generic=False) for c in q.get('colors') or [] if c.get('name')])
-    p['season'] = cat['code']; pid = base = (q.get('id') or slugify(q['name']) or 'produkt'); i = 2
-    while db.get_product(cat['code'], pid): pid = f'{base}_{i}'; i += 1
-    p['id'] = pid; p['prev_id'] = key if pid != key else None; p['sort'] = db.next_sort(cat['code'], p['section'])
+        pid = db.free_id(cat['code'], slugify(q['name']) or 'produkt')
+    p['season'] = cat['code']; p['id'] = pid; p['prev_id'] = key if pid != key else None; p['sort'] = db.next_sort(cat['code'], p['section'])
     db.save_product(p); return p
 
 # ---------- soubory a přehled ----------
@@ -227,6 +228,12 @@ def photo_usage():
     use = collections.defaultdict(list)
     def add(path, **kw):
         if path: use[path].append(kw)
+    def prod(p, code):
+        for k, lbl in PHOTO_SLOTS: add(p.get(k), catalog=code, id=p['id'], name=p['name'], what=lbl)
+        for b in p.get('badges') or []: add(b.get('file'), catalog=code, id=p['id'], name=p['name'], what='ikona')
+        for c in p.get('colors') or []:
+            for k, lbl in COLOR_SLOTS: add(c.get(k), catalog=code, id=p['id'], name=p['name'], what=f'{lbl} · {c.get("name") or ""}')
+    linked = set(); placed = db.card_usage()
     for cat in db.list_catalogs():
         code = cat['code']; add(cat.get('hero'), catalog=code, what='úvodní fotka katalogu')
         for s in db.list_sections(code):
@@ -234,11 +241,10 @@ def photo_usage():
         if cat.get('source') == 'archive':
             for c in db.list_prev_cards(code): add(c.get('image'), catalog=code, what=f'karta z PDF · {c["name"]}')
             continue
-        for p in db.list_products(code):
-            for k, lbl in PHOTO_SLOTS: add(p.get(k), catalog=code, id=p['id'], name=p['name'], what=lbl)
-            for b in p.get('badges') or []: add(b.get('file'), catalog=code, id=p['id'], name=p['name'], what='ikona')
-            for c in p.get('colors') or []:
-                for k, lbl in COLOR_SLOTS: add(c.get(k), catalog=code, id=p['id'], name=p['name'], what=f'{lbl} · {c.get("name") or ""}')
+        for p in db.list_products(code): prod(p, code)
+        if cat.get('linked'): linked.add(code)
+    for c in db.list_cards():   # karty, které zrovna nejsou v žádném rozpracovaném katalogu, své fotky pořád potřebují
+        if not linked & set(placed.get(c['id'], [])): prod(c, 'karty')
     return use
 
 FOLDERS = collections.OrderedDict([('foto', 'Fotky produktů'), ('rozkresy', 'Rozkresy'), ('ikony', 'Ikony'), ('ikony_produkt', 'Ikony z PDF'), ('pages', 'Technické strany'),

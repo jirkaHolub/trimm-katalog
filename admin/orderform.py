@@ -1,7 +1,7 @@
 """Předobjednávkový formulář (Excel, řádek = model × barva × velikost) jako zdroj katalogu:
 načtení, spárování modelů a barev s hotovými kartami, návrh změn a jejich provedení."""
 import os, re, io, json, difflib, collections
-import db, catalogs
+import db, catalogs, cards
 from catalogs import slugify, norm, REPO
 from schemas import SCHEMAS, SECTIONS, empty_product
 
@@ -237,13 +237,12 @@ def apply(code, body):
             if not p: continue
             db.save_product(update_product(p, m, dict(opts, rename=True), photos)); res['paired'] += 1; continue
         if act == 'copy' and n['source']:
-            p = db.get_product(n['source']['catalog'], n['source']['id']); p.pop('prev_id', None); res['copied'] += 1
+            p = cards.take(code, db.get_product(n['source']['catalog'], n['source']['id'])); p.pop('prev_id', None); res['copied'] += 1
             if p['section'] not in {s['key'] for s in db.list_sections(code)}: p['section'] = m['section']
         else:
             p = empty_product(m['section']); p['serie'] = serie_of.get((m['section'], m['typ']), ''); p['typ'] = m['typ']; res['created'] += 1
-        p['season'] = code; p['new'] = True; pid = base = slugify(m['name']) or 'produkt'; i = 2
-        while db.get_product(code, pid): pid = f'{base}_{i}'; i += 1
-        p['id'] = pid; p['sort'] = db.next_sort(code, p['section'])
+            p['id'] = db.free_id(code, slugify(m['name']) or 'produkt')
+        p['season'] = code; p['new'] = True; p['sort'] = db.next_sort(code, p['section'])
         db.save_product(update_product(p, m, dict(opts, add_colors=True, remove_colors=True, prices=True, sizes=True, rename=True), photos))
     paired = {choice.get(n['key'], '')[5:] for n in pl['new'] if (choice.get(n['key']) or '').startswith('pair:')} | {n['suggest'] for n in pl['new'] if n['suggest'] and n['key'] not in choice}
     for pid in body.get('remove') or []:
