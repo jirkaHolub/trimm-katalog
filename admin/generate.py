@@ -46,7 +46,7 @@ I = {
 def icon(k, title=''): return f'<span class="ic" title="{E(title)}">{I[k]}</span>'
 GENDER_CZ = {'men': 'Pánské', 'women': 'Dámské', 'kids': 'Dětské', 'uni': 'Unisex'}
 TYP_LABEL = {'s.p.': 'spací pytel', 'lodní': 'lodní vak', 'vodní': 'vodní vak', 'kompresní': 'kompresní vak', 'bivakovací': 'bivakovací pytel', 'náhradní': 'náhradní díl', 'tyčky': 'tyčky', 'vložka': 'vložka do spacáku'}
-SMALL_TYP = {'polštář', 'peněženka', 'pásek', 'nákrčník', 'kšiltovka', 'čepice', 'láhev', 'kolík', 'tyčky', 'náhradní', 'konektor'}
+SMALL_TYP = {'polštář', 'peněženka', 'pásek', 'nákrčník', 'kšiltovka', 'čepice', 'láhev', 'tyčky', 'náhradní', 'konektor'}
 
 _shots = {}
 def white_corners(im):
@@ -252,21 +252,28 @@ def build(season='SS27', pdf=True, log=print):
         store.write(idx, f'<!DOCTYPE html>\n<html lang="cs">\n<head>\n<meta charset="utf-8">\n<title>{E(cfg["doc_title"])}</title>\n<meta http-equiv="refresh" content="0; url={fn}">\n<link rel="canonical" href="{fn}">\n</head>\n<body>\n<p>Přesměrování na <a href="{fn}">katalog</a>…</p>\n</body>\n</html>\n'.encode('utf-8'), 'text/html; charset=utf-8')
     log(f'HTML: {key_html} ({len(doc) // 1024} kB, {len(products)} modelů)')
     if pdf:
-        if store.REMOTE:   # online: Chrome tiskne z dočasného souboru
-            work = os.path.join(store.TMP, 'print'); os.makedirs(work, exist_ok=True); src = os.path.join(work, fn); out = os.path.join(work, os.path.basename(key_pdf))
+        # PDF se netiskne z webové stránky, ale z vlastní tiskové sazby (printdoc.py): pevné strany A4, karta na celou výšku strany
+        import printdoc, tempfile
+        if store.REMOTE:
+            work = os.path.join(store.TMP, 'print'); os.makedirs(work, exist_ok=True); out = os.path.join(work, os.path.basename(key_pdf))
             import catalogs
             root = store.overlay([k for k, u in catalogs.photo_usage().items() if any(x['catalog'] == season for x in u)])   # obrázky pod jednou složkou, ať je Chrome čte z disku
-            open(src, 'w', encoding='utf-8').write(render_document(cat, products, sections, 'file://' + root + '/'))
         else:
-            src = cfg['out_html']; out = cfg['out_pdf']; os.makedirs(os.path.dirname(out), exist_ok=True)
+            work = tempfile.mkdtemp(prefix='katalog-print-'); root = HERE; out = cfg['out_pdf']; os.makedirs(os.path.dirname(out), exist_ok=True)
+        src = os.path.join(work, 'print.html'); pdoc, outline = printdoc.render(cat, products, sections, root)
+        open(src, 'w', encoding='utf-8').write(pdoc)
         if os.path.exists(out) and store.REMOTE: os.remove(out)
         cmd = [chrome_path(), '--headless=new', '--disable-gpu', '--no-pdf-header-footer', f'--print-to-pdf={out}', '--virtual-time-budget=30000',
                '--run-all-compositor-stages-before-draw'] + (['--no-sandbox', '--disable-dev-shm-usage', f'--user-data-dir={os.path.join(store.TMP, "chrome")}'] if store.REMOTE else []) + ['file://' + src]
         r = subprocess.run(cmd, capture_output=True, timeout=280 if store.REMOTE else 600)
+        if not store.REMOTE:
+            import shutil; shutil.rmtree(work, ignore_errors=True)
         if not os.path.exists(out): raise RuntimeError('PDF se nepodařilo vytvořit: ' + (r.stderr.decode('utf-8', 'ignore')[-400:] or 'Chrome nic nevrátil'))
-        try:
-            import fitz; d = fitz.open(out); n = len(d); cnt = collections.Counter(p.get_text().count('DMOC') for p in d); d.close()
-            log(f'PDF: {key_pdf} ({n} stran; stránky se 2 kartami: {cnt.get(2, 0)}, s 1: {cnt.get(1, 0)})')
+        try:   # záložky podle sekcí a sérií, popis dokumentu, úspornější uložení
+            import fitz; d = fitz.open(out); n = len(d)
+            d.set_toc([t for t in outline if t[2] <= n]); d.set_metadata(dict(title=cfg['doc_title'], author='TRIMM', subject=cfg['label'], creator='TRIMM katalogy'))
+            tmp = out + '.tmp'; d.save(tmp, garbage=3, deflate=True); d.close(); os.replace(tmp, out)
+            log(f'PDF: {key_pdf} ({n} stran, {os.path.getsize(out) / 1048576:.0f} MB)')
         except Exception as e: n = None; log(f'PDF hotovo ({e})')
         if store.REMOTE: store.write(key_pdf, open(out, 'rb').read(), 'application/pdf', max_age=60, pages=n)
     return cfg
