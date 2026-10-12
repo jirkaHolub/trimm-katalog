@@ -18,9 +18,10 @@ import re
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-SRC = os.path.join(HERE, 'trimm_katalog_FW_26_27_3.html')
+ROOT = os.path.dirname(HERE)          # katalog leží v kořeni repa, skript v nastroje/
+SRC = os.path.join(ROOT, 'trimm_katalog_FW_26_27_3.html')
 DICT = os.path.join(HERE, 'i18n', 'en.json')
-OUT = os.path.join(HERE, 'trimm_katalog_FW_26_27_3_en.html')
+OUT = os.path.join(ROOT, 'trimm_katalog_FW_26_27_3_en.html')
 
 missing = []
 
