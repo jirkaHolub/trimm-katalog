@@ -148,17 +148,24 @@ class Renderer:
         badge = '<span class="new">Novinka</span>' if r.get('new') else ''
         search = ' '.join([r['name'], r.get('typ') or '', sk] + [c['name'] for c in r['colors']]).lower()
         desc = f'<p class="desc">{E(r["desc"])}</p>' if r.get('desc') else '<p class="desc ph-desc">Popis doplníme.</p>'
-        return f'''<article class="card{dense}" id="m-{r['id']}" data-eh="{int(eh)}" data-sec="{sec}" data-serie="{E(slug(sk))}" data-g="{g or ''}" data-s="{E(search)}" style="--sc:{sc}">
-<div class="head"><div class="head-l"><h3>{E(r['name'])}</h3>{badge}</div><span class="dmoc"><span class="dmoc-l">DMOC</span>{E(price(r))}</span></div>
-{self.photos_html(r)}
-<div class="meta">{meta}</div>
-<div class="rest"><div class="specs">{self.spec_chips(r)}</div>
-{self.badges_html(r)}
-{self.temps_html(r)}
-<div class="body"><div class="mats">{self.fields_html(r)}{desc}</div><div class="feats">{self.feats_html(r)}</div></div>
-{self.draw_html(r)}
-{self.colors_html(r)}</div>
+        parts = dict(head=f'<div class="head"><div class="head-l"><h3>{E(r["name"])}</h3>{badge}</div><span class="dmoc"><span class="dmoc-l">DMOC</span>{E(price(r))}</span></div>',
+                     photo=self.photos_html(r), meta=f'<div class="meta">{meta}</div>', specs=f'<div class="specs">{self.spec_chips(r)}</div>', badges=self.badges_html(r), temps=self.temps_html(r),
+                     body=f'<div class="body"><div class="mats">{self.fields_html(r)}{desc}</div><div class="feats">{self.feats_html(r)}</div></div>', draw=self.draw_html(r), colors=self.colors_html(r))
+        return f'''<article class="card{dense}{self.card_cls(r)}" id="m-{r['id']}" data-eh="{int(eh)}" data-sec="{sec}" data-serie="{E(slug(sk))}" data-g="{g or ''}" data-s="{E(search)}" style="--sc:{sc}">
+{self.assemble(r, parts)}
 </article>'''
+    def card_cls(self, r): return ''
+    def assemble(self, r, P):
+        """poskládání karty z dílů (tisková sazba si uspořádání mění)"""
+        return f'''{P["head"]}
+{P["photo"]}
+{P["meta"]}
+<div class="rest">{P["specs"]}
+{P["badges"]}
+{P["temps"]}
+{P["body"]}
+{P["draw"]}
+{P["colors"]}</div>'''
 
 def groups(items):
     g = []
