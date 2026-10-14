@@ -366,8 +366,8 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .photo img:only-child{height:96%;max-width:85%}
 .p-rev{height:80%;max-width:25%}
 .photo.three{gap:2%}.photo.three .p-front{max-width:46%}.photo.three .p-back{max-width:25%}
-/* detail: dvě hlavní fotky stejně vysoké (zadek/vesta + předek) a menší detail vpravo */
-.photo.detail{gap:2%}.photo.detail .p-back{height:94%;max-width:30%}.photo.detail .p-front{max-width:42%}.p-detail{height:58%;max-width:24%;align-self:flex-end}
+/* detail: zadní a přední pohled jako u každé bundy, navíc menší třetí fotka vpravo (vesta bez rukávů) */
+.photo.detail{gap:2%}.photo.detail .p-back{max-width:28%}.photo.detail .p-front{max-width:44%}.p-detail{height:72%;max-width:26%}
 .p-hero{height:96%;max-width:100%}
 .photo.two{gap:2%}.photo.two .p-hero{height:96%;max-width:66%}.photo.two .p-inner{height:60%;max-width:32%}
 .photo.small img{height:62%;max-width:60%}
