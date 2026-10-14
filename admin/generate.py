@@ -106,6 +106,8 @@ class Renderer:
             cls += ' three'; imgs += f'<img class="p-rev" src="{self.src(r["hero_reverse"])}" alt="{E(r["name"])} – rubová strana" loading="lazy">'
         if c.get('back') and r['section'] in ('sportswear', 'backpacks') and self.is_product_shot(c['back']): imgs += f'<img class="p-back" src="{self.src(c["back"])}" alt="{E(r["name"])} – zadní strana" loading="lazy">'
         imgs += f'<img class="p-front" src="{self.src(c["front"])}" alt="{E(r["name"])}" loading="lazy">'
+        if r.get('hero_detail'):   # detail (např. odepnutý rukáv u CONTRE/CONTRA): menší fotka vpravo vedle hlavních
+            cls += ' detail'; imgs += f'<img class="p-detail" src="{self.src(r["hero_detail"])}" alt="{E(r["name"])} – detail" loading="lazy">'
         return f'<div class="{cls}">{imgs}</div>'
     def badges_html(self, r):
         if not r.get('badges'): return ''
@@ -364,6 +366,8 @@ svg{width:1em;height:1em;fill:none;stroke:currentColor;stroke-width:1.8;stroke-l
 .photo img:only-child{height:96%;max-width:85%}
 .p-rev{height:80%;max-width:25%}
 .photo.three{gap:2%}.photo.three .p-front{max-width:46%}.photo.three .p-back{max-width:25%}
+/* detail: dvě hlavní fotky stejně vysoké (zadek/vesta + předek) a menší detail vpravo */
+.photo.detail{gap:2%}.photo.detail .p-back{height:94%;max-width:30%}.photo.detail .p-front{max-width:42%}.p-detail{height:58%;max-width:24%;align-self:flex-end}
 .p-hero{height:96%;max-width:100%}
 .photo.two{gap:2%}.photo.two .p-hero{height:96%;max-width:66%}.photo.two .p-inner{height:60%;max-width:32%}
 .photo.small img{height:62%;max-width:60%}
