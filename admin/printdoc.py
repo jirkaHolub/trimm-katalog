@@ -40,8 +40,10 @@ class PrintRenderer(Renderer):
             try: fp = print_image(fp, self.SIZES.get(w, 1600))
             except Exception: pass
         return E(_url(fp))
-    TALL = .55   # poměr šířka/výška hlavní fotky, od kterého jde fotka vedle textu (spacáky, karimatky, vložky – na šířku by byla maličká)
+    TALL = .6   # poměr šířka/výška hlavní fotky, od kterého jde fotka vedle textu (spacáky, karimatky, vložky – na šířku by byla maličká)
+    TALL_SECTIONS = {'sleeping', 'mattress'}   # jinde (tašky, vodní vaky) by jedna karta na straně měla jinou sazbu než sousední
     def tall(self, r):
+        if r.get('section') not in self.TALL_SECTIONS: return False
         if not r.get('hero') or r.get('hero_back') or r.get('hero_inner') or r.get('hero_reverse') or r.get('typ') in generate.SMALL_TYP: return False
         try:
             with Image.open(os.path.join(self.root, r['hero'])) as im: w, h = im.size
@@ -216,10 +218,12 @@ body{width:auto;margin:0;background:#fff;-webkit-print-color-adjust:exact;print-
 .cw{flex:1;min-height:0;overflow:hidden}
 .prod .card{border:none!important;padding:0;min-height:0;background:none;display:flex;flex-direction:column}
 .prod .head{min-height:0;margin-bottom:4px;align-items:baseline}
+/* Novinka vedle názvu, ne pod ním – hlavička je na všech kartách stejně vysoká a linky pod fotkou neuskakují */
+.prod .head-l{flex-direction:row;align-items:baseline;flex-wrap:wrap;gap:4px 10px}
+.prod .new{white-space:nowrap}
 .prod .dmoc{font-size:15px}.prod .dmoc-l{font-size:8.5px}
+/* pole fotky je stejně vysoké pro všechny druhy karet (i drobné zboží – peněženky, kšiltovky, konektory – tam je jen menší fotka) */
 .prod .photo{flex:1000 1 0;height:auto;min-height:145px;max-height:430px;padding:6px 4px}
-.prod .photo.wide{max-height:470px}
-.prod .photo.small{min-height:110px;max-height:290px}
 .prod .card.tall .side{display:flex;gap:14px;min-height:330px;max-height:none;margin-top:2px;flex:1000 1 0}
 .prod .card.tall .tphoto{flex:0 0 31%;position:relative;min-width:0}
 .prod .card.tall .tphoto .photo{position:absolute;inset:4px 2px 6px;height:auto;min-height:0;max-height:none;padding:0;flex:none}
@@ -233,6 +237,8 @@ body{width:auto;margin:0;background:#fff;-webkit-print-color-adjust:exact;print-
 .prod .draw img{max-height:120px}
 .prod .colors{min-height:0;padding:8px 0 0;margin-top:10px}
 .prod .c-art,.prod .c-photo,.prod .c-none{height:60px;max-width:78px}
+.prod .c-name{min-height:21px}   /* místo na dva řádky i u krátkých názvů – řada barev je stejně vysoká a linka nad ní sedí */
+.prod .card:has(.colors .c-item:nth-child(7)) .colors{grid-auto-flow:column;grid-template-columns:none}   /* všechny barvy v jedné řadě (i 7–9), ať je řada barev na obou kartách strany stejně vysoká */
 /* zadní strana */
 .back{background:#111;color:#9a9a9a;display:flex;align-items:center;justify-content:center;text-align:center;font-size:10pt;line-height:1.8}
 .back b{color:#fff;font-size:26pt;letter-spacing:.34em;display:block;margin-bottom:6mm}
@@ -262,9 +268,12 @@ function fitCards(){
   const z=Math.min(...cws.map(need));
   // volné místo dostane fotka – na všech kartách skupiny stejně, aby linky pod fotkami seděly v jedné výšce
   const extra=Math.max(0,Math.min(...cws.map(cw=>(cw.getBoundingClientRect().height-nat(cw,z))/z)));
-  cws.forEach(cw=>{const c=cw.firstElementChild,ph=fx(c),cs=getComputedStyle(ph);
-   const mx=parseFloat(cs.maxHeight),v=parseFloat(cs.minHeight)+extra;
-   c.style.zoom=z;c.style.height=(cw.clientHeight/z)+'px';ph.style.flex='none';ph.style[prop(ph)]=(isNaN(mx)?v:Math.min(v,mx))+'px'});
+  // fotky (.photo) dostanou v celé skupině jednu společnou výšku (nejmenší z povolených), aby linka pod nimi seděla na všech kartách
+  const want=cw=>{const cs=getComputedStyle(fx(cw.firstElementChild)),mx=parseFloat(cs.maxHeight),v=parseFloat(cs.minHeight)+extra;return isNaN(mx)?v:Math.min(v,mx)};
+  const photos=cws.filter(cw=>!fx(cw.firstElementChild).classList.contains('side'));
+  const H=photos.length?Math.min(...photos.map(want)):0;
+  cws.forEach(cw=>{const c=cw.firstElementChild,ph=fx(c);
+   c.style.zoom=z;c.style.height=(cw.clientHeight/z)+'px';ph.style.flex='none';ph.style[prop(ph)]=(ph.classList.contains('side')?want(cw):H)+'px'});
   pgs.forEach(pg=>pg.dataset.z=z.toFixed(3));
  });
  document.documentElement.dataset.fit='1';
