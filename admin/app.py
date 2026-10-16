@@ -507,10 +507,13 @@ def live_catalog(code: str, lang: str = 'cs', prices: str = None):
 @app.post('/api/cards/i18n/fill')
 def i18n_fill(body: dict, request: Request):
     """doplní jazykovou vrstvu karet z připraveného souboru i18n/<lang>.json (jen chybějící texty, force = i vyplněné)"""
-    auth.need_admin(request); log = []
-    try: r = translate.fill(_lang(body.get('lang') or 'en'), force=bool(body.get('force')), log=log.append)
-    except ValueError as e: raise HTTPException(400, str(e))
-    return dict(r, log='\n'.join(log))
+    auth.need_admin(request); log = []; want = body.get('lang')
+    langs = [_lang(want)] if want else [l for l in LANG.CODES if l != 'cs' and translate.load(l)]   # bez jazyka = všechny, pro které je soubor
+    r = {}
+    for l in langs:
+        try: r = translate.fill(l, force=bool(body.get('force')), log=log.append)
+        except ValueError as e: raise HTTPException(400, str(e))
+    return dict(r, langs=langs, log='\n'.join(log) or 'Žádný připravený soubor překladů.')
 
 def _sec_color(code, section): return next((s['color'] for s in db.list_sections(code) if s['key'] == section), None)
 

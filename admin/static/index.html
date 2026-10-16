@@ -795,14 +795,14 @@ function renderFeed(){
 let CARDS=null, CQ='', CSEC='all', CUSE='all';
 async function showCards(){show('vCards');if(!CATS.length)await loadCats();CARDS=await api('/api/cards');renderCards()}
 document.addEventListener('click',async e=>{const b=e.target.closest('#cI18n');if(!b)return;b.disabled=true;b.textContent='doplňuji…';
- try{const r=await api('/api/cards/i18n/fill',{method:'POST',body:JSON.stringify({lang:'en'})});alert(r.log);if(META)META=null}catch(x){alert(errText(x))}
- b.disabled=false;b.textContent='Doplnit EN z připraveného souboru'});
+ try{const r=await api('/api/cards/i18n/fill',{method:'POST',body:JSON.stringify({})});alert(r.log);if(META)META=null}catch(x){alert(errText(x))}
+ b.disabled=false;b.textContent='Doplnit překlady z připravených souborů'});
 function renderCards(){
  const D=CARDS, open=CATS.filter(c=>c.source==='db'&&c.linked&&c.status!=='done'), secCz=k=>(D.sections.find(s=>s.key===k)||{}).cz||k||'';
  const q=CQ.trim().toLowerCase(), inOpen=c=>c.catalogs.some(x=>x.linked);
  const L=D.cards.filter(c=>(CSEC==='all'||c.section===CSEC)&&(CUSE==='all'||(CUSE==='free')===!inOpen(c))&&(!q||c.name.toLowerCase().includes(q)));
  const secs=D.sections.filter(s=>D.cards.some(c=>c.section===s.key));
- $('#cardsv').innerHTML=`<div class="phead"><h1>Karty produktů</h1><span class="hint">${pl(D.cards.length,'karta','karty','karet')} · ${D.cards.filter(c=>!inOpen(c)).length} mimo rozpracované katalogy</span><span class="sp"></span>${ME.role==='admin'||!ME.auth?'<button id="cI18n" title="Doplní anglické texty karet z připraveného souboru admin/i18n/en.json – jen tam, kde v kartě chybí; nic jiného se v kartách nemění">Doplnit EN z připraveného souboru</button>':''}</div>
+ $('#cardsv').innerHTML=`<div class="phead"><h1>Karty produktů</h1><span class="hint">${pl(D.cards.length,'karta','karty','karet')} · ${D.cards.filter(c=>!inOpen(c)).length} mimo rozpracované katalogy</span><span class="sp"></span>${ME.role==='admin'||!ME.auth?'<button id="cI18n" title="Doplní překlady karet (EN, ES…) z připravených souborů admin/i18n/*.json – jen tam, kde v kartě chybí; nic jiného se v kartách nemění">Doplnit překlady z připravených souborů</button>':''}</div>
  ${D.migrated?'':`<div class="lock">Katalogy zatím mají každý své vlastní kopie produktů. Převod založí společné karty (obsah určí rozpracované katalogy, uzavřené si nechají své kopie) a před tím všechno zazálohuje do Verzí. ${ME.role==='admin'||!ME.auth?'<button id="cMig" class="pri">Převést na společné karty</button>':'Převod může spustit správce.'}</div>`}
  <div class="hint" style="margin-bottom:10px">Každý produkt má jednu kartu. Rozpracované katalogy z karet jen skládají svůj výběr, takže úprava karty se projeví ve všech najednou. Kartu upravíš v katalogu, kde je zařazená.</div>
  <div class="inline" style="margin-bottom:12px"><input type="search" id="cQ" placeholder="Hledat model…" value="${esc(CQ)}" style="width:240px">
