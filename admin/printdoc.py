@@ -32,8 +32,8 @@ def print_image(fp, px):
 class PrintRenderer(Renderer):
     """Obrázky bere z disku, upravené pro tisk (print_image)."""
     SIZES = {200: 320, 240: 360}   # šířka, kterou si karta říká pro web -> px pro tisk; ostatní (hlavní fotky, rozkres rozměrů) 1600
-    def __init__(self, root):
-        super().__init__(_url(root) + '/'); self.root = root
+    def __init__(self, root, lang='cs', prices=None):
+        super().__init__(_url(root) + '/', lang, prices); self.root = root
     def src(self, path, w=700):
         fp = os.path.join(self.root, path)
         if not store.REMOTE:   # online se kvůli času tiskne z originálů
@@ -125,9 +125,9 @@ def paginate(products, sections, root):
 
 def serie_label(k): return k + ('' if 'ACCESSORIES' in k or k in ('WATERPROOF', 'WATERBLADDER', 'BACKPACKS') else ' SERIE')
 
-def render(cat, products, sections, root):
+def render(cat, products, sections, root, lang='cs', prices=None):
     """(html, osnova pro záložky PDF [[úroveň, název, strana]])"""
-    R = PrintRenderer(root); cfg = catalog_cfg(cat); pages, toc = paginate(products, sections, root); out = []; outline = []
+    R = PrintRenderer(root, lang, prices); cfg = catalog_cfg(cat, lang); pages, toc = paginate(products, sections, root); out = []; outline = []; T = R.t
     foot = f'TRIMM · {E(cfg["label"])}'
     def corner(n, color, x0=None, x1=None, y0=None):
         """barevný roh s číslem strany: sudá vlevo, lichá vpravo (u technických stran tam, kde je pruh v předloze)"""
@@ -144,13 +144,13 @@ def render(cat, products, sections, root):
             cols = ''
             for t in toc:
                 s = t['sec']; rows = ''.join(f'<a class="tr" href="#pg-{x["page"]}"><i style="background:{x["color"]}"></i><span class="tn">{E(serie_label(x["name"]))}</span><span class="td"></span><span class="tp">{x["page"]}</span></a>' for x in t['series'])
-                cols += f'<div class="ts" style="--tc:{s["color"]}"><a class="th" href="#pg-{t["page"]}"><span class="tt">{E(s["title"])}</span><span class="tp">{t["page"]}</span></a><div class="tcz">{E(s["cz"])} · {t["n"]} modelů</div>{rows}</div>'
-            out.append(f'<section class="pg tocp" id="pg-{n}"><div class="toc-k">OBSAH <span>CONTENT</span></div><div class="toc-c">{cols}</div><div class="pf-t r">{foot}</div>{corner(n, "#1a1a1a")}</section>')
-            outline.append([1, 'Obsah', n])
+                cols += f'<div class="ts" style="--tc:{s["color"]}"><a class="th" href="#pg-{t["page"]}"><span class="tt">{E(s["title"])}</span><span class="tp">{t["page"]}</span></a><div class="tcz">{E(generate.sec_sub(s, lang))} · {t["n"]} {T("modelů")}</div>{rows}</div>'
+            out.append(f'<section class="pg tocp" id="pg-{n}"><div class="toc-k">{"OBSAH <span>CONTENT</span>" if lang == "cs" else T("OBSAH")}</div><div class="toc-c">{cols}</div><div class="pf-t r">{foot}</div>{corner(n, "#1a1a1a")}</section>')
+            outline.append([1, T('Obsah'), n])
         elif k == 'info':
             s = p['sec']; fp, bar = info_page(root, p['path'])
             num = corner(n, bar['color'], bar['x0'], bar['x1'], bar['y0']) if bar else ''
-            out.append(f'<section class="pg info" id="pg-{n}"><img src="{E(_url(fp))}" alt="Technické informace – {E(s["cz"])}">{num}</section>')
+            out.append(f'<section class="pg info" id="pg-{n}"><img src="{E(_url(fp))}" alt="{T("Technické informace")} – {E(generate.sec_sub(s, lang))}">{num}</section>')
         elif k == 'prod':
             s = p['sec']; seen = []; slots = ''
             for sk, r in p['cards']:
@@ -159,12 +159,12 @@ def render(cat, products, sections, root):
                 slots += f'<div class="slot" style="--sc:{col}"><div class="ov"><i></i>{E(serie_label(sk))}</div><div class="cw">{R.card(r, s["color"])}</div></div>'
             sk0 = p['cards'][0][0]   # skupina pro společné zmenšení karet a výšku fotky: celá série (sekce + série první karty na straně), jinak jen tato strana
             grp = f'{s["key"]}|{sk0}' if s['key'] in FIT_BY_SERIE and 'ACCESSORIES' not in sk0 else f'pg-{n}'
-            out.append(f'<section class="pg prod" id="pg-{n}" data-grp="{E(grp)}" style="--tc:{s["color"]}"><header class="phd"><b>{E(s["title"])}</b><span class="phd-cz">{E(s["cz"])}</span></header>'
-                       f'<div class="slots">{slots}</div><div class="pf-t {"r" if n % 2 == 0 else "l"}">{foot} · ceny DMOC v Kč včetně DPH</div>{corner(n, s["color"])}</section>')
+            out.append(f'<section class="pg prod" id="pg-{n}" data-grp="{E(grp)}" style="--tc:{s["color"]}"><header class="phd"><b>{E(s["title"])}</b><span class="phd-cz">{E(generate.sec_sub(s, lang))}</span></header>'
+                       f'<div class="slots">{slots}</div><div class="pf-t {"r" if n % 2 == 0 else "l"}">{foot}{" · " + T("ceny DMOC v Kč včetně DPH") if R.prices else ""}</div>{corner(n, s["color"])}</section>')
         else:
-            out.append(f'<section class="pg back" id="pg-{n}"><div><b>TRIMM</b><p>Chebská 79/23, 322 00 Plzeň, Czech Republic<br>Tel.: +420 377 822 236 · E-mail: trimm@trimm.eu · www.trimm.eu</p><div class="sub">{E(cfg["label"])} · CENY DMOC V KČ VČETNĚ DPH · ZMĚNY VYHRAZENY</div></div></section>')
+            out.append(f'<section class="pg back" id="pg-{n}"><div><b>TRIMM</b><p>Chebská 79/23, 322 00 Plzeň, Czech Republic<br>Tel.: +420 377 822 236 · E-mail: trimm@trimm.eu · www.trimm.eu</p><div class="sub">{" · ".join(x for x in [E(cfg["label"]), T("CENY DMOC V KČ VČETNĚ DPH") if R.prices else "", T("ZMĚNY VYHRAZENY")] if x)}</div></div></section>')
     for t in toc:
-        outline.append([1, f'{t["sec"]["title"]} – {t["sec"]["cz"]}', t['page']])
+        outline.append([1, f'{t["sec"]["title"]} – {generate.sec_sub(t["sec"], lang)}', t['page']])
         outline += [[2, serie_label(x['name']), x['page']] for x in t['series']]
     doc = f'''<!DOCTYPE html>
 <html lang="cs"><head><meta charset="UTF-8"><title>{E(cfg['doc_title'])}</title>

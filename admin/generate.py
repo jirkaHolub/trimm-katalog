@@ -2,18 +2,23 @@
 import os, re, html, collections, math, subprocess, json
 from PIL import Image
 import db, store
+import lang as LANG
 from schemas import SECTIONS as SEC_DEF, SERIE_COLORS
 
 HERE = os.path.dirname(os.path.abspath(__file__)); REPO = os.path.abspath(os.path.join(HERE, '..'))
 E = html.escape
 CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome'
 
-def catalog_cfg(cat):
-    """cesty a popisky pro generování z uloženého záznamu katalogu"""
+def catalog_cfg(cat, lang='cs'):
+    """cesty a popisky pro generování z uloženého záznamu katalogu; jiný jazyk než čeština má vlastní výstupy (_EN) a název dokumentu"""
     code = cat['code']; out_html = cat.get('out_html') or f'{code.lower()}/trimm_katalog_{code}.html'
-    return dict(title=cat.get('title') or '', year=cat.get('year') or '', label=f'{cat.get("title") or ""} {cat.get("year") or ""}'.strip(),
-                out_html=os.path.join(REPO, out_html), out_pdf=os.path.join(REPO, cat.get('out_pdf') or f'vystupy/trimm_katalog_{code}_CZ.pdf'),
-                img_prefix='../' * (out_html.count('/')) + 'admin/', hero=cat.get('hero') or '', doc_title=cat.get('doc_title') or f'TRIMM — Katalog {code}')
+    cfg = dict(title=cat.get('title') or '', year=cat.get('year') or '', label=f'{cat.get("title") or ""} {cat.get("year") or ""}'.strip(),
+               out_html=os.path.join(REPO, out_html), out_pdf=os.path.join(REPO, cat.get('out_pdf') or f'vystupy/trimm_katalog_{code}_CZ.pdf'),
+               img_prefix='../' * (out_html.count('/')) + 'admin/', hero=cat.get('hero') or '', doc_title=cat.get('doc_title') or f'TRIMM — Katalog {code}', lang=lang)
+    if lang != 'cs':
+        cfg['out_html'], cfg['out_pdf'] = LANG.out_paths(cfg, lang)
+        cfg['doc_title'] = cfg['doc_title'].replace('Katalog', LANG.t(lang, 'Katalog'))
+    return cfg
 
 def serie_key(s): return (s or 'OSTATNÍ').upper().replace(' SERIE', '').strip()
 def serie_color(sec, s, sec_color):
@@ -21,10 +26,10 @@ def serie_color(sec, s, sec_color):
     if 'ACCESSORIES' in k: return '#777'
     return SERIE_COLORS.get(k, sec_color)
 def slug(s): return re.sub(r'[^a-z0-9]+', '-', s.lower()).strip('-')
-def price(r):
+def price(r, lang='cs'):
     if not r.get('price_min'): return ''
-    f = lambda v: f'{int(v):,}'.replace(',', ' ')
-    return (f'od {f(r["price_min"])} Kč' if r.get('price_max') and r['price_max'] != r['price_min'] else f'{f(r["price_min"])} Kč')
+    f = lambda v: f'{int(v):,}'.replace(',', ' '); od = LANG.t(lang, 'od'); kc = LANG.t(lang, 'Kč')
+    return (f'{od} {f(r["price_min"])} {kc}' if r.get('price_max') and r['price_max'] != r['price_min'] else f'{f(r["price_min"])} {kc}')
 
 I = {
  'weight':'<svg viewBox="0 0 24 24"><path d="M12 3a3 3 0 0 1 3 3H9a3 3 0 0 1 3-3z"/><path d="M5 8h14l2 12H3z"/></svg>',
@@ -55,9 +60,11 @@ def white_corners(im):
     return sum(im.getpixel(p) for p in pts) / len(pts) > 235
 
 class Renderer:
-    def __init__(self, img_prefix):
-        self.pfx = img_prefix
+    def __init__(self, img_prefix, lang='cs', prices=None):
+        self.pfx = img_prefix; self.lang = lang
+        self.prices = (lang == 'cs') if prices is None else bool(prices)   # ceny v Kč mají smysl jen v české verzi, jinde jen na vyžádání
         self.sized = img_prefix == '/'   # zobrazení přímo z aplikace: místo originálů (až 1600 px) posílat zmenšeniny podle velikosti v kartě
+    def t(self, key, group='ui'): return LANG.t(self.lang, key, group)
     def src(self, path, w=700):
         if self.sized and path.startswith('uploads/'): return E(f'/thumb/{path}?w={w}')
         return E(self.pfx + path)
@@ -100,7 +107,7 @@ class Renderer:
             return f'<div class="{cls} has-hero"><img class="p-hero" src="{self.src(r["hero"])}" alt="{E(r["name"])}" loading="lazy"></div>'
         fronts = [c for c in r['colors'] if c.get('front')]
         fronts = sorted(fronts, key=lambda c: (0 if c.get('main') else 1, 0 if c.get('back') else 1, 1 if c.get('generic') else 0, r['colors'].index(c)))
-        if not fronts: return f'<div class="{cls}"><div class="ph"><span class="ph-n">{E(r["name"])}</span><span class="ph-t">foto doplníme</span></div></div>'
+        if not fronts: return f'<div class="{cls}"><div class="ph"><span class="ph-n">{E(r["name"])}</span><span class="ph-t">{self.t("foto doplníme")}</span></div></div>'
         c = fronts[0]; imgs = ''
         if r.get('hero_reverse'):   # oboustranná bunda: rub + zadek + předek (jako DOUBLE ve FW 26/27)
             cls += ' three'; imgs += f'<img class="p-rev" src="{self.src(r["hero_reverse"])}" alt="{E(r["name"])} – rubová strana" loading="lazy">'
@@ -126,8 +133,8 @@ class Renderer:
         return ''.join(f'<div class="mat"><span class="mat-l">{E(k)}</span><span class="mat-v">{E(v)}</span></div>' for k, v in (r.get('fields') or {}).items() if v)
     def feats_html(self, r):
         out = ''
-        if r.get('features'): out += '<div class="feat"><div class="feat-l">VLASTNOSTI</div><ul>' + ''.join(f'<li>{E(f)}</li>' for f in r['features']) + '</ul></div>'
-        if r.get('activities'): out += '<div class="feat"><div class="feat-l">AKTIVITY</div><ul>' + ''.join(f'<li>{E(f)}</li>' for f in r['activities']) + '</ul></div>'
+        if r.get('features'): out += f'<div class="feat"><div class="feat-l">{self.t("VLASTNOSTI")}</div><ul>' + ''.join(f'<li>{E(f)}</li>' for f in r['features']) + '</ul></div>'
+        if r.get('activities'): out += f'<div class="feat"><div class="feat-l">{self.t("AKTIVITY")}</div><ul>' + ''.join(f'<li>{E(f)}</li>' for f in r['activities']) + '</ul></div>'
         return out
     def est_height(self, r):
         ch = lambda t, w: max(1, math.ceil(len(t) / w))
@@ -140,17 +147,21 @@ class Renderer:
         n = len(r['colors']); h += 12 + (100 if n < 7 else 100 * math.ceil(n / 6))
         return h
     def card(self, r, sec_color):
+        r = LANG.localize(r, self.lang)   # texty ve zvoleném jazyce (klíče typ/sekce zůstávají české)
         sec = r['section']; sk = serie_key(r.get('serie')); sc = serie_color(sec, r.get('serie'), sec_color)
         eh = self.est_height(r); dense = ' dense2' if eh > 1080 else (' dense' if eh > 960 else '')
         g = r.get('gender') or None; meta = ''
-        if g: meta += f'<span class="g" title="{GENDER_CZ[g]}">{icon(g, GENDER_CZ[g])}<span>{GENDER_CZ[g]}</span></span>'
-        meta += f'<span class="typ">{E(TYP_LABEL.get(r.get("typ") or "", r.get("typ") or ""))}</span>'
+        gl = self.t(g, 'genders') if g else ''; gl = GENDER_CZ[g] if g and gl == g else gl
+        if g: meta += f'<span class="g" title="{gl}">{icon(g, gl)}<span>{gl}</span></span>'
+        typ = r.get('typ_label') if self.lang != 'cs' else TYP_LABEL.get(r.get('typ') or '', r.get('typ') or '')
+        meta += f'<span class="typ">{E(typ or "")}</span>'
         S = r.get('specs') or {}
         if S.get('size'): meta += f'<span class="size">{E(S["size"])}</span>'
-        badge = '<span class="new">Novinka</span>' if r.get('new') else ''
-        search = ' '.join([r['name'], r.get('typ') or '', sk] + [c['name'] for c in r['colors']]).lower()
-        desc = f'<p class="desc">{E(r["desc"])}</p>' if r.get('desc') else '<p class="desc ph-desc">Popis doplníme.</p>'
-        parts = dict(head=f'<div class="head"><div class="head-l"><h3>{E(r["name"])}</h3>{badge}</div><span class="dmoc"><span class="dmoc-l">DMOC</span>{E(price(r))}</span></div>',
+        badge = f'<span class="new">{self.t("Novinka")}</span>' if r.get('new') else ''
+        search = ' '.join([r['name'], r.get('typ') or '', typ or '', sk] + [c['name'] for c in r['colors']]).lower()
+        desc = f'<p class="desc">{E(r["desc"])}</p>' if r.get('desc') else f'<p class="desc ph-desc">{self.t("Popis doplníme.")}</p>'
+        dmoc = f'<span class="dmoc"><span class="dmoc-l">{self.t("DMOC")}</span>{E(price(r, self.lang))}</span>' if self.prices else ''
+        parts = dict(head=f'<div class="head"><div class="head-l"><h3>{E(r["name"])}</h3>{badge}</div>{dmoc}</div>',
                      photo=self.photos_html(r), meta=f'<div class="meta">{meta}</div>', specs=f'<div class="specs">{self.spec_chips(r)}</div>', badges=self.badges_html(r), temps=self.temps_html(r),
                      body=f'<div class="body"><div class="mats">{self.fields_html(r)}{desc}</div><div class="feats">{self.feats_html(r)}</div></div>', draw=self.draw_html(r), colors=self.colors_html(r))
         return f'''<article class="card{dense}{self.card_cls(r)}" id="m-{r['id']}" data-eh="{int(eh)}" data-sec="{sec}" data-serie="{E(slug(sk))}" data-g="{g or ''}" data-s="{E(search)}" style="--sc:{sc}">
@@ -183,23 +194,27 @@ def groups(items):
 def css(img_prefix, hero, label=''):
     return CSS_BASE.replace('__HERO__', (f'/thumb/{hero}?w=1600' if img_prefix == '/' else img_prefix + hero) if hero else '').replace('__LABEL__', label.replace('"', ''))
 
-def render_document(cat, products, sections, img_prefix):
-    R = Renderer(img_prefix); cfg = catalog_cfg(cat)
+def sec_sub(s, lang):
+    """český podtitul sekce, v jiném jazyce ze slovníku"""
+    return LANG.t(lang, s['key'], 'sections') if lang != 'cs' else s['cz']
+
+def render_document(cat, products, sections, img_prefix, lang='cs', prices=None):
+    R = Renderer(img_prefix, lang, prices); cfg = catalog_cfg(cat, lang); T = R.t
     by_sec = collections.OrderedDict((s['key'], []) for s in sections)
     for r in products:
         by_sec.setdefault(r['section'], []).append(r)
     toc = ''; body = ''; chips = ''
     for s in sections:
         sec = s['key']; items = by_sec.get(sec, []); gs = groups(items)
-        toc += f'<div class="toc-sec" style="--tc:{s["color"]}"><a href="#sec-{sec}" class="toc-h"><span class="toc-dot"></span>{E(s["title"])}<span class="toc-cz">{E(s["cz"])}</span><span class="toc-cnt">{len(items)}</span></a><div class="toc-series">'
+        toc += f'<div class="toc-sec" style="--tc:{s["color"]}"><a href="#sec-{sec}" class="toc-h"><span class="toc-dot"></span>{E(s["title"])}<span class="toc-cz">{E(sec_sub(s, lang))}</span><span class="toc-cnt">{len(items)}</span></a><div class="toc-series">'
         tc = collections.OrderedDict()
         for k, v in gs.items(): tc.setdefault(k.split(' #')[0], [k, 0]); tc[k.split(' #')[0]][1] += len(v)
         toc += ''.join(f'<a href="#s-{sec}-{slug(k0)}" class="toc-s" data-sec="{sec}"><i style="background:{serie_color(sec, k0, s["color"])}"></i>{E(k0)}<span>{n}</span></a>' for k0, (k, n) in tc.items())
         toc += '</div></div>'
-        chips += f'<button class="chip" data-f="{sec}" style="--tc:{s["color"]}">{E(s["cz"].upper())}</button>'
-        pages = ''.join(f'<img src="{R.src(p, 2400)}" alt="Technické informace" loading="lazy">' for p in (s.get('pages') or []) if store.exists(p))
+        chips += f'<button class="chip" data-f="{sec}" style="--tc:{s["color"]}">{E(sec_sub(s, lang).upper())}</button>'
+        pages = ''.join(f'<img src="{R.src(p, 2400)}" alt="{T("Technické informace")}" loading="lazy">' for p in (s.get('pages') or []) if store.exists(p))
         info = f'<div class="info-pages">{pages}</div>' if pages else ''
-        body += f'<section class="sec" id="sec-{sec}" data-sec="{sec}" style="--tc:{s["color"]}"><div class="sec-head"><div class="sec-bar"></div><div><h2>{E(s["title"])}</h2><div class="sec-cz">{E(s["cz"])}</div></div><span class="sec-cnt">{len(items)} modelů</span></div>{info}'
+        body += f'<section class="sec" id="sec-{sec}" data-sec="{sec}" style="--tc:{s["color"]}"><div class="sec-head"><div class="sec-bar"></div><div><h2>{E(s["title"])}</h2><div class="sec-cz">{E(sec_sub(s, lang))}</div></div><span class="sec-cnt">{len(items)} {T("modelů")}</span></div>{info}'
         for k, v in gs.items():
             k0 = k.split(' #')[0]; col = serie_color(sec, k0, s['color'])
             body += f'<div class="serie" id="s-{sec}-{slug(k)}" data-serie="{slug(k0)}" style="--sc:{col}"><div class="serie-head"><div class="serie-bar"></div><h3>{E(k0)}{"" if "ACCESSORIES" in k0 or k0 in ("WATERPROOF", "WATERBLADDER", "BACKPACKS") else " SERIE"}</h3><span class="serie-cnt">{len(v)}</span></div><div class="grid">'
@@ -208,8 +223,9 @@ def render_document(cat, products, sections, img_prefix):
         body += '</section>'
     n_new = sum(1 for r in products if r.get('new'))
     n_series = sum(len({k.split(' #')[0] for k in groups(v)}) for v in by_sec.values())
+    foot = ' · '.join(x for x in [E(cfg['label']), T('CENY DMOC V KČ VČETNĚ DPH') if R.prices else '', T('ZMĚNY VYHRAZENY')] if x)
     return f'''<!DOCTYPE html>
-<html lang="cs">
+<html lang="{lang}">
 <head>
 <meta charset="UTF-8">
 <title>{E(cfg['doc_title'])}</title>
@@ -217,49 +233,59 @@ def render_document(cat, products, sections, img_prefix):
 <style>{css(img_prefix, cfg['hero'], cfg['label'])}</style>
 </head>
 <body>
-<section class="hero" aria-label="TRIMM {E(cfg['label'])}"><div><div class="brand">TRIMM · OUTDOOR PRODUCTS</div><h1>{E(cfg['title'])} <span>{E(cfg['year'])}</span></h1><div class="sub">KATALOG · CZ</div></div></section>
+<section class="hero" aria-label="TRIMM {E(cfg['label'])}"><div><div class="brand">TRIMM · OUTDOOR PRODUCTS</div><h1>{E(cfg['title'])} <span>{E(cfg['year'])}</span></h1><div class="sub">{T('KATALOG · CZ')}</div></div></section>
 <section class="toc">
  <div class="toc-title">CONTENT</div>
  <div class="toc-grid">{toc}</div>
  <div class="stats-row">
-  <div><div class="stat-n">{len(products)}</div><div class="stat-l">MODELŮ</div></div>
-  <div><div class="stat-n">{n_series}</div><div class="stat-l">SÉRIÍ</div></div>
-  <div><div class="stat-n">{n_new}</div><div class="stat-l">NOVINEK</div></div>
+  <div><div class="stat-n">{len(products)}</div><div class="stat-l">{T('MODELŮ')}</div></div>
+  <div><div class="stat-n">{n_series}</div><div class="stat-l">{T('SÉRIÍ')}</div></div>
+  <div><div class="stat-n">{n_new}</div><div class="stat-l">{T('NOVINEK')}</div></div>
  </div>
 </section>
 <div class="fbar">
- <input type="search" id="q" placeholder="Vyhledat model, barvu, typ">
- <div class="chips f"><button class="chip active" data-f="all">VŠE</button>{chips}</div>
- <div class="chips g"><button class="chip active" data-g="all">VŠICHNI</button><button class="chip" data-g="men">PÁNSKÉ</button><button class="chip" data-g="women">DÁMSKÉ</button><button class="chip" data-g="kids">DĚTSKÉ</button></div>
+ <input type="search" id="q" placeholder="{T('Vyhledat model, barvu, typ')}">
+ <div class="chips f"><button class="chip active" data-f="all">{T('VŠE')}</button>{chips}</div>
+ <div class="chips g"><button class="chip active" data-g="all">{T('VŠICHNI')}</button><button class="chip" data-g="men">{T('PÁNSKÉ')}</button><button class="chip" data-g="women">{T('DÁMSKÉ')}</button><button class="chip" data-g="kids">{T('DĚTSKÉ')}</button></div>
  <span class="fcount" id="cnt"></span>
 </div>
 <main id="products">
 {body}
 </main>
-<footer><b>TRIMM</b><br>Chebská 79/23, 322 00 Plzeň, Czech Republic<br>Tel.: +420 377 822 236 · E-mail: trimm@trimm.eu · www.trimm.eu<div class="sub">{E(cfg['label'])} · CENY DMOC V KČ VČETNĚ DPH · ZMĚNY VYHRAZENY</div></footer>
-<script>{JS}</script>
+<footer><b>TRIMM</b><br>Chebská 79/23, 322 00 Plzeň, Czech Republic<br>Tel.: +420 377 822 236 · E-mail: trimm@trimm.eu · www.trimm.eu<div class="sub">{foot}</div></footer>
+<script>{JS.replace("' modelů'", "' " + T('modelů') + "'")}</script>
 </body>
 </html>'''
 
-def render_card_preview(r, img_prefix, sec_color=None):
-    sec = dict(SEC_DEF.get(r['section'], {})); R = Renderer(img_prefix)
+def render_card_preview(r, img_prefix, sec_color=None, lang='cs', prices=None):
+    sec = dict(SEC_DEF.get(r['section'], {})); R = Renderer(img_prefix, lang, prices)
     if sec_color: sec['color'] = sec_color
-    return f'''<!DOCTYPE html><html lang="cs"><head><meta charset="UTF-8"><style>{css(img_prefix, "")}
+    return f'''<!DOCTYPE html><html lang="{lang}"><head><meta charset="UTF-8"><style>{css(img_prefix, "")}
 body{{background:#f6f6f4;padding:12px}}.grid{{grid-template-columns:1fr;max-width:460px;border:1px solid #e4e4e4}}.card{{min-height:0;border-right:none!important}}.card>.rest{{min-height:0}}</style></head>
 <body><div class="grid" style="--tc:{sec.get('color', '#888')}">{R.card(r, sec.get('color', '#888'))}</div></body></html>'''
 
-def build(season='SS27', pdf=True, log=print):
+def build(season='SS27', pdf=True, log=print, langs=None, prices=None):
+    """Vygeneruje HTML (+ PDF) katalogu v daných jazycích. prices: None = Kč jen česky, True/False = vynutit pro všechny jazyky.
+    Vrací seznam výstupů [{lang, html, pdf}] (cesty vůči repu)."""
     cat = db.get_catalog(season)
     if not cat: raise ValueError(f'Katalog {season} neexistuje')
-    cfg = catalog_cfg(cat)
-    products = db.list_products(season); sections = db.list_sections(season)
-    doc = render_document(cat, products, sections, cfg['img_prefix'])
+    products = db.list_products(season); sections = db.list_sections(season); outputs = []
+    for lang in (langs or ['cs']):
+        if lang not in LANG.CODES: raise ValueError(f'Neznámý jazyk {lang}')
+        cfg = _build_lang(cat, products, sections, lang, pdf, log, prices)
+        outputs.append(dict(lang=lang, html=os.path.relpath(cfg['out_html'], REPO), pdf=os.path.relpath(cfg['out_pdf'], REPO) if pdf else None))
+    return outputs
+
+def _build_lang(cat, products, sections, lang, pdf, log, prices):
+    season = cat['code']; cfg = catalog_cfg(cat, lang)
+    doc = render_document(cat, products, sections, cfg['img_prefix'], lang, prices)
     key_html = os.path.relpath(cfg['out_html'], REPO); key_pdf = os.path.relpath(cfg['out_pdf'], REPO); fn = os.path.basename(key_html)
     store.write(key_html, doc.encode('utf-8'), 'text/html; charset=utf-8', max_age=60)
     idx = os.path.dirname(key_html) + '/index.html'
-    if not store.exists(idx):
+    if lang == 'cs' and not store.exists(idx):
         store.write(idx, f'<!DOCTYPE html>\n<html lang="cs">\n<head>\n<meta charset="utf-8">\n<title>{E(cfg["doc_title"])}</title>\n<meta http-equiv="refresh" content="0; url={fn}">\n<link rel="canonical" href="{fn}">\n</head>\n<body>\n<p>Přesměrování na <a href="{fn}">katalog</a>…</p>\n</body>\n</html>\n'.encode('utf-8'), 'text/html; charset=utf-8')
-    log(f'HTML: {key_html} ({len(doc) // 1024} kB, {len(products)} modelů)')
+    miss = [p['name'] for p in products if LANG.localize(p, lang).get('_missing')] if lang != 'cs' else []
+    log(f'HTML ({lang.upper()}): {key_html} ({len(doc) // 1024} kB, {len(products)} modelů)' + (f' – {len(miss)} karet s nepřeloženým textem: {", ".join(miss[:8])}{"…" if len(miss) > 8 else ""}' if miss else ''))
     if pdf:
         # PDF se netiskne z webové stránky, ale z vlastní tiskové sazby (printdoc.py): pevné strany A4, karta na celou výšku strany
         import printdoc, tempfile
@@ -269,7 +295,7 @@ def build(season='SS27', pdf=True, log=print):
             root = store.overlay([k for k, u in catalogs.photo_usage().items() if any(x['catalog'] == season for x in u)])   # obrázky pod jednou složkou, ať je Chrome čte z disku
         else:
             work = tempfile.mkdtemp(prefix='katalog-print-'); root = HERE; out = cfg['out_pdf']; os.makedirs(os.path.dirname(out), exist_ok=True)
-        src = os.path.join(work, 'print.html'); pdoc, outline = printdoc.render(cat, products, sections, root)
+        src = os.path.join(work, 'print.html'); pdoc, outline = printdoc.render(cat, products, sections, root, lang, prices)
         open(src, 'w', encoding='utf-8').write(pdoc)
         if os.path.exists(out) and store.REMOTE: os.remove(out)
         cmd = [chrome_path(), '--headless=new', '--disable-gpu', '--no-pdf-header-footer', f'--print-to-pdf={out}', '--virtual-time-budget=30000',
@@ -282,7 +308,7 @@ def build(season='SS27', pdf=True, log=print):
             import fitz; d = fitz.open(out); n = len(d)
             d.set_toc([t for t in outline if t[2] <= n]); d.set_metadata(dict(title=cfg['doc_title'], author='TRIMM', subject=cfg['label'], creator='TRIMM katalogy'))
             tmp = out + '.tmp'; d.save(tmp, garbage=3, deflate=True); d.close(); os.replace(tmp, out)
-            log(f'PDF: {key_pdf} ({n} stran, {os.path.getsize(out) / 1048576:.0f} MB)')
+            log(f'PDF ({lang.upper()}): {key_pdf} ({n} stran, {os.path.getsize(out) / 1048576:.0f} MB)')
         except Exception as e: n = None; log(f'PDF hotovo ({e})')
         if store.REMOTE: store.write(key_pdf, open(out, 'rb').read(), 'application/pdf', max_age=60, pages=n)
     return cfg
@@ -477,4 +503,5 @@ go();
 if __name__ == '__main__':
     import sys
     args = [a for a in sys.argv[1:] if not a.startswith('--')]
-    build(args[0] if args else 'SS27', pdf='--no-pdf' not in sys.argv)
+    langs = [a.split('=')[1] for a in sys.argv if a.startswith('--lang=')]   # --lang=cs --lang=en
+    build(args[0] if args else 'SS27', pdf='--no-pdf' not in sys.argv, langs=langs or None)

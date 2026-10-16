@@ -171,10 +171,12 @@ def file_info(path, label):
 def catalog_files(cat):
     out = []
     if cat.get('source') == 'db':
-        cfg = generate.catalog_cfg(cat)
-        for lbl, p in (('PDF · CZ', cfg['out_pdf']), ('Web (HTML)', cfg['out_html'])):
-            f = file_info(os.path.relpath(p, REPO), lbl)
-            if f: f['generated'] = True; out.append(f)
+        import lang as LANG
+        for lng in LANG.CODES:   # výstupy po jazycích: čeština má uložené cesty, ostatní _EN apod.
+            cfg = generate.catalog_cfg(cat, lng); u = 'CZ' if lng == 'cs' else lng.upper()
+            for lbl, p in ((f'PDF · {u}', cfg['out_pdf']), (f'Web (HTML) · {u}', cfg['out_html'])):
+                f = file_info(os.path.relpath(p, REPO), lbl)
+                if f: f['generated'] = True; f['lang'] = lng; out.append(f)
     for e in cat.get('files') or []:
         f = file_info(e['path'], e.get('label') or os.path.basename(e['path']))
         if f: out.append(f)

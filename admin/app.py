@@ -8,7 +8,8 @@ except ImportError:
 from fastapi.responses import HTMLResponse, JSONResponse, FileResponse, RedirectResponse, Response
 from fastapi.staticfiles import StaticFiles
 from PIL import Image
-import db, generate, catalogs, orderform, auth, store, versions, cards
+import db, generate, catalogs, orderform, auth, store, versions, cards, translate
+import lang as LANG
 from typing import List
 from schemas import SECTIONS, SCHEMAS, SPEC_LABELS, GENDERS, BADGE_LABELS, empty_product
 
@@ -56,7 +57,7 @@ def index(): return open(os.path.join(HERE, 'static', 'index.html'), encoding='u
 def catalogs_list():
     cats = [catalogs.summary(c) for c in db.list_catalogs()]
     cats.sort(key=lambda c: (-(c.get('year_num') or 0), 0 if c.get('kind') == 'FW' else 1))
-    return dict(catalogs=cats, kinds=[dict(key=k, **v) for k, v in catalogs.KINDS.items()])
+    return dict(catalogs=cats, kinds=[dict(key=k, **v) for k, v in catalogs.KINDS.items()], langs=LANG.LANGS)
 
 @app.post('/api/catalogs')
 def catalog_create(body: dict):
@@ -148,7 +149,7 @@ def meta(code: str):
     for p in prods: typs.setdefault(p['section'], set()).add(p.get('typ') or '')
     secs = db.list_sections(code)
     return dict(season=code, catalog=dict(cat, label=catalogs.catalog_label(cat)), sections=[dict(key=s['key'], title=s['title'], cz=s['cz'], color=s['color']) for s in secs if s['key'] in SCHEMAS],
-                schemas=SCHEMAS, spec_labels=SPEC_LABELS, genders=GENDERS,
+                schemas=SCHEMAS, spec_labels=SPEC_LABELS, genders=GENDERS, langs=LANG.LANGS, dict=LANG.DICT,
                 badges=[dict(name=b, file=f'uploads/ikony/{b}.png', label=BADGE_LABELS.get(b, b)) for b in badges], series=series,
                 typs={k: sorted(v | set(SCHEMAS[k]['typ'])) for k, v in typs.items() if k in SCHEMAS})
 
@@ -160,7 +161,8 @@ def products(code: str, section: str = None):
     for p in prods:
         if section and p['section'] != section: continue
         out.append(dict(id=p['id'], shared=[k for k in use.get(p['id'], []) if k in others], name=p['name'], section=p['section'], serie=p['serie'], sort=p['sort'], typ=p.get('typ'), new=p.get('new'),
-                        thumb=p.get('hero') or next((c.get('front') for c in p['colors'] if c.get('front')), None), n_colors=len(p['colors']), prev=ov['status'].get(p['id'])))
+                        thumb=p.get('hero') or next((c.get('front') for c in p['colors'] if c.get('front')), None), n_colors=len(p['colors']), prev=ov['status'].get(p['id']),
+                        tr={l: LANG.status(p, l) for l in LANG.CODES if l != 'cs'}))
     return dict(products=out, removed=ov['removed'], prev=ov['prev'], prev_kind=ov['kind'], linked=bool(cat.get('linked')))
 
 @app.get('/api/c/{code}/products/{pid}')
@@ -478,22 +480,37 @@ def storage_delete(path: str):
     store.delete(path)
     return dict(ok=True)
 
+def _lang(lang):
+    if lang not in LANG.CODES: raise HTTPException(400, f'Neznámý jazyk {lang}')
+    return lang
+def _prices(prices):
+    """parametr cen: None = podle jazyka (Kč jen česky), 'czk' = s cenami, 'none' = bez cen"""
+    return None if prices in (None, '', 'auto') else prices == 'czk'
+
 @app.get('/api/c/{code}/preview/{pid}', response_class=HTMLResponse)
-def preview(code: str, pid: str):
+def preview(code: str, pid: str, lang: str = 'cs', prices: str = None):
     p = db.get_product(code, pid)
     if not p: raise HTTPException(404)
-    return generate.render_card_preview(p, IMG, _sec_color(code, p['section']))
+    return generate.render_card_preview(p, IMG, _sec_color(code, p['section']), _lang(lang), _prices(prices))
 
 @app.post('/api/c/{code}/preview', response_class=HTMLResponse)
-def preview_draft(code: str, body: dict):
+def preview_draft(code: str, body: dict, lang: str = 'cs', prices: str = None):
     body.setdefault('colors', []); body.setdefault('id', 'draft'); body.setdefault('name', '')
-    return generate.render_card_preview(body, IMG, _sec_color(code, body.get('section')))
+    return generate.render_card_preview(body, IMG, _sec_color(code, body.get('section')), _lang(lang), _prices(prices))
 
 @app.get('/nahled/{code}', response_class=HTMLResponse)
-def live_catalog(code: str):
+def live_catalog(code: str, lang: str = 'cs', prices: str = None):
     """celý katalog vykreslený rovnou z databáze – ukazuje uložené změny hned, bez generování"""
     cat = need_catalog(code)
-    return HTMLResponse(generate.render_document(cat, db.list_products(code), db.list_sections(code), IMG), headers={'Cache-Control': 'no-store'})
+    return HTMLResponse(generate.render_document(cat, db.list_products(code), db.list_sections(code), IMG, _lang(lang), _prices(prices)), headers={'Cache-Control': 'no-store'})
+
+@app.post('/api/cards/i18n/fill')
+def i18n_fill(body: dict, request: Request):
+    """doplní jazykovou vrstvu karet z připraveného souboru i18n/<lang>.json (jen chybějící texty, force = i vyplněné)"""
+    auth.need_admin(request); log = []
+    try: r = translate.fill(_lang(body.get('lang') or 'en'), force=bool(body.get('force')), log=log.append)
+    except ValueError as e: raise HTTPException(400, str(e))
+    return dict(r, log='\n'.join(log))
 
 def _sec_color(code, section): return next((s['color'] for s in db.list_sections(code) if s['key'] == section), None)
 
@@ -502,14 +519,16 @@ _gen_lock = threading.Lock()
 def gen(code: str, body: dict, request: Request):
     cat = need_catalog(code, write=True)
     if not _gen_lock.acquire(blocking=False): raise HTTPException(409, 'Generování už běží')
-    log = []; cfg = generate.catalog_cfg(cat)
+    log = []; cfg = generate.catalog_cfg(cat); langs = [_lang(l) for l in (body.get('langs') or ['cs'])]; outputs = []
     try:
         versions.create(code, 'Vygenerovaný katalog', _who(request), auto=True)   # ať jde dohledat stav, ze kterého PDF vzniklo
-        generate.build(code, pdf=bool(body.get('pdf', True)), log=log.append)
+        outputs = generate.build(code, pdf=bool(body.get('pdf', True)), log=log.append, langs=langs, prices=_prices(body.get('prices')))
         if body.get('push') and not store.REMOTE: generate.git_push(log=log.append, dirs=[os.path.relpath(os.path.dirname(cfg['out_html']), REPO)])
     except Exception as e: log.append('CHYBA: ' + str(e))
     finally: _gen_lock.release()
-    return dict(log='\n'.join(log), html='/repo/' + os.path.relpath(cfg['out_html'], REPO), pdf=store.url(os.path.relpath(cfg['out_pdf'], REPO)))
+    outs = [dict(lang=o['lang'], html='/repo/' + o['html'], pdf=store.url(o['pdf']) if o.get('pdf') else None) for o in outputs]
+    first = outs[0] if outs else dict(html='/repo/' + os.path.relpath(cfg['out_html'], REPO), pdf=store.url(os.path.relpath(cfg['out_pdf'], REPO)))
+    return dict(log='\n'.join(log), html=first['html'], pdf=first['pdf'], outputs=outs)
 
 if __name__ == '__main__':
     import uvicorn, webbrowser, socket
