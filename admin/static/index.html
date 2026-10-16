@@ -126,7 +126,6 @@ main.side{grid-template-columns:270px minmax(340px,1fr) minmax(680px,47vw)}
 .orig{font-size:11.5px;color:#555;background:#f6f6f4;border-left:3px solid #ddd;padding:6px 8px;border-radius:3px;margin:2px 0 4px;white-space:pre-wrap;line-height:1.4}
 input.ro,textarea.ro{opacity:.6;background:#f6f6f4}
 #langSeg span{padding:4px 11px;cursor:pointer;font-size:12px;font-weight:700}#langSeg span.on{background:#1a1a1a;color:#fff}
-.tfld{display:grid;grid-template-columns:200px 1fr 1fr;gap:8px;margin-bottom:6px;align-items:center}
 #list input{width:100%;padding:7px 10px;border:1px solid var(--b);border-radius:4px;font:inherit}
 .chips{display:flex;flex-wrap:wrap;gap:4px}
 .chip{padding:4px 9px;border:1px solid var(--b);border-radius:20px;font-size:11px;background:#fff;cursor:pointer}
@@ -405,58 +404,46 @@ function setDirty(){if(!cur)return;dirty=true;if($('#st'))$('#st').textContent='
 
 // ---------- formulář ----------
 function lockHtml(){return META.catalog.status==='done'?`<div class="lock">Katalog ${esc(META.catalog.label)} je uzavřený – změny nejdou uložit. Odemkneš ho v <a href="#/k/${CODE}/nastaveni">nastavení katalogu</a>.</div>`:''}
-// překladový formulář: jen texty karty; společné údaje (fotky, barvy, ceny, čísla) se mění v češtině
-function renderFormT(){
- const p=cur, f=$('#form'), L=(p.i18n&&p.i18n[LANG])||{}, D=(META.dict&&META.dict[LANG])||{}, ln=langName(LANG);
- const fk=Object.keys(p.fields||{}).filter(k=>p.fields[k]); const fl=k=>(D.fields&&D.fields[k])||k;
- const typAuto=(D.typ_by_section&&D.typ_by_section[p.section]&&D.typ_by_section[p.section][p.typ])||(D.typ&&D.typ[p.typ])||'';
- const acts=(p.activities||[]).map(a=>a.replace('•','').trim()).filter(Boolean).map(a=>(D.activities&&D.activities[a])||a);
- f.innerHTML=`${lockHtml()}
- <div class="bar"><h1>${esc(p.name)} <small style="font-size:12px;color:var(--acc);letter-spacing:.1em">${esc(ln.toUpperCase())}</small></h1><span class="status" id="st">uloženo</span><button id="bSave" class="pri">Uložit</button></div>
- <div class="hint" style="margin:8px 0 12px">Překlad karty do jazyka ${esc(ln)}. Překládá se jen text; fotky, barvy, kódy, ceny a číselné údaje jsou společné a mění se v češtině (přepni vlevo na CZ). Prázdné pole = v katalogu zůstane český text a karta se počítá jako nepřeložená.</div>
- <div class="sec"><h2>Popis</h2><label>Česky</label><div class="orig">${esc(p.desc||'—')}</div><label>${esc(ln)}</label><textarea id="tDesc" placeholder="Překlad popisu…">${esc(L.desc||'')}</textarea></div>
- <div class="sec"><h2>Vlastnosti</h2><div class="row"><div><label>Česky</label><textarea class="ro" readonly style="min-height:130px">${esc((p.features||[]).join('\n'))}</textarea></div><div><label>${esc(ln)} – řádek za řádek (${(p.features||[]).length})</label><textarea id="tFeat" style="min-height:130px">${esc((L.features||[]).join('\n'))}</textarea></div></div></div>
- <div class="sec"><h2>Materiály a parametry</h2><div class="hint" style="margin-bottom:8px">Název pole se překládá sám. Hodnotu přelož jen tam, kde je česky; čísla a anglické názvy materiálů nech prázdné.</div>
-  <div id="tFields">${fk.map(k=>`<div class="tfld"><input type="text" value="${esc(k)} → ${esc(fl(k))}" readonly class="ro"><input type="text" value="${esc(p.fields[k])}" readonly class="ro"><input type="text" data-tk="${esc(k)}" value="${esc((L.fields||{})[k]||'')}" placeholder="překlad hodnoty (prázdné = beze změny)"></div>`).join('')||'<div class="hint">Karta nemá vyplněná pole.</div>'}</div></div>
- <div class="sec"><h2>Typ a aktivity</h2><div class="row"><div><label>Typ (česky: ${esc(p.typ||'—')})</label><input type="text" id="tTyp" value="${esc(L.typ||'')}" placeholder="${esc(typAuto||'ze slovníku')}"></div><div><label>Aktivity (ze slovníku, automaticky)</label><div class="orig">${esc(acts.join('\n')||'—')}</div></div></div></div>`;
- $('#bSave').onclick=save; f.querySelectorAll('input,textarea').forEach(el=>el.addEventListener('input',setDirty));
-}
 function collectT(){
  const p=cur; p.i18n=p.i18n||{}; const L={};
- const d=$('#tDesc').value.trim(); if(d)L.desc=d;
- const ft=$('#tFeat').value.split('\n').map(s=>s.trim()); if(ft.some(Boolean))L.features=(p.features||[]).map((_,i)=>ft[i]||'');
- const F={}; $$('#tFields [data-tk]').forEach(el=>{const v=el.value.trim(); if(v)F[el.dataset.tk]=v}); if(Object.keys(F).length)L.fields=F;
- const t=$('#tTyp').value.trim(); if(t)L.typ=t;
+ const d=$('#fDesc').value.trim(); if(d)L.desc=d;
+ const ft=$('#fFeat').value.split('\n').map(s=>s.trim()); if(ft.some(Boolean))L.features=(p.features||[]).map((_,i)=>ft[i]||'');
+ const F={}; $$('#fields .fld').forEach(r=>{const k=r.querySelector('[data-fk]').dataset.k, v=r.querySelector('[data-fv]').value.trim(); if(k&&v)F[k]=v}); if(Object.keys(F).length)L.fields=F;
+ const t=$('#fTyp').value.trim(); if(t)L.typ=t;
  p.i18n[LANG]=L; return p;
 }
 function renderForm(){
- if(LANG!=='cs')return renderFormT();
  const p=cur, S=META.schemas[p.section]; const f=$('#form');
+ // jiný jazyk než čeština: stejný formulář, ale v textových polích je překlad (prázdné = zůstane čeština), ostatní jen ke čtení
+ const tx=LANG!=='cs', L=tx?((p.i18n||{})[LANG]||{}):{}, D=tx?((META.dict&&META.dict[LANG])||{}):{};
+ const fl=k=>(D.fields&&D.fields[k])||k, typAuto=tx?((D.typ_by_section&&D.typ_by_section[p.section]&&D.typ_by_section[p.section][p.typ])||(D.typ&&D.typ[p.typ])||''):'';
+ const actsT=tx?(p.activities||[]).map(a=>a.replace('•','').trim()).filter(Boolean).map(a=>(D.activities&&D.activities[a])||a):null;
+ const fieldRowT=(k,v)=>`<div class="fld"><input type="text" value="${esc(fl(k))}" readonly data-fk data-k="${esc(k)}"><input type="text" value="${esc((L.fields||{})[k]||'')}" placeholder="${esc(v||'')}" data-fv><button class="x" data-k="${esc(k)}" title="Odebrat">×</button></div>`;
  const secOpts=META.sections.map(s=>`<option value="${s.key}"${s.key===p.section?' selected':''}>${s.cz}</option>`).join('');
  const serieList=(META.series[p.section]||[]).map(s=>`<option value="${esc(s)}">`).join('');
  const typList=(META.typs[p.section]||[]).map(s=>`<option value="${esc(s)}">`).join('');
  const specs=S.specs.filter(k=>k!=='size').map(k=>`<div><label>${META.spec_labels[k]}</label><input type="text" data-spec="${k}" value="${esc(p.specs?.[k]||'')}"></div>`).join('');
  const extraSpecs=Object.keys(p.specs||{}).filter(k=>!S.specs.includes(k)&&k!=='temps'&&k!=='size').map(k=>`<div><label>${META.spec_labels[k]||k}</label><input type="text" data-spec="${k}" value="${esc(p.specs[k]||'')}"></div>`).join('');
  const fieldKeys=[...S.fields.filter(k=>k in (p.fields||{})),...Object.keys(p.fields||{}).filter(k=>!S.fields.includes(k))];
- const fields=fieldKeys.map(k=>fieldRow(k,p.fields[k])).join('');
+ const fields=fieldKeys.map(k=>tx?fieldRowT(k,p.fields[k]):fieldRow(k,p.fields[k])).join('');
  const photos=S.photos.map(([k,l])=>slot(k,l,p[k])).join('');
  const T=p.specs?.temps||{};
  f.innerHTML=`${META.catalog.status==='done'?`<div class="lock">Katalog ${esc(META.catalog.label)} je uzavřený – změny nejdou uložit. Odemkneš ho v <a href="#/k/${CODE}/nastaveni">nastavení katalogu</a>.</div>`:''}
- <div class="bar"><h1>${esc(p.name)}</h1><span class="status" id="st">uloženo</span><button id="bMore" class="more" title="Další akce">⋯</button><button id="bSave" class="pri">Uložit</button></div>
- ${META.linked?`<div class="hint" style="margin:8px 0 12px">Společná karta${(()=>{const s=(LIST.find(x=>x.id===p.id)||{}).shared||[];return s.length?' – změny se projeví i v '+s.map(esc).join(', '):''})()}. Jen pro tento katalog platí sekce, série, pořadí a štítek Novinka.</div>`:''}
+ <div class="bar"><h1>${esc(p.name)}${tx?` <small style="font-size:12px;color:var(--acc);letter-spacing:.1em">${LANG.toUpperCase()}</small>`:''}</h1><span class="status" id="st">uloženo</span><button id="bMore" class="more" title="Další akce">⋯</button><button id="bSave" class="pri">Uložit</button></div>
+ ${tx?`<div class="hint" style="margin:8px 0 12px"><b>${esc(langName(LANG))}</b> – upravuješ jen texty karty: popis, vlastnosti, hodnoty polí a typ. Ostatní je společné a mění se v češtině (CS). Prázdné pole = v katalogu zůstane český text.</div>`:META.linked?`<div class="hint" style="margin:8px 0 12px">Společná karta${(()=>{const s=(LIST.find(x=>x.id===p.id)||{}).shared||[];return s.length?' – změny se projeví i v '+s.map(esc).join(', '):''})()}. Jen pro tento katalog platí sekce, série, pořadí a štítek Novinka.</div>`:''}
  <div class="sec"><h2>Základ</h2>
   <div class="row">
    <div style="grid-column:span 2"><label>Název</label><input type="text" id="fName" value="${esc(p.name)}"></div>
    <div><label>Kategorie</label><select id="fSection">${secOpts}</select></div>
    <div><label>Série</label><input type="text" id="fSerie" list="dlSerie" value="${esc(p.serie||'')}"><datalist id="dlSerie">${serieList}</datalist></div>
-   <div><label>Typ</label><input type="text" id="fTyp" list="dlTyp" value="${esc(p.typ||'')}"><datalist id="dlTyp">${typList}</datalist></div>
+   <div><label>Typ</label><input type="text" id="fTyp" list="dlTyp" value="${esc(tx?(L.typ||''):(p.typ||''))}" placeholder="${esc(tx?(typAuto||p.typ||''):'')}"><datalist id="dlTyp">${tx?'':typList}</datalist></div>
    ${S.gender?`<div><label>Pohlaví</label><select id="fGender">${Object.entries(META.genders).map(([k,v])=>`<option value="${k}"${(p.gender||'')===k?' selected':''}>${v}</option>`).join('')}</select></div>`:''}
    <div><label>DMOC od (Kč)</label><input type="number" id="fPmin" value="${p.price_min??''}"></div>
    <div><label>DMOC do (Kč)</label><input type="number" id="fPmax" value="${p.price_max??''}"></div>
    ${S.gender?`<div><label>Velikosti (čárkou)</label><input type="text" id="fSizes" value="${esc((p.sizes||[]).join(', '))}"></div><div><label>Rozsah velikostí (zobrazí se)</label><input type="text" id="fSize" value="${esc(p.specs?.size||'')}"></div>`:''}
    <div class="inline" style="align-self:end"><label class="inline"><input type="checkbox" id="fNew"${p.new?' checked':''}> Novinka</label><label class="inline"><input type="checkbox" id="fWide"${p.wide?' checked':''}> Široká fotka</label></div>
   </div>
-  <label>Popis</label><textarea id="fDesc">${esc(p.desc||'')}</textarea>
+  <label>Popis</label><textarea id="fDesc" placeholder="${esc(tx?(p.desc||''):'')}">${esc(tx?(L.desc||''):(p.desc||''))}</textarea>
   <div class="row" style="margin-top:10px"><div style="grid-column:span 3"><label>Odkaz na trimm.eu (pro načítání fotek z webu)</label><input type="text" id="fWeb" value="${esc(p.web_url||'')}"></div></div>
  </div>
  <div class="sec"><h2>Specifikace (ikony pod fotkou)</h2><div class="row">${specs}${extraSpecs}</div>
@@ -465,7 +452,7 @@ function renderForm(){
  <div class="sec"><h2>Materiály a parametry</h2><div id="fields">${fields}</div>
   <div class="inline"><select id="addField"><option value="">+ přidat pole…</option>${S.fields.filter(k=>!(k in (p.fields||{}))).map(k=>`<option>${k}</option>`).join('')}<option value="__custom">vlastní název…</option></select></div>
  </div>
- <div class="sec"><h2>Vlastnosti a aktivity</h2><div class="row"><div><label>Vlastnosti (jedna na řádek)</label><textarea id="fFeat" style="min-height:130px">${esc((p.features||[]).join('\n'))}</textarea></div><div><label>Aktivity (jedna na řádek)</label><textarea id="fAct" style="min-height:130px">${esc((p.activities||[]).join('\n'))}</textarea></div></div></div>
+ <div class="sec"><h2>Vlastnosti a aktivity</h2><div class="row"><div><label>Vlastnosti (jedna na řádek${tx?', ve stejném pořadí jako česky':''})</label><textarea id="fFeat" style="min-height:130px" placeholder="${esc(tx?(p.features||[]).join('\n'):'')}">${esc(tx?(L.features||[]).join('\n'):(p.features||[]).join('\n'))}</textarea></div><div><label>Aktivity (${tx?'ze slovníku, automaticky':'jedna na řádek'})</label><textarea id="fAct" style="min-height:130px">${esc((tx?actsT:(p.activities||[])).join('\n'))}</textarea></div></div></div>
  <div class="sec"><h2>Ikony (štítky)</h2><div class="badges" id="badges">${META.badges.map(b=>`<div class="bd${(p.badges||[]).some(x=>x.name===b.name)?' on':''}" data-name="${b.name}" data-file="${b.file}" data-label="${esc(b.label)}"><img src="/${b.file}"><small>${esc(b.label)}</small></div>`).join('')}</div></div>
  ${S.photos.length?`<div class="sec"><h2>Fotky produktu</h2><div class="photos" id="photos">${photos}</div><div class="hint">${p.section==='sportswear'?'Rubová strana jen pro oboustranné bundy (ukáže se vlevo vedle zadního a předního pohledu). Detail se ukáže menší vpravo vedle hlavních fotek (např. odepnutý rukáv u CONTRE).':'Přetáhni obrázek do rámečku nebo klikni. Vnitřní stan s průhledným pozadím nahraj jako PNG.'}</div></div>`:''}
  <div class="sec"><h2>Barevné varianty</h2>
@@ -480,8 +467,10 @@ function renderForm(){
  $('#addField').onchange=e=>{let k=e.target.value;if(!k)return;if(k==='__custom'){k=prompt('Název pole:');if(!k)return;k=k.toUpperCase()}collect();cur.fields[k]='';renderForm();setDirty();$$('#fields input')[Object.keys(cur.fields).indexOf(k)*2+1]?.focus()};
  $('#fields').addEventListener('click',e=>{const b=e.target.closest('.x');if(!b)return;collect();delete cur.fields[b.dataset.k];renderForm();setDirty()});
  $('#badges').onclick=e=>{const b=e.target.closest('.bd');if(!b)return;b.classList.toggle('on');setDirty()};
- $$('#photos .slot').forEach(s=>bindSlot(s));
+ if(!tx)$$('#photos .slot').forEach(s=>bindSlot(s));
  $('#addColor').onclick=()=>{collect();cur.colors.push({name:'',codes:[],front:null,back:null,art:null,generic:false});renderColors();setDirty()};
+ if(tx){const keep=new Set(['fDesc','fFeat','fTyp']);f.querySelectorAll('input,select,textarea').forEach(el=>{if(!keep.has(el.id)&&!el.hasAttribute('data-fv'))el.disabled=true});
+  ['#bMore','#addField','#addColor'].forEach(q=>{const e=$(q);if(e)e.style.display='none'});f.querySelectorAll('.x,.tb').forEach(e=>e.style.display='none')}
 }
 function fieldRow(k,v){return `<div class="fld"><input type="text" value="${esc(k)}" data-fk><input type="text" value="${esc(v||'')}" data-fv><button class="x" data-k="${esc(k)}" title="Odebrat">×</button></div>`}
 function toolbar(has){return `<div class="tb">${has?`<button data-act="edit" title="Upravit (ořez, otočení, pozadí)">✎</button>`:''}<button data-act="up" title="Nahrát ze souboru">⬆</button><button data-act="lib" title="Vybrat z knihovny">☰</button><button data-act="web" title="Z webu trimm.eu / z URL">🌐</button>${has?`<button data-act="rm" title="Odebrat">×</button>`:''}</div>`}
@@ -525,11 +514,11 @@ function renderColors(){
  const S=META.schemas[cur.section]; const tb=$('#colors');
  tb.innerHTML=cur.colors.map((c,i)=>`<tr data-i="${i}"><td>${i+1}<br><button class="sm" data-cm="-1">▲</button><button class="sm" data-cm="1">▼</button></td><td><input type="text" data-cn value="${esc(c.name)}"></td><td><input type="text" data-cc value="${esc((c.codes||[]).join(', '))}"></td>${S.color_photos.map(k=>`<td><div class="dz" data-ck="${k}">${c[k]?`<img src="/${c[k]}">`:'<span>+</span>'}${toolbar(!!c[k])}</div></td>`).join('')}<td><input type="checkbox" data-cg${c.generic?' checked':''}></td><td><button class="x" data-cx title="Smazat barvu">×</button></td></tr>`).join('');
  tb.querySelectorAll('input').forEach(el=>el.addEventListener('input',setDirty));
- tb.querySelectorAll('.dz').forEach(dz=>{
+ if(LANG==='cs')tb.querySelectorAll('.dz').forEach(dz=>{
   const i=+dz.closest('tr').dataset.i,k=dz.dataset.ck;
   bindDz(dz,()=>cur.colors[i][k],p=>{collect();cur.colors[i][k]=p;renderColors()},kindFor(k));
  });
- tb.onclick=e=>{const b=e.target.closest('button[data-cx],button[data-cm]');if(!b)return;const i=+b.closest('tr').dataset.i;collect();
+ tb.onclick=e=>{if(LANG!=='cs')return;const b=e.target.closest('button[data-cx],button[data-cm]');if(!b)return;const i=+b.closest('tr').dataset.i;collect();
   if(b.dataset.cx!==undefined){if(!confirm('Smazat barvu?'))return;cur.colors.splice(i,1)}
   else{const j=i+ +b.dataset.cm;if(j<0||j>=cur.colors.length)return;[cur.colors[i],cur.colors[j]]=[cur.colors[j],cur.colors[i]]}
   renderColors();setDirty();preview()};

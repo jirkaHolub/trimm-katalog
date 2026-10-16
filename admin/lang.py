@@ -3,7 +3,8 @@
 Co v jazykové vrstvě chybí, generátor doplní z češtiny a přepočítá, kolik toho bylo."""
 import re
 
-LANGS = [('cs', 'Čeština'), ('en', 'English')]
+LANGS = [('cs', 'Čeština'), ('en', 'English'), ('es', 'Español')]
+DECIMAL_POINT = {'en'}   # jazyky s desetinnou tečkou; ostatní (cs, es) mají čárku
 CODES = [c for c, _ in LANGS]
 
 # slovník pevných textů: klíč -> {lang: text}; čeština = klíč sám (u 'ui' klíčů) nebo uvedená hodnota
@@ -54,6 +55,45 @@ DICT = {
             'SERIE': 'SERIES', 'Počet osob': 'Persons', 'Hmotnost': 'Weight', 'Objem': 'Volume', 'Rozměr': 'Dimensions', 'Sbalený rozměr': 'Packed size',
         },
     },
+    'es': {
+        'fields': {
+            'VNĚJŠÍ STAN': 'TIENDA EXTERIOR', 'VNITŘNÍ STAN': 'TIENDA INTERIOR', 'PODLAHA': 'SUELO', 'KONSTRUKCE': 'VARILLAS', 'KOLÍKY': 'PIQUETAS',
+            'ROZMĚR': 'DIMENSIONES', 'ROZMĚRY': 'DIMENSIONES', 'MATERIÁL': 'MATERIAL', 'VNITŘNÍ MATERIÁL': 'MATERIAL INTERIOR',
+            'VNĚJŠÍ MATERIÁL': 'MATERIAL EXTERIOR', 'IZOLAČNÍ VRSTVA': 'AISLAMIENTO', 'ŠÍŘKA': 'ANCHO', 'VÝPLŇ': 'RELLENO',
+            'VENTIL': 'VÁLVULA', 'MATERIÁL VÝPLNĚ': 'RELLENO',
+        },
+        'specs': {
+            'persons': 'Personas', 'weight': 'Peso', 'volume': 'Volumen', 'length': 'Longitud', 'width': 'Ancho', 'thickness': 'Grosor',
+            'rvalue': 'Valor R', 'dims': 'Dimensiones', 'pack': 'Tamaño plegado', 'pcs': 'Unidades por paquete', 'size': 'Tallas',
+        },
+        'genders': {'men': 'Hombre', 'women': 'Mujer', 'kids': 'Niños', 'uni': 'Unisex'},
+        'typ': {
+            'stan': 'tienda', 'zástěna': 'pared lateral', 'ložnice': 'dormitorio', 'moskytiéra': 'mosquitera', 'podlážka': 'suelo protector',
+            'konektor': 'conector', 'kolík': 'piqueta', 'tyčky': 'varillas', 'náhradní': 'repuesto', 's.p.': 'saco de dormir',
+            'vložka': 'sábana para saco', 'kompresní': 'bolsa de compresión', 'bivakovací': 'funda vivac', 'karimatka': 'esterilla',
+            'polštář': 'almohada', 'sedák': 'asiento', 'batoh': 'mochila', 'lodní': 'bolsa estanca', 'vodní': 'bolsa de hidratación',
+            'taška': 'bolsa', 'láhev': 'botella', 'pláštěnka': 'funda de lluvia', 'ledvinka': 'riñonera', 'peněženka': 'cartera',
+            'bunda': 'chaqueta', 'kalhoty': 'pantalón', 'mikina': 'sudadera', 'tričko': 'camiseta', 'vesta': 'chaleco', 'kšiltovka': 'gorra',
+            'šortky': 'pantalón corto', 'nákrčník': 'braga de cuello', 'návleky': 'polainas', 'pásek': 'cinturón', 'sukně': 'falda', 'čepice': 'gorro',
+        },
+        'typ_by_section': {'sportswear': {'pláštěnka': 'poncho'}},
+        'activities': {
+            'Adventure': 'Aventura', 'Běžecké lyžování': 'Esquí de fondo', 'Běžné nošení': 'Uso diario', 'Cyklistika': 'Ciclismo',
+            'Freeride a Snowboarding': 'Freeride y snowboard', 'Jogging': 'Jogging', 'Lyžování': 'Esquí', 'Ski Alp': 'Esquí de travesía',
+            'Trekking': 'Trekking',
+        },
+        'sections': {'tents': 'Tiendas', 'sleeping': 'Sacos de dormir', 'mattress': 'Esterillas y colchonetas',
+                     'backpacks': 'Mochilas, bolsas estancas y de hidratación', 'sportswear': 'Ropa'},
+        'ui': {
+            'VLASTNOSTI': 'CARACTERÍSTICAS', 'AKTIVITY': 'ACTIVIDADES', 'Novinka': 'Novedad', 'DMOC': 'PVP', 'od': 'desde', 'Kč': 'CZK',
+            'Popis doplníme.': 'Descripción pendiente.', 'foto doplníme': 'foto pendiente', 'KATALOG · CZ': 'CATÁLOGO · ES',
+            'MODELŮ': 'MODELOS', 'SÉRIÍ': 'SERIES', 'NOVINEK': 'NOVEDADES', 'modelů': 'modelos', 'Vyhledat model, barvu, typ': 'Buscar modelo, color, tipo',
+            'VŠE': 'TODO', 'VŠICHNI': 'TODOS', 'PÁNSKÉ': 'HOMBRE', 'DÁMSKÉ': 'MUJER', 'DĚTSKÉ': 'NIÑOS',
+            'CENY DMOC V KČ VČETNĚ DPH': 'PVP EN CZK CON IVA', 'ceny DMOC v Kč včetně DPH': 'PVP en CZK con IVA',
+            'ZMĚNY VYHRAZENY': 'SUJETO A CAMBIOS', 'OBSAH': 'ÍNDICE', 'CONTENT': '', 'Technické informace': 'Información técnica',
+            'Katalog': 'Catálogo', 'Obsah': 'Índice', 'SERIE': 'SERIE',
+        },
+    },
 }
 TRANSLATED = ('desc', 'features', 'fields', 'typ', 'activities')   # co má jazyková vrstva v kartě
 
@@ -70,12 +110,15 @@ _PERSONS = re.compile(r'^(\d[\d\s\-–]*)\s*osob[ay]?$')
 _DEC = re.compile(r'(?<=\d),(?=\d)')
 def number_label(lang, s):
     """desetinná čárka -> tečka mimo češtinu (0,2 kg -> 0.2 kg); jinak beze změny"""
-    return _DEC.sub('.', s) if lang != 'cs' and s else s
+    return _DEC.sub('.', s) if lang in DECIMAL_POINT and s else s
 def size_label(lang, s):
     """velikost: '2-3 osoby' -> '2-3 persons', ostatní beze změny"""
     if lang == 'cs' or not s: return s
     m = _PERSONS.match(s.strip())
-    if m: n = m.group(1).strip(); return n + (' person' if n == '1' else ' persons')
+    if m:
+        n = m.group(1).strip()
+        if lang == 'es': return n + (' persona' if n == '1' else ' personas')
+        return n + (' person' if n == '1' else ' persons')
     return s
 
 def _clean(s): return re.sub(r'\s+', ' ', (s or '').replace('•', '')).strip()
