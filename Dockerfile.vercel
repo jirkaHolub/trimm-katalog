@@ -22,6 +22,7 @@ COPY admin/prethumb.py ./
 RUN python prethumb.py /app/base
 COPY admin/*.py ./
 COPY admin/static ./static
+COPY admin/i18n ./i18n
 
 ENV CHROME=/usr/bin/chromium PYTHONUNBUFFERED=1 KATALOG_BASE_DIR=/app/base
 CMD ["sh", "-c", "uvicorn app:app --host 0.0.0.0 --port ${PORT:-80}"]
