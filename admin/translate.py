@@ -12,7 +12,7 @@ def load(lng):
     if not os.path.exists(fp): return None
     return json.load(open(fp, encoding='utf-8'))
 
-def _norm(s): return re.sub(r'\s+', ' ', s or '').strip()
+def _norm(s): return re.sub(r'\s*([,;:/])\s*', r'\1 ', re.sub(r'\s+', ' ', s or '')).strip()   # mezery kolem čárek nerozhodují (korektura je sjednocuje)
 
 def proposal(p, lng, T, by_desc):
     """navržená vrstva i18n[lng] pro kartu (jen z připraveného souboru, bez strojového překladu)"""
@@ -21,10 +21,12 @@ def proposal(p, lng, T, by_desc):
         d = T['desc'].get(p['id']) or by_desc.get(_norm(p['desc']))
         if d: L['desc'] = d
     if p.get('features'):
-        tf = [T['features'].get(_norm(f)) or '' for f in p['features']]
+        FT = {_norm(k): v for k, v in T['features'].items()}
+        tf = [FT.get(_norm(f)) or '' for f in p['features']]
         if any(tf): L['features'] = tf
     F = p.get('fields') or {}
-    tv = {k: T['values'][_norm(v)] for k, v in F.items() if v and _norm(v) in T['values']}
+    V = {_norm(k): v for k, v in T['values'].items()}
+    tv = {k: V[_norm(v)] for k, v in F.items() if v and _norm(v) in V}
     if tv: L['fields'] = tv
     return L
 

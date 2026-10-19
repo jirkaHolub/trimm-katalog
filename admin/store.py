@@ -113,10 +113,45 @@ def write(key, data, content_type=None, max_age=None, **meta):
     if not safe(key): raise ValueError('neplatná cesta')
     if not REMOTE:
         fp = fs_path(key); os.makedirs(os.path.dirname(fp), exist_ok=True); open(fp, 'wb').write(data); return
-    from vercel import blob
-    blob.put(key, data, access='public', content_type=content_type or mimetypes.guess_type(key)[0] or 'application/octet-stream',
-             add_random_suffix=False, overwrite=True, cache_control_max_age=max_age, token=TOKEN, multipart=len(data) > 20 * 1024 * 1024)
+    _blob_put(key, data, content_type or mimetypes.guess_type(key)[0] or 'application/octet-stream', max_age)
     index(key, len(data), time.time(), **meta)
+
+# Vercel Blob přes jeho REST API (stejný protokol jako SDK `vercel`, verze 11). SDK se nepoužívá: jeho závislost vercel-sandbox
+# od 15. 10. 2026 přepisuje části balíčku a `vercel.blob.put` v obrazu přestal existovat – generování online pak spadlo.
+BLOB_API = os.environ.get('VERCEL_BLOB_API_URL') or 'https://vercel.com/api/blob'
+PART = 8 * 1024 * 1024   # velikost dílu při vícedílném nahrávání (soubory nad 20 MB, tj. PDF)
+
+def _blob_call(path, method, headers, body=None, params=None):
+    from urllib.parse import urlencode
+    from urllib.error import HTTPError
+    url = BLOB_API + path + ('?' + urlencode(params) if params else '')
+    h = {'authorization': f'Bearer {TOKEN}', 'x-api-version': '11', 'user-agent': 'katalog'}; h.update(headers)
+    if isinstance(body, (dict, list)): body = json.dumps(body).encode(); h['content-type'] = 'application/json'
+    for attempt in range(3):
+        try:
+            with urlopen(Request(url, data=body, method=method, headers=h), timeout=300) as r: return json.loads(r.read() or b'{}')
+        except HTTPError as e:
+            msg = e.read().decode('utf-8', 'ignore')[:300]
+            if attempt == 2 or e.code < 500: raise RuntimeError(f'Blob {method} {path}: HTTP {e.code} {msg}')
+        except Exception:
+            if attempt == 2: raise
+        time.sleep(1 + attempt)
+
+def _blob_put(key, data, content_type, max_age=None):
+    hdr = {'x-content-type': content_type, 'x-add-random-suffix': '0', 'x-allow-overwrite': '1'}
+    if max_age is not None: hdr['x-cache-control-max-age'] = str(max_age)
+    params = {'pathname': key}
+    if len(data) <= 20 * 1024 * 1024:
+        return _blob_call('', 'PUT', dict(hdr, **{'x-content-length': str(len(data))}), data, params)
+    mpu = _blob_call('/mpu', 'POST', dict(hdr, **{'x-mpu-action': 'create'}), None, params)
+    uid, mkey = mpu['uploadId'], quote(mpu['key'], safe=''); parts = []
+    for n, off in enumerate(range(0, len(data), PART), 1):
+        chunk = data[off:off + PART]
+        r = _blob_call('/mpu', 'POST', dict(hdr, **{'x-mpu-action': 'upload', 'x-mpu-key': mkey, 'x-mpu-upload-id': uid, 'x-mpu-part-number': str(n), 'x-content-length': str(len(chunk))}), chunk, params)
+        parts.append({'partNumber': n, 'etag': r['etag']})
+    return _blob_call('/mpu', 'POST', dict(hdr, **{'x-mpu-action': 'complete', 'x-mpu-key': mkey, 'x-mpu-upload-id': uid}), parts, params)
+
+def _blob_delete(urls): _blob_call('/delete', 'POST', {}, {'urls': list(urls)})
 
 def index(key, size, mtime, **meta):
     con = _db()
@@ -131,8 +166,7 @@ def delete(key):
         return
     r = _row(key)
     if r and not r.get('deleted'):
-        from vercel import blob
-        blob.delete([f'{BASE}/{quote(key)}'], token=TOKEN)
+        _blob_delete([f'{BASE}/{quote(key)}'])
     con = _db(); con.execute('DELETE FROM files WHERE key=?', (key,)); con.commit(); con.close(); _fresh()
     if os.path.isfile(base_path(key)): index(key, 0, time.time(), deleted=True)   # soubor ze základu smazat nejde, jen ho skrýt
 
