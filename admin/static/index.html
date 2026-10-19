@@ -659,6 +659,8 @@ function dlgArchive(){
 }
 // ---------- nastavení katalogu ----------
 let SET=null;
+let PGL='cs';   // jazyk technických stran v nastavení
+function pgList(s,make){if(PGL==='cs'){if(make)s.pages=s.pages||[];return s.pages||[]} s.pages_i18n=s.pages_i18n||{}; if(make)s.pages_i18n[PGL]=s.pages_i18n[PGL]||[]; return s.pages_i18n[PGL]||[]}
 async function showSettings(code){show('vSettings');if(!CATS.length)await loadCats();SET=await api('/api/c/'+code);renderSettings()}
 function renderSettings(){
  const c=SET, db_=c.source==='db', locked=c.status==='done'&&db_;
@@ -670,9 +672,10 @@ function renderSettings(){
   ${db_?`<div class="photos"><div class="slot" style="width:340px"><div class="dz" id="sHero" style="height:190px">${c.hero?`<img src="/thumb/${c.hero}?w=700">`:'<span>Úvodní fotka<br>přetáhni nebo klikni</span>'}${toolbar(!!c.hero)}</div><div class="cap"><b>Úvodní fotka</b></div></div></div><div class="hint">Každý rok se mění hlavně tahle fotka. Nahraj novou, původní zůstane u loňského katalogu.</div>`:''}</div>
  ${db_?`<div class="sec"><h2>Loňský katalog (pro porovnání karet)</h2><div class="row"><div><select id="sPrev"><option value="">— žádný —</option>${prevOpts}</select></div></div><div class="hint">U každého produktu se v editoru ukazuje, jak jeho karta vypadala v tomto katalogu a co se změnilo.</div></div>
  <div class="sec"><h2>Sekce a technické strany</h2><div id="sSecs">${c.sections.map((s,i)=>`<div class="srow" data-i="${i}"><div><button class="sm" data-sm="-1">▲</button><button class="sm" data-sm="1">▼</button></div><input type="text" data-k="cz" value="${esc(s.cz)}"><input type="text" data-k="title" value="${esc(s.title)}"><input type="color" data-k="color" value="${esc(s.color)}" style="height:30px;padding:2px"><button class="x" data-sx title="Odebrat sekci">×</button></div>
-  <div class="pgs" data-i="${i}">${(s.pages||[]).map((p,j)=>`<div class="pg"><img src="/thumb/${p}?w=240"><button class="x" data-px="${j}" title="Odebrat stranu">×</button></div>`).join('')}<div class="add" data-padd>+ strana</div></div>`).join('')}</div>
+  <div class="pgs" data-i="${i}">${pgList(s).map((p,j)=>`<div class="pg"><img src="/thumb/${p}?w=240"><button class="x" data-px="${j}" title="Odebrat stranu">×</button></div>`).join('')}<div class="add" data-padd>+ strana${PGL==='cs'?'':' '+PGL.toUpperCase()}</div>${PGL!=='cs'&&!pgList(s).length&&(s.pages||[]).length?`<div class="hint" style="align-self:center">Pro ${PGL.toUpperCase()} zatím nic – v katalogu ${PGL.toUpperCase()} se použijí české strany.</div>`:''}</div>`).join('')}</div>
   ${avail.length?`<div class="inline"><select id="sAdd" style="width:auto"><option value="">+ přidat sekci…</option>${avail.map(d=>`<option value="${d.key}">${esc(d.cz)}</option>`).join('')}</select></div>`:''}
-  <div class="hint">Pořadí sekcí = pořadí v katalogu. Technické strany (obrázky celých stran s tabulkami a piktogramy) se vloží na začátek sekce.</div></div>`:''}
+  <div class="inline" style="margin-top:8px"><span class="hint">Technické strany pro jazyk:</span><div class="seg" id="sPgLang">${LANGS.map(([k,l])=>`<span data-pl="${k}" class="${k===PGL?'on':''}" title="${esc(l)}">${k.toUpperCase()}</span>`).join('')}</div></div>
+  <div class="hint">Pořadí sekcí = pořadí v katalogu. Technické strany (obrázky celých stran s tabulkami a piktogramy) se vloží na začátek sekce. Každý jazyk má své strany; když pro jazyk chybí, vezmou se české.</div></div>`:''}
  ${db_?`<div class="sec"><h2>Karty produktů</h2>${c.linked?'<div class="hint">Katalog skládá společné karty: úprava karty se projeví ve všech rozpracovaných katalozích, kde je zařazená. Uzavřením si katalog karty zkopíruje a přestane se měnit.</div>'
    :locked?'<div class="hint">Uzavřený katalog má vlastní kopie karet. Změny společných karet se ho netýkají.</div>'
    :'<div class="inline"><button id="sLink">Napojit na společné karty</button><span class="hint">Katalog má vlastní kopie karet (byl uzavřený a karty se mezitím změnily). Úpravy se teď ukládají jen do něj.</span></div>'}</div>`:''}
@@ -693,10 +696,12 @@ function renderSettings(){
  if($('#sSecs'))$('#sSecs').onclick=e=>{const row=e.target.closest('[data-i]');if(!row)return;const i=+row.dataset.i,t=e.target;
   if(t.dataset.sm){pull();const j=i+ +t.dataset.sm;if(j<0||j>=c.sections.length)return;[c.sections[i],c.sections[j]]=[c.sections[j],c.sections[i]];redraw()}
   else if(t.dataset.sx!==undefined){if(!confirm('Odebrat sekci z katalogu?'))return;pull();c.sections.splice(i,1);redraw()}
-  else if(t.dataset.px!==undefined){pull();c.sections[i].pages.splice(+t.dataset.px,1);redraw()}
-  else if(t.dataset.padd!==undefined){const add=p=>{pull();(c.sections[i].pages=c.sections[i].pages||[]).push(p);redraw()};
+  else if(t.dataset.px!==undefined){pull();pgList(c.sections[i]).splice(+t.dataset.px,1);redraw()}
+  else if(t.dataset.padd!==undefined){const add=p=>{pull();pgList(c.sections[i],true).push(p);redraw()};
    pmOpen('Technická strana',`<div class="inline"><button id="tpUp" class="pri">Nahrát obrázek strany</button><button id="tpLib">Vybrat z úložiště</button></div>`);
    $('#tpUp').onclick=()=>pick(f=>uploadTo(f,'pages',p=>{pmClose();add(p)}));$('#tpLib').onclick=()=>openLibrary('pages',add)}};
+ if($('#sPgLang'))$('#sPgLang').onclick=e=>{const sp=e.target.closest('span[data-pl]');if(!sp)return;pull();PGL=sp.dataset.pl;renderSettings()};
+ $$('#sPgLang span').forEach(sp=>{sp.style.padding='3px 10px';sp.style.cursor='pointer';sp.style.fontSize='12px';if(sp.classList.contains('on')){sp.style.background='#1a1a1a';sp.style.color='#fff'}});
  if($('#sAdd'))$('#sAdd').onchange=e=>{const d=c.section_defs.find(d=>d.key===e.target.value);if(!d)return;pull();c.sections.push({key:d.key,title:d.title,cz:d.cz,color:d.color,pages:[]});redraw()};
  $('#sFiles').onclick=async e=>{const p=e.target.dataset.fx;if(!p||!confirm('Odebrat soubor ze seznamu? Na disku zůstane.'))return;await api('/api/c/'+c.code+'/files?path='+encodeURIComponent(p),{method:'DELETE'});showSettings(c.code)};
  $('#sFAdd').onclick=async()=>{const f=$('#sFF').files[0];if(!f)return alert('Vyber PDF');const fd=new FormData();fd.append('file',f);fd.append('label',$('#sFL').value);const r=await fetch('/api/c/'+c.code+'/files',{method:'POST',body:fd});if(!r.ok)return alert((await r.json()).detail||'Nahrání selhalo');showSettings(c.code)};

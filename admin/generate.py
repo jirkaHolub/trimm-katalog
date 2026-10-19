@@ -194,6 +194,14 @@ def groups(items):
 def css(img_prefix, hero, label=''):
     return CSS_BASE.replace('__HERO__', (f'/thumb/{hero}?w=1600' if img_prefix == '/' else img_prefix + hero) if hero else '').replace('__LABEL__', label.replace('"', ''))
 
+def sec_pages(s, lang):
+    """technické strany sekce pro jazyk; když pro jazyk nejsou, použijí se české (generování to hlásí v logu)"""
+    if lang != 'cs' and (s.get('pages_i18n') or {}).get(lang): return s['pages_i18n'][lang]
+    return s.get('pages') or []
+def pages_missing(sections, lang):
+    """sekce, které mají české technické strany, ale pro daný jazyk žádné"""
+    return [s for s in sections if lang != 'cs' and s.get('pages') and not (s.get('pages_i18n') or {}).get(lang)]
+
 def sec_sub(s, lang):
     """český podtitul sekce, v jiném jazyce ze slovníku"""
     return LANG.t(lang, s['key'], 'sections') if lang != 'cs' else s['cz']
@@ -212,7 +220,7 @@ def render_document(cat, products, sections, img_prefix, lang='cs', prices=None)
         toc += ''.join(f'<a href="#s-{sec}-{slug(k0)}" class="toc-s" data-sec="{sec}"><i style="background:{serie_color(sec, k0, s["color"])}"></i>{E(k0)}<span>{n}</span></a>' for k0, (k, n) in tc.items())
         toc += '</div></div>'
         chips += f'<button class="chip" data-f="{sec}" style="--tc:{s["color"]}">{E(sec_sub(s, lang).upper())}</button>'
-        pages = ''.join(f'<img src="{R.src(p, 2400)}" alt="{T("Technické informace")}" loading="lazy">' for p in (s.get('pages') or []) if store.exists(p))
+        pages = ''.join(f'<img src="{R.src(p, 2400)}" alt="{T("Technické informace")}" loading="lazy">' for p in sec_pages(s, lang) if store.exists(p))
         info = f'<div class="info-pages">{pages}</div>' if pages else ''
         body += f'<section class="sec" id="sec-{sec}" data-sec="{sec}" style="--tc:{s["color"]}"><div class="sec-head"><div class="sec-bar"></div><div><h2>{E(s["title"])}</h2><div class="sec-cz">{E(sec_sub(s, lang))}</div></div><span class="sec-cnt">{len(items)} {T("modelů")}</span></div>{info}'
         for k, v in gs.items():
@@ -286,6 +294,8 @@ def _build_lang(cat, products, sections, lang, pdf, log, prices):
         store.write(idx, f'<!DOCTYPE html>\n<html lang="cs">\n<head>\n<meta charset="utf-8">\n<title>{E(cfg["doc_title"])}</title>\n<meta http-equiv="refresh" content="0; url={fn}">\n<link rel="canonical" href="{fn}">\n</head>\n<body>\n<p>Přesměrování na <a href="{fn}">katalog</a>…</p>\n</body>\n</html>\n'.encode('utf-8'), 'text/html; charset=utf-8')
     miss = [p['name'] for p in products if LANG.localize(p, lang).get('_missing')] if lang != 'cs' else []
     log(f'HTML ({lang.upper()}): {key_html} ({len(doc) // 1024} kB, {len(products)} modelů)' + (f' – {len(miss)} karet s nepřeloženým textem: {", ".join(miss[:8])}{"…" if len(miss) > 8 else ""}' if miss else ''))
+    pm = pages_missing(sections, lang)
+    if pm: log(f'  technické strany pro {lang.upper()} chybí u sekcí {", ".join(s["title"] for s in pm)} – použity české (nahraj je v Nastavení katalogu)')
     if pdf:
         # PDF se netiskne z webové stránky, ale z vlastní tiskové sazby (printdoc.py): pevné strany A4, karta na celou výšku strany
         import printdoc, tempfile

@@ -102,7 +102,7 @@ def catalog_update(code: str, body: dict):
         for i, s in enumerate(body['sections']):
             if s.get('key') not in SECTIONS: continue
             keep.add(s['key']); db.save_section(code, dict(key=s['key'], title=s.get('title') or SECTIONS[s['key']]['title'], cz=s.get('cz') or SECTIONS[s['key']]['cz'],
-                                                           color=s.get('color') or SECTIONS[s['key']]['color'], pages=s.get('pages') or [], sort=i))
+                                                           color=s.get('color') or SECTIONS[s['key']]['color'], pages=s.get('pages') or [], pages_i18n=s.get('pages_i18n') or {}, sort=i))
         for s in db.list_sections(code):
             if s['key'] not in keep:
                 if db.list_products(code, s['key']): raise HTTPException(400, f'Sekce „{s["cz"]}“ obsahuje produkty, nejde odebrat.')

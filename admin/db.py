@@ -171,7 +171,7 @@ def set_products(season, products, linked, overwrite=False, sections=None):
             ex('DELETE FROM sections WHERE season=?', (season,))
             for s in sections:
                 ex('INSERT INTO sections(key,season,title,cz,color,pages,sort) VALUES(?,?,?,?,?,?,?)',
-                   (s['key'], season, s['title'], s['cz'], s['color'], json.dumps(s.get('pages') or []), int(s.get('sort') or 0)))
+                   (s['key'], season, s['title'], s['cz'], s['color'], _pages_dump(s), int(s.get('sort') or 0)))
         for p in products:
             p = dict(p, season=season)
             if linked: _put_card(ex, p, keep=not overwrite); p = _link(p)
@@ -229,13 +229,22 @@ def renumber(season, section, ids):
 # ---------- sekce ----------
 def list_sections(season):
     con = connect(); rows = con.execute('SELECT * FROM sections WHERE season=? ORDER BY sort', (season,)).fetchall(); con.close()
-    return [dict(key=r['key'], title=r['title'], cz=r['cz'], color=r['color'], pages=json.loads(r['pages'] or '[]'), sort=r['sort']) for r in rows]
+    return [dict(key=r['key'], title=r['title'], cz=r['cz'], color=r['color'], sort=r['sort'], **_pages_load(r['pages'])) for r in rows]
+
+def _pages_load(raw):
+    """technické strany: list = jen české; dict = {cs: [...], en: [...]} -> pages (cs) + pages_i18n (ostatní jazyky)"""
+    v = json.loads(raw or '[]')
+    if isinstance(v, dict): return dict(pages=v.get('cs') or [], pages_i18n={k: p for k, p in v.items() if k != 'cs' and p})
+    return dict(pages=v or [], pages_i18n={})
+def _pages_dump(s):
+    extra = {k: p for k, p in (s.get('pages_i18n') or {}).items() if p}
+    return json.dumps(dict(cs=s.get('pages') or [], **extra) if extra else (s.get('pages') or []))
 
 def save_section(season, s):
     con = connect()
     con.execute('INSERT INTO sections(key,season,title,cz,color,pages,sort) VALUES(?,?,?,?,?,?,?) ON CONFLICT(key,season) DO UPDATE SET '
                 'title=excluded.title, cz=excluded.cz, color=excluded.color, pages=excluded.pages, sort=excluded.sort',
-                (s['key'], season, s['title'], s['cz'], s['color'], json.dumps(s.get('pages') or []), int(s.get('sort') or 0)))
+                (s['key'], season, s['title'], s['cz'], s['color'], _pages_dump(s), int(s.get('sort') or 0)))
     con.commit(); con.close()
 
 def delete_section(season, key):

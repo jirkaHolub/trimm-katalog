@@ -102,13 +102,13 @@ def _find_bar(im):
 # neuskakují). U oblečení, batohů a doplňků se řeší každá strana zvlášť, aby karty s málem textu nepřišly o velkou fotku.
 FIT_BY_SERIE = {'tents', 'sleeping', 'mattress'}
 
-def paginate(products, sections, root):
+def paginate(products, sections, root, lang='cs'):
     """Rozvržení stran. Série v sekci na sebe navazují bez prázdných míst; nová sekce začíná na nové straně."""
     by_sec = collections.OrderedDict((s['key'], []) for s in sections)
     for r in products: by_sec.setdefault(r['section'], []).append(r)
     pages = [dict(kind='cover'), dict(kind='toc')]; toc = []
     for s in sections:
-        items = by_sec.get(s['key'], []); infos = [p for p in (s.get('pages') or []) if os.path.exists(os.path.join(root, p))]
+        items = by_sec.get(s['key'], []); infos = [p for p in generate.sec_pages(s, lang) if os.path.exists(os.path.join(root, p))]
         if not items and not infos: continue
         entry = dict(sec=s, page=len(pages) + 1, n=len(items), series=[]); toc.append(entry)
         for p in infos: pages.append(dict(kind='info', sec=s, path=p))
@@ -127,7 +127,7 @@ def serie_label(k): return k + ('' if 'ACCESSORIES' in k or k in ('WATERPROOF', 
 
 def render(cat, products, sections, root, lang='cs', prices=None):
     """(html, osnova pro záložky PDF [[úroveň, název, strana]])"""
-    R = PrintRenderer(root, lang, prices); cfg = catalog_cfg(cat, lang); pages, toc = paginate(products, sections, root); out = []; outline = []; T = R.t
+    R = PrintRenderer(root, lang, prices); cfg = catalog_cfg(cat, lang); pages, toc = paginate(products, sections, root, lang); out = []; outline = []; T = R.t
     foot = f'TRIMM · {E(cfg["label"])}'
     def corner(n, color, x0=None, x1=None, y0=None):
         """barevný roh s číslem strany: sudá vlevo, lichá vpravo (u technických stran tam, kde je pruh v předloze)"""
