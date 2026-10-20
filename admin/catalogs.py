@@ -240,6 +240,8 @@ def photo_usage():
         code = cat['code']; add(cat.get('hero'), catalog=code, what='úvodní fotka katalogu')
         for s in db.list_sections(code):
             for pg in s.get('pages') or []: add(pg, catalog=code, what=f'technická strana · {s["cz"]}')
+            for lg, pgs in (s.get('pages_i18n') or {}).items():
+                for pg in pgs or []: add(pg, catalog=code, what=f'technická strana {lg.upper()} · {s["cz"]}')
         if cat.get('source') == 'archive':
             for c in db.list_prev_cards(code): add(c.get('image'), catalog=code, what=f'karta z PDF · {c["name"]}')
             continue
