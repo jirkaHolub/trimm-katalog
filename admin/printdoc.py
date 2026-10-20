@@ -36,7 +36,13 @@ class PrintRenderer(Renderer):
         super().__init__(_url(root) + '/', lang, prices); self.root = root
     def src(self, path, w=700):
         fp = os.path.join(self.root, path)
-        if not store.REMOTE:   # online se kvůli času tiskne z originálů
+        if store.REMOTE:   # online ze zmenšenin připravených při sestavení obrazu (z originálů Chromium v kontejneru padá na paměť)
+            try:
+                import catalogs
+                t = catalogs.thumb(path, 360 if w in self.SIZES else (2400 if path.startswith('uploads/pages/') else 1200))
+                if t: fp = t
+            except Exception: pass
+        else:
             try: fp = print_image(fp, self.SIZES.get(w, 1600))
             except Exception: pass
         return E(_url(fp))
